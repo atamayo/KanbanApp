@@ -154,6 +154,7 @@ struct TaskCardView: View {
             .padding(AppStyle.Spacing.cardPadding)
             .background(cardBackground)
             .scaleEffect(isDragging ? AppStyle.Shapes.dragScale : 1.0)
+            .contentShape(.contextMenuPreview, RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius, style: .continuous))
             .draggable(task.id.uuidString) {
                 RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
                     .fill(AppStyle.Colors.surface)

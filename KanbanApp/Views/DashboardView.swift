@@ -278,6 +278,14 @@ struct DashboardView: View {
                     .frame(width: AppStyle.Spacing.stackedBarWidth)
             }
 
+            HStack(spacing: 6) {
+                Image(systemName: "hand.tap.fill")
+                    .font(.system(size: 11, weight: .semibold))
+                Text("Tap a lane to open its tasks")
+                    .font(.system(size: 12, weight: .medium))
+            }
+            .foregroundStyle(AppStyle.Colors.subtleText)
+
             VStack(spacing: AppStyle.Spacing.none) {
                 statusRow(status: .todo, count: todoCount, color: AppStyle.Colors.Status.todo, icon: "circle")
                 
@@ -319,6 +327,8 @@ struct DashboardView: View {
                     .font(isHighlighted ? AppStyle.Typography.statusLabelHighlighted : AppStyle.Typography.statusLabel)
                     .foregroundStyle(isHighlighted ? .primary : rowColor.opacity(0.85))
                     .frame(width: AppStyle.Spacing.statusLabelWidthCompact, alignment: .leading)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.78)
 
                 GeometryReader { geo in
                     Capsule()
@@ -333,7 +343,7 @@ struct DashboardView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .animation(.spring(response: 0.6, dampingFraction: 0.7), value: barRatio)
                 }
-                .frame(height: isHighlighted ? AppStyle.Shapes.barHeightHighlighted : AppStyle.Shapes.barHeight)
+                .frame(height: AppStyle.Shapes.barHeightHighlighted)
 
                 Text(count.formatted())
                     .font(isHighlighted ? AppStyle.Typography.statusLabelHighlighted : AppStyle.Typography.statusCount)
@@ -341,9 +351,14 @@ struct DashboardView: View {
                     .monospacedDigit()
                     .contentTransition(.numericText())
                     .frame(width: AppStyle.Spacing.statusCountWidthCompact, alignment: .trailing)
+
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 12, weight: .semibold))
+                    .foregroundStyle(.tertiary)
+                    .frame(width: 12)
             }
             .padding(.horizontal, AppStyle.Spacing.cardPadding)
-            .padding(.vertical, isHighlighted ? AppStyle.Spacing.statusRowVerticalHighlighted : AppStyle.Spacing.statusRowVerticalCompact)
+            .padding(.vertical, AppStyle.Spacing.statusRowVerticalCompact)
             .contentShape(.rect)
             .background {
                 if isHighlighted {
@@ -353,9 +368,18 @@ struct DashboardView: View {
                         .padding(.vertical, AppStyle.Spacing.statusHighlightPaddingVertical)
                 }
             }
+            .overlay(alignment: .trailing) {
+                if isHighlighted {
+                    RoundedRectangle(cornerRadius: AppStyle.Shapes.statusHighlightCornerRadius, style: .continuous)
+                        .stroke(rowColor.opacity(0.16), lineWidth: 1)
+                        .padding(.horizontal, AppStyle.Spacing.statusHighlightPaddingHorizontal)
+                        .padding(.vertical, AppStyle.Spacing.statusHighlightPaddingVertical)
+                }
+            }
         }
         .buttonStyle(.plain)
         .accessibilityLabel("\(status.rawValue), \(count) tasks")
+        .accessibilityHint("Opens the \(status.rawValue) lane")
     }
 
     private var stackedBar: some View {
