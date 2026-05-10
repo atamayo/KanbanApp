@@ -23,6 +23,8 @@
 		A7C100000000000000000007 /* OnboardingManifestoPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C100000000000000000008 /* OnboardingManifestoPageView.swift */; };
 		A7C100000000000000000009 /* AppIconBadgeSyncView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C10000000000000000000A /* AppIconBadgeSyncView.swift */; };
 		A7C10000000000000000000B /* SearchTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C10000000000000000000C /* SearchTasksView.swift */; };
+		A7C10000000000000000000D /* QuickCaptureTaskGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C10000000000000000000E /* QuickCaptureTaskGenerator.swift */; };
+		A7C100000000000000000010 /* NextActionSuggestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C100000000000000000011 /* NextActionSuggestionService.swift */; };
 		E1F2A3B4C5D6000000000001 /* WIPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F2A3B4C5D6000000000002 /* WIPView.swift */; };
 		E1F2A3B4C5D6000000000003 /* PersonalKanbanManifestoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F2A3B4C5D6000000000004 /* PersonalKanbanManifestoView.swift */; };
 		C46D8078D30040238CCDE162FB2FE17E /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE822CFBF944080AA7DC05248E4FCB2 /* MainTabView.swift */; };
@@ -51,6 +53,8 @@
 		A7C100000000000000000008 /* OnboardingManifestoPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingManifestoPageView.swift; sourceTree = "<group>"; };
 		A7C10000000000000000000A /* AppIconBadgeSyncView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconBadgeSyncView.swift; sourceTree = "<group>"; };
 		A7C10000000000000000000C /* SearchTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTasksView.swift; sourceTree = "<group>"; };
+		A7C10000000000000000000E /* QuickCaptureTaskGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickCaptureTaskGenerator.swift; sourceTree = "<group>"; };
+		A7C100000000000000000011 /* NextActionSuggestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextActionSuggestionService.swift; sourceTree = "<group>"; };
 		E1F2A3B4C5D6000000000002 /* WIPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIPView.swift; sourceTree = "<group>"; };
 		E1F2A3B4C5D6000000000004 /* PersonalKanbanManifestoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalKanbanManifestoView.swift; sourceTree = "<group>"; };
 		FAE822CFBF944080AA7DC05248E4FCB2 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -87,6 +91,7 @@
 				A1B2C3D4E5F6000000000034 /* AppStyle.swift */,
 				A1B2C3D4E5F6000000000012 /* Info.plist */,
 				A1B2C3D4E5F6000000000004 /* Models */,
+				A7C10000000000000000000F /* Services */,
 				A1B2C3D4E5F6000000000005 /* Views */,
 				A1B2C3D4E5F6000000000006 /* Resources */,
 			);
@@ -125,6 +130,15 @@
 				D4C3B2A20000000000000002 /* CustomAlertView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A7C10000000000000000000F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A7C10000000000000000000E /* QuickCaptureTaskGenerator.swift */,
+				A7C100000000000000000011 /* NextActionSuggestionService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		A1B2C3D4E5F6000000000006 /* Resources */ = {
@@ -236,6 +250,8 @@
 				A7C100000000000000000007 /* OnboardingManifestoPageView.swift in Sources */,
 				A7C100000000000000000009 /* AppIconBadgeSyncView.swift in Sources */,
 				A7C10000000000000000000B /* SearchTasksView.swift in Sources */,
+				A7C10000000000000000000D /* QuickCaptureTaskGenerator.swift in Sources */,
+				A7C100000000000000000010 /* NextActionSuggestionService.swift in Sources */,
 				E1F2A3B4C5D6000000000001 /* WIPView.swift in Sources */,
 				E1F2A3B4C5D6000000000003 /* PersonalKanbanManifestoView.swift in Sources */,
 				C46D8078D30040238CCDE162FB2FE17E /* MainTabView.swift in Sources */,

@@ -5,10 +5,13 @@ struct AddTaskView: View {
     let status: TaskStatus
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
+    @State private var quickCaptureText = ""
     @State private var title = ""
     @State private var description = ""
     @State private var completionCriteria = ""
     @State private var priority: TaskPriority = .medium
+    @State private var isGeneratingQuickCapture = false
+    @State private var quickCaptureMessage: String?
     @State private var showingWIPLimitAlert = false
     @FocusState private var focusedField: Field?
     @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = true
@@ -31,6 +34,7 @@ struct AddTaskView: View {
             
             ScrollView {
                 VStack(spacing: AppStyle.Spacing.extraLarge) {
+                    quickCaptureSection
                     titleSection
                     descriptionSection
                     completionCriteriaSection
@@ -51,6 +55,67 @@ struct AddTaskView: View {
             title: "WIP Limit Reached",
             message: "Personal Kanban recommends a WIP limit of 2 or 3 to minimize context-switching and finish tasks faster. Finish or move an active task before adding another In Progress task."
         )
+    }
+
+    private var quickCaptureSection: some View {
+        VStack(alignment: .leading, spacing: AppStyle.Spacing.medium) {
+            HStack(alignment: .center) {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Quick Capture AI")
+                        .font(AppStyle.Typography.sectionTitle)
+                        .foregroundStyle(.secondary)
+                        .tracking(AppStyle.Typography.sectionTracking)
+
+                    Text("Paste a messy thought and turn it into a clean task draft.")
+                        .font(AppStyle.Typography.guidanceFooter)
+                        .foregroundStyle(.secondary)
+                }
+
+                Spacer()
+
+                Button {
+                    Task { await generateTaskDraft() }
+                } label: {
+                    HStack(spacing: 8) {
+                        if isGeneratingQuickCapture {
+                            ProgressView()
+                                .controlSize(.small)
+                        } else {
+                            Image(systemName: "apple.intelligence")
+                        }
+
+                        Text(isGeneratingQuickCapture ? "Thinking…" : "Generate")
+                    }
+                    .font(.subheadline.weight(.semibold))
+                    .frame(minWidth: 118)
+                }
+                .buttonStyle(.glass)
+                .disabled(quickCaptureText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || isGeneratingQuickCapture || !isQuickCaptureAvailable)
+            }
+
+            TextField("Paste notes, a brain dump, or a rough idea…", text: $quickCaptureText, axis: .vertical)
+                .font(.body)
+                .lineLimit(4...8)
+                .padding(AppStyle.Spacing.normal)
+                .background(AppStyle.Colors.surface)
+                .clipShape(RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
+                .overlay(
+                    RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous)
+                        .stroke(AppStyle.Colors.surfaceBorder, lineWidth: AppStyle.Shapes.borderWidth)
+                )
+
+            if let quickCaptureMessage {
+                Text(quickCaptureMessage)
+                    .font(AppStyle.Typography.guidanceFooter)
+                    .foregroundStyle(isQuickCaptureAvailable ? .secondary : AppStyle.Colors.warning)
+                    .fixedSize(horizontal: false, vertical: true)
+            } else if !isQuickCaptureAvailable, let unavailableMessage = quickCaptureUnavailableMessage {
+                Text(unavailableMessage)
+                    .font(AppStyle.Typography.guidanceFooter)
+                    .foregroundStyle(AppStyle.Colors.warning)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+        }
     }
 
     private var header: some View {
@@ -215,6 +280,24 @@ struct AddTaskView: View {
         .disabled(!isValid)
     }
 
+    private var quickCaptureAvailability: QuickCaptureAvailability {
+        QuickCaptureTaskGenerator.availability
+    }
+
+    private var isQuickCaptureAvailable: Bool {
+        if case .available = quickCaptureAvailability {
+            return true
+        }
+        return false
+    }
+
+    private var quickCaptureUnavailableMessage: String? {
+        if case .unavailable(let message) = quickCaptureAvailability {
+            return message
+        }
+        return nil
+    }
+
     private func addTask() {
         guard isValid else { return }
 
@@ -242,6 +325,45 @@ struct AddTaskView: View {
         modelContext.insert(task)
         try? modelContext.save()
         dismiss()
+    }
+
+    @MainActor
+    private func generateTaskDraft() async {
+        let cleanedText = quickCaptureText.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !cleanedText.isEmpty else { return }
+        guard isQuickCaptureAvailable else {
+            quickCaptureMessage = quickCaptureUnavailableMessage
+            return
+        }
+
+        isGeneratingQuickCapture = true
+        quickCaptureMessage = nil
+
+        defer { isGeneratingQuickCapture = false }
+
+        do {
+            let draft = try await QuickCaptureTaskGenerator.generate(from: cleanedText)
+            title = draft.title.trimmingCharacters(in: .whitespacesAndNewlines)
+
+            let cleanedDescription = draft.taskDescription.trimmingCharacters(in: .whitespacesAndNewlines)
+            let cleanedNextAction = draft.nextAction.trimmingCharacters(in: .whitespacesAndNewlines)
+            let cleanedDone = draft.definitionOfDone.trimmingCharacters(in: .whitespacesAndNewlines)
+
+            if cleanedDescription.isEmpty {
+                description = cleanedNextAction.isEmpty ? "" : "Next action: \(cleanedNextAction)"
+            } else if cleanedNextAction.isEmpty {
+                description = cleanedDescription
+            } else {
+                description = "\(cleanedDescription)\n\nNext action: \(cleanedNextAction)"
+            }
+
+            completionCriteria = cleanedDone
+            priority = QuickCaptureTaskGenerator.taskPriority(from: draft.priority)
+            focusedField = .title
+            quickCaptureMessage = "Draft generated. Review and adjust before creating the task."
+        } catch {
+            quickCaptureMessage = "Quick Capture AI couldn’t generate a draft right now. Try shortening the note and retry."
+        }
     }
 
     private var statusColor: Color {

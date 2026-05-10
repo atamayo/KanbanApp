@@ -4,6 +4,9 @@ import SwiftData
 struct TaskDetailView: View {
     @Bindable var task: TaskItem
     @Environment(\.dismiss) private var dismiss
+    @State private var suggestedNextAction = ""
+    @State private var isGeneratingNextAction = false
+    @State private var nextActionMessage: String?
 
     var body: some View {
         NavigationStack {
@@ -27,6 +30,9 @@ struct TaskDetailView: View {
                     Label("Definition of Done", systemImage: "checklist")
                 } footer: {
                     Text("Keep it compact. A short completion check helps you finish instead of endlessly refining.")
+                }
+                if task.status != .done {
+                    nextActionSection
                 }
                 Section {
                     Picker("Status", selection: $task.status) {
@@ -124,6 +130,53 @@ struct TaskDetailView: View {
         }
     }
 
+    private var nextActionSection: some View {
+        Section {
+            Button {
+                Task { await generateNextAction() }
+            } label: {
+                HStack {
+                    if isGeneratingNextAction {
+                        ProgressView()
+                            .controlSize(.small)
+                    } else {
+                        Image(systemName: "apple.intelligence")
+                    }
+                    Text(isGeneratingNextAction ? "Generating…" : "Suggest Next Action")
+                }
+            }
+            .disabled(isGeneratingNextAction || !isNextActionAvailable)
+
+            if !suggestedNextAction.isEmpty {
+                VStack(alignment: .leading, spacing: AppStyle.Spacing.small) {
+                    Text(suggestedNextAction)
+                        .foregroundStyle(.primary)
+
+                    HStack {
+                        Button("Use Suggestion") {
+                            applySuggestedNextAction()
+                        }
+                        Button("Try Again") {
+                            Task { await generateNextAction() }
+                        }
+                    }
+                    .font(.subheadline)
+                }
+                .padding(.vertical, AppStyle.Spacing.tiny)
+            }
+        } header: {
+            Label("Next Action", systemImage: "bolt.fill")
+        } footer: {
+            if let nextActionMessage {
+                Text(nextActionMessage)
+            } else if !isNextActionAvailable, let unavailableMessage = nextActionUnavailableMessage {
+                Text(unavailableMessage)
+            } else {
+                Text("Generate one concrete next step to help restart motion on this task.")
+            }
+        }
+    }
+
     private func statusColor(_ status: TaskStatus) -> Color {
         switch status {
         case .todo: return AppStyle.Colors.Status.todo
@@ -161,5 +214,61 @@ struct TaskDetailView: View {
                 task.updatedAt = Date()
             }
         )
+    }
+
+    private var nextActionAvailability: QuickCaptureAvailability {
+        NextActionSuggestionService.availability
+    }
+
+    private var isNextActionAvailable: Bool {
+        if case .available = nextActionAvailability {
+            return true
+        }
+        return false
+    }
+
+    private var nextActionUnavailableMessage: String? {
+        if case .unavailable(let message) = nextActionAvailability {
+            return message
+        }
+        return nil
+    }
+
+    @MainActor
+    private func generateNextAction() async {
+        guard isNextActionAvailable else {
+            nextActionMessage = nextActionUnavailableMessage
+            return
+        }
+
+        isGeneratingNextAction = true
+        nextActionMessage = nil
+
+        defer { isGeneratingNextAction = false }
+
+        do {
+            suggestedNextAction = try await NextActionSuggestionService.generate(for: task)
+            nextActionMessage = "Review the suggestion before applying it to the task."
+        } catch {
+            nextActionMessage = "The app couldn’t generate a next action right now. Try again in a moment."
+        }
+    }
+
+    private func applySuggestedNextAction() {
+        guard !suggestedNextAction.isEmpty else { return }
+
+        let suggestionLine = "Next action: \(suggestedNextAction)"
+        let trimmedDescription = task.desc.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        if trimmedDescription.isEmpty {
+            task.desc = suggestionLine
+        } else if trimmedDescription.contains(suggestionLine) {
+            return
+        } else {
+            task.desc = "\(trimmedDescription)\n\n\(suggestionLine)"
+        }
+
+        task.updatedAt = Date()
+        nextActionMessage = "Suggestion added to the task description."
     }
 }

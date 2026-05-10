@@ -59,6 +59,8 @@ struct MainTabView: View {
                     SearchTasksView(allTasks: allTasks, searchText: $searchText)
                 }
                 .searchable(text: $searchText, prompt: "Search tasks")
+                .searchToolbarBehavior(.minimize)
+                .searchPresentationToolbarBehavior(.avoidHidingContent)
             }
 
             Tab("Settings", systemImage: "gearshape", value: .settings) {

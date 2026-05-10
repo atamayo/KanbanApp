@@ -19,6 +19,9 @@ struct SettingsView: View {
         }
         .background(AppStyle.Colors.background)
         .scrollEdgeEffectStyle(.soft, for: .all)
+        .contentMargins(.top, AppStyle.Spacing.small, for: .scrollContent)
+        .contentMargins(.bottom, AppStyle.Spacing.extraLarge, for: .scrollContent)
+        .controlSize(.large)
         .navigationTitle("Settings")
         .navigationBarTitleDisplayMode(.inline)
     }

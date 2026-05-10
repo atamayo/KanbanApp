@@ -130,6 +130,8 @@ struct DashboardView: View {
         }
         .background(AppStyle.Colors.background)
         .scrollEdgeEffectStyle(.soft, for: .all)
+        .contentMargins(.top, AppStyle.Spacing.small, for: .scrollContent)
+        .contentMargins(.bottom, AppStyle.Spacing.extraLarge, for: .scrollContent)
         .navigationTitle("Dashboard")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {

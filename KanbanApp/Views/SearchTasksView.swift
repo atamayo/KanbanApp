@@ -44,6 +44,9 @@ struct SearchTasksView: View {
                 }
                 .listStyle(.plain)
                 .scrollContentBackground(.hidden)
+                .contentMargins(.top, AppStyle.Spacing.tiny, for: .scrollContent)
+                .contentMargins(.bottom, AppStyle.Spacing.extraLarge, for: .scrollContent)
+                .contentMargins(.horizontal, AppStyle.Spacing.tiny, for: .scrollIndicators)
             }
         }
         .background(AppStyle.Colors.background)
