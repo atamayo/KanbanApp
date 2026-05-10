@@ -44,18 +44,15 @@ struct TaskDetailView: View {
                 } header: {
                     Label("Status", systemImage: "arrow.triangle.branch")
                 }
-                Section {
-                    Toggle(isOn: blockedBinding) {
-                        Label("Blocked / Waiting", systemImage: task.isBlocked ? "pause.circle.fill" : "pause.circle")
-                    }
-                    .disabled(task.status != .inProgress)
-                } header: {
-                    Label("Flow State", systemImage: "scope")
-                } footer: {
-                    if task.status == .inProgress {
+                if task.status == .inProgress {
+                    Section {
+                        Toggle(isOn: blockedBinding) {
+                            Label("Blocked / Waiting", systemImage: task.isBlocked ? "pause.circle.fill" : "pause.circle")
+                        }
+                    } header: {
+                        Label("Flow State", systemImage: "scope")
+                    } footer: {
                         Text("Use this when work cannot move forward yet. Blocked tasks should become visible quickly.")
-                    } else {
-                        Text("Blocked state is only available for tasks that are currently in progress.")
                     }
                 }
                 Section {

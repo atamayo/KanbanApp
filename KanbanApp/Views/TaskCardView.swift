@@ -316,6 +316,19 @@ struct TaskCardView: View {
         } label: {
             Label("Priority", systemImage: "flag")
         }
+        if task.status == .inProgress {
+            Button {
+                task.isBlocked.toggle()
+                task.updatedAt = Date()
+                try? modelContext.save()
+            } label: {
+                Label(
+                    task.isBlocked ? "Mark Active" : "Mark Blocked / Waiting",
+                    systemImage: task.isBlocked ? "play.circle.fill" : "pause.circle.fill"
+                )
+            }
+            Divider()
+        }
         Divider()
         if task.status != .todo {
             Button {

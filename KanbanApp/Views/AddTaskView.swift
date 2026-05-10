@@ -7,6 +7,7 @@ struct AddTaskView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var title = ""
     @State private var description = ""
+    @State private var completionCriteria = ""
     @State private var priority: TaskPriority = .medium
     @State private var showingWIPLimitAlert = false
     @FocusState private var focusedField: Field?
@@ -17,6 +18,7 @@ struct AddTaskView: View {
     enum Field {
         case title
         case description
+        case completionCriteria
     }
 
     private var isValid: Bool {
@@ -30,6 +32,8 @@ struct AddTaskView: View {
             ScrollView {
                 VStack(spacing: AppStyle.Spacing.extraLarge) {
                     titleSection
+                    descriptionSection
+                    completionCriteriaSection
                     prioritySection
                     statusInfo
                 }
@@ -129,6 +133,52 @@ struct AddTaskView: View {
         }
     }
 
+    private var descriptionSection: some View {
+        VStack(alignment: .leading, spacing: AppStyle.Spacing.medium) {
+            Text("Description")
+                .font(AppStyle.Typography.sectionTitle)
+                .foregroundStyle(.secondary)
+                .tracking(AppStyle.Typography.sectionTracking)
+
+            TextField("Add context for the task", text: $description, axis: .vertical)
+                .font(.body)
+                .lineLimit(3...6)
+                .padding(AppStyle.Spacing.normal)
+                .background(AppStyle.Colors.surface)
+                .clipShape(RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
+                .overlay(
+                    RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous)
+                        .stroke(AppStyle.Colors.surfaceBorder, lineWidth: AppStyle.Shapes.borderWidth)
+                )
+                .focused($focusedField, equals: .description)
+        }
+    }
+
+    private var completionCriteriaSection: some View {
+        VStack(alignment: .leading, spacing: AppStyle.Spacing.medium) {
+            Text("Definition of Done")
+                .font(AppStyle.Typography.sectionTitle)
+                .foregroundStyle(.secondary)
+                .tracking(AppStyle.Typography.sectionTracking)
+
+            TextField("What does done look like?", text: $completionCriteria, axis: .vertical)
+                .font(.body)
+                .lineLimit(2...4)
+                .padding(AppStyle.Spacing.normal)
+                .background(AppStyle.Colors.surface)
+                .clipShape(RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
+                .overlay(
+                    RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous)
+                        .stroke(AppStyle.Colors.surfaceBorder, lineWidth: AppStyle.Shapes.borderWidth)
+                )
+                .focused($focusedField, equals: .completionCriteria)
+
+            Text("Keep it short. A compact finish check makes it easier to close the task.")
+                .font(AppStyle.Typography.guidanceFooter)
+                .foregroundStyle(.secondary)
+        }
+    }
+
     private var statusInfo: some View {
         HStack(spacing: AppStyle.Spacing.medium) {
             Image(systemName: "info.circle.fill")
@@ -181,7 +231,14 @@ struct AddTaskView: View {
         }
 
         let order = allTasks.filter { $0.status == status }.count
-        let task = TaskItem(title: title, description: "", status: status, priority: priority, order: order)
+        let task = TaskItem(
+            title: title,
+            description: description,
+            completionCriteria: completionCriteria,
+            status: status,
+            priority: priority,
+            order: order
+        )
         modelContext.insert(task)
         try? modelContext.save()
         dismiss()
