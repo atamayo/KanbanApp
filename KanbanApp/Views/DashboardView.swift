@@ -95,60 +95,95 @@ struct DashboardView: View {
     // MARK: - Header
 
     private var headerSection: some View {
-        HStack(spacing: AppStyle.Spacing.hStackGap) {
-            VStack(alignment: .leading, spacing: AppStyle.Spacing.headerVStackGap) {
-                Text("Your Progress")
-                    .font(AppStyle.Typography.sectionTitle)
-                    .foregroundStyle(.secondary)
-                    .tracking(AppStyle.Typography.sectionTracking)
-                
-                Text("\(doneCount) of \(totalCount) tasks")
-                    .font(AppStyle.Typography.compactHeaderTitle)
-                    .foregroundStyle(.primary)
-                    .contentTransition(.numericText())
+        HStack(alignment: .center, spacing: 18) {
+            VStack(alignment: .leading, spacing: 12) {
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("Your Progress")
+                        .font(.system(size: 14, weight: .medium))
+                        .foregroundStyle(AppStyle.Colors.subtleText)
+
+                    Text("\(doneCount) of \(totalCount) tasks")
+                        .font(.system(size: 15, weight: .bold, design: .rounded))
+                        .foregroundStyle(.primary)
+                        .contentTransition(.numericText())
+                        .minimumScaleFactor(0.85)
+                }
+
+                progressBar
             }
 
-            Spacer()
-            
+            Spacer(minLength: 0)
+
             progressRing
         }
-        .padding(.vertical, AppStyle.Spacing.headerPaddingVertical)
-        .padding(.horizontal, AppStyle.Spacing.headerPaddingHorizontal)
+        .padding(.vertical, 18)
+        .padding(.horizontal, 22)
         .cardStyle(cornerRadius: AppStyle.Shapes.headerCornerRadius)
     }
 
+    private var progressBar: some View {
+        GeometryReader { geo in
+            ZStack(alignment: .leading) {
+                Capsule()
+                    .fill(AppStyle.Colors.track.opacity(0.65))
+
+                Capsule()
+                    .fill(
+                        LinearGradient(
+                            colors: [
+                                AppStyle.Colors.Status.done.opacity(0.85),
+                                AppStyle.Colors.Status.done
+                            ],
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        )
+                    )
+                    .frame(width: max(12, geo.size.width * donePercent))
+                    .animation(.spring(duration: 0.9, bounce: 0.12), value: donePercent)
+            }
+        }
+        .frame(maxWidth: 420)
+        .frame(height: 10)
+    }
+
     private var progressRing: some View {
-        let ringSize = AppStyle.Shapes.compactRingSize
+        let ringSize: CGFloat = 96
         return ZStack {
             Circle()
-                .stroke(AppStyle.Colors.track, lineWidth: AppStyle.Shapes.compactRingTrackStroke)
+                .stroke(AppStyle.Colors.track.opacity(0.6), lineWidth: 9)
 
             Circle()
                 .trim(from: 0, to: donePercent)
                 .stroke(
-                    AppStyle.Colors.Status.done.opacity(0.25),
-                    style: .init(lineWidth: AppStyle.Shapes.compactRingGlowStroke, lineCap: .round)
+                    AppStyle.Colors.Status.done.opacity(0.16),
+                    style: .init(lineWidth: 12, lineCap: .round)
                 )
                 .rotationEffect(.degrees(-90))
-                .blur(radius: AppStyle.Shapes.compactRingGlowBlur)
+                .blur(radius: 4)
 
             Circle()
                 .trim(from: 0, to: donePercent)
                 .stroke(
                     LinearGradient(
-                        colors: [AppStyle.Colors.Status.done, AppStyle.Colors.Status.done.opacity(0.6)],
-                        startPoint: .topLeading,
+                        colors: [AppStyle.Colors.Status.done.opacity(0.95), AppStyle.Colors.Status.done],
+                        startPoint: .top,
                         endPoint: .bottomTrailing
                     ),
-                    style: .init(lineWidth: AppStyle.Shapes.compactRingTrackStroke, lineCap: .round)
+                    style: .init(lineWidth: 9, lineCap: .round)
                 )
                 .rotationEffect(.degrees(-90))
                 .animation(.spring(duration: 1, bounce: 0.15), value: donePercent)
 
-            Text("\(Int(donePercent * 100))%")
-                .font(AppStyle.Typography.ringPercentageSmall)
-                .foregroundStyle(.primary)
-                .contentTransition(.numericText())
+            VStack(spacing: 2) {
+                Text("\(Int(donePercent * 100))%")
+                    .font(.system(size: 20, weight: .bold, design: .rounded))
+                    .foregroundStyle(.primary)
+                    .contentTransition(.numericText())
+
+                Text("Complete")
+                    .font(.system(size: 10, weight: .medium))
+                    .foregroundStyle(AppStyle.Colors.subtleText)
+            }
         }
         .frame(width: ringSize, height: ringSize)
     }
