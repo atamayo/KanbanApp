@@ -2,21 +2,73 @@ import SwiftUI
 import SwiftData
 
 struct MainTabView: View {
+    private enum AppTab: Int, Hashable {
+        case dashboard
+        case tasks
+        case search
+        case settings
+    }
+
     @Query(sort: \TaskItem.order) private var allTasks: [TaskItem]
-    @State private var selectedTab = 0
+    @State private var selectedTab: AppTab = .dashboard
     @State private var selectedSegment: TaskStatus = .todo
     @State private var isAddingTask = false
     @State private var addTaskStatus: TaskStatus = .todo
+    @State private var searchText = ""
+
+    private var inProgressCount: Int {
+        allTasks.filter { $0.status == .inProgress }.count
+    }
 
     var body: some View {
-        ZStack(alignment: .bottom) {
-            tabContent
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+        TabView(selection: $selectedTab) {
+            Tab("Dashboard", systemImage: "house", value: .dashboard) {
+                NavigationStack {
+                    DashboardView(
+                        allTasks: allTasks,
+                        onAddTask: {
+                            addTaskStatus = .todo
+                            isAddingTask = true
+                        },
+                        onSelectStatus: { status in
+                            selectedSegment = status
+                            withAnimation(.snappy) {
+                                selectedTab = .tasks
+                            }
+                        }
+                    )
+                }
+            }
 
-            GlassTabBar(selectedTab: $selectedTab)
-                .padding(.horizontal, AppStyle.Spacing.normal)
-                .padding(.bottom, AppStyle.Spacing.small)
+            Tab("All Tasks", systemImage: "checklist", value: .tasks) {
+                NavigationStack {
+                    AllTasksView(
+                        allTasks: allTasks,
+                        selectedSegment: $selectedSegment,
+                        onAddTask: {
+                            addTaskStatus = selectedSegment
+                            isAddingTask = true
+                        }
+                    )
+                }
+            }
+            .badge(inProgressCount > 0 ? inProgressCount : 0)
+
+            Tab(value: .search, role: .search) {
+                NavigationStack {
+                    SearchTasksView(allTasks: allTasks, searchText: $searchText)
+                }
+                .searchable(text: $searchText, prompt: "Search tasks")
+            }
+
+            Tab("Settings", systemImage: "gearshape", value: .settings) {
+                NavigationStack {
+                    SettingsView()
+                }
+            }
         }
+        .tabViewSearchActivation(.searchTabSelection)
+        .tabBarMinimizeBehavior(.onScrollDown)
         .ignoresSafeArea(.keyboard)
         .syncAppIconBadge(tasks: allTasks)
         .sheet(isPresented: $isAddingTask) {
@@ -24,86 +76,5 @@ struct MainTabView: View {
                 .presentationDetents([.medium])
                 .presentationDragIndicator(.visible)
         }
-    }
-
-    @ViewBuilder
-    private var tabContent: some View {
-        switch selectedTab {
-        case 0:
-            NavigationStack {
-                DashboardView(
-                    allTasks: allTasks,
-                    onAddTask: {
-                        addTaskStatus = .todo
-                        isAddingTask = true
-                    },
-                    onSelectStatus: { status in
-                        selectedSegment = status
-                        withAnimation(.snappy) {
-                            selectedTab = 1
-                        }
-                    }
-                )
-            }
-        case 1:
-            NavigationStack {
-                AllTasksView(
-                    allTasks: allTasks,
-                    selectedSegment: $selectedSegment,
-                    onAddTask: {
-                        addTaskStatus = selectedSegment
-                        isAddingTask = true
-                    }
-                )
-            }
-        case 2:
-            NavigationStack {
-                SettingsView()
-            }
-        default:
-            EmptyView()
-        }
-    }
-}
-
-private struct GlassTabBar: View {
-    @Binding var selectedTab: Int
-
-    var body: some View {
-        HStack(spacing: AppStyle.Spacing.none) {
-            tabButton(index: 0, icon: "house", selectedIcon: "house.fill", title: "Dashboard")
-            tabButton(index: 1, icon: "checklist", selectedIcon: "checklist", title: "All Tasks")
-            tabButton(index: 2, icon: "gearshape", selectedIcon: "gearshape.fill", title: "Settings")
-        }
-        .padding(.horizontal, AppStyle.Spacing.extraLarge)
-        .padding(.vertical, AppStyle.Spacing.small)
-        .background(.ultraThinMaterial)
-        .clipShape(RoundedRectangle(cornerRadius: AppStyle.Shapes.tabBarCornerRadius, style: .continuous))
-        .shadow(
-            color: AppStyle.Colors.cardShadow,
-            radius: AppStyle.Shapes.cardShadowRadius,
-            y: -AppStyle.Shapes.cardShadowY
-        )
-    }
-
-    private func tabButton(index: Int, icon: String, selectedIcon: String, title: String) -> some View {
-        let isSelected = selectedTab == index
-        return Button {
-            withAnimation(.snappy) {
-                selectedTab = index
-            }
-        } label: {
-            VStack(spacing: AppStyle.Spacing.tabBarIconGap) {
-                Image(systemName: isSelected ? selectedIcon : icon)
-                    .font(.system(size: AppStyle.Shapes.iconSizeMedium, weight: .semibold))
-                Text(title)
-                    .font(AppStyle.Typography.tabLabel)
-            }
-            .foregroundStyle(isSelected ? AppStyle.Colors.Status.todo : .secondary)
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, AppStyle.Spacing.tiny)
-            .contentShape(.rect)
-        }
-        .buttonStyle(.plain)
     }
 }

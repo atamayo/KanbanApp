@@ -8,16 +8,14 @@ struct AllTasksView: View {
     var onAddTask: (() -> Void)? = nil
     
     @State private var selectedTask: TaskItem?
-    @State private var searchText = ""
+    @Namespace private var glassChromeNamespace
     @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = true
     @AppStorage("maxActiveTasks") private var maxActiveTasks = 3
 
     private var filteredTasks: [TaskItem] {
         allTasks
             .filter { task in
-                let matchesStatus = task.status == selectedSegment
-                let matchesSearch = searchText.isEmpty || task.title.localizedCaseInsensitiveContains(searchText) || task.desc.localizedCaseInsensitiveContains(searchText)
-                return matchesStatus && matchesSearch
+                task.status == selectedSegment
             }
             .sorted { a, b in
                 if a.order != b.order {
@@ -37,15 +35,12 @@ struct AllTasksView: View {
 
     var body: some View {
         VStack(spacing: AppStyle.Spacing.none) {
-            // Search Bar
-            searchBar
-                .padding(.horizontal, AppStyle.Spacing.normal)
-                .padding(.top, AppStyle.Spacing.small)
-
-            // Sliding Pill Status Picker
-            StatusPicker(selection: $selectedSegment)
-                .padding(.horizontal, AppStyle.Spacing.normal)
-                .padding(.vertical, AppStyle.Spacing.medium)
+            GlassEffectContainer(spacing: 18) {
+                StatusPicker(selection: $selectedSegment, glassNamespace: glassChromeNamespace)
+                    .padding(.horizontal, AppStyle.Spacing.normal)
+                    .padding(.top, AppStyle.Spacing.small)
+                    .padding(.bottom, AppStyle.Spacing.medium)
+            }
 
             if selectedSegment == .todo && isWIPLimitReached {
                 finishFirstBanner
@@ -70,6 +65,7 @@ struct AllTasksView: View {
             }
         }
         .background(AppStyle.Colors.background)
+        .scrollEdgeEffectStyle(.soft, for: .all)
         .navigationTitle("All Tasks")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
@@ -81,18 +77,8 @@ struct AllTasksView: View {
                         .font(AppStyle.Typography.bodyLarge)
                         .foregroundStyle(AppStyle.Colors.Status.todo)
                         .frame(width: AppStyle.Shapes.buttonSizeMedium, height: AppStyle.Shapes.buttonSizeMedium)
-                        .background(.ultraThinMaterial, in: .circle)
-                        .overlay(
-                            Circle()
-                                .stroke(AppStyle.Colors.surfaceBorder, lineWidth: AppStyle.Shapes.borderWidth)
-                        )
-                        .shadow(
-                            color: AppStyle.Colors.cardShadow,
-                            radius: AppStyle.Shapes.tinyShadowRadius,
-                            x: AppStyle.Spacing.none,
-                            y: AppStyle.Shapes.tinyShadowY
-                        )
                 }
+                .buttonStyle(.glass)
                 .opacity(selectedSegment == .todo && isWIPLimitReached ? 0.65 : 1.0)
             }
         }
@@ -102,40 +88,16 @@ struct AllTasksView: View {
         }
     }
 
-    private var searchBar: some View {
-        HStack {
-            Image(systemName: "magnifyingglass")
-                .foregroundStyle(.secondary)
-            TextField("Search tasks...", text: $searchText)
-                .font(AppStyle.Typography.statusLabel)
-            if !searchText.isEmpty {
-                Button {
-                    searchText = ""
-                } label: {
-                    Image(systemName: "xmark.circle.fill")
-                        .foregroundStyle(.secondary)
-                }
-            }
-        }
-        .padding(AppStyle.Spacing.small)
-        .background(AppStyle.Colors.surface)
-        .clipShape(RoundedRectangle(cornerRadius: AppStyle.Shapes.tinyCornerRadius))
-        .overlay(
-            RoundedRectangle(cornerRadius: AppStyle.Shapes.tinyCornerRadius)
-                .stroke(AppStyle.Colors.surfaceBorder, lineWidth: AppStyle.Shapes.borderWidth)
-        )
-    }
-
     private var emptyState: some View {
         VStack(spacing: AppStyle.Spacing.emptyStateSpacing) {
             Spacer()
-            Image(systemName: searchText.isEmpty ? "tray" : "magnifyingglass")
+            Image(systemName: "tray")
                 .font(AppStyle.Typography.emptyIcon)
                 .foregroundStyle(.secondary)
-            Text(searchText.isEmpty ? "No tasks" : "No results")
+            Text("No tasks")
                 .font(AppStyle.Typography.emptyTitle)
                 .foregroundStyle(.primary)
-            Text(searchText.isEmpty ? "No tasks in this status" : "Try a different search term")
+            Text("No tasks in this status")
                 .font(AppStyle.Typography.emptySubtitle)
                 .foregroundStyle(.secondary)
             Spacer()
@@ -186,35 +148,21 @@ struct AllTasksView: View {
 
 private struct StatusPicker: View {
     @Binding var selection: TaskStatus
+    let glassNamespace: Namespace.ID
 
     var body: some View {
-        HStack(spacing: AppStyle.Spacing.none) {
+        Picker("Status", selection: $selection) {
             ForEach(TaskStatus.allCases) { status in
                 Text(status.rawValue)
-                    .font(AppStyle.Typography.tabLabel)
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, AppStyle.Spacing.totalRowVertical)
-                    .foregroundStyle(selection == status ? .white : AppStyle.Colors.subtleText)
-                    .contentShape(.rect)
-                    .onTapGesture {
-                        withAnimation(.snappy(duration: 0.3)) { selection = status }
-                    }
+                    .tag(status)
             }
         }
-        .background {
-            GeometryReader { geo in
-                let segmentWidth = geo.size.width / CGFloat(TaskStatus.allCases.count)
-                let index = CGFloat(TaskStatus.allCases.firstIndex(of: selection) ?? 0)
-                Capsule()
-                    .fill(tintColor(for: selection))
-                    .frame(width: max(segmentWidth - AppStyle.Spacing.small, AppStyle.Spacing.none))
-                    .offset(x: AppStyle.Spacing.tiny + segmentWidth * index)
-            }
-            .animation(.snappy(duration: 0.3), value: selection)
-        }
-        .padding(AppStyle.Spacing.tiny)
-        .background(AppStyle.Colors.surface)
-        .clipShape(Capsule())
+        .pickerStyle(.segmented)
+        .tint(tintColor(for: selection))
+        .labelsHidden()
+        .padding(6)
+        .glassEffect(.regular.tint(Color.white.opacity(0.04)), in: Capsule())
+        .glassEffectID("status-picker", in: glassNamespace)
     }
 
     private func tintColor(for status: TaskStatus) -> Color {

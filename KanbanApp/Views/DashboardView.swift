@@ -129,6 +129,7 @@ struct DashboardView: View {
             }
         }
         .background(AppStyle.Colors.background)
+        .scrollEdgeEffectStyle(.soft, for: .all)
         .navigationTitle("Dashboard")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
@@ -140,13 +141,8 @@ struct DashboardView: View {
                         .font(AppStyle.Typography.bodyLarge)
                         .foregroundStyle(AppStyle.Colors.Status.todo)
                         .frame(width: AppStyle.Shapes.buttonSizeMedium, height: AppStyle.Shapes.buttonSizeMedium)
-                        .background(.ultraThinMaterial, in: .circle)
-                        .overlay(
-                            Circle()
-                                .stroke(AppStyle.Colors.surfaceBorder, lineWidth: AppStyle.Shapes.borderWidth)
-                        )
-                        .shadow(color: AppStyle.Colors.cardShadow, radius: AppStyle.Shapes.cardShadowRadius, x: 0, y: 2)
                 }
+                .buttonStyle(.glass)
             }
         }
     }
@@ -280,9 +276,9 @@ struct DashboardView: View {
 
             HStack(spacing: 6) {
                 Image(systemName: "hand.tap.fill")
-                    .font(.system(size: 11, weight: .semibold))
+                    .font(.system(size: 12, weight: .semibold))
                 Text("Tap a lane to open its tasks")
-                    .font(.system(size: 12, weight: .medium))
+                    .font(.system(size: 13, weight: .medium))
             }
             .foregroundStyle(AppStyle.Colors.subtleText)
 
@@ -319,16 +315,16 @@ struct DashboardView: View {
         } label: {
             HStack(spacing: AppStyle.Spacing.statusRowGap) {
                 Image(systemName: isWIPLimitReached ? "exclamationmark.triangle.fill" : icon)
-                    .font(.system(size: AppStyle.Shapes.statusIconSize, weight: .bold))
+                    .font(.system(size: 17, weight: .bold))
                     .foregroundStyle(rowColor)
-                    .frame(width: AppStyle.Spacing.statusIconWidth)
+                    .frame(width: 24)
 
                 Text(status.rawValue)
-                    .font(isHighlighted ? AppStyle.Typography.statusLabelHighlighted : AppStyle.Typography.statusLabel)
+                    .font(.system(size: 20, weight: isHighlighted ? .bold : .semibold, design: .rounded))
                     .foregroundStyle(isHighlighted ? .primary : rowColor.opacity(0.85))
-                    .frame(width: AppStyle.Spacing.statusLabelWidthCompact, alignment: .leading)
+                    .frame(width: 112, alignment: .leading)
                     .lineLimit(1)
-                    .minimumScaleFactor(0.78)
+                    .minimumScaleFactor(0.82)
 
                 GeometryReader { geo in
                     Capsule()
@@ -346,19 +342,19 @@ struct DashboardView: View {
                 .frame(height: AppStyle.Shapes.barHeightHighlighted)
 
                 Text(count.formatted())
-                    .font(isHighlighted ? AppStyle.Typography.statusLabelHighlighted : AppStyle.Typography.statusCount)
+                    .font(.system(size: 22, weight: .bold, design: .rounded))
                     .foregroundStyle(isHighlighted ? .primary : .secondary)
                     .monospacedDigit()
                     .contentTransition(.numericText())
-                    .frame(width: AppStyle.Spacing.statusCountWidthCompact, alignment: .trailing)
+                    .frame(width: 32, alignment: .trailing)
 
                 Image(systemName: "chevron.right")
-                    .font(.system(size: 12, weight: .semibold))
+                    .font(.system(size: 14, weight: .semibold))
                     .foregroundStyle(.tertiary)
-                    .frame(width: 12)
+                    .frame(width: 14)
             }
             .padding(.horizontal, AppStyle.Spacing.cardPadding)
-            .padding(.vertical, AppStyle.Spacing.statusRowVerticalCompact)
+            .padding(.vertical, 18)
             .contentShape(.rect)
             .background {
                 if isHighlighted {

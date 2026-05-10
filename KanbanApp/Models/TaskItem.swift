@@ -7,6 +7,14 @@ enum TaskStatus: String, Codable, CaseIterable, Identifiable {
     case done = "Done"
 
     var id: String { rawValue }
+
+    var sortOrder: Int {
+        switch self {
+        case .todo: return 0
+        case .inProgress: return 1
+        case .done: return 2
+        }
+    }
 }
 
 enum TaskPriority: String, Codable, CaseIterable, Identifiable {

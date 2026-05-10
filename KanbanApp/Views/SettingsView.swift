@@ -18,6 +18,7 @@ struct SettingsView: View {
             .padding(.bottom, 120)
         }
         .background(AppStyle.Colors.background)
+        .scrollEdgeEffectStyle(.soft, for: .all)
         .navigationTitle("Settings")
         .navigationBarTitleDisplayMode(.inline)
     }
