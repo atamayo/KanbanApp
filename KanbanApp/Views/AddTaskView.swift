@@ -10,7 +10,7 @@ struct AddTaskView: View {
     @State private var priority: TaskPriority = .medium
     @State private var showingWIPLimitAlert = false
     @FocusState private var focusedField: Field?
-    @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = false
+    @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = true
     @AppStorage("maxActiveTasks") private var maxActiveTasks = 3
 
     enum Field {

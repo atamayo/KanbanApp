@@ -6,6 +6,11 @@ struct KanbanApp: App {
     let container: ModelContainer
 
     init() {
+        UserDefaults.standard.register(defaults: [
+            "isFocusGuardEnabled": true,
+            "maxActiveTasks": 3,
+        ])
+
         let config = ModelConfiguration()
         do {
             container = try ModelContainer(for: TaskItem.self, configurations: config)

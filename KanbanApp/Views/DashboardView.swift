@@ -4,7 +4,7 @@ struct DashboardView: View {
     var onAddTask: (() -> Void)? = nil
     var onSelectStatus: ((TaskStatus) -> Void)? = nil
     
-    @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = false
+    @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = true
     @AppStorage("maxActiveTasks") private var maxActiveTasks = 3
 
     // MARK: - Data
@@ -27,8 +27,11 @@ struct DashboardView: View {
         max(count(priority: .high), count(priority: .medium), count(priority: .low))
     }
 
-    private var recentTasks: [TaskItem] {
-        allTasks.sorted { $0.updatedAt > $1.updatedAt }.prefix(3).map { $0 }
+    private var oldestInProgressTask: TaskItem? {
+        allTasks
+            .filter { $0.status == .inProgress }
+            .sorted { $0.lastStatusChange < $1.lastStatusChange }
+            .first
     }
 
     // MARK: - Body
@@ -43,9 +46,13 @@ struct DashboardView: View {
                     statusSection
                     prioritySection
                     
-                    if !recentTasks.isEmpty {
-                        recentActivitySection
-                    }
+                    WIPView(
+                        inProgressCount: inProgressCount,
+                        maxActiveTasks: maxActiveTasks,
+                        isFocusGuardEnabled: isFocusGuardEnabled,
+                        oldestInProgressTask: oldestInProgressTask,
+                        onReviewActiveTasks: { onSelectStatus?(.inProgress) }
+                    )
                     
                     insightFooter
                 }
@@ -378,57 +385,6 @@ struct DashboardView: View {
         }
         .cardStyle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
         .opacity(isEmpty ? 0.8 : 1.0)
-    }
-
-    // MARK: - Recent Activity
-
-    private var recentActivitySection: some View {
-        VStack(alignment: .leading, spacing: AppStyle.Spacing.sectionToCard) {
-            sectionHeader("Recent Activity")
-
-            VStack(spacing: AppStyle.Spacing.none) {
-                ForEach(recentTasks) { task in
-                    HStack(alignment: .top, spacing: AppStyle.Spacing.statusRowGap) {
-                        Circle()
-                            .fill(statusColor(for: task.status))
-                            .frame(width: AppStyle.Shapes.dotSize, height: AppStyle.Shapes.dotSize)
-                            .padding(.top, AppStyle.Spacing.recentActivityCircleTopPadding)
-                        
-                        VStack(alignment: .leading, spacing: AppStyle.Spacing.tiny) {
-                            Text(task.title)
-                                .font(AppStyle.Typography.cardTitle)
-                                .foregroundStyle(.primary)
-                                .lineLimit(nil)
-                                .fixedSize(horizontal: false, vertical: true)
-                                .multilineTextAlignment(.leading)
-                            
-                            Text(task.updatedAt, style: .relative)
-                                .font(AppStyle.Typography.cardDate)
-                                .foregroundStyle(.secondary)
-                        }
-                        
-                        Spacer()
-                    }
-                    .padding(.horizontal, AppStyle.Spacing.cardPadding)
-                    .padding(.vertical, AppStyle.Spacing.recentActivityRowVerticalPadding)
-                    
-                    if task.id != recentTasks.last?.id {
-                        AppStyle.Colors.divider
-                            .frame(height: 1)
-                            .padding(.leading, AppStyle.Spacing.cardPadding + AppStyle.Spacing.statusIconWidth)
-                    }
-                }
-            }
-            .cardStyle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
-        }
-    }
-
-    private func statusColor(for status: TaskStatus) -> Color {
-        switch status {
-        case .todo: return AppStyle.Colors.Status.todo
-        case .inProgress: return AppStyle.Colors.Status.inProgress
-        case .done: return AppStyle.Colors.Status.done
-        }
     }
 
     // MARK: - Footer

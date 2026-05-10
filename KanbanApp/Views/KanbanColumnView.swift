@@ -9,7 +9,7 @@ struct KanbanColumnView: View {
     @State private var droppedID: UUID?
     @State private var targetedZone: TaskPriority?
     
-    @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = false
+    @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = true
     @AppStorage("maxActiveTasks") private var maxActiveTasks = 3
 
     private var columnColor: Color {

@@ -17,6 +17,7 @@
 		A1B2C3D4E5F6000000000020 /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F600000000001F /* TaskDetailView.swift */; };
 		A1B2C3D4E5F6000000000032 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000000000033 /* DashboardView.swift */; };
 		A1B2C3D4E5F6000000000035 /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000000000034 /* AppStyle.swift */; };
+		E1F2A3B4C5D6000000000001 /* WIPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F2A3B4C5D6000000000002 /* WIPView.swift */; };
 		C46D8078D30040238CCDE162FB2FE17E /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE822CFBF944080AA7DC05248E4FCB2 /* MainTabView.swift */; };
 		CC88F17F1EB745D7B67C1DED74B18C18 /* AllTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC21578A5014A16A3256BF3F502DDAC /* AllTasksView.swift */; };
 		D4C3B2A10000000000000001 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C3B2A20000000000000002 /* CustomAlertView.swift */; };
@@ -37,6 +38,7 @@
 		A1B2C3D4E5F600000000001F /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F6000000000033 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F6000000000034 /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
+		E1F2A3B4C5D6000000000002 /* WIPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIPView.swift; sourceTree = "<group>"; };
 		FAE822CFBF944080AA7DC05248E4FCB2 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		2BC21578A5014A16A3256BF3F502DDAC /* AllTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTasksView.swift; sourceTree = "<group>"; };
 		9527358144CD4E779E36F571C9E106AD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				A1B2C3D4E5F600000000001D /* AddTaskView.swift */,
 				A1B2C3D4E5F600000000001F /* TaskDetailView.swift */,
 				A1B2C3D4E5F6000000000033 /* DashboardView.swift */,
+				E1F2A3B4C5D6000000000002 /* WIPView.swift */,
 				2BC21578A5014A16A3256BF3F502DDAC /* AllTasksView.swift */,
 				9527358144CD4E779E36F571C9E106AD /* SettingsView.swift */,
 				D4C3B2A20000000000000002 /* CustomAlertView.swift */,
@@ -206,6 +209,7 @@
 				A1B2C3D4E5F6000000000020 /* TaskDetailView.swift in Sources */,
 				A1B2C3D4E5F6000000000032 /* DashboardView.swift in Sources */,
 				A1B2C3D4E5F6000000000035 /* AppStyle.swift in Sources */,
+				E1F2A3B4C5D6000000000001 /* WIPView.swift in Sources */,
 				C46D8078D30040238CCDE162FB2FE17E /* MainTabView.swift in Sources */,
 				CC88F17F1EB745D7B67C1DED74B18C18 /* AllTasksView.swift in Sources */,
 				D4C3B2A10000000000000001 /* CustomAlertView.swift in Sources */,

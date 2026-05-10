@@ -41,7 +41,7 @@ struct TaskCardView: View {
     @State private var wipLimitError = false
     @State private var showingWIPLimitAlert = false
     
-    @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = false
+    @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = true
     @AppStorage("maxActiveTasks") private var maxActiveTasks = 3
     @Query(filter: #Predicate<TaskItem> { $0.statusRaw == "In Progress" }) private var inProgressTasks: [TaskItem]
 
