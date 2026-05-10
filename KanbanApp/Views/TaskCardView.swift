@@ -2,6 +2,37 @@ import SwiftUI
 import SwiftData
 
 struct TaskCardView: View {
+    private enum FlowState {
+        case ready
+        case fresh
+        case active
+        case aging
+        case stalled
+        case completed
+
+        var label: String {
+            switch self {
+            case .ready: return "Ready"
+            case .fresh: return "Fresh"
+            case .active: return "Active"
+            case .aging: return "Aging"
+            case .stalled: return "Stalled"
+            case .completed: return "Closed"
+            }
+        }
+
+        var icon: String {
+            switch self {
+            case .ready: return "play.circle"
+            case .fresh: return "sparkles"
+            case .active: return "bolt.circle"
+            case .aging: return "clock.badge.exclamationmark"
+            case .stalled: return "exclamationmark.circle"
+            case .completed: return "checkmark.seal"
+            }
+        }
+    }
+
     let task: TaskItem
     let onSelect: (TaskItem) -> Void
     @Environment(\.modelContext) private var modelContext
@@ -33,6 +64,79 @@ struct TaskCardView: View {
     private var closedAt: Date? {
         guard task.status == .done else { return nil }
         return task.finalizedAt ?? task.updatedAt
+    }
+
+    private var flowReferenceDate: Date {
+        switch task.status {
+        case .todo:
+            return task.createdAt
+        case .inProgress:
+            return task.lastStatusChange
+        case .done:
+            return closedAt ?? task.updatedAt
+        }
+    }
+
+    private var flowAge: TimeInterval {
+        Date().timeIntervalSince(flowReferenceDate)
+    }
+
+    private var flowState: FlowState {
+        switch task.status {
+        case .todo:
+            return .ready
+        case .done:
+            return .completed
+        case .inProgress:
+            if flowAge < 24 * 60 * 60 {
+                return .fresh
+            } else if flowAge < 3 * 24 * 60 * 60 {
+                return .active
+            } else if flowAge < 5 * 24 * 60 * 60 {
+                return .aging
+            } else {
+                return .stalled
+            }
+        }
+    }
+
+    private var flowColor: Color {
+        switch flowState {
+        case .ready:
+            return AppStyle.Colors.Status.todo
+        case .fresh:
+            return .secondary
+        case .active:
+            return AppStyle.Colors.Status.done
+        case .aging:
+            return AppStyle.Colors.Priority.medium
+        case .stalled:
+            return AppStyle.Colors.Priority.high
+        case .completed:
+            return AppStyle.Colors.Status.done
+        }
+    }
+
+    private var flowDurationText: String {
+        let minutes = Int(flowAge / 60)
+        let hours = Int(flowAge / 3600)
+        let days = Int(flowAge / 86400)
+
+        if days > 0 { return "\(days)d" }
+        if hours > 0 { return "\(hours)h" }
+        if minutes > 0 { return "\(minutes)m" }
+        return "now"
+    }
+
+    private var accentWidthRatio: CGFloat {
+        switch flowState {
+        case .ready: return 0.18
+        case .fresh: return 0.28
+        case .active: return 0.52
+        case .aging: return 0.76
+        case .stalled: return 1.0
+        case .completed: return 0.42
+        }
     }
 
     var body: some View {
@@ -119,20 +223,13 @@ struct TaskCardView: View {
 
     private var timeInfo: some View {
         HStack(spacing: AppStyle.Spacing.tiny) {
-            if let closedAt {
-                Image(systemName: "checkmark.seal")
-                    .foregroundStyle(AppStyle.Colors.Status.done)
-                Text("Closed")
-                Text(closedAt, style: .date)
-                Text(closedAt, style: .time)
-            } else {
-                Image(systemName: "clock")
-                Text(task.createdAt, style: .relative)
-                Text("ago")
-            }
+            Image(systemName: flowState.icon)
+            Text(flowState.label)
+            Text("·")
+            Text(flowDurationText)
         }
         .font(AppStyle.Typography.cardDate)
-        .foregroundStyle(.tertiary)
+        .foregroundStyle(flowColor)
     }
 
     private var dragHandle: some View {
@@ -145,8 +242,28 @@ struct TaskCardView: View {
     private var cardBackground: some View {
         RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
             .fill(AppStyle.Colors.surface)
+            .overlay(alignment: .bottomLeading) {
+                GeometryReader { geo in
+                    Capsule()
+                        .fill(
+                            LinearGradient(
+                                colors: [flowColor.opacity(0.95), flowColor.opacity(0.45)],
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
+                        )
+                        .frame(width: max(28, geo.size.width * accentWidthRatio), height: 4)
+                        .padding(.horizontal, 14)
+                        .padding(.bottom, 10)
+                }
+                .allowsHitTesting(false)
+            }
+            .overlay {
+                RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
+                    .stroke(flowColor.opacity(0.08), lineWidth: 1)
+            }
             .shadow(
-                color: AppStyle.Colors.cardShadow,
+                color: flowColor.opacity(isDragging ? 0.18 : 0.08),
                 radius: isDragging ? AppStyle.Shapes.dragShadowRadius : AppStyle.Shapes.tinyShadowRadius,
                 y: isDragging ? AppStyle.Shapes.dragShadowRadius / 2 : AppStyle.Shapes.tinyShadowY
             )

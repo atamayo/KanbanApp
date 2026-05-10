@@ -9,7 +9,6 @@ struct AllTasksView: View {
     
     @State private var selectedTask: TaskItem?
     @State private var searchText = ""
-    @State private var isSortingDescending = true
 
     private var filteredTasks: [TaskItem] {
         allTasks
@@ -59,35 +58,24 @@ struct AllTasksView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                HStack(spacing: AppStyle.Spacing.small) {
-                    Button {
-                        // Toggle sort or show filter options
-                        withAnimation { isSortingDescending.toggle() }
-                    } label: {
-                        Image(systemName: "line.3.horizontal.decrease.circle")
-                            .font(AppStyle.Typography.bodyLarge)
-                            .foregroundStyle(AppStyle.Colors.Status.todo)
-                    }
-                    
-                    Button {
-                        onAddTask?()
-                    } label: {
-                        Image(systemName: "plus")
-                            .font(AppStyle.Typography.bodyLarge)
-                            .foregroundStyle(AppStyle.Colors.Status.todo)
-                            .frame(width: AppStyle.Shapes.buttonSizeMedium, height: AppStyle.Shapes.buttonSizeMedium)
-                            .background(.ultraThinMaterial, in: .circle)
-                            .overlay(
-                                Circle()
-                                    .stroke(AppStyle.Colors.surfaceBorder, lineWidth: AppStyle.Shapes.borderWidth)
-                            )
-                            .shadow(
-                                color: AppStyle.Colors.cardShadow,
-                                radius: AppStyle.Shapes.tinyShadowRadius,
-                                x: AppStyle.Spacing.none,
-                                y: AppStyle.Shapes.tinyShadowY
-                            )
-                    }
+                Button {
+                    onAddTask?()
+                } label: {
+                    Image(systemName: "plus")
+                        .font(AppStyle.Typography.bodyLarge)
+                        .foregroundStyle(AppStyle.Colors.Status.todo)
+                        .frame(width: AppStyle.Shapes.buttonSizeMedium, height: AppStyle.Shapes.buttonSizeMedium)
+                        .background(.ultraThinMaterial, in: .circle)
+                        .overlay(
+                            Circle()
+                                .stroke(AppStyle.Colors.surfaceBorder, lineWidth: AppStyle.Shapes.borderWidth)
+                        )
+                        .shadow(
+                            color: AppStyle.Colors.cardShadow,
+                            radius: AppStyle.Shapes.tinyShadowRadius,
+                            x: AppStyle.Spacing.none,
+                            y: AppStyle.Shapes.tinyShadowY
+                        )
                 }
             }
         }

@@ -23,6 +23,10 @@ struct DashboardView: View {
         allTasks.filter { $0.priority == priority }.count
     }
 
+    private var maxPriorityCount: Int {
+        max(count(priority: .high), count(priority: .medium), count(priority: .low))
+    }
+
     private var recentTasks: [TaskItem] {
         allTasks.sorted { $0.updatedAt > $1.updatedAt }.prefix(3).map { $0 }
     }
@@ -329,12 +333,10 @@ struct DashboardView: View {
 
     private func priorityCard(priority: String, count: Int, tint: Color) -> some View {
         let isEmpty = count == 0
-        
-        return VStack(spacing: AppStyle.Spacing.none) {
-            tint
-                .frame(height: AppStyle.Shapes.accentBarHeight)
-                .opacity(isEmpty ? 0.3 : 1.0)
+        let dominanceRatio = maxPriorityCount > 0 ? CGFloat(count) / CGFloat(maxPriorityCount) : 0
+        let fillOpacity = isEmpty ? 0.04 : 0.14
 
+        return VStack(spacing: AppStyle.Spacing.none) {
             VStack(spacing: AppStyle.Spacing.priorityCardVStackGap) {
                 Text(count.formatted())
                     .font(AppStyle.Typography.priorityNumber)
@@ -356,7 +358,24 @@ struct DashboardView: View {
             .padding(.horizontal, AppStyle.Spacing.statusRowVerticalCompact)
         }
         .frame(maxWidth: .infinity)
-        .background(isEmpty ? Color.secondary.opacity(0.02) : Color.clear)
+        .background {
+            GeometryReader { geo in
+                VStack(spacing: 0) {
+                    let fillHeight = dominanceRatio > 0
+                        ? max(
+                            AppStyle.Shapes.accentBarHeight,
+                            geo.size.height * (0.18 + (0.52 * dominanceRatio))
+                        )
+                        : AppStyle.Shapes.accentBarHeight
+
+                    tint
+                        .opacity(isEmpty ? 0.18 : fillOpacity)
+                        .frame(height: fillHeight)
+
+                    Spacer(minLength: 0)
+                }
+            }
+        }
         .cardStyle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
         .opacity(isEmpty ? 0.8 : 1.0)
     }
