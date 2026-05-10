@@ -18,6 +18,7 @@ struct MainTabView: View {
                 .padding(.bottom, AppStyle.Spacing.small)
         }
         .ignoresSafeArea(.keyboard)
+        .syncAppIconBadge(tasks: allTasks)
         .sheet(isPresented: $isAddingTask) {
             AddTaskView(status: addTaskStatus)
                 .presentationDetents([.medium])
