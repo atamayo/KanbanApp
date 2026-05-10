@@ -4,6 +4,7 @@ import SwiftData
 struct TaskCardView: View {
     private enum FlowState {
         case ready
+        case blocked
         case fresh
         case active
         case aging
@@ -13,6 +14,7 @@ struct TaskCardView: View {
         var label: String {
             switch self {
             case .ready: return "Ready"
+            case .blocked: return "Blocked"
             case .fresh: return "Fresh"
             case .active: return "Active"
             case .aging: return "Aging"
@@ -24,6 +26,7 @@ struct TaskCardView: View {
         var icon: String {
             switch self {
             case .ready: return "play.circle"
+            case .blocked: return "pause.circle.fill"
             case .fresh: return "sparkles"
             case .active: return "bolt.circle"
             case .aging: return "clock.badge.exclamationmark"
@@ -43,6 +46,7 @@ struct TaskCardView: View {
     
     @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = true
     @AppStorage("maxActiveTasks") private var maxActiveTasks = 3
+    @AppStorage("wipLimitHitCount") private var wipLimitHitCount = 0
     @Query(filter: #Predicate<TaskItem> { $0.statusRaw == "In Progress" }) private var inProgressTasks: [TaskItem]
 
     private var statusColor: Color {
@@ -88,6 +92,9 @@ struct TaskCardView: View {
         case .done:
             return .completed
         case .inProgress:
+            if task.isBlocked {
+                return .blocked
+            }
             if flowAge < 24 * 60 * 60 {
                 return .fresh
             } else if flowAge < 3 * 24 * 60 * 60 {
@@ -104,6 +111,8 @@ struct TaskCardView: View {
         switch flowState {
         case .ready:
             return AppStyle.Colors.Status.todo
+        case .blocked:
+            return AppStyle.Colors.warning
         case .fresh:
             return .secondary
         case .active:
@@ -131,6 +140,7 @@ struct TaskCardView: View {
     private var accentWidthRatio: CGFloat {
         switch flowState {
         case .ready: return 0.18
+        case .blocked: return 0.94
         case .fresh: return 0.28
         case .active: return 0.52
         case .aging: return 0.76
@@ -206,6 +216,9 @@ struct TaskCardView: View {
                 Spacer()
                 
                 VStack(alignment: .trailing, spacing: AppStyle.Spacing.tiny) {
+                    if task.isBlocked {
+                        blockedPill
+                    }
                     priorityPill
                 }
             }
@@ -276,6 +289,16 @@ struct TaskCardView: View {
             .padding(.vertical, AppStyle.Spacing.pillVerticalPadding)
             .background(priorityColor.opacity(0.12))
             .foregroundStyle(priorityColor)
+            .clipShape(Capsule())
+    }
+
+    private var blockedPill: some View {
+        Text("Blocked")
+            .font(AppStyle.Typography.pillLabel)
+            .padding(.horizontal, AppStyle.Spacing.pillHorizontalPadding)
+            .padding(.vertical, AppStyle.Spacing.pillVerticalPadding)
+            .background(AppStyle.Colors.warning.opacity(0.12))
+            .foregroundStyle(AppStyle.Colors.warning)
             .clipShape(Capsule())
     }
 
@@ -351,6 +374,7 @@ struct TaskCardView: View {
     }
 
     private func triggerLimitFeedback() {
+        wipLimitHitCount += 1
         withAnimation(.spring()) {
             wipLimitError = true
         }

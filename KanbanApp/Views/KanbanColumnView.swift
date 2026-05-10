@@ -11,6 +11,7 @@ struct KanbanColumnView: View {
     
     @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = true
     @AppStorage("maxActiveTasks") private var maxActiveTasks = 3
+    @AppStorage("wipLimitHitCount") private var wipLimitHitCount = 0
 
     private var columnColor: Color {
         if status == .inProgress && isFocusGuardEnabled && tasks.count >= maxActiveTasks {
@@ -105,6 +106,7 @@ struct KanbanColumnView: View {
             else { return false }
             
             if status == .inProgress && isFocusGuardEnabled && tasks.count >= maxActiveTasks {
+                wipLimitHitCount += 1
                 UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                 NotificationCenter.default.post(name: NSNotification.Name("WIPLimitReached"), object: nil)
                 return false

@@ -3,12 +3,14 @@ import SwiftUI
 struct SettingsView: View {
     @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = true
     @AppStorage("maxActiveTasks") private var maxActiveTasks = 3
+    @AppStorage("wipLimitHitCount") private var wipLimitHitCount = 0
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: AppStyle.Spacing.compactSectionSpacing) {
                 focusGuardHero
                 flowOptimizationSection
+                workflowPolicySection
                 learningSection
             }
             .padding(.horizontal, AppStyle.Spacing.outerHorizontal)
@@ -155,6 +157,32 @@ struct SettingsView: View {
                     icon: "checkmark.circle",
                     title: "Small WIP, faster finish",
                     body: "A limit of 2 or 3 active tasks usually improves focus, quality, and completion rate."
+                )
+            }
+        }
+    }
+
+    private var workflowPolicySection: some View {
+        VStack(alignment: .leading, spacing: AppStyle.Spacing.sectionToCard) {
+            sectionHeader("Workflow Policy")
+
+            VStack(spacing: 14) {
+                settingsInfoCard(
+                    icon: "arrow.down.circle.fill",
+                    title: "Pull only when there is room",
+                    body: "In this app, a new task should move into In Progress only when the active lane has capacity. WIP limit hits so far: \(wipLimitHitCount)."
+                )
+
+                settingsInfoCard(
+                    icon: "bolt.circle.fill",
+                    title: "In Progress means active attention",
+                    body: "A task belongs in In Progress only when you are actively working it now. Blocked or waiting work should be visible, not mixed in silently."
+                )
+
+                settingsInfoCard(
+                    icon: "checkmark.circle.fill",
+                    title: "Done means criteria met",
+                    body: "A task is done when its finish check is satisfied, not when it merely feels close. Use the Definition of Done field to make completion explicit."
                 )
             }
         }

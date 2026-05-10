@@ -21,6 +21,14 @@ struct TaskDetailView: View {
                     Label("Description", systemImage: "text.alignleft")
                 }
                 Section {
+                    TextField("What does done look like?", text: $task.completionCriteria, axis: .vertical)
+                        .lineLimit(1...3)
+                } header: {
+                    Label("Definition of Done", systemImage: "checklist")
+                } footer: {
+                    Text("Keep it compact. A short completion check helps you finish instead of endlessly refining.")
+                }
+                Section {
                     Picker("Status", selection: $task.status) {
                         ForEach(TaskStatus.allCases) { s in
                             HStack {
@@ -35,6 +43,20 @@ struct TaskDetailView: View {
                     .pickerStyle(.menu)
                 } header: {
                     Label("Status", systemImage: "arrow.triangle.branch")
+                }
+                Section {
+                    Toggle(isOn: blockedBinding) {
+                        Label("Blocked / Waiting", systemImage: task.isBlocked ? "pause.circle.fill" : "pause.circle")
+                    }
+                    .disabled(task.status != .inProgress)
+                } header: {
+                    Label("Flow State", systemImage: "scope")
+                } footer: {
+                    if task.status == .inProgress {
+                        Text("Use this when work cannot move forward yet. Blocked tasks should become visible quickly.")
+                    } else {
+                        Text("Blocked state is only available for tasks that are currently in progress.")
+                    }
                 }
                 Section {
                     Picker("Priority", selection: $task.priorityRaw) {
@@ -132,5 +154,15 @@ struct TaskDetailView: View {
         case .medium: return AppStyle.Colors.Zone.medium
         case .low: return AppStyle.Colors.Zone.low
         }
+    }
+
+    private var blockedBinding: Binding<Bool> {
+        Binding(
+            get: { task.isBlocked },
+            set: { newValue in
+                task.isBlocked = task.status == .inProgress ? newValue : false
+                task.updatedAt = Date()
+            }
+        )
     }
 }

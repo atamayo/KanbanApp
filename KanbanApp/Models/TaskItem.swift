@@ -30,11 +30,14 @@ final class TaskItem {
     var id: UUID
     var title: String
     var desc: String
+    var completionCriteria: String
     var statusRaw: String
     var priorityRaw: String?
+    var isBlocked: Bool
     var createdAt: Date
     var updatedAt: Date
     var finalizedAt: Date?
+    var enteredInProgressAt: Date?
     var order: Int
 
     var lastStatusChange: Date
@@ -43,6 +46,14 @@ final class TaskItem {
         set { 
             if statusRaw != newValue.rawValue {
                 statusRaw = newValue.rawValue 
+                if newValue == .inProgress {
+                    enteredInProgressAt = Date()
+                } else if newValue == .todo {
+                    enteredInProgressAt = nil
+                }
+                if newValue != .inProgress {
+                    isBlocked = false
+                }
                 updateFinalizedAt(for: newValue)
                 lastStatusChange = Date()
             }
@@ -72,15 +83,18 @@ final class TaskItem {
         return ""
     }
 
-    init(title: String, description: String = "", status: TaskStatus = .todo, priority: TaskPriority = .medium, order: Int = 0) {
+    init(title: String, description: String = "", completionCriteria: String = "", status: TaskStatus = .todo, priority: TaskPriority = .medium, isBlocked: Bool = false, order: Int = 0) {
         self.id = UUID()
         self.title = title
         self.desc = description
+        self.completionCriteria = completionCriteria
         self.statusRaw = status.rawValue
         self.priorityRaw = priority.rawValue
+        self.isBlocked = status == .inProgress ? isBlocked : false
         self.createdAt = Date()
         self.updatedAt = Date()
         self.lastStatusChange = Date()
+        self.enteredInProgressAt = status == .inProgress ? Date() : nil
         self.order = order
         updateFinalizedAt(for: status)
     }

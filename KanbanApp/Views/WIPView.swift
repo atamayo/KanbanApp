@@ -4,7 +4,9 @@ struct WIPView: View {
     let inProgressCount: Int
     let maxActiveTasks: Int
     let isFocusGuardEnabled: Bool
+    let blockedInProgressTask: TaskItem?
     let oldestInProgressTask: TaskItem?
+    let nextPullTask: TaskItem?
     let onReviewActiveTasks: () -> Void
 
     private var isWIPLimitReached: Bool {
@@ -16,7 +18,10 @@ struct WIPView: View {
     }
 
     private var wipAccentColor: Color {
-        isWIPLimitReached ? AppStyle.Colors.warning : AppStyle.Colors.Status.inProgress
+        if blockedInProgressTask != nil || isWIPLimitReached {
+            return AppStyle.Colors.warning
+        }
+        return AppStyle.Colors.Status.inProgress
     }
 
     private var wipHeadline: String {
@@ -29,6 +34,10 @@ struct WIPView: View {
     }
 
     private var wipMessage: String {
+        if blockedInProgressTask != nil {
+            return "At least one active task is blocked. Unblock flow before pulling more work into motion."
+        }
+
         if isWIPLimitReached {
             return "Your active lane is full. Closing one task now will reduce context switching and free the board to move again."
         }
@@ -38,6 +47,39 @@ struct WIPView: View {
         }
 
         return "Keep active work tight. Protect the remaining capacity so your current tasks can reach done."
+    }
+
+    private var spotlightTitle: String {
+        if blockedInProgressTask != nil {
+            return "Unblock this task first"
+        }
+        if isWIPLimitReached {
+            return "Best task to finish next"
+        }
+        return "Best task to pull next"
+    }
+
+    private var spotlightTask: TaskItem? {
+        if let blockedInProgressTask {
+            return blockedInProgressTask
+        }
+        if isWIPLimitReached {
+            return oldestInProgressTask
+        }
+        return nextPullTask
+    }
+
+    private var spotlightSubtitle: String {
+        if let blockedInProgressTask {
+            return blockedInProgressTask.lastStatusChange.formatted(.relative(presentation: .named))
+        }
+        if let oldestInProgressTask, isWIPLimitReached {
+            return oldestInProgressTask.lastStatusChange.formatted(.relative(presentation: .named))
+        }
+        if let nextPullTask {
+            return "\(nextPullTask.priority.rawValue) priority"
+        }
+        return ""
     }
 
     var body: some View {
@@ -79,27 +121,29 @@ struct WIPView: View {
                     )
 
                     statPill(
-                        label: isWIPLimitReached ? "Action" : "Slots Left",
-                        value: isWIPLimitReached ? "Finish 1" : "\(remainingWIPSlots)",
-                        tint: isWIPLimitReached ? AppStyle.Colors.Status.done : AppStyle.Colors.Status.todo
+                        label: blockedInProgressTask != nil ? "Priority" : (isWIPLimitReached ? "Action" : "Slots Left"),
+                        value: blockedInProgressTask != nil ? "Unblock" : (isWIPLimitReached ? "Finish 1" : "\(remainingWIPSlots)"),
+                        tint: blockedInProgressTask != nil ? AppStyle.Colors.warning : (isWIPLimitReached ? AppStyle.Colors.Status.done : AppStyle.Colors.Status.todo)
                     )
                 }
 
-                if let oldestInProgressTask {
+                if let spotlightTask {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(isWIPLimitReached ? "Best task to finish next" : "Keep this one moving")
+                        Text(spotlightTitle)
                             .font(.caption.weight(.semibold))
                             .foregroundStyle(wipAccentColor)
                             .textCase(.uppercase)
 
-                        Text(oldestInProgressTask.title)
+                        Text(spotlightTask.title)
                             .font(AppStyle.Typography.cardTitle)
                             .foregroundStyle(.primary)
                             .lineLimit(2)
 
-                        Text(oldestInProgressTask.lastStatusChange, style: .relative)
-                            .font(AppStyle.Typography.cardDate)
-                            .foregroundStyle(.secondary)
+                        if !spotlightSubtitle.isEmpty {
+                            Text(spotlightSubtitle)
+                                .font(AppStyle.Typography.cardDate)
+                                .foregroundStyle(.secondary)
+                        }
                     }
                     .padding(14)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -108,16 +152,16 @@ struct WIPView: View {
 
                 Button(action: onReviewActiveTasks) {
                     HStack {
-                        Text(isWIPLimitReached ? "Review Active Tasks" : "Protect Your Focus")
+                        Text(isWIPLimitReached || blockedInProgressTask != nil ? "Review Active Tasks" : "Review Before Pulling")
                         Spacer()
                         Image(systemName: "arrow.right")
                     }
                     .font(.system(size: 15, weight: .semibold))
-                    .foregroundStyle(isWIPLimitReached ? Color.white : wipAccentColor)
+                    .foregroundStyle(isWIPLimitReached || blockedInProgressTask != nil ? Color.white : wipAccentColor)
                     .padding(.horizontal, 16)
                     .padding(.vertical, 14)
                     .background(
-                        isWIPLimitReached
+                        isWIPLimitReached || blockedInProgressTask != nil
                         ? AnyShapeStyle(LinearGradient(colors: [wipAccentColor, wipAccentColor.opacity(0.72)], startPoint: .leading, endPoint: .trailing))
                         : AnyShapeStyle(.white.opacity(0.8)),
                         in: RoundedRectangle(cornerRadius: 16, style: .continuous)

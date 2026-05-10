@@ -12,6 +12,7 @@ struct AddTaskView: View {
     @FocusState private var focusedField: Field?
     @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = true
     @AppStorage("maxActiveTasks") private var maxActiveTasks = 3
+    @AppStorage("wipLimitHitCount") private var wipLimitHitCount = 0
 
     enum Field {
         case title
@@ -172,6 +173,7 @@ struct AddTaskView: View {
         if status == .inProgress && isFocusGuardEnabled {
             let inProgressCount = allTasks.filter { $0.status == .inProgress }.count
             guard inProgressCount < maxActiveTasks else {
+                wipLimitHitCount += 1
                 UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                 showingWIPLimitAlert = true
                 return

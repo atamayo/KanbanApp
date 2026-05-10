@@ -6,6 +6,7 @@ struct DashboardView: View {
     
     @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = true
     @AppStorage("maxActiveTasks") private var maxActiveTasks = 3
+    @AppStorage("wipLimitHitCount") private var wipLimitHitCount = 0
 
     // MARK: - Data
 
@@ -29,9 +30,71 @@ struct DashboardView: View {
 
     private var oldestInProgressTask: TaskItem? {
         allTasks
-            .filter { $0.status == .inProgress }
+            .filter { $0.status == .inProgress && !$0.isBlocked }
             .sorted { $0.lastStatusChange < $1.lastStatusChange }
             .first
+    }
+
+    private var blockedInProgressTask: TaskItem? {
+        allTasks
+            .filter { $0.status == .inProgress && $0.isBlocked }
+            .sorted { $0.updatedAt < $1.updatedAt }
+            .first
+    }
+
+    private var nextPullTask: TaskItem? {
+        allTasks
+            .filter { $0.status == .todo }
+            .sorted { lhs, rhs in
+                if lhs.priority.sortOrder != rhs.priority.sortOrder {
+                    return lhs.priority.sortOrder < rhs.priority.sortOrder
+                }
+                return lhs.createdAt < rhs.createdAt
+            }
+            .first
+    }
+
+    private var agingInProgressTasks: [TaskItem] {
+        allTasks
+            .filter {
+                $0.status == .inProgress &&
+                !$0.isBlocked &&
+                Date().timeIntervalSince($0.lastStatusChange) >= (3 * 24 * 60 * 60) &&
+                Date().timeIntervalSince($0.lastStatusChange) < (5 * 24 * 60 * 60)
+            }
+            .sorted { $0.lastStatusChange < $1.lastStatusChange }
+    }
+
+    private var stalledInProgressTasks: [TaskItem] {
+        allTasks
+            .filter {
+                $0.status == .inProgress &&
+                !$0.isBlocked &&
+                Date().timeIntervalSince($0.lastStatusChange) >= (5 * 24 * 60 * 60)
+            }
+            .sorted { $0.lastStatusChange < $1.lastStatusChange }
+    }
+
+    private var doneThisWeekCount: Int {
+        let weekAgo = Calendar.current.date(byAdding: .day, value: -7, to: Date()) ?? Date()
+        return allTasks.filter {
+            $0.status == .done && ($0.finalizedAt ?? $0.updatedAt) >= weekAgo
+        }.count
+    }
+
+    private var tasksWithCompletionCriteria: Int {
+        allTasks.filter { !$0.completionCriteria.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }.count
+    }
+
+    private var doneTasksWithCycleTime: [TaskItem] {
+        allTasks.filter { $0.status == .done && $0.enteredInProgressAt != nil && ($0.finalizedAt ?? $0.updatedAt) >= ($0.enteredInProgressAt ?? .distantPast) }
+    }
+
+    private var averageDaysToDone: Double? {
+        let durations = doneTasksWithCycleTime.map { ($0.finalizedAt ?? $0.updatedAt).timeIntervalSince($0.enteredInProgressAt ?? ($0.finalizedAt ?? $0.updatedAt)) }
+        guard !durations.isEmpty else { return nil }
+        let averageSeconds = durations.reduce(0, +) / Double(durations.count)
+        return averageSeconds / (24 * 60 * 60)
     }
 
     // MARK: - Body
@@ -50,11 +113,16 @@ struct DashboardView: View {
                         inProgressCount: inProgressCount,
                         maxActiveTasks: maxActiveTasks,
                         isFocusGuardEnabled: isFocusGuardEnabled,
+                        blockedInProgressTask: blockedInProgressTask,
                         oldestInProgressTask: oldestInProgressTask,
+                        nextPullTask: nextPullTask,
                         onReviewActiveTasks: { onSelectStatus?(.inProgress) }
                     )
+
+                    flowReviewSection
+                    trendSection
                     
-                    insightFooter
+                    momentumSection
                 }
                 .padding(.horizontal, AppStyle.Spacing.outerHorizontal)
                 .padding(.vertical, AppStyle.Spacing.outerVertical)
@@ -389,22 +457,236 @@ struct DashboardView: View {
 
     // MARK: - Footer
 
-    private var insightFooter: some View {
-        VStack(spacing: AppStyle.Spacing.statusHighlightPaddingHorizontal) {
-            Text("You've completed \(doneCount) tasks.")
-                .font(AppStyle.Typography.formFooter)
-                .foregroundStyle(.secondary)
-            
-            Text("Keep up the great momentum!")
-                .font(.caption2)
-                .foregroundStyle(.tertiary)
+    private var flowReviewSection: some View {
+        VStack(alignment: .leading, spacing: AppStyle.Spacing.sectionToCard) {
+            sectionHeader("Flow Review")
+
+            VStack(spacing: 12) {
+                flowReviewCard(
+                    title: "Blocked Work",
+                    count: blockedInProgressTask == nil ? 0 : allTasks.filter { $0.status == .inProgress && $0.isBlocked }.count,
+                    tint: AppStyle.Colors.warning,
+                    icon: "pause.circle.fill",
+                    description: blockedInProgressTask == nil ? "No active blockers right now." : "Blocked tasks need attention before more work is pulled."
+                )
+
+                flowReviewCard(
+                    title: "Aging Tasks",
+                    count: agingInProgressTasks.count,
+                    tint: AppStyle.Colors.Priority.medium,
+                    icon: "clock.badge.exclamationmark",
+                    description: agingInProgressTasks.isEmpty ? "Nothing is drifting yet." : "These tasks are staying active long enough to risk drag."
+                )
+
+                flowReviewCard(
+                    title: "Stalled Tasks",
+                    count: stalledInProgressTasks.count,
+                    tint: AppStyle.Colors.Priority.high,
+                    icon: "exclamationmark.circle.fill",
+                    description: stalledInProgressTasks.isEmpty ? "No stalled work right now." : "These tasks have sat too long in progress and may need a decision."
+                )
+            }
         }
-        .frame(maxWidth: .infinity)
-        .padding(.top, AppStyle.Spacing.normal)
+    }
+
+    private var momentumSection: some View {
+        VStack(alignment: .leading, spacing: AppStyle.Spacing.sectionToCard) {
+            sectionHeader("Done Momentum")
+
+            VStack(alignment: .leading, spacing: 18) {
+                HStack(spacing: 12) {
+                    momentumStatCard(
+                        label: "Done This Week",
+                        value: "\(doneThisWeekCount)",
+                        tint: AppStyle.Colors.Status.done
+                    )
+
+                    momentumStatCard(
+                        label: "Clear Finish Checks",
+                        value: "\(tasksWithCompletionCriteria)",
+                        tint: AppStyle.Colors.Status.todo
+                    )
+                }
+
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(momentumHeadline)
+                        .font(.system(size: 18, weight: .bold, design: .rounded))
+                        .foregroundStyle(.primary)
+
+                    Text(momentumMessage)
+                        .font(AppStyle.Typography.formFooter)
+                        .foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+            }
+            .padding(20)
+            .background(
+                LinearGradient(
+                    colors: [
+                        AppStyle.Colors.Status.done.opacity(0.14),
+                        AppStyle.Colors.surface,
+                        AppStyle.Colors.surface
+                    ],
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                ),
+                in: RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius, style: .continuous)
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius, style: .continuous)
+                    .stroke(AppStyle.Colors.surfaceBorder, lineWidth: 1)
+            )
+        }
         .padding(.bottom, AppStyle.Spacing.emptyBottomSpacer)
     }
 
+    private var trendSection: some View {
+        VStack(alignment: .leading, spacing: AppStyle.Spacing.sectionToCard) {
+            sectionHeader("Flow Trends")
+
+            HStack(spacing: 12) {
+                trendCard(
+                    label: "Avg Days To Done",
+                    value: averageDaysToDone.map { String(format: "%.1f", $0) } ?? "-",
+                    tint: AppStyle.Colors.Status.done,
+                    note: averageDaysToDone == nil ? "Need completed in-progress tasks" : "From In Progress to Done"
+                )
+
+                trendCard(
+                    label: "Done This Week",
+                    value: "\(doneThisWeekCount)",
+                    tint: AppStyle.Colors.Status.todo,
+                    note: "Recent finish rate"
+                )
+            }
+
+            HStack(spacing: 12) {
+                trendCard(
+                    label: "WIP Limit Hits",
+                    value: "\(wipLimitHitCount)",
+                    tint: AppStyle.Colors.warning,
+                    note: "Times flow pushed back"
+                )
+
+                trendCard(
+                    label: "Active Age",
+                    value: oldestInProgressTask.map { activeAgeText(for: $0) } ?? "-",
+                    tint: AppStyle.Colors.Status.inProgress,
+                    note: oldestInProgressTask == nil ? "No active task running" : "Oldest active task"
+                )
+            }
+        }
+    }
+
     // MARK: - Shared
+
+    private var momentumHeadline: String {
+        if doneThisWeekCount >= 5 {
+            return "Strong finishing rhythm."
+        }
+        if doneThisWeekCount > 0 {
+            return "Momentum is visible."
+        }
+        return "The next finished task changes the board."
+    }
+
+    private var momentumMessage: String {
+        if doneThisWeekCount >= 5 {
+            return "You are turning work into done consistently. Protect that rhythm by keeping WIP tight."
+        }
+        if doneThisWeekCount > 0 {
+            return "Every completed task frees attention and opens space for the next pull."
+        }
+        return "Close one task and you free a focus slot, strengthen the Done column, and make progress feel real again."
+    }
+
+    private func flowReviewCard(title: String, count: Int, tint: Color, icon: String, description: String) -> some View {
+        Button {
+            onSelectStatus?(.inProgress)
+        } label: {
+            HStack(alignment: .top, spacing: 14) {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 14, style: .continuous)
+                        .fill(tint.opacity(0.12))
+                        .frame(width: 44, height: 44)
+
+                    Image(systemName: icon)
+                        .font(.system(size: 18, weight: .semibold))
+                        .foregroundStyle(tint)
+                }
+
+                VStack(alignment: .leading, spacing: 4) {
+                    HStack {
+                        Text(title)
+                            .font(AppStyle.Typography.statusLabelHighlighted)
+                            .foregroundStyle(.primary)
+
+                        Spacer()
+
+                        Text("\(count)")
+                            .font(.system(size: 18, weight: .bold, design: .rounded))
+                            .foregroundStyle(tint)
+                    }
+
+                    Text(description)
+                        .font(AppStyle.Typography.cardDate)
+                        .foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+            }
+            .padding(18)
+            .cardStyle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
+        }
+        .buttonStyle(.plain)
+    }
+
+    private func momentumStatCard(label: String, value: String, tint: Color) -> some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(label)
+                .font(.caption.weight(.medium))
+                .foregroundStyle(.secondary)
+
+            Text(value)
+                .font(.system(size: 20, weight: .bold, design: .rounded))
+                .foregroundStyle(tint)
+        }
+        .padding(14)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(tint.opacity(0.08), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+    }
+
+    private func trendCard(label: String, value: String, tint: Color, note: String) -> some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(label)
+                .font(.caption.weight(.medium))
+                .foregroundStyle(.secondary)
+
+            Text(value)
+                .font(.system(size: 20, weight: .bold, design: .rounded))
+                .foregroundStyle(tint)
+
+            Text(note)
+                .font(AppStyle.Typography.cardDate)
+                .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .padding(14)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .cardStyle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
+    }
+
+    private func activeAgeText(for task: TaskItem) -> String {
+        let days = Int(Date().timeIntervalSince(task.lastStatusChange) / (24 * 60 * 60))
+        if days > 0 {
+            return "\(days)d"
+        }
+        let hours = Int(Date().timeIntervalSince(task.lastStatusChange) / (60 * 60))
+        if hours > 0 {
+            return "\(hours)h"
+        }
+        let minutes = Int(Date().timeIntervalSince(task.lastStatusChange) / 60)
+        return "\(max(minutes, 1))m"
+    }
 
     private func sectionHeader(_ title: String) -> some View {
         Text(title)

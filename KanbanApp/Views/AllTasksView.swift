@@ -9,6 +9,8 @@ struct AllTasksView: View {
     
     @State private var selectedTask: TaskItem?
     @State private var searchText = ""
+    @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = true
+    @AppStorage("maxActiveTasks") private var maxActiveTasks = 3
 
     private var filteredTasks: [TaskItem] {
         allTasks
@@ -25,6 +27,14 @@ struct AllTasksView: View {
             }
     }
 
+    private var inProgressCount: Int {
+        allTasks.filter { $0.status == .inProgress }.count
+    }
+
+    private var isWIPLimitReached: Bool {
+        isFocusGuardEnabled && inProgressCount >= maxActiveTasks
+    }
+
     var body: some View {
         VStack(spacing: AppStyle.Spacing.none) {
             // Search Bar
@@ -36,6 +46,12 @@ struct AllTasksView: View {
             StatusPicker(selection: $selectedSegment)
                 .padding(.horizontal, AppStyle.Spacing.normal)
                 .padding(.vertical, AppStyle.Spacing.medium)
+
+            if selectedSegment == .todo && isWIPLimitReached {
+                finishFirstBanner
+                    .padding(.horizontal, AppStyle.Spacing.normal)
+                    .padding(.bottom, AppStyle.Spacing.small)
+            }
 
             if filteredTasks.isEmpty {
                 emptyState
@@ -77,6 +93,7 @@ struct AllTasksView: View {
                             y: AppStyle.Shapes.tinyShadowY
                         )
                 }
+                .opacity(selectedSegment == .todo && isWIPLimitReached ? 0.65 : 1.0)
             }
         }
         .sheet(item: $selectedTask) { task in
@@ -124,6 +141,34 @@ struct AllTasksView: View {
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+
+    private var finishFirstBanner: some View {
+        HStack(alignment: .top, spacing: 12) {
+            Image(systemName: "flame.fill")
+                .font(.system(size: 16, weight: .semibold))
+                .foregroundStyle(AppStyle.Colors.warning)
+                .padding(.top, 2)
+
+            VStack(alignment: .leading, spacing: 4) {
+                Text("Finish one before pulling another.")
+                    .font(AppStyle.Typography.statusLabelHighlighted)
+                    .foregroundStyle(.primary)
+
+                Text("Your active lane is full. Review In Progress work before starting from To Do.")
+                    .font(AppStyle.Typography.cardDate)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+
+            Spacer()
+        }
+        .padding(14)
+        .background(AppStyle.Colors.warning.opacity(0.10), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                .stroke(AppStyle.Colors.warning.opacity(0.18), lineWidth: 1)
+        )
     }
 
     private func moveTask(from source: IndexSet, to destination: Int) {
