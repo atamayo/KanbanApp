@@ -4,92 +4,136 @@ import SwiftData
 struct KanbanBoardView: View {
     @Query(sort: \TaskItem.order) private var allTasks: [TaskItem]
     @Environment(\.modelContext) private var modelContext
-    @State private var showingAdd = false
-    @State private var addStatus: TaskStatus = .todo
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @State private var selectedTask: TaskItem?
+    @State private var droppedTaskID: UUID?
+    @State private var toastMessage: String?
+    @State private var showToast = false
+    @State private var showingWIPAlert = false
+
+    private func triggerToast(message: String) {
+        withAnimation(.spring()) {
+            toastMessage = message
+            showToast = true
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            withAnimation(.spring()) {
+                showToast = false
+            }
+        }
+    }
 
     private func tasks(for status: TaskStatus) -> [TaskItem] {
-        allTasks.filter { $0.status == status }
+        allTasks
+            .filter { $0.status == status }
+            .sorted { a, b in
+                if a.priority.sortOrder != b.priority.sortOrder {
+                    return a.priority.sortOrder < b.priority.sortOrder
+                }
+                return a.order < b.order
+            }
     }
 
     var body: some View {
+        boardContent
+            .navigationTitle("Kanban")
+            .navigationBarTitleDisplayMode(.inline)
+            .inspector(isPresented: .init(
+                get: { selectedTask != nil && horizontalSizeClass == .regular },
+                set: { if !$0 { selectedTask = nil } }
+            )) {
+                detailSheet
+                    .inspectorColumnWidth(min: AppStyle.Shapes.inspectorMinWidth, ideal: AppStyle.Shapes.inspectorIdealWidth)
+            }
+            .sheet(isPresented: .init(
+                get: { selectedTask != nil && horizontalSizeClass != .regular },
+                set: { if !$0 { selectedTask = nil } }
+            )) {
+                detailSheet
+                    .presentationSizing(.form)
+            }
+            .onReceive(NotificationCenter.default.publisher(for: NSNotification.Name("WIPLimitReached"))) { _ in
+                showingWIPAlert = true
+                let inProgressTasks = allTasks.filter { $0.status == .inProgress }
+                if let exampleTask = inProgressTasks.first {
+                    triggerToast(message: "You're at peak capacity! Finishing '\(exampleTask.title)' will free up space.")
+                } else {
+                    triggerToast(message: "Limit Reached")
+                }
+            }
+            .customAlert(
+                isPresented: $showingWIPAlert,
+                iconName: "brain.head.profile",
+                title: "WIP Limit Reached",
+                message: "Personal Kanban recommends a WIP limit of 2 or 3 to minimize context-switching and finish tasks faster."
+            )
+            .overlay(alignment: .top) {
+                if showToast {
+                    Text(toastMessage ?? "")
+                        .font(AppStyle.Typography.formFooter)
+                        .padding(.horizontal, AppStyle.Spacing.normal)
+                        .padding(.vertical, AppStyle.Spacing.tiny)
+                        .background(AppStyle.Colors.warning.opacity(0.9))
+                        .foregroundStyle(.white)
+                        .clipShape(Capsule())
+                        .transition(.move(edge: .top).combined(with: .opacity))
+                        .padding(.top, 10)
+                }
+            }
+            .sensoryFeedback(.success, trigger: droppedTaskID)
+    }
+
+    @ViewBuilder
+    private var boardContent: some View {
         GeometryReader { geo in
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 16) {
+                HStack(spacing: AppStyle.Spacing.boardHStackGap) {
                     ForEach(TaskStatus.allCases) { status in
                         KanbanColumnView(
                             tasks: tasks(for: status),
                             status: status,
-                            width: max(geo.size.width * 0.75, 300),
-                            onMove: { id in
-                                guard let task = allTasks.first(where: { $0.id == id }) else { return }
-                                let count = tasks(for: status).count
+                            width: max(geo.size.width * AppStyle.Shapes.columnWidthRatio, AppStyle.Shapes.columnMinWidth),
+                            onDrop: { id, priority in
                                 withAnimation(.snappy) {
-                                    task.status = status
-                                    task.order = count
-                                    task.updatedAt = Date()
-                                    reorder(status: status)
-                                    try? modelContext.save()
+                                    move(id, to: status, priority: priority)
                                 }
-                            }
+                                droppedTaskID = id
+                            },
+                            onSelect: { selectedTask = $0 }
                         )
-                        .dropDestination(for: String.self) { items, _ in
-                            guard let id = items.first, let uuid = UUID(uuidString: id),
-                                  allTasks.contains(where: { $0.id == uuid })
-                            else { return false }
-                            let count = tasks(for: status).count
-                            if let task = allTasks.first(where: { $0.id == uuid }) {
-                                withAnimation(.snappy) {
-                                    task.status = status
-                                    task.order = count
-                                    task.updatedAt = Date()
-                                    reorder(status: status)
-                                    try? modelContext.save()
-                                }
-                                return true
-                            }
-                            return false
-                        }
                     }
                 }
-                .padding(.horizontal, 16)
+                .padding(.horizontal, AppStyle.Spacing.cardPadding)
                 .scrollTargetLayout()
             }
             .scrollTargetBehavior(.viewAligned)
+            .scrollBounceBehavior(.basedOnSize)
+            .scrollClipDisabled()
         }
-        .overlay(alignment: .bottomTrailing) {
-            addButton
+    }
+
+    @ViewBuilder
+    private var detailSheet: some View {
+        if let task = selectedTask {
+            TaskDetailView(task: task)
         }
-        .sheet(isPresented: $showingAdd) {
-            AddTaskView(status: addStatus)
-        }
+    }
+
+    private func move(_ id: UUID, to status: TaskStatus, priority: TaskPriority) {
+        guard let task = allTasks.first(where: { $0.id == id }) else { return }
+        task.status = status
+        task.priority = priority
+        task.order = tasks(for: status).count
+        task.updatedAt = Date()
+        reorder(status: status)
+        try? modelContext.save()
     }
 
     private func reorder(status: TaskStatus) {
-        let columnTasks = tasks(for: status).sorted { $0.order < $1.order }
-        for (i, t) in columnTasks.enumerated() {
+        let sorted = tasks(for: status)
+        for (i, t) in sorted.enumerated() {
             t.order = i
         }
-    }
-
-    private var addButton: some View {
-        Menu {
-            ForEach(TaskStatus.allCases) { status in
-                Button(status.rawValue) {
-                    addStatus = status
-                    showingAdd = true
-                }
-            }
-        } label: {
-            Image(systemName: "plus")
-                .font(.title2.weight(.semibold))
-                .foregroundStyle(.white)
-                .frame(width: 56, height: 56)
-                .background(
-                    LinearGradient(colors: [.blue, .purple], startPoint: .topLeading, endPoint: .bottomTrailing),
-                    in: .circle
-                )
-                .shadow(color: .purple.opacity(0.4), radius: 12, y: 4)
-        }
-        .padding(24)
     }
 }

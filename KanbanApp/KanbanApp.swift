@@ -6,10 +6,12 @@ struct KanbanApp: App {
     let container: ModelContainer
 
     init() {
+        let config = ModelConfiguration()
         do {
-            container = try ModelContainer(for: TaskItem.self)
+            container = try ModelContainer(for: TaskItem.self, configurations: config)
         } catch {
-            fatalError("Failed to create ModelContainer: \(error)")
+            try? FileManager.default.removeItem(at: config.url)
+            container = try! ModelContainer(for: TaskItem.self, configurations: config)
         }
     }
 

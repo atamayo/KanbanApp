@@ -2,42 +2,55 @@ import SwiftUI
 import SwiftData
 
 struct TaskDetailView: View {
-    @State var task: TaskItem
-    @Environment(\.modelContext) private var modelContext
+    @Bindable var task: TaskItem
     @Environment(\.dismiss) private var dismiss
-    @State private var title: String = ""
-    @State private var description: String = ""
 
     var body: some View {
         NavigationStack {
             Form {
                 Section {
-                    TextField("Title", text: $title, axis: .vertical)
-                        .font(.title3.weight(.semibold))
+                    TextField("Buy groceries", text: $task.title, axis: .vertical)
+                        .font(AppStyle.Typography.detailTitle)
                 } header: {
                     Label("Title", systemImage: "pencil")
                 }
                 Section {
-                    TextField("Description", text: $description, axis: .vertical)
+                    TextField("Description", text: $task.desc, axis: .vertical)
                         .lineLimit(3...8)
                 } header: {
                     Label("Description", systemImage: "text.alignleft")
                 }
                 Section {
-                    Picker("Status", selection: $task.statusRaw) {
+                    Picker("Status", selection: $task.status) {
                         ForEach(TaskStatus.allCases) { s in
                             HStack {
                                 Circle()
                                     .fill(statusColor(s))
-                                    .frame(width: 8, height: 8)
+                                    .frame(width: AppStyle.Shapes.dotSize, height: AppStyle.Shapes.dotSize)
                                 Text(s.rawValue)
                             }
-                            .tag(s.rawValue)
+                            .tag(s)
                         }
                     }
                     .pickerStyle(.menu)
                 } header: {
                     Label("Status", systemImage: "arrow.triangle.branch")
+                }
+                Section {
+                    Picker("Priority", selection: $task.priorityRaw) {
+                        ForEach(TaskPriority.allCases) { p in
+                            HStack {
+                                Image(systemName: priorityIcon(p))
+                                    .foregroundStyle(priorityColor(p))
+                                    .frame(width: AppStyle.Spacing.iconFrameWidth)
+                                Text(p.rawValue)
+                            }
+                            .tag(p.rawValue)
+                        }
+                    }
+                    .pickerStyle(.menu)
+                } header: {
+                    Label("Priority", systemImage: "flag")
                 }
                 Section {
                     HStack {
@@ -52,13 +65,24 @@ struct TaskDetailView: View {
                         Text(task.updatedAt, style: .relative)
                             .foregroundStyle(.secondary)
                     }
+                    if let closedAt {
+                        HStack {
+                            Label("Closed", systemImage: "checkmark.seal")
+                            Spacer()
+                            VStack(alignment: .trailing, spacing: AppStyle.Spacing.tiny) {
+                                Text(closedAt, style: .date)
+                                Text(closedAt, style: .time)
+                            }
+                            .foregroundStyle(.secondary)
+                        }
+                    }
                 } header: {
                     Label("Info", systemImage: "info.circle")
                 }
                 Section {
                     Button(role: .destructive) {
-                        modelContext.delete(task)
-                        try? modelContext.save()
+                        task.modelContext?.delete(task)
+                        try? task.modelContext?.save()
                         dismiss()
                     } label: {
                         Label("Delete Task", systemImage: "trash")
@@ -69,29 +93,44 @@ struct TaskDetailView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Save") {
-                        guard !title.trimmingCharacters(in: .whitespaces).isEmpty else { return }
-                        task.title = title
-                        task.desc = description
+                    Button("Done") {
                         task.updatedAt = Date()
-                        try? modelContext.save()
                         dismiss()
                     }
-                    .fontWeight(.semibold)
                 }
             }
-            .onAppear {
-                title = task.title
-                description = task.desc
+            .onDisappear {
+                try? task.modelContext?.save()
             }
         }
     }
 
     private func statusColor(_ status: TaskStatus) -> Color {
         switch status {
-        case .todo: return .blue
-        case .inProgress: return .orange
-        case .done: return .green
+        case .todo: return AppStyle.Colors.Status.todo
+        case .inProgress: return AppStyle.Colors.Status.inProgress
+        case .done: return AppStyle.Colors.Status.done
+        }
+    }
+
+    private var closedAt: Date? {
+        guard task.status == .done else { return nil }
+        return task.finalizedAt ?? task.updatedAt
+    }
+
+    private func priorityIcon(_ priority: TaskPriority) -> String {
+        switch priority {
+        case .high: return "exclamationmark.circle.fill"
+        case .medium: return "minus.circle.fill"
+        case .low: return "arrow.down.circle.fill"
+        }
+    }
+
+    private func priorityColor(_ priority: TaskPriority) -> Color {
+        switch priority {
+        case .high: return AppStyle.Colors.Zone.high
+        case .medium: return AppStyle.Colors.Zone.medium
+        case .low: return AppStyle.Colors.Zone.low
         }
     }
 }
