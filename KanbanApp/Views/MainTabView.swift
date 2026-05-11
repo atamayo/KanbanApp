@@ -68,9 +68,6 @@ struct MainTabView: View {
             Tab(value: .search, role: .search) {
                 NavigationStack {
                     SearchTasksView(allTasks: allTasks, searchText: $searchText)
-                        .toolbar {
-                            addTaskToolbarItem
-                        }
                 }
                 .searchable(text: $searchText, prompt: "Search tasks")
                 .searchToolbarBehavior(.minimize)
