@@ -20,29 +20,17 @@ struct MainTabView: View {
         allTasks.filter { $0.status == .inProgress }.count
     }
 
-    private var showsAddAccessory: Bool {
-        switch selectedTab {
-        case .dashboard, .tasks:
-            return true
-        case .search, .settings:
-            return false
-        }
-    }
-
     var body: some View {
         tabContent
-            .tabViewBottomAccessory(isEnabled: showsAddAccessory) {
-                AddTaskAccessoryButton(action: presentAddTask)
+            .tabViewSearchActivation(.searchTabSelection)
+            .tabBarMinimizeBehavior(.onScrollDown)
+            .ignoresSafeArea(.keyboard)
+            .syncAppIconBadge(tasks: allTasks)
+            .sheet(isPresented: $isAddingTask) {
+                AddTaskView(status: addTaskStatus)
+                    .presentationDetents([.medium])
+                    .presentationDragIndicator(.visible)
             }
-        .tabViewSearchActivation(.searchTabSelection)
-        .tabBarMinimizeBehavior(.onScrollDown)
-        .ignoresSafeArea(.keyboard)
-        .syncAppIconBadge(tasks: allTasks)
-        .sheet(isPresented: $isAddingTask) {
-            AddTaskView(status: addTaskStatus)
-                .presentationDetents([.medium])
-                .presentationDragIndicator(.visible)
-        }
     }
 
     private var tabContent: some View {
@@ -58,6 +46,9 @@ struct MainTabView: View {
                             }
                         }
                     )
+                    .toolbar {
+                        addTaskToolbarItem
+                    }
                 }
             }
 
@@ -67,6 +58,9 @@ struct MainTabView: View {
                         allTasks: allTasks,
                         selectedSegment: $selectedSegment
                     )
+                    .toolbar {
+                        addTaskToolbarItem
+                    }
                 }
             }
             .badge(inProgressCount > 0 ? inProgressCount : 0)
@@ -74,6 +68,9 @@ struct MainTabView: View {
             Tab(value: .search, role: .search) {
                 NavigationStack {
                     SearchTasksView(allTasks: allTasks, searchText: $searchText)
+                        .toolbar {
+                            addTaskToolbarItem
+                        }
                 }
                 .searchable(text: $searchText, prompt: "Search tasks")
                 .searchToolbarBehavior(.minimize)
@@ -85,6 +82,18 @@ struct MainTabView: View {
                     SettingsView()
                 }
             }
+        }
+    }
+
+    @ToolbarContentBuilder
+    private var addTaskToolbarItem: some ToolbarContent {
+        ToolbarItem(placement: .topBarTrailing) {
+            Button(action: presentAddTask) {
+                Label("Add Task", systemImage: "plus")
+            }
+            .labelStyle(.titleAndIcon)
+            .buttonStyle(.glassProminent)
+            .accessibilityLabel("Add Task")
         }
     }
 
@@ -102,28 +111,53 @@ struct MainTabView: View {
     }
 }
 
-private struct AddTaskAccessoryButton: View {
-    @Environment(\.tabViewBottomAccessoryPlacement) private var placement
-    let action: () -> Void
+#Preview("Main Tabs") {
+    MainTabView()
+        .modelContainer(MainTabViewPreview.container)
+}
 
-    private var horizontalPadding: CGFloat {
-        placement == .inline ? 12 : 16
-    }
+@MainActor
+private enum MainTabViewPreview {
+    static let container: ModelContainer = {
+        let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
+        let container = try! ModelContainer(for: TaskItem.self, configurations: configuration)
+        let context = container.mainContext
 
-    private var verticalPadding: CGFloat {
-        placement == .inline ? 8 : 10
-    }
+        [
+            TaskItem(
+                title: "Plan sprint goals",
+                description: "Define the next iteration outcome for the board refresh.",
+                completionCriteria: "Sprint goal shared with the team",
+                status: .todo,
+                priority: .high,
+                order: 0
+            ),
+            TaskItem(
+                title: "Refine onboarding copy",
+                description: "Tighten the opening walkthrough so it reads clearly.",
+                completionCriteria: "Three onboarding pages reviewed",
+                status: .todo,
+                priority: .medium,
+                order: 1
+            ),
+            TaskItem(
+                title: "Polish task card layout",
+                description: "Adjust spacing and hierarchy for active work.",
+                completionCriteria: "Updated layout approved on iPhone and iPad",
+                status: .inProgress,
+                priority: .high,
+                order: 0
+            ),
+            TaskItem(
+                title: "Ship search improvements",
+                description: "Complete the last pass on task discovery.",
+                completionCriteria: "Search tab behavior validated",
+                status: .done,
+                priority: .medium,
+                order: 0
+            )
+        ].forEach { context.insert($0) }
 
-    var body: some View {
-        HStack {
-            Button(action: action) {
-                Label("Add Task", systemImage: "plus")
-                    .font(.system(size: 16, weight: .semibold))
-                    .frame(maxWidth: placement == .inline ? nil : .infinity)
-            }
-            .buttonStyle(.glassProminent)
-        }
-        .padding(.horizontal, horizontalPadding)
-        .padding(.vertical, verticalPadding)
-    }
+        return container
+    }()
 }
