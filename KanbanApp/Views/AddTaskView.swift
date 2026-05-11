@@ -1,6 +1,7 @@
 import SwiftData
 import PhotosUI
 import SwiftUI
+import AVFoundation
 
 struct AddTaskView: View {
     let status: TaskStatus
@@ -19,6 +20,7 @@ struct AddTaskView: View {
     @State private var showingWIPLimitAlert = false
     @State private var showingQuickCaptureSheet = false
     @State private var showingPhotoPicker = false
+    @State private var showingLiveTextScanner = false
     @FocusState private var focusedField: Field?
     @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = true
     @AppStorage("maxActiveTasks") private var maxActiveTasks = 3
@@ -75,6 +77,13 @@ struct AddTaskView: View {
             }
             .presentationDetents([.medium, .large])
             .presentationDragIndicator(.visible)
+        }
+        .sheet(isPresented: $showingLiveTextScanner) {
+            LiveTextScannerSheet { recognizedText in
+                Task { await handleRecognizedQuickCaptureText(recognizedText, source: .scanner) }
+            } onError: { error in
+                quickCaptureMessage = error.localizedDescription
+            }
         }
         .customAlert(
             isPresented: $showingWIPLimitAlert,
@@ -263,6 +272,12 @@ struct AddTaskView: View {
             } label: {
                 Label("Import Photo", systemImage: "photo.on.rectangle.angled")
             }
+
+            Button {
+                Task { await beginLiveTextScan() }
+            } label: {
+                Label("Scan Text", systemImage: "camera.viewfinder")
+            }
         } label: {
             HStack(spacing: AppStyle.Spacing.small) {
                 Image(systemName: "wand.and.stars")
@@ -391,20 +406,7 @@ struct AddTaskView: View {
             }
 
             let extractedText = try await ImageTextExtractionService.extractText(from: imageData)
-            quickCaptureText = extractedText
-            quickCaptureDraftMessage = "Photo imported. Review the extracted text or generate a draft."
-
-            guard isQuickCaptureAvailable else {
-                showingQuickCaptureSheet = true
-                quickCaptureMessage = "Photo imported. Text extracted. Apple Intelligence is unavailable, so review it manually."
-                return
-            }
-
-            isGeneratingQuickCapture = true
-            defer { isGeneratingQuickCapture = false }
-
-            let draft = try await QuickCaptureTaskGenerator.generate(from: extractedText)
-            applyTaskDraft(draft, message: "Photo imported. Draft generated from the extracted text.")
+            await handleRecognizedQuickCaptureText(extractedText, source: .photo)
         } catch let error as ImageTextExtractionError {
             quickCaptureMessage = error.localizedDescription
         } catch {
@@ -435,6 +437,65 @@ struct AddTaskView: View {
         quickCaptureMessage = message
     }
 
+    @MainActor
+    private func beginLiveTextScan() async {
+        quickCaptureMessage = nil
+        quickCaptureDraftMessage = nil
+
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .authorized:
+            showingLiveTextScanner = true
+        case .notDetermined:
+            let granted = await requestCameraAccess()
+            if granted {
+                showingLiveTextScanner = true
+            } else {
+                quickCaptureMessage = LiveTextScannerError.cameraAccessDenied.localizedDescription
+            }
+        case .denied, .restricted:
+            quickCaptureMessage = LiveTextScannerError.cameraAccessDenied.localizedDescription
+        @unknown default:
+            quickCaptureMessage = "Camera access is unavailable right now."
+        }
+    }
+
+    @MainActor
+    private func handleRecognizedQuickCaptureText(_ recognizedText: String, source: QuickCaptureSource) async {
+        let cleanedText = recognizedText.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !cleanedText.isEmpty else {
+            quickCaptureMessage = LiveTextScannerError.noTextFound.localizedDescription
+            return
+        }
+
+        quickCaptureText = cleanedText
+        quickCaptureDraftMessage = source.reviewMessage
+
+        guard isQuickCaptureAvailable else {
+            showingQuickCaptureSheet = true
+            quickCaptureMessage = source.manualReviewMessage
+            return
+        }
+
+        isGeneratingQuickCapture = true
+        defer { isGeneratingQuickCapture = false }
+
+        do {
+            let draft = try await QuickCaptureTaskGenerator.generate(from: cleanedText)
+            applyTaskDraft(draft, message: source.successMessage)
+        } catch {
+            showingQuickCaptureSheet = true
+            quickCaptureMessage = source.generationFailureMessage
+        }
+    }
+
+    private func requestCameraAccess() async -> Bool {
+        await withCheckedContinuation { continuation in
+            AVCaptureDevice.requestAccess(for: .video) { granted in
+                continuation.resume(returning: granted)
+            }
+        }
+    }
+
     private var statusColor: Color {
         switch status {
         case .todo: return AppStyle.Colors.Status.todo
@@ -456,6 +517,47 @@ struct AddTaskView: View {
         case .high: return AppStyle.Colors.Priority.high
         case .medium: return AppStyle.Colors.Priority.medium
         case .low: return AppStyle.Colors.Priority.low
+        }
+    }
+}
+
+private enum QuickCaptureSource {
+    case photo
+    case scanner
+
+    var reviewMessage: String {
+        switch self {
+        case .photo:
+            return "Photo imported. Review the extracted text or generate a draft."
+        case .scanner:
+            return "Text captured. Review the extracted text or generate a draft."
+        }
+    }
+
+    var manualReviewMessage: String {
+        switch self {
+        case .photo:
+            return "Photo imported. Text extracted. Apple Intelligence is unavailable, so review it manually."
+        case .scanner:
+            return "Text captured. Apple Intelligence is unavailable, so review it manually."
+        }
+    }
+
+    var successMessage: String {
+        switch self {
+        case .photo:
+            return "Photo imported. Draft generated from the extracted text."
+        case .scanner:
+            return "Text captured. Draft generated from the camera scan."
+        }
+    }
+
+    var generationFailureMessage: String {
+        switch self {
+        case .photo:
+            return "The image text was extracted, but the AI draft couldn’t be generated right now. Review it and generate again."
+        case .scanner:
+            return "The text was captured, but the AI draft couldn’t be generated right now. Review it and generate again."
         }
     }
 }
