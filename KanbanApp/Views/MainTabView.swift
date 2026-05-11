@@ -28,7 +28,7 @@ struct MainTabView: View {
             .syncAppIconBadge(tasks: allTasks)
             .sheet(isPresented: $isAddingTask) {
                 AddTaskView(status: addTaskStatus)
-                    .presentationDetents([.medium])
+                    .presentationDetents([.large])
                     .presentationDragIndicator(.visible)
             }
     }
