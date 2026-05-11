@@ -3,21 +3,21 @@ import SwiftUI
 struct OnboardingWelcomePageView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            VStack(alignment: .leading, spacing: 24) {
-                VStack(alignment: .leading, spacing: 14) {
+            VStack(alignment: .leading, spacing: AppStyle.Spacing.compactSectionSpacing) {
+                VStack(alignment: .leading, spacing: AppStyle.Spacing.regular) {
                     Text("See your work clearly")
-                        .font(.system(size: 32, weight: .bold, design: .rounded))
-                        .foregroundStyle(.primary)
+                        .font(AppStyle.Typography.heroTitle)
+                        .foregroundStyle(AppStyle.Colors.primaryText)
 
                     Text("KanbanApp gives you one clear system for your tasks, so you can stop juggling everything in your head and start moving work forward.")
                         .font(AppStyle.Typography.formFooter)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(AppStyle.Colors.secondaryText)
                         .fixedSize(horizontal: false, vertical: true)
                 }
 
                 boardPreview
 
-                VStack(spacing: 14) {
+                VStack(spacing: AppStyle.Spacing.regular) {
                     featureRow(
                         icon: "rectangle.3.group.fill",
                         tint: AppStyle.Colors.Status.todo,
@@ -34,12 +34,12 @@ struct OnboardingWelcomePageView: View {
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.bottom, 12)
+            .padding(.bottom, AppStyle.Spacing.statusRowGap)
         }
     }
 
     private var boardPreview: some View {
-        HStack(spacing: 12) {
+        HStack(spacing: AppStyle.Spacing.statusRowGap) {
             laneCard(title: "To Do", count: "5", tint: AppStyle.Colors.Status.todo)
             laneCard(title: "In Progress", count: "2", tint: AppStyle.Colors.Status.inProgress)
             laneCard(title: "Done", count: "8", tint: AppStyle.Colors.Status.done)
@@ -47,50 +47,50 @@ struct OnboardingWelcomePageView: View {
     }
 
     private func laneCard(title: String, count: String, tint: Color) -> some View {
-        VStack(alignment: .leading, spacing: 10) {
-            RoundedRectangle(cornerRadius: 999, style: .continuous)
+        VStack(alignment: .leading, spacing: AppStyle.Spacing.compact) {
+            Capsule()
                 .fill(tint)
-                .frame(width: 32, height: 6)
+                .frame(width: AppStyle.Shapes.lanePreviewAccentWidth, height: AppStyle.Shapes.previewAccentHeight)
 
             Text(title)
-                .font(.caption.weight(.semibold))
-                .foregroundStyle(.secondary)
+                .font(AppStyle.Typography.statLabel)
+                .foregroundStyle(AppStyle.Colors.secondaryText)
 
             Text(count)
-                .font(.system(size: 26, weight: .bold, design: .rounded))
-                .foregroundStyle(.primary)
+                .font(AppStyle.Typography.priorityNumber)
+                .foregroundStyle(AppStyle.Colors.primaryText)
         }
-        .padding(16)
+        .padding(AppStyle.Spacing.normal)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .cardStyle(cornerRadius: 16)
+        .cardStyle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
     }
 
     private func featureRow(icon: String, tint: Color, title: String, body: String) -> some View {
-        HStack(alignment: .top, spacing: 14) {
+        HStack(alignment: .top, spacing: AppStyle.Spacing.regular) {
             ZStack {
-                RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .fill(tint.opacity(0.12))
-                    .frame(width: 44, height: 44)
+                RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous)
+                    .fill(tint.opacity(AppStyle.Opacity.accentWashStrong))
+                    .frame(width: AppStyle.Shapes.iconBadgeSmall, height: AppStyle.Shapes.iconBadgeSmall)
 
                 Image(systemName: icon)
-                    .font(.system(size: 18, weight: .semibold))
+                    .font(AppStyle.Typography.iconMedium)
                     .foregroundStyle(tint)
             }
 
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: AppStyle.Spacing.tiny) {
                 Text(title)
                     .font(AppStyle.Typography.statusLabelHighlighted)
-                    .foregroundStyle(.primary)
+                    .foregroundStyle(AppStyle.Colors.primaryText)
 
                 Text(body)
                     .font(AppStyle.Typography.formFooter)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(AppStyle.Colors.secondaryText)
                     .fixedSize(horizontal: false, vertical: true)
             }
 
             Spacer()
         }
-        .padding(18)
+        .padding(AppStyle.Spacing.cardContentPadding)
         .cardStyle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
     }
 }

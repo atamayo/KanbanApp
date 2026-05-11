@@ -15,7 +15,7 @@ struct SettingsView: View {
             }
             .padding(.horizontal, AppStyle.Spacing.outerHorizontal)
             .padding(.top, AppStyle.Spacing.outerVertical)
-            .padding(.bottom, 120)
+            .padding(.bottom, AppStyle.Spacing.settingsBottomPadding)
         }
         .background(AppStyle.Colors.background)
         .scrollEdgeEffectStyle(.soft, for: .all)
@@ -27,35 +27,35 @@ struct SettingsView: View {
     }
 
     private var focusGuardHero: some View {
-        VStack(alignment: .leading, spacing: 14) {
-            HStack(alignment: .top, spacing: 14) {
+        VStack(alignment: .leading, spacing: AppStyle.Spacing.regular) {
+            HStack(alignment: .top, spacing: AppStyle.Spacing.regular) {
                 ZStack {
                     Circle()
-                        .fill(AppStyle.Colors.Status.inProgress.opacity(0.14))
-                        .frame(width: 48, height: 48)
+                        .fill(AppStyle.Colors.Status.inProgress.opacity(AppStyle.Opacity.accentWashEmphasized))
+                        .frame(width: AppStyle.Shapes.iconBadgeMedium, height: AppStyle.Shapes.iconBadgeMedium)
 
                     Image(systemName: "brain.head.profile")
-                        .font(.system(size: 20, weight: .semibold))
+                        .font(AppStyle.Typography.iconLarge)
                         .foregroundStyle(AppStyle.Colors.Status.inProgress)
                 }
 
-                VStack(alignment: .leading, spacing: 6) {
+                VStack(alignment: .leading, spacing: AppStyle.Spacing.tight) {
                     Text("Protect your attention")
-                        .font(.system(size: 20, weight: .bold, design: .rounded))
-                        .foregroundStyle(.primary)
+                        .font(AppStyle.Typography.metricMedium)
+                        .foregroundStyle(AppStyle.Colors.primaryText)
 
                     Text("Personal Kanban works best when you finish before you pull. Keep your active lane small and visible.")
                         .font(AppStyle.Typography.formFooter)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(AppStyle.Colors.secondaryText)
                         .fixedSize(horizontal: false, vertical: true)
                 }
             }
 
-            HStack(spacing: 12) {
+            HStack(spacing: AppStyle.Spacing.statusRowGap) {
                 settingsStatCard(
                     label: "Flow Optimization",
                     value: isFocusGuardEnabled ? "On" : "Off",
-                    tint: isFocusGuardEnabled ? AppStyle.Colors.Status.done : .secondary
+                    tint: isFocusGuardEnabled ? AppStyle.Colors.Status.done : AppStyle.Colors.secondaryText
                 )
 
                 settingsStatCard(
@@ -65,63 +65,46 @@ struct SettingsView: View {
                 )
             }
         }
-        .padding(22)
-        .background {
-            RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius, style: .continuous)
-                .fill(
-                    LinearGradient(
-                        colors: [
-                            AppStyle.Colors.Status.inProgress.opacity(0.14),
-                            AppStyle.Colors.surface,
-                            AppStyle.Colors.surface
-                        ],
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    )
-                )
-        }
-        .overlay {
-            RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius, style: .continuous)
-                .stroke(AppStyle.Colors.surfaceBorder, lineWidth: 1)
-        }
+        .padding(AppStyle.Spacing.heroPadding)
+        .accentCardStyle(tint: AppStyle.Colors.Status.inProgress)
     }
 
     private var flowOptimizationSection: some View {
         VStack(alignment: .leading, spacing: AppStyle.Spacing.sectionToCard) {
             sectionHeader("Flow Optimization")
 
-            VStack(alignment: .leading, spacing: 18) {
+            VStack(alignment: .leading, spacing: AppStyle.Spacing.comfortable) {
                 Toggle(isOn: $isFocusGuardEnabled) {
-                    HStack(spacing: 12) {
+                    HStack(spacing: AppStyle.Spacing.statusRowGap) {
                         Image(systemName: "scope")
-                            .font(.system(size: 18, weight: .semibold))
+                            .font(AppStyle.Typography.iconMedium)
                             .foregroundStyle(AppStyle.Colors.Status.inProgress)
-                            .frame(width: 28)
+                            .frame(width: AppStyle.Spacing.iconFrameWidthLarge)
 
-                        VStack(alignment: .leading, spacing: 2) {
+                        VStack(alignment: .leading, spacing: AppStyle.Spacing.micro) {
                             Text("Enable Flow Optimization")
                                 .font(AppStyle.Typography.statusLabelHighlighted)
-                                .foregroundStyle(.primary)
+                                .foregroundStyle(AppStyle.Colors.primaryText)
 
                             Text("Limit work in progress to reduce context switching.")
                                 .font(AppStyle.Typography.cardDate)
-                                .foregroundStyle(.secondary)
+                                .foregroundStyle(AppStyle.Colors.secondaryText)
                         }
                     }
                 }
                 .tint(AppStyle.Colors.Status.inProgress)
 
                 if isFocusGuardEnabled {
-                    VStack(alignment: .leading, spacing: 12) {
+                    VStack(alignment: .leading, spacing: AppStyle.Spacing.statusRowGap) {
                         HStack {
                             Label("Max Active Tasks", systemImage: "gauge.medium")
                                 .font(AppStyle.Typography.statusLabel)
-                                .foregroundStyle(.primary)
+                                .foregroundStyle(AppStyle.Colors.primaryText)
 
                             Spacer()
 
                             Text("\(maxActiveTasks)")
-                                .font(.system(size: 20, weight: .bold, design: .rounded))
+                                .font(AppStyle.Typography.metricMedium)
                                 .foregroundStyle(AppStyle.Colors.Status.inProgress)
                         }
 
@@ -130,13 +113,13 @@ struct SettingsView: View {
 
                         Text(recommendationText)
                             .font(AppStyle.Typography.guidanceFooter)
-                            .foregroundStyle(.secondary)
+                            .foregroundStyle(AppStyle.Colors.secondaryText)
                     }
-                    .padding(16)
-                    .background(AppStyle.Colors.Status.inProgress.opacity(0.08), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    .padding(AppStyle.Spacing.normal)
+                    .background(AppStyle.Colors.Status.inProgress.opacity(AppStyle.Opacity.accentWashSubtle), in: RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
                 }
             }
-            .padding(20)
+            .padding(AppStyle.Spacing.large)
             .cardStyle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
         }
     }
@@ -145,7 +128,7 @@ struct SettingsView: View {
         VStack(alignment: .leading, spacing: AppStyle.Spacing.sectionToCard) {
             sectionHeader("Practice")
 
-            VStack(spacing: 14) {
+            VStack(spacing: AppStyle.Spacing.regular) {
                 NavigationLink {
                     PersonalKanbanManifestoView()
                 } label: {
@@ -170,7 +153,7 @@ struct SettingsView: View {
         VStack(alignment: .leading, spacing: AppStyle.Spacing.sectionToCard) {
             sectionHeader("Workflow Policy")
 
-            VStack(spacing: 14) {
+            VStack(spacing: AppStyle.Spacing.regular) {
                 settingsInfoCard(
                     icon: "arrow.down.circle.fill",
                     title: "Pull only when there is room",
@@ -204,74 +187,74 @@ struct SettingsView: View {
     }
 
     private func settingsStatCard(label: String, value: String, tint: Color) -> some View {
-        VStack(alignment: .leading, spacing: 4) {
+        VStack(alignment: .leading, spacing: AppStyle.Spacing.tiny) {
             Text(label)
-                .font(.caption.weight(.medium))
-                .foregroundStyle(.secondary)
+                .font(AppStyle.Typography.statLabel)
+                .foregroundStyle(AppStyle.Colors.secondaryText)
 
             Text(value)
-                .font(.system(size: 20, weight: .bold, design: .rounded))
+                .font(AppStyle.Typography.metricMedium)
                 .foregroundStyle(tint)
         }
-        .padding(14)
+        .padding(AppStyle.Spacing.compactCardPadding)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(tint.opacity(0.08), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .background(tint.opacity(AppStyle.Opacity.accentWashSubtle), in: RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
     }
 
     private func settingsLinkCard(icon: String, title: String, subtitle: String) -> some View {
-        HStack(spacing: 14) {
+        HStack(spacing: AppStyle.Spacing.regular) {
             ZStack {
-                RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .fill(AppStyle.Colors.Status.todo.opacity(0.12))
-                    .frame(width: 48, height: 48)
+                RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous)
+                    .fill(AppStyle.Colors.Status.todo.opacity(AppStyle.Opacity.accentWashStrong))
+                    .frame(width: AppStyle.Shapes.iconBadgeMedium, height: AppStyle.Shapes.iconBadgeMedium)
 
                 Image(systemName: icon)
-                    .font(.system(size: 19, weight: .semibold))
+                    .font(AppStyle.Typography.iconMedium)
                     .foregroundStyle(AppStyle.Colors.Status.todo)
             }
 
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: AppStyle.Spacing.tiny) {
                 Text(title)
                     .font(AppStyle.Typography.statusLabelHighlighted)
-                    .foregroundStyle(.primary)
+                    .foregroundStyle(AppStyle.Colors.primaryText)
 
                 Text(subtitle)
                     .font(AppStyle.Typography.cardDate)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(AppStyle.Colors.secondaryText)
                     .fixedSize(horizontal: false, vertical: true)
             }
 
             Spacer()
 
             Image(systemName: "chevron.right")
-                .font(.system(size: 13, weight: .semibold))
-                .foregroundStyle(.tertiary)
+                .font(AppStyle.Typography.iconSmall)
+                .foregroundStyle(AppStyle.Colors.tertiaryText)
         }
-        .padding(18)
+        .padding(AppStyle.Spacing.cardContentPadding)
         .cardStyle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
     }
 
     private func settingsInfoCard(icon: String, title: String, body: String) -> some View {
-        HStack(alignment: .top, spacing: 14) {
+        HStack(alignment: .top, spacing: AppStyle.Spacing.regular) {
             Image(systemName: icon)
-                .font(.system(size: 18, weight: .semibold))
+                .font(AppStyle.Typography.iconMedium)
                 .foregroundStyle(AppStyle.Colors.Status.done)
-                .frame(width: 24)
+                .frame(width: AppStyle.Spacing.iconFrameWidthMedium)
 
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: AppStyle.Spacing.tiny) {
                 Text(title)
                     .font(AppStyle.Typography.statusLabelHighlighted)
-                    .foregroundStyle(.primary)
+                    .foregroundStyle(AppStyle.Colors.primaryText)
 
                 Text(body)
                     .font(AppStyle.Typography.cardDate)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(AppStyle.Colors.secondaryText)
                     .fixedSize(horizontal: false, vertical: true)
             }
 
             Spacer()
         }
-        .padding(18)
+        .padding(AppStyle.Spacing.cardContentPadding)
         .cardStyle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
     }
 
@@ -279,20 +262,18 @@ struct SettingsView: View {
         HStack {
             Text(label)
                 .font(AppStyle.Typography.statusLabel)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(AppStyle.Colors.secondaryText)
 
             Spacer()
 
             Text(value)
                 .font(AppStyle.Typography.statusLabelHighlighted)
-                .foregroundStyle(.primary)
+                .foregroundStyle(AppStyle.Colors.primaryText)
         }
     }
 
     private func sectionHeader(_ title: String) -> some View {
         Text(title)
-            .font(AppStyle.Typography.sectionTitle)
-            .foregroundStyle(.secondary)
-            .tracking(AppStyle.Typography.sectionTracking)
+            .sectionHeaderStyle()
     }
 }

@@ -82,13 +82,13 @@ struct TaskDetailView: View {
                         Label("Created", systemImage: "calendar")
                         Spacer()
                         Text(task.createdAt, style: .date)
-                            .foregroundStyle(.secondary)
+                            .foregroundStyle(AppStyle.Colors.secondaryText)
                     }
                     HStack {
                         Label("Updated", systemImage: "clock")
                         Spacer()
                         Text(task.updatedAt, style: .relative)
-                            .foregroundStyle(.secondary)
+                            .foregroundStyle(AppStyle.Colors.secondaryText)
                     }
                     if let closedAt {
                         HStack {
@@ -98,7 +98,7 @@ struct TaskDetailView: View {
                                 Text(closedAt, style: .date)
                                 Text(closedAt, style: .time)
                             }
-                            .foregroundStyle(.secondary)
+                            .foregroundStyle(AppStyle.Colors.secondaryText)
                         }
                     }
                 } header: {
@@ -150,7 +150,7 @@ struct TaskDetailView: View {
             if !suggestedNextAction.isEmpty {
                 VStack(alignment: .leading, spacing: AppStyle.Spacing.small) {
                     Text(suggestedNextAction)
-                        .foregroundStyle(.primary)
+                        .foregroundStyle(AppStyle.Colors.primaryText)
 
                     HStack {
                         Button("Use Suggestion") {
@@ -160,7 +160,7 @@ struct TaskDetailView: View {
                             Task { await generateNextAction() }
                         }
                     }
-                    .font(.subheadline)
+                    .font(AppStyle.Typography.formFooter)
                 }
                 .padding(.vertical, AppStyle.Spacing.tiny)
             }

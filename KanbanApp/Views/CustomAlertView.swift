@@ -10,37 +10,37 @@ struct CustomAlertView: View {
     var body: some View {
         if isPresented {
             ZStack {
-                Color.black.opacity(0.35)
+                AppStyle.Colors.scrim
                     .ignoresSafeArea()
 
                 VStack(spacing: AppStyle.Spacing.normal) {
                     Image(systemName: iconName)
-                        .font(.system(size: 34, weight: .semibold))
+                        .font(AppStyle.Typography.iconAlert)
                         .foregroundStyle(AppStyle.Colors.Status.inProgress)
-                        .frame(width: 58, height: 58)
-                        .background(AppStyle.Colors.Status.inProgress.opacity(0.12), in: .circle)
+                        .frame(width: AppStyle.Shapes.alertIconSize, height: AppStyle.Shapes.alertIconSize)
+                        .background(AppStyle.Colors.Status.inProgress.opacity(AppStyle.Opacity.accentWashStrong), in: .circle)
 
                     VStack(spacing: AppStyle.Spacing.small) {
                         Text(title)
                             .font(AppStyle.Typography.headerTitle)
-                            .foregroundStyle(.primary)
+                            .foregroundStyle(AppStyle.Colors.primaryText)
                             .multilineTextAlignment(.center)
 
                         Text(message)
                             .font(AppStyle.Typography.formFooter)
-                            .foregroundStyle(.secondary)
+                            .foregroundStyle(AppStyle.Colors.secondaryText)
                             .multilineTextAlignment(.center)
                             .fixedSize(horizontal: false, vertical: true)
                     }
 
                     Button {
-                        withAnimation(.snappy) {
+                        withAnimation(AppStyle.Motion.snappy) {
                             isPresented = false
                         }
                     } label: {
                         Text(buttonTitle)
                             .font(AppStyle.Typography.bodyLarge)
-                            .foregroundStyle(.white)
+                            .foregroundStyle(AppStyle.Colors.inverseText)
                             .frame(maxWidth: .infinity)
                             .padding(.vertical, AppStyle.Spacing.medium)
                             .background(AppStyle.Colors.Status.todo, in: RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
@@ -49,17 +49,22 @@ struct CustomAlertView: View {
                     .accessibilityLabel(buttonTitle)
                 }
                 .padding(AppStyle.Spacing.extraLarge)
-                .frame(maxWidth: 320)
-                .background(.regularMaterial, in: RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius, style: .continuous))
+                .frame(maxWidth: AppStyle.Shapes.modalMaxWidth)
+                .background(AppStyle.Materials.alert, in: RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius, style: .continuous))
                 .overlay {
                     RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius, style: .continuous)
                         .stroke(AppStyle.Colors.surfaceBorder, lineWidth: AppStyle.Shapes.borderWidth)
                 }
-                .shadow(color: AppStyle.Colors.cardShadow, radius: 18, x: 0, y: 10)
+                .shadow(
+                    color: AppStyle.Colors.cardShadow,
+                    radius: AppStyle.Shapes.alertShadowRadius,
+                    x: AppStyle.Spacing.none,
+                    y: AppStyle.Shapes.alertShadowY
+                )
                 .padding(.horizontal, AppStyle.Spacing.extraLarge)
             }
-            .transition(.opacity.combined(with: .scale(scale: 0.98)))
-            .zIndex(1000)
+            .transition(.opacity.combined(with: .scale(scale: AppStyle.Shapes.alertTransitionScale)))
+            .zIndex(AppStyle.Layers.modal)
         }
     }
 }

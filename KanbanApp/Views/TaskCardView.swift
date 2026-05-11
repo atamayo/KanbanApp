@@ -170,8 +170,8 @@ struct TaskCardView: View {
             .overlay(alignment: .top) {
                 if wipLimitError {
                     RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
-                        .stroke(AppStyle.Colors.warning, lineWidth: 2)
-                    .animation(.spring(), value: wipLimitError)
+                        .stroke(AppStyle.Colors.warning, lineWidth: AppStyle.Shapes.warningBorderWidth)
+                    .animation(AppStyle.Motion.standardSpring, value: wipLimitError)
                 }
             }
             .accessibilityLabel(task.title)
@@ -194,13 +194,13 @@ struct TaskCardView: View {
 
     private var checkbox: some View {
         Button {
-            withAnimation(.spring) {
+            withAnimation(AppStyle.Motion.standardSpring) {
                 toggleCompletion()
             }
         } label: {
             Image(systemName: task.status == .done ? "checkmark.circle.fill" : "circle")
-                .font(.system(size: AppStyle.Spacing.checkboxSize))
-                .foregroundStyle(task.status == .done ? AppStyle.Colors.Status.done : .secondary)
+                .font(AppStyle.Typography.checkbox)
+                .foregroundStyle(task.status == .done ? AppStyle.Colors.Status.done : AppStyle.Colors.secondaryText)
         }
         .buttonStyle(.plain)
     }
@@ -211,7 +211,7 @@ struct TaskCardView: View {
                 Text(task.title)
                     .font(AppStyle.Typography.cardTitle)
                     .lineLimit(2)
-                    .foregroundStyle(task.status == .done ? .secondary : .primary)
+                    .foregroundStyle(task.status == .done ? AppStyle.Colors.secondaryText : AppStyle.Colors.primaryText)
                     .strikethrough(task.status == .done)
                 
                 Spacer()
@@ -227,7 +227,7 @@ struct TaskCardView: View {
             if !task.desc.isEmpty {
                 Text(task.desc)
                     .font(AppStyle.Typography.cardDescription)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(AppStyle.Colors.secondaryText)
                     .lineLimit(2)
             }
 
@@ -248,8 +248,8 @@ struct TaskCardView: View {
 
     private var dragHandle: some View {
         Image(systemName: "line.3.horizontal")
-            .font(.system(size: AppStyle.Shapes.iconSizeMedium, weight: .semibold))
-            .foregroundStyle(.quaternary)
+            .font(AppStyle.Typography.iconMedium)
+            .foregroundStyle(AppStyle.Colors.quaternaryText)
             .frame(width: AppStyle.Spacing.dragHandleWidth)
     }
 
@@ -261,23 +261,23 @@ struct TaskCardView: View {
                     Capsule()
                         .fill(
                             LinearGradient(
-                                colors: [flowColor.opacity(0.95), flowColor.opacity(0.45)],
+                                colors: [flowColor.opacity(AppStyle.Opacity.accentForegroundEmphasized), flowColor.opacity(AppStyle.Opacity.cardAccentTrailing)],
                                 startPoint: .leading,
                                 endPoint: .trailing
                             )
                         )
-                        .frame(width: max(28, geo.size.width * accentWidthRatio), height: 4)
-                        .padding(.horizontal, 14)
-                        .padding(.bottom, 10)
+                        .frame(width: max(AppStyle.Shapes.cardAccentMinWidth, geo.size.width * accentWidthRatio), height: AppStyle.Shapes.cardAccentHeight)
+                        .padding(.horizontal, AppStyle.Spacing.regular)
+                        .padding(.bottom, AppStyle.Spacing.compact)
                 }
                 .allowsHitTesting(false)
             }
             .overlay {
                 RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
-                    .stroke(flowColor.opacity(0.08), lineWidth: 1)
+                    .stroke(flowColor.opacity(AppStyle.Opacity.cardBorder), lineWidth: AppStyle.Shapes.emphasizedBorderWidth)
             }
             .shadow(
-                color: flowColor.opacity(isDragging ? 0.18 : 0.08),
+                color: flowColor.opacity(isDragging ? AppStyle.Opacity.dragShadow : AppStyle.Opacity.restingShadow),
                 radius: isDragging ? AppStyle.Shapes.dragShadowRadius : AppStyle.Shapes.tinyShadowRadius,
                 y: isDragging ? AppStyle.Shapes.dragShadowRadius / 2 : AppStyle.Shapes.tinyShadowY
             )
@@ -288,7 +288,7 @@ struct TaskCardView: View {
             .font(AppStyle.Typography.pillLabel)
             .padding(.horizontal, AppStyle.Spacing.pillHorizontalPadding)
             .padding(.vertical, AppStyle.Spacing.pillVerticalPadding)
-            .background(priorityColor.opacity(0.12))
+            .background(priorityColor.opacity(AppStyle.Opacity.accentWashStrong))
             .foregroundStyle(priorityColor)
             .clipShape(Capsule())
     }
@@ -298,7 +298,7 @@ struct TaskCardView: View {
             .font(AppStyle.Typography.pillLabel)
             .padding(.horizontal, AppStyle.Spacing.pillHorizontalPadding)
             .padding(.vertical, AppStyle.Spacing.pillVerticalPadding)
-            .background(AppStyle.Colors.warning.opacity(0.12))
+            .background(AppStyle.Colors.warning.opacity(AppStyle.Opacity.accentWashStrong))
             .foregroundStyle(AppStyle.Colors.warning)
             .clipShape(Capsule())
     }
@@ -389,14 +389,14 @@ struct TaskCardView: View {
 
     private func triggerLimitFeedback() {
         wipLimitHitCount += 1
-        withAnimation(.spring()) {
+        withAnimation(AppStyle.Motion.standardSpring) {
             wipLimitError = true
         }
         showingWIPLimitAlert = true
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            withAnimation(.spring()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + AppStyle.Motion.feedbackDismissDelay) {
+            withAnimation(AppStyle.Motion.standardSpring) {
                 wipLimitError = false
             }
         }

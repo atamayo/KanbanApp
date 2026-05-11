@@ -12,13 +12,13 @@ struct KanbanBoardView: View {
     @State private var showingWIPAlert = false
 
     private func triggerToast(message: String) {
-        withAnimation(.spring()) {
+        withAnimation(AppStyle.Motion.standardSpring) {
             toastMessage = message
             showToast = true
         }
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            withAnimation(.spring()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + AppStyle.Motion.toastDismissDelay) {
+            withAnimation(AppStyle.Motion.standardSpring) {
                 showToast = false
             }
         }
@@ -74,11 +74,11 @@ struct KanbanBoardView: View {
                         .font(AppStyle.Typography.formFooter)
                         .padding(.horizontal, AppStyle.Spacing.normal)
                         .padding(.vertical, AppStyle.Spacing.tiny)
-                        .background(AppStyle.Colors.warning.opacity(0.9))
-                        .foregroundStyle(.white)
+                        .background(AppStyle.Colors.warning.opacity(AppStyle.Opacity.toast))
+                        .foregroundStyle(AppStyle.Colors.inverseText)
                         .clipShape(Capsule())
                         .transition(.move(edge: .top).combined(with: .opacity))
-                        .padding(.top, 10)
+                        .padding(.top, AppStyle.Spacing.toastTopPadding)
                 }
             }
             .sensoryFeedback(.success, trigger: droppedTaskID)
@@ -93,9 +93,9 @@ struct KanbanBoardView: View {
                         KanbanColumnView(
                             tasks: tasks(for: status),
                             status: status,
-                            width: max(geo.size.width * AppStyle.Shapes.columnWidthRatio, AppStyle.Shapes.columnMinWidth),
+                            width: min(max(geo.size.width * AppStyle.Shapes.columnWidthRatio, AppStyle.Shapes.columnMinWidth), AppStyle.Shapes.columnMaxWidth),
                             onDrop: { id, priority in
-                                withAnimation(.snappy) {
+                                withAnimation(AppStyle.Motion.snappy) {
                                     move(id, to: status, priority: priority)
                                 }
                                 droppedTaskID = id

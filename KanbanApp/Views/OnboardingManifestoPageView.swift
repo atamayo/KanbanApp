@@ -3,25 +3,25 @@ import SwiftUI
 struct OnboardingManifestoPageView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            VStack(alignment: .leading, spacing: 24) {
-                VStack(alignment: .leading, spacing: 14) {
+            VStack(alignment: .leading, spacing: AppStyle.Spacing.compactSectionSpacing) {
+                VStack(alignment: .leading, spacing: AppStyle.Spacing.regular) {
                     Text("Personal Kanban in practice")
-                        .font(.system(size: 32, weight: .bold, design: .rounded))
-                        .foregroundStyle(.primary)
+                        .font(AppStyle.Typography.heroTitle)
+                        .foregroundStyle(AppStyle.Colors.primaryText)
 
                     Text("The manifesto is simple: visualize your work, limit work in progress, pull only when there is room, and let Done stay visible.")
                         .font(AppStyle.Typography.formFooter)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(AppStyle.Colors.secondaryText)
                         .fixedSize(horizontal: false, vertical: true)
                 }
 
-                HStack(spacing: 10) {
+                HStack(spacing: AppStyle.Spacing.compact) {
                     principlePill("Visualize", tint: AppStyle.Colors.Status.todo)
                     principlePill("Limit WIP", tint: AppStyle.Colors.Status.inProgress)
                     principlePill("Finish", tint: AppStyle.Colors.Status.done)
                 }
 
-                VStack(spacing: 14) {
+                VStack(spacing: AppStyle.Spacing.regular) {
                     manifestoRow(
                         icon: "eye.fill",
                         tint: AppStyle.Colors.Status.todo,
@@ -46,11 +46,11 @@ struct OnboardingManifestoPageView: View {
 
                 Text("Use the board to choose deliberately, the dashboard to protect flow, and the Done column to keep momentum real.")
                     .font(AppStyle.Typography.guidanceFooter)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(AppStyle.Colors.secondaryText)
                     .fixedSize(horizontal: false, vertical: true)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.bottom, 12)
+            .padding(.bottom, AppStyle.Spacing.statusRowGap)
         }
     }
 
@@ -58,37 +58,37 @@ struct OnboardingManifestoPageView: View {
         Text(title)
             .font(AppStyle.Typography.pillLabel)
             .foregroundStyle(tint)
-            .padding(.horizontal, 12)
-            .padding(.vertical, 6)
-            .background(tint.opacity(0.12), in: Capsule())
+            .padding(.horizontal, AppStyle.Spacing.emphasizedPillHorizontalPadding)
+            .padding(.vertical, AppStyle.Spacing.emphasizedPillVerticalPadding)
+            .background(tint.opacity(AppStyle.Opacity.accentWashStrong), in: Capsule())
     }
 
     private func manifestoRow(icon: String, tint: Color, title: String, body: String) -> some View {
-        HStack(alignment: .top, spacing: 14) {
+        HStack(alignment: .top, spacing: AppStyle.Spacing.regular) {
             ZStack {
-                RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .fill(tint.opacity(0.12))
-                    .frame(width: 44, height: 44)
+                RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous)
+                    .fill(tint.opacity(AppStyle.Opacity.accentWashStrong))
+                    .frame(width: AppStyle.Shapes.iconBadgeSmall, height: AppStyle.Shapes.iconBadgeSmall)
 
                 Image(systemName: icon)
-                    .font(.system(size: 18, weight: .semibold))
+                    .font(AppStyle.Typography.iconMedium)
                     .foregroundStyle(tint)
             }
 
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: AppStyle.Spacing.tiny) {
                 Text(title)
                     .font(AppStyle.Typography.statusLabelHighlighted)
-                    .foregroundStyle(.primary)
+                    .foregroundStyle(AppStyle.Colors.primaryText)
 
                 Text(body)
                     .font(AppStyle.Typography.formFooter)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(AppStyle.Colors.secondaryText)
                     .fixedSize(horizontal: false, vertical: true)
             }
 
             Spacer()
         }
-        .padding(18)
+        .padding(AppStyle.Spacing.cardContentPadding)
         .cardStyle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
     }
 }

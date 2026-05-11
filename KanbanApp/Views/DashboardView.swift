@@ -1,7 +1,6 @@
 import SwiftUI
 struct DashboardView: View {
     let allTasks: [TaskItem]
-    var onAddTask: (() -> Void)? = nil
     var onSelectStatus: ((TaskStatus) -> Void)? = nil
     
     @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = true
@@ -134,19 +133,6 @@ struct DashboardView: View {
         .contentMargins(.bottom, AppStyle.Spacing.extraLarge, for: .scrollContent)
         .navigationTitle("Dashboard")
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button {
-                    onAddTask?()
-                } label: {
-                    Image(systemName: "plus")
-                        .font(AppStyle.Typography.bodyLarge)
-                        .foregroundStyle(AppStyle.Colors.Status.todo)
-                        .frame(width: AppStyle.Shapes.buttonSizeMedium, height: AppStyle.Shapes.buttonSizeMedium)
-                }
-                .buttonStyle(.glass)
-            }
-        }
     }
 
     // MARK: - Empty State
@@ -155,15 +141,15 @@ struct DashboardView: View {
         VStack(spacing: AppStyle.Spacing.emptyStateSpacing) {
             Image(systemName: "square.3.layers.3d")
                 .font(AppStyle.Typography.emptyIcon)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(AppStyle.Colors.secondaryText)
 
             Text("No tasks yet")
                 .font(AppStyle.Typography.emptyTitle)
-                .foregroundStyle(.primary)
+                .foregroundStyle(AppStyle.Colors.primaryText)
 
             Text("Add a task to populate your dashboard")
                 .font(AppStyle.Typography.emptySubtitle)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(AppStyle.Colors.secondaryText)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(.vertical, AppStyle.Spacing.emptyStateVerticalPadding)
@@ -172,16 +158,16 @@ struct DashboardView: View {
     // MARK: - Header
 
     private var headerSection: some View {
-        HStack(alignment: .center, spacing: 18) {
-            VStack(alignment: .leading, spacing: 12) {
-                VStack(alignment: .leading, spacing: 6) {
+        HStack(alignment: .center, spacing: AppStyle.Spacing.comfortable) {
+            VStack(alignment: .leading, spacing: AppStyle.Spacing.statusRowGap) {
+                VStack(alignment: .leading, spacing: AppStyle.Spacing.tight) {
                     Text("Your Progress")
-                        .font(.system(size: 14, weight: .medium))
+                        .font(AppStyle.Typography.inlineHint)
                         .foregroundStyle(AppStyle.Colors.subtleText)
 
                     Text("\(doneCount) of \(totalCount) tasks")
-                        .font(.system(size: 15, weight: .bold, design: .rounded))
-                        .foregroundStyle(.primary)
+                        .font(AppStyle.Typography.metricSmall)
+                        .foregroundStyle(AppStyle.Colors.primaryText)
                         .contentTransition(.numericText())
                         .minimumScaleFactor(0.85)
                 }
@@ -189,12 +175,12 @@ struct DashboardView: View {
                 progressBar
             }
 
-            Spacer(minLength: 0)
+            Spacer(minLength: AppStyle.Spacing.none)
 
             progressRing
         }
-        .padding(.vertical, 18)
-        .padding(.horizontal, 22)
+        .padding(.vertical, AppStyle.Spacing.comfortable)
+        .padding(.horizontal, AppStyle.Spacing.heroPadding)
         .cardStyle(cornerRadius: AppStyle.Shapes.headerCornerRadius)
     }
 
@@ -202,63 +188,63 @@ struct DashboardView: View {
         GeometryReader { geo in
             ZStack(alignment: .leading) {
                 Capsule()
-                    .fill(AppStyle.Colors.track.opacity(0.65))
+                    .fill(AppStyle.Colors.track.opacity(AppStyle.Opacity.track))
 
                 Capsule()
                     .fill(
                         LinearGradient(
                             colors: [
-                                AppStyle.Colors.Status.done.opacity(0.85),
+                                AppStyle.Colors.Status.done.opacity(AppStyle.Opacity.accentForegroundStrong),
                                 AppStyle.Colors.Status.done
                             ],
                             startPoint: .leading,
                             endPoint: .trailing
                         )
                     )
-                    .frame(width: max(12, geo.size.width * donePercent))
-                    .animation(.spring(duration: 0.9, bounce: 0.12), value: donePercent)
+                    .frame(width: max(AppStyle.Shapes.progressMinWidth, geo.size.width * donePercent))
+                    .animation(AppStyle.Motion.progress, value: donePercent)
             }
         }
-        .frame(maxWidth: 420)
-        .frame(height: 10)
+        .frame(maxWidth: AppStyle.Shapes.progressBarMaxWidth)
+        .frame(height: AppStyle.Shapes.progressBarHeight)
     }
 
     private var progressRing: some View {
-        let ringSize: CGFloat = 96
+        let ringSize = AppStyle.Shapes.dashboardRingSize
         return ZStack {
             Circle()
-                .stroke(AppStyle.Colors.track.opacity(0.6), lineWidth: 9)
+                .stroke(AppStyle.Colors.track.opacity(AppStyle.Opacity.subtleTrack), lineWidth: AppStyle.Shapes.dashboardRingTrackStroke)
 
             Circle()
                 .trim(from: 0, to: donePercent)
                 .stroke(
-                    AppStyle.Colors.Status.done.opacity(0.16),
-                    style: .init(lineWidth: 12, lineCap: .round)
+                    AppStyle.Colors.Status.done.opacity(AppStyle.Opacity.accentBorder),
+                    style: .init(lineWidth: AppStyle.Shapes.dashboardRingGlowStroke, lineCap: .round)
                 )
                 .rotationEffect(.degrees(-90))
-                .blur(radius: 4)
+                .blur(radius: AppStyle.Shapes.compactRingGlowBlur)
 
             Circle()
                 .trim(from: 0, to: donePercent)
                 .stroke(
                     LinearGradient(
-                        colors: [AppStyle.Colors.Status.done.opacity(0.95), AppStyle.Colors.Status.done],
+                        colors: [AppStyle.Colors.Status.done.opacity(AppStyle.Opacity.accentForegroundEmphasized), AppStyle.Colors.Status.done],
                         startPoint: .top,
                         endPoint: .bottomTrailing
                     ),
-                    style: .init(lineWidth: 9, lineCap: .round)
+                    style: .init(lineWidth: AppStyle.Shapes.dashboardRingTrackStroke, lineCap: .round)
                 )
                 .rotationEffect(.degrees(-90))
-                .animation(.spring(duration: 1, bounce: 0.15), value: donePercent)
+                .animation(AppStyle.Motion.ringProgress, value: donePercent)
 
-            VStack(spacing: 2) {
+            VStack(spacing: AppStyle.Spacing.micro) {
                 Text("\(Int(donePercent * 100))%")
-                    .font(.system(size: 20, weight: .bold, design: .rounded))
-                    .foregroundStyle(.primary)
+                    .font(AppStyle.Typography.ringPercentage)
+                    .foregroundStyle(AppStyle.Colors.primaryText)
                     .contentTransition(.numericText())
 
                 Text("Complete")
-                    .font(.system(size: 10, weight: .medium))
+                    .font(AppStyle.Typography.ringCaption)
                     .foregroundStyle(AppStyle.Colors.subtleText)
             }
         }
@@ -276,11 +262,11 @@ struct DashboardView: View {
                     .frame(width: AppStyle.Spacing.stackedBarWidth)
             }
 
-            HStack(spacing: 6) {
+            HStack(spacing: AppStyle.Spacing.tight) {
                 Image(systemName: "hand.tap.fill")
-                    .font(.system(size: 12, weight: .semibold))
+                    .font(AppStyle.Typography.iconTiny)
                 Text("Tap a lane to open its tasks")
-                    .font(.system(size: 13, weight: .medium))
+                    .font(AppStyle.Typography.inlineHint)
             }
             .foregroundStyle(AppStyle.Colors.subtleText)
 
@@ -301,7 +287,7 @@ struct DashboardView: View {
 
     private var dividerLine: some View {
         AppStyle.Colors.divider
-            .frame(height: 1)
+            .frame(height: AppStyle.Shapes.dividerHeight)
             .padding(.leading, AppStyle.Spacing.dividerLeadingCompact)
     }
 
@@ -317,14 +303,14 @@ struct DashboardView: View {
         } label: {
             HStack(spacing: AppStyle.Spacing.statusRowGap) {
                 Image(systemName: isWIPLimitReached ? "exclamationmark.triangle.fill" : icon)
-                    .font(.system(size: 17, weight: .bold))
+                    .font(AppStyle.Typography.iconMedium)
                     .foregroundStyle(rowColor)
-                    .frame(width: 24)
+                    .frame(width: AppStyle.Shapes.statusRowIconWidth)
 
                 Text(status.rawValue)
-                    .font(.system(size: 20, weight: isHighlighted ? .bold : .semibold, design: .rounded))
-                    .foregroundStyle(isHighlighted ? .primary : rowColor.opacity(0.85))
-                    .frame(width: 112, alignment: .leading)
+                    .font(isHighlighted ? AppStyle.Typography.statusRowTitleHighlighted : AppStyle.Typography.statusRowTitle)
+                    .foregroundStyle(isHighlighted ? AppStyle.Colors.primaryText : rowColor.opacity(AppStyle.Opacity.accentForegroundStrong))
+                    .frame(width: AppStyle.Spacing.statusLabelWidthComfortable, alignment: .leading)
                     .lineLimit(1)
                     .minimumScaleFactor(0.82)
 
@@ -332,36 +318,36 @@ struct DashboardView: View {
                     Capsule()
                         .fill(
                             LinearGradient(
-                                colors: [rowColor, rowColor.opacity(0.6)],
+                                colors: [rowColor, rowColor.opacity(AppStyle.Opacity.subtleTrack)],
                                 startPoint: .leading,
                                 endPoint: .trailing
                             )
                         )
                         .frame(width: max(AppStyle.Shapes.minBarWidth, geo.size.width * barRatio))
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .animation(.spring(response: 0.6, dampingFraction: 0.7), value: barRatio)
+                        .animation(AppStyle.Motion.rowProgress, value: barRatio)
                 }
                 .frame(height: AppStyle.Shapes.barHeightHighlighted)
 
                 Text(count.formatted())
-                    .font(.system(size: 22, weight: .bold, design: .rounded))
-                    .foregroundStyle(isHighlighted ? .primary : .secondary)
+                    .font(AppStyle.Typography.statusRowCount)
+                    .foregroundStyle(isHighlighted ? AppStyle.Colors.primaryText : AppStyle.Colors.secondaryText)
                     .monospacedDigit()
                     .contentTransition(.numericText())
-                    .frame(width: 32, alignment: .trailing)
+                    .frame(width: AppStyle.Spacing.countFrameWidthComfortable, alignment: .trailing)
 
                 Image(systemName: "chevron.right")
-                    .font(.system(size: 14, weight: .semibold))
-                    .foregroundStyle(.tertiary)
-                    .frame(width: 14)
+                    .font(AppStyle.Typography.iconSmall)
+                    .foregroundStyle(AppStyle.Colors.tertiaryText)
+                    .frame(width: AppStyle.Shapes.chevronWidth)
             }
             .padding(.horizontal, AppStyle.Spacing.cardPadding)
-            .padding(.vertical, 18)
+            .padding(.vertical, AppStyle.Spacing.statusRowVerticalComfortable)
             .contentShape(.rect)
             .background {
                 if isHighlighted {
                     RoundedRectangle(cornerRadius: AppStyle.Shapes.statusHighlightCornerRadius, style: .continuous)
-                        .fill(rowColor.opacity(0.12))
+                        .fill(rowColor.opacity(AppStyle.Opacity.accentWashStrong))
                         .padding(.horizontal, AppStyle.Spacing.statusHighlightPaddingHorizontal)
                         .padding(.vertical, AppStyle.Spacing.statusHighlightPaddingVertical)
                 }
@@ -369,7 +355,7 @@ struct DashboardView: View {
             .overlay(alignment: .trailing) {
                 if isHighlighted {
                     RoundedRectangle(cornerRadius: AppStyle.Shapes.statusHighlightCornerRadius, style: .continuous)
-                        .stroke(rowColor.opacity(0.16), lineWidth: 1)
+                        .stroke(rowColor.opacity(AppStyle.Opacity.accentBorder), lineWidth: AppStyle.Shapes.emphasizedBorderWidth)
                         .padding(.horizontal, AppStyle.Spacing.statusHighlightPaddingHorizontal)
                         .padding(.vertical, AppStyle.Spacing.statusHighlightPaddingVertical)
                 }
@@ -431,24 +417,24 @@ struct DashboardView: View {
     private func priorityCard(priority: String, count: Int, tint: Color) -> some View {
         let isEmpty = count == 0
         let dominanceRatio = maxPriorityCount > 0 ? CGFloat(count) / CGFloat(maxPriorityCount) : 0
-        let fillOpacity = isEmpty ? 0.04 : 0.14
+        let fillOpacity = isEmpty ? AppStyle.Opacity.accentWashVeryFaint : AppStyle.Opacity.accentWashEmphasized
 
         return VStack(spacing: AppStyle.Spacing.none) {
             VStack(spacing: AppStyle.Spacing.priorityCardVStackGap) {
                 Text(count.formatted())
                     .font(AppStyle.Typography.priorityNumber)
-                    .foregroundStyle(isEmpty ? .tertiary : .primary)
+                    .foregroundStyle(isEmpty ? AppStyle.Colors.tertiaryText : AppStyle.Colors.primaryText)
                     .contentTransition(.numericText())
                     .monospacedDigit()
                     .frame(maxWidth: .infinity, alignment: .trailing)
 
                 HStack(spacing: AppStyle.Spacing.sectionHStackGap) {
                     Circle()
-                        .fill(isEmpty ? .secondary.opacity(0.3) : tint)
+                        .fill(isEmpty ? AppStyle.Colors.secondaryText.opacity(AppStyle.Opacity.iconInactive) : tint)
                         .frame(width: AppStyle.Shapes.priorityDotSize, height: AppStyle.Shapes.priorityDotSize)
                     Text(priority)
                         .font(AppStyle.Typography.priorityLabelBold)
-                        .foregroundStyle(isEmpty ? .tertiary : .primary)
+                        .foregroundStyle(isEmpty ? AppStyle.Colors.tertiaryText : AppStyle.Colors.primaryText)
                 }
             }
             .padding(.vertical, AppStyle.Spacing.priorityVerticalPadding)
@@ -457,24 +443,24 @@ struct DashboardView: View {
         .frame(maxWidth: .infinity)
         .background {
             GeometryReader { geo in
-                VStack(spacing: 0) {
+                VStack(spacing: AppStyle.Spacing.none) {
                     let fillHeight = dominanceRatio > 0
                         ? max(
                             AppStyle.Shapes.accentBarHeight,
-                            geo.size.height * (0.18 + (0.52 * dominanceRatio))
+                            geo.size.height * (AppStyle.Shapes.priorityFillBaseline + (AppStyle.Shapes.priorityFillRange * dominanceRatio))
                         )
                         : AppStyle.Shapes.accentBarHeight
 
                     tint
-                        .opacity(isEmpty ? 0.18 : fillOpacity)
+                        .opacity(isEmpty ? AppStyle.Opacity.accentFillMuted : fillOpacity)
                         .frame(height: fillHeight)
 
-                    Spacer(minLength: 0)
+                    Spacer(minLength: AppStyle.Spacing.none)
                 }
             }
         }
         .cardStyle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
-        .opacity(isEmpty ? 0.8 : 1.0)
+        .opacity(isEmpty ? AppStyle.Opacity.inactiveCard : AppStyle.Opacity.opaque)
     }
 
     // MARK: - Footer
@@ -483,7 +469,7 @@ struct DashboardView: View {
         VStack(alignment: .leading, spacing: AppStyle.Spacing.sectionToCard) {
             sectionHeader("Flow Review")
 
-            VStack(spacing: 12) {
+            VStack(spacing: AppStyle.Spacing.statusRowGap) {
                 flowReviewCard(
                     title: "Blocked Work",
                     count: blockedInProgressTask == nil ? 0 : allTasks.filter { $0.status == .inProgress && $0.isBlocked }.count,
@@ -515,8 +501,8 @@ struct DashboardView: View {
         VStack(alignment: .leading, spacing: AppStyle.Spacing.sectionToCard) {
             sectionHeader("Done Momentum")
 
-            VStack(alignment: .leading, spacing: 18) {
-                HStack(spacing: 12) {
+            VStack(alignment: .leading, spacing: AppStyle.Spacing.comfortable) {
+                HStack(spacing: AppStyle.Spacing.statusRowGap) {
                     momentumStatCard(
                         label: "Done This Week",
                         value: "\(doneThisWeekCount)",
@@ -530,34 +516,19 @@ struct DashboardView: View {
                     )
                 }
 
-                VStack(alignment: .leading, spacing: 4) {
+                VStack(alignment: .leading, spacing: AppStyle.Spacing.tiny) {
                     Text(momentumHeadline)
-                        .font(.system(size: 18, weight: .bold, design: .rounded))
-                        .foregroundStyle(.primary)
+                        .font(AppStyle.Typography.metricMedium)
+                        .foregroundStyle(AppStyle.Colors.primaryText)
 
                     Text(momentumMessage)
                         .font(AppStyle.Typography.formFooter)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(AppStyle.Colors.secondaryText)
                         .fixedSize(horizontal: false, vertical: true)
                 }
             }
-            .padding(20)
-            .background(
-                LinearGradient(
-                    colors: [
-                        AppStyle.Colors.Status.done.opacity(0.14),
-                        AppStyle.Colors.surface,
-                        AppStyle.Colors.surface
-                    ],
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
-                ),
-                in: RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius, style: .continuous)
-            )
-            .overlay(
-                RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius, style: .continuous)
-                    .stroke(AppStyle.Colors.surfaceBorder, lineWidth: 1)
-            )
+            .padding(AppStyle.Spacing.large)
+            .accentCardStyle(tint: AppStyle.Colors.Status.done)
         }
         .padding(.bottom, AppStyle.Spacing.emptyBottomSpacer)
     }
@@ -566,7 +537,7 @@ struct DashboardView: View {
         VStack(alignment: .leading, spacing: AppStyle.Spacing.sectionToCard) {
             sectionHeader("Flow Trends")
 
-            HStack(spacing: 12) {
+            HStack(spacing: AppStyle.Spacing.statusRowGap) {
                 trendCard(
                     label: "Avg Days To Done",
                     value: averageDaysToDone.map { String(format: "%.1f", $0) } ?? "-",
@@ -582,7 +553,7 @@ struct DashboardView: View {
                 )
             }
 
-            HStack(spacing: 12) {
+            HStack(spacing: AppStyle.Spacing.statusRowGap) {
                 trendCard(
                     label: "WIP Limit Hits",
                     value: "\(wipLimitHitCount)",
@@ -626,73 +597,73 @@ struct DashboardView: View {
         Button {
             onSelectStatus?(.inProgress)
         } label: {
-            HStack(alignment: .top, spacing: 14) {
+            HStack(alignment: .top, spacing: AppStyle.Spacing.regular) {
                 ZStack {
-                    RoundedRectangle(cornerRadius: 14, style: .continuous)
-                        .fill(tint.opacity(0.12))
-                        .frame(width: 44, height: 44)
+                    RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous)
+                        .fill(tint.opacity(AppStyle.Opacity.accentWashStrong))
+                        .frame(width: AppStyle.Shapes.iconBadgeSmall, height: AppStyle.Shapes.iconBadgeSmall)
 
                     Image(systemName: icon)
-                        .font(.system(size: 18, weight: .semibold))
+                        .font(AppStyle.Typography.iconMedium)
                         .foregroundStyle(tint)
                 }
 
-                VStack(alignment: .leading, spacing: 4) {
+                VStack(alignment: .leading, spacing: AppStyle.Spacing.tiny) {
                     HStack {
                         Text(title)
                             .font(AppStyle.Typography.statusLabelHighlighted)
-                            .foregroundStyle(.primary)
+                            .foregroundStyle(AppStyle.Colors.primaryText)
 
                         Spacer()
 
                         Text("\(count)")
-                            .font(.system(size: 18, weight: .bold, design: .rounded))
+                            .font(AppStyle.Typography.metricMedium)
                             .foregroundStyle(tint)
                     }
 
                     Text(description)
                         .font(AppStyle.Typography.cardDate)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(AppStyle.Colors.secondaryText)
                         .fixedSize(horizontal: false, vertical: true)
                 }
             }
-            .padding(18)
+            .padding(AppStyle.Spacing.cardContentPadding)
             .cardStyle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
         }
         .buttonStyle(.plain)
     }
 
     private func momentumStatCard(label: String, value: String, tint: Color) -> some View {
-        VStack(alignment: .leading, spacing: 4) {
+        VStack(alignment: .leading, spacing: AppStyle.Spacing.tiny) {
             Text(label)
-                .font(.caption.weight(.medium))
-                .foregroundStyle(.secondary)
+                .font(AppStyle.Typography.statLabel)
+                .foregroundStyle(AppStyle.Colors.secondaryText)
 
             Text(value)
-                .font(.system(size: 20, weight: .bold, design: .rounded))
+                .font(AppStyle.Typography.metricMedium)
                 .foregroundStyle(tint)
         }
-        .padding(14)
+        .padding(AppStyle.Spacing.compactCardPadding)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(tint.opacity(0.08), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .background(tint.opacity(AppStyle.Opacity.accentWashSubtle), in: RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
     }
 
     private func trendCard(label: String, value: String, tint: Color, note: String) -> some View {
-        VStack(alignment: .leading, spacing: 4) {
+        VStack(alignment: .leading, spacing: AppStyle.Spacing.tiny) {
             Text(label)
-                .font(.caption.weight(.medium))
-                .foregroundStyle(.secondary)
+                .font(AppStyle.Typography.statLabel)
+                .foregroundStyle(AppStyle.Colors.secondaryText)
 
             Text(value)
-                .font(.system(size: 20, weight: .bold, design: .rounded))
+                .font(AppStyle.Typography.metricMedium)
                 .foregroundStyle(tint)
 
             Text(note)
                 .font(AppStyle.Typography.cardDate)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(AppStyle.Colors.secondaryText)
                 .fixedSize(horizontal: false, vertical: true)
         }
-        .padding(14)
+        .padding(AppStyle.Spacing.compactCardPadding)
         .frame(maxWidth: .infinity, alignment: .leading)
         .cardStyle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
     }
@@ -712,8 +683,6 @@ struct DashboardView: View {
 
     private func sectionHeader(_ title: String) -> some View {
         Text(title)
-            .font(AppStyle.Typography.sectionTitle)
-            .foregroundStyle(.secondary)
-            .tracking(AppStyle.Typography.sectionTracking)
+            .sectionHeaderStyle()
     }
 }

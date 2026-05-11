@@ -18,47 +18,30 @@ struct PersonalKanbanManifestoView: View {
     }
 
     private var heroCard: some View {
-        VStack(alignment: .leading, spacing: 14) {
+        VStack(alignment: .leading, spacing: AppStyle.Spacing.regular) {
             Text("Personal Kanban")
-                .font(.system(size: 28, weight: .bold, design: .rounded))
-                .foregroundStyle(.primary)
+                .font(AppStyle.Typography.manifestoTitle)
+                .foregroundStyle(AppStyle.Colors.primaryText)
 
             Text("This app applies Personal Kanban by helping you see your work clearly, protect your focus, and finish before starting more.")
                 .font(AppStyle.Typography.formFooter)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(AppStyle.Colors.secondaryText)
 
-            HStack(spacing: 12) {
+            HStack(spacing: AppStyle.Spacing.statusRowGap) {
                 principlePill("Visualize work", tint: AppStyle.Colors.Status.todo)
                 principlePill("Limit WIP", tint: AppStyle.Colors.Status.inProgress)
                 principlePill("Finish", tint: AppStyle.Colors.Status.done)
             }
         }
-        .padding(22)
-        .background {
-            RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius, style: .continuous)
-                .fill(
-                    LinearGradient(
-                        colors: [
-                            AppStyle.Colors.Status.todo.opacity(0.14),
-                            AppStyle.Colors.surface,
-                            AppStyle.Colors.surface
-                        ],
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    )
-                )
-        }
-        .overlay {
-            RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius, style: .continuous)
-                .stroke(AppStyle.Colors.surfaceBorder, lineWidth: 1)
-        }
+        .padding(AppStyle.Spacing.heroPadding)
+        .accentCardStyle(tint: AppStyle.Colors.Status.todo)
     }
 
     private var principlesSection: some View {
         VStack(alignment: .leading, spacing: AppStyle.Spacing.sectionToCard) {
             sectionHeader("How This App Supports It")
 
-            VStack(spacing: 14) {
+            VStack(spacing: AppStyle.Spacing.regular) {
                 manifestoCard(
                     icon: "rectangle.3.group.fill",
                     title: "Your work is visible",
@@ -90,7 +73,7 @@ struct PersonalKanbanManifestoView: View {
         VStack(alignment: .leading, spacing: AppStyle.Spacing.sectionToCard) {
             sectionHeader("How To Use This App")
 
-            VStack(spacing: 14) {
+            VStack(spacing: AppStyle.Spacing.regular) {
                 manifestoCard(
                     icon: "square.grid.3x3.fill",
                     title: "Work from the board",
@@ -116,7 +99,7 @@ struct PersonalKanbanManifestoView: View {
         VStack(alignment: .leading, spacing: AppStyle.Spacing.sectionToCard) {
             sectionHeader("What The User Gains")
 
-            VStack(spacing: 14) {
+            VStack(spacing: AppStyle.Spacing.regular) {
                 manifestoCard(
                     icon: "brain.fill",
                     title: "Lower mental load",
@@ -148,44 +131,42 @@ struct PersonalKanbanManifestoView: View {
         Text(title)
             .font(AppStyle.Typography.pillLabel)
             .foregroundStyle(tint)
-            .padding(.horizontal, 12)
-            .padding(.vertical, 6)
-            .background(tint.opacity(0.12), in: Capsule())
+            .padding(.horizontal, AppStyle.Spacing.emphasizedPillHorizontalPadding)
+            .padding(.vertical, AppStyle.Spacing.emphasizedPillVerticalPadding)
+            .background(tint.opacity(AppStyle.Opacity.accentWashStrong), in: Capsule())
     }
 
     private func manifestoCard(icon: String, title: String, body: String) -> some View {
-        HStack(alignment: .top, spacing: 14) {
+        HStack(alignment: .top, spacing: AppStyle.Spacing.regular) {
             ZStack {
-                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous)
                     .fill(AppStyle.Colors.surface)
-                    .frame(width: 44, height: 44)
+                    .frame(width: AppStyle.Shapes.iconBadgeSmall, height: AppStyle.Shapes.iconBadgeSmall)
 
                 Image(systemName: icon)
-                    .font(.system(size: 18, weight: .semibold))
+                    .font(AppStyle.Typography.iconMedium)
                     .foregroundStyle(AppStyle.Colors.Status.todo)
             }
 
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: AppStyle.Spacing.tiny) {
                 Text(title)
                     .font(AppStyle.Typography.statusLabelHighlighted)
-                    .foregroundStyle(.primary)
+                    .foregroundStyle(AppStyle.Colors.primaryText)
 
                 Text(body)
                     .font(AppStyle.Typography.formFooter)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(AppStyle.Colors.secondaryText)
                     .fixedSize(horizontal: false, vertical: true)
             }
 
             Spacer()
         }
-        .padding(18)
+        .padding(AppStyle.Spacing.cardContentPadding)
         .cardStyle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
     }
 
     private func sectionHeader(_ title: String) -> some View {
         Text(title)
-            .font(AppStyle.Typography.sectionTitle)
-            .foregroundStyle(.secondary)
-            .tracking(AppStyle.Typography.sectionTracking)
+            .sectionHeaderStyle()
     }
 }

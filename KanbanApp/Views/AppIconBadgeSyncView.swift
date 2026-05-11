@@ -37,6 +37,7 @@ struct AppIconBadgeSyncModifier: ViewModifier {
     private func requestBadgePermissionIfNeeded() async {
 #if os(iOS)
         guard !hasRequestedBadgePermission else { return }
+        guard inProgressCount > 0 else { return }
 
         let center = UNUserNotificationCenter.current()
         let granted = (try? await center.requestAuthorization(options: [.badge])) ?? false

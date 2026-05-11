@@ -7,7 +7,7 @@ struct OnboardingView: View {
 
     var body: some View {
         NavigationStack {
-            VStack(spacing: 0) {
+            VStack(spacing: AppStyle.Spacing.none) {
                 header
 
                 TabView(selection: $page) {
@@ -21,13 +21,13 @@ struct OnboardingView: View {
                         .tag(2)
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
-                .animation(.snappy, value: page)
+                .animation(AppStyle.Motion.snappy, value: page)
 
                 footer
             }
             .padding(.horizontal, AppStyle.Spacing.outerHorizontal)
             .padding(.top, AppStyle.Spacing.outerVertical)
-            .padding(.bottom, 32)
+            .padding(.bottom, AppStyle.Spacing.onboardingBottomPadding)
             .background(AppStyle.Colors.background)
         }
     }
@@ -42,29 +42,29 @@ struct OnboardingView: View {
                 Button("Skip") {
                     onComplete()
                 }
-                .font(.subheadline.weight(.semibold))
-                .foregroundStyle(.secondary)
+                .font(AppStyle.Typography.secondaryAction)
+                .foregroundStyle(AppStyle.Colors.secondaryText)
             }
         }
-        .padding(.bottom, 18)
+        .padding(.bottom, AppStyle.Spacing.comfortable)
     }
 
     private var progressDots: some View {
-        HStack(spacing: 8) {
+        HStack(spacing: AppStyle.Spacing.small) {
             ForEach(0..<3, id: \.self) { index in
                 Capsule()
                     .fill(index == page ? AppStyle.Colors.Status.todo : AppStyle.Colors.track)
-                    .frame(width: index == page ? 28 : 8, height: 8)
-                    .animation(.spring(duration: 0.5, bounce: 0.2), value: page)
+                    .frame(width: index == page ? AppStyle.Shapes.activePageDotWidth : AppStyle.Shapes.pageDotWidth, height: AppStyle.Shapes.pageDotHeight)
+                    .animation(AppStyle.Motion.pageIndicator, value: page)
             }
         }
     }
 
     private var footer: some View {
-        VStack(spacing: 14) {
+        VStack(spacing: AppStyle.Spacing.regular) {
             Button {
                 if page < 2 {
-                    withAnimation(.snappy) {
+                    withAnimation(AppStyle.Motion.snappy) {
                         page += 1
                     }
                 } else {
@@ -73,18 +73,18 @@ struct OnboardingView: View {
             } label: {
                 Text(page == 2 ? "Start Focusing" : "Continue")
                     .font(AppStyle.Typography.bodyLarge)
-                    .foregroundStyle(.white)
+                    .foregroundStyle(AppStyle.Colors.inverseText)
                     .frame(maxWidth: .infinity)
-                    .padding(.vertical, 16)
-                    .background(AppStyle.Colors.Status.todo, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+                    .padding(.vertical, AppStyle.Spacing.normal)
+                    .background(AppStyle.Colors.Status.todo, in: RoundedRectangle(cornerRadius: AppStyle.Shapes.primaryControlCornerRadius, style: .continuous))
             }
             .buttonStyle(.plain)
 
             Text(page == 2 ? "You can revisit the manifesto anytime from Settings." : "A focused system works better when you keep active work small.")
                 .font(AppStyle.Typography.guidanceFooter)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(AppStyle.Colors.secondaryText)
                 .multilineTextAlignment(.center)
         }
-        .padding(.top, 18)
+        .padding(.top, AppStyle.Spacing.comfortable)
     }
 }
