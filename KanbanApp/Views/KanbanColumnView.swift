@@ -44,7 +44,7 @@ struct KanbanColumnView: View {
         .padding(AppStyle.Spacing.columnPadding)
         .background(
             RoundedRectangle(cornerRadius: AppStyle.Shapes.columnCornerRadius)
-                .fill(.regularMaterial)
+                .fill(AppStyle.Materials.column)
                 .shadow(
                     color: AppStyle.Colors.columnShadow,
                     radius: AppStyle.Shapes.columnShadowRadius,
@@ -54,7 +54,7 @@ struct KanbanColumnView: View {
         .overlay {
             if status == .inProgress && isFocusGuardEnabled && tasks.count >= maxActiveTasks {
                 RoundedRectangle(cornerRadius: AppStyle.Shapes.columnCornerRadius)
-                    .stroke(AppStyle.Colors.warning.opacity(0.3), lineWidth: 2)
+                    .stroke(AppStyle.Colors.warning.opacity(AppStyle.Opacity.warningBorder), lineWidth: AppStyle.Shapes.warningBorderWidth)
             }
         }
         .accessibilityElement(children: .contain)
@@ -76,8 +76,8 @@ struct KanbanColumnView: View {
                     }
                     .scrollTransition(.interactive.threshold(.visible(0.5))) { content, phase in
                         content
-                            .opacity(phase.isIdentity ? 1 : 0.6)
-                            .scaleEffect(phase.isIdentity ? 1 : 0.95)
+                            .opacity(phase.isIdentity ? AppStyle.Opacity.opaque : AppStyle.Opacity.scrollTransition)
+                            .scaleEffect(phase.isIdentity ? AppStyle.Opacity.opaque : AppStyle.Opacity.scrollScale)
                     }
             }
 
@@ -89,7 +89,7 @@ struct KanbanColumnView: View {
             }
 
             if priority == .low {
-                Color.clear.frame(height: AppStyle.Spacing.emptyBottomSpacer)
+                AppStyle.Colors.clear.frame(height: AppStyle.Spacing.emptyBottomSpacer)
             }
         }
         .frame(minHeight: AppStyle.Shapes.zoneMinHeight)
@@ -116,7 +116,7 @@ struct KanbanColumnView: View {
             onDrop(uuid, priority)
             return true
         } isTargeted: { targeted in
-            withAnimation(.snappy) { targetedZone = targeted ? priority : nil }
+            withAnimation(AppStyle.Motion.snappy) { targetedZone = targeted ? priority : nil }
         }
     }
 
@@ -134,10 +134,10 @@ struct KanbanColumnView: View {
                 .font(AppStyle.Typography.zoneIcon)
             Text(priority.rawValue)
                 .font(AppStyle.Typography.zoneHeader)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(AppStyle.Colors.secondaryText)
             Text(count.formatted())
                 .font(AppStyle.Typography.zoneCount)
-                .foregroundStyle(.tertiary)
+                .foregroundStyle(AppStyle.Colors.tertiaryText)
             Spacer()
         }
         .padding(.horizontal, AppStyle.Spacing.zoneContentMargin)
@@ -151,11 +151,11 @@ struct KanbanColumnView: View {
                 .frame(width: AppStyle.Shapes.dotSize, height: AppStyle.Shapes.dotSize)
             Text(status.rawValue)
                 .font(AppStyle.Typography.columnHeader)
-                .foregroundStyle(.primary)
+                .foregroundStyle(AppStyle.Colors.primaryText)
             Spacer()
             Text(tasks.count.formatted())
                 .font(AppStyle.Typography.zoneCount)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(AppStyle.Colors.secondaryText)
                 .padding(.horizontal, AppStyle.Spacing.badgeHorizontalPadding)
                 .padding(.vertical, AppStyle.Spacing.badgeVerticalPadding)
                 .background(AppStyle.Colors.badgeBackground, in: .capsule)

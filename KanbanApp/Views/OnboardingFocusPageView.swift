@@ -3,21 +3,21 @@ import SwiftUI
 struct OnboardingFocusPageView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            VStack(alignment: .leading, spacing: 24) {
-                VStack(alignment: .leading, spacing: 14) {
+            VStack(alignment: .leading, spacing: AppStyle.Spacing.compactSectionSpacing) {
+                VStack(alignment: .leading, spacing: AppStyle.Spacing.regular) {
                     Text("Protect your focus")
-                        .font(.system(size: 32, weight: .bold, design: .rounded))
-                        .foregroundStyle(.primary)
+                        .font(AppStyle.Typography.heroTitle)
+                        .foregroundStyle(AppStyle.Colors.primaryText)
 
                     Text("This app is built around Personal Kanban discipline: do less at once, finish more often, and reduce context switching.")
                         .font(AppStyle.Typography.formFooter)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(AppStyle.Colors.secondaryText)
                         .fixedSize(horizontal: false, vertical: true)
                 }
 
                 pressureCard
 
-                VStack(spacing: 14) {
+                VStack(spacing: AppStyle.Spacing.regular) {
                     principleRow(
                         icon: "line.3.horizontal.decrease.circle.fill",
                         tint: AppStyle.Colors.Status.inProgress,
@@ -41,33 +41,33 @@ struct OnboardingFocusPageView: View {
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.bottom, 12)
+            .padding(.bottom, AppStyle.Spacing.statusRowGap)
         }
     }
 
     private var pressureCard: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: AppStyle.Spacing.normal) {
             HStack(alignment: .center) {
-                VStack(alignment: .leading, spacing: 6) {
+                VStack(alignment: .leading, spacing: AppStyle.Spacing.tight) {
                     Text("In Progress")
-                        .font(.caption.weight(.medium))
-                        .foregroundStyle(.secondary)
+                        .font(AppStyle.Typography.statLabel)
+                        .foregroundStyle(AppStyle.Colors.secondaryText)
 
                     Text("3 / 3")
-                        .font(.system(size: 30, weight: .bold, design: .rounded))
+                        .font(AppStyle.Typography.metricLarge)
                         .foregroundStyle(AppStyle.Colors.warning)
                 }
 
                 Spacer()
 
-                VStack(alignment: .trailing, spacing: 4) {
+                VStack(alignment: .trailing, spacing: AppStyle.Spacing.tiny) {
                     Text("WIP full")
-                        .font(.system(size: 18, weight: .bold, design: .rounded))
-                        .foregroundStyle(.primary)
+                        .font(AppStyle.Typography.metricMedium)
+                        .foregroundStyle(AppStyle.Colors.primaryText)
 
                     Text("Finish one task before pulling another.")
                         .font(AppStyle.Typography.cardDate)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(AppStyle.Colors.secondaryText)
                         .multilineTextAlignment(.trailing)
                 }
             }
@@ -75,7 +75,7 @@ struct OnboardingFocusPageView: View {
             GeometryReader { geo in
                 ZStack(alignment: .leading) {
                     Capsule()
-                        .fill(AppStyle.Colors.track.opacity(0.7))
+                        .fill(AppStyle.Colors.track.opacity(AppStyle.Opacity.trackStrong))
 
                     Capsule()
                         .fill(
@@ -88,37 +88,37 @@ struct OnboardingFocusPageView: View {
                         .frame(width: geo.size.width)
                 }
             }
-            .frame(height: 10)
+            .frame(height: AppStyle.Shapes.progressBarHeight)
         }
-        .padding(20)
-        .background(AppStyle.Colors.warning.opacity(0.08), in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+        .padding(AppStyle.Spacing.large)
+        .background(AppStyle.Colors.warning.opacity(AppStyle.Opacity.accentWashSubtle), in: RoundedRectangle(cornerRadius: AppStyle.Shapes.primaryControlCornerRadius, style: .continuous))
         .overlay(
-            RoundedRectangle(cornerRadius: 18, style: .continuous)
-                .stroke(AppStyle.Colors.warning.opacity(0.18), lineWidth: 1)
+            RoundedRectangle(cornerRadius: AppStyle.Shapes.primaryControlCornerRadius, style: .continuous)
+                .stroke(AppStyle.Colors.warning.opacity(AppStyle.Opacity.accentBorderStrong), lineWidth: AppStyle.Shapes.emphasizedBorderWidth)
         )
     }
 
     private func principleRow(icon: String, tint: Color, title: String, body: String) -> some View {
-        HStack(alignment: .top, spacing: 14) {
+        HStack(alignment: .top, spacing: AppStyle.Spacing.regular) {
             Image(systemName: icon)
-                .font(.system(size: 18, weight: .semibold))
+                .font(AppStyle.Typography.iconMedium)
                 .foregroundStyle(tint)
-                .frame(width: 24)
+                .frame(width: AppStyle.Spacing.iconFrameWidthMedium)
 
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: AppStyle.Spacing.tiny) {
                 Text(title)
                     .font(AppStyle.Typography.statusLabelHighlighted)
-                    .foregroundStyle(.primary)
+                    .foregroundStyle(AppStyle.Colors.primaryText)
 
                 Text(body)
                     .font(AppStyle.Typography.formFooter)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(AppStyle.Colors.secondaryText)
                     .fixedSize(horizontal: false, vertical: true)
             }
 
             Spacer()
         }
-        .padding(18)
+        .padding(AppStyle.Spacing.cardContentPadding)
         .cardStyle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
     }
 }

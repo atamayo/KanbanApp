@@ -96,8 +96,8 @@ struct AddTaskView: View {
     private var header: some View {
         HStack {
             Button("Cancel") { dismiss() }
-                .font(.body)
-                .foregroundStyle(.secondary)
+                .font(AppStyle.Typography.body)
+                .foregroundStyle(AppStyle.Colors.secondaryText)
             
             Spacer()
             
@@ -107,34 +107,25 @@ struct AddTaskView: View {
             Spacer()
             
             Button("Cancel") { dismiss() }
-                .font(.body)
-                .opacity(0)
-                .disabled(true)
+                .font(AppStyle.Typography.body)
+                .hidden()
+                .accessibilityHidden(true)
         }
         .padding(.horizontal, AppStyle.Spacing.extraLarge)
         .padding(.vertical, AppStyle.Spacing.large)
-        .background(.ultraThinMaterial)
+        .background(AppStyle.Materials.chrome)
         .overlay(alignment: .bottom) {
-            Divider().opacity(0.5)
+            Divider().opacity(AppStyle.Opacity.divider)
         }
     }
 
     private var titleSection: some View {
         VStack(alignment: .leading, spacing: AppStyle.Spacing.medium) {
             Text("Title")
-                .font(AppStyle.Typography.sectionTitle)
-                .foregroundStyle(.secondary)
-                .tracking(AppStyle.Typography.sectionTracking)
+                .sectionHeaderStyle()
             
             TextField("What needs to be done?", text: $title)
-                .font(.body)
-                .padding(AppStyle.Spacing.normal)
-                .background(AppStyle.Colors.surface)
-                .clipShape(RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
-                .overlay(
-                    RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous)
-                        .stroke(AppStyle.Colors.surfaceBorder, lineWidth: AppStyle.Shapes.borderWidth)
-                )
+                .formFieldStyle()
                 .focused($focusedField, equals: .title)
         }
     }
@@ -142,29 +133,27 @@ struct AddTaskView: View {
     private var prioritySection: some View {
         VStack(alignment: .leading, spacing: AppStyle.Spacing.medium) {
             Text("Priority")
-                .font(AppStyle.Typography.sectionTitle)
-                .foregroundStyle(.secondary)
-                .tracking(AppStyle.Typography.sectionTracking)
+                .sectionHeaderStyle()
             
             HStack(spacing: AppStyle.Spacing.medium) {
                 ForEach(TaskPriority.allCases) { p in
                     Button {
-                        withAnimation(.snappy) { priority = p }
+                        withAnimation(AppStyle.Motion.snappy) { priority = p }
                     } label: {
                         VStack(spacing: AppStyle.Spacing.small) {
                             Image(systemName: priorityIcon(p))
-                                .font(.title3)
+                                .font(AppStyle.Typography.fabIcon)
                             Text(p.rawValue)
                                 .font(AppStyle.Typography.priorityLabel)
                         }
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, AppStyle.Spacing.medium)
-                        .background(priority == p ? priorityColor(p).opacity(0.15) : AppStyle.Colors.surface)
-                        .foregroundStyle(priority == p ? priorityColor(p) : .secondary)
+                        .background(priority == p ? priorityColor(p).opacity(AppStyle.Opacity.accentWashSelected) : AppStyle.Colors.surface)
+                        .foregroundStyle(priority == p ? priorityColor(p) : AppStyle.Colors.secondaryText)
                         .clipShape(RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
                         .overlay(
                             RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous)
-                                .stroke(priority == p ? priorityColor(p).opacity(0.5) : AppStyle.Colors.surfaceBorder, lineWidth: AppStyle.Shapes.borderWidth)
+                                .stroke(priority == p ? priorityColor(p).opacity(AppStyle.Opacity.divider) : AppStyle.Colors.surfaceBorder, lineWidth: AppStyle.Shapes.borderWidth)
                         )
                     }
                     .buttonStyle(.plain)
@@ -176,20 +165,11 @@ struct AddTaskView: View {
     private var descriptionSection: some View {
         VStack(alignment: .leading, spacing: AppStyle.Spacing.medium) {
             Text("Description")
-                .font(AppStyle.Typography.sectionTitle)
-                .foregroundStyle(.secondary)
-                .tracking(AppStyle.Typography.sectionTracking)
+                .sectionHeaderStyle()
 
             TextField("Add context for the task", text: $description, axis: .vertical)
-                .font(.body)
                 .lineLimit(3...6)
-                .padding(AppStyle.Spacing.normal)
-                .background(AppStyle.Colors.surface)
-                .clipShape(RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
-                .overlay(
-                    RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous)
-                        .stroke(AppStyle.Colors.surfaceBorder, lineWidth: AppStyle.Shapes.borderWidth)
-                )
+                .formFieldStyle()
                 .focused($focusedField, equals: .description)
         }
     }
@@ -197,25 +177,16 @@ struct AddTaskView: View {
     private var completionCriteriaSection: some View {
         VStack(alignment: .leading, spacing: AppStyle.Spacing.medium) {
             Text("Definition of Done")
-                .font(AppStyle.Typography.sectionTitle)
-                .foregroundStyle(.secondary)
-                .tracking(AppStyle.Typography.sectionTracking)
+                .sectionHeaderStyle()
 
             TextField("What does done look like?", text: $completionCriteria, axis: .vertical)
-                .font(.body)
                 .lineLimit(2...4)
-                .padding(AppStyle.Spacing.normal)
-                .background(AppStyle.Colors.surface)
-                .clipShape(RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
-                .overlay(
-                    RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous)
-                        .stroke(AppStyle.Colors.surfaceBorder, lineWidth: AppStyle.Shapes.borderWidth)
-                )
+                .formFieldStyle()
                 .focused($focusedField, equals: .completionCriteria)
 
             Text("Keep it short. A compact finish check makes it easier to close the task.")
                 .font(AppStyle.Typography.guidanceFooter)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(AppStyle.Colors.secondaryText)
         }
     }
 
@@ -227,10 +198,10 @@ struct AddTaskView: View {
             Text("Adding to \(Text(status.rawValue).fontWeight(.bold)) status")
         } 
         .font(AppStyle.Typography.formFooter)
-        .foregroundStyle(.secondary)
+        .foregroundStyle(AppStyle.Colors.secondaryText)
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(AppStyle.Spacing.normal)
-        .background(statusColor.opacity(0.05))
+        .background(statusColor.opacity(AppStyle.Opacity.accentWashFaint))
         .clipShape(RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
     }
 
@@ -242,7 +213,7 @@ struct AddTaskView: View {
                         .controlSize(.small)
                     Text("Extracting text from image…")
                         .font(AppStyle.Typography.guidanceFooter)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(AppStyle.Colors.secondaryText)
                 }
             } else if let quickCaptureMessage {
                 Text(quickCaptureMessage)
@@ -283,10 +254,10 @@ struct AddTaskView: View {
                 Image(systemName: "wand.and.stars")
                 Text("Capture")
             }
-            .font(.headline)
+            .font(AppStyle.Typography.buttonLabel)
             .frame(height: AppStyle.Shapes.fabSize)
             .padding(.horizontal, AppStyle.Spacing.normal)
-            .frame(minWidth: 132)
+            .frame(minWidth: AppStyle.Shapes.formControlMinWidth)
         }
         .buttonStyle(.glass)
         .disabled(isGeneratingQuickCapture || isImportingQuickCapturePhoto)
@@ -298,15 +269,15 @@ struct AddTaskView: View {
         } label: {
             HStack(spacing: AppStyle.Spacing.small) {
                 Image(systemName: "text.badge.plus")
-                    .font(.headline.weight(.semibold))
+                    .font(AppStyle.Typography.buttonLabel)
 
                 Text("Create Task")
-                    .font(.headline)
+                    .font(AppStyle.Typography.buttonLabel)
             }
             .frame(maxWidth: .infinity)
             .frame(height: AppStyle.Shapes.fabSize)
         }
-        .tint(isValid ? AppStyle.Colors.Status.todo : Color.gray.opacity(0.55))
+        .tint(isValid ? AppStyle.Colors.Status.todo : AppStyle.Colors.disabledControl)
         .buttonStyle(.glass)
         .disabled(!isValid)
     }
@@ -585,25 +556,18 @@ private struct QuickCaptureDraftSheet: View {
 
                     Text("Paste a note, email, or rough thought and turn it into a clean task draft.")
                         .font(AppStyle.Typography.formFooter)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(AppStyle.Colors.secondaryText)
                 }
 
                 TextField("Paste a note or messy thought…", text: $text, axis: .vertical)
-                    .font(.body)
                     .lineLimit(8...14)
-                    .padding(AppStyle.Spacing.normal)
-                    .background(AppStyle.Colors.surface)
-                    .clipShape(RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
-                    .overlay(
-                        RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous)
-                            .stroke(AppStyle.Colors.surfaceBorder, lineWidth: AppStyle.Shapes.borderWidth)
-                    )
+                    .formFieldStyle()
                     .focused($isTextFocused)
 
                 if let message {
                     Text(message)
                         .font(AppStyle.Typography.guidanceFooter)
-                        .foregroundStyle(message.hasPrefix("Draft generated.") ? AppStyle.Colors.doneAccent : .secondary)
+                        .foregroundStyle(message.hasPrefix("Draft generated.") ? AppStyle.Colors.doneAccent : AppStyle.Colors.secondaryText)
                         .fixedSize(horizontal: false, vertical: true)
                 } else if !isAvailable, let unavailableMessage {
                     Text(unavailableMessage)
@@ -612,7 +576,7 @@ private struct QuickCaptureDraftSheet: View {
                         .fixedSize(horizontal: false, vertical: true)
                 }
 
-                Spacer(minLength: 0)
+                Spacer(minLength: AppStyle.Spacing.none)
             }
             .padding(AppStyle.Spacing.extraLarge)
             .background(AppStyle.Colors.background)

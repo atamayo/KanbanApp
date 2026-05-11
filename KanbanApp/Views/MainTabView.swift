@@ -41,7 +41,7 @@ struct MainTabView: View {
                         allTasks: allTasks,
                         onSelectStatus: { status in
                             selectedSegment = status
-                            withAnimation(.snappy) {
+                            withAnimation(AppStyle.Motion.snappy) {
                                 selectedTab = .tasks
                             }
                         }

@@ -10,12 +10,12 @@ struct QuickCapturePhotoImportButton: View {
             selection: $selectedItem,
             matching: .images
         ) {
-            HStack(spacing: 8) {
+            HStack(spacing: AppStyle.Spacing.small) {
                 Image(systemName: "photo.on.rectangle.angled")
                 Text("Import Photo")
             }
-            .font(.subheadline.weight(.semibold))
-            .frame(minWidth: 132)
+            .font(AppStyle.Typography.secondaryAction)
+            .frame(minWidth: AppStyle.Shapes.formControlMinWidth)
         }
         .buttonStyle(.glass)
         .disabled(isBusy)

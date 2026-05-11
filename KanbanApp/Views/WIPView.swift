@@ -85,35 +85,33 @@ struct WIPView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: AppStyle.Spacing.sectionToCard) {
             Text("WIP Pressure")
-                .font(AppStyle.Typography.sectionTitle)
-                .foregroundStyle(.secondary)
-                .tracking(AppStyle.Typography.sectionTracking)
+                .sectionHeaderStyle()
 
-            VStack(alignment: .leading, spacing: 18) {
-                HStack(alignment: .top, spacing: 16) {
+            VStack(alignment: .leading, spacing: AppStyle.Spacing.comfortable) {
+                HStack(alignment: .top, spacing: AppStyle.Spacing.normal) {
                     ZStack {
                         Circle()
-                            .fill(wipAccentColor.opacity(0.15))
-                            .frame(width: 52, height: 52)
+                            .fill(wipAccentColor.opacity(AppStyle.Opacity.accentWashSelected))
+                            .frame(width: AppStyle.Shapes.iconBadgeLarge, height: AppStyle.Shapes.iconBadgeLarge)
 
                         Image(systemName: isWIPLimitReached ? "flame.fill" : "scope")
-                            .font(.system(size: 22, weight: .semibold))
+                            .font(AppStyle.Typography.iconHero)
                             .foregroundStyle(wipAccentColor)
                     }
 
-                    VStack(alignment: .leading, spacing: 6) {
+                    VStack(alignment: .leading, spacing: AppStyle.Spacing.tight) {
                         Text(wipHeadline)
-                            .font(.system(size: 19, weight: .bold, design: .rounded))
-                            .foregroundStyle(.primary)
+                            .font(AppStyle.Typography.metricMedium)
+                            .foregroundStyle(AppStyle.Colors.primaryText)
 
                         Text(wipMessage)
                             .font(AppStyle.Typography.formFooter)
-                            .foregroundStyle(.secondary)
+                            .foregroundStyle(AppStyle.Colors.secondaryText)
                             .fixedSize(horizontal: false, vertical: true)
                     }
                 }
 
-                HStack(spacing: 12) {
+                HStack(spacing: AppStyle.Spacing.statusRowGap) {
                     statPill(
                         label: "Active",
                         value: "\(inProgressCount)/\(maxActiveTasks)",
@@ -128,26 +126,26 @@ struct WIPView: View {
                 }
 
                 if let spotlightTask {
-                    VStack(alignment: .leading, spacing: 4) {
+                    VStack(alignment: .leading, spacing: AppStyle.Spacing.tiny) {
                         Text(spotlightTitle)
-                            .font(.caption.weight(.semibold))
+                            .font(AppStyle.Typography.pillLabel)
                             .foregroundStyle(wipAccentColor)
                             .textCase(.uppercase)
 
                         Text(spotlightTask.title)
                             .font(AppStyle.Typography.cardTitle)
-                            .foregroundStyle(.primary)
+                            .foregroundStyle(AppStyle.Colors.primaryText)
                             .lineLimit(2)
 
                         if !spotlightSubtitle.isEmpty {
                             Text(spotlightSubtitle)
                                 .font(AppStyle.Typography.cardDate)
-                                .foregroundStyle(.secondary)
+                                .foregroundStyle(AppStyle.Colors.secondaryText)
                         }
                     }
-                    .padding(14)
+                    .padding(AppStyle.Spacing.compactCardPadding)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .background(.white.opacity(0.5), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    .background(AppStyle.Colors.spotlightSurface, in: RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
                 }
 
                 Button(action: onReviewActiveTasks) {
@@ -156,55 +154,46 @@ struct WIPView: View {
                         Spacer()
                         Image(systemName: "arrow.right")
                     }
-                    .font(.system(size: 15, weight: .semibold))
-                    .foregroundStyle(isWIPLimitReached || blockedInProgressTask != nil ? Color.white : wipAccentColor)
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 14)
+                    .font(AppStyle.Typography.buttonLabel)
+                    .foregroundStyle(isWIPLimitReached || blockedInProgressTask != nil ? AppStyle.Colors.inverseText : wipAccentColor)
+                    .padding(.horizontal, AppStyle.Spacing.normal)
+                    .padding(.vertical, AppStyle.Spacing.regular)
                     .background(
                         isWIPLimitReached || blockedInProgressTask != nil
-                        ? AnyShapeStyle(LinearGradient(colors: [wipAccentColor, wipAccentColor.opacity(0.72)], startPoint: .leading, endPoint: .trailing))
-                        : AnyShapeStyle(.white.opacity(0.8)),
-                        in: RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        ? AnyShapeStyle(LinearGradient(colors: [wipAccentColor, wipAccentColor.opacity(AppStyle.Opacity.accentForegroundMuted)], startPoint: .leading, endPoint: .trailing))
+                        : AnyShapeStyle(AppStyle.Colors.spotlightSurface),
+                        in: RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius, style: .continuous)
                     )
                 }
                 .buttonStyle(.plain)
             }
-            .padding(22)
-            .background {
-                RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius, style: .continuous)
-                    .fill(
-                        LinearGradient(
-                            colors: [
-                                wipAccentColor.opacity(isWIPLimitReached ? 0.18 : 0.12),
-                                AppStyle.Colors.surface,
-                                AppStyle.Colors.surface
-                            ],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                    )
-            }
-            .overlay {
-                RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius, style: .continuous)
-                    .stroke(wipAccentColor.opacity(0.16), lineWidth: 1)
-            }
-            .shadow(color: wipAccentColor.opacity(0.08), radius: 10, x: 0, y: 6)
+            .padding(AppStyle.Spacing.heroPadding)
+            .accentCardStyle(
+                tint: wipAccentColor,
+                fillOpacity: isWIPLimitReached ? AppStyle.Opacity.accentFillMuted : AppStyle.Opacity.accentWashStrong
+            )
+            .shadow(
+                color: wipAccentColor.opacity(AppStyle.Opacity.restingShadow),
+                radius: AppStyle.Shapes.columnShadowRadius,
+                x: AppStyle.Spacing.none,
+                y: AppStyle.Spacing.tight
+            )
         }
     }
 
     private func statPill(label: String, value: String, tint: Color) -> some View {
-        VStack(alignment: .leading, spacing: 4) {
+        VStack(alignment: .leading, spacing: AppStyle.Spacing.tiny) {
             Text(label)
-                .font(.caption.weight(.medium))
-                .foregroundStyle(.secondary)
+                .font(AppStyle.Typography.statLabel)
+                .foregroundStyle(AppStyle.Colors.secondaryText)
 
             Text(value)
-                .font(.system(size: 18, weight: .bold, design: .rounded))
-                .foregroundStyle(.primary)
+                .font(AppStyle.Typography.metricMedium)
+                .foregroundStyle(AppStyle.Colors.primaryText)
         }
-        .padding(.horizontal, 14)
-        .padding(.vertical, 10)
+        .padding(.horizontal, AppStyle.Spacing.regular)
+        .padding(.vertical, AppStyle.Spacing.compact)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(tint.opacity(0.10), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .background(tint.opacity(AppStyle.Opacity.accentWash), in: RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
     }
 }

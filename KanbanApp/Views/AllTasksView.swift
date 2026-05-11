@@ -34,7 +34,7 @@ struct AllTasksView: View {
 
     var body: some View {
         VStack(spacing: AppStyle.Spacing.none) {
-            GlassEffectContainer(spacing: 18) {
+            GlassEffectContainer(spacing: AppStyle.Spacing.comfortable) {
                 StatusPicker(selection: $selectedSegment, glassNamespace: glassChromeNamespace)
                     .padding(.horizontal, AppStyle.Spacing.normal)
                     .padding(.top, AppStyle.Spacing.small)
@@ -55,7 +55,7 @@ struct AllTasksView: View {
                         TaskCardView(task: task, onSelect: { selectedTask = $0 })
                             .listRowInsets(EdgeInsets(top: AppStyle.Spacing.tiny, leading: AppStyle.Spacing.cardPadding, bottom: AppStyle.Spacing.tiny, trailing: AppStyle.Spacing.cardPadding))
                             .listRowSeparator(.hidden)
-                            .listRowBackground(Color.clear)
+                            .listRowBackground(AppStyle.Colors.clear)
                     }
                     .onMove(perform: moveTask)
                 }
@@ -81,43 +81,43 @@ struct AllTasksView: View {
             Spacer()
             Image(systemName: "tray")
                 .font(AppStyle.Typography.emptyIcon)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(AppStyle.Colors.secondaryText)
             Text("No tasks")
                 .font(AppStyle.Typography.emptyTitle)
-                .foregroundStyle(.primary)
+                .foregroundStyle(AppStyle.Colors.primaryText)
             Text("No tasks in this status")
                 .font(AppStyle.Typography.emptySubtitle)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(AppStyle.Colors.secondaryText)
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
     private var finishFirstBanner: some View {
-        HStack(alignment: .top, spacing: 12) {
+        HStack(alignment: .top, spacing: AppStyle.Spacing.statusRowGap) {
             Image(systemName: "flame.fill")
-                .font(.system(size: 16, weight: .semibold))
+                .font(AppStyle.Typography.iconSmall)
                 .foregroundStyle(AppStyle.Colors.warning)
-                .padding(.top, 2)
+                .padding(.top, AppStyle.Spacing.micro)
 
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: AppStyle.Spacing.tiny) {
                 Text("Finish one before pulling another.")
                     .font(AppStyle.Typography.statusLabelHighlighted)
-                    .foregroundStyle(.primary)
+                    .foregroundStyle(AppStyle.Colors.primaryText)
 
                 Text("Your active lane is full. Review In Progress work before starting from To Do.")
                     .font(AppStyle.Typography.cardDate)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(AppStyle.Colors.secondaryText)
                     .fixedSize(horizontal: false, vertical: true)
             }
 
             Spacer()
         }
-        .padding(14)
-        .background(AppStyle.Colors.warning.opacity(0.10), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .padding(AppStyle.Spacing.compactCardPadding)
+        .background(AppStyle.Colors.warning.opacity(AppStyle.Opacity.accentWash), in: RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
         .overlay(
-            RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .stroke(AppStyle.Colors.warning.opacity(0.18), lineWidth: 1)
+            RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous)
+                .stroke(AppStyle.Colors.warning.opacity(AppStyle.Opacity.accentBorderStrong), lineWidth: AppStyle.Shapes.emphasizedBorderWidth)
         )
     }
 
@@ -149,8 +149,8 @@ private struct StatusPicker: View {
         .tint(tintColor(for: selection))
         .controlSize(.large)
         .labelsHidden()
-        .padding(6)
-        .glassEffect(.regular.tint(Color.white.opacity(0.04)), in: Capsule())
+        .padding(AppStyle.Spacing.tight)
+        .glassEffect(.regular.tint(AppStyle.Colors.glassTint), in: Capsule())
         .glassEffectID("status-picker", in: glassNamespace)
     }
 
