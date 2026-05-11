@@ -1,7 +1,6 @@
 import SwiftUI
 struct DashboardView: View {
     let allTasks: [TaskItem]
-    var onAddTask: (() -> Void)? = nil
     var onSelectStatus: ((TaskStatus) -> Void)? = nil
     
     @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = true
@@ -134,19 +133,6 @@ struct DashboardView: View {
         .contentMargins(.bottom, AppStyle.Spacing.extraLarge, for: .scrollContent)
         .navigationTitle("Dashboard")
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button {
-                    onAddTask?()
-                } label: {
-                    Image(systemName: "plus")
-                        .font(AppStyle.Typography.bodyLarge)
-                        .foregroundStyle(AppStyle.Colors.Status.todo)
-                        .frame(width: AppStyle.Shapes.buttonSizeMedium, height: AppStyle.Shapes.buttonSizeMedium)
-                }
-                .buttonStyle(.glass)
-            }
-        }
     }
 
     // MARK: - Empty State

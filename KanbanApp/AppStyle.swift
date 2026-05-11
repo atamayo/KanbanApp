@@ -98,6 +98,10 @@ enum AppStyle {
             light: UIColor(white: 0, alpha: 0.12)
         )
         static let checkmark = Color.green
+        static let doneAccent = dynamic(
+            dark: UIColor(red: 0.44, green: 0.84, blue: 0.62, alpha: 1),
+            light: UIColor(red: 0.18, green: 0.58, blue: 0.38, alpha: 1)
+        )
         static let warning = dynamic(
             dark: UIColor(red: 1.0, green: 0.4, blue: 0.0, alpha: 1),
             light: UIColor(red: 0.9, green: 0.3, blue: 0.0, alpha: 1)

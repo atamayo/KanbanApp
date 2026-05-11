@@ -1,5 +1,6 @@
-import SwiftUI
 import SwiftData
+import PhotosUI
+import SwiftUI
 
 struct AddTaskView: View {
     let status: TaskStatus
@@ -10,9 +11,14 @@ struct AddTaskView: View {
     @State private var description = ""
     @State private var completionCriteria = ""
     @State private var priority: TaskPriority = .medium
+    @State private var selectedQuickCapturePhoto: PhotosPickerItem?
     @State private var isGeneratingQuickCapture = false
+    @State private var isImportingQuickCapturePhoto = false
     @State private var quickCaptureMessage: String?
+    @State private var quickCaptureDraftMessage: String?
     @State private var showingWIPLimitAlert = false
+    @State private var showingQuickCaptureSheet = false
+    @State private var showingPhotoPicker = false
     @FocusState private var focusedField: Field?
     @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = true
     @AppStorage("maxActiveTasks") private var maxActiveTasks = 3
@@ -34,7 +40,6 @@ struct AddTaskView: View {
             
             ScrollView {
                 VStack(spacing: AppStyle.Spacing.extraLarge) {
-                    quickCaptureSection
                     titleSection
                     descriptionSection
                     completionCriteriaSection
@@ -44,78 +49,39 @@ struct AddTaskView: View {
                 .padding(AppStyle.Spacing.extraLarge)
             }
             
-            createButton
+            bottomActionBar
                 .padding(AppStyle.Spacing.extraLarge)
         }
         .background(AppStyle.Colors.background)
         .onAppear { focusedField = .title }
+        .task(id: selectedQuickCapturePhoto) {
+            guard let selectedQuickCapturePhoto else { return }
+            await importQuickCapturePhoto(selectedQuickCapturePhoto)
+        }
+        .photosPicker(
+            isPresented: $showingPhotoPicker,
+            selection: $selectedQuickCapturePhoto,
+            matching: .images
+        )
+        .sheet(isPresented: $showingQuickCaptureSheet) {
+            QuickCaptureDraftSheet(
+                text: $quickCaptureText,
+                message: quickCaptureDraftMessage,
+                isAvailable: isQuickCaptureAvailable,
+                unavailableMessage: quickCaptureUnavailableMessage,
+                isGenerating: isGeneratingQuickCapture
+            ) {
+                await generateTaskDraft()
+            }
+            .presentationDetents([.medium, .large])
+            .presentationDragIndicator(.visible)
+        }
         .customAlert(
             isPresented: $showingWIPLimitAlert,
             iconName: "brain.head.profile",
             title: "WIP Limit Reached",
             message: "Personal Kanban recommends a WIP limit of 2 or 3 to minimize context-switching and finish tasks faster. Finish or move an active task before adding another In Progress task."
         )
-    }
-
-    private var quickCaptureSection: some View {
-        VStack(alignment: .leading, spacing: AppStyle.Spacing.medium) {
-            HStack(alignment: .center) {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("Quick Capture AI")
-                        .font(AppStyle.Typography.sectionTitle)
-                        .foregroundStyle(.secondary)
-                        .tracking(AppStyle.Typography.sectionTracking)
-
-                    Text("Paste a messy thought and turn it into a clean task draft.")
-                        .font(AppStyle.Typography.guidanceFooter)
-                        .foregroundStyle(.secondary)
-                }
-
-                Spacer()
-
-                Button {
-                    Task { await generateTaskDraft() }
-                } label: {
-                    HStack(spacing: 8) {
-                        if isGeneratingQuickCapture {
-                            ProgressView()
-                                .controlSize(.small)
-                        } else {
-                            Image(systemName: "apple.intelligence")
-                        }
-
-                        Text(isGeneratingQuickCapture ? "Thinking…" : "Generate")
-                    }
-                    .font(.subheadline.weight(.semibold))
-                    .frame(minWidth: 118)
-                }
-                .buttonStyle(.glass)
-                .disabled(quickCaptureText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || isGeneratingQuickCapture || !isQuickCaptureAvailable)
-            }
-
-            TextField("Paste notes, a brain dump, or a rough idea…", text: $quickCaptureText, axis: .vertical)
-                .font(.body)
-                .lineLimit(4...8)
-                .padding(AppStyle.Spacing.normal)
-                .background(AppStyle.Colors.surface)
-                .clipShape(RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
-                .overlay(
-                    RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous)
-                        .stroke(AppStyle.Colors.surfaceBorder, lineWidth: AppStyle.Shapes.borderWidth)
-                )
-
-            if let quickCaptureMessage {
-                Text(quickCaptureMessage)
-                    .font(AppStyle.Typography.guidanceFooter)
-                    .foregroundStyle(isQuickCaptureAvailable ? .secondary : AppStyle.Colors.warning)
-                    .fixedSize(horizontal: false, vertical: true)
-            } else if !isQuickCaptureAvailable, let unavailableMessage = quickCaptureUnavailableMessage {
-                Text(unavailableMessage)
-                    .font(AppStyle.Typography.guidanceFooter)
-                    .foregroundStyle(AppStyle.Colors.warning)
-                    .fixedSize(horizontal: false, vertical: true)
-            }
-        }
     }
 
     private var header: some View {
@@ -259,29 +225,86 @@ struct AddTaskView: View {
         .clipShape(RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
     }
 
+    private var bottomActionBar: some View {
+        VStack(alignment: .leading, spacing: AppStyle.Spacing.medium) {
+            if isImportingQuickCapturePhoto {
+                HStack(spacing: AppStyle.Spacing.small) {
+                    ProgressView()
+                        .controlSize(.small)
+                    Text("Extracting text from image…")
+                        .font(AppStyle.Typography.guidanceFooter)
+                        .foregroundStyle(.secondary)
+                }
+            } else if let quickCaptureMessage {
+                Text(quickCaptureMessage)
+                    .font(AppStyle.Typography.guidanceFooter)
+                    .foregroundStyle(quickCaptureMessageColor)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+
+            HStack(spacing: AppStyle.Spacing.medium) {
+                captureMenu
+                createButton
+            }
+        }
+    }
+
+    private var captureMenu: some View {
+        Menu {
+            Button {
+                quickCaptureDraftMessage = nil
+                showingQuickCaptureSheet = true
+            } label: {
+                Label("Paste Note", systemImage: "square.and.pencil")
+            }
+
+            Button {
+                showingPhotoPicker = true
+            } label: {
+                Label("Import Photo", systemImage: "photo.on.rectangle.angled")
+            }
+        } label: {
+            HStack(spacing: AppStyle.Spacing.small) {
+                Image(systemName: "wand.and.stars")
+                Text("Capture")
+            }
+            .font(.headline)
+            .frame(height: AppStyle.Shapes.fabSize)
+            .padding(.horizontal, AppStyle.Spacing.normal)
+            .frame(minWidth: 132)
+        }
+        .buttonStyle(.glass)
+        .disabled(isGeneratingQuickCapture || isImportingQuickCapturePhoto)
+    }
+
     private var createButton: some View {
         Button {
             addTask()
         } label: {
-            Text("Create Task")
-                .font(.headline)
-                .foregroundStyle(.white)
-                .frame(maxWidth: .infinity)
-                .frame(height: AppStyle.Shapes.fabSize)
-                .background(isValid ? AppStyle.Colors.Status.todo : Color.gray.opacity(0.3))
-                .clipShape(RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius, style: .continuous))
-                .shadow(
-                    color: (isValid ? AppStyle.Colors.Status.todo : Color.clear).opacity(0.3),
-                    radius: AppStyle.Shapes.fabShadowRadius,
-                    x: AppStyle.Spacing.none,
-                    y: AppStyle.Shapes.fabShadowY
-                )
+            HStack(spacing: AppStyle.Spacing.small) {
+                Image(systemName: "text.badge.plus")
+                    .font(.headline.weight(.semibold))
+
+                Text("Create Task")
+                    .font(.headline)
+            }
+            .frame(maxWidth: .infinity)
+            .frame(height: AppStyle.Shapes.fabSize)
         }
+        .tint(isValid ? AppStyle.Colors.Status.todo : Color.gray.opacity(0.55))
+        .buttonStyle(.glass)
         .disabled(!isValid)
     }
 
     private var quickCaptureAvailability: QuickCaptureAvailability {
         QuickCaptureTaskGenerator.availability
+    }
+
+    private var quickCaptureMessageColor: Color {
+        if quickCaptureMessage?.hasPrefix("Photo imported.") == true || quickCaptureMessage?.hasPrefix("Draft generated.") == true {
+            return AppStyle.Colors.doneAccent
+        }
+        return isQuickCaptureAvailable ? .secondary : AppStyle.Colors.warning
     }
 
     private var isQuickCaptureAvailable: Bool {
@@ -332,38 +355,84 @@ struct AddTaskView: View {
         let cleanedText = quickCaptureText.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !cleanedText.isEmpty else { return }
         guard isQuickCaptureAvailable else {
-            quickCaptureMessage = quickCaptureUnavailableMessage
+            quickCaptureDraftMessage = quickCaptureUnavailableMessage
             return
         }
 
         isGeneratingQuickCapture = true
-        quickCaptureMessage = nil
+        quickCaptureDraftMessage = nil
 
         defer { isGeneratingQuickCapture = false }
 
         do {
             let draft = try await QuickCaptureTaskGenerator.generate(from: cleanedText)
-            title = draft.title.trimmingCharacters(in: .whitespacesAndNewlines)
+            applyTaskDraft(draft, message: "Draft generated. Review and adjust before creating the task.")
+            showingQuickCaptureSheet = false
+        } catch {
+            quickCaptureDraftMessage = "Quick Capture AI couldn’t generate a draft right now. Try shortening the note and retry."
+        }
+    }
 
-            let cleanedDescription = draft.taskDescription.trimmingCharacters(in: .whitespacesAndNewlines)
-            let cleanedNextAction = draft.nextAction.trimmingCharacters(in: .whitespacesAndNewlines)
-            let cleanedDone = draft.definitionOfDone.trimmingCharacters(in: .whitespacesAndNewlines)
+    @MainActor
+    private func importQuickCapturePhoto(_ item: PhotosPickerItem) async {
+        isImportingQuickCapturePhoto = true
+        quickCaptureMessage = nil
+        quickCaptureDraftMessage = nil
 
-            if cleanedDescription.isEmpty {
-                description = cleanedNextAction.isEmpty ? "" : "Next action: \(cleanedNextAction)"
-            } else if cleanedNextAction.isEmpty {
-                description = cleanedDescription
-            } else {
-                description = "\(cleanedDescription)\n\nNext action: \(cleanedNextAction)"
+        defer {
+            isImportingQuickCapturePhoto = false
+            selectedQuickCapturePhoto = nil
+        }
+
+        do {
+            guard let imageData = try await item.loadTransferable(type: Data.self) else {
+                quickCaptureMessage = "The selected image could not be loaded."
+                return
             }
 
-            completionCriteria = cleanedDone
-            priority = QuickCaptureTaskGenerator.taskPriority(from: draft.priority)
-            focusedField = .title
-            quickCaptureMessage = "Draft generated. Review and adjust before creating the task."
+            let extractedText = try await ImageTextExtractionService.extractText(from: imageData)
+            quickCaptureText = extractedText
+            quickCaptureDraftMessage = "Photo imported. Review the extracted text or generate a draft."
+
+            guard isQuickCaptureAvailable else {
+                showingQuickCaptureSheet = true
+                quickCaptureMessage = "Photo imported. Text extracted. Apple Intelligence is unavailable, so review it manually."
+                return
+            }
+
+            isGeneratingQuickCapture = true
+            defer { isGeneratingQuickCapture = false }
+
+            let draft = try await QuickCaptureTaskGenerator.generate(from: extractedText)
+            applyTaskDraft(draft, message: "Photo imported. Draft generated from the extracted text.")
+        } catch let error as ImageTextExtractionError {
+            quickCaptureMessage = error.localizedDescription
         } catch {
-            quickCaptureMessage = "Quick Capture AI couldn’t generate a draft right now. Try shortening the note and retry."
+            quickCaptureMessage = "The image text was extracted, but the AI draft couldn’t be generated right now. Review it and generate again."
+            showingQuickCaptureSheet = true
         }
+    }
+
+    @MainActor
+    private func applyTaskDraft(_ draft: QuickCaptureTaskDraft, message: String) {
+        title = draft.title.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        let cleanedDescription = draft.taskDescription.trimmingCharacters(in: .whitespacesAndNewlines)
+        let cleanedNextAction = draft.nextAction.trimmingCharacters(in: .whitespacesAndNewlines)
+        let cleanedDone = draft.definitionOfDone.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        if cleanedDescription.isEmpty {
+            description = cleanedNextAction.isEmpty ? "" : "Next action: \(cleanedNextAction)"
+        } else if cleanedNextAction.isEmpty {
+            description = cleanedDescription
+        } else {
+            description = "\(cleanedDescription)\n\nNext action: \(cleanedNextAction)"
+        }
+
+        completionCriteria = cleanedDone
+        priority = QuickCaptureTaskGenerator.taskPriority(from: draft.priority)
+        focusedField = .title
+        quickCaptureMessage = message
     }
 
     private var statusColor: Color {
@@ -387,6 +456,90 @@ struct AddTaskView: View {
         case .high: return AppStyle.Colors.Priority.high
         case .medium: return AppStyle.Colors.Priority.medium
         case .low: return AppStyle.Colors.Priority.low
+        }
+    }
+}
+
+private struct QuickCaptureDraftSheet: View {
+    @Binding var text: String
+    let message: String?
+    let isAvailable: Bool
+    let unavailableMessage: String?
+    let isGenerating: Bool
+    let onGenerate: @MainActor () async -> Void
+    @Environment(\.dismiss) private var dismiss
+    @FocusState private var isTextFocused: Bool
+
+    private var canGenerate: Bool {
+        isAvailable && !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && !isGenerating
+    }
+
+    var body: some View {
+        NavigationStack {
+            VStack(alignment: .leading, spacing: AppStyle.Spacing.large) {
+                VStack(alignment: .leading, spacing: AppStyle.Spacing.small) {
+                    Text("Quick Capture")
+                        .font(AppStyle.Typography.compactHeaderTitle)
+
+                    Text("Paste a note, email, or rough thought and turn it into a clean task draft.")
+                        .font(AppStyle.Typography.formFooter)
+                        .foregroundStyle(.secondary)
+                }
+
+                TextField("Paste a note or messy thought…", text: $text, axis: .vertical)
+                    .font(.body)
+                    .lineLimit(8...14)
+                    .padding(AppStyle.Spacing.normal)
+                    .background(AppStyle.Colors.surface)
+                    .clipShape(RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous)
+                            .stroke(AppStyle.Colors.surfaceBorder, lineWidth: AppStyle.Shapes.borderWidth)
+                    )
+                    .focused($isTextFocused)
+
+                if let message {
+                    Text(message)
+                        .font(AppStyle.Typography.guidanceFooter)
+                        .foregroundStyle(message.hasPrefix("Draft generated.") ? AppStyle.Colors.doneAccent : .secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                } else if !isAvailable, let unavailableMessage {
+                    Text(unavailableMessage)
+                        .font(AppStyle.Typography.guidanceFooter)
+                        .foregroundStyle(AppStyle.Colors.warning)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+
+                Spacer(minLength: 0)
+            }
+            .padding(AppStyle.Spacing.extraLarge)
+            .background(AppStyle.Colors.background)
+            .navigationTitle("Paste Note")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button("Cancel") {
+                        dismiss()
+                    }
+                }
+
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        Task { await onGenerate() }
+                    } label: {
+                        if isGenerating {
+                            ProgressView()
+                                .controlSize(.small)
+                        } else {
+                            Text("Generate Draft")
+                        }
+                    }
+                    .disabled(!canGenerate)
+                }
+            }
+            .onAppear {
+                isTextFocused = true
+            }
         }
     }
 }

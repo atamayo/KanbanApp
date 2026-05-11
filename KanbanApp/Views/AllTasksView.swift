@@ -5,7 +5,6 @@ struct AllTasksView: View {
     @Environment(\.modelContext) private var modelContext
     let allTasks: [TaskItem]
     @Binding var selectedSegment: TaskStatus
-    var onAddTask: (() -> Void)? = nil
     
     @State private var selectedTask: TaskItem?
     @Namespace private var glassChromeNamespace
@@ -71,20 +70,6 @@ struct AllTasksView: View {
         .scrollEdgeEffectStyle(.soft, for: .all)
         .navigationTitle("All Tasks")
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button {
-                    onAddTask?()
-                } label: {
-                    Image(systemName: "plus")
-                        .font(AppStyle.Typography.bodyLarge)
-                        .foregroundStyle(AppStyle.Colors.Status.todo)
-                        .frame(width: AppStyle.Shapes.buttonSizeMedium, height: AppStyle.Shapes.buttonSizeMedium)
-                }
-                .buttonStyle(.glass)
-                .opacity(selectedSegment == .todo && isWIPLimitReached ? 0.65 : 1.0)
-            }
-        }
         .sheet(item: $selectedTask) { task in
             TaskDetailView(task: task)
                 .presentationSizing(.form)
