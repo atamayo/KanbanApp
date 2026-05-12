@@ -2,6 +2,11 @@ import SwiftUI
 import SwiftData
 
 struct TaskCardView: View {
+    enum SwipeConfiguration {
+        case disabled
+        case listStatusActions
+    }
+
     private enum FlowState {
         case ready
         case blocked
@@ -38,6 +43,7 @@ struct TaskCardView: View {
 
     let task: TaskItem
     let onSelect: (TaskItem) -> Void
+    let swipeConfiguration: SwipeConfiguration
     @Environment(\.modelContext) private var modelContext
     @State private var lastMovedStatus: TaskStatus?
     @State private var isDragging = false
@@ -48,6 +54,16 @@ struct TaskCardView: View {
     @AppStorage("maxActiveTasks") private var maxActiveTasks = 3
     @AppStorage("wipLimitHitCount") private var wipLimitHitCount = 0
     @Query(filter: #Predicate<TaskItem> { $0.statusRaw == "In Progress" }) private var inProgressTasks: [TaskItem]
+
+    init(
+        task: TaskItem,
+        onSelect: @escaping (TaskItem) -> Void,
+        swipeConfiguration: SwipeConfiguration = .disabled
+    ) {
+        self.task = task
+        self.onSelect = onSelect
+        self.swipeConfiguration = swipeConfiguration
+    }
 
     private var statusColor: Color {
         switch task.status {
@@ -182,6 +198,9 @@ struct TaskCardView: View {
                 title: "WIP Limit Reached",
                 message: "Personal Kanban recommends a WIP limit of 2 or 3 to minimize context-switching and finish tasks faster. Finish or move an active task before moving another task into In Progress."
             )
+            .taskCardSwipeActions(configuration: swipeConfiguration, task: task) { status in
+                performStatusTransition(to: status)
+            }
     }
 
     private var mainContent: some View {
@@ -333,24 +352,21 @@ struct TaskCardView: View {
         Divider()
         if task.status != .todo {
             Button {
-                move(.todo)
-                lastMovedStatus = .todo
+                performStatusTransition(to: .todo)
             } label: {
                 Label("Move to To Do", systemImage: "arrow.left")
             }
         }
         if task.status != .inProgress {
             Button {
-                move(.inProgress)
-                lastMovedStatus = .inProgress
+                performStatusTransition(to: .inProgress)
             } label: {
                 Label("Move to In Progress", systemImage: "arrow.right")
             }
         }
         if task.status != .done {
             Button {
-                move(.done)
-                lastMovedStatus = .done
+                performStatusTransition(to: .done)
             } label: {
                 Label("Mark Done", systemImage: "checkmark")
             }
@@ -363,28 +379,28 @@ struct TaskCardView: View {
         }
     }
 
-    private func move(_ status: TaskStatus) {
+    private func performStatusTransition(to status: TaskStatus) {
+        guard task.status != status else { return }
+
         if status == .inProgress && isFocusGuardEnabled && inProgressTasks.count >= maxActiveTasks {
             triggerLimitFeedback()
             return
         }
-        
+
+        let previousStatus = task.status
+        let destinationOrder = nextOrder(for: status)
         task.status = status
+        task.order = destinationOrder
         task.updatedAt = Date()
+        reorderTasks(in: previousStatus)
+        reorderTasks(in: status)
+        lastMovedStatus = status
         try? modelContext.save()
     }
 
     private func toggleCompletion() {
         let newStatus: TaskStatus = task.status == .done ? .todo : .done
-        
-        if newStatus == .inProgress && isFocusGuardEnabled && inProgressTasks.count >= maxActiveTasks {
-            triggerLimitFeedback()
-            return
-        }
-
-        task.status = newStatus
-        task.updatedAt = Date()
-        try? modelContext.save()
+        performStatusTransition(to: newStatus)
     }
 
     private func triggerLimitFeedback() {
@@ -407,11 +423,111 @@ struct TaskCardView: View {
         try? modelContext.save()
     }
 
+    private func nextOrder(for status: TaskStatus) -> Int {
+        let descriptor = FetchDescriptor<TaskItem>()
+        let allTasks = (try? modelContext.fetch(descriptor)) ?? []
+
+        return allTasks
+            .filter { $0.status == status && $0.id != task.id }
+            .count
+    }
+
+    private func reorderTasks(in status: TaskStatus) {
+        let descriptor = FetchDescriptor<TaskItem>()
+        let allTasks = (try? modelContext.fetch(descriptor)) ?? []
+        let sortedTasks = allTasks
+            .filter { $0.status == status }
+            .sorted { lhs, rhs in
+                if lhs.priority.sortOrder != rhs.priority.sortOrder {
+                    return lhs.priority.sortOrder < rhs.priority.sortOrder
+                }
+                if lhs.order != rhs.order {
+                    return lhs.order < rhs.order
+                }
+                return lhs.createdAt < rhs.createdAt
+            }
+
+        for (index, item) in sortedTasks.enumerated() {
+            item.order = index
+        }
+    }
+
     private func priorityIconName(_ priority: TaskPriority) -> String {
         switch priority {
         case .high: return "exclamationmark.circle.fill"
         case .medium: return "minus.circle.fill"
         case .low: return "arrow.down.circle.fill"
         }
+    }
+}
+
+private extension View {
+    @ViewBuilder
+    func taskCardSwipeActions(
+        configuration: TaskCardView.SwipeConfiguration,
+        task: TaskItem,
+        onMove: @escaping (TaskStatus) -> Void
+    ) -> some View {
+#if os(iOS)
+        switch configuration {
+        case .disabled:
+            self
+        case .listStatusActions:
+            self
+                .swipeActions(edge: .leading, allowsFullSwipe: task.status != .done) {
+                    switch task.status {
+                    case .todo:
+                        Button {
+                            onMove(.inProgress)
+                        } label: {
+                            Label("Move to In Progress", systemImage: "arrow.right.circle")
+                        }
+                        .tint(AppStyle.Colors.Status.inProgress)
+
+                    case .inProgress:
+                        Button {
+                            onMove(.done)
+                        } label: {
+                            Label("Mark Done", systemImage: "checkmark.circle")
+                        }
+                        .tint(AppStyle.Colors.Status.done)
+
+                    case .done:
+                        EmptyView()
+                    }
+                }
+                .swipeActions(edge: .trailing, allowsFullSwipe: task.status == .inProgress) {
+                    switch task.status {
+                    case .todo:
+                        EmptyView()
+
+                    case .inProgress:
+                        Button {
+                            onMove(.todo)
+                        } label: {
+                            Label("Move to To Do", systemImage: "arrow.left.circle")
+                        }
+                        .tint(AppStyle.Colors.Status.todo)
+
+                    case .done:
+                        Button {
+                            onMove(.todo)
+                        } label: {
+                            Label("Move to To Do", systemImage: "arrow.left.circle")
+                        }
+                        .tint(AppStyle.Colors.Status.todo)
+
+                        Button {
+                            onMove(.inProgress)
+                        } label: {
+                            Label("Move to In Progress", systemImage: "arrow.right.circle")
+                        }
+                        .tint(AppStyle.Colors.Status.inProgress)
+                    }
+                }
+        }
+#else
+        self
+#endif
     }
 }

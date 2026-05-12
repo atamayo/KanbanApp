@@ -52,7 +52,11 @@ struct AllTasksView: View {
             } else {
                 List {
                     ForEach(filteredTasks) { task in
-                        TaskCardView(task: task, onSelect: { selectedTask = $0 })
+                        TaskCardView(
+                            task: task,
+                            onSelect: { selectedTask = $0 },
+                            swipeConfiguration: .listStatusActions
+                        )
                             .listRowInsets(EdgeInsets(top: AppStyle.Spacing.tiny, leading: AppStyle.Spacing.cardPadding, bottom: AppStyle.Spacing.tiny, trailing: AppStyle.Spacing.cardPadding))
                             .listRowSeparator(.hidden)
                             .listRowBackground(AppStyle.Colors.clear)
