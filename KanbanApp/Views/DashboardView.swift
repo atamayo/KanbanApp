@@ -10,10 +10,14 @@ struct DashboardView: View {
 
     // MARK: - Data
 
-    private var totalCount: Int { allTasks.count }
-    private var doneCount: Int { allTasks.filter { $0.status == .done }.count }
-    private var inProgressCount: Int { allTasks.filter { $0.status == .inProgress }.count }
-    private var todoCount: Int { allTasks.filter { $0.status == .todo }.count }
+    private var currentTasks: [TaskItem] {
+        allTasks.filter { !$0.isArchived }
+    }
+
+    private var totalCount: Int { currentTasks.count }
+    private var doneCount: Int { currentTasks.filter { $0.status == .done }.count }
+    private var inProgressCount: Int { currentTasks.filter { $0.status == .inProgress }.count }
+    private var todoCount: Int { currentTasks.filter { $0.status == .todo }.count }
 
     private var donePercent: Double {
         guard totalCount > 0 else { return 0 }
@@ -21,7 +25,7 @@ struct DashboardView: View {
     }
 
     private func count(priority: TaskPriority) -> Int {
-        allTasks.filter { $0.priority == priority }.count
+        currentTasks.filter { $0.priority == priority }.count
     }
 
     private var maxPriorityCount: Int {
@@ -29,21 +33,21 @@ struct DashboardView: View {
     }
 
     private var oldestInProgressTask: TaskItem? {
-        allTasks
+        currentTasks
             .filter { $0.status == .inProgress && !$0.isBlocked }
             .sorted { $0.lastStatusChange < $1.lastStatusChange }
             .first
     }
 
     private var blockedInProgressTask: TaskItem? {
-        allTasks
+        currentTasks
             .filter { $0.status == .inProgress && $0.isBlocked }
             .sorted { $0.updatedAt < $1.updatedAt }
             .first
     }
 
     private var nextPullTask: TaskItem? {
-        allTasks
+        currentTasks
             .filter { $0.status == .todo }
             .sorted { lhs, rhs in
                 if lhs.priority.sortOrder != rhs.priority.sortOrder {
@@ -55,7 +59,7 @@ struct DashboardView: View {
     }
 
     private var agingInProgressTasks: [TaskItem] {
-        allTasks
+        currentTasks
             .filter {
                 $0.status == .inProgress &&
                 !$0.isBlocked &&
@@ -66,7 +70,7 @@ struct DashboardView: View {
     }
 
     private var stalledInProgressTasks: [TaskItem] {
-        allTasks
+        currentTasks
             .filter {
                 $0.status == .inProgress &&
                 !$0.isBlocked &&
@@ -83,7 +87,7 @@ struct DashboardView: View {
     }
 
     private var tasksWithCompletionCriteria: Int {
-        allTasks.filter { !$0.completionCriteria.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }.count
+        currentTasks.filter { !$0.completionCriteria.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }.count
     }
 
     private var doneTasksWithCycleTime: [TaskItem] {
@@ -110,7 +114,7 @@ struct DashboardView: View {
                     prioritySection
                     
                     WIPView(
-                        allTasks: allTasks,
+                        allTasks: currentTasks,
                         maxActiveTasks: maxActiveTasks,
                         isFocusGuardEnabled: isFocusGuardEnabled,
                         onReviewActiveTasks: { onSelectStatus?(.inProgress) },
@@ -478,7 +482,7 @@ struct DashboardView: View {
             VStack(spacing: AppStyle.Spacing.statusRowGap) {
                 flowReviewCard(
                     title: "Blocked Work",
-                    count: blockedInProgressTask == nil ? 0 : allTasks.filter { $0.status == .inProgress && $0.isBlocked }.count,
+                    count: blockedInProgressTask == nil ? 0 : currentTasks.filter { $0.status == .inProgress && $0.isBlocked }.count,
                     tint: AppStyle.Colors.blocked,
                     icon: "pause.circle.fill",
                     description: blockedInProgressTask == nil ? "No active blockers right now." : "Blocked tasks need attention before more work is pulled."

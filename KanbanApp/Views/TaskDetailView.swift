@@ -101,8 +101,43 @@ struct TaskDetailView: View {
                             .foregroundStyle(AppStyle.Colors.secondaryText)
                         }
                     }
+                    if let archivedAt = task.archivedAt {
+                        HStack {
+                            Label("Archived", systemImage: "archivebox")
+                            Spacer()
+                            VStack(alignment: .trailing, spacing: AppStyle.Spacing.tiny) {
+                                Text(archivedAt, style: .date)
+                                Text(archivedAt, style: .time)
+                            }
+                            .foregroundStyle(AppStyle.Colors.secondaryText)
+                        }
+                    }
                 } header: {
                     Label("Info", systemImage: "info.circle")
+                }
+                if task.status == .done {
+                    Section {
+                        if task.isArchived {
+                            Button {
+                                task.restoreFromArchive()
+                                try? task.modelContext?.save()
+                            } label: {
+                                Label("Restore from Archive", systemImage: "archivebox")
+                            }
+                        } else {
+                            Button {
+                                task.archive()
+                                try? task.modelContext?.save()
+                                dismiss()
+                            } label: {
+                                Label("Archive Completed Task", systemImage: "archivebox.fill")
+                            }
+                        }
+                    } header: {
+                        Label("Archive", systemImage: "archivebox")
+                    } footer: {
+                        Text("Archived Done tasks leave the active board but still count toward completion history.")
+                    }
                 }
                 Section {
                     Button(role: .destructive) {

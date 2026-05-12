@@ -7,6 +7,7 @@ struct AllTasksView: View {
     @Binding var selectedSegment: TaskStatus
     
     @State private var selectedTask: TaskItem?
+    @State private var isShowingArchivedDone = false
     @Namespace private var glassChromeNamespace
     @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = true
     @AppStorage("maxActiveTasks") private var maxActiveTasks = 3
@@ -14,7 +15,11 @@ struct AllTasksView: View {
     private var filteredTasks: [TaskItem] {
         allTasks
             .filter { task in
-                task.status == selectedSegment
+                guard task.status == selectedSegment else { return false }
+                if selectedSegment == .done {
+                    return task.isArchived == isShowingArchivedDone
+                }
+                return !task.isArchived
             }
             .sorted { a, b in
                 if a.order != b.order {
@@ -25,7 +30,15 @@ struct AllTasksView: View {
     }
 
     private var inProgressCount: Int {
-        allTasks.filter { $0.status == .inProgress }.count
+        allTasks.filter { $0.status == .inProgress && !$0.isArchived }.count
+    }
+
+    private var currentDoneCount: Int {
+        allTasks.filter { $0.status == .done && !$0.isArchived }.count
+    }
+
+    private var archivedDoneCount: Int {
+        allTasks.filter { $0.status == .done && $0.isArchived }.count
     }
 
     private var isWIPLimitReached: Bool {
@@ -43,6 +56,12 @@ struct AllTasksView: View {
 
             if selectedSegment == .todo && isWIPLimitReached {
                 finishFirstBanner
+                    .padding(.horizontal, AppStyle.Spacing.normal)
+                    .padding(.bottom, AppStyle.Spacing.small)
+            }
+
+            if selectedSegment == .done {
+                doneArchiveFilter
                     .padding(.horizontal, AppStyle.Spacing.normal)
                     .padding(.bottom, AppStyle.Spacing.small)
             }
@@ -89,12 +108,31 @@ struct AllTasksView: View {
             Text("No tasks")
                 .font(AppStyle.Typography.emptyTitle)
                 .foregroundStyle(AppStyle.Colors.primaryText)
-            Text("No tasks in this status")
+            Text(emptyStateMessage)
                 .font(AppStyle.Typography.emptySubtitle)
                 .foregroundStyle(AppStyle.Colors.secondaryText)
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+
+    private var emptyStateMessage: String {
+        if selectedSegment == .done && isShowingArchivedDone {
+            return "No archived Done tasks yet"
+        }
+        return "No tasks in this status"
+    }
+
+    private var doneArchiveFilter: some View {
+        Picker("Done Filter", selection: $isShowingArchivedDone) {
+            Text("Current \(currentDoneCount)")
+                .tag(false)
+            Text("Archived \(archivedDoneCount)")
+                .tag(true)
+        }
+        .pickerStyle(.segmented)
+        .tint(AppStyle.Colors.Status.done)
+        .accessibilityLabel("Done task filter")
     }
 
     private var finishFirstBanner: some View {

@@ -45,6 +45,7 @@ final class TaskItem {
     var createdAt: Date
     var updatedAt: Date
     var finalizedAt: Date?
+    var archivedAt: Date?
     var enteredInProgressAt: Date?
     var order: Int
 
@@ -54,6 +55,7 @@ final class TaskItem {
         set { 
             if statusRaw != newValue.rawValue {
                 statusRaw = newValue.rawValue 
+                archivedAt = nil
                 if newValue == .inProgress {
                     enteredInProgressAt = Date()
                 } else if newValue == .todo {
@@ -77,6 +79,21 @@ final class TaskItem {
         status == .inProgress && Date().timeIntervalSince(lastStatusChange) > (3 * 24 * 60 * 60)
     }
 
+    var isArchived: Bool {
+        archivedAt != nil
+    }
+
+    func archive() {
+        guard status == .done else { return }
+        archivedAt = Date()
+        updatedAt = Date()
+    }
+
+    func restoreFromArchive() {
+        guard archivedAt != nil else { return }
+        archivedAt = nil
+        updatedAt = Date()
+    }
 
     func timeInStatus() -> String {
         let diff = Date().timeIntervalSince(lastStatusChange)
@@ -103,6 +120,7 @@ final class TaskItem {
         self.updatedAt = Date()
         self.lastStatusChange = Date()
         self.enteredInProgressAt = status == .inProgress ? Date() : nil
+        self.archivedAt = nil
         self.order = order
         updateFinalizedAt(for: status)
     }

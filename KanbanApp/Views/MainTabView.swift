@@ -18,7 +18,7 @@ struct MainTabView: View {
     @State private var searchText = ""
 
     private var inProgressCount: Int {
-        allTasks.filter { $0.status == .inProgress }.count
+        allTasks.filter { $0.status == .inProgress && !$0.isArchived }.count
     }
 
     var body: some View {

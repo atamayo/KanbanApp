@@ -159,6 +159,10 @@ struct TaskCardView: View {
     }
 
     private var statusIconName: String {
+        if task.isArchived {
+            return "archivebox.fill"
+        }
+
         switch task.status {
         case .todo:
             return "circle.fill"
@@ -170,7 +174,10 @@ struct TaskCardView: View {
     }
 
     private var statusBadgeText: String {
-        task.status == .todo ? flowState.label : task.status.rawValue
+        if task.isArchived {
+            return "Archived"
+        }
+        return task.status == .todo ? flowState.label : task.status.rawValue
     }
 
     private var statusBadgeIcon: String {
@@ -186,6 +193,26 @@ struct TaskCardView: View {
     }
 
     private var metadataSummary: String {
+        if task.isArchived, let archivedAt = task.archivedAt {
+            let archivedAge = Date().timeIntervalSince(archivedAt)
+            let minutes = Int(archivedAge / 60)
+            let hours = Int(archivedAge / 3600)
+            let days = Int(archivedAge / 86400)
+            let duration: String
+
+            if days > 0 {
+                duration = "\(days)d"
+            } else if hours > 0 {
+                duration = "\(hours)h"
+            } else if minutes > 0 {
+                duration = "\(minutes)m"
+            } else {
+                duration = "now"
+            }
+
+            return "Archived \(duration) ago"
+        }
+
         switch task.status {
         case .todo:
             return "\(flowState.label), created \(flowDurationText) ago"
@@ -210,6 +237,10 @@ struct TaskCardView: View {
 
         if task.status == .done {
             parts.append("Completed")
+        }
+
+        if task.isArchived {
+            parts.append("Archived")
         }
 
         return parts.joined(separator: ", ")
@@ -261,6 +292,10 @@ struct TaskCardView: View {
             )
             .taskCardSwipeActions(configuration: swipeConfiguration, task: task) { status in
                 performStatusTransition(to: status)
+            } onArchive: {
+                archiveTask()
+            } onRestore: {
+                restoreTask()
             }
     }
 
@@ -438,6 +473,22 @@ struct TaskCardView: View {
             }
         }
         Divider()
+        if task.status == .done {
+            if task.isArchived {
+                Button {
+                    restoreTask()
+                } label: {
+                    Label("Restore from Archive", systemImage: "archivebox")
+                }
+            } else {
+                Button {
+                    archiveTask()
+                } label: {
+                    Label("Archive Completed Task", systemImage: "archivebox.fill")
+                }
+            }
+            Divider()
+        }
         Button(role: .destructive) {
             withAnimation { delete() }
         } label: {
@@ -484,12 +535,25 @@ struct TaskCardView: View {
         try? modelContext.save()
     }
 
+    private func archiveTask() {
+        task.archive()
+        reorderTasks(in: .done)
+        try? modelContext.save()
+    }
+
+    private func restoreTask() {
+        task.restoreFromArchive()
+        task.order = nextOrder(for: .done)
+        reorderTasks(in: .done)
+        try? modelContext.save()
+    }
+
     private func nextOrder(for status: TaskStatus) -> Int {
         let descriptor = FetchDescriptor<TaskItem>()
         let allTasks = (try? modelContext.fetch(descriptor)) ?? []
 
         return allTasks
-            .filter { $0.status == status && $0.id != task.id }
+            .filter { $0.status == status && !$0.isArchived && $0.id != task.id }
             .count
     }
 
@@ -497,7 +561,7 @@ struct TaskCardView: View {
         let descriptor = FetchDescriptor<TaskItem>()
         let allTasks = (try? modelContext.fetch(descriptor)) ?? []
         let sortedTasks = allTasks
-            .filter { $0.status == status }
+            .filter { $0.status == status && !$0.isArchived }
             .sorted { lhs, rhs in
                 if lhs.priority.sortOrder != rhs.priority.sortOrder {
                     return lhs.priority.sortOrder < rhs.priority.sortOrder
@@ -553,7 +617,9 @@ private extension View {
     func taskCardSwipeActions(
         configuration: TaskCardView.SwipeConfiguration,
         task: TaskItem,
-        onMove: @escaping (TaskStatus) -> Void
+        onMove: @escaping (TaskStatus) -> Void,
+        onArchive: @escaping () -> Void,
+        onRestore: @escaping () -> Void
     ) -> some View {
 #if os(iOS)
         switch configuration {
@@ -580,7 +646,21 @@ private extension View {
                         .tint(AppStyle.Colors.Status.done)
 
                     case .done:
-                        EmptyView()
+                        if task.isArchived {
+                            Button {
+                                onRestore()
+                            } label: {
+                                Label("Restore", systemImage: "archivebox")
+                            }
+                            .tint(AppStyle.Colors.Status.done)
+                        } else {
+                            Button {
+                                onArchive()
+                            } label: {
+                                Label("Archive", systemImage: "archivebox.fill")
+                            }
+                            .tint(AppStyle.Colors.secondaryText)
+                        }
                     }
                 }
                 .swipeActions(edge: .trailing, allowsFullSwipe: task.status == .inProgress) {
