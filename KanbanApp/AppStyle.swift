@@ -69,8 +69,8 @@ enum AppStyle {
                 light: UIColor(red: 0.75, green: 0.25, blue: 0.28, alpha: 1)
             )
             static let medium = dynamic(
-                dark: UIColor(red: 0.90, green: 0.60, blue: 0.30, alpha: 1),
-                light: UIColor(red: 0.80, green: 0.45, blue: 0.18, alpha: 1)
+                dark: UIColor(red: 0.88, green: 0.70, blue: 0.34, alpha: 1),
+                light: UIColor(red: 0.64, green: 0.49, blue: 0.18, alpha: 1)
             )
             static let low = dynamic(
                 dark: UIColor(red: 0.35, green: 0.68, blue: 0.72, alpha: 1),
