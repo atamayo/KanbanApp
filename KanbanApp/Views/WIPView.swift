@@ -18,13 +18,19 @@ struct WIPView: View {
     }
 
     private var wipAccentColor: Color {
-        if blockedInProgressTask != nil || isWIPLimitReached {
+        if blockedInProgressTask != nil {
+            return AppStyle.Colors.blocked
+        }
+        if isWIPLimitReached {
             return AppStyle.Colors.warning
         }
         return AppStyle.Colors.Status.inProgress
     }
 
     private var wipHeadline: String {
+        if blockedInProgressTask != nil {
+            return "Blocked work needs attention."
+        }
         if isWIPLimitReached {
             return "WIP full. Finish before you pull."
         }
@@ -57,6 +63,13 @@ struct WIPView: View {
             return "Best task to finish next"
         }
         return "Best task to pull next"
+    }
+
+    private var wipIconName: String {
+        if blockedInProgressTask != nil {
+            return "pause.circle.fill"
+        }
+        return isWIPLimitReached ? "flame.fill" : "scope"
     }
 
     private var spotlightTask: TaskItem? {
@@ -94,7 +107,7 @@ struct WIPView: View {
                             .fill(wipAccentColor.opacity(AppStyle.Opacity.accentWashSelected))
                             .frame(width: AppStyle.Shapes.iconBadgeLarge, height: AppStyle.Shapes.iconBadgeLarge)
 
-                        Image(systemName: isWIPLimitReached ? "flame.fill" : "scope")
+                        Image(systemName: wipIconName)
                             .font(AppStyle.Typography.iconHero)
                             .foregroundStyle(wipAccentColor)
                     }
@@ -121,7 +134,7 @@ struct WIPView: View {
                     statPill(
                         label: blockedInProgressTask != nil ? "Priority" : (isWIPLimitReached ? "Action" : "Slots Left"),
                         value: blockedInProgressTask != nil ? "Unblock" : (isWIPLimitReached ? "Finish 1" : "\(remainingWIPSlots)"),
-                        tint: blockedInProgressTask != nil ? AppStyle.Colors.warning : (isWIPLimitReached ? AppStyle.Colors.Status.done : AppStyle.Colors.Status.todo)
+                        tint: blockedInProgressTask != nil ? AppStyle.Colors.blocked : (isWIPLimitReached ? AppStyle.Colors.Status.done : AppStyle.Colors.Status.todo)
                     )
                 }
 

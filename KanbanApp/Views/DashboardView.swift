@@ -473,7 +473,7 @@ struct DashboardView: View {
                 flowReviewCard(
                     title: "Blocked Work",
                     count: blockedInProgressTask == nil ? 0 : allTasks.filter { $0.status == .inProgress && $0.isBlocked }.count,
-                    tint: AppStyle.Colors.warning,
+                    tint: AppStyle.Colors.blocked,
                     icon: "pause.circle.fill",
                     description: blockedInProgressTask == nil ? "No active blockers right now." : "Blocked tasks need attention before more work is pulled."
                 )

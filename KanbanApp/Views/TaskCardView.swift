@@ -88,7 +88,7 @@ struct TaskCardView: View {
     }
 
     private var metadataTint: Color {
-        task.isBlocked ? AppStyle.Colors.warning : flowColor
+        task.isBlocked ? AppStyle.Colors.blocked : flowColor
     }
 
     private var flowReferenceDate: Date {
@@ -133,7 +133,7 @@ struct TaskCardView: View {
         case .ready:
             return AppStyle.Colors.Status.todo
         case .blocked:
-            return AppStyle.Colors.warning
+            return AppStyle.Colors.blocked
         case .fresh:
             return AppStyle.Colors.Status.inProgress
         case .active:
@@ -178,7 +178,7 @@ struct TaskCardView: View {
     }
 
     private var statusBadgeTint: Color {
-        task.isBlocked ? AppStyle.Colors.warning : statusColor
+        task.isBlocked ? AppStyle.Colors.blocked : statusColor
     }
 
     private var priorityIconName: String {
@@ -216,7 +216,7 @@ struct TaskCardView: View {
     }
 
     private var accessibilityHintText: String {
-        "Double-tap to open details. Swipe or long press for actions. Drag with the handle to reorder."
+        "Double-tap to open details. Swipe or long press for actions. Drag the card to reorder."
     }
 
     var body: some View {
@@ -265,16 +265,10 @@ struct TaskCardView: View {
     }
 
     private var mainContent: some View {
-        HStack(alignment: .top, spacing: AppStyle.Spacing.regular) {
-            VStack(alignment: .leading, spacing: AppStyle.Spacing.medium) {
-                taskHeader
-                taskDescription
-                taskMetadataRow
-            }
-
-            Spacer(minLength: AppStyle.Spacing.none)
-
-            dragHandle
+        VStack(alignment: .leading, spacing: AppStyle.Spacing.medium) {
+            taskHeader
+            taskDescription
+            taskMetadataRow
         }
     }
 
@@ -340,10 +334,6 @@ struct TaskCardView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 
-    private var dragHandle: some View {
-        TaskDragHandle()
-    }
-
     private var cardBackground: some View {
         ZStack(alignment: .leading) {
             RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius, style: .continuous)
@@ -394,7 +384,7 @@ struct TaskCardView: View {
         TaskBadge(
             text: "Blocked",
             systemImage: "pause.circle.fill",
-            tint: AppStyle.Colors.warning
+            tint: AppStyle.Colors.blocked
         )
     }
 
@@ -555,17 +545,6 @@ private struct TaskBadge: View {
                 .stroke(tint.opacity(AppStyle.Opacity.accentBorder), lineWidth: AppStyle.Shapes.borderWidth)
         )
         .accessibilityHidden(true)
-    }
-}
-
-private struct TaskDragHandle: View {
-    var body: some View {
-        Image(systemName: "line.3.horizontal")
-            .font(AppStyle.Typography.iconMedium)
-            .foregroundStyle(AppStyle.Colors.quaternaryText)
-            .frame(width: AppStyle.Shapes.iconBadgeSmall, height: AppStyle.Shapes.iconBadgeSmall)
-            .contentShape(Rectangle())
-            .accessibilityHidden(true)
     }
 }
 

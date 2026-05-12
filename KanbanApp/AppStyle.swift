@@ -73,8 +73,8 @@ enum AppStyle {
                 light: UIColor(red: 0.64, green: 0.49, blue: 0.18, alpha: 1)
             )
             static let low = dynamic(
-                dark: UIColor(red: 0.35, green: 0.68, blue: 0.72, alpha: 1),
-                light: UIColor(red: 0.15, green: 0.55, blue: 0.60, alpha: 1)
+                dark: UIColor(red: 0.48, green: 0.58, blue: 0.68, alpha: 1),
+                light: UIColor(red: 0.34, green: 0.45, blue: 0.56, alpha: 1)
             )
         }
 
@@ -128,6 +128,10 @@ enum AppStyle {
         static let warning = dynamic(
             dark: UIColor(red: 1.0, green: 0.4, blue: 0.0, alpha: 1),
             light: UIColor(red: 0.9, green: 0.3, blue: 0.0, alpha: 1)
+        )
+        static let blocked = dynamic(
+            dark: UIColor(red: 0.98, green: 0.36, blue: 0.30, alpha: 1),
+            light: UIColor(red: 0.78, green: 0.20, blue: 0.14, alpha: 1)
         )
 
         static let cardSheen = dynamic(
