@@ -13,6 +13,8 @@ struct WIPView: View {
     @State private var coachReviewDetent: PresentationDetent = .large
     @State private var pendingTaskToOpen: TaskItem?
     @State private var shouldReviewActiveTasksAfterDismiss = false
+    @State private var generatedCoachCopy: WIPCoachCopyDraft?
+    @State private var generatedCoachCopySignature: String?
 
     private var recommendation: WIPCoachRecommendation {
         WIPCoachEngine.evaluate(
@@ -24,6 +26,27 @@ struct WIPView: View {
 
     private var wipAccentColor: Color {
         color(for: recommendation.pressure)
+    }
+
+    private var coachCopyRequest: WIPCoachCopyRequest {
+        WIPCoachCopyRequest(recommendation: recommendation)
+    }
+
+    private var validGeneratedCopy: WIPCoachCopyDraft? {
+        guard generatedCoachCopySignature == coachCopyRequest.signature else { return nil }
+        return generatedCoachCopy
+    }
+
+    private var displayedHeadline: String {
+        validGeneratedCopy?.headline.trimmedNonEmpty ?? recommendation.headline
+    }
+
+    private var displayedBody: String {
+        validGeneratedCopy?.body.trimmedNonEmpty ?? recommendation.body
+    }
+
+    private var displayedRecommendationReason: String {
+        validGeneratedCopy?.recommendationReason.trimmedNonEmpty ?? recommendation.reason
     }
 
     private var wipIconName: String {
@@ -69,6 +92,9 @@ struct WIPView: View {
         .sheet(isPresented: $isShowingCoachReview) {
             WIPCoachReviewSheet(
                 recommendation: recommendation,
+                headline: displayedHeadline,
+                coachBody: displayedBody,
+                recommendationReason: displayedRecommendationReason,
                 accentColor: wipAccentColor,
                 onPullTask: pullTask,
                 onOpenTask: queueOpenTask,
@@ -88,6 +114,9 @@ struct WIPView: View {
                 onReviewActiveTasks()
             }
         }
+        .task(id: coachCopyRequest.signature) {
+            await refreshGeneratedCoachCopy(for: coachCopyRequest)
+        }
     }
 
     private var header: some View {
@@ -104,11 +133,11 @@ struct WIPView: View {
             }
 
             VStack(alignment: .leading, spacing: AppStyle.Spacing.tight) {
-                Text(recommendation.headline)
+                Text(displayedHeadline)
                     .font(AppStyle.Typography.metricMedium)
                     .foregroundStyle(AppStyle.Colors.primaryText)
 
-                Text(recommendation.body)
+                Text(displayedBody)
                     .font(AppStyle.Typography.formFooter)
                     .foregroundStyle(AppStyle.Colors.secondaryText)
                     .fixedSize(horizontal: false, vertical: true)
@@ -160,7 +189,7 @@ struct WIPView: View {
                 .foregroundStyle(AppStyle.Colors.primaryText)
                 .lineLimit(2)
 
-            Text(recommendation.recommendedTask == nil ? "No ready tasks need attention right now" : recommendation.reason)
+            Text(displayedRecommendationReason)
                 .font(AppStyle.Typography.cardDate)
                 .foregroundStyle(AppStyle.Colors.secondaryText)
                 .fixedSize(horizontal: false, vertical: true)
@@ -208,7 +237,7 @@ struct WIPView: View {
 
     private var accessibilitySummary: String {
         let taskSummary = recommendation.recommendedTask.map { "Recommended task: \($0.title)." } ?? "No recommended task."
-        return "Work in progress pressure. \(recommendation.headline) \(recommendation.stats.activeCount) of \(recommendation.stats.wipLimit) tasks active. \(recommendation.stats.slotsLeft) slots left. \(recommendation.label.capitalized). \(taskSummary)"
+        return "Work in progress pressure. \(displayedHeadline) \(recommendation.stats.activeCount) of \(recommendation.stats.wipLimit) tasks active. \(recommendation.stats.slotsLeft) slots left. \(recommendation.label.capitalized). \(taskSummary)"
     }
 
     private func statPill(label: String, value: String, tint: Color) -> some View {
@@ -260,10 +289,33 @@ struct WIPView: View {
             return AppStyle.Colors.blocked
         }
     }
+
+    @MainActor
+    private func refreshGeneratedCoachCopy(for request: WIPCoachCopyRequest) async {
+        generatedCoachCopy = nil
+        generatedCoachCopySignature = nil
+
+        guard case .available = WIPCoachCopyGenerator.availability else { return }
+
+        do {
+            let copy = try await WIPCoachCopyGenerator.generate(for: request)
+            guard request.signature == coachCopyRequest.signature else { return }
+            guard copy.hasUsableContent else { return }
+
+            generatedCoachCopy = copy
+            generatedCoachCopySignature = request.signature
+        } catch {
+            generatedCoachCopy = nil
+            generatedCoachCopySignature = nil
+        }
+    }
 }
 
 private struct WIPCoachReviewSheet: View {
     let recommendation: WIPCoachRecommendation
+    let headline: String
+    let coachBody: String
+    let recommendationReason: String
     let accentColor: Color
     let onPullTask: (TaskItem) -> Void
     let onOpenTask: (TaskItem) -> Void
@@ -298,11 +350,11 @@ private struct WIPCoachReviewSheet: View {
 
     private var summaryCard: some View {
         VStack(alignment: .leading, spacing: AppStyle.Spacing.normal) {
-            Label(recommendation.headline, systemImage: "scope")
+            Label(headline, systemImage: "scope")
                 .font(AppStyle.Typography.metricMedium)
                 .foregroundStyle(AppStyle.Colors.primaryText)
 
-            Text(recommendation.body)
+            Text(coachBody)
                 .font(AppStyle.Typography.formFooter)
                 .foregroundStyle(AppStyle.Colors.secondaryText)
                 .fixedSize(horizontal: false, vertical: true)
@@ -348,7 +400,7 @@ private struct WIPCoachReviewSheet: View {
                     .foregroundStyle(AppStyle.Colors.primaryText)
                     .fixedSize(horizontal: false, vertical: true)
 
-                Text(recommendation.recommendedTask == nil ? "No ready tasks need attention right now." : recommendation.reason)
+                Text(recommendationReason)
                     .font(AppStyle.Typography.formFooter)
                     .foregroundStyle(AppStyle.Colors.secondaryText)
 

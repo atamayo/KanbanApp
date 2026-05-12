@@ -37,6 +37,7 @@
 		FC1578978B8E4651B24C4D809767D49F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9527358144CD4E779E36F571C9E106AD /* SettingsView.swift */; };
 		F00D00000000000000000001 /* VoiceCaptureSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00D00000000000000000002 /* VoiceCaptureSheet.swift */; };
 		F00D00000000000000000003 /* WIPCoachEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00D00000000000000000004 /* WIPCoachEngine.swift */; };
+		F00D00000000000000000005 /* WIPCoachCopyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00D00000000000000000006 /* WIPCoachCopyGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		FAE822CFBF944080AA7DC05248E4FCB2 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		F00D00000000000000000002 /* VoiceCaptureSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceCaptureSheet.swift; sourceTree = "<group>"; };
 		F00D00000000000000000004 /* WIPCoachEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIPCoachEngine.swift; sourceTree = "<group>"; };
+		F00D00000000000000000006 /* WIPCoachCopyGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIPCoachCopyGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 				A7C100000000000000000011 /* NextActionSuggestionService.swift */,
 				A7C100000000000000000013 /* ImageTextExtractionService.swift */,
 				F00D00000000000000000004 /* WIPCoachEngine.swift */,
+				F00D00000000000000000006 /* WIPCoachCopyGenerator.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				DD1100000000000000000001 /* LiveTextScannerSheet.swift in Sources */,
 				F00D00000000000000000001 /* VoiceCaptureSheet.swift in Sources */,
 				F00D00000000000000000003 /* WIPCoachEngine.swift in Sources */,
+				F00D00000000000000000005 /* WIPCoachCopyGenerator.swift in Sources */,
 				E1F2A3B4C5D6000000000001 /* WIPView.swift in Sources */,
 				E1F2A3B4C5D6000000000003 /* PersonalKanbanManifestoView.swift in Sources */,
 				C46D8078D30040238CCDE162FB2FE17E /* MainTabView.swift in Sources */,
