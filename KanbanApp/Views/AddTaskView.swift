@@ -23,6 +23,7 @@ struct AddTaskView: View {
     @State private var showingQuickCaptureSheet = false
     @State private var showingPhotoPicker = false
     @State private var showingLiveTextScanner = false
+    @State private var showingVoiceCapture = false
     @FocusState private var focusedField: Field?
     @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = true
     @AppStorage("maxActiveTasks") private var maxActiveTasks = 3
@@ -86,6 +87,15 @@ struct AddTaskView: View {
             } onError: { error in
                 quickCaptureMessage = error.localizedDescription
             }
+        }
+        .sheet(isPresented: $showingVoiceCapture) {
+            VoiceCaptureSheet { recognizedText in
+                Task { await handleRecognizedQuickCaptureText(recognizedText, source: .voice) }
+            } onError: { error in
+                quickCaptureMessage = error.localizedDescription
+            }
+            .presentationDetents([.large, .large])
+            .presentationDragIndicator(.visible)
         }
         .customAlert(
             isPresented: $showingWIPLimitAlert,
@@ -250,6 +260,13 @@ struct AddTaskView: View {
                 Task { await beginLiveTextScan() }
             } label: {
                 Label("Scan Text", systemImage: "camera.viewfinder")
+            }
+
+            Button {
+                quickCaptureMessage = nil
+                showingVoiceCapture = true
+            } label: {
+                Label("Record Voice", systemImage: "mic.fill")
             }
         } label: {
             HStack(spacing: AppStyle.Spacing.small) {
@@ -498,6 +515,7 @@ struct AddTaskView: View {
 private enum QuickCaptureSource {
     case photo
     case scanner
+    case voice
 
     var reviewMessage: String {
         switch self {
@@ -505,6 +523,8 @@ private enum QuickCaptureSource {
             return "Photo imported. Review the extracted text or generate a draft."
         case .scanner:
             return "Text captured. Review the extracted text or generate a draft."
+        case .voice:
+            return "Voice captured. Review the transcript or generate a draft."
         }
     }
 
@@ -514,6 +534,8 @@ private enum QuickCaptureSource {
             return "Photo imported. Text extracted. Apple Intelligence is unavailable, so review it manually."
         case .scanner:
             return "Text captured. Apple Intelligence is unavailable, so review it manually."
+        case .voice:
+            return "Voice captured. Apple Intelligence is unavailable, so review it manually."
         }
     }
 
@@ -523,6 +545,8 @@ private enum QuickCaptureSource {
             return "Photo imported. Draft generated from the extracted text."
         case .scanner:
             return "Text captured. Draft generated from the camera scan."
+        case .voice:
+            return "Voice captured. Draft generated from your dictation."
         }
     }
 
@@ -532,6 +556,8 @@ private enum QuickCaptureSource {
             return "The image text was extracted, but the AI draft couldn’t be generated right now. Review it and generate again."
         case .scanner:
             return "The text was captured, but the AI draft couldn’t be generated right now. Review it and generate again."
+        case .voice:
+            return "The voice transcript was captured, but the AI draft couldn’t be generated right now. Review it and generate again."
         }
     }
 }

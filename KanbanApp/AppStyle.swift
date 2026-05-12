@@ -379,6 +379,7 @@ enum AppStyle {
         static let lanePreviewAccentWidth: CGFloat = 32
         static let formControlMinWidth: CGFloat = 132
         static let modalMaxWidth: CGFloat = 320
+        static let voiceTranscriptMinHeight: CGFloat = 180
         static let statusIconSize: CGFloat = 14
         static let statusRowIconWidth: CGFloat = 24
         static let chevronWidth: CGFloat = 14

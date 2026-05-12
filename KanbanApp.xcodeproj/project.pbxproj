@@ -35,6 +35,7 @@
 		E1F2A3B4C5D6000000000001 /* WIPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F2A3B4C5D6000000000002 /* WIPView.swift */; };
 		E1F2A3B4C5D6000000000003 /* PersonalKanbanManifestoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F2A3B4C5D6000000000004 /* PersonalKanbanManifestoView.swift */; };
 		FC1578978B8E4651B24C4D809767D49F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9527358144CD4E779E36F571C9E106AD /* SettingsView.swift */; };
+		F00D00000000000000000001 /* VoiceCaptureSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00D00000000000000000002 /* VoiceCaptureSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		E1F2A3B4C5D6000000000002 /* WIPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIPView.swift; sourceTree = "<group>"; };
 		E1F2A3B4C5D6000000000004 /* PersonalKanbanManifestoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalKanbanManifestoView.swift; sourceTree = "<group>"; };
 		FAE822CFBF944080AA7DC05248E4FCB2 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		F00D00000000000000000002 /* VoiceCaptureSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceCaptureSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				A1B2C3D4E5F600000000001D /* AddTaskView.swift */,
 				A7C100000000000000000015 /* QuickCapturePhotoImportButton.swift */,
 				DD1100000000000000000002 /* LiveTextScannerSheet.swift */,
+				F00D00000000000000000002 /* VoiceCaptureSheet.swift */,
 				A1B2C3D4E5F600000000001F /* TaskDetailView.swift */,
 				A1B2C3D4E5F6000000000033 /* DashboardView.swift */,
 				A7C100000000000000000002 /* OnboardingView.swift */,
@@ -264,6 +267,7 @@
 				A7C100000000000000000012 /* ImageTextExtractionService.swift in Sources */,
 				A7C100000000000000000014 /* QuickCapturePhotoImportButton.swift in Sources */,
 				DD1100000000000000000001 /* LiveTextScannerSheet.swift in Sources */,
+				F00D00000000000000000001 /* VoiceCaptureSheet.swift in Sources */,
 				E1F2A3B4C5D6000000000001 /* WIPView.swift in Sources */,
 				E1F2A3B4C5D6000000000003 /* PersonalKanbanManifestoView.swift in Sources */,
 				C46D8078D30040238CCDE162FB2FE17E /* MainTabView.swift in Sources */,
