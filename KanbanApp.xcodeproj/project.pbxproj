@@ -15,6 +15,7 @@
 		A1B2C3D4E5F600000000001C /* TaskCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F600000000001B /* TaskCardView.swift */; };
 		A1B2C3D4E5F600000000001E /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F600000000001D /* AddTaskView.swift */; };
 		A1B2C3D4E5F6000000000020 /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F600000000001F /* TaskDetailView.swift */; };
+		A1B2C3D4E5F6000000000031 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000000000030 /* Assets.xcassets */; };
 		A1B2C3D4E5F6000000000032 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000000000033 /* DashboardView.swift */; };
 		A1B2C3D4E5F6000000000035 /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000000000034 /* AppStyle.swift */; };
 		A7C100000000000000000001 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C100000000000000000002 /* OnboardingView.swift */; };
@@ -27,17 +28,18 @@
 		A7C100000000000000000010 /* NextActionSuggestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C100000000000000000011 /* NextActionSuggestionService.swift */; };
 		A7C100000000000000000012 /* ImageTextExtractionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C100000000000000000013 /* ImageTextExtractionService.swift */; };
 		A7C100000000000000000014 /* QuickCapturePhotoImportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C100000000000000000015 /* QuickCapturePhotoImportButton.swift */; };
-		DD1100000000000000000001 /* LiveTextScannerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1100000000000000000002 /* LiveTextScannerSheet.swift */; };
-		E1F2A3B4C5D6000000000001 /* WIPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F2A3B4C5D6000000000002 /* WIPView.swift */; };
-		E1F2A3B4C5D6000000000003 /* PersonalKanbanManifestoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F2A3B4C5D6000000000004 /* PersonalKanbanManifestoView.swift */; };
 		C46D8078D30040238CCDE162FB2FE17E /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE822CFBF944080AA7DC05248E4FCB2 /* MainTabView.swift */; };
 		CC88F17F1EB745D7B67C1DED74B18C18 /* AllTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC21578A5014A16A3256BF3F502DDAC /* AllTasksView.swift */; };
 		D4C3B2A10000000000000001 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C3B2A20000000000000002 /* CustomAlertView.swift */; };
+		DD1100000000000000000001 /* LiveTextScannerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1100000000000000000002 /* LiveTextScannerSheet.swift */; };
+		E1F2A3B4C5D6000000000001 /* WIPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F2A3B4C5D6000000000002 /* WIPView.swift */; };
+		E1F2A3B4C5D6000000000003 /* PersonalKanbanManifestoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F2A3B4C5D6000000000004 /* PersonalKanbanManifestoView.swift */; };
 		FC1578978B8E4651B24C4D809767D49F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9527358144CD4E779E36F571C9E106AD /* SettingsView.swift */; };
-		A1B2C3D4E5F6000000000031 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000000000030 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2BC21578A5014A16A3256BF3F502DDAC /* AllTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTasksView.swift; sourceTree = "<group>"; };
+		9527358144CD4E779E36F571C9E106AD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F6000000000009 /* KanbanApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KanbanApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1B2C3D4E5F6000000000010 /* KanbanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanbanApp.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F6000000000012 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 		A1B2C3D4E5F600000000001B /* TaskCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCardView.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F600000000001D /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F600000000001F /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000000000030 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1B2C3D4E5F6000000000033 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F6000000000034 /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
 		A7C100000000000000000002 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -60,14 +63,11 @@
 		A7C100000000000000000011 /* NextActionSuggestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextActionSuggestionService.swift; sourceTree = "<group>"; };
 		A7C100000000000000000013 /* ImageTextExtractionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTextExtractionService.swift; sourceTree = "<group>"; };
 		A7C100000000000000000015 /* QuickCapturePhotoImportButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickCapturePhotoImportButton.swift; sourceTree = "<group>"; };
+		D4C3B2A20000000000000002 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		DD1100000000000000000002 /* LiveTextScannerSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTextScannerSheet.swift; sourceTree = "<group>"; };
 		E1F2A3B4C5D6000000000002 /* WIPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIPView.swift; sourceTree = "<group>"; };
 		E1F2A3B4C5D6000000000004 /* PersonalKanbanManifestoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalKanbanManifestoView.swift; sourceTree = "<group>"; };
 		FAE822CFBF944080AA7DC05248E4FCB2 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
-		2BC21578A5014A16A3256BF3F502DDAC /* AllTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTasksView.swift; sourceTree = "<group>"; };
-		9527358144CD4E779E36F571C9E106AD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		D4C3B2A20000000000000002 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
-		A1B2C3D4E5F6000000000030 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,16 +140,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		A7C10000000000000000000F /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				A7C10000000000000000000E /* QuickCaptureTaskGenerator.swift */,
-				A7C100000000000000000011 /* NextActionSuggestionService.swift */,
-				A7C100000000000000000013 /* ImageTextExtractionService.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		A1B2C3D4E5F6000000000006 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +161,16 @@
 				A1B2C3D4E5F6000000000009 /* KanbanApp.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A7C10000000000000000000F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A7C10000000000000000000E /* QuickCaptureTaskGenerator.swift */,
+				A7C100000000000000000011 /* NextActionSuggestionService.swift */,
+				A7C100000000000000000013 /* ImageTextExtractionService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,11 +391,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FMAF78CAD7;
 				INFOPLIST_FILE = KanbanApp/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Use the camera to scan text and turn it into a task draft.";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Use the camera to scan text and turn it into a task draft.";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.KanbanApp;
+				PRODUCT_BUNDLE_IDENTIFIER = KanbanApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -408,15 +408,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FMAF78CAD7;
 				INFOPLIST_FILE = KanbanApp/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Use the camera to scan text and turn it into a task draft.";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Use the camera to scan text and turn it into a task draft.";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.KanbanApp;
+				PRODUCT_BUNDLE_IDENTIFIER = KanbanApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
