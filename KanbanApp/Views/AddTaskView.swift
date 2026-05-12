@@ -5,6 +5,8 @@ import AVFoundation
 
 struct AddTaskView: View {
     let status: TaskStatus
+    var onTaskCreated: ((TaskItem) -> Void)? = nil
+
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
     @State private var quickCaptureText = ""
@@ -333,6 +335,7 @@ struct AddTaskView: View {
         )
         modelContext.insert(task)
         try? modelContext.save()
+        onTaskCreated?(task)
         dismiss()
     }
 
