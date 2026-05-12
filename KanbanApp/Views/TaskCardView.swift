@@ -205,23 +205,9 @@ struct TaskCardView: View {
 
     private var mainContent: some View {
         HStack(spacing: AppStyle.Spacing.medium) {
-            checkbox
             taskDetails
             dragHandle
         }
-    }
-
-    private var checkbox: some View {
-        Button {
-            withAnimation(AppStyle.Motion.standardSpring) {
-                toggleCompletion()
-            }
-        } label: {
-            Image(systemName: task.status == .done ? "checkmark.circle.fill" : "circle")
-                .font(AppStyle.Typography.checkbox)
-                .foregroundStyle(task.status == .done ? AppStyle.Colors.Status.done : AppStyle.Colors.secondaryText)
-        }
-        .buttonStyle(.plain)
     }
 
     private var taskDetails: some View {
@@ -398,11 +384,6 @@ struct TaskCardView: View {
         try? modelContext.save()
     }
 
-    private func toggleCompletion() {
-        let newStatus: TaskStatus = task.status == .done ? .todo : .done
-        performStatusTransition(to: newStatus)
-    }
-
     private func triggerLimitFeedback() {
         wipLimitHitCount += 1
         withAnimation(AppStyle.Motion.standardSpring) {
@@ -520,7 +501,7 @@ private extension View {
                         Button {
                             onMove(.inProgress)
                         } label: {
-                            Label("Move to In Progress", systemImage: "arrow.right.circle")
+                            Label("Move to In Progress", systemImage: "arrow.left.circle")
                         }
                         .tint(AppStyle.Colors.Status.inProgress)
                     }
@@ -530,4 +511,46 @@ private extension View {
         self
 #endif
     }
+}
+
+#Preview("Task Card States") {
+    let previewTasks = [
+        TaskItem(
+            title: "Draft release notes",
+            description: "Summarize the latest board updates for the next TestFlight build.",
+            status: .todo,
+            priority: .high,
+            order: 0
+        ),
+        TaskItem(
+            title: "Refine swipe interactions",
+            description: "Validate the left and right swipe affordances in the list views.",
+            status: .inProgress,
+            priority: .medium,
+            isBlocked: true,
+            order: 1
+        ),
+        TaskItem(
+            title: "Ship task card iteration",
+            description: "The swipe pattern is approved and ready for release.",
+            status: .done,
+            priority: .low,
+            order: 2
+        )
+    ]
+
+    return ScrollView {
+        VStack(spacing: AppStyle.Spacing.medium) {
+            ForEach(previewTasks) { task in
+                TaskCardView(
+                    task: task,
+                    onSelect: { _ in },
+                    swipeConfiguration: .listStatusActions
+                )
+            }
+        }
+        .padding(AppStyle.Spacing.normal)
+    }
+    .background(AppStyle.Colors.background)
+    .modelContainer(for: TaskItem.self, inMemory: true)
 }
