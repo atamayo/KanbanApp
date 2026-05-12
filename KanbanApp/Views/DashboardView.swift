@@ -6,6 +6,7 @@ struct DashboardView: View {
     @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = true
     @AppStorage("maxActiveTasks") private var maxActiveTasks = 3
     @AppStorage("wipLimitHitCount") private var wipLimitHitCount = 0
+    @State private var selectedCoachTask: TaskItem?
 
     // MARK: - Data
 
@@ -109,13 +110,13 @@ struct DashboardView: View {
                     prioritySection
                     
                     WIPView(
-                        inProgressCount: inProgressCount,
+                        allTasks: allTasks,
                         maxActiveTasks: maxActiveTasks,
                         isFocusGuardEnabled: isFocusGuardEnabled,
-                        blockedInProgressTask: blockedInProgressTask,
-                        oldestInProgressTask: oldestInProgressTask,
-                        nextPullTask: nextPullTask,
-                        onReviewActiveTasks: { onSelectStatus?(.inProgress) }
+                        onReviewActiveTasks: { onSelectStatus?(.inProgress) },
+                        onOpenTask: { task in
+                            selectedCoachTask = task
+                        }
                     )
 
                     flowReviewSection
@@ -133,6 +134,11 @@ struct DashboardView: View {
         .contentMargins(.bottom, AppStyle.Spacing.extraLarge, for: .scrollContent)
         .navigationTitle("Dashboard")
         .navigationBarTitleDisplayMode(.inline)
+        .sheet(item: $selectedCoachTask) { task in
+            TaskDetailView(task: task)
+                .presentationDetents([.large])
+                .presentationDragIndicator(.visible)
+        }
     }
 
     // MARK: - Empty State
