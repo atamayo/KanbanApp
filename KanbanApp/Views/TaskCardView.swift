@@ -45,6 +45,7 @@ struct TaskCardView: View {
     let onSelect: (TaskItem) -> Void
     let swipeConfiguration: SwipeConfiguration
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var lastMovedStatus: TaskStatus?
     @State private var isDragging = false
     @State private var wipLimitError = false
@@ -84,6 +85,10 @@ struct TaskCardView: View {
     private var closedAt: Date? {
         guard task.status == .done else { return nil }
         return task.finalizedAt ?? task.updatedAt
+    }
+
+    private var metadataTint: Color {
+        task.isBlocked ? AppStyle.Colors.warning : flowColor
     }
 
     private var flowReferenceDate: Date {
@@ -130,9 +135,9 @@ struct TaskCardView: View {
         case .blocked:
             return AppStyle.Colors.warning
         case .fresh:
-            return .secondary
+            return AppStyle.Colors.Status.inProgress
         case .active:
-            return AppStyle.Colors.Status.done
+            return AppStyle.Colors.Status.inProgress
         case .aging:
             return AppStyle.Colors.Priority.medium
         case .stalled:
@@ -153,23 +158,79 @@ struct TaskCardView: View {
         return "now"
     }
 
-    private var accentWidthRatio: CGFloat {
-        switch flowState {
-        case .ready: return 0.18
-        case .blocked: return 0.94
-        case .fresh: return 0.28
-        case .active: return 0.52
-        case .aging: return 0.76
-        case .stalled: return 1.0
-        case .completed: return 0.42
+    private var statusIconName: String {
+        switch task.status {
+        case .todo:
+            return "circle.fill"
+        case .inProgress:
+            return task.isBlocked ? "pause.circle.fill" : "play.circle.fill"
+        case .done:
+            return "checkmark.circle.fill"
         }
     }
 
+    private var statusBadgeText: String {
+        task.status == .todo ? flowState.label : task.status.rawValue
+    }
+
+    private var statusBadgeIcon: String {
+        task.status == .todo ? flowState.icon : statusIconName
+    }
+
+    private var statusBadgeTint: Color {
+        task.isBlocked ? AppStyle.Colors.warning : statusColor
+    }
+
+    private var priorityIconName: String {
+        priorityIconName(task.priority)
+    }
+
+    private var metadataSummary: String {
+        switch task.status {
+        case .todo:
+            return "\(flowState.label), created \(flowDurationText) ago"
+        case .inProgress:
+            return "\(flowState.label), in progress for \(flowDurationText)"
+        case .done:
+            return "Closed \(flowDurationText) ago"
+        }
+    }
+
+    private var accessibilitySummary: String {
+        var parts = [
+            task.title,
+            task.status.rawValue,
+            "\(task.priority.rawValue) priority",
+            metadataSummary
+        ]
+
+        if task.isBlocked {
+            parts.append("Blocked")
+        }
+
+        if task.status == .done {
+            parts.append("Completed")
+        }
+
+        return parts.joined(separator: ", ")
+    }
+
+    private var accessibilityHintText: String {
+        "Double-tap to open details. Swipe or long press for actions. Drag with the handle to reorder."
+    }
+
     var body: some View {
-        mainContent
-            .padding(AppStyle.Spacing.cardPadding)
-            .background(cardBackground)
-            .scaleEffect(isDragging ? AppStyle.Shapes.dragScale : 1.0)
+        Button {
+            onSelect(task)
+        } label: {
+            mainContent
+                .padding(AppStyle.Spacing.cardContentPadding)
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .buttonStyle(.plain)
+        .background(cardBackground)
+        .scaleEffect(isDragging && !reduceMotion ? AppStyle.Shapes.dragScale : 1.0)
+        .contentShape(Rectangle())
             .contentShape(.contextMenuPreview, RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius, style: .continuous))
             .draggable(task.id.uuidString) {
                 RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
@@ -178,7 +239,6 @@ struct TaskCardView: View {
                     .onAppear { isDragging = true }
                     .onDisappear { isDragging = false }
             }
-            .onTapGesture { onSelect(task) }
             .contextMenu { contextMenuItems }
             .hoverEffect(.lift)
             .sensoryFeedback(.impact(weight: .light), trigger: lastMovedStatus)
@@ -190,8 +250,9 @@ struct TaskCardView: View {
                     .animation(AppStyle.Motion.standardSpring, value: wipLimitError)
                 }
             }
-            .accessibilityLabel(task.title)
-            .accessibilityHint(task.status.rawValue)
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel(accessibilitySummary)
+            .accessibilityHint(accessibilityHintText)
             .customAlert(
                 isPresented: $showingWIPLimitAlert,
                 iconName: "brain.head.profile",
@@ -204,108 +265,137 @@ struct TaskCardView: View {
     }
 
     private var mainContent: some View {
-        HStack(spacing: AppStyle.Spacing.medium) {
-            taskDetails
+        HStack(alignment: .top, spacing: AppStyle.Spacing.regular) {
+            VStack(alignment: .leading, spacing: AppStyle.Spacing.medium) {
+                taskHeader
+                taskDescription
+                taskMetadataRow
+            }
+
+            Spacer(minLength: AppStyle.Spacing.none)
+
             dragHandle
         }
     }
 
-    private var taskDetails: some View {
+    private var taskHeader: some View {
         VStack(alignment: .leading, spacing: AppStyle.Spacing.small) {
-            HStack(alignment: .top) {
-                Text(task.title)
-                    .font(AppStyle.Typography.cardTitle)
-                    .lineLimit(2)
-                    .foregroundStyle(task.status == .done ? AppStyle.Colors.secondaryText : AppStyle.Colors.primaryText)
-                    .strikethrough(task.status == .done)
-                
-                Spacer()
-                
-                VStack(alignment: .trailing, spacing: AppStyle.Spacing.tiny) {
-                    if task.isBlocked {
-                        blockedPill
-                    }
-                    priorityPill
-                }
-            }
-
-            if !task.desc.isEmpty {
-                Text(task.desc)
-                    .font(AppStyle.Typography.cardDescription)
-                    .foregroundStyle(AppStyle.Colors.secondaryText)
-                    .lineLimit(2)
-            }
-
-            timeInfo
+            taskTitle
+            badgeGroup
         }
     }
 
-    private var timeInfo: some View {
-        HStack(spacing: AppStyle.Spacing.tiny) {
-            Image(systemName: flowState.icon)
-            Text(flowState.label)
-            Text("·")
-            Text(flowDurationText)
+    private var taskTitle: some View {
+        Text(task.title)
+            .font(AppStyle.Typography.detailTitle)
+            .foregroundStyle(task.status == .done ? AppStyle.Colors.secondaryText : AppStyle.Colors.primaryText)
+            .strikethrough(task.status == .done, color: AppStyle.Colors.Status.done.opacity(AppStyle.Opacity.accentForegroundMuted))
+            .lineLimit(2)
+            .multilineTextAlignment(.leading)
+            .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    private var badgeGroup: some View {
+        ViewThatFits(in: .horizontal) {
+            HStack(spacing: AppStyle.Spacing.tiny) {
+                taskBadges
+            }
+
+            VStack(alignment: .leading, spacing: AppStyle.Spacing.tiny) {
+                taskBadges
+            }
         }
-        .font(AppStyle.Typography.cardDate)
-        .foregroundStyle(flowColor)
+    }
+
+    @ViewBuilder
+    private var taskBadges: some View {
+        if task.isBlocked {
+            blockedPill
+        }
+
+        TaskBadge(
+            text: statusBadgeText,
+            systemImage: statusBadgeIcon,
+            tint: statusBadgeTint
+        )
+
+        priorityPill
+    }
+
+    @ViewBuilder
+    private var taskDescription: some View {
+        if !task.desc.isEmpty {
+            Text(task.desc)
+                .font(AppStyle.Typography.formFooter)
+                .foregroundStyle(AppStyle.Colors.secondaryText)
+                .lineLimit(3)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+    }
+
+    private var taskMetadataRow: some View {
+        metadataItem(icon: flowState.icon, text: metadataSummary, tint: metadataTint)
+        .font(AppStyle.Typography.inlineHint)
+        .foregroundStyle(AppStyle.Colors.subtleText)
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     private var dragHandle: some View {
-        Image(systemName: "line.3.horizontal")
-            .font(AppStyle.Typography.iconMedium)
-            .foregroundStyle(AppStyle.Colors.quaternaryText)
-            .frame(width: AppStyle.Spacing.dragHandleWidth)
+        TaskDragHandle()
     }
 
     private var cardBackground: some View {
-        RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
-            .fill(AppStyle.Colors.surface)
-            .overlay(alignment: .bottomLeading) {
-                GeometryReader { geo in
-                    Capsule()
-                        .fill(
-                            LinearGradient(
-                                colors: [flowColor.opacity(AppStyle.Opacity.accentForegroundEmphasized), flowColor.opacity(AppStyle.Opacity.cardAccentTrailing)],
-                                startPoint: .leading,
-                                endPoint: .trailing
-                            )
-                        )
-                        .frame(width: max(AppStyle.Shapes.cardAccentMinWidth, geo.size.width * accentWidthRatio), height: AppStyle.Shapes.cardAccentHeight)
-                        .padding(.horizontal, AppStyle.Spacing.regular)
-                        .padding(.bottom, AppStyle.Spacing.compact)
-                }
-                .allowsHitTesting(false)
-            }
-            .overlay {
-                RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
-                    .stroke(flowColor.opacity(AppStyle.Opacity.cardBorder), lineWidth: AppStyle.Shapes.emphasizedBorderWidth)
-            }
+        ZStack(alignment: .leading) {
+            RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius, style: .continuous)
+                .fill(AppStyle.Colors.surface)
+                .overlay(
+                    RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius, style: .continuous)
+                        .fill(AppStyle.Colors.cardSheen)
+                )
+
+            Rectangle()
+                .fill(metadataTint)
+                .frame(width: AppStyle.Shapes.sideBarWidth)
+                .accessibilityHidden(true)
+        }
+            .clipShape(RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius, style: .continuous))
+            .overlay(
+                RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius, style: .continuous)
+                    .stroke(AppStyle.Colors.surfaceBorder, lineWidth: AppStyle.Shapes.borderWidth)
+            )
             .shadow(
-                color: flowColor.opacity(isDragging ? AppStyle.Opacity.dragShadow : AppStyle.Opacity.restingShadow),
-                radius: isDragging ? AppStyle.Shapes.dragShadowRadius : AppStyle.Shapes.tinyShadowRadius,
-                y: isDragging ? AppStyle.Shapes.dragShadowRadius / 2 : AppStyle.Shapes.tinyShadowY
+                color: AppStyle.Colors.cardShadow,
+                radius: AppStyle.Shapes.cardShadowRadius,
+                x: AppStyle.Shapes.cardShadowX,
+                y: AppStyle.Shapes.cardShadowY
             )
     }
 
+    private func metadataItem(icon: String, text: String, tint: Color) -> some View {
+        HStack(spacing: AppStyle.Spacing.tiny) {
+            Image(systemName: icon)
+                .foregroundStyle(tint)
+
+            Text(text)
+                .lineLimit(1)
+                .minimumScaleFactor(0.85)
+        }
+    }
+
     private var priorityPill: some View {
-        Text(task.priority.rawValue)
-            .font(AppStyle.Typography.pillLabel)
-            .padding(.horizontal, AppStyle.Spacing.pillHorizontalPadding)
-            .padding(.vertical, AppStyle.Spacing.pillVerticalPadding)
-            .background(priorityColor.opacity(AppStyle.Opacity.accentWashStrong))
-            .foregroundStyle(priorityColor)
-            .clipShape(Capsule())
+        TaskBadge(
+            text: task.priority.rawValue,
+            systemImage: priorityIconName,
+            tint: priorityColor
+        )
     }
 
     private var blockedPill: some View {
-        Text("Blocked")
-            .font(AppStyle.Typography.pillLabel)
-            .padding(.horizontal, AppStyle.Spacing.pillHorizontalPadding)
-            .padding(.vertical, AppStyle.Spacing.pillVerticalPadding)
-            .background(AppStyle.Colors.warning.opacity(AppStyle.Opacity.accentWashStrong))
-            .foregroundStyle(AppStyle.Colors.warning)
-            .clipShape(Capsule())
+        TaskBadge(
+            text: "Blocked",
+            systemImage: "pause.circle.fill",
+            tint: AppStyle.Colors.warning
+        )
     }
 
     @ViewBuilder
@@ -347,7 +437,7 @@ struct TaskCardView: View {
             Button {
                 performStatusTransition(to: .inProgress)
             } label: {
-                Label("Move to In Progress", systemImage: "arrow.right")
+                Label("Move to In Progress", systemImage: task.status == .done ? "arrow.left" : "arrow.right")
             }
         }
         if task.status != .done {
@@ -442,6 +532,43 @@ struct TaskCardView: View {
     }
 }
 
+private struct TaskBadge: View {
+    let text: String
+    let systemImage: String
+    let tint: Color
+
+    var body: some View {
+        HStack(spacing: AppStyle.Spacing.tiny) {
+            Image(systemName: systemImage)
+                .font(AppStyle.Typography.iconTiny)
+
+            Text(text)
+                .lineLimit(1)
+        }
+        .font(AppStyle.Typography.pillLabel)
+        .foregroundStyle(tint)
+        .padding(.horizontal, AppStyle.Spacing.pillHorizontalPadding)
+        .padding(.vertical, AppStyle.Spacing.pillVerticalPadding)
+        .background(tint.opacity(AppStyle.Opacity.accentWashStrong), in: Capsule())
+        .overlay(
+            Capsule()
+                .stroke(tint.opacity(AppStyle.Opacity.accentBorder), lineWidth: AppStyle.Shapes.borderWidth)
+        )
+        .accessibilityHidden(true)
+    }
+}
+
+private struct TaskDragHandle: View {
+    var body: some View {
+        Image(systemName: "line.3.horizontal")
+            .font(AppStyle.Typography.iconMedium)
+            .foregroundStyle(AppStyle.Colors.quaternaryText)
+            .frame(width: AppStyle.Shapes.iconBadgeSmall, height: AppStyle.Shapes.iconBadgeSmall)
+            .contentShape(Rectangle())
+            .accessibilityHidden(true)
+    }
+}
+
 private extension View {
     @ViewBuilder
     func taskCardSwipeActions(
@@ -513,35 +640,28 @@ private extension View {
     }
 }
 
-#Preview("Task Card States") {
-    let previewTasks = [
-        TaskItem(
-            title: "Draft release notes",
-            description: "Summarize the latest board updates for the next TestFlight build.",
-            status: .todo,
-            priority: .high,
-            order: 0
-        ),
-        TaskItem(
-            title: "Refine swipe interactions",
-            description: "Validate the left and right swipe affordances in the list views.",
-            status: .inProgress,
-            priority: .medium,
-            isBlocked: true,
-            order: 1
-        ),
-        TaskItem(
-            title: "Ship task card iteration",
-            description: "The swipe pattern is approved and ready for release.",
-            status: .done,
-            priority: .low,
-            order: 2
-        )
-    ]
+private func previewTask(
+    title: String,
+    description: String,
+    status: TaskStatus,
+    priority: TaskPriority,
+    isBlocked: Bool = false,
+    order: Int = 0
+) -> TaskItem {
+    TaskItem(
+        title: title,
+        description: description,
+        status: status,
+        priority: priority,
+        isBlocked: isBlocked,
+        order: order
+    )
+}
 
-    return ScrollView {
+private func taskCardPreview(_ tasks: [TaskItem]) -> some View {
+    ScrollView {
         VStack(spacing: AppStyle.Spacing.medium) {
-            ForEach(previewTasks) { task in
+            ForEach(tasks) { task in
                 TaskCardView(
                     task: task,
                     onSelect: { _ in },
@@ -553,4 +673,92 @@ private extension View {
     }
     .background(AppStyle.Colors.background)
     .modelContainer(for: TaskItem.self, inMemory: true)
+}
+
+#Preview("Ready / To Do") {
+    taskCardPreview([
+        previewTask(
+            title: "Draft release notes",
+            description: "Summarize the latest board updates for the next TestFlight build.",
+            status: .todo,
+            priority: .medium
+        )
+    ])
+}
+
+#Preview("In Progress") {
+    taskCardPreview([
+        previewTask(
+            title: "Refine swipe interactions",
+            description: "Validate the left and right swipe affordances in the list views.",
+            status: .inProgress,
+            priority: .medium
+        )
+    ])
+}
+
+#Preview("Blocked") {
+    taskCardPreview([
+        previewTask(
+            title: "Waiting on App Review notes",
+            description: "A follow-up from the release checklist is blocked until the previous build gets feedback.",
+            status: .inProgress,
+            priority: .high,
+            isBlocked: true
+        )
+    ])
+}
+
+#Preview("Closed / Done") {
+    taskCardPreview([
+        previewTask(
+            title: "Ship task card iteration",
+            description: "The swipe pattern is approved and ready for release.",
+            status: .done,
+            priority: .low
+        )
+    ])
+}
+
+#Preview("Priority Mix") {
+    taskCardPreview([
+        previewTask(title: "High priority follow-up", description: "Tight feedback loop for a release issue.", status: .todo, priority: .high, order: 0),
+        previewTask(title: "Medium effort polish", description: "Refine spacing and hierarchy in the task list.", status: .inProgress, priority: .medium, order: 1),
+        previewTask(title: "Low pressure cleanup", description: "Archive old notes and remove stale copy.", status: .done, priority: .low, order: 2)
+    ])
+}
+
+#Preview("Long Content") {
+    taskCardPreview([
+        previewTask(
+            title: "Prepare a longer task title that still needs to read cleanly on compact iPhone widths without crowding the badges or drag affordance",
+            description: "This description is intentionally longer so the Canvas preview shows how three lines wrap inside the card while preserving the same relaxed spacing, muted helper tone, and native feel used throughout the Dashboard surfaces.",
+            status: .todo,
+            priority: .high
+        )
+    ])
+}
+
+#Preview("Large Dynamic Type") {
+    taskCardPreview([
+        previewTask(
+            title: "Accessibility pass for task cards",
+            description: "Verify titles, badges, metadata, and actions continue to fit at larger sizes.",
+            status: .inProgress,
+            priority: .medium
+        )
+    ])
+    .environment(\.dynamicTypeSize, .accessibility3)
+}
+
+#Preview("Dark Mode") {
+    taskCardPreview([
+        previewTask(
+            title: "Night review",
+            description: "Check the soft surfaces and muted text balance in dark appearance.",
+            status: .done,
+            priority: .medium
+        )
+    ])
+    .preferredColorScheme(.dark)
 }
