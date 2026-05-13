@@ -19,11 +19,6 @@ struct DashboardView: View {
     private var inProgressCount: Int { currentTasks.filter { $0.status == .inProgress }.count }
     private var todoCount: Int { currentTasks.filter { $0.status == .todo }.count }
 
-    private var donePercent: Double {
-        guard totalCount > 0 else { return 0 }
-        return Double(doneCount) / Double(totalCount)
-    }
-
     private func count(priority: TaskPriority) -> Int {
         currentTasks.filter { $0.priority == priority }.count
     }
@@ -109,7 +104,7 @@ struct DashboardView: View {
                 emptyState
             } else {
                 VStack(spacing: AppStyle.Spacing.compactSectionSpacing) {
-                    headerSection
+                    ProgresView(doneCount: doneCount, totalCount: totalCount)
                     StatusView(
                         todoCount: todoCount,
                         inProgressCount: inProgressCount,
@@ -171,102 +166,6 @@ struct DashboardView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(.vertical, AppStyle.Spacing.emptyStateVerticalPadding)
-    }
-
-    // MARK: - Header
-
-    private var headerSection: some View {
-        HStack(alignment: .center, spacing: AppStyle.Spacing.comfortable) {
-            VStack(alignment: .leading, spacing: AppStyle.Spacing.statusRowGap) {
-                VStack(alignment: .leading, spacing: AppStyle.Spacing.tight) {
-                    Text("Your Progress")
-                        .font(AppStyle.Typography.inlineHint)
-                        .foregroundStyle(AppStyle.Colors.subtleText)
-
-                    Text("\(doneCount) of \(totalCount) tasks")
-                        .font(AppStyle.Typography.metricSmall)
-                        .foregroundStyle(AppStyle.Colors.primaryText)
-                        .contentTransition(.numericText())
-                        .minimumScaleFactor(0.85)
-                }
-
-                progressBar
-            }
-
-            Spacer(minLength: AppStyle.Spacing.none)
-
-            progressRing
-        }
-        .padding(.vertical, AppStyle.Spacing.comfortable)
-        .padding(.horizontal, AppStyle.Spacing.heroPadding)
-        .cardStyle(cornerRadius: AppStyle.Shapes.headerCornerRadius)
-    }
-
-    private var progressBar: some View {
-        GeometryReader { geo in
-            ZStack(alignment: .leading) {
-                Capsule()
-                    .fill(AppStyle.Colors.track.opacity(AppStyle.Opacity.track))
-
-                Capsule()
-                    .fill(
-                        LinearGradient(
-                            colors: [
-                                AppStyle.Colors.Status.done.opacity(AppStyle.Opacity.accentForegroundStrong),
-                                AppStyle.Colors.Status.done
-                            ],
-                            startPoint: .leading,
-                            endPoint: .trailing
-                        )
-                    )
-                    .frame(width: max(AppStyle.Shapes.progressMinWidth, geo.size.width * donePercent))
-                    .animation(AppStyle.Motion.progress, value: donePercent)
-            }
-        }
-        .frame(maxWidth: AppStyle.Shapes.progressBarMaxWidth)
-        .frame(height: AppStyle.Shapes.progressBarHeight)
-    }
-
-    private var progressRing: some View {
-        let ringSize = AppStyle.Shapes.dashboardRingSize
-        return ZStack {
-            Circle()
-                .stroke(AppStyle.Colors.track.opacity(AppStyle.Opacity.subtleTrack), lineWidth: AppStyle.Shapes.dashboardRingTrackStroke)
-
-            Circle()
-                .trim(from: 0, to: donePercent)
-                .stroke(
-                    AppStyle.Colors.Status.done.opacity(AppStyle.Opacity.accentBorder),
-                    style: .init(lineWidth: AppStyle.Shapes.dashboardRingGlowStroke, lineCap: .round)
-                )
-                .rotationEffect(.degrees(-90))
-                .blur(radius: AppStyle.Shapes.compactRingGlowBlur)
-
-            Circle()
-                .trim(from: 0, to: donePercent)
-                .stroke(
-                    LinearGradient(
-                        colors: [AppStyle.Colors.Status.done.opacity(AppStyle.Opacity.accentForegroundEmphasized), AppStyle.Colors.Status.done],
-                        startPoint: .top,
-                        endPoint: .bottomTrailing
-                    ),
-                    style: .init(lineWidth: AppStyle.Shapes.dashboardRingTrackStroke, lineCap: .round)
-                )
-                .rotationEffect(.degrees(-90))
-                .animation(AppStyle.Motion.ringProgress, value: donePercent)
-
-            VStack(spacing: AppStyle.Spacing.micro) {
-                Text("\(Int(donePercent * 100))%")
-                    .font(AppStyle.Typography.ringPercentage)
-                    .foregroundStyle(AppStyle.Colors.primaryText)
-                    .contentTransition(.numericText())
-
-                Text("Complete")
-                    .font(AppStyle.Typography.ringCaption)
-                    .foregroundStyle(AppStyle.Colors.subtleText)
-            }
-        }
-        .frame(width: ringSize, height: ringSize)
     }
 
     // MARK: - Priority

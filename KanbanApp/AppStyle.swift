@@ -171,6 +171,7 @@ enum AppStyle {
 
         static let sectionTitle = Font.caption.weight(.regular)
         static let sectionTracking: CGFloat = 1.8
+        static let minimumScaleFactor: CGFloat = 0.7
 
         static let statusLabel = Font.subheadline.weight(.medium)
         static let statusLabelHighlighted = Font.subheadline.weight(.bold)

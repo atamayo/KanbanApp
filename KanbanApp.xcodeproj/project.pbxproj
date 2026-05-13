@@ -19,6 +19,7 @@
 		A1B2C3D4E5F6000000000032 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000000000033 /* DashboardView.swift */; };
 		A1B2C3D4E5F6000000000035 /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000000000034 /* AppStyle.swift */; };
 		A1B2C3D4E5F6000000000036 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000000000037 /* StatusView.swift */; };
+		A1B2C3D4E5F6000000000038 /* ProgresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000000000039 /* ProgresView.swift */; };
 		A7C100000000000000000001 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C100000000000000000002 /* OnboardingView.swift */; };
 		A7C100000000000000000003 /* OnboardingWelcomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C100000000000000000004 /* OnboardingWelcomePageView.swift */; };
 		A7C100000000000000000005 /* OnboardingFocusPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C100000000000000000006 /* OnboardingFocusPageView.swift */; };
@@ -58,6 +59,7 @@
 		A1B2C3D4E5F6000000000033 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F6000000000034 /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F6000000000037 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000000000039 /* ProgresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgresView.swift; sourceTree = "<group>"; };
 		A7C100000000000000000002 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		A7C100000000000000000004 /* OnboardingWelcomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomePageView.swift; sourceTree = "<group>"; };
 		A7C100000000000000000006 /* OnboardingFocusPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFocusPageView.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				F00D00000000000000000002 /* VoiceCaptureSheet.swift */,
 				A1B2C3D4E5F600000000001F /* TaskDetailView.swift */,
 				A1B2C3D4E5F6000000000033 /* DashboardView.swift */,
+				A1B2C3D4E5F6000000000039 /* ProgresView.swift */,
 				A1B2C3D4E5F6000000000037 /* StatusView.swift */,
 				A7C100000000000000000002 /* OnboardingView.swift */,
 				A7C100000000000000000004 /* OnboardingWelcomePageView.swift */,
@@ -265,6 +268,7 @@
 				A1B2C3D4E5F6000000000020 /* TaskDetailView.swift in Sources */,
 				A1B2C3D4E5F6000000000032 /* DashboardView.swift in Sources */,
 				A1B2C3D4E5F6000000000036 /* StatusView.swift in Sources */,
+				A1B2C3D4E5F6000000000038 /* ProgresView.swift in Sources */,
 				A1B2C3D4E5F6000000000035 /* AppStyle.swift in Sources */,
 				A7C100000000000000000001 /* OnboardingView.swift in Sources */,
 				A7C100000000000000000003 /* OnboardingWelcomePageView.swift in Sources */,
