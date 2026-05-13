@@ -110,7 +110,15 @@ struct DashboardView: View {
             } else {
                 VStack(spacing: AppStyle.Spacing.compactSectionSpacing) {
                     headerSection
-                    statusSection
+                    StatusView(
+                        todoCount: todoCount,
+                        inProgressCount: inProgressCount,
+                        doneCount: doneCount,
+                        totalCount: totalCount,
+                        maxActiveTasks: maxActiveTasks,
+                        isFocusGuardEnabled: isFocusGuardEnabled,
+                        onSelectStatus: onSelectStatus
+                    )
                     prioritySection
                     
                     WIPView(
@@ -259,155 +267,6 @@ struct DashboardView: View {
             }
         }
         .frame(width: ringSize, height: ringSize)
-    }
-
-    // MARK: - Status
-
-    private var statusSection: some View {
-        VStack(alignment: .leading, spacing: AppStyle.Spacing.statusRowGap) {
-            HStack(alignment: .center) {
-                sectionHeader("Status")
-                Spacer()
-                stackedBar
-                    .frame(width: AppStyle.Spacing.stackedBarWidth)
-            }
-
-            HStack(spacing: AppStyle.Spacing.tight) {
-                Image(systemName: "hand.tap.fill")
-                    .font(AppStyle.Typography.iconTiny)
-                Text("Tap a lane to open its tasks")
-                    .font(AppStyle.Typography.inlineHint)
-            }
-            .foregroundStyle(AppStyle.Colors.subtleText)
-
-            VStack(spacing: AppStyle.Spacing.none) {
-                statusRow(status: .todo, count: todoCount, color: AppStyle.Colors.Status.todo, icon: "circle")
-                
-                dividerLine
-                
-                statusRow(status: .inProgress, count: inProgressCount, color: AppStyle.Colors.Status.inProgress, icon: "clock.fill", isHighlighted: true)
-                
-                dividerLine
-                
-                statusRow(status: .done, count: doneCount, color: AppStyle.Colors.Status.done, icon: "checkmark.circle.fill")
-            }
-            .cardStyle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
-        }
-    }
-
-    private var dividerLine: some View {
-        AppStyle.Colors.divider
-            .frame(height: AppStyle.Shapes.dividerHeight)
-            .padding(.leading, AppStyle.Spacing.dividerLeadingCompact)
-    }
-
-    private func statusRow(status: TaskStatus, count: Int, color: Color, icon: String, isHighlighted: Bool = false) -> some View {
-        let barRatio = totalCount > 0 ? Double(count) / Double(totalCount) : 0.0
-        
-        // Focus Guard logic
-        let isWIPLimitReached = isFocusGuardEnabled && status == .inProgress && count >= maxActiveTasks
-        let rowColor = isWIPLimitReached ? AppStyle.Colors.warning : color
-
-        return Button {
-            onSelectStatus?(status)
-        } label: {
-            HStack(spacing: AppStyle.Spacing.statusRowGap) {
-                Image(systemName: isWIPLimitReached ? "exclamationmark.triangle.fill" : icon)
-                    .font(AppStyle.Typography.iconMedium)
-                    .foregroundStyle(rowColor)
-                    .frame(width: AppStyle.Shapes.statusRowIconWidth)
-
-                Text(status.rawValue)
-                    .font(isHighlighted ? AppStyle.Typography.statusRowTitleHighlighted : AppStyle.Typography.statusRowTitle)
-                    .foregroundStyle(isHighlighted ? AppStyle.Colors.primaryText : rowColor.opacity(AppStyle.Opacity.accentForegroundStrong))
-                    .frame(width: AppStyle.Spacing.statusLabelWidthComfortable, alignment: .leading)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.82)
-
-                GeometryReader { geo in
-                    Capsule()
-                        .fill(
-                            LinearGradient(
-                                colors: [rowColor, rowColor.opacity(AppStyle.Opacity.subtleTrack)],
-                                startPoint: .leading,
-                                endPoint: .trailing
-                            )
-                        )
-                        .frame(width: max(AppStyle.Shapes.minBarWidth, geo.size.width * barRatio))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .animation(AppStyle.Motion.rowProgress, value: barRatio)
-                }
-                .frame(height: AppStyle.Shapes.barHeightHighlighted)
-
-                Text(count.formatted())
-                    .font(AppStyle.Typography.statusRowCount)
-                    .foregroundStyle(isHighlighted ? AppStyle.Colors.primaryText : AppStyle.Colors.secondaryText)
-                    .monospacedDigit()
-                    .contentTransition(.numericText())
-                    .frame(width: AppStyle.Spacing.countFrameWidthComfortable, alignment: .trailing)
-
-                Image(systemName: "chevron.right")
-                    .font(AppStyle.Typography.iconSmall)
-                    .foregroundStyle(AppStyle.Colors.tertiaryText)
-                    .frame(width: AppStyle.Shapes.chevronWidth)
-            }
-            .padding(.horizontal, AppStyle.Spacing.cardPadding)
-            .padding(.vertical, AppStyle.Spacing.statusRowVerticalComfortable)
-            .contentShape(.rect)
-            .background {
-                if isHighlighted {
-                    RoundedRectangle(cornerRadius: AppStyle.Shapes.statusHighlightCornerRadius, style: .continuous)
-                        .fill(rowColor.opacity(AppStyle.Opacity.accentWashStrong))
-                        .padding(.horizontal, AppStyle.Spacing.statusHighlightPaddingHorizontal)
-                        .padding(.vertical, AppStyle.Spacing.statusHighlightPaddingVertical)
-                }
-            }
-            .overlay(alignment: .trailing) {
-                if isHighlighted {
-                    RoundedRectangle(cornerRadius: AppStyle.Shapes.statusHighlightCornerRadius, style: .continuous)
-                        .stroke(rowColor.opacity(AppStyle.Opacity.accentBorder), lineWidth: AppStyle.Shapes.emphasizedBorderWidth)
-                        .padding(.horizontal, AppStyle.Spacing.statusHighlightPaddingHorizontal)
-                        .padding(.vertical, AppStyle.Spacing.statusHighlightPaddingVertical)
-                }
-            }
-        }
-        .buttonStyle(.plain)
-        .accessibilityLabel("\(status.rawValue), \(count) tasks")
-        .accessibilityHint("Opens the \(status.rawValue) lane")
-    }
-
-    private var stackedBar: some View {
-        let total = max(totalCount, 1)
-        let todoRatio = CGFloat(todoCount) / CGFloat(total)
-        let progRatio = CGFloat(inProgressCount) / CGFloat(total)
-        let doneRatio = CGFloat(doneCount) / CGFloat(total)
-
-        return GeometryReader { geo in
-            ZStack(alignment: .leading) {
-                Capsule()
-                    .fill(AppStyle.Colors.track)
-
-                HStack(spacing: AppStyle.Spacing.none) {
-                    if todoCount > 0 {
-                        Rectangle()
-                            .fill(AppStyle.Colors.Status.todo)
-                            .frame(width: geo.size.width * todoRatio)
-                    }
-                    if inProgressCount > 0 {
-                        Rectangle()
-                            .fill(isFocusGuardEnabled && inProgressCount >= maxActiveTasks ? AppStyle.Colors.warning : AppStyle.Colors.Status.inProgress)
-                            .frame(width: geo.size.width * progRatio)
-                    }
-                    if doneCount > 0 {
-                        Rectangle()
-                            .fill(AppStyle.Colors.Status.done)
-                            .frame(width: geo.size.width * doneRatio)
-                    }
-                }
-            }
-            .clipShape(Capsule())
-        }
-        .frame(height: AppStyle.Shapes.barHeight)
     }
 
     // MARK: - Priority

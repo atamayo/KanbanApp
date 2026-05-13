@@ -274,6 +274,7 @@ enum AppStyle {
         static let statusRowVerticalCompact: CGFloat = 12
         static let statusRowVerticalComfortable: CGFloat = 18
         static let statusRowVerticalHighlighted: CGFloat = 16
+        static let statusRowSubtitleGap: CGFloat = 2
         static let totalRowVertical: CGFloat = 10
 
         static let statusLabelWidth: CGFloat = 88
@@ -329,6 +330,7 @@ enum AppStyle {
         static let pillCornerRadius: CGFloat = 8
 
         static let barHeight: CGFloat = 4
+        static let statusDistributionBarHeight: CGFloat = 5
         static let previewAccentHeight: CGFloat = 6
         static let barHeightHighlighted: CGFloat = 7
         static let progressBarHeight: CGFloat = 10
@@ -354,6 +356,7 @@ enum AppStyle {
         static let iconBadgeMedium: CGFloat = 48
         static let iconBadgeLarge: CGFloat = 52
         static let alertIconSize: CGFloat = 58
+        static let minimumTapTarget: CGFloat = 44
         
         static let dragScale: CGFloat = 1.05
         static let dragShadowRadius: CGFloat = 12
