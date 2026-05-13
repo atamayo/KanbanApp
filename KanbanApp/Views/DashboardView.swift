@@ -104,7 +104,12 @@ struct DashboardView: View {
                 emptyState
             } else {
                 VStack(spacing: AppStyle.Spacing.compactSectionSpacing) {
-                    ProgresView(doneCount: doneCount, totalCount: totalCount)
+                    ProgresView(
+                        doneCount: doneCount,
+                        totalCount: totalCount,
+                        todoCount: todoCount,
+                        inProgressCount: inProgressCount
+                    )
                     StatusView(
                         todoCount: todoCount,
                         inProgressCount: inProgressCount,

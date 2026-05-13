@@ -187,6 +187,11 @@ enum AppStyle {
         static let ringPercentage = Font.system(.title3, design: .rounded, weight: .bold)
         static let ringCaption = Font.caption2.weight(.medium)
         static let ringPercentageSmall = Font.caption2.weight(.bold)
+        static let progressEyebrow = Font.system(.callout, design: .rounded, weight: .medium)
+        static let progressSummary = Font.system(.title, design: .rounded, weight: .bold)
+        static let progressInsight = Font.system(.callout, design: .rounded, weight: .regular)
+        static let progressBreakdownCount = Font.system(.headline, design: .rounded, weight: .bold)
+        static let progressBreakdownLabel = Font.system(.subheadline, design: .rounded, weight: .regular)
 
         static let emptyIcon = Font.system(size: 42, weight: .light)
         static let emptyTitle = Font.title2.weight(.medium)
@@ -262,10 +267,17 @@ enum AppStyle {
         static let headerPaddingHorizontal: CGFloat = 20
         static let statusCardVerticalPadding: CGFloat = 6
         static let priorityVerticalPadding: CGFloat = 20
+        static let progressCardVerticalPadding: CGFloat = 24
+        static let progressCardHorizontalPadding: CGFloat = 28
 
         static let headerHStackGap: CGFloat = 24
         static let hStackGap: CGFloat = 14
         static let statusRowGap: CGFloat = 12
+        static let progressContentGap: CGFloat = 24
+        static let progressSummaryGap: CGFloat = 22
+        static let progressTextGap: CGFloat = 14
+        static let progressBreakdownTopGap: CGFloat = 34
+        static let progressBreakdownItemGap: CGFloat = 8
         static let priorityHStackGap: CGFloat = 12
         static let headerVStackGap: CGFloat = 6
         static let priorityCardVStackGap: CGFloat = 10
@@ -366,6 +378,12 @@ enum AppStyle {
         static let dashboardRingSize: CGFloat = 96
         static let dashboardRingTrackStroke: CGFloat = 9
         static let dashboardRingGlowStroke: CGFloat = 12
+        static let progressRingSize: CGFloat = 84
+        static let progressRingTrackStroke: CGFloat = 7
+        static let progressRingGlowStroke: CGFloat = 10
+        static let progressRingHeroSize: CGFloat = 104
+        static let progressRingHeroTrackStroke: CGFloat = 8
+        static let progressRingHeroGlowStroke: CGFloat = 10
         static let compactRingSize: CGFloat = 44
         static let ringTrackStroke: CGFloat = 4
         static let compactRingTrackStroke: CGFloat = 3
@@ -388,6 +406,7 @@ enum AppStyle {
         static let statusRowIconWidth: CGFloat = 24
         static let chevronWidth: CGFloat = 14
         static let dividerHeight: CGFloat = 1
+        static let progressBreakdownDividerHeight: CGFloat = 28
 
         static let tinyShadowRadius: CGFloat = 4
         static let tinyShadowY: CGFloat = 2
