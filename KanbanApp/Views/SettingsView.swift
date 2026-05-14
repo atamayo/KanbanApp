@@ -4,11 +4,13 @@ struct SettingsView: View {
     @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = true
     @AppStorage("maxActiveTasks") private var maxActiveTasks = 3
     @AppStorage("wipLimitHitCount") private var wipLimitHitCount = 0
+    @Environment(\.persistenceSyncMode) private var persistenceSyncMode
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: AppStyle.Spacing.compactSectionSpacing) {
                 focusGuardHero
+                syncSection
                 flowOptimizationSection
                 workflowPolicySection
                 learningSection
@@ -121,6 +123,20 @@ struct SettingsView: View {
             }
             .padding(AppStyle.Spacing.large)
             .cardStyle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
+        }
+    }
+
+    private var syncSection: some View {
+        VStack(alignment: .leading, spacing: AppStyle.Spacing.sectionToCard) {
+            sectionHeader("Task Sync")
+
+            settingsInfoCard(
+                icon: persistenceSyncMode.isCloudBacked ? "icloud.fill" : "internaldrive.fill",
+                title: persistenceSyncMode.isCloudBacked ? "iCloud sync is on" : "Using local storage on this device",
+                body: persistenceSyncMode.isCloudBacked
+                    ? "Tasks sync through iCloud when you use the same Apple Account on each device. Changes can take a short moment to appear everywhere."
+                    : "Tasks are currently stored only on this device. Turn on iCloud for this app to keep tasks available when you switch phones."
+            )
         }
     }
 

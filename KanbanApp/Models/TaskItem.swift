@@ -35,21 +35,21 @@ enum TaskPriority: String, Codable, CaseIterable, Identifiable {
 
 @Model
 final class TaskItem {
-    var id: UUID
-    var title: String
-    var desc: String
-    var completionCriteria: String
-    var statusRaw: String
+    var id: UUID = UUID()
+    var title: String = ""
+    var desc: String = ""
+    var completionCriteria: String = ""
+    var statusRaw: String = TaskStatus.todo.rawValue
     var priorityRaw: String?
-    var isBlocked: Bool
-    var createdAt: Date
-    var updatedAt: Date
+    var isBlocked: Bool = false
+    var createdAt: Date = Date()
+    var updatedAt: Date = Date()
     var finalizedAt: Date?
     var archivedAt: Date?
     var enteredInProgressAt: Date?
-    var order: Int
+    var order: Int = 0
 
-    var lastStatusChange: Date
+    var lastStatusChange: Date = Date()
     var status: TaskStatus {
         get { TaskStatus(rawValue: statusRaw) ?? .todo }
         set { 

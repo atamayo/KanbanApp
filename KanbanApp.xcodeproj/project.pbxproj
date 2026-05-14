@@ -30,6 +30,7 @@
 		A7C100000000000000000010 /* NextActionSuggestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C100000000000000000011 /* NextActionSuggestionService.swift */; };
 		A7C100000000000000000012 /* ImageTextExtractionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C100000000000000000013 /* ImageTextExtractionService.swift */; };
 		A7C100000000000000000014 /* QuickCapturePhotoImportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C100000000000000000015 /* QuickCapturePhotoImportButton.swift */; };
+		B8A7D0D8D7304BF4B02921A1 /* PersistenceBootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A7D0D7D7304BF4B02921A1 /* PersistenceBootstrap.swift */; };
 		C46D8078D30040238CCDE162FB2FE17E /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE822CFBF944080AA7DC05248E4FCB2 /* MainTabView.swift */; };
 		CC88F17F1EB745D7B67C1DED74B18C18 /* AllTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC21578A5014A16A3256BF3F502DDAC /* AllTasksView.swift */; };
 		D4C3B2A10000000000000001 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C3B2A20000000000000002 /* CustomAlertView.swift */; };
@@ -70,6 +71,8 @@
 		A7C100000000000000000011 /* NextActionSuggestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextActionSuggestionService.swift; sourceTree = "<group>"; };
 		A7C100000000000000000013 /* ImageTextExtractionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTextExtractionService.swift; sourceTree = "<group>"; };
 		A7C100000000000000000015 /* QuickCapturePhotoImportButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickCapturePhotoImportButton.swift; sourceTree = "<group>"; };
+		B8A7D0D6D7304BF4B02921A1 /* KanbanApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KanbanApp.entitlements; sourceTree = "<group>"; };
+		B8A7D0D7D7304BF4B02921A1 /* PersistenceBootstrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceBootstrap.swift; sourceTree = "<group>"; };
 		D4C3B2A20000000000000002 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		DD1100000000000000000002 /* LiveTextScannerSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTextScannerSheet.swift; sourceTree = "<group>"; };
 		E1F2A3B4C5D6000000000002 /* WIPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIPView.swift; sourceTree = "<group>"; };
@@ -106,6 +109,7 @@
 				A1B2C3D4E5F6000000000010 /* KanbanApp.swift */,
 				A1B2C3D4E5F6000000000034 /* AppStyle.swift */,
 				A1B2C3D4E5F6000000000012 /* Info.plist */,
+				B8A7D0D6D7304BF4B02921A1 /* KanbanApp.entitlements */,
 				A1B2C3D4E5F6000000000004 /* Models */,
 				A7C10000000000000000000F /* Services */,
 				A1B2C3D4E5F6000000000005 /* Views */,
@@ -182,6 +186,7 @@
 				A7C10000000000000000000E /* QuickCaptureTaskGenerator.swift */,
 				A7C100000000000000000011 /* NextActionSuggestionService.swift */,
 				A7C100000000000000000013 /* ImageTextExtractionService.swift */,
+				B8A7D0D7D7304BF4B02921A1 /* PersistenceBootstrap.swift */,
 				F00D00000000000000000004 /* WIPCoachEngine.swift */,
 				F00D00000000000000000006 /* WIPCoachCopyGenerator.swift */,
 			);
@@ -220,6 +225,14 @@
 				TargetAttributes = {
 					A1B2C3D4E5F600000000000A = {
 						CreatedOnToolsVersion = 15.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -270,6 +283,7 @@
 				A1B2C3D4E5F6000000000036 /* StatusView.swift in Sources */,
 				A1B2C3D4E5F6000000000038 /* ProgresView.swift in Sources */,
 				A1B2C3D4E5F6000000000035 /* AppStyle.swift in Sources */,
+				B8A7D0D8D7304BF4B02921A1 /* PersistenceBootstrap.swift in Sources */,
 				A7C100000000000000000001 /* OnboardingView.swift in Sources */,
 				A7C100000000000000000003 /* OnboardingWelcomePageView.swift in Sources */,
 				A7C100000000000000000005 /* OnboardingFocusPageView.swift in Sources */,
@@ -410,6 +424,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = KanbanApp/KanbanApp.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = KanbanApp/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
@@ -429,6 +444,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = KanbanApp/KanbanApp.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = KanbanApp/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
