@@ -40,9 +40,9 @@ struct OnboardingWelcomePageView: View {
 
     private var boardPreview: some View {
         HStack(spacing: AppStyle.Spacing.statusRowGap) {
-            laneCard(title: "To Do", count: "5", tint: AppStyle.Colors.Status.todo)
-            laneCard(title: "In Progress", count: "2", tint: AppStyle.Colors.Status.inProgress)
-            laneCard(title: "Done", count: "8", tint: AppStyle.Colors.Status.done)
+            laneCard(title: TaskStatus.todo.localizedName, count: "5", tint: AppStyle.Colors.Status.todo)
+            laneCard(title: TaskStatus.inProgress.localizedName, count: "2", tint: AppStyle.Colors.Status.inProgress)
+            laneCard(title: TaskStatus.done.localizedName, count: "8", tint: AppStyle.Colors.Status.done)
         }
     }
 
@@ -65,7 +65,7 @@ struct OnboardingWelcomePageView: View {
         .cardStyle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
     }
 
-    private func featureRow(icon: String, tint: Color, title: String, body: String) -> some View {
+    private func featureRow(icon: String, tint: Color, title: LocalizedStringKey, body: LocalizedStringKey) -> some View {
         HStack(alignment: .top, spacing: AppStyle.Spacing.regular) {
             ZStack {
                 RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous)

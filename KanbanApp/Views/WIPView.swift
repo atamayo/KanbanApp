@@ -184,7 +184,7 @@ struct WIPView: View {
                 .foregroundStyle(wipAccentColor)
                 .textCase(.uppercase)
 
-            Text(recommendation.recommendedTask?.title ?? "Your board is clear")
+            Text(recommendation.recommendedTask?.title ?? String(localized: "Your board is clear"))
                 .font(AppStyle.Typography.cardTitle)
                 .foregroundStyle(AppStyle.Colors.primaryText)
                 .lineLimit(2)
@@ -236,11 +236,11 @@ struct WIPView: View {
     }
 
     private var accessibilitySummary: String {
-        let taskSummary = recommendation.recommendedTask.map { "Recommended task: \($0.title)." } ?? "No recommended task."
-        return "Work in progress pressure. \(displayedHeadline) \(recommendation.stats.activeCount) of \(recommendation.stats.wipLimit) tasks active. \(recommendation.stats.slotsLeft) slots left. \(recommendation.label.capitalized). \(taskSummary)"
+        let taskSummary = recommendation.recommendedTask.map { String(localized: "Recommended task: \($0.title).") } ?? String(localized: "No recommended task.")
+        return String(localized: "Work in progress pressure. \(displayedHeadline) \(recommendation.stats.activeCount) of \(recommendation.stats.wipLimit) tasks active. \(recommendation.stats.slotsLeft) slots left. \(recommendation.label.capitalized). \(taskSummary)")
     }
 
-    private func statPill(label: String, value: String, tint: Color) -> some View {
+    private func statPill(label: LocalizedStringKey, value: String, tint: Color) -> some View {
         VStack(alignment: .leading, spacing: AppStyle.Spacing.tiny) {
             Text(label)
                 .font(AppStyle.Typography.statLabel)
@@ -372,7 +372,7 @@ private struct WIPCoachReviewSheet: View {
         .padding(AppStyle.Spacing.large)
         .accentCardStyle(tint: accentColor)
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("Work in progress review. \(recommendation.stats.activeCount) of \(recommendation.stats.wipLimit) tasks active. \(recommendation.stats.slotsLeft) slots left. \(recommendation.stats.blockedCount) blocked tasks. \(recommendation.stats.readyCount) ready tasks.")
+        .accessibilityLabel(String(localized: "Work in progress review. \(recommendation.stats.activeCount) of \(recommendation.stats.wipLimit) tasks active. \(recommendation.stats.slotsLeft) slots left. \(recommendation.stats.blockedCount) blocked tasks. \(recommendation.stats.readyCount) ready tasks."))
     }
 
     private var statsRow: some View {
@@ -395,7 +395,7 @@ private struct WIPCoachReviewSheet: View {
                     .foregroundStyle(accentColor)
                     .textCase(.uppercase)
 
-                Text(recommendation.recommendedTask?.title ?? "Your board is clear")
+                Text(recommendation.recommendedTask?.title ?? String(localized: "Your board is clear"))
                     .font(AppStyle.Typography.cardTitle)
                     .foregroundStyle(AppStyle.Colors.primaryText)
                     .fixedSize(horizontal: false, vertical: true)
@@ -516,7 +516,7 @@ private struct WIPCoachReviewSheet: View {
                     ForEach(recommendation.activeTasks.prefix(3)) { task in
                         taskRow(
                             title: task.title,
-                            subtitle: task.isBlocked ? "Blocked" : task.lastStatusChange.formatted(.relative(presentation: .named)),
+                            subtitle: task.isBlocked ? String(localized: "Blocked") : task.lastStatusChange.formatted(.relative(presentation: .named)),
                             icon: task.isBlocked ? "pause.circle.fill" : "clock.fill",
                             tint: task.isBlocked ? AppStyle.Colors.blocked : AppStyle.Colors.Status.inProgress
                         ) {
@@ -529,7 +529,7 @@ private struct WIPCoachReviewSheet: View {
         }
     }
 
-    private func statTile(_ label: String, _ value: String) -> some View {
+    private func statTile(_ label: LocalizedStringKey, _ value: String) -> some View {
         VStack(alignment: .leading, spacing: AppStyle.Spacing.tiny) {
             Text(label)
                 .font(AppStyle.Typography.statLabel)

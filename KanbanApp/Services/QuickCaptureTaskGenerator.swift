@@ -32,13 +32,13 @@ enum QuickCaptureTaskGenerator {
         case .available:
             return .available
         case .unavailable(.deviceNotEligible):
-            return .unavailable("Apple Intelligence is not supported on this device.")
+            return .unavailable(String(localized: "Apple Intelligence is not supported on this device."))
         case .unavailable(.appleIntelligenceNotEnabled):
-            return .unavailable("Turn on Apple Intelligence in Settings to use Quick Capture AI.")
+            return .unavailable(String(localized: "Turn on Apple Intelligence in Settings to use Quick Capture AI."))
         case .unavailable(.modelNotReady):
-            return .unavailable("Apple Intelligence is getting ready. Try again in a moment.")
+            return .unavailable(String(localized: "Apple Intelligence is getting ready. Try again in a moment."))
         case .unavailable:
-            return .unavailable("Quick Capture AI is unavailable right now.")
+            return .unavailable(String(localized: "Quick Capture AI is unavailable right now."))
         }
     }
 

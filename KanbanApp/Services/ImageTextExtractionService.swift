@@ -9,9 +9,9 @@ enum ImageTextExtractionError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .unsupportedImage:
-            return "The selected image could not be read."
+            return String(localized: "The selected image could not be read.")
         case .noTextFound:
-            return "No readable text was found in that image."
+            return String(localized: "No readable text was found in that image.")
         }
     }
 }

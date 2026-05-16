@@ -112,13 +112,13 @@ enum WIPCoachCopyGenerator {
         case .available:
             return .available
         case .unavailable(.deviceNotEligible):
-            return .unavailable("Apple Intelligence is not supported on this device.")
+            return .unavailable(String(localized: "Apple Intelligence is not supported on this device."))
         case .unavailable(.appleIntelligenceNotEnabled):
-            return .unavailable("Turn on Apple Intelligence in Settings to personalize WIP coaching.")
+            return .unavailable(String(localized: "Turn on Apple Intelligence in Settings to personalize WIP coaching."))
         case .unavailable(.modelNotReady):
-            return .unavailable("Apple Intelligence is getting ready. Try again in a moment.")
+            return .unavailable(String(localized: "Apple Intelligence is getting ready. Try again in a moment."))
         case .unavailable:
-            return .unavailable("WIP Coach AI copy is unavailable right now.")
+            return .unavailable(String(localized: "WIP Coach AI copy is unavailable right now."))
         }
     }
 

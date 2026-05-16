@@ -171,7 +171,7 @@ struct AddTaskView: View {
                         VStack(spacing: AppStyle.Spacing.small) {
                             Image(systemName: priorityIcon(p))
                                 .font(AppStyle.Typography.fabIcon)
-                            Text(p.rawValue)
+                            Text(p.localizedName)
                                 .font(AppStyle.Typography.priorityLabel)
                         }
                         .frame(maxWidth: .infinity)
@@ -223,7 +223,7 @@ struct AddTaskView: View {
             Image(systemName: "info.circle.fill")
                 .foregroundStyle(statusColor)
             
-            Text("Adding to \(Text(status.rawValue).fontWeight(.bold)) status")
+            Text("Adding to \(Text(status.localizedName).fontWeight(.bold)) status")
         } 
         .font(AppStyle.Typography.formFooter)
         .foregroundStyle(AppStyle.Colors.secondaryText)
@@ -234,7 +234,7 @@ struct AddTaskView: View {
     }
 
     private var quickCaptureMessageColor: Color {
-        if quickCapture.message?.hasPrefix("Photo imported.") == true || quickCapture.message?.hasPrefix("Draft generated.") == true {
+        if quickCapture.isMessagePositive {
             return AppStyle.Colors.doneAccent
         }
         return quickCapture.isAvailable ? .secondary : AppStyle.Colors.warning
@@ -303,11 +303,11 @@ struct AddTaskView: View {
         let cleanedDone = draft.definitionOfDone.trimmingCharacters(in: .whitespacesAndNewlines)
 
         if cleanedDescription.isEmpty {
-            description = cleanedNextAction.isEmpty ? "" : "Next action: \(cleanedNextAction)"
+            description = cleanedNextAction.isEmpty ? "" : String(localized: "Next action: \(cleanedNextAction)")
         } else if cleanedNextAction.isEmpty {
             description = cleanedDescription
         } else {
-            description = "\(cleanedDescription)\n\nNext action: \(cleanedNextAction)"
+            description = "\(cleanedDescription)\n\n\(String(localized: "Next action: \(cleanedNextAction)"))"
         }
 
         completionCriteria = cleanedDone
@@ -347,7 +347,7 @@ struct AddTaskView: View {
         case .denied:
             quickCapture.showMessage(LiveTextScannerError.cameraAccessDenied.localizedDescription)
         case .unavailable:
-            quickCapture.showMessage("Camera access is unavailable right now.")
+            quickCapture.showMessage(String(localized: "Camera access is unavailable right now."))
         }
     }
 

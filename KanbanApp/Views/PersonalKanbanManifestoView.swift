@@ -127,7 +127,7 @@ struct PersonalKanbanManifestoView: View {
         }
     }
 
-    private func principlePill(_ title: String, tint: Color) -> some View {
+    private func principlePill(_ title: LocalizedStringKey, tint: Color) -> some View {
         Text(title)
             .font(AppStyle.Typography.pillLabel)
             .foregroundStyle(tint)
@@ -136,7 +136,7 @@ struct PersonalKanbanManifestoView: View {
             .background(tint.opacity(AppStyle.Opacity.accentWashStrong), in: Capsule())
     }
 
-    private func manifestoCard(icon: String, title: String, body: String) -> some View {
+    private func manifestoCard(icon: String, title: LocalizedStringKey, body: LocalizedStringKey) -> some View {
         HStack(alignment: .top, spacing: AppStyle.Spacing.regular) {
             ZStack {
                 RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous)
@@ -165,7 +165,7 @@ struct PersonalKanbanManifestoView: View {
         .cardStyle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
     }
 
-    private func sectionHeader(_ title: String) -> some View {
+    private func sectionHeader(_ title: LocalizedStringKey) -> some View {
         Text(title)
             .sectionHeaderStyle()
     }

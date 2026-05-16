@@ -10,13 +10,13 @@ enum LiveTextScannerError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .unsupported:
-            return "Live text scanning is not supported on this device."
+            return String(localized: "Live text scanning is not supported on this device.")
         case .unavailable:
-            return "The camera scanner is unavailable right now."
+            return String(localized: "The camera scanner is unavailable right now.")
         case .noTextFound:
-            return "No readable text was found in the camera view."
+            return String(localized: "No readable text was found in the camera view.")
         case .cameraAccessDenied:
-            return "Camera access is required to scan text. Enable it in Settings."
+            return String(localized: "Camera access is required to scan text. Enable it in Settings.")
         }
     }
 }

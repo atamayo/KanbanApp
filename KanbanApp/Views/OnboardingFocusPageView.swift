@@ -49,7 +49,7 @@ struct OnboardingFocusPageView: View {
         VStack(alignment: .leading, spacing: AppStyle.Spacing.normal) {
             HStack(alignment: .center) {
                 VStack(alignment: .leading, spacing: AppStyle.Spacing.tight) {
-                    Text("In Progress")
+                    Text(TaskStatus.inProgress.localizedName)
                         .font(AppStyle.Typography.statLabel)
                         .foregroundStyle(AppStyle.Colors.secondaryText)
 
@@ -98,7 +98,7 @@ struct OnboardingFocusPageView: View {
         )
     }
 
-    private func principleRow(icon: String, tint: Color, title: String, body: String) -> some View {
+    private func principleRow(icon: String, tint: Color, title: LocalizedStringKey, body: LocalizedStringKey) -> some View {
         HStack(alignment: .top, spacing: AppStyle.Spacing.regular) {
             Image(systemName: icon)
                 .font(AppStyle.Typography.iconMedium)

@@ -17,24 +17,24 @@ struct StatusView: View {
                 count: todoCount,
                 color: AppStyle.Colors.Status.todo,
                 icon: "circle",
-                zeroSubtitle: "No waiting tasks",
-                countSubtitle: "waiting"
+                zeroSubtitle: String(localized: "No waiting tasks"),
+                countSubtitle: String(localized: "waiting")
             ),
             StatusLane(
                 status: .inProgress,
                 count: inProgressCount,
                 color: inProgressColor,
                 icon: inProgressIcon,
-                zeroSubtitle: "No active tasks",
-                countSubtitle: "active"
+                zeroSubtitle: String(localized: "No active tasks"),
+                countSubtitle: String(localized: "active")
             ),
             StatusLane(
                 status: .done,
                 count: doneCount,
                 color: AppStyle.Colors.Status.done,
                 icon: "checkmark.circle.fill",
-                zeroSubtitle: "Nothing completed yet",
-                countSubtitle: "completed"
+                zeroSubtitle: String(localized: "Nothing completed yet"),
+                countSubtitle: String(localized: "completed")
             )
         ]
     }
@@ -94,7 +94,7 @@ struct StatusView: View {
     }
 
     private var distributionAccessibilityLabel: String {
-        "Status distribution: \(todoCount) to do, \(inProgressCount) in progress, \(doneCount) done"
+        String(localized: "Status distribution: \(todoCount) to do, \(inProgressCount) in progress, \(doneCount) done")
     }
 }
 
@@ -163,7 +163,7 @@ private struct StatusRow: View {
                     .accessibilityHidden(true)
 
                 VStack(alignment: .leading, spacing: AppStyle.Spacing.statusRowSubtitleGap) {
-                    Text(lane.status.rawValue)
+                    Text(lane.status.localizedName)
                         .font(AppStyle.Typography.statusRowTitle)
                         .foregroundStyle(AppStyle.Colors.primaryText)
                         .lineLimit(1)
@@ -219,7 +219,7 @@ private struct StatusRow: View {
         }
         .buttonStyle(.plain)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("\(lane.status.rawValue), \(lane.count) \(lane.count == 1 ? "task" : "tasks")")
+        .accessibilityLabel(String(localized: "\(lane.status.localizedName), \(lane.count) \(lane.taskWord)"))
         .accessibilityHint("Opens tasks in this lane")
     }
 }
@@ -233,7 +233,11 @@ private struct StatusLane {
     let countSubtitle: String
 
     var subtitle: String {
-        count == 0 ? zeroSubtitle : "\(count.formatted()) \(countSubtitle)"
+        count == 0 ? zeroSubtitle : String(localized: "\(count.formatted()) \(countSubtitle)")
+    }
+
+    var taskWord: String {
+        count == 1 ? String(localized: "task") : String(localized: "tasks")
     }
 }
 
