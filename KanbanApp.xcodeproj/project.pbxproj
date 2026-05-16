@@ -36,6 +36,9 @@
 		A7C10000000000000000001C /* CameraPermissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C10000000000000000001D /* CameraPermissionService.swift */; };
 		A7C10000000000000000001E /* AddTaskActionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C10000000000000000001F /* AddTaskActionBar.swift */; };
 		A7C100000000000000000020 /* QuickCaptureCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C100000000000000000021 /* QuickCaptureCoordinator.swift */; };
+		A7C100000000000000000022 /* TaskAgingEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C100000000000000000023 /* TaskAgingEvaluator.swift */; };
+		A7C100000000000000000024 /* TaskAgingNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C100000000000000000025 /* TaskAgingNotificationService.swift */; };
+		A7C100000000000000000026 /* TaskAgingNotificationSyncView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C100000000000000000027 /* TaskAgingNotificationSyncView.swift */; };
 		B8A7D0D8D7304BF4B02921A1 /* PersistenceBootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A7D0D7D7304BF4B02921A1 /* PersistenceBootstrap.swift */; };
 		C46D8078D30040238CCDE162FB2FE17E /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE822CFBF944080AA7DC05248E4FCB2 /* MainTabView.swift */; };
 		CC88F17F1EB745D7B67C1DED74B18C18 /* AllTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC21578A5014A16A3256BF3F502DDAC /* AllTasksView.swift */; };
@@ -83,6 +86,9 @@
 		A7C10000000000000000001D /* CameraPermissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionService.swift; sourceTree = "<group>"; };
 		A7C10000000000000000001F /* AddTaskActionBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskActionBar.swift; sourceTree = "<group>"; };
 		A7C100000000000000000021 /* QuickCaptureCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickCaptureCoordinator.swift; sourceTree = "<group>"; };
+		A7C100000000000000000023 /* TaskAgingEvaluator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAgingEvaluator.swift; sourceTree = "<group>"; };
+		A7C100000000000000000025 /* TaskAgingNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAgingNotificationService.swift; sourceTree = "<group>"; };
+		A7C100000000000000000027 /* TaskAgingNotificationSyncView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAgingNotificationSyncView.swift; sourceTree = "<group>"; };
 		B8A7D0D6D7304BF4B02921A1 /* KanbanApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KanbanApp.entitlements; sourceTree = "<group>"; };
 		B8A7D0D7D7304BF4B02921A1 /* PersistenceBootstrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceBootstrap.swift; sourceTree = "<group>"; };
 		D4C3B2A20000000000000002 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
@@ -163,6 +169,7 @@
 				A7C100000000000000000008 /* OnboardingManifestoPageView.swift */,
 				A7C10000000000000000000A /* AppIconBadgeSyncView.swift */,
 				A7C10000000000000000000C /* SearchTasksView.swift */,
+				A7C100000000000000000027 /* TaskAgingNotificationSyncView.swift */,
 				E1F2A3B4C5D6000000000002 /* WIPView.swift */,
 				E1F2A3B4C5D6000000000004 /* PersonalKanbanManifestoView.swift */,
 				2BC21578A5014A16A3256BF3F502DDAC /* AllTasksView.swift */,
@@ -204,6 +211,8 @@
 				A7C10000000000000000001D /* CameraPermissionService.swift */,
 				A7C100000000000000000017 /* VoiceCaptureService.swift */,
 				A7C100000000000000000021 /* QuickCaptureCoordinator.swift */,
+				A7C100000000000000000023 /* TaskAgingEvaluator.swift */,
+				A7C100000000000000000025 /* TaskAgingNotificationService.swift */,
 				B8A7D0D7D7304BF4B02921A1 /* PersistenceBootstrap.swift */,
 				F00D00000000000000000004 /* WIPCoachEngine.swift */,
 				F00D00000000000000000006 /* WIPCoachCopyGenerator.swift */,
@@ -314,10 +323,13 @@
 				A7C10000000000000000001C /* CameraPermissionService.swift in Sources */,
 				A7C100000000000000000016 /* VoiceCaptureService.swift in Sources */,
 				A7C100000000000000000020 /* QuickCaptureCoordinator.swift in Sources */,
+				A7C100000000000000000022 /* TaskAgingEvaluator.swift in Sources */,
+				A7C100000000000000000024 /* TaskAgingNotificationService.swift in Sources */,
 				A7C100000000000000000014 /* QuickCapturePhotoImportButton.swift in Sources */,
 				A7C10000000000000000001E /* AddTaskActionBar.swift in Sources */,
 				A7C100000000000000000018 /* QuickCaptureDraftSheet.swift in Sources */,
 				A7C10000000000000000001A /* QuickCaptureSource.swift in Sources */,
+				A7C100000000000000000026 /* TaskAgingNotificationSyncView.swift in Sources */,
 				DD1100000000000000000001 /* LiveTextScannerSheet.swift in Sources */,
 				F00D00000000000000000001 /* VoiceCaptureSheet.swift in Sources */,
 				F00D00000000000000000003 /* WIPCoachEngine.swift in Sources */,

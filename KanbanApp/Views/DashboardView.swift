@@ -6,6 +6,8 @@ struct DashboardView: View {
     @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = true
     @AppStorage("maxActiveTasks") private var maxActiveTasks = 3
     @AppStorage("wipLimitHitCount") private var wipLimitHitCount = 0
+    @AppStorage("taskAgingNotificationDayThreshold") private var taskAgingNotificationDayThreshold = 3
+    @AppStorage("taskStalledNotificationDayThreshold") private var taskStalledNotificationDayThreshold = 5
     @State private var selectedCoachTask: TaskItem?
 
     // MARK: - Data
@@ -30,7 +32,7 @@ struct DashboardView: View {
     private var oldestInProgressTask: TaskItem? {
         currentTasks
             .filter { $0.status == .inProgress && !$0.isBlocked }
-            .sorted { $0.lastStatusChange < $1.lastStatusChange }
+            .sorted { TaskAgingEvaluator.activeSince(for: $0) < TaskAgingEvaluator.activeSince(for: $1) }
             .first
     }
 
@@ -53,25 +55,21 @@ struct DashboardView: View {
             .first
     }
 
+    private var agingSummary: TaskAgingSummary {
+        TaskAgingEvaluator.evaluate(
+            tasks: currentTasks,
+            now: Date(),
+            agingDays: taskAgingNotificationDayThreshold,
+            stalledDays: taskStalledNotificationDayThreshold
+        )
+    }
+
     private var agingInProgressTasks: [TaskItem] {
-        currentTasks
-            .filter {
-                $0.status == .inProgress &&
-                !$0.isBlocked &&
-                Date().timeIntervalSince($0.lastStatusChange) >= (3 * 24 * 60 * 60) &&
-                Date().timeIntervalSince($0.lastStatusChange) < (5 * 24 * 60 * 60)
-            }
-            .sorted { $0.lastStatusChange < $1.lastStatusChange }
+        agingSummary.agingTasks
     }
 
     private var stalledInProgressTasks: [TaskItem] {
-        currentTasks
-            .filter {
-                $0.status == .inProgress &&
-                !$0.isBlocked &&
-                Date().timeIntervalSince($0.lastStatusChange) >= (5 * 24 * 60 * 60)
-            }
-            .sorted { $0.lastStatusChange < $1.lastStatusChange }
+        agingSummary.stalledTasks
     }
 
     private var doneThisWeekCount: Int {
@@ -442,15 +440,16 @@ struct DashboardView: View {
     }
 
     private func activeAgeText(for task: TaskItem) -> String {
-        let days = Int(Date().timeIntervalSince(task.lastStatusChange) / (24 * 60 * 60))
+        let activeSince = TaskAgingEvaluator.activeSince(for: task)
+        let days = Int(Date().timeIntervalSince(activeSince) / (24 * 60 * 60))
         if days > 0 {
             return "\(days)d"
         }
-        let hours = Int(Date().timeIntervalSince(task.lastStatusChange) / (60 * 60))
+        let hours = Int(Date().timeIntervalSince(activeSince) / (60 * 60))
         if hours > 0 {
             return "\(hours)h"
         }
-        let minutes = Int(Date().timeIntervalSince(task.lastStatusChange) / 60)
+        let minutes = Int(Date().timeIntervalSince(activeSince) / 60)
         return "\(max(minutes, 1))m"
     }
 

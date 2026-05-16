@@ -9,6 +9,10 @@ struct KanbanApp: App {
         UserDefaults.standard.register(defaults: [
             "isFocusGuardEnabled": true,
             "maxActiveTasks": 3,
+            "isTaskAgingNotificationsEnabled": false,
+            "taskAgingNotificationDayThreshold": 3,
+            "taskStalledNotificationDayThreshold": 5,
+            "taskAgingNotificationHour": 9,
         ])
 
         persistence = PersistenceBootstrap.makeContainer()

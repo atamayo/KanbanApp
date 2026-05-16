@@ -54,6 +54,8 @@ struct TaskCardView: View {
     @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = true
     @AppStorage("maxActiveTasks") private var maxActiveTasks = 3
     @AppStorage("wipLimitHitCount") private var wipLimitHitCount = 0
+    @AppStorage("taskAgingNotificationDayThreshold") private var taskAgingNotificationDayThreshold = 3
+    @AppStorage("taskStalledNotificationDayThreshold") private var taskStalledNotificationDayThreshold = 5
     @Query(filter: #Predicate<TaskItem> { $0.statusRaw == "In Progress" }) private var inProgressTasks: [TaskItem]
 
     init(
@@ -96,7 +98,7 @@ struct TaskCardView: View {
         case .todo:
             return task.createdAt
         case .inProgress:
-            return task.lastStatusChange
+            return TaskAgingEvaluator.activeSince(for: task)
         case .done:
             return closedAt ?? task.updatedAt
         }
@@ -118,9 +120,9 @@ struct TaskCardView: View {
             }
             if flowAge < 24 * 60 * 60 {
                 return .fresh
-            } else if flowAge < 3 * 24 * 60 * 60 {
+            } else if flowAge < TimeInterval(taskAgingNotificationDayThreshold * 86_400) {
                 return .active
-            } else if flowAge < 5 * 24 * 60 * 60 {
+            } else if flowAge < TimeInterval(max(taskStalledNotificationDayThreshold, taskAgingNotificationDayThreshold + 1) * 86_400) {
                 return .aging
             } else {
                 return .stalled

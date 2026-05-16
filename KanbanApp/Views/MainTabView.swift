@@ -27,6 +27,7 @@ struct MainTabView: View {
             .tabBarMinimizeBehavior(.onScrollDown)
             .ignoresSafeArea(.keyboard)
             .syncAppIconBadge(tasks: allTasks)
+            .syncTaskAgingNotifications(tasks: allTasks)
             .sheet(isPresented: $isAddingTask) {
                 AddTaskView(status: addTaskStatus) { createdTask in
                     handleCreatedTask(createdTask, from: addTaskSourceTab)
