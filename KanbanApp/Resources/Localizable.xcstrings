@@ -16,6 +16,12 @@
             "state": "translated",
             "value": "\"%@\" ist schon eine Weile in Arbeit. Prüfe sie, bevor du mehr Arbeit hereinziehst."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” 已经进行了一段时间。拉入更多工作前，先检查一下。"
+          }
         }
       }
     },
@@ -32,6 +38,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "\"%@\" liegt langsam zu lange in Arbeit. Eine kurze Prüfung kann das Board in Bewegung halten."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” 在进行中开始变久了。快速检查一下，可以让看板继续流动。"
           }
         }
       }
@@ -50,6 +62,12 @@
             "state": "translated",
             "value": "\"%@\" braucht vielleicht eine Entscheidung. %lld weitere aktive %@ werden langsam alt."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” 可能需要一个决定。另有 %lld 个活跃%@也在变旧。"
+          }
         }
       }
     },
@@ -62,6 +80,12 @@
           }
         },
         "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ %@"
+          }
+        },
+        "zh-Hans": {
           "stringUnit": {
             "state": "translated",
             "value": "%@ %@"
@@ -82,6 +106,12 @@
             "state": "translated",
             "value": "Spalte %@, %lld Aufgaben"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 列，%lld 个任务"
+          }
         }
       }
     },
@@ -97,6 +127,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@ von %@ %@ erledigt"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已完成 %@/%@ %@"
           }
         }
       }
@@ -114,6 +150,12 @@
             "state": "translated",
             "value": "Priorität %@"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@优先级"
+          }
         }
       }
     },
@@ -129,6 +171,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@, %lld %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@，%lld %@"
           }
         }
       }
@@ -146,6 +194,12 @@
             "state": "translated",
             "value": "%@, vor %@ erstellt"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@，创建于 %@ 前"
+          }
         }
       }
     },
@@ -161,6 +215,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@, seit %@ in Arbeit"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@，已进行 %@"
           }
         }
       }
@@ -178,6 +238,12 @@
             "state": "translated",
             "value": "%@. %@"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@。%@"
+          }
         }
       }
     },
@@ -194,6 +260,12 @@
             "state": "translated",
             "value": "%lld"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld"
+          }
         }
       }
     },
@@ -206,6 +278,12 @@
           }
         },
         "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld %@"
+          }
+        },
+        "zh-Hans": {
           "stringUnit": {
             "state": "translated",
             "value": "%lld %@"
@@ -227,6 +305,12 @@
             "state": "translated",
             "value": "%lld %@ könnten feststecken"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld 个%@可能已停滞"
+          }
         }
       }
     },
@@ -243,6 +327,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld aktive %@ werden alt"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld 个活跃%@正在变旧"
           }
         }
       }
@@ -261,6 +351,12 @@
             "state": "translated",
             "value": "%lld T"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld天"
+          }
         }
       }
     },
@@ -277,6 +373,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld T im Status"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在此状态 %lld 天"
           }
         }
       }
@@ -295,6 +397,12 @@
             "state": "translated",
             "value": "%lld Std."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld小时"
+          }
         }
       }
     },
@@ -311,6 +419,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld Std. im Status"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在此状态 %lld 小时"
           }
         }
       }
@@ -329,6 +443,12 @@
             "state": "translated",
             "value": "%lld Min."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld分钟"
+          }
         }
       }
     },
@@ -346,6 +466,12 @@
             "state": "translated",
             "value": "vor %lld Min."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld 分钟前"
+          }
         }
       }
     },
@@ -358,6 +484,12 @@
           }
         },
         "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3 / 3"
+          }
+        },
+        "zh-Hans": {
           "stringUnit": {
             "state": "translated",
             "value": "3 / 3"
@@ -378,6 +510,12 @@
             "state": "translated",
             "value": "Ein fokussiertes System funktioniert besser, wenn du aktive Arbeit klein hältst."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "当你把活跃工作控制得更少时，专注系统会运转得更好。"
+          }
         }
       }
     },
@@ -393,6 +531,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ein Limit von 2 oder 3 aktiven Aufgaben verbessert meist Fokus, Qualität und Abschlussrate."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "将活跃任务限制在 2 或 3 个，通常能提升专注度、质量和完成率。"
           }
         }
       }
@@ -410,6 +554,12 @@
             "state": "translated",
             "value": "Eine begrenzte In-Arbeit-Spalte macht es leichter, bei der aktuellen Arbeit zu bleiben, statt Energie auf zu viele Aufgaben zu verteilen."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "限制“进行中”列，可以让你更容易专注当前工作，而不是把精力分散到太多任务上。"
+          }
         }
       }
     },
@@ -425,6 +575,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Eine Aufgabe gehört nur dann in In Arbeit, wenn du gerade aktiv daran arbeitest. Blockierte oder wartende Arbeit sollte sichtbar sein und nicht still daruntergemischt werden."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "只有当你现在真的在处理某个任务时，它才属于“进行中”。被阻塞或等待中的工作应该清楚可见，而不是悄悄混在里面。"
           }
         }
       }
@@ -442,6 +598,12 @@
             "state": "translated",
             "value": "Eine Aufgabe ist erledigt, wenn ihre Abschlussprüfung erfüllt ist, nicht wenn sie sich nur fast fertig anfühlt. Nutze das Feld Definition of Done, um den Abschluss eindeutig zu machen."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "任务只有满足完成检查时才算完成，而不是感觉快好了就算。使用“完成定义”字段，让完成标准更明确。"
+          }
         }
       }
     },
@@ -457,6 +619,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Handlungsfähiges Dashboard"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "可行动的仪表盘"
           }
         }
       }
@@ -474,6 +642,12 @@
             "state": "translated",
             "value": "aktiv"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "活跃"
+          }
         }
       }
     },
@@ -489,6 +663,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aktiv"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "活跃"
           }
         }
       }
@@ -506,6 +686,12 @@
             "state": "translated",
             "value": "Aktives Alter"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "活跃时长"
+          }
         }
       }
     },
@@ -521,6 +707,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hinweise für aktive Aufgaben"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "活跃任务提醒"
           }
         }
       }
@@ -538,6 +730,12 @@
             "state": "translated",
             "value": "Aktive Arbeit"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "活跃工作"
+          }
         }
       }
     },
@@ -553,6 +751,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Füge eine Aufgabe hinzu, um dein Dashboard zu füllen"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "添加一个任务，让仪表盘开始显示内容"
           }
         }
       }
@@ -570,6 +774,12 @@
             "state": "translated",
             "value": "Füge Kontext zur Aufgabe hinzu"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "为任务添加上下文"
+          }
         }
       }
     },
@@ -585,6 +795,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aufgabe hinzufügen"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "添加任务"
           }
         }
       }
@@ -602,6 +818,12 @@
             "state": "translated",
             "value": "Füge deine erste Aufgabe hinzu, um Fortschritt zu verfolgen."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "添加第一个任务，开始跟踪进度。"
+          }
         }
       }
     },
@@ -617,6 +839,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Wird zum Status %@ hinzugefügt"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正在添加到 %@ 状态"
           }
         }
       }
@@ -634,6 +862,12 @@
             "state": "translated",
             "value": "Alternd"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "变久"
+          }
         }
       }
     },
@@ -649,6 +883,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Altert nach"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "变久阈值"
           }
         }
       }
@@ -666,6 +906,12 @@
             "state": "translated",
             "value": "Alternde Aufgaben"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "变久的任务"
+          }
         }
       }
     },
@@ -681,6 +927,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Alle Aufgaben"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "所有任务"
           }
         }
       }
@@ -698,6 +950,12 @@
             "state": "translated",
             "value": "Alle Aufgaben erledigt"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "所有任务已完成"
+          }
         }
       }
     },
@@ -713,6 +971,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Fast geschafft: Schließe die übrigen Aufgaben ab."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "快完成了，收尾剩下的任务。"
           }
         }
       }
@@ -730,6 +994,12 @@
             "state": "translated",
             "value": "Apple Intelligence wird vorbereitet. Versuch es gleich noch einmal."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Intelligence 正在准备中。请稍后再试。"
+          }
         }
       }
     },
@@ -745,6 +1015,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Apple Intelligence wird auf diesem Gerät nicht unterstützt."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "此设备不支持 Apple Intelligence。"
           }
         }
       }
@@ -762,6 +1038,12 @@
             "state": "translated",
             "value": "Apple Intelligence ist nicht verfügbar. Füge den Text hier ein und ergänze ihn manuell zur Aufgabe."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Intelligence 不可用。请在这里粘贴文本，然后手动添加到任务中。"
+          }
         }
       }
     },
@@ -777,6 +1059,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Archivieren"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "归档"
           }
         }
       }
@@ -794,6 +1082,12 @@
             "state": "translated",
             "value": "Erledigte Aufgabe archivieren"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "归档已完成任务"
+          }
         }
       }
     },
@@ -809,6 +1103,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Archiviert"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已归档"
           }
         }
       }
@@ -826,6 +1126,12 @@
             "state": "translated",
             "value": "Vor %@ archiviert"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 前已归档"
+          }
         }
       }
     },
@@ -841,6 +1147,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld archiviert"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已归档 %lld"
           }
         }
       }
@@ -858,6 +1170,12 @@
             "state": "translated",
             "value": "Archivierte erledigte Aufgaben verlassen das aktive Board, zählen aber weiterhin zur Abschluss-Historie."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "归档的已完成任务会离开活跃看板，但仍会计入完成历史。"
+          }
         }
       }
     },
@@ -873,6 +1191,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ø Tage bis erledigt"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "平均完成天数"
           }
         }
       }
@@ -890,6 +1214,12 @@
             "state": "translated",
             "value": "BESTE NÄCHSTE AUFGABE"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下一步最适合拉入的任务"
+          }
         }
       }
     },
@@ -905,6 +1235,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Blockiert"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已阻塞"
           }
         }
       }
@@ -922,6 +1258,12 @@
             "state": "translated",
             "value": "Blockiert / Wartend"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已阻塞 / 等待中"
+          }
         }
       }
     },
@@ -937,6 +1279,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Blockierte aktive Arbeit"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "被阻塞的活跃工作"
           }
         }
       }
@@ -954,6 +1302,12 @@
             "state": "translated",
             "value": "Blockierte Aufgaben brauchen Aufmerksamkeit, bevor mehr Arbeit hereingeholt wird."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "拉入更多工作前，先处理被阻塞的任务。"
+          }
         }
       }
     },
@@ -969,6 +1323,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Blockierte Arbeit"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "阻塞工作"
           }
         }
       }
@@ -986,6 +1346,12 @@
             "state": "translated",
             "value": "Blockierte Arbeit bremst deinen Flow."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "阻塞工作正在拖慢你的流程。"
+          }
         }
       }
     },
@@ -1001,6 +1367,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Blockierte Arbeit bleibt sichtbar"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "阻塞工作保持可见"
           }
         }
       }
@@ -1018,6 +1390,12 @@
             "state": "translated",
             "value": "Board vollständig: Alle Aufgaben sind erledigt."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "看板完成，所有任务都已完成。"
+          }
         }
       }
     },
@@ -1033,6 +1411,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "ERST AUFTEILEN"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "先拆分"
           }
         }
       }
@@ -1050,6 +1434,12 @@
             "state": "translated",
             "value": "Aufgabe aufteilen"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "拆分任务"
+          }
         }
       }
     },
@@ -1065,6 +1455,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lebensmittel einkaufen"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "买菜"
           }
         }
       }
@@ -1082,6 +1478,12 @@
             "state": "translated",
             "value": "Kamerazugriff ist nötig, um Text zu scannen. Aktiviere ihn in den Einstellungen."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "扫描文本需要相机权限。请在设置中开启。"
+          }
         }
       }
     },
@@ -1097,6 +1499,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Kamerazugriff ist gerade nicht verfügbar."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "相机权限现在不可用。"
           }
         }
       }
@@ -1114,6 +1522,12 @@
             "state": "translated",
             "value": "Abbrechen"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "取消"
+          }
         }
       }
     },
@@ -1129,6 +1543,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Erfassen"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "捕捉"
           }
         }
       }
@@ -1146,6 +1566,12 @@
             "state": "translated",
             "value": "Nächste Aufgabe wählen"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "选择下一个任务"
+          }
         }
       }
     },
@@ -1161,6 +1587,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Leeren"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "清空"
           }
         }
       }
@@ -1178,6 +1610,12 @@
             "state": "translated",
             "value": "Abschlussprüfung löschen"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "清除完成检查"
+          }
         }
       }
     },
@@ -1193,6 +1631,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Abschlussprüfungen löschen"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "清除完成检查"
           }
         }
       }
@@ -1210,6 +1654,12 @@
             "state": "translated",
             "value": "Klarere Entscheidungen"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "更清晰的决策"
+          }
         }
       }
     },
@@ -1225,6 +1675,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Schließen"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "关闭"
           }
         }
       }
@@ -1242,6 +1698,12 @@
             "state": "translated",
             "value": "Schließe eine Aufgabe ab und du machst einen Fokusplatz frei, stärkst die Erledigt-Spalte und lässt Fortschritt wieder greifbar werden."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "关闭一个任务，就能释放一个专注位置，让“已完成”列更充实，也让进展更真实可见。"
+          }
         }
       }
     },
@@ -1257,6 +1719,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Geschlossen"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已关闭"
           }
         }
       }
@@ -1274,6 +1742,12 @@
             "state": "translated",
             "value": "Vor %@ geschlossen"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 前已关闭"
+          }
         }
       }
     },
@@ -1289,6 +1763,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Abschließen"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完成"
           }
         }
       }
@@ -1306,6 +1786,12 @@
             "state": "translated",
             "value": "erledigt"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已完成"
+          }
         }
       }
     },
@@ -1321,6 +1807,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Erledigt"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已完成"
           }
         }
       }
@@ -1338,6 +1830,12 @@
             "state": "translated",
             "value": "Abschluss bleibt nicht verborgen. Dashboard und Board machen erledigte Arbeit sichtbar, damit Fortschritt konkret und motivierend wirkt."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完成不会被隐藏。仪表盘和看板都会显示已完成工作，让进展更具体，也更有动力。"
+          }
         }
       }
     },
@@ -1353,6 +1851,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Weiter"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "继续"
           }
         }
       }
@@ -1370,6 +1874,12 @@
             "state": "translated",
             "value": "Aufgabe erstellen"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "创建任务"
+          }
         }
       }
     },
@@ -1385,6 +1895,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Erstellt"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已创建"
           }
         }
       }
@@ -1402,6 +1918,12 @@
             "state": "translated",
             "value": "Aktuell %lld"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "当前 %lld"
+          }
         }
       }
     },
@@ -1417,6 +1939,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dashboard"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "仪表盘"
           }
         }
       }
@@ -1434,6 +1962,12 @@
             "state": "translated",
             "value": "Tag"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "天"
+          }
         }
       }
     },
@@ -1449,6 +1983,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tage"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "天"
           }
         }
       }
@@ -1466,6 +2006,12 @@
             "state": "translated",
             "value": "Definition of Done"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完成定义"
+          }
         }
       }
     },
@@ -1481,6 +2027,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Löschen"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "删除"
           }
         }
       }
@@ -1498,6 +2050,12 @@
             "state": "translated",
             "value": "Aufgabe löschen"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "删除任务"
+          }
         }
       }
     },
@@ -1513,6 +2071,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Beschreibe eine Aufgabe ganz natürlich. Du kannst die generierte Aufgabe vor dem Speichern bearbeiten."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "用自然语言描述一个任务。保存前你可以编辑生成的任务。"
           }
         }
       }
@@ -1530,6 +2094,12 @@
             "state": "translated",
             "value": "Beschreibung"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "描述"
+          }
         }
       }
     },
@@ -1546,6 +2116,12 @@
             "state": "translated",
             "value": "Zeit für Zusammenfassung"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "摘要时间"
+          }
         }
       }
     },
@@ -1561,6 +2137,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Schließt den Scanner, ohne den erfassten Text zu verwenden."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "关闭扫描器，不使用捕捉到的文本。"
           }
         }
       }
@@ -1579,6 +2161,12 @@
             "state": "translated",
             "value": "Erledigt"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已完成"
+          }
         }
       }
     },
@@ -1594,6 +2182,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Erledigt-Filter"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已完成筛选"
           }
         }
       }
@@ -1611,6 +2205,12 @@
             "state": "translated",
             "value": "Erledigt heißt: Kriterien erfüllt"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已完成表示标准已满足"
+          }
         }
       }
     },
@@ -1626,6 +2226,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Erledigt-Schwung"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完成动能"
           }
         }
       }
@@ -1643,6 +2249,12 @@
             "state": "translated",
             "value": "Erledigt bleibt sichtbar"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已完成保持可见"
+          }
         }
       }
     },
@@ -1658,6 +2270,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Filter für erledigte Aufgaben"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已完成任务筛选"
           }
         }
       }
@@ -1675,6 +2293,12 @@
             "state": "translated",
             "value": "Diese Woche erledigt"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "本周已完成"
+          }
         }
       }
     },
@@ -1690,6 +2314,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Doppeltippen öffnet Details. Wische oder halte gedrückt für Aktionen. Ziehe die Karte, um sie neu zu sortieren."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "双击打开详情。滑动或长按可执行操作。拖动卡片可重新排序。"
           }
         }
       }
@@ -1707,6 +2337,12 @@
             "state": "translated",
             "value": "Entwurf erstellt. Prüfe und passe ihn an, bevor du die Aufgabe erstellst."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "草稿已生成。创建任务前请检查并调整。"
+          }
         }
       }
     },
@@ -1722,6 +2358,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hinweise für aktive Aufgaben aktivieren"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "开启活跃任务提醒"
           }
         }
       }
@@ -1739,6 +2381,12 @@
             "state": "translated",
             "value": "Flow-Optimierung aktivieren"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "开启流程优化"
+          }
         }
       }
     },
@@ -1754,6 +2402,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Genug Kontext"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "上下文足够"
           }
         }
       }
@@ -1771,6 +2425,12 @@
             "state": "translated",
             "value": "Jede erledigte Aufgabe macht Aufmerksamkeit frei und schafft Platz für die nächste Aufgabe."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "每完成一个任务，都会释放注意力，并为下一次拉入工作腾出空间。"
+          }
         }
       }
     },
@@ -1786,6 +2446,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Text wird aus dem Bild extrahiert…"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正在从图片中提取文本…"
           }
         }
       }
@@ -1803,6 +2469,12 @@
             "state": "translated",
             "value": "Suche Aufgaben nach Titel, Beschreibung oder Definition of Done."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "按标题、描述或完成定义查找任务。"
+          }
         }
       }
     },
@@ -1818,6 +2490,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Fertigstellen"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完成"
           }
         }
       }
@@ -1835,6 +2513,12 @@
             "state": "translated",
             "value": "Erledige eine, bevor du die nächste hereinholst."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "先完成一个，再拉入下一个。"
+          }
         }
       }
     },
@@ -1850,6 +2534,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Erledige eine Aufgabe, bevor du die nächste hereinholst."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "先完成一个任务，再拉入另一个。"
           }
         }
       }
@@ -1867,6 +2557,12 @@
             "state": "translated",
             "value": "Erledige eine aktive Aufgabe oder bring sie voran, bevor du neue Arbeit hereinholst."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "拉入新工作前，先完成或推进一个活跃任务。"
+          }
         }
       }
     },
@@ -1882,6 +2578,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Erledigte Arbeit ist Teil des Systems. Zu sehen, wie Aufgaben abgeschlossen werden, gibt Schwung und reduziert Stress."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已完成工作也是系统的一部分。看到任务关闭，会带来动能，也能减轻压力。"
           }
         }
       }
@@ -1899,6 +2601,12 @@
             "state": "translated",
             "value": "Flow-Optimierung"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "流程优化"
+          }
         }
       }
     },
@@ -1914,6 +2622,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Flow-Optimierung schützt den Fokus"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "流程优化保护专注"
           }
         }
       }
@@ -1931,6 +2645,12 @@
             "state": "translated",
             "value": "Flow-Überprüfung"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "流程回顾"
+          }
         }
       }
     },
@@ -1946,6 +2666,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Flow-Zustand"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "流程状态"
           }
         }
       }
@@ -1963,6 +2689,12 @@
             "state": "translated",
             "value": "Flow-Trends"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "流程趋势"
+          }
         }
       }
     },
@@ -1978,6 +2710,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aktuelle Arbeit fokussieren"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "专注当前工作"
           }
         }
       }
@@ -1995,6 +2733,12 @@
             "state": "translated",
             "value": "Aufgabe fokussieren"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "专注任务"
+          }
         }
       }
     },
@@ -2010,6 +2754,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "DIESE AUFGABE FOKUSSIEREN"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "专注此任务"
           }
         }
       }
@@ -2027,6 +2777,12 @@
             "state": "translated",
             "value": "Frisch"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新近"
+          }
         }
       }
     },
@@ -2042,6 +2798,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Von In Arbeit zu Erledigt"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "从进行中到已完成"
           }
         }
       }
@@ -2059,6 +2821,12 @@
             "state": "translated",
             "value": "Erstelle einen konkreten nächsten Schritt, um diese Aufgabe wieder in Bewegung zu bringen."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "生成一个具体的下一步，帮助这个任务重新动起来。"
+          }
         }
       }
     },
@@ -2075,6 +2843,12 @@
             "state": "translated",
             "value": "Wird generiert…"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正在生成…"
+          }
         }
       }
     },
@@ -2090,6 +2864,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Guter Start: Bewege Arbeit weiter Richtung Erledigt."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "开局不错，继续把工作推进到已完成。"
           }
         }
       }
@@ -2108,6 +2888,12 @@
             "state": "translated",
             "value": "Hoch"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "高"
+          }
         }
       }
     },
@@ -2123,6 +2909,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hohe Priorität"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "高优先级"
           }
         }
       }
@@ -2140,6 +2932,12 @@
             "state": "translated",
             "value": "Wie diese App dich unterstützt"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "这款 App 如何支持它"
+          }
         }
       }
     },
@@ -2155,6 +2953,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "So nutzt du diese App"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "如何使用这款 App"
           }
         }
       }
@@ -2172,6 +2976,12 @@
             "state": "translated",
             "value": "iCloud-Sync ist aktiviert"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iCloud 同步已开启"
+          }
         }
       }
     },
@@ -2187,6 +2997,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Foto importieren"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "导入照片"
           }
         }
       }
@@ -2205,6 +3021,12 @@
             "state": "translated",
             "value": "In Arbeit"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "进行中"
+          }
         }
       }
     },
@@ -2220,6 +3042,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "In Arbeit bedeutet aktive Aufmerksamkeit"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "进行中意味着正在投入注意力"
           }
         }
       }
@@ -2237,6 +3065,12 @@
             "state": "translated",
             "value": "In dieser App sollte eine neue Aufgabe nur dann nach In Arbeit wechseln, wenn die aktive Spalte Kapazität hat. Bisherige WIP-Limit-Treffer: %lld."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在这款 App 中，只有当活跃列还有容量时，新任务才应该进入“进行中”。目前触发 WIP 限制次数：%lld。"
+          }
         }
       }
     },
@@ -2253,6 +3087,12 @@
             "state": "translated",
             "value": "Info"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "信息"
+          }
         }
       }
     },
@@ -2265,6 +3105,12 @@
           }
         },
         "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kanban"
+          }
+        },
+        "zh-Hans": {
           "stringUnit": {
             "state": "translated",
             "value": "Kanban"
@@ -2285,6 +3131,12 @@
             "state": "translated",
             "value": "KanbanApp gibt dir ein klares System für deine Aufgaben, damit du nicht alles im Kopf jonglierst und Arbeit wirklich voranbringst."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KanbanApp 为你的任务提供一个清晰系统，让你不用把所有事情都塞在脑子里，而是开始真正推进工作。"
+          }
         }
       }
     },
@@ -2300,6 +3152,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Halte es kompakt. Eine kurze Abschlussprüfung hilft dir, fertig zu werden, statt endlos zu verfeinern."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "保持简短。简短的完成检查能帮你完成，而不是无止境地打磨。"
           }
         }
       }
@@ -2317,6 +3175,12 @@
             "state": "translated",
             "value": "Halte es kurz. Eine kompakte Abschlussprüfung macht es leichter, die Aufgabe abzuschließen."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "保持简短。紧凑的完成检查会让任务更容易收尾。"
+          }
         }
       }
     },
@@ -2332,6 +3196,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Halte Aufgaben in den drei Kernzuständen in Bewegung. Das Board ist das Hauptbild deines Flows, nicht nur eine Aufgabenliste."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "让任务在三个核心状态间流动。看板是你工作流程的主视图，不只是任务列表。"
           }
         }
       }
@@ -2349,6 +3219,12 @@
             "state": "translated",
             "value": "Große Aufgabe"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "大任务"
+          }
         }
       }
     },
@@ -2364,6 +3240,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lass Erledigt dich motivieren"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "让已完成带来动力"
           }
         }
       }
@@ -2381,6 +3263,12 @@
             "state": "translated",
             "value": "Limit erreicht"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已达到限制"
+          }
         }
       }
     },
@@ -2396,6 +3284,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "WIP begrenzen"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "限制 WIP"
           }
         }
       }
@@ -2413,6 +3307,12 @@
             "state": "translated",
             "value": "Begrenze Arbeit in Arbeit, um Kontextwechsel zu reduzieren."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "限制进行中的工作，减少上下文切换。"
+          }
         }
       }
     },
@@ -2429,6 +3329,12 @@
             "state": "translated",
             "value": "Höre zu..."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正在听..."
+          }
         }
       }
     },
@@ -2444,6 +3350,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Live-Text-Scanning wird auf diesem Gerät nicht unterstützt."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "此设备不支持实时文本扫描。"
           }
         }
       }
@@ -2462,6 +3374,12 @@
             "state": "translated",
             "value": "Niedrig"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "低"
+          }
         }
       }
     },
@@ -2477,6 +3395,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Niedrige Priorität"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "低优先级"
           }
         }
       }
@@ -2494,6 +3418,12 @@
             "state": "translated",
             "value": "Weniger mentale Last"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "降低脑力负担"
+          }
         }
       }
     },
@@ -2509,6 +3439,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Manifest"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "宣言"
           }
         }
       }
@@ -2526,6 +3462,12 @@
             "state": "translated",
             "value": "Als aktiv markieren"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "标记为活跃"
+          }
         }
       }
     },
@@ -2541,6 +3483,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Als blockiert / wartend markieren"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "标记为阻塞 / 等待中"
           }
         }
       }
@@ -2558,6 +3506,12 @@
             "state": "translated",
             "value": "Als erledigt markieren"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "标记为已完成"
+          }
         }
       }
     },
@@ -2573,6 +3527,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Max. aktive Aufgaben"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最大活跃任务数"
           }
         }
       }
@@ -2591,6 +3551,12 @@
             "state": "translated",
             "value": "Mittel"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "中"
+          }
         }
       }
     },
@@ -2606,6 +3572,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mittlere Priorität"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "中优先级"
           }
         }
       }
@@ -2623,6 +3595,12 @@
             "state": "translated",
             "value": "Mikrofonzugriff ist nötig, um Aufgaben zu diktieren. Aktiviere ihn in den Einstellungen."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "听写任务需要麦克风权限。请在设置中开启。"
+          }
         }
       }
     },
@@ -2638,6 +3616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Auf deinem Board entsteht Schwung."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你的看板正在积累动能。"
           }
         }
       }
@@ -2655,6 +3639,12 @@
             "state": "translated",
             "value": "Schwung ist sichtbar."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "动能已经可见。"
+          }
         }
       }
     },
@@ -2670,6 +3660,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mehr Motivation zum Abschließen"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "更多完成动力"
           }
         }
       }
@@ -2687,6 +3683,12 @@
             "state": "translated",
             "value": "Verschiebe eine Aufgabe nur dann nach In Arbeit, wenn Kapazität frei wird. Lass Abschlüsse Platz für das nächste Commitment schaffen."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "只有当容量释放出来时，才把任务移动到“进行中”。让完成为下一个承诺腾出空间。"
+          }
         }
       }
     },
@@ -2702,6 +3704,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nach In Arbeit verschieben"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "移动到进行中"
           }
         }
       }
@@ -2719,6 +3727,12 @@
             "state": "translated",
             "value": "Nach Zu erledigen verschieben"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "移动到待办"
+          }
         }
       }
     },
@@ -2734,6 +3748,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Verschiebe deine erste Aufgabe nach Erledigt, um Schwung aufzubauen."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "把第一个任务移动到已完成，建立动能。"
           }
         }
       }
@@ -2751,6 +3771,12 @@
             "state": "translated",
             "value": "Verschiebt diese Aufgabe nach In Arbeit."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "将此任务移动到进行中。"
+          }
         }
       }
     },
@@ -2766,6 +3792,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Erledigte In-Arbeit-Aufgaben nötig"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "需要完成进行中的任务"
           }
         }
       }
@@ -2783,6 +3815,12 @@
             "state": "translated",
             "value": "Braucht klareren Umfang"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "需要更清晰的范围"
+          }
         }
       }
     },
@@ -2798,6 +3836,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Neue Aufgabe"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新任务"
           }
         }
       }
@@ -2815,6 +3859,12 @@
             "state": "translated",
             "value": "Nächste Aktion"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下一步行动"
+          }
         }
       }
     },
@@ -2830,6 +3880,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Der Vorschlag für die nächste Aktion ist gerade nicht verfügbar."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下一步行动建议现在不可用。"
           }
         }
       }
@@ -2847,6 +3903,12 @@
             "state": "translated",
             "value": "Nächste Aktion: %@"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下一步行动：%@"
+          }
         }
       }
     },
@@ -2862,6 +3924,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "KEINE AKTION NÖTIG"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "无需操作"
           }
         }
       }
@@ -2879,6 +3947,12 @@
             "state": "translated",
             "value": "Gerade gibt es keine aktiven Blocker."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "当前没有活跃阻塞。"
+          }
         }
       }
     },
@@ -2894,6 +3968,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Keine aktive Aufgabe läuft"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "当前没有活跃任务"
           }
         }
       }
@@ -2911,6 +3991,12 @@
             "state": "translated",
             "value": "Keine aktiven Aufgaben"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "没有活跃任务"
+          }
         }
       }
     },
@@ -2926,6 +4012,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Keine passenden Aufgaben"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "没有匹配的任务"
           }
         }
       }
@@ -2943,6 +4035,12 @@
             "state": "translated",
             "value": "In diesem Bild wurde kein lesbarer Text gefunden."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未在该图片中找到可读文本。"
+          }
         }
       }
     },
@@ -2958,6 +4056,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "In der Kameraansicht wurde kein lesbarer Text gefunden."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未在相机画面中找到可读文本。"
           }
         }
       }
@@ -2975,6 +4079,12 @@
             "state": "translated",
             "value": "Keine bereiten Aufgaben warten"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "没有等待中的就绪任务"
+          }
         }
       }
     },
@@ -2990,6 +4100,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Keine bereite Arbeit braucht Aufmerksamkeit"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "没有需要关注的就绪工作"
           }
         }
       }
@@ -3007,6 +4123,12 @@
             "state": "translated",
             "value": "Keine empfohlene Aufgabe."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "没有推荐任务。"
+          }
         }
       }
     },
@@ -3022,6 +4144,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Es wurde keine Sprache erfasst. Versuch die Aufnahme noch einmal."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "没有捕捉到语音。请重新录制。"
           }
         }
       }
@@ -3039,6 +4167,12 @@
             "state": "translated",
             "value": "Gerade steckt keine Arbeit fest."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "当前没有停滞的工作。"
+          }
         }
       }
     },
@@ -3054,6 +4188,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Keine Aufgaben"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "没有任务"
           }
         }
       }
@@ -3071,6 +4211,12 @@
             "state": "translated",
             "value": "Noch keine Aufgaben"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "还没有任务"
+          }
         }
       }
     },
@@ -3086,6 +4232,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Keine wartenden Aufgaben"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "没有等待中的任务"
           }
         }
       }
@@ -3103,6 +4255,12 @@
             "state": "translated",
             "value": "Noch nichts erledigt"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "还没有完成任何内容"
+          }
         }
       }
     },
@@ -3119,6 +4277,12 @@
             "state": "translated",
             "value": "Noch driftet nichts ab."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "暂时没有任务偏离。"
+          }
         }
       }
     },
@@ -3134,6 +4298,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Benachrichtigungen wurden nicht aktiviert. Du kannst sie in den Einstellungen erlauben, um Hinweise zu aktiven Aufgaben zu erhalten."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "通知未开启。你可以在设置中允许通知，以接收活跃任务提醒。"
           }
         }
       }
@@ -3152,6 +4322,12 @@
             "state": "translated",
             "value": "jetzt"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "现在"
+          }
         }
       }
     },
@@ -3167,6 +4343,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aus"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "关闭"
           }
         }
       }
@@ -3184,6 +4366,12 @@
             "state": "translated",
             "value": "OK"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "好"
+          }
         }
       }
     },
@@ -3199,6 +4387,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Älteste aktive Aufgabe"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最久的活跃任务"
           }
         }
       }
@@ -3216,6 +4410,12 @@
             "state": "translated",
             "value": "Ein"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "开启"
+          }
         }
       }
     },
@@ -3231,6 +4431,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nur noch ein Fokusplatz frei"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "只剩一个专注位置"
           }
         }
       }
@@ -3248,6 +4454,12 @@
             "state": "translated",
             "value": "Blockierte Aufgabe öffnen"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "打开阻塞任务"
+          }
         }
       }
     },
@@ -3263,6 +4475,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Öffnet eine detaillierte Empfehlung."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "打开详细推荐。"
           }
         }
       }
@@ -3280,6 +4498,12 @@
             "state": "translated",
             "value": "Öffnet Aufgabendetails."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "打开任务详情。"
+          }
         }
       }
     },
@@ -3295,6 +4519,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Öffnet Aufgaben in dieser Spalte"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "打开此列中的任务"
           }
         }
       }
@@ -3312,6 +4542,12 @@
             "state": "translated",
             "value": "Öffnet die Spalte für aktive Arbeit."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "打开活跃工作列。"
+          }
         }
       }
     },
@@ -3327,6 +4563,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Öffnet die blockierte Aufgabe, damit du sie aktualisieren kannst."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "打开被阻塞的任务，方便你更新。"
           }
         }
       }
@@ -3344,6 +4586,12 @@
             "state": "translated",
             "value": "Öffnet die empfohlene aktive Aufgabe."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "打开推荐的活跃任务。"
+          }
         }
       }
     },
@@ -3359,6 +4607,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld über dem WIP-Limit"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "超出 WIP 限制 %lld"
           }
         }
       }
@@ -3376,6 +4630,12 @@
             "state": "translated",
             "value": "Füge eine Notiz oder einen unfertigen Gedanken ein…"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "粘贴一段笔记或零散想法…"
+          }
         }
       }
     },
@@ -3391,6 +4651,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Notiz einfügen"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "粘贴笔记"
           }
         }
       }
@@ -3408,6 +4674,12 @@
             "state": "translated",
             "value": "Persönliches Kanban"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "个人 Kanban"
+          }
         }
       }
     },
@@ -3423,6 +4695,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Persönliches Kanban in der Praxis"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "个人 Kanban 实践"
           }
         }
       }
@@ -3440,6 +4718,12 @@
             "state": "translated",
             "value": "Manifest für persönliches Kanban"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "个人 Kanban 宣言"
+          }
         }
       }
     },
@@ -3455,6 +4739,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Persönliches Kanban empfiehlt ein WIP-Limit von 2 oder 3, um Kontextwechsel zu minimieren und Aufgaben schneller abzuschließen."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "个人 Kanban 建议将 WIP 限制在 2 或 3，以减少上下文切换，更快完成任务。"
           }
         }
       }
@@ -3472,6 +4762,12 @@
             "state": "translated",
             "value": "Persönliches Kanban empfiehlt ein WIP-Limit von 2 oder 3, um Kontextwechsel zu minimieren und Aufgaben schneller abzuschließen. Erledige oder verschiebe eine aktive Aufgabe, bevor du eine weitere In-Arbeit-Aufgabe hinzufügst."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "个人 Kanban 建议将 WIP 限制在 2 或 3，以减少上下文切换，更快完成任务。添加另一个进行中任务前，先完成或移动一个活跃任务。"
+          }
         }
       }
     },
@@ -3487,6 +4783,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Persönliches Kanban empfiehlt ein WIP-Limit von 2 oder 3, um Kontextwechsel zu minimieren und Aufgaben schneller abzuschließen. Erledige oder verschiebe eine aktive Aufgabe, bevor du eine weitere Aufgabe nach In Arbeit verschiebst."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "个人 Kanban 建议将 WIP 限制在 2 或 3，以减少上下文切换，更快完成任务。把另一个任务移入进行中前，先完成或移动一个活跃任务。"
           }
         }
       }
@@ -3504,6 +4806,12 @@
             "state": "translated",
             "value": "Persönliches Kanban funktioniert am besten, wenn du fertigstellst, bevor du Neues hereinholst. Halte deine aktive Spalte klein und sichtbar."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "个人 Kanban 在“先完成，再拉入”时效果最好。保持活跃列精简且可见。"
+          }
         }
       }
     },
@@ -3519,6 +4827,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Foto importiert. Apple Intelligence ist nicht verfügbar, deshalb wurde der Text zur manuellen Prüfung hinzugefügt."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "照片已导入。Apple Intelligence 不可用，文本已添加供你手动检查。"
           }
         }
       }
@@ -3536,6 +4850,12 @@
             "state": "translated",
             "value": "Foto importiert. Entwurf aus dem extrahierten Text erstellt."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "照片已导入。已根据提取的文本生成草稿。"
+          }
         }
       }
     },
@@ -3551,6 +4871,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Foto importiert. Prüfe den extrahierten Text oder erstelle einen Entwurf."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "照片已导入。请检查提取的文本，或生成草稿。"
           }
         }
       }
@@ -3568,6 +4894,12 @@
             "state": "translated",
             "value": "Praxis"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "实践"
+          }
         }
       }
     },
@@ -3583,6 +4915,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Druck erscheint im richtigen Moment"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "压力在合适的时刻出现"
           }
         }
       }
@@ -3600,6 +4938,12 @@
             "state": "translated",
             "value": "Priorität"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "优先级"
+          }
         }
       }
     },
@@ -3615,6 +4959,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Prioritätssignale, WIP-Hinweise und sichtbare Aufgabenstatus helfen dabei, mit weniger Reibung zu wählen, was als Nächstes erledigt werden soll."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "优先级信号、WIP 指引和可见任务状态，可以帮助用户更轻松地选择下一步要完成什么。"
           }
         }
       }
@@ -3632,6 +4982,12 @@
             "state": "translated",
             "value": "Schütze deine Aufmerksamkeit"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "保护你的注意力"
+          }
         }
       }
     },
@@ -3647,6 +5003,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Schütze deinen Fokus"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "保护你的专注"
           }
         }
       }
@@ -3664,6 +5026,12 @@
             "state": "translated",
             "value": "Holen statt überladen"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "拉入工作，而不是过载"
+          }
         }
       }
     },
@@ -3679,6 +5047,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hol nur dann Arbeit herein, wenn die nächste Aufgabe klein oder dringend ist. Sonst erledige zuerst aktive Arbeit."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "只有当下一个任务很小或很紧急时才拉入。否则，先完成活跃工作。"
           }
         }
       }
@@ -3696,6 +5070,12 @@
             "state": "translated",
             "value": "Nur holen, wenn Platz ist"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "有空间时才拉入"
+          }
         }
       }
     },
@@ -3711,6 +5091,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nur holen, wenn du Platz hast"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "只有有余量时才拉入"
           }
         }
       }
@@ -3728,6 +5114,12 @@
             "state": "translated",
             "value": "Aufgabe hereinholen"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "拉入任务"
+          }
         }
       }
     },
@@ -3743,6 +5135,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Schnellerfassung"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "快速捕捉"
           }
         }
       }
@@ -3760,6 +5158,12 @@
             "state": "translated",
             "value": "Die Schnellerfassungs-KI konnte gerade keinen Entwurf erstellen. Prüfe den Text und versuch es erneut."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "快速捕捉 AI 现在无法生成草稿。请检查文本后重试。"
+          }
         }
       }
     },
@@ -3775,6 +5179,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Die Schnellerfassungs-KI konnte gerade keinen Entwurf erstellen. Kürze die Notiz und versuch es erneut."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "快速捕捉 AI 现在无法生成草稿。请尝试缩短笔记后重试。"
           }
         }
       }
@@ -3792,6 +5202,12 @@
             "state": "translated",
             "value": "Die Schnellerfassungs-KI ist gerade nicht verfügbar."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "快速捕捉 AI 现在不可用。"
+          }
         }
       }
     },
@@ -3807,6 +5223,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lies die Grundprinzipien hinter visueller Arbeit, Pull-Systemen und WIP-Limits."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "了解可视化工作、拉动系统和 WIP 限制背后的核心原则。"
           }
         }
       }
@@ -3824,6 +5246,12 @@
             "state": "translated",
             "value": "Bereit"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "就绪"
+          }
         }
       }
     },
@@ -3839,6 +5267,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bereite Alternativen"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "就绪备选项"
           }
         }
       }
@@ -3856,6 +5290,12 @@
             "state": "translated",
             "value": "Bereit zum Hereinholen"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "可拉入"
+          }
         }
       }
     },
@@ -3871,6 +5311,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aktuelle Abschlussrate"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "近期完成率"
           }
         }
       }
@@ -3888,6 +5334,12 @@
             "state": "translated",
             "value": "Empfohlene Aktion"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "推荐操作"
+          }
         }
       }
     },
@@ -3903,6 +5355,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Empfohlene Aufgabe: %@."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "推荐任务：%@。"
           }
         }
       }
@@ -3920,6 +5378,12 @@
             "state": "translated",
             "value": "Erneut aufnehmen"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "重新录音"
+          }
         }
       }
     },
@@ -3935,6 +5399,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sprache aufnehmen"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "录制语音"
           }
         }
       }
@@ -3952,6 +5422,12 @@
             "state": "translated",
             "value": "Reduziere aktive Arbeit, bevor du etwas Neues startest. Das schützt Fokus und Abschlussgeschwindigkeit."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "开始新工作前，先减少活跃工作。这样能保护专注和完成速度。"
+          }
         }
       }
     },
@@ -3967,6 +5443,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "ERST WIP REDUZIEREN"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "先减少 WIP"
           }
         }
       }
@@ -3984,6 +5466,12 @@
             "state": "translated",
             "value": "WIP jetzt reduzieren"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "现在减少 WIP"
+          }
         }
       }
     },
@@ -3999,6 +5487,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bezug zu aktiver Arbeit"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "与活跃工作相关"
           }
         }
       }
@@ -4016,6 +5510,12 @@
             "state": "translated",
             "value": "Löse blockierte Arbeit, bevor du mehr Aufgaben hereinholst, außer eine neue Aufgabe ist dringend und klein."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "拉入更多任务前，先解决被阻塞的工作，除非新任务紧急且很小。"
+          }
         }
       }
     },
@@ -4031,6 +5531,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Wiederherstellen"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "恢复"
           }
         }
       }
@@ -4048,6 +5554,12 @@
             "state": "translated",
             "value": "Aus Archiv wiederherstellen"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "从归档恢复"
+          }
         }
       }
     },
@@ -4063,6 +5575,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aktive Aufgaben prüfen"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "检查活跃任务"
           }
         }
       }
@@ -4080,6 +5598,12 @@
             "state": "translated",
             "value": "Vor dem Hereinholen prüfen"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "拉入前检查"
+          }
         }
       }
     },
@@ -4095,6 +5619,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Kapazität prüfen"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "检查容量"
           }
         }
       }
@@ -4112,6 +5642,12 @@
             "state": "translated",
             "value": "Aufgaben nach Spalte prüfen"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "按列检查任务"
+          }
         }
       }
     },
@@ -4127,6 +5663,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Prüfe den Vorschlag, bevor du ihn auf die Aufgabe anwendest."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "应用到任务前，请先检查建议。"
           }
         }
       }
@@ -4144,6 +5686,12 @@
             "state": "translated",
             "value": "Prüfe deine aktiven Aufgaben und entscheide, was als Nächstes vorankommen soll."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "检查你的活跃任务，决定下一步该推进什么。"
+          }
         }
       }
     },
@@ -4159,6 +5707,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Prüfe dein Transkript"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "检查你的转写文本"
           }
         }
       }
@@ -4176,6 +5730,12 @@
             "state": "translated",
             "value": "Text scannen"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "扫描文本"
+          }
         }
       }
     },
@@ -4191,6 +5751,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Scanner nicht verfügbar"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "扫描器不可用"
           }
         }
       }
@@ -4208,6 +5774,12 @@
             "state": "translated",
             "value": "Suchen"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "搜索"
+          }
         }
       }
     },
@@ -4223,6 +5795,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aufgaben suchen"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "搜索任务"
           }
         }
       }
@@ -4240,6 +5818,12 @@
             "state": "translated",
             "value": "Deine Arbeit suchen"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "搜索你的工作"
+          }
         }
       }
     },
@@ -4255,6 +5839,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sieh Fortschritt, WIP-Druck und Flow-Signale, die dich Richtung Abschluss schieben."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "查看进度、WIP 压力和流程信号，推动你走向完成。"
           }
         }
       }
@@ -4272,6 +5862,12 @@
             "state": "translated",
             "value": "Sieh deine Arbeit klar"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "清楚看到你的工作"
+          }
         }
       }
     },
@@ -4287,6 +5883,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sende täglich eine Erinnerung, wenn In-Arbeit-Aufgaben altern oder feststecken."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "当进行中的任务变久或停滞时，每天发送一次提醒。"
           }
         }
       }
@@ -4304,6 +5906,12 @@
             "state": "translated",
             "value": "Lege eine maximale Anzahl aktiver Aufgaben fest, damit deine Aufmerksamkeit eng fokussiert bleibt."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "设置活跃任务上限，让注意力保持集中。"
+          }
         }
       }
     },
@@ -4319,6 +5927,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Einstellungen"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "设置"
           }
         }
       }
@@ -4336,6 +5950,12 @@
             "state": "translated",
             "value": "Überspringen"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "跳过"
+          }
         }
       }
     },
@@ -4351,6 +5971,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Freie Plätze"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "剩余位置"
           }
         }
       }
@@ -4368,6 +5994,12 @@
             "state": "translated",
             "value": "Kleines WIP, schneller fertig"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "更小 WIP，更快完成"
+          }
         }
       }
     },
@@ -4383,6 +6015,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zugriff auf Spracherkennung ist nötig, um Aufgaben zu diktieren. Aktiviere ihn in den Einstellungen."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "听写任务需要语音识别权限。请在设置中开启。"
           }
         }
       }
@@ -4400,6 +6038,12 @@
             "state": "translated",
             "value": "Feststeckend"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "停滞"
+          }
         }
       }
     },
@@ -4415,6 +6059,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Steckt fest nach"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "停滞阈值"
           }
         }
       }
@@ -4432,6 +6082,12 @@
             "state": "translated",
             "value": "Feststeckende Aufgaben"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "停滞任务"
+          }
         }
       }
     },
@@ -4447,6 +6103,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Starte eine neue Aufgabe nur, wenn Kapazität frei wird. Abschlüsse schaffen Platz für das nächste Commitment."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "只有当容量释放出来时，才开始新任务。完成会为下一个承诺创造空间。"
           }
         }
       }
@@ -4464,6 +6126,12 @@
             "state": "translated",
             "value": "Fokus starten"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "开始专注"
+          }
         }
       }
     },
@@ -4479,6 +6147,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Status"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "状态"
           }
         }
       }
@@ -4496,6 +6170,12 @@
             "state": "translated",
             "value": "Statusverteilung: %lld zu erledigen, %lld in Arbeit, %lld erledigt"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "状态分布：%lld 个待办，%lld 个进行中，%lld 个已完成"
+          }
         }
       }
     },
@@ -4511,6 +6191,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Stopp"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "停止"
           }
         }
       }
@@ -4528,6 +6214,12 @@
             "state": "translated",
             "value": "Starker Abschlussrhythmus."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完成节奏很好。"
+          }
         }
       }
     },
@@ -4543,6 +6235,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Stärkerer Fokus"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "更强专注"
           }
         }
       }
@@ -4560,6 +6258,12 @@
             "state": "translated",
             "value": "Nächste Aktion vorschlagen"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "建议下一步行动"
+          }
         }
       }
     },
@@ -4575,6 +6279,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vorschlag zur Aufgabenbeschreibung hinzugefügt."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "建议已添加到任务描述。"
           }
         }
       }
@@ -4593,6 +6303,12 @@
             "state": "translated",
             "value": "Aufgabe"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "任务"
+          }
         }
       }
     },
@@ -4609,6 +6325,12 @@
             "state": "translated",
             "value": "Aufgabendetails"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "任务详情"
+          }
         }
       }
     },
@@ -4624,6 +6346,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aufgabensync"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "任务同步"
           }
         }
       }
@@ -4642,6 +6370,12 @@
             "state": "translated",
             "value": "Aufgaben"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "任务"
+          }
         }
       }
     },
@@ -4657,6 +6391,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aufgaben werden derzeit nur auf diesem Gerät gespeichert. Aktiviere iCloud für diese App, damit deine Aufgaben verfügbar bleiben, wenn du das Telefon wechselst."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "任务目前只存储在此设备上。为这款 App 开启 iCloud，即使换手机也能继续访问任务。"
           }
         }
       }
@@ -4674,6 +6414,12 @@
             "state": "translated",
             "value": "Aufgaben müssen nicht mehr in deinem Kopf wohnen. Board und Dashboard halten das System für dich."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "任务不再需要全部记在脑子里。看板和仪表盘会帮你承载这个系统。"
+          }
         }
       }
     },
@@ -4689,6 +6435,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aufgaben werden über iCloud synchronisiert, wenn du auf jedem Gerät denselben Apple Account verwendest. Änderungen können einen kurzen Moment brauchen, bis sie überall erscheinen."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "当你在每台设备上使用同一个 Apple 账户时，任务会通过 iCloud 同步。更改可能需要一点时间才会出现在所有设备上。"
           }
         }
       }
@@ -4706,6 +6458,12 @@
             "state": "translated",
             "value": "Text hinzugefügt. Apple Intelligence ist nicht verfügbar, also prüfe ihn manuell, bevor du die Aufgabe erstellst."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "文本已添加。Apple Intelligence 不可用，请在创建任务前手动检查。"
+          }
         }
       }
     },
@@ -4721,6 +6479,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Text erfasst. Apple Intelligence ist nicht verfügbar, deshalb wurde der Text zur manuellen Prüfung hinzugefügt."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "文本已捕捉。Apple Intelligence 不可用，文本已添加供你手动检查。"
           }
         }
       }
@@ -4738,6 +6502,12 @@
             "state": "translated",
             "value": "Text erfasst. Entwurf aus dem Kamerascan erstellt."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "文本已捕捉。已根据相机扫描生成草稿。"
+          }
         }
       }
     },
@@ -4753,6 +6523,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Text erfasst. Prüfe den extrahierten Text oder erstelle einen Entwurf."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "文本已捕捉。请检查提取的文本，或生成草稿。"
           }
         }
       }
@@ -4770,6 +6546,12 @@
             "state": "translated",
             "value": "Die App kann ein WIP-Limit durchsetzen, damit nicht zu viele Aufgaben gleichzeitig in In Arbeit landen. Das hält die Aufmerksamkeit eng und reduziert Kontextwechsel."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "这款 App 可以执行 WIP 限制，避免一次有太多任务进入进行中。这样能让注意力更集中，并减少上下文切换。"
+          }
         }
       }
     },
@@ -4785,6 +6567,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Die App konnte gerade keine nächste Aktion erstellen. Versuch es gleich noch einmal."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App 现在无法生成下一步行动。请稍后再试。"
           }
         }
       }
@@ -4802,6 +6590,12 @@
             "state": "translated",
             "value": "Die App plant eine fortlaufende tägliche Zusammenfassung um %lld:00 Uhr und sendet nie eine Benachrichtigung pro Aufgabe."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App 会在每天 %lld:00 安排滚动摘要，不会按每个任务单独发送通知。"
+          }
         }
       }
     },
@@ -4817,6 +6611,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Das Board macht jede Aufgabe über Zu erledigen, In Arbeit und Erledigt sichtbar, damit du siehst, was wartet, was aktiv ist und was abgeschlossen wurde."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "看板通过待办、进行中和已完成，让每个任务都清楚可见。你能看到哪些在等待、哪些正在进行、哪些已经完成。"
           }
         }
       }
@@ -4834,6 +6634,12 @@
             "state": "translated",
             "value": "Das Board macht deine Commitments sichtbar, damit nichts Wichtiges vage oder verborgen bleibt."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "看板让你的承诺可见，重要事项不会再模糊或隐藏。"
+          }
         }
       }
     },
@@ -4849,6 +6655,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Der Kamerascanner ist gerade nicht verfügbar."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "相机扫描器现在不可用。"
           }
         }
       }
@@ -4866,6 +6678,12 @@
             "state": "translated",
             "value": "Das Dashboard zeigt Fortschritt, WIP-Druck und Prioritätsverteilung, damit du entscheiden kannst, ob du abschließt, pausierst oder vermeidest, mehr Arbeit hereinzuholen."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "仪表盘会显示进度、WIP 压力和优先级分布，帮助你决定是完成、暂停，还是避免拉入更多工作。"
+          }
         }
       }
     },
@@ -4881,6 +6699,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Der Bildtext wurde extrahiert, aber der KI-Entwurf konnte gerade nicht erstellt werden. Prüfe ihn und erstelle ihn erneut."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "图片文本已提取，但现在无法生成 AI 草稿。请检查后重新生成。"
           }
         }
       }
@@ -4898,6 +6722,12 @@
             "state": "translated",
             "value": "Das Manifest ist einfach: Visualisiere deine Arbeit, begrenze Arbeit in Arbeit, hole nur Arbeit herein, wenn Platz ist, und lass Erledigt sichtbar bleiben."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "宣言很简单：可视化你的工作，限制进行中的工作，有空间时才拉入，并让已完成保持可见。"
+          }
         }
       }
     },
@@ -4913,6 +6743,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Das Mikrofon konnte nicht gestartet werden. Prüfe die Audioberechtigungen und versuch es erneut."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "无法启动麦克风。请检查音频权限后重试。"
           }
         }
       }
@@ -4930,6 +6766,12 @@
             "state": "translated",
             "value": "Die nächste erledigte Aufgabe verändert das Board."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下一个完成的任务会改变看板。"
+          }
         }
       }
     },
@@ -4945,6 +6787,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Das ausgewählte Bild konnte nicht geladen werden."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "无法加载所选图片。"
           }
         }
       }
@@ -4962,6 +6810,12 @@
             "state": "translated",
             "value": "Das ausgewählte Bild konnte nicht gelesen werden."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "无法读取所选图片。"
+          }
         }
       }
     },
@@ -4977,6 +6831,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Der Text wurde erfasst, aber der KI-Entwurf konnte gerade nicht erstellt werden. Prüfe ihn und erstelle ihn erneut."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "文本已捕捉，但现在无法生成 AI 草稿。请检查后重新生成。"
           }
         }
       }
@@ -4994,6 +6854,12 @@
             "state": "translated",
             "value": "Das Sprachtranskript wurde erfasst, aber der KI-Entwurf konnte gerade nicht erstellt werden. Prüfe es und erstelle ihn erneut."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "语音转写已捕捉，但现在无法生成 AI 草稿。请检查后重新生成。"
+          }
         }
       }
     },
@@ -5009,6 +6875,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Diese Aufgaben bleiben lange genug aktiv, um den Flow auszubremsen."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "这些任务活跃时间已经较长，可能开始拖慢流程。"
           }
         }
       }
@@ -5026,6 +6898,12 @@
             "state": "translated",
             "value": "Diese Aufgaben liegen zu lange in Arbeit und brauchen vielleicht eine Entscheidung."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "这些任务在进行中停留太久，可能需要一个决定。"
+          }
         }
       }
     },
@@ -5041,6 +6919,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Diese App setzt persönliches Kanban um, indem sie dir hilft, deine Arbeit klar zu sehen, deinen Fokus zu schützen und abzuschließen, bevor du mehr startest."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "这款 App 通过帮助你清楚看到工作、保护专注，并在开始更多工作前先完成当前任务，来实践个人 Kanban。"
           }
         }
       }
@@ -5058,6 +6942,12 @@
             "state": "translated",
             "value": "Diese App basiert auf persönlicher Kanban-Disziplin: weniger gleichzeitig tun, öfter abschließen und Kontextwechsel reduzieren."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "这款 App 围绕个人 Kanban 纪律构建：一次少做一点，更频繁完成，并减少上下文切换。"
+          }
         }
       }
     },
@@ -5074,6 +6964,12 @@
             "state": "translated",
             "value": "Wie oft der Flow zurückgeschoben hat"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "流程提醒次数"
+          }
         }
       }
     },
@@ -5089,6 +6985,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Titel"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "标题"
           }
         }
       }
@@ -5107,6 +7009,12 @@
             "state": "translated",
             "value": "Zu erledigen"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "待办"
+          }
         }
       }
     },
@@ -5122,6 +7030,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zu viel Arbeit ist aktiv."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "活跃工作太多了。"
           }
         }
       }
@@ -5139,6 +7053,12 @@
             "state": "translated",
             "value": "Verfolge Arbeit über Zu erledigen, In Arbeit und Erledigt, statt mentale Listen zu führen."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "用待办、进行中和已完成来跟踪工作，而不是把清单放在脑子里。"
+          }
         }
       }
     },
@@ -5154,6 +7074,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Transkript"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "转写文本"
           }
         }
       }
@@ -5171,6 +7097,12 @@
             "state": "translated",
             "value": "Versuch einen anderen Suchbegriff."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "试试其他搜索词。"
+          }
         }
       }
     },
@@ -5186,6 +7118,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Erneut versuchen"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "重试"
           }
         }
       }
@@ -5203,6 +7141,12 @@
             "state": "translated",
             "value": "Aktiviere Apple Intelligence in den Einstellungen, um WIP-Coaching zu personalisieren."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在设置中开启 Apple Intelligence，以个性化 WIP 辅导。"
+          }
         }
       }
     },
@@ -5218,6 +7162,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aktiviere Apple Intelligence in den Einstellungen, um eine nächste Aktion vorzuschlagen."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在设置中开启 Apple Intelligence，以建议下一步行动。"
           }
         }
       }
@@ -5235,6 +7185,12 @@
             "state": "translated",
             "value": "Aktiviere Apple Intelligence in den Einstellungen, um die Schnellerfassungs-KI zu nutzen."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在设置中开启 Apple Intelligence，以使用快速捕捉 AI。"
+          }
         }
       }
     },
@@ -5250,6 +7206,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "ERST ENTBLOCKEN"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "先解除阻塞"
           }
         }
       }
@@ -5267,6 +7229,12 @@
             "state": "translated",
             "value": "Arbeit entblocken"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "解除工作阻塞"
+          }
         }
       }
     },
@@ -5282,6 +7250,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aktualisiert"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已更新"
           }
         }
       }
@@ -5299,6 +7273,12 @@
             "state": "translated",
             "value": "Vorschlag verwenden"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "使用建议"
+          }
         }
       }
     },
@@ -5314,6 +7294,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Text verwenden"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "使用文本"
           }
         }
       }
@@ -5331,6 +7317,12 @@
             "state": "translated",
             "value": "Nutze das Board, um bewusst zu wählen, das Dashboard, um den Flow zu schützen, und die Erledigt-Spalte, damit Schwung sichtbar bleibt."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "用看板有意识地选择，用仪表盘保护流程，用已完成列让动能保持真实。"
+          }
         }
       }
     },
@@ -5346,6 +7338,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nutze das Dashboard, um den Flow neu auszubalancieren"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "使用仪表盘重新平衡流程"
           }
         }
       }
@@ -5363,6 +7361,12 @@
             "state": "translated",
             "value": "Nutze das, wenn Arbeit noch nicht vorankommen kann. Blockierte Aufgaben sollten schnell sichtbar werden."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "当工作暂时无法推进时使用它。被阻塞的任务应该尽快变得可见。"
+          }
         }
       }
     },
@@ -5378,6 +7382,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Transkript verwenden"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "使用转写文本"
           }
         }
       }
@@ -5395,6 +7405,12 @@
             "state": "translated",
             "value": "Verwendet den erkannten Text, um einen Aufgabenentwurf zu erstellen."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "使用识别到的文本创建任务草稿。"
+          }
         }
       }
     },
@@ -5410,6 +7426,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lokaler Speicher auf diesem Gerät wird verwendet"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正在使用此设备上的本地存储"
           }
         }
       }
@@ -5427,6 +7449,12 @@
             "state": "translated",
             "value": "Sichtbarer Fortschritt und ein echter Erledigt-Zustand machen Abschluss zu etwas, das du sehen kannst, nicht nur zu etwas, das du vorhast."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "可见的进度和真实的已完成状态，会让完成变成你看得见的东西，而不只是一个打算。"
+          }
         }
       }
     },
@@ -5442,6 +7470,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Visuelles Board"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "可视化看板"
           }
         }
       }
@@ -5459,6 +7493,12 @@
             "state": "translated",
             "value": "Visualisieren"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "可视化"
+          }
         }
       }
     },
@@ -5474,6 +7514,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Arbeit visualisieren"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "可视化工作"
           }
         }
       }
@@ -5491,6 +7537,12 @@
             "state": "translated",
             "value": "Visualisiere deine Arbeit"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "可视化你的工作"
+          }
         }
       }
     },
@@ -5506,6 +7558,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sprache erfasst. Apple Intelligence ist nicht verfügbar, deshalb wurde das Transkript zur manuellen Prüfung hinzugefügt."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "语音已捕捉。Apple Intelligence 不可用，转写文本已添加供你手动检查。"
           }
         }
       }
@@ -5523,6 +7581,12 @@
             "state": "translated",
             "value": "Sprache erfasst. Entwurf aus deinem Diktat erstellt."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "语音已捕捉。已根据你的听写生成草稿。"
+          }
         }
       }
     },
@@ -5538,6 +7602,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sprache erfasst. Prüfe das Transkript oder erstelle einen Entwurf."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "语音已捕捉。请检查转写文本，或生成草稿。"
           }
         }
       }
@@ -5555,6 +7625,12 @@
             "state": "translated",
             "value": "Sprachdiktat ist gerade nicht verfügbar. Versuch es gleich noch einmal."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "语音听写现在不可用。请稍后再试。"
+          }
         }
       }
     },
@@ -5570,6 +7646,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "wartend"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "等待中"
           }
         }
       }
@@ -5587,6 +7669,12 @@
             "state": "translated",
             "value": "Wartet seit einer Woche"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已等待一周"
+          }
         }
       }
     },
@@ -5602,6 +7690,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Wartet seit Tagen"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已等待多天"
           }
         }
       }
@@ -5619,6 +7713,12 @@
             "state": "translated",
             "value": "Wartende Arbeit sollte klar sichtbar sein und nicht still in den aktiven Fokus gemischt werden."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "等待中的工作应该清楚可见，而不是悄悄混进活跃焦点里。"
+          }
         }
       }
     },
@@ -5634,6 +7734,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Wie sieht erledigt aus?"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "什么才算完成？"
           }
         }
       }
@@ -5651,6 +7757,12 @@
             "state": "translated",
             "value": "Was muss erledigt werden?"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "需要完成什么？"
+          }
         }
       }
     },
@@ -5666,6 +7778,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Was du dadurch gewinnst"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "用户能获得什么"
           }
         }
       }
@@ -5683,6 +7801,12 @@
             "state": "translated",
             "value": "Wenn deine aktive Spalte voll ist, schiebt dich das Dashboard zurück Richtung Abschluss. Die App fördert Pull statt Überlastung."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "当活跃列满了，仪表盘会把你推回完成工作。App 鼓励拉动，而不是过载。"
+          }
         }
       }
     },
@@ -5698,6 +7822,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Wenn deine Spalte voll ist, schiebt dich die App zurück Richtung Abschluss, bevor du mehr Arbeit hereinholst."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "当你的列满了，App 会提醒你先完成，再拉入更多工作。"
           }
         }
       }
@@ -5715,6 +7845,12 @@
             "state": "translated",
             "value": "WIP-Coach"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP 教练"
+          }
         }
       }
     },
@@ -5730,6 +7866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Der KI-Text des WIP-Coachs ist gerade nicht verfügbar."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP 教练的 AI 文案现在不可用。"
           }
         }
       }
@@ -5747,6 +7889,12 @@
             "state": "translated",
             "value": "WIP voll"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP 已满"
+          }
         }
       }
     },
@@ -5762,6 +7910,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "WIP-Limit"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP 限制"
           }
         }
       }
@@ -5779,6 +7933,12 @@
             "state": "translated",
             "value": "WIP-Limit-Treffer"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "触发 WIP 限制次数"
+          }
         }
       }
     },
@@ -5794,6 +7954,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "WIP-Limit erreicht"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已达到 WIP 限制"
           }
         }
       }
@@ -5811,6 +7977,12 @@
             "state": "translated",
             "value": "WIP-Limit erreicht"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已达到 WIP 限制"
+          }
         }
       }
     },
@@ -5826,6 +7998,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "WIP-Druck"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP 压力"
           }
         }
       }
@@ -5843,6 +8021,12 @@
             "state": "translated",
             "value": "WIP-Druck"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP 压力"
+          }
         }
       }
     },
@@ -5858,6 +8042,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Arbeite vom Board aus"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "从看板开始工作"
           }
         }
       }
@@ -5875,6 +8065,12 @@
             "state": "translated",
             "value": "Druck bei Arbeit in Arbeit. %@ %lld von %lld Aufgaben aktiv. %lld Plätze frei. %@. %@"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "进行中工作压力。%@ %lld/%lld 个任务处于活跃状态。剩余 %lld 个位置。%@。%@"
+          }
         }
       }
     },
@@ -5890,6 +8086,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Prüfung von Arbeit in Arbeit. %lld von %lld Aufgaben aktiv. %lld Plätze frei. %lld blockierte Aufgaben. %lld bereite Aufgaben."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "进行中工作回顾。%lld/%lld 个任务处于活跃状态。剩余 %lld 个位置。%lld 个阻塞任务。%lld 个就绪任务。"
           }
         }
       }
@@ -5907,6 +8109,12 @@
             "state": "translated",
             "value": "Workflow-Regel"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "工作流策略"
+          }
         }
       }
     },
@@ -5922,6 +8130,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Du verwandelst Arbeit konsequent in Erledigtes. Schütze diesen Rhythmus, indem du WIP eng hältst."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你正在稳定地把工作变成已完成。通过收紧 WIP 来保护这个节奏。"
           }
         }
       }
@@ -5939,6 +8153,12 @@
             "state": "translated",
             "value": "Du kannst das Manifest jederzeit in den Einstellungen erneut ansehen."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你可以随时从设置中重新查看宣言。"
+          }
         }
       }
     },
@@ -5954,6 +8174,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Du kannst sicher noch eine Aufgabe hereinholen, aber halte aktive Arbeit eng, damit aktuelle Aufgaben erledigt werden können."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你可以安全地再拉入一个任务，但要保持活跃工作精简，让当前任务能够完成。"
           }
         }
       }
@@ -5971,6 +8197,12 @@
             "state": "translated",
             "value": "Du bist an der Kapazitätsgrenze."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你已经达到容量上限。"
+          }
         }
       }
     },
@@ -5986,6 +8218,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Du bist bei voller Kapazität! Wenn du '%@' erledigst, wird Platz frei."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你已经满负荷了！完成“%@”会释放空间。"
           }
         }
       }
@@ -6003,6 +8241,12 @@
             "state": "translated",
             "value": "Du bist nah an deinem WIP-Limit."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你已经接近 WIP 限制。"
+          }
         }
       }
     },
@@ -6018,6 +8262,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Deine aktive Spalte ist voll. Prüfe Arbeit in In Arbeit, bevor du etwas aus Zu erledigen startest."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你的活跃列已满。从待办开始新任务前，先检查进行中的工作。"
           }
         }
       }
@@ -6035,6 +8285,12 @@
             "state": "translated",
             "value": "Deine aktive Arbeit liegt innerhalb der Kapazität. Hole vorsichtig Arbeit herein oder erledige zuerst eine aktuelle Aufgabe."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你的活跃工作仍在容量内。谨慎拉入新工作，或先完成一个当前任务。"
+          }
         }
       }
     },
@@ -6050,6 +8306,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dein Board ist leer"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你的看板是空的"
           }
         }
       }
@@ -6067,6 +8329,12 @@
             "state": "translated",
             "value": "Dein Flow ist ausgeglichen."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你的流程很平衡。"
+          }
         }
       }
     },
@@ -6082,6 +8350,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dein Flow hat noch Platz."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你的流程还有空间。"
           }
         }
       }
@@ -6099,6 +8373,12 @@
             "state": "translated",
             "value": "DEIN FORTSCHRITT"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你的进度"
+          }
         }
       }
     },
@@ -6114,6 +8394,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dein Fortschritt. %@. %lld Prozent erledigt. %@ %lld zu erledigen, %lld in Arbeit, %lld erledigt."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你的进度。%@。已完成 %lld%%。%@ %lld 个待办，%lld 个进行中，%lld 个已完成。"
           }
         }
       }
@@ -6131,6 +8417,12 @@
             "state": "translated",
             "value": "Dein Fortschritt. Noch keine Aufgaben. Füge deine erste Aufgabe hinzu, um Fortschritt zu verfolgen."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你的进度。还没有任务。添加第一个任务，开始跟踪进度。"
+          }
         }
       }
     },
@@ -6146,6 +8438,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Deine Arbeit ist sichtbar"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你的工作清晰可见"
           }
         }
       }

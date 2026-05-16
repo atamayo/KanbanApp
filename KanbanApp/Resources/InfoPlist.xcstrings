@@ -22,6 +22,12 @@
             "state": "translated",
             "value": "KanbanApp"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KanbanApp"
+          }
         }
       }
     },
@@ -44,6 +50,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Verwende die Kamera, um Text zu scannen und daraus einen Aufgabenentwurf zu machen."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "使用相机扫描文本，并将其转换为任务草稿。"
           }
         }
       }
@@ -68,6 +80,12 @@
             "state": "translated",
             "value": "Verwende das Mikrofon, um eine Aufgabe zu diktieren und daraus einen Aufgabenentwurf zu machen."
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "使用麦克风听写任务，并将其转换为任务草稿。"
+          }
         }
       }
     },
@@ -90,6 +108,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Verwende die Spracherkennung, um diktierte Aufgaben zu transkribieren."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "使用语音识别来转写听写的任务。"
           }
         }
       }
