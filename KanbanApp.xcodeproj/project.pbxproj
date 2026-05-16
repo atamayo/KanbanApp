@@ -39,6 +39,8 @@
 		A7C100000000000000000022 /* TaskAgingEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C100000000000000000023 /* TaskAgingEvaluator.swift */; };
 		A7C100000000000000000024 /* TaskAgingNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C100000000000000000025 /* TaskAgingNotificationService.swift */; };
 		A7C100000000000000000026 /* TaskAgingNotificationSyncView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C100000000000000000027 /* TaskAgingNotificationSyncView.swift */; };
+		A7C100000000000000000028 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A7C100000000000000000029 /* Localizable.xcstrings */; };
+		A7C10000000000000000002A /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A7C10000000000000000002B /* InfoPlist.xcstrings */; };
 		B8A7D0D8D7304BF4B02921A1 /* PersistenceBootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A7D0D7D7304BF4B02921A1 /* PersistenceBootstrap.swift */; };
 		C46D8078D30040238CCDE162FB2FE17E /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE822CFBF944080AA7DC05248E4FCB2 /* MainTabView.swift */; };
 		CC88F17F1EB745D7B67C1DED74B18C18 /* AllTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC21578A5014A16A3256BF3F502DDAC /* AllTasksView.swift */; };
@@ -89,6 +91,8 @@
 		A7C100000000000000000023 /* TaskAgingEvaluator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAgingEvaluator.swift; sourceTree = "<group>"; };
 		A7C100000000000000000025 /* TaskAgingNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAgingNotificationService.swift; sourceTree = "<group>"; };
 		A7C100000000000000000027 /* TaskAgingNotificationSyncView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAgingNotificationSyncView.swift; sourceTree = "<group>"; };
+		A7C100000000000000000029 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		A7C10000000000000000002B /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		B8A7D0D6D7304BF4B02921A1 /* KanbanApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KanbanApp.entitlements; sourceTree = "<group>"; };
 		B8A7D0D7D7304BF4B02921A1 /* PersistenceBootstrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceBootstrap.swift; sourceTree = "<group>"; };
 		D4C3B2A20000000000000002 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
@@ -183,6 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				A1B2C3D4E5F6000000000030 /* Assets.xcassets */,
+				A7C100000000000000000029 /* Localizable.xcstrings */,
+				A7C10000000000000000002B /* InfoPlist.xcstrings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -288,6 +294,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1B2C3D4E5F6000000000031 /* Assets.xcassets in Resources */,
+				A7C100000000000000000028 /* Localizable.xcstrings in Resources */,
+				A7C10000000000000000002A /* InfoPlist.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -58,7 +58,7 @@ struct KanbanColumnView: View {
             }
         }
         .accessibilityElement(children: .contain)
-        .accessibilityLabel("\(status.rawValue) column, \(tasks.count) tasks")
+        .accessibilityLabel(String(localized: "\(status.localizedName) column, \(tasks.count) tasks"))
         .sensoryFeedback(.success, trigger: droppedID)
     }
 
@@ -132,7 +132,7 @@ struct KanbanColumnView: View {
             Image(systemName: priorityIconName(priority))
                 .foregroundStyle(priorityZoneColor(priority))
                 .font(AppStyle.Typography.zoneIcon)
-            Text(priority.rawValue)
+            Text(priority.localizedName)
                 .font(AppStyle.Typography.zoneHeader)
                 .foregroundStyle(AppStyle.Colors.secondaryText)
             Text(count.formatted())
@@ -149,7 +149,7 @@ struct KanbanColumnView: View {
             Circle()
                 .fill(columnColor)
                 .frame(width: AppStyle.Shapes.dotSize, height: AppStyle.Shapes.dotSize)
-            Text(status.rawValue)
+            Text(status.localizedName)
                 .font(AppStyle.Typography.columnHeader)
                 .foregroundStyle(AppStyle.Colors.primaryText)
             Spacer()

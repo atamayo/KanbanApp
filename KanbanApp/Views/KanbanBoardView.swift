@@ -57,9 +57,9 @@ struct KanbanBoardView: View {
                 showingWIPAlert = true
                 let inProgressTasks = allTasks.filter { $0.status == .inProgress }
                 if let exampleTask = inProgressTasks.first {
-                    triggerToast(message: "You're at peak capacity! Finishing '\(exampleTask.title)' will free up space.")
+                    triggerToast(message: String(localized: "You're at peak capacity! Finishing '\(exampleTask.title)' will free up space."))
                 } else {
-                    triggerToast(message: "Limit Reached")
+                    triggerToast(message: String(localized: "Limit Reached"))
                 }
             }
             .customAlert(

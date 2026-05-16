@@ -106,29 +106,31 @@ enum TaskAgingNotificationService {
 
     private static func title(for summary: TaskAgingSummary) -> String {
         if !summary.stalledTasks.isEmpty {
-            return "\(summary.stalledTasks.count) \(taskWord(summary.stalledTasks.count)) may be stalled"
+            let count = summary.stalledTasks.count
+            return String(localized: "\(count) \(taskWord(count)) may be stalled", comment: "Daily notification title for stalled active tasks")
         }
 
-        return "\(summary.agingTasks.count) active \(taskWord(summary.agingTasks.count)) aging"
+        let count = summary.agingTasks.count
+        return String(localized: "\(count) active \(taskWord(count)) aging", comment: "Daily notification title for aging active tasks")
     }
 
     private static func body(for summary: TaskAgingSummary) -> String {
         if let task = summary.stalledTasks.first {
             let agingCount = summary.agingTasks.count
             if agingCount > 0 {
-                return "\"\(task.title)\" may need a decision. \(agingCount) more active \(taskWord(agingCount)) are aging."
+                return String(localized: "\"\(task.title)\" may need a decision. \(agingCount) more active \(taskWord(agingCount)) are aging.", comment: "Daily notification body naming a stalled task and summarizing aging tasks")
             }
-            return "\"\(task.title)\" has been in progress for a while. Review it before pulling more work."
+            return String(localized: "\"\(task.title)\" has been in progress for a while. Review it before pulling more work.", comment: "Daily notification body naming a stalled task")
         }
 
         if let task = summary.agingTasks.first {
-            return "\"\(task.title)\" is starting to age in progress. A quick review can keep the board moving."
+            return String(localized: "\"\(task.title)\" is starting to age in progress. A quick review can keep the board moving.", comment: "Daily notification body naming an aging task")
         }
 
-        return "Review your active tasks and decide what should move forward next."
+        return String(localized: "Review your active tasks and decide what should move forward next.")
     }
 
     private static func taskWord(_ count: Int) -> String {
-        count == 1 ? "task" : "tasks"
+        count == 1 ? String(localized: "task", comment: "Singular task count noun") : String(localized: "tasks", comment: "Plural task count noun")
     }
 }

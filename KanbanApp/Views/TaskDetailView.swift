@@ -41,7 +41,7 @@ struct TaskDetailView: View {
                                 Circle()
                                     .fill(statusColor(s))
                                     .frame(width: AppStyle.Shapes.dotSize, height: AppStyle.Shapes.dotSize)
-                                Text(s.rawValue)
+                                Text(s.localizedName)
                             }
                             .tag(s)
                         }
@@ -68,7 +68,7 @@ struct TaskDetailView: View {
                                 Image(systemName: priorityIcon(p))
                                     .foregroundStyle(priorityColor(p))
                                     .frame(width: AppStyle.Spacing.iconFrameWidth)
-                                Text(p.rawValue)
+                                Text(p.localizedName)
                             }
                             .tag(p.rawValue)
                         }
@@ -283,16 +283,16 @@ struct TaskDetailView: View {
 
         do {
             suggestedNextAction = try await NextActionSuggestionService.generate(for: task)
-            nextActionMessage = "Review the suggestion before applying it to the task."
+            nextActionMessage = String(localized: "Review the suggestion before applying it to the task.")
         } catch {
-            nextActionMessage = "The app couldn’t generate a next action right now. Try again in a moment."
+            nextActionMessage = String(localized: "The app couldn’t generate a next action right now. Try again in a moment.")
         }
     }
 
     private func applySuggestedNextAction() {
         guard !suggestedNextAction.isEmpty else { return }
 
-        let suggestionLine = "Next action: \(suggestedNextAction)"
+        let suggestionLine = String(localized: "Next action: \(suggestedNextAction)")
         let trimmedDescription = task.desc.trimmingCharacters(in: .whitespacesAndNewlines)
 
         if trimmedDescription.isEmpty {
@@ -304,6 +304,6 @@ struct TaskDetailView: View {
         }
 
         task.updatedAt = Date()
-        nextActionMessage = "Suggestion added to the task description."
+        nextActionMessage = String(localized: "Suggestion added to the task description.")
     }
 }

@@ -183,7 +183,7 @@ private struct StatusPicker: View {
     var body: some View {
         Picker("Status", selection: $selection) {
             ForEach(TaskStatus.allCases) { status in
-                Text(status.rawValue)
+                Text(status.localizedName)
                     .tag(status)
             }
         }

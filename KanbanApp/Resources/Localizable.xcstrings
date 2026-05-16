@@ -1,0 +1,1158 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    "\"%@\" has been in progress for a while. Review it before pulling more work." : {
+      "comment" : "Daily notification body naming a stalled task"
+    },
+    "\"%@\" is starting to age in progress. A quick review can keep the board moving." : {
+      "comment" : "Daily notification body naming an aging task"
+    },
+    "\"%@\" may need a decision. %lld more active %@ are aging." : {
+      "comment" : "Daily notification body naming a stalled task and summarizing aging tasks"
+    },
+    "%@ %@" : {
+
+    },
+    "%@ column, %lld tasks" : {
+
+    },
+    "%@ of %@ %@ completed" : {
+
+    },
+    "%@ priority" : {
+
+    },
+    "%@, %lld %@" : {
+
+    },
+    "%@, created %@ ago" : {
+
+    },
+    "%@, in progress for %@" : {
+
+    },
+    "%@. %@" : {
+
+    },
+    "%lld" : {
+
+    },
+    "%lld %@" : {
+
+    },
+    "%lld %@ may be stalled" : {
+      "comment" : "Daily notification title for stalled active tasks"
+    },
+    "%lld active %@ aging" : {
+      "comment" : "Daily notification title for aging active tasks"
+    },
+    "%lldd" : {
+      "comment" : "Short duration in days"
+    },
+    "%lldd in status" : {
+      "comment" : "Short relative time in current task status"
+    },
+    "%lldh" : {
+      "comment" : "Short duration in hours"
+    },
+    "%lldh in status" : {
+      "comment" : "Short relative time in current task status"
+    },
+    "%lldm" : {
+      "comment" : "Short duration in minutes"
+    },
+    "%lldm ago" : {
+      "comment" : "Short relative time since task status changed"
+    },
+    "3 / 3" : {
+
+    },
+    "A focused system works better when you keep active work small." : {
+
+    },
+    "A limit of 2 or 3 active tasks usually improves focus, quality, and completion rate." : {
+
+    },
+    "A limited In Progress lane makes it easier to stay with the current work instead of scattering effort across too many tasks." : {
+
+    },
+    "A task belongs in In Progress only when you are actively working it now. Blocked or waiting work should be visible, not mixed in silently." : {
+
+    },
+    "A task is done when its finish check is satisfied, not when it merely feels close. Use the Definition of Done field to make completion explicit." : {
+
+    },
+    "Actionable dashboard" : {
+
+    },
+    "active" : {
+
+    },
+    "Active" : {
+
+    },
+    "Active Age" : {
+
+    },
+    "Active Task Nudges" : {
+
+    },
+    "Active Work" : {
+
+    },
+    "Add a task to populate your dashboard" : {
+
+    },
+    "Add context for the task" : {
+
+    },
+    "Add Task" : {
+
+    },
+    "Add your first task to start tracking progress." : {
+
+    },
+    "Adding to %@ status" : {
+
+    },
+    "Aging" : {
+
+    },
+    "Aging after" : {
+
+    },
+    "Aging Tasks" : {
+
+    },
+    "All Tasks" : {
+
+    },
+    "All tasks completed" : {
+
+    },
+    "Almost there — close the remaining tasks." : {
+
+    },
+    "Apple Intelligence is getting ready. Try again in a moment." : {
+
+    },
+    "Apple Intelligence is not supported on this device." : {
+
+    },
+    "Apple Intelligence is unavailable, so paste text here and add it to the task manually." : {
+
+    },
+    "Archive" : {
+
+    },
+    "Archive Completed Task" : {
+
+    },
+    "Archived" : {
+
+    },
+    "Archived %@ ago" : {
+
+    },
+    "Archived %lld" : {
+
+    },
+    "Archived Done tasks leave the active board but still count toward completion history." : {
+
+    },
+    "Avg Days To Done" : {
+
+    },
+    "BEST TASK TO PULL NEXT" : {
+
+    },
+    "Blocked" : {
+
+    },
+    "Blocked / Waiting" : {
+
+    },
+    "Blocked active work" : {
+
+    },
+    "Blocked tasks need attention before more work is pulled." : {
+
+    },
+    "Blocked Work" : {
+
+    },
+    "Blocked work is slowing your flow." : {
+
+    },
+    "Blocked work stays visible" : {
+
+    },
+    "Board complete — all tasks are done." : {
+
+    },
+    "BREAK DOWN FIRST" : {
+
+    },
+    "Break Down Task" : {
+
+    },
+    "Buy groceries" : {
+
+    },
+    "Camera access is required to scan text. Enable it in Settings." : {
+
+    },
+    "Camera access is unavailable right now." : {
+
+    },
+    "Cancel" : {
+
+    },
+    "Capture" : {
+
+    },
+    "Choose Next Task" : {
+
+    },
+    "Clear" : {
+
+    },
+    "Clear finish check" : {
+
+    },
+    "Clear Finish Checks" : {
+
+    },
+    "Clearer decisions" : {
+
+    },
+    "Close" : {
+
+    },
+    "Close one task and you free a focus slot, strengthen the Done column, and make progress feel real again." : {
+
+    },
+    "Closed" : {
+
+    },
+    "Closed %@ ago" : {
+
+    },
+    "Complete" : {
+
+    },
+    "completed" : {
+
+    },
+    "Completed" : {
+
+    },
+    "Completion is not hidden. The dashboard and board both make finished work visible so progress feels concrete and motivating." : {
+
+    },
+    "Continue" : {
+
+    },
+    "Create Task" : {
+
+    },
+    "Created" : {
+
+    },
+    "Current %lld" : {
+
+    },
+    "Dashboard" : {
+
+    },
+    "day" : {
+
+    },
+    "days" : {
+
+    },
+    "Definition of Done" : {
+
+    },
+    "Delete" : {
+
+    },
+    "Delete Task" : {
+
+    },
+    "Describe one task naturally. You can edit the generated task before saving." : {
+
+    },
+    "Description" : {
+
+    },
+    "Digest time" : {
+
+    },
+    "Dismisses the scanner without using captured text." : {
+
+    },
+    "Done" : {
+      "comment" : "Task status name"
+    },
+    "Done Filter" : {
+
+    },
+    "Done means criteria met" : {
+
+    },
+    "Done Momentum" : {
+
+    },
+    "Done stays visible" : {
+
+    },
+    "Done task filter" : {
+
+    },
+    "Done This Week" : {
+
+    },
+    "Double-tap to open details. Swipe or long press for actions. Drag the card to reorder." : {
+
+    },
+    "Draft generated. Review and adjust before creating the task." : {
+
+    },
+    "Enable Active Task Nudges" : {
+
+    },
+    "Enable Flow Optimization" : {
+
+    },
+    "Enough context" : {
+
+    },
+    "Every completed task frees attention and opens space for the next pull." : {
+
+    },
+    "Extracting text from image…" : {
+
+    },
+    "Find tasks by title, description, or definition of done." : {
+
+    },
+    "Finish" : {
+
+    },
+    "Finish one before pulling another." : {
+
+    },
+    "Finish one task before pulling another." : {
+
+    },
+    "Finish or move one active task forward before pulling new work." : {
+
+    },
+    "Finished work is part of the system. Seeing tasks close gives momentum and reduces stress." : {
+
+    },
+    "Flow Optimization" : {
+
+    },
+    "Flow Optimization protects focus" : {
+
+    },
+    "Flow Review" : {
+
+    },
+    "Flow State" : {
+
+    },
+    "Flow Trends" : {
+
+    },
+    "Focus Current Work" : {
+
+    },
+    "Focus Task" : {
+
+    },
+    "FOCUS THIS TASK" : {
+
+    },
+    "Fresh" : {
+
+    },
+    "From In Progress to Done" : {
+
+    },
+    "Generate one concrete next step to help restart motion on this task." : {
+
+    },
+    "Generating…" : {
+
+    },
+    "Good start — keep moving work toward Done." : {
+
+    },
+    "High" : {
+      "comment" : "Task priority name"
+    },
+    "High priority" : {
+
+    },
+    "How This App Supports It" : {
+
+    },
+    "How To Use This App" : {
+
+    },
+    "iCloud sync is on" : {
+
+    },
+    "Import Photo" : {
+
+    },
+    "In Progress" : {
+      "comment" : "Task status name"
+    },
+    "In Progress means active attention" : {
+
+    },
+    "In this app, a new task should move into In Progress only when the active lane has capacity. WIP limit hits so far: %lld." : {
+
+    },
+    "Info" : {
+
+    },
+    "Kanban" : {
+
+    },
+    "KanbanApp gives you one clear system for your tasks, so you can stop juggling everything in your head and start moving work forward." : {
+
+    },
+    "Keep it compact. A short completion check helps you finish instead of endlessly refining." : {
+
+    },
+    "Keep it short. A compact finish check makes it easier to close the task." : {
+
+    },
+    "Keep tasks moving through the three core states. The board is the main picture of your flow, not just a list of tasks." : {
+
+    },
+    "Large task" : {
+
+    },
+    "Let Done motivate you" : {
+
+    },
+    "Limit Reached" : {
+
+    },
+    "Limit WIP" : {
+
+    },
+    "Limit work in progress to reduce context switching." : {
+
+    },
+    "Listening..." : {
+
+    },
+    "Live text scanning is not supported on this device." : {
+
+    },
+    "Low" : {
+      "comment" : "Task priority name"
+    },
+    "Low priority" : {
+
+    },
+    "Lower mental load" : {
+
+    },
+    "Manifesto" : {
+
+    },
+    "Mark Active" : {
+
+    },
+    "Mark Blocked / Waiting" : {
+
+    },
+    "Mark Done" : {
+
+    },
+    "Max Active Tasks" : {
+
+    },
+    "Medium" : {
+      "comment" : "Task priority name"
+    },
+    "Medium priority" : {
+
+    },
+    "Microphone access is required to dictate tasks. Enable it in Settings." : {
+
+    },
+    "Momentum is building across your board." : {
+
+    },
+    "Momentum is visible." : {
+
+    },
+    "More motivation to finish" : {
+
+    },
+    "Move a task into In Progress only when capacity opens up. Let completion create space for the next commitment." : {
+
+    },
+    "Move to In Progress" : {
+
+    },
+    "Move to To Do" : {
+
+    },
+    "Move your first task to Done to build momentum." : {
+
+    },
+    "Moves this task to In Progress." : {
+
+    },
+    "Need completed in-progress tasks" : {
+
+    },
+    "Needs clearer scope" : {
+
+    },
+    "New Task" : {
+
+    },
+    "Next Action" : {
+
+    },
+    "Next Action suggestion is unavailable right now." : {
+
+    },
+    "Next action: %@" : {
+
+    },
+    "NO ACTION NEEDED" : {
+
+    },
+    "No active blockers right now." : {
+
+    },
+    "No active task running" : {
+
+    },
+    "No active tasks" : {
+
+    },
+    "No matching tasks" : {
+
+    },
+    "No readable text was found in that image." : {
+
+    },
+    "No readable text was found in the camera view." : {
+
+    },
+    "No ready tasks are waiting" : {
+
+    },
+    "No ready work needs attention" : {
+
+    },
+    "No recommended task." : {
+
+    },
+    "No speech was captured. Try recording again." : {
+
+    },
+    "No stalled work right now." : {
+
+    },
+    "No tasks" : {
+
+    },
+    "No tasks yet" : {
+
+    },
+    "No waiting tasks" : {
+
+    },
+    "Nothing completed yet" : {
+
+    },
+    "Nothing is drifting yet." : {
+
+    },
+    "Notifications were not enabled. You can allow them in Settings to receive active task nudges." : {
+
+    },
+    "now" : {
+      "comment" : "Immediate relative duration"
+    },
+    "Off" : {
+
+    },
+    "OK" : {
+
+    },
+    "Oldest active task" : {
+
+    },
+    "On" : {
+
+    },
+    "Only one focus slot remains" : {
+
+    },
+    "Open Blocked Task" : {
+
+    },
+    "Opens a detailed recommendation." : {
+
+    },
+    "Opens task details." : {
+
+    },
+    "Opens tasks in this lane" : {
+
+    },
+    "Opens the active work lane." : {
+
+    },
+    "Opens the blocked task so you can update it." : {
+
+    },
+    "Opens the recommended active task." : {
+
+    },
+    "Over WIP limit by %lld" : {
+
+    },
+    "Paste a note or messy thought…" : {
+
+    },
+    "Paste Note" : {
+
+    },
+    "Personal Kanban" : {
+
+    },
+    "Personal Kanban in practice" : {
+
+    },
+    "Personal Kanban Manifesto" : {
+
+    },
+    "Personal Kanban recommends a WIP limit of 2 or 3 to minimize context-switching and finish tasks faster." : {
+
+    },
+    "Personal Kanban recommends a WIP limit of 2 or 3 to minimize context-switching and finish tasks faster. Finish or move an active task before adding another In Progress task." : {
+
+    },
+    "Personal Kanban recommends a WIP limit of 2 or 3 to minimize context-switching and finish tasks faster. Finish or move an active task before moving another task into In Progress." : {
+
+    },
+    "Personal Kanban works best when you finish before you pull. Keep your active lane small and visible." : {
+
+    },
+    "Photo imported. Apple Intelligence is unavailable, so the text was added for manual review." : {
+
+    },
+    "Photo imported. Draft generated from the extracted text." : {
+
+    },
+    "Photo imported. Review the extracted text or generate a draft." : {
+
+    },
+    "Practice" : {
+
+    },
+    "Pressure appears at the right moment" : {
+
+    },
+    "Priority" : {
+
+    },
+    "Priority signals, WIP guidance, and visible task states help the user choose what to finish next with less friction." : {
+
+    },
+    "Protect your attention" : {
+
+    },
+    "Protect your focus" : {
+
+    },
+    "Pull instead of overload" : {
+
+    },
+    "Pull only if the next task is small or urgent. Otherwise, finish active work first." : {
+
+    },
+    "Pull only when there is room" : {
+
+    },
+    "Pull only when you have room" : {
+
+    },
+    "Pull Task" : {
+
+    },
+    "Quick Capture" : {
+
+    },
+    "Quick Capture AI couldn’t generate a draft right now. Review the text and try again." : {
+
+    },
+    "Quick Capture AI couldn’t generate a draft right now. Try shortening the note and retry." : {
+
+    },
+    "Quick Capture AI is unavailable right now." : {
+
+    },
+    "Read the core principles behind visual work, pull systems, and WIP limits." : {
+
+    },
+    "Ready" : {
+
+    },
+    "Ready Alternatives" : {
+
+    },
+    "Ready to pull" : {
+
+    },
+    "Recent finish rate" : {
+
+    },
+    "Recommended Action" : {
+
+    },
+    "Recommended task: %@." : {
+
+    },
+    "Record Again" : {
+
+    },
+    "Record Voice" : {
+
+    },
+    "Reduce active work before starting anything new. This will protect focus and completion speed." : {
+
+    },
+    "REDUCE WIP FIRST" : {
+
+    },
+    "Reduce WIP Now" : {
+
+    },
+    "Related to active work" : {
+
+    },
+    "Resolve blocked work before pulling more tasks, unless a new task is urgent and small." : {
+
+    },
+    "Restore" : {
+
+    },
+    "Restore from Archive" : {
+
+    },
+    "Review Active Tasks" : {
+
+    },
+    "Review Before Pulling" : {
+
+    },
+    "Review Capacity" : {
+
+    },
+    "Review tasks by lane" : {
+
+    },
+    "Review the suggestion before applying it to the task." : {
+
+    },
+    "Review your active tasks and decide what should move forward next." : {
+
+    },
+    "Review your transcript" : {
+
+    },
+    "Scan Text" : {
+
+    },
+    "Scanner unavailable" : {
+
+    },
+    "Search" : {
+
+    },
+    "Search tasks" : {
+
+    },
+    "Search your work" : {
+
+    },
+    "See progress, WIP pressure, and flow signals that push you toward finishing." : {
+
+    },
+    "See your work clearly" : {
+
+    },
+    "Send one daily reminder when In Progress tasks are aging or stalled." : {
+
+    },
+    "Set a max number of active tasks so your attention stays narrow." : {
+
+    },
+    "Settings" : {
+
+    },
+    "Skip" : {
+
+    },
+    "Slots Left" : {
+
+    },
+    "Small WIP, faster finish" : {
+
+    },
+    "Speech recognition access is required to dictate tasks. Enable it in Settings." : {
+
+    },
+    "Stalled" : {
+
+    },
+    "Stalled after" : {
+
+    },
+    "Stalled Tasks" : {
+
+    },
+    "Start a new task only when capacity opens. Completion creates space for the next commitment." : {
+
+    },
+    "Start Focusing" : {
+
+    },
+    "Status" : {
+
+    },
+    "Status distribution: %lld to do, %lld in progress, %lld done" : {
+
+    },
+    "Stop" : {
+
+    },
+    "Strong finishing rhythm." : {
+
+    },
+    "Stronger focus" : {
+
+    },
+    "Suggest Next Action" : {
+
+    },
+    "Suggestion added to the task description." : {
+
+    },
+    "task" : {
+      "comment" : "Singular task count noun"
+    },
+    "Task Details" : {
+
+    },
+    "Task Sync" : {
+
+    },
+    "tasks" : {
+      "comment" : "Plural task count noun"
+    },
+    "Tasks are currently stored only on this device. Turn on iCloud for this app to keep tasks available when you switch phones." : {
+
+    },
+    "Tasks no longer have to live in memory. The board and dashboard hold the system for you." : {
+
+    },
+    "Tasks sync through iCloud when you use the same Apple Account on each device. Changes can take a short moment to appear everywhere." : {
+
+    },
+    "Text added. Apple Intelligence is unavailable, so review it manually before creating the task." : {
+
+    },
+    "Text captured. Apple Intelligence is unavailable, so the text was added for manual review." : {
+
+    },
+    "Text captured. Draft generated from the camera scan." : {
+
+    },
+    "Text captured. Review the extracted text or generate a draft." : {
+
+    },
+    "The app can enforce a WIP limit so too many tasks do not enter In Progress at once. That keeps attention narrow and reduces context switching." : {
+
+    },
+    "The app couldn’t generate a next action right now. Try again in a moment." : {
+
+    },
+    "The app schedules a rolling daily digest at %lld:00 and never sends one notification per task." : {
+
+    },
+    "The board makes every task explicit through To Do, In Progress, and Done, so you can see what is waiting, what is active, and what has been completed." : {
+
+    },
+    "The board makes your commitments visible so nothing important stays vague or hidden." : {
+
+    },
+    "The camera scanner is unavailable right now." : {
+
+    },
+    "The dashboard shows progress, WIP pressure, and priority distribution so you can decide whether to finish, pause, or avoid pulling more." : {
+
+    },
+    "The image text was extracted, but the AI draft couldn’t be generated right now. Review it and generate again." : {
+
+    },
+    "The manifesto is simple: visualize your work, limit work in progress, pull only when there is room, and let Done stay visible." : {
+
+    },
+    "The microphone could not be started. Check audio permissions and try again." : {
+
+    },
+    "The next finished task changes the board." : {
+
+    },
+    "The selected image could not be loaded." : {
+
+    },
+    "The selected image could not be read." : {
+
+    },
+    "The text was captured, but the AI draft couldn’t be generated right now. Review it and generate again." : {
+
+    },
+    "The voice transcript was captured, but the AI draft couldn’t be generated right now. Review it and generate again." : {
+
+    },
+    "These tasks are staying active long enough to risk drag." : {
+
+    },
+    "These tasks have sat too long in progress and may need a decision." : {
+
+    },
+    "This app applies Personal Kanban by helping you see your work clearly, protect your focus, and finish before starting more." : {
+
+    },
+    "This app is built around Personal Kanban discipline: do less at once, finish more often, and reduce context switching." : {
+
+    },
+    "Times flow pushed back" : {
+
+    },
+    "Title" : {
+
+    },
+    "To Do" : {
+      "comment" : "Task status name"
+    },
+    "Too much work is active." : {
+
+    },
+    "Track work through To Do, In Progress, and Done instead of keeping mental lists." : {
+
+    },
+    "Transcript" : {
+
+    },
+    "Try a different search term." : {
+
+    },
+    "Try Again" : {
+
+    },
+    "Turn on Apple Intelligence in Settings to personalize WIP coaching." : {
+
+    },
+    "Turn on Apple Intelligence in Settings to suggest a next action." : {
+
+    },
+    "Turn on Apple Intelligence in Settings to use Quick Capture AI." : {
+
+    },
+    "UNBLOCK FIRST" : {
+
+    },
+    "Unblock Work" : {
+
+    },
+    "Updated" : {
+
+    },
+    "Use Suggestion" : {
+
+    },
+    "Use Text" : {
+
+    },
+    "Use the board to choose deliberately, the dashboard to protect flow, and the Done column to keep momentum real." : {
+
+    },
+    "Use the dashboard to rebalance flow" : {
+
+    },
+    "Use this when work cannot move forward yet. Blocked tasks should become visible quickly." : {
+
+    },
+    "Use Transcript" : {
+
+    },
+    "Uses the recognized text to create a task draft." : {
+
+    },
+    "Using local storage on this device" : {
+
+    },
+    "Visible progress and a real Done state turn completion into something you can see, not just something you intend." : {
+
+    },
+    "Visual board" : {
+
+    },
+    "Visualize" : {
+
+    },
+    "Visualize work" : {
+
+    },
+    "Visualize your work" : {
+
+    },
+    "Voice captured. Apple Intelligence is unavailable, so the transcript was added for manual review." : {
+
+    },
+    "Voice captured. Draft generated from your dictation." : {
+
+    },
+    "Voice captured. Review the transcript or generate a draft." : {
+
+    },
+    "Voice dictation is unavailable right now. Try again in a moment." : {
+
+    },
+    "waiting" : {
+
+    },
+    "Waiting for a week" : {
+
+    },
+    "Waiting for days" : {
+
+    },
+    "Waiting work should be seen clearly, not silently mixed into active focus." : {
+
+    },
+    "What does done look like?" : {
+
+    },
+    "What needs to be done?" : {
+
+    },
+    "What The User Gains" : {
+
+    },
+    "When your active lane is full, the dashboard pushes you back toward finishing. The app encourages pull, not overload." : {
+
+    },
+    "When your lane is full, the app pushes you back toward finishing before pulling more work." : {
+
+    },
+    "WIP Coach" : {
+
+    },
+    "WIP Coach AI copy is unavailable right now." : {
+
+    },
+    "WIP full" : {
+
+    },
+    "WIP Limit" : {
+
+    },
+    "WIP Limit Hits" : {
+
+    },
+    "WIP limit reached" : {
+
+    },
+    "WIP Limit Reached" : {
+
+    },
+    "WIP pressure" : {
+
+    },
+    "WIP Pressure" : {
+
+    },
+    "Work from the board" : {
+
+    },
+    "Work in progress pressure. %@ %lld of %lld tasks active. %lld slots left. %@. %@" : {
+
+    },
+    "Work in progress review. %lld of %lld tasks active. %lld slots left. %lld blocked tasks. %lld ready tasks." : {
+
+    },
+    "Workflow Policy" : {
+
+    },
+    "You are turning work into done consistently. Protect that rhythm by keeping WIP tight." : {
+
+    },
+    "You can revisit the manifesto anytime from Settings." : {
+
+    },
+    "You can safely pull one more task, but keep active work tight so current tasks can reach done." : {
+
+    },
+    "You're at capacity." : {
+
+    },
+    "You're at peak capacity! Finishing '%@' will free up space." : {
+
+    },
+    "You're close to your WIP limit." : {
+
+    },
+    "Your active lane is full. Review In Progress work before starting from To Do." : {
+
+    },
+    "Your active work is within capacity. Pull carefully or finish a current task first." : {
+
+    },
+    "Your board is clear" : {
+
+    },
+    "Your flow is balanced." : {
+
+    },
+    "Your flow still has room." : {
+
+    },
+    "YOUR PROGRESS" : {
+
+    },
+    "Your progress. %@. %lld percent complete. %@ %lld to do, %lld in progress, %lld done." : {
+
+    },
+    "Your progress. No tasks yet. Add your first task to start tracking progress." : {
+
+    },
+    "Your work is visible" : {
+
+    }
+  },
+  "version" : "1.0"
+}

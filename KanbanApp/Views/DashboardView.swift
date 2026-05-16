@@ -178,14 +178,14 @@ struct DashboardView: View {
             sectionHeader("Priority")
 
             HStack(spacing: AppStyle.Spacing.priorityHStackGap) {
-                priorityCard(priority: "High", count: count(priority: .high), tint: AppStyle.Colors.Priority.high)
-                priorityCard(priority: "Medium", count: count(priority: .medium), tint: AppStyle.Colors.Priority.medium)
-                priorityCard(priority: "Low", count: count(priority: .low), tint: AppStyle.Colors.Priority.low)
+                priorityCard(priority: .high, count: count(priority: .high), tint: AppStyle.Colors.Priority.high)
+                priorityCard(priority: .medium, count: count(priority: .medium), tint: AppStyle.Colors.Priority.medium)
+                priorityCard(priority: .low, count: count(priority: .low), tint: AppStyle.Colors.Priority.low)
             }
         }
     }
 
-    private func priorityCard(priority: String, count: Int, tint: Color) -> some View {
+    private func priorityCard(priority: TaskPriority, count: Int, tint: Color) -> some View {
         let isEmpty = count == 0
         let dominanceRatio = maxPriorityCount > 0 ? CGFloat(count) / CGFloat(maxPriorityCount) : 0
         let fillOpacity = isEmpty ? AppStyle.Opacity.accentWashVeryFaint : AppStyle.Opacity.accentWashEmphasized
@@ -203,7 +203,7 @@ struct DashboardView: View {
                     Circle()
                         .fill(isEmpty ? AppStyle.Colors.secondaryText.opacity(AppStyle.Opacity.iconInactive) : tint)
                         .frame(width: AppStyle.Shapes.priorityDotSize, height: AppStyle.Shapes.priorityDotSize)
-                    Text(priority)
+                    Text(priority.localizedName)
                         .font(AppStyle.Typography.priorityLabelBold)
                         .foregroundStyle(isEmpty ? AppStyle.Colors.tertiaryText : AppStyle.Colors.primaryText)
                 }
@@ -246,7 +246,7 @@ struct DashboardView: View {
                     count: blockedInProgressTask == nil ? 0 : currentTasks.filter { $0.status == .inProgress && $0.isBlocked }.count,
                     tint: AppStyle.Colors.blocked,
                     icon: "pause.circle.fill",
-                    description: blockedInProgressTask == nil ? "No active blockers right now." : "Blocked tasks need attention before more work is pulled."
+                    description: blockedInProgressTask == nil ? String(localized: "No active blockers right now.") : String(localized: "Blocked tasks need attention before more work is pulled.")
                 )
 
                 flowReviewCard(
@@ -254,7 +254,7 @@ struct DashboardView: View {
                     count: agingInProgressTasks.count,
                     tint: AppStyle.Colors.Priority.medium,
                     icon: "clock.badge.exclamationmark",
-                    description: agingInProgressTasks.isEmpty ? "Nothing is drifting yet." : "These tasks are staying active long enough to risk drag."
+                    description: agingInProgressTasks.isEmpty ? String(localized: "Nothing is drifting yet.") : String(localized: "These tasks are staying active long enough to risk drag.")
                 )
 
                 flowReviewCard(
@@ -262,7 +262,7 @@ struct DashboardView: View {
                     count: stalledInProgressTasks.count,
                     tint: AppStyle.Colors.Priority.high,
                     icon: "exclamationmark.circle.fill",
-                    description: stalledInProgressTasks.isEmpty ? "No stalled work right now." : "These tasks have sat too long in progress and may need a decision."
+                    description: stalledInProgressTasks.isEmpty ? String(localized: "No stalled work right now.") : String(localized: "These tasks have sat too long in progress and may need a decision.")
                 )
             }
         }
@@ -313,14 +313,14 @@ struct DashboardView: View {
                     label: "Avg Days To Done",
                     value: averageDaysToDone.map { String(format: "%.1f", $0) } ?? "-",
                     tint: AppStyle.Colors.Status.done,
-                    note: averageDaysToDone == nil ? "Need completed in-progress tasks" : "From In Progress to Done"
+                    note: averageDaysToDone == nil ? String(localized: "Need completed in-progress tasks") : String(localized: "From In Progress to Done")
                 )
 
                 trendCard(
                     label: "Done This Week",
                     value: "\(doneThisWeekCount)",
                     tint: AppStyle.Colors.Status.todo,
-                    note: "Recent finish rate"
+                    note: String(localized: "Recent finish rate")
                 )
             }
 
@@ -329,14 +329,14 @@ struct DashboardView: View {
                     label: "WIP Limit Hits",
                     value: "\(wipLimitHitCount)",
                     tint: AppStyle.Colors.warning,
-                    note: "Times flow pushed back"
+                    note: String(localized: "Times flow pushed back")
                 )
 
                 trendCard(
                     label: "Active Age",
                     value: oldestInProgressTask.map { activeAgeText(for: $0) } ?? "-",
                     tint: AppStyle.Colors.Status.inProgress,
-                    note: oldestInProgressTask == nil ? "No active task running" : "Oldest active task"
+                    note: oldestInProgressTask == nil ? String(localized: "No active task running") : String(localized: "Oldest active task")
                 )
             }
         }
@@ -346,25 +346,25 @@ struct DashboardView: View {
 
     private var momentumHeadline: String {
         if doneThisWeekCount >= 5 {
-            return "Strong finishing rhythm."
+            return String(localized: "Strong finishing rhythm.")
         }
         if doneThisWeekCount > 0 {
-            return "Momentum is visible."
+            return String(localized: "Momentum is visible.")
         }
-        return "The next finished task changes the board."
+        return String(localized: "The next finished task changes the board.")
     }
 
     private var momentumMessage: String {
         if doneThisWeekCount >= 5 {
-            return "You are turning work into done consistently. Protect that rhythm by keeping WIP tight."
+            return String(localized: "You are turning work into done consistently. Protect that rhythm by keeping WIP tight.")
         }
         if doneThisWeekCount > 0 {
-            return "Every completed task frees attention and opens space for the next pull."
+            return String(localized: "Every completed task frees attention and opens space for the next pull.")
         }
-        return "Close one task and you free a focus slot, strengthen the Done column, and make progress feel real again."
+        return String(localized: "Close one task and you free a focus slot, strengthen the Done column, and make progress feel real again.")
     }
 
-    private func flowReviewCard(title: String, count: Int, tint: Color, icon: String, description: String) -> some View {
+    private func flowReviewCard(title: LocalizedStringKey, count: Int, tint: Color, icon: String, description: String) -> some View {
         Button {
             onSelectStatus?(.inProgress)
         } label: {
@@ -404,7 +404,7 @@ struct DashboardView: View {
         .buttonStyle(.plain)
     }
 
-    private func momentumStatCard(label: String, value: String, tint: Color) -> some View {
+    private func momentumStatCard(label: LocalizedStringKey, value: String, tint: Color) -> some View {
         VStack(alignment: .leading, spacing: AppStyle.Spacing.tiny) {
             Text(label)
                 .font(AppStyle.Typography.statLabel)
@@ -419,7 +419,7 @@ struct DashboardView: View {
         .background(tint.opacity(AppStyle.Opacity.accentWashSubtle), in: RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
     }
 
-    private func trendCard(label: String, value: String, tint: Color, note: String) -> some View {
+    private func trendCard(label: LocalizedStringKey, value: String, tint: Color, note: String) -> some View {
         VStack(alignment: .leading, spacing: AppStyle.Spacing.tiny) {
             Text(label)
                 .font(AppStyle.Typography.statLabel)
@@ -443,17 +443,17 @@ struct DashboardView: View {
         let activeSince = TaskAgingEvaluator.activeSince(for: task)
         let days = Int(Date().timeIntervalSince(activeSince) / (24 * 60 * 60))
         if days > 0 {
-            return "\(days)d"
+            return String(localized: "\(days)d", comment: "Short duration in days")
         }
         let hours = Int(Date().timeIntervalSince(activeSince) / (60 * 60))
         if hours > 0 {
-            return "\(hours)h"
+            return String(localized: "\(hours)h", comment: "Short duration in hours")
         }
         let minutes = Int(Date().timeIntervalSince(activeSince) / 60)
-        return "\(max(minutes, 1))m"
+        return String(localized: "\(max(minutes, 1))m", comment: "Short duration in minutes")
     }
 
-    private func sectionHeader(_ title: String) -> some View {
+    private func sectionHeader(_ title: LocalizedStringKey) -> some View {
         Text(title)
             .sectionHeaderStyle()
     }

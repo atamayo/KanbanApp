@@ -314,51 +314,51 @@ private struct ProgressMetrics {
 
     var summaryText: String {
         if totalCount == 0 {
-            return "No tasks yet"
+            return String(localized: "No tasks yet")
         }
 
         if completedCount == totalCount {
-            return "All tasks completed"
+            return String(localized: "All tasks completed")
         }
 
-        return "\(completedCount.formatted()) of \(totalCount.formatted()) \(taskWord) completed"
+        return String(localized: "\(completedCount.formatted()) of \(totalCount.formatted()) \(taskWord) completed")
     }
 
     var insightText: String {
         switch percentage {
         case 0 where totalCount == 0:
-            return "Add your first task to start tracking progress."
+            return String(localized: "Add your first task to start tracking progress.")
         case 0:
-            return "Move your first task to Done to build momentum."
+            return String(localized: "Move your first task to Done to build momentum.")
         case 1...39:
-            return "Good start — keep moving work toward Done."
+            return String(localized: "Good start — keep moving work toward Done.")
         case 40...74:
-            return "Momentum is building across your board."
+            return String(localized: "Momentum is building across your board.")
         case 75...99:
-            return "Almost there — close the remaining tasks."
+            return String(localized: "Almost there — close the remaining tasks.")
         default:
-            return "Board complete — all tasks are done."
+            return String(localized: "Board complete — all tasks are done.")
         }
     }
 
     var accessibilityLabel: String {
         if isEmpty {
-            return "Your progress. No tasks yet. Add your first task to start tracking progress."
+            return String(localized: "Your progress. No tasks yet. Add your first task to start tracking progress.")
         }
 
-        return "Your progress. \(summaryText). \(percentage) percent complete. \(insightText) \(todoCount) to do, \(inProgressCount) in progress, \(completedCount) done."
+        return String(localized: "Your progress. \(summaryText). \(percentage) percent complete. \(insightText) \(todoCount) to do, \(inProgressCount) in progress, \(completedCount) done.")
     }
 
     var breakdownLanes: [ProgressLane] {
         [
-            ProgressLane(label: "To Do", count: todoCount, color: AppStyle.Colors.Status.todo),
-            ProgressLane(label: "In Progress", count: inProgressCount, color: AppStyle.Colors.Status.inProgress),
-            ProgressLane(label: "Done", count: completedCount, color: AppStyle.Colors.Status.done)
+            ProgressLane(label: TaskStatus.todo.localizedName, count: todoCount, color: AppStyle.Colors.Status.todo),
+            ProgressLane(label: TaskStatus.inProgress.localizedName, count: inProgressCount, color: AppStyle.Colors.Status.inProgress),
+            ProgressLane(label: TaskStatus.done.localizedName, count: completedCount, color: AppStyle.Colors.Status.done)
         ]
     }
 
     private var taskWord: String {
-        totalCount == 1 ? "task" : "tasks"
+        totalCount == 1 ? String(localized: "task") : String(localized: "tasks")
     }
 }
 

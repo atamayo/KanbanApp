@@ -3,9 +3,9 @@ import SwiftUI
 struct CustomAlertView: View {
     @Binding var isPresented: Bool
     let iconName: String
-    let title: String
-    let message: String
-    var buttonTitle = "OK"
+    let title: LocalizedStringKey
+    let message: LocalizedStringKey
+    var buttonTitle: LocalizedStringKey = "OK"
 
     var body: some View {
         if isPresented {
@@ -46,7 +46,7 @@ struct CustomAlertView: View {
                             .background(AppStyle.Colors.Status.todo, in: RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
                     }
                     .buttonStyle(.plain)
-                    .accessibilityLabel(buttonTitle)
+                    .accessibilityLabel(Text(buttonTitle))
                 }
                 .padding(AppStyle.Spacing.extraLarge)
                 .frame(maxWidth: AppStyle.Shapes.modalMaxWidth)
@@ -73,9 +73,9 @@ extension View {
     func customAlert(
         isPresented: Binding<Bool>,
         iconName: String,
-        title: String,
-        message: String,
-        buttonTitle: String = "OK"
+        title: LocalizedStringKey,
+        message: LocalizedStringKey,
+        buttonTitle: LocalizedStringKey = "OK"
     ) -> some View {
         fullScreenCover(isPresented: isPresented) {
             CustomAlertView(

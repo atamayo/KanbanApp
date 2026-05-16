@@ -15,6 +15,7 @@ final class QuickCaptureCoordinator: ObservableObject {
     @Published var text = ""
     @Published var message: String?
     @Published var draftMessage: String?
+    @Published var isMessagePositive = false
     @Published var isGenerating = false
     @Published var isImportingPhoto = false
     @Published private(set) var isAvailable = false
@@ -49,7 +50,7 @@ final class QuickCaptureCoordinator: ObservableObject {
             text = cleanedText
             return .applyDraft(draft, message: QuickCaptureSource.paste.successMessage)
         } catch {
-            draftMessage = "Quick Capture AI couldn’t generate a draft right now. Try shortening the note and retry."
+            draftMessage = String(localized: "Quick Capture AI couldn’t generate a draft right now. Try shortening the note and retry.")
             return .none
         }
     }
@@ -57,13 +58,15 @@ final class QuickCaptureCoordinator: ObservableObject {
     func importPhoto(_ item: PhotosPickerItem) async -> QuickCaptureCoordinatorResult {
         isImportingPhoto = true
         message = nil
+        isMessagePositive = false
         draftMessage = nil
 
         defer { isImportingPhoto = false }
 
         do {
             guard let imageData = try await item.loadTransferable(type: Data.self) else {
-                message = "The selected image could not be loaded."
+                message = String(localized: "The selected image could not be loaded.")
+                isMessagePositive = false
                 return .none
             }
 
@@ -71,9 +74,11 @@ final class QuickCaptureCoordinator: ObservableObject {
             return await handleRecognizedText(extractedText, source: .photo)
         } catch let error as ImageTextExtractionError {
             message = error.localizedDescription
+            isMessagePositive = false
             return .none
         } catch {
-            message = "The image text was extracted, but the AI draft couldn’t be generated right now. Review it and generate again."
+            message = String(localized: "The image text was extracted, but the AI draft couldn’t be generated right now. Review it and generate again.")
+            isMessagePositive = false
             return .showReviewSheet
         }
     }
@@ -82,6 +87,7 @@ final class QuickCaptureCoordinator: ObservableObject {
         let cleanedText = recognizedText.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !cleanedText.isEmpty else {
             message = LiveTextScannerError.noTextFound.localizedDescription
+            isMessagePositive = false
             return .none
         }
 
@@ -101,27 +107,32 @@ final class QuickCaptureCoordinator: ObservableObject {
             return .applyDraft(draft, message: source.successMessage)
         } catch {
             message = source.generationFailureMessage
+            isMessagePositive = false
             return .showReviewSheet
         }
     }
 
     func markDraftApplied(message: String) {
         self.message = message
+        isMessagePositive = true
     }
 
     func markManualTextApplied(_ cleanedText: String, source: QuickCaptureSource) {
         text = cleanedText
         draftMessage = nil
         message = source.manualAppliedMessage
+        isMessagePositive = false
     }
 
     func clearFeedback() {
         message = nil
         draftMessage = nil
+        isMessagePositive = false
     }
 
     func showMessage(_ message: String) {
         self.message = message
+        isMessagePositive = false
     }
 
     private func refreshAvailability() {

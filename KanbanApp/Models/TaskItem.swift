@@ -8,6 +8,17 @@ enum TaskStatus: String, Codable, CaseIterable, Identifiable {
 
     var id: String { rawValue }
 
+    var localizedName: String {
+        switch self {
+        case .todo:
+            return String(localized: "To Do", comment: "Task status name")
+        case .inProgress:
+            return String(localized: "In Progress", comment: "Task status name")
+        case .done:
+            return String(localized: "Done", comment: "Task status name")
+        }
+    }
+
     var sortOrder: Int {
         switch self {
         case .todo: return 0
@@ -23,6 +34,17 @@ enum TaskPriority: String, Codable, CaseIterable, Identifiable {
     case high = "High"
 
     var id: String { rawValue }
+
+    var localizedName: String {
+        switch self {
+        case .low:
+            return String(localized: "Low", comment: "Task priority name")
+        case .medium:
+            return String(localized: "Medium", comment: "Task priority name")
+        case .high:
+            return String(localized: "High", comment: "Task priority name")
+        }
+    }
 
     var sortOrder: Int {
         switch self {
@@ -102,9 +124,9 @@ final class TaskItem {
         let hours = Int(diff / 3600)
         let days = Int(diff / 86400)
         
-        if days > 0 { return "\(days)d in status" }
-        if hours > 0 { return "\(hours)h in status" }
-        if minutes > 0 { return "\(minutes)m ago" }
+        if days > 0 { return String(localized: "\(days)d in status", comment: "Short relative time in current task status") }
+        if hours > 0 { return String(localized: "\(hours)h in status", comment: "Short relative time in current task status") }
+        if minutes > 0 { return String(localized: "\(minutes)m ago", comment: "Short relative time since task status changed") }
         return ""
     }
 

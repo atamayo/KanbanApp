@@ -18,13 +18,13 @@ struct TaskCardView: View {
 
         var label: String {
             switch self {
-            case .ready: return "Ready"
-            case .blocked: return "Blocked"
-            case .fresh: return "Fresh"
-            case .active: return "Active"
-            case .aging: return "Aging"
-            case .stalled: return "Stalled"
-            case .completed: return "Closed"
+            case .ready: return String(localized: "Ready")
+            case .blocked: return String(localized: "Blocked")
+            case .fresh: return String(localized: "Fresh")
+            case .active: return String(localized: "Active")
+            case .aging: return String(localized: "Aging")
+            case .stalled: return String(localized: "Stalled")
+            case .completed: return String(localized: "Closed")
             }
         }
 
@@ -154,10 +154,10 @@ struct TaskCardView: View {
         let hours = Int(flowAge / 3600)
         let days = Int(flowAge / 86400)
 
-        if days > 0 { return "\(days)d" }
-        if hours > 0 { return "\(hours)h" }
-        if minutes > 0 { return "\(minutes)m" }
-        return "now"
+        if days > 0 { return String(localized: "\(days)d", comment: "Short duration in days") }
+        if hours > 0 { return String(localized: "\(hours)h", comment: "Short duration in hours") }
+        if minutes > 0 { return String(localized: "\(minutes)m", comment: "Short duration in minutes") }
+        return String(localized: "now", comment: "Immediate relative duration")
     }
 
     private var statusIconName: String {
@@ -177,9 +177,9 @@ struct TaskCardView: View {
 
     private var statusBadgeText: String {
         if task.isArchived {
-            return "Archived"
+            return String(localized: "Archived")
         }
-        return task.status == .todo ? flowState.label : task.status.rawValue
+        return task.status == .todo ? flowState.label : task.status.localizedName
     }
 
     private var statusBadgeIcon: String {
@@ -203,53 +203,53 @@ struct TaskCardView: View {
             let duration: String
 
             if days > 0 {
-                duration = "\(days)d"
+                duration = String(localized: "\(days)d", comment: "Short duration in days")
             } else if hours > 0 {
-                duration = "\(hours)h"
+                duration = String(localized: "\(hours)h", comment: "Short duration in hours")
             } else if minutes > 0 {
-                duration = "\(minutes)m"
+                duration = String(localized: "\(minutes)m", comment: "Short duration in minutes")
             } else {
-                duration = "now"
+                duration = String(localized: "now", comment: "Immediate relative duration")
             }
 
-            return "Archived \(duration) ago"
+            return String(localized: "Archived \(duration) ago")
         }
 
         switch task.status {
         case .todo:
-            return "\(flowState.label), created \(flowDurationText) ago"
+            return String(localized: "\(flowState.label), created \(flowDurationText) ago")
         case .inProgress:
-            return "\(flowState.label), in progress for \(flowDurationText)"
+            return String(localized: "\(flowState.label), in progress for \(flowDurationText)")
         case .done:
-            return "Closed \(flowDurationText) ago"
+            return String(localized: "Closed \(flowDurationText) ago")
         }
     }
 
     private var accessibilitySummary: String {
         var parts = [
             task.title,
-            task.status.rawValue,
-            "\(task.priority.rawValue) priority",
+            task.status.localizedName,
+            String(localized: "\(task.priority.localizedName) priority"),
             metadataSummary
         ]
 
         if task.isBlocked {
-            parts.append("Blocked")
+            parts.append(String(localized: "Blocked"))
         }
 
         if task.status == .done {
-            parts.append("Completed")
+            parts.append(String(localized: "Completed"))
         }
 
         if task.isArchived {
-            parts.append("Archived")
+            parts.append(String(localized: "Archived"))
         }
 
         return parts.joined(separator: ", ")
     }
 
     private var accessibilityHintText: String {
-        "Double-tap to open details. Swipe or long press for actions. Drag the card to reorder."
+        String(localized: "Double-tap to open details. Swipe or long press for actions. Drag the card to reorder.")
     }
 
     var body: some View {
@@ -411,7 +411,7 @@ struct TaskCardView: View {
 
     private var priorityPill: some View {
         TaskBadge(
-            text: task.priority.rawValue,
+            text: task.priority.localizedName,
             systemImage: priorityIconName,
             tint: priorityColor
         )
@@ -419,7 +419,7 @@ struct TaskCardView: View {
 
     private var blockedPill: some View {
         TaskBadge(
-            text: "Blocked",
+            text: String(localized: "Blocked"),
             systemImage: "pause.circle.fill",
             tint: AppStyle.Colors.blocked
         )
@@ -433,7 +433,7 @@ struct TaskCardView: View {
                     task.priority = p
                     try? modelContext.save()
                 } label: {
-                    Label(p.rawValue, systemImage: priorityIconName(p))
+                    Label(p.localizedName, systemImage: priorityIconName(p))
                 }
             }
         } label: {

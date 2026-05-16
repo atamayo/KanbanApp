@@ -12,15 +12,15 @@ enum VoiceCaptureError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .speechRecognitionDenied:
-            return "Speech recognition access is required to dictate tasks. Enable it in Settings."
+            return String(localized: "Speech recognition access is required to dictate tasks. Enable it in Settings.")
         case .microphoneDenied:
-            return "Microphone access is required to dictate tasks. Enable it in Settings."
+            return String(localized: "Microphone access is required to dictate tasks. Enable it in Settings.")
         case .recognizerUnavailable:
-            return "Voice dictation is unavailable right now. Try again in a moment."
+            return String(localized: "Voice dictation is unavailable right now. Try again in a moment.")
         case .audioSetupFailed:
-            return "The microphone could not be started. Check audio permissions and try again."
+            return String(localized: "The microphone could not be started. Check audio permissions and try again.")
         case .noSpeechFound:
-            return "No speech was captured. Try recording again."
+            return String(localized: "No speech was captured. Try recording again.")
         }
     }
 }

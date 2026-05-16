@@ -62,7 +62,7 @@ struct SettingsView: View {
             HStack(spacing: AppStyle.Spacing.statusRowGap) {
                 settingsStatCard(
                     label: "Flow Optimization",
-                    value: isFocusGuardEnabled ? "On" : "Off",
+                    value: isFocusGuardEnabled ? String(localized: "On") : String(localized: "Off"),
                     tint: isFocusGuardEnabled ? AppStyle.Colors.Status.done : AppStyle.Colors.secondaryText
                 )
 
@@ -320,12 +320,12 @@ struct SettingsView: View {
             isTaskAgingNotificationsEnabled = true
         } else {
             isTaskAgingNotificationsEnabled = false
-            taskAgingNotificationMessage = "Notifications were not enabled. You can allow them in Settings to receive active task nudges."
+            taskAgingNotificationMessage = String(localized: "Notifications were not enabled. You can allow them in Settings to receive active task nudges.")
             await TaskAgingNotificationService.cancelScheduledNotifications()
         }
     }
 
-    private func settingsStatCard(label: String, value: String, tint: Color) -> some View {
+    private func settingsStatCard(label: LocalizedStringKey, value: String, tint: Color) -> some View {
         VStack(alignment: .leading, spacing: AppStyle.Spacing.tiny) {
             Text(label)
                 .font(AppStyle.Typography.statLabel)
@@ -340,7 +340,7 @@ struct SettingsView: View {
         .background(tint.opacity(AppStyle.Opacity.accentWashSubtle), in: RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
     }
 
-    private func settingsLinkCard(icon: String, title: String, subtitle: String) -> some View {
+    private func settingsLinkCard(icon: String, title: LocalizedStringKey, subtitle: LocalizedStringKey) -> some View {
         HStack(spacing: AppStyle.Spacing.regular) {
             ZStack {
                 RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous)
@@ -374,7 +374,7 @@ struct SettingsView: View {
     }
 
     private func thresholdStepper(
-        title: String,
+        title: LocalizedStringKey,
         value: Int,
         systemImage: String,
         binding: Binding<Int>,
@@ -388,7 +388,7 @@ struct SettingsView: View {
 
                 Spacer()
 
-                Text("\(value) \(value == 1 ? "day" : "days")")
+                Text(String(localized: "\(value) \(value == 1 ? String(localized: "day") : String(localized: "days"))"))
                     .font(AppStyle.Typography.metricMedium)
                     .foregroundStyle(AppStyle.Colors.warning)
             }
@@ -398,7 +398,7 @@ struct SettingsView: View {
         }
     }
 
-    private func settingsInfoCard(icon: String, title: String, body: String) -> some View {
+    private func settingsInfoCard(icon: String, title: LocalizedStringKey, body: LocalizedStringKey) -> some View {
         HStack(alignment: .top, spacing: AppStyle.Spacing.regular) {
             Image(systemName: icon)
                 .font(AppStyle.Typography.iconMedium)
@@ -422,7 +422,7 @@ struct SettingsView: View {
         .cardStyle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
     }
 
-    private func infoRow(label: String, value: String) -> some View {
+    private func infoRow(label: LocalizedStringKey, value: String) -> some View {
         HStack {
             Text(label)
                 .font(AppStyle.Typography.statusLabel)
@@ -436,7 +436,7 @@ struct SettingsView: View {
         }
     }
 
-    private func sectionHeader(_ title: String) -> some View {
+    private func sectionHeader(_ title: LocalizedStringKey) -> some View {
         Text(title)
             .sectionHeaderStyle()
     }

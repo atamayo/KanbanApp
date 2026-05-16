@@ -90,7 +90,7 @@ enum WIPCoachEngine {
                 pressure: .overloaded,
                 action: .reduceWIP,
                 recommendedTask: bestActiveTask(from: activeTasks, now: now),
-                reason: "Over WIP limit by \(activeCount - wipLimit)",
+                reason: String(localized: "Over WIP limit by \(activeCount - wipLimit)"),
                 stats: stats,
                 readyAlternatives: Array(rankedReadyTasks.prefix(3)),
                 activeTasks: activeTasks
@@ -102,7 +102,7 @@ enum WIPCoachEngine {
                 pressure: .blocked,
                 action: .unblockTask,
                 recommendedTask: blockedTask,
-                reason: "Blocked active work",
+                reason: String(localized: "Blocked active work"),
                 stats: stats,
                 readyAlternatives: Array(rankedReadyTasks.prefix(3)),
                 activeTasks: activeTasks
@@ -114,7 +114,7 @@ enum WIPCoachEngine {
                 pressure: .atLimit,
                 action: .focusCurrentTask,
                 recommendedTask: bestActiveTask(from: activeTasks, now: now),
-                reason: "WIP limit reached",
+                reason: String(localized: "WIP limit reached"),
                 stats: stats,
                 readyAlternatives: Array(rankedReadyTasks.prefix(3)),
                 activeTasks: activeTasks
@@ -138,7 +138,7 @@ enum WIPCoachEngine {
                 pressure: .nearLimit,
                 action: .focusCurrentTask,
                 recommendedTask: bestActiveTask(from: activeTasks, now: now),
-                reason: "Only one focus slot remains",
+                reason: String(localized: "Only one focus slot remains"),
                 stats: stats,
                 readyAlternatives: Array(rankedReadyTasks.prefix(3)),
                 activeTasks: activeTasks
@@ -161,7 +161,7 @@ enum WIPCoachEngine {
             pressure: .healthy,
             action: .noActionNeeded,
             recommendedTask: nil,
-            reason: activeTasks.isEmpty ? "No ready work needs attention" : "No ready tasks are waiting",
+            reason: activeTasks.isEmpty ? String(localized: "No ready work needs attention") : String(localized: "No ready tasks are waiting"),
             stats: stats,
             readyAlternatives: [],
             activeTasks: activeTasks
@@ -197,39 +197,39 @@ enum WIPCoachEngine {
         switch pressure {
         case .hasRoom:
             return (
-                "Your flow still has room.",
-                "You can safely pull one more task, but keep active work tight so current tasks can reach done.",
-                "Review Before Pulling"
+                String(localized: "Your flow still has room."),
+                String(localized: "You can safely pull one more task, but keep active work tight so current tasks can reach done."),
+                String(localized: "Review Before Pulling")
             )
         case .healthy:
             return (
-                "Your flow is balanced.",
-                "Your active work is within capacity. Pull carefully or finish a current task first.",
-                "Choose Next Task"
+                String(localized: "Your flow is balanced."),
+                String(localized: "Your active work is within capacity. Pull carefully or finish a current task first."),
+                String(localized: "Choose Next Task")
             )
         case .nearLimit:
             return (
-                "You're close to your WIP limit.",
-                "Pull only if the next task is small or urgent. Otherwise, finish active work first.",
-                "Review Capacity"
+                String(localized: "You're close to your WIP limit."),
+                String(localized: "Pull only if the next task is small or urgent. Otherwise, finish active work first."),
+                String(localized: "Review Capacity")
             )
         case .atLimit:
             return (
-                "You're at capacity.",
-                "Finish or move one active task forward before pulling new work.",
-                "Focus Current Work"
+                String(localized: "You're at capacity."),
+                String(localized: "Finish or move one active task forward before pulling new work."),
+                String(localized: "Focus Current Work")
             )
         case .overloaded:
             return (
-                "Too much work is active.",
-                "Reduce active work before starting anything new. This will protect focus and completion speed.",
-                "Reduce WIP Now"
+                String(localized: "Too much work is active."),
+                String(localized: "Reduce active work before starting anything new. This will protect focus and completion speed."),
+                String(localized: "Reduce WIP Now")
             )
         case .blocked:
             return (
-                "Blocked work is slowing your flow.",
-                "Resolve blocked work before pulling more tasks, unless a new task is urgent and small.",
-                "Unblock Work"
+                String(localized: "Blocked work is slowing your flow."),
+                String(localized: "Resolve blocked work before pulling more tasks, unless a new task is urgent and small."),
+                String(localized: "Unblock Work")
             )
         }
     }
@@ -237,17 +237,17 @@ enum WIPCoachEngine {
     private static func label(for action: WIPCoachActionType) -> String {
         switch action {
         case .pullNextTask:
-            return "BEST TASK TO PULL NEXT"
+            return String(localized: "BEST TASK TO PULL NEXT")
         case .focusCurrentTask:
-            return "FOCUS THIS TASK"
+            return String(localized: "FOCUS THIS TASK")
         case .unblockTask:
-            return "UNBLOCK FIRST"
+            return String(localized: "UNBLOCK FIRST")
         case .reduceWIP:
-            return "REDUCE WIP FIRST"
+            return String(localized: "REDUCE WIP FIRST")
         case .breakDownTask:
-            return "BREAK DOWN FIRST"
+            return String(localized: "BREAK DOWN FIRST")
         case .noActionNeeded:
-            return "NO ACTION NEEDED"
+            return String(localized: "NO ACTION NEEDED")
         }
     }
 
@@ -258,32 +258,32 @@ enum WIPCoachEngine {
         switch task.priority {
         case .high:
             score += 40
-            reasons.append("High priority")
+            reasons.append(String(localized: "High priority"))
         case .medium:
             score += 20
-            reasons.append("Medium priority")
+            reasons.append(String(localized: "Medium priority"))
         case .low:
             score += 5
-            reasons.append("Low priority")
+            reasons.append(String(localized: "Low priority"))
         }
 
         if !task.completionCriteria.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             score += 10
-            reasons.append("Clear finish check")
+            reasons.append(String(localized: "Clear finish check"))
         }
 
         if task.desc.trimmingCharacters(in: .whitespacesAndNewlines).count >= 24 {
             score += 5
-            reasons.append("Enough context")
+            reasons.append(String(localized: "Enough context"))
         }
 
         let ageDays = now.timeIntervalSince(task.createdAt) / 86_400
         if ageDays >= 7 {
             score += 5
-            reasons.append("Waiting for a week")
+            reasons.append(String(localized: "Waiting for a week"))
         } else if ageDays >= 3 {
             score += 3
-            reasons.append("Waiting for days")
+            reasons.append(String(localized: "Waiting for days"))
         }
 
         let titleWordCount = task.title
@@ -293,23 +293,23 @@ enum WIPCoachEngine {
             task.desc.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty &&
             task.completionCriteria.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             score -= 15
-            reasons.append("Needs clearer scope")
+            reasons.append(String(localized: "Needs clearer scope"))
         }
 
         if task.title.count > 90 {
             score -= 10
-            reasons.append("Large task")
+            reasons.append(String(localized: "Large task"))
         }
 
         if activeTasks.contains(where: { $0.title.localizedCaseInsensitiveContains(task.title) || task.title.localizedCaseInsensitiveContains($0.title) }) {
             score += 10
-            reasons.append("Related to active work")
+            reasons.append(String(localized: "Related to active work"))
         }
 
         return WIPCoachTaskCandidate(
             task: task,
             score: score,
-            reason: reasons.first ?? "Ready to pull"
+            reason: reasons.first ?? String(localized: "Ready to pull")
         )
     }
 
