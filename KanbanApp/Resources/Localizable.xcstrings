@@ -22,6 +22,12 @@
             "state": "translated",
             "value": "“%@” 已经进行了一段时间。拉入更多工作前，先检查一下。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "「%@」はしばらく進行中です。新しい作業を引き込む前に確認しましょう。"
+          }
         }
       }
     },
@@ -44,6 +50,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "“%@” 在进行中开始变久了。快速检查一下，可以让看板继续流动。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "「%@」は進行中のまま少し時間が経っています。軽く見直すと、ボードの流れを保てます。"
           }
         }
       }
@@ -68,6 +80,12 @@
             "state": "translated",
             "value": "“%@” 可能需要一个决定。另有 %lld 个活跃%@也在变旧。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "「%@」には判断が必要かもしれません。ほかにも %lld 件のアクティブな%@が長引いています。"
+          }
         }
       }
     },
@@ -86,6 +104,12 @@
           }
         },
         "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ %@"
+          }
+        },
+        "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "%@ %@"
@@ -112,6 +136,12 @@
             "state": "translated",
             "value": "%@ 列，%lld 个任务"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 列、%lld 件のタスク"
+          }
         }
       }
     },
@@ -133,6 +163,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "已完成 %@/%@ %@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ / %@ %@ 完了"
           }
         }
       }
@@ -156,6 +192,12 @@
             "state": "translated",
             "value": "%@优先级"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@優先度"
+          }
         }
       }
     },
@@ -177,6 +219,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@，%lld %@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@、%lld %@"
           }
         }
       }
@@ -200,6 +248,12 @@
             "state": "translated",
             "value": "%@，创建于 %@ 前"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@、%@前に作成"
+          }
         }
       }
     },
@@ -222,6 +276,12 @@
             "state": "translated",
             "value": "%@，已进行 %@"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@、%@進行中"
+          }
         }
       }
     },
@@ -240,6 +300,12 @@
           }
         },
         "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@。%@"
+          }
+        },
+        "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "%@。%@"
@@ -266,6 +332,12 @@
             "state": "translated",
             "value": "%lld"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld"
+          }
         }
       }
     },
@@ -284,6 +356,12 @@
           }
         },
         "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld %@"
+          }
+        },
+        "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "%lld %@"
@@ -311,6 +389,12 @@
             "state": "translated",
             "value": "%lld 个%@可能已停滞"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld 件の%@が停滞している可能性があります"
+          }
         }
       }
     },
@@ -333,6 +417,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld 个活跃%@正在变旧"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld 件のアクティブな%@が長引いています"
           }
         }
       }
@@ -357,6 +447,12 @@
             "state": "translated",
             "value": "%lld天"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld日"
+          }
         }
       }
     },
@@ -379,6 +475,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "在此状态 %lld 天"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この状態で %lld 日"
           }
         }
       }
@@ -403,6 +505,12 @@
             "state": "translated",
             "value": "%lld小时"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld時間"
+          }
         }
       }
     },
@@ -425,6 +533,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "在此状态 %lld 小时"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この状態で %lld 時間"
           }
         }
       }
@@ -449,6 +563,12 @@
             "state": "translated",
             "value": "%lld分钟"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld分"
+          }
         }
       }
     },
@@ -472,6 +592,12 @@
             "state": "translated",
             "value": "%lld 分钟前"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld分前"
+          }
         }
       }
     },
@@ -490,6 +616,12 @@
           }
         },
         "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3 / 3"
+          }
+        },
+        "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "3 / 3"
@@ -516,6 +648,12 @@
             "state": "translated",
             "value": "当你把活跃工作控制得更少时，专注系统会运转得更好。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アクティブな作業を小さく保つほど、集中できる仕組みはうまく機能します。"
+          }
         }
       }
     },
@@ -537,6 +675,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "将活跃任务限制在 2 或 3 个，通常能提升专注度、质量和完成率。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アクティブなタスクを 2〜3 件に絞ると、集中力、品質、完了率が上がりやすくなります。"
           }
         }
       }
@@ -560,6 +704,12 @@
             "state": "translated",
             "value": "限制“进行中”列，可以让你更容易专注当前工作，而不是把精力分散到太多任务上。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "「進行中」を制限すると、作業を増やしすぎず、今の作業に集中しやすくなります。"
+          }
         }
       }
     },
@@ -581,6 +731,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "只有当你现在真的在处理某个任务时，它才属于“进行中”。被阻塞或等待中的工作应该清楚可见，而不是悄悄混在里面。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タスクを「進行中」に置くのは、今まさに取り組んでいるときだけです。ブロック中や待機中の作業は、見えないまま混ぜずに可視化しましょう。"
           }
         }
       }
@@ -604,6 +760,12 @@
             "state": "translated",
             "value": "任务只有满足完成检查时才算完成，而不是感觉快好了就算。使用“完成定义”字段，让完成标准更明确。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タスクは「もう少しで終わり」ではなく、完了条件を満たしたときに完了です。「完了の定義」を使って、完了基準を明確にしましょう。"
+          }
         }
       }
     },
@@ -625,6 +787,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "可行动的仪表盘"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "行動につながるダッシュボード"
           }
         }
       }
@@ -648,6 +816,12 @@
             "state": "translated",
             "value": "活跃"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アクティブ"
+          }
         }
       }
     },
@@ -669,6 +843,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "活跃"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アクティブ"
           }
         }
       }
@@ -692,6 +872,12 @@
             "state": "translated",
             "value": "活跃时长"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アクティブ期間"
+          }
         }
       }
     },
@@ -713,6 +899,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "活跃任务提醒"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アクティブタスク通知"
           }
         }
       }
@@ -736,6 +928,12 @@
             "state": "translated",
             "value": "活跃工作"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アクティブな作業"
+          }
         }
       }
     },
@@ -757,6 +955,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "添加一个任务，让仪表盘开始显示内容"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タスクを追加すると、ダッシュボードに内容が表示されます"
           }
         }
       }
@@ -780,6 +984,12 @@
             "state": "translated",
             "value": "为任务添加上下文"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タスクの背景を追加"
+          }
         }
       }
     },
@@ -801,6 +1011,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "添加任务"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タスクを追加"
           }
         }
       }
@@ -824,6 +1040,12 @@
             "state": "translated",
             "value": "添加第一个任务，开始跟踪进度。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最初のタスクを追加して、進捗の記録を始めましょう。"
+          }
         }
       }
     },
@@ -845,6 +1067,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "正在添加到 %@ 状态"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ ステータスに追加中"
           }
         }
       }
@@ -868,6 +1096,12 @@
             "state": "translated",
             "value": "变久"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "長期化"
+          }
         }
       }
     },
@@ -889,6 +1123,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "变久阈值"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "長期化のしきい値"
           }
         }
       }
@@ -912,6 +1152,12 @@
             "state": "translated",
             "value": "变久的任务"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "長期化しているタスク"
+          }
         }
       }
     },
@@ -933,6 +1179,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "所有任务"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "すべてのタスク"
           }
         }
       }
@@ -956,6 +1208,12 @@
             "state": "translated",
             "value": "所有任务已完成"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "すべてのタスクが完了しました"
+          }
         }
       }
     },
@@ -977,6 +1235,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "快完成了，收尾剩下的任务。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "あと少しです。残りのタスクを完了しましょう。"
           }
         }
       }
@@ -1000,6 +1264,12 @@
             "state": "translated",
             "value": "Apple Intelligence 正在准备中。请稍后再试。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Intelligence を準備しています。少し待ってからもう一度お試しください。"
+          }
         }
       }
     },
@@ -1021,6 +1291,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "此设备不支持 Apple Intelligence。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このデバイスでは Apple Intelligence はサポートされていません。"
           }
         }
       }
@@ -1044,6 +1320,12 @@
             "state": "translated",
             "value": "Apple Intelligence 不可用。请在这里粘贴文本，然后手动添加到任务中。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Intelligence を利用できません。ここにテキストを貼り付け、手動でタスクに追加してください。"
+          }
         }
       }
     },
@@ -1065,6 +1347,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "归档"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アーカイブ"
           }
         }
       }
@@ -1088,6 +1376,12 @@
             "state": "translated",
             "value": "归档已完成任务"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完了タスクをアーカイブ"
+          }
         }
       }
     },
@@ -1109,6 +1403,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "已归档"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アーカイブ済み"
           }
         }
       }
@@ -1132,6 +1432,12 @@
             "state": "translated",
             "value": "%@ 前已归档"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@前にアーカイブ"
+          }
         }
       }
     },
@@ -1153,6 +1459,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "已归档 %lld"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アーカイブ済み %lld 件"
           }
         }
       }
@@ -1176,6 +1488,12 @@
             "state": "translated",
             "value": "归档的已完成任务会离开活跃看板，但仍会计入完成历史。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アーカイブした完了タスクはアクティブなボードから外れますが、完了履歴には残ります。"
+          }
         }
       }
     },
@@ -1197,6 +1515,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "平均完成天数"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "平均完了日数"
           }
         }
       }
@@ -1220,6 +1544,12 @@
             "state": "translated",
             "value": "下一步最适合拉入的任务"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "次に引き込むべきタスク"
+          }
         }
       }
     },
@@ -1241,6 +1571,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "已阻塞"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ブロック中"
           }
         }
       }
@@ -1264,6 +1600,12 @@
             "state": "translated",
             "value": "已阻塞 / 等待中"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ブロック中 / 待機中"
+          }
         }
       }
     },
@@ -1285,6 +1627,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "被阻塞的活跃工作"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ブロック中のアクティブ作業"
           }
         }
       }
@@ -1308,6 +1656,12 @@
             "state": "translated",
             "value": "拉入更多工作前，先处理被阻塞的任务。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新しい作業を引き込む前に、ブロック中のタスクを確認しましょう。"
+          }
         }
       }
     },
@@ -1329,6 +1683,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "阻塞工作"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ブロック中の作業"
           }
         }
       }
@@ -1352,6 +1712,12 @@
             "state": "translated",
             "value": "阻塞工作正在拖慢你的流程。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ブロック中の作業が流れを遅くしています。"
+          }
         }
       }
     },
@@ -1373,6 +1739,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "阻塞工作保持可见"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ブロック中の作業を見える状態に保つ"
           }
         }
       }
@@ -1396,6 +1768,12 @@
             "state": "translated",
             "value": "看板完成，所有任务都已完成。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ボード完了。すべてのタスクが完了しました。"
+          }
         }
       }
     },
@@ -1417,6 +1795,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "先拆分"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "先に分解"
           }
         }
       }
@@ -1440,6 +1824,12 @@
             "state": "translated",
             "value": "拆分任务"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タスクを分解"
+          }
         }
       }
     },
@@ -1461,6 +1851,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "买菜"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "食料品を買う"
           }
         }
       }
@@ -1484,6 +1880,12 @@
             "state": "translated",
             "value": "扫描文本需要相机权限。请在设置中开启。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "テキストをスキャンするにはカメラへのアクセスが必要です。設定で有効にしてください。"
+          }
         }
       }
     },
@@ -1505,6 +1907,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "相机权限现在不可用。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "現在、カメラへのアクセスを利用できません。"
           }
         }
       }
@@ -1528,6 +1936,12 @@
             "state": "translated",
             "value": "取消"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "キャンセル"
+          }
         }
       }
     },
@@ -1549,6 +1963,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "捕捉"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "取り込み"
           }
         }
       }
@@ -1572,6 +1992,12 @@
             "state": "translated",
             "value": "选择下一个任务"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "次のタスクを選択"
+          }
         }
       }
     },
@@ -1593,6 +2019,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "清空"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "クリア"
           }
         }
       }
@@ -1616,6 +2048,12 @@
             "state": "translated",
             "value": "清除完成检查"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完了条件をクリア"
+          }
         }
       }
     },
@@ -1637,6 +2075,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "清除完成检查"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完了条件をクリア"
           }
         }
       }
@@ -1660,6 +2104,12 @@
             "state": "translated",
             "value": "更清晰的决策"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "判断を明確に"
+          }
         }
       }
     },
@@ -1681,6 +2131,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "关闭"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "閉じる"
           }
         }
       }
@@ -1704,6 +2160,12 @@
             "state": "translated",
             "value": "关闭一个任务，就能释放一个专注位置，让“已完成”列更充实，也让进展更真实可见。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タスクを 1 つ完了すると、集中枠が空き、「完了」列が強くなり、進捗を実感しやすくなります。"
+          }
         }
       }
     },
@@ -1725,6 +2187,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "已关闭"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "クローズ済み"
           }
         }
       }
@@ -1748,6 +2216,12 @@
             "state": "translated",
             "value": "%@ 前已关闭"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@前にクローズ"
+          }
         }
       }
     },
@@ -1769,6 +2243,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "完成"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完了"
           }
         }
       }
@@ -1792,6 +2272,12 @@
             "state": "translated",
             "value": "已完成"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完了"
+          }
         }
       }
     },
@@ -1813,6 +2299,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "已完成"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完了済み"
           }
         }
       }
@@ -1836,6 +2328,12 @@
             "state": "translated",
             "value": "完成不会被隐藏。仪表盘和看板都会显示已完成工作，让进展更具体，也更有动力。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完了した作業は隠れません。ダッシュボードとボードの両方で見えるため、進捗が具体的で励みになります。"
+          }
         }
       }
     },
@@ -1857,6 +2355,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "继续"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "続ける"
           }
         }
       }
@@ -1880,6 +2384,12 @@
             "state": "translated",
             "value": "创建任务"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タスクを作成"
+          }
         }
       }
     },
@@ -1901,6 +2411,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "已创建"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "作成済み"
           }
         }
       }
@@ -1924,6 +2440,12 @@
             "state": "translated",
             "value": "当前 %lld"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "現在 %lld"
+          }
         }
       }
     },
@@ -1945,6 +2467,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "仪表盘"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ダッシュボード"
           }
         }
       }
@@ -1968,6 +2496,12 @@
             "state": "translated",
             "value": "天"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "日"
+          }
         }
       }
     },
@@ -1989,6 +2523,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "天"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "日"
           }
         }
       }
@@ -2012,6 +2552,12 @@
             "state": "translated",
             "value": "完成定义"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完了の定義"
+          }
         }
       }
     },
@@ -2033,6 +2579,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "删除"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "削除"
           }
         }
       }
@@ -2056,6 +2608,12 @@
             "state": "translated",
             "value": "删除任务"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タスクを削除"
+          }
         }
       }
     },
@@ -2077,6 +2635,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "用自然语言描述一个任务。保存前你可以编辑生成的任务。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タスクを自然な言葉で説明してください。生成されたタスクは保存前に編集できます。"
           }
         }
       }
@@ -2100,6 +2664,12 @@
             "state": "translated",
             "value": "描述"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "説明"
+          }
         }
       }
     },
@@ -2122,6 +2692,12 @@
             "state": "translated",
             "value": "摘要时间"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ダイジェスト時刻"
+          }
         }
       }
     },
@@ -2143,6 +2719,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "关闭扫描器，不使用捕捉到的文本。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "取り込んだテキストを使わずにスキャナーを閉じます。"
           }
         }
       }
@@ -2167,6 +2749,12 @@
             "state": "translated",
             "value": "已完成"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完了"
+          }
         }
       }
     },
@@ -2188,6 +2776,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "已完成筛选"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完了フィルター"
           }
         }
       }
@@ -2211,6 +2805,12 @@
             "state": "translated",
             "value": "已完成表示标准已满足"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完了とは基準を満たすこと"
+          }
         }
       }
     },
@@ -2232,6 +2832,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "完成动能"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完了の勢い"
           }
         }
       }
@@ -2255,6 +2861,12 @@
             "state": "translated",
             "value": "已完成保持可见"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完了を見える状態に保つ"
+          }
         }
       }
     },
@@ -2276,6 +2888,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "已完成任务筛选"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完了タスクフィルター"
           }
         }
       }
@@ -2299,6 +2917,12 @@
             "state": "translated",
             "value": "本周已完成"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今週の完了"
+          }
         }
       }
     },
@@ -2320,6 +2944,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "双击打开详情。滑动或长按可执行操作。拖动卡片可重新排序。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ダブルタップで詳細を開きます。スワイプまたは長押しで操作できます。カードをドラッグして並べ替えます。"
           }
         }
       }
@@ -2343,6 +2973,12 @@
             "state": "translated",
             "value": "草稿已生成。创建任务前请检查并调整。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下書きを生成しました。タスクを作成する前に確認して調整してください。"
+          }
         }
       }
     },
@@ -2364,6 +3000,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "开启活跃任务提醒"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アクティブタスク通知を有効にする"
           }
         }
       }
@@ -2387,6 +3029,12 @@
             "state": "translated",
             "value": "开启流程优化"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フロー最適化を有効にする"
+          }
         }
       }
     },
@@ -2408,6 +3056,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "上下文足够"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "十分な背景情報"
           }
         }
       }
@@ -2431,6 +3085,12 @@
             "state": "translated",
             "value": "每完成一个任务，都会释放注意力，并为下一次拉入工作腾出空间。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タスクを 1 つ完了するたびに注意力が空き、次の作業を引き込む余地が生まれます。"
+          }
         }
       }
     },
@@ -2452,6 +3112,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "正在从图片中提取文本…"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "画像からテキストを抽出しています…"
           }
         }
       }
@@ -2475,6 +3141,12 @@
             "state": "translated",
             "value": "按标题、描述或完成定义查找任务。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タイトル、説明、完了の定義でタスクを検索します。"
+          }
         }
       }
     },
@@ -2496,6 +3168,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "完成"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "終わらせる"
           }
         }
       }
@@ -2519,6 +3197,12 @@
             "state": "translated",
             "value": "先完成一个，再拉入下一个。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "次を引き込む前に、まず 1 つ完了しましょう。"
+          }
         }
       }
     },
@@ -2540,6 +3224,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "先完成一个任务，再拉入另一个。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "次のタスクを引き込む前に、1 つ完了しましょう。"
           }
         }
       }
@@ -2563,6 +3253,12 @@
             "state": "translated",
             "value": "拉入新工作前，先完成或推进一个活跃任务。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新しい作業を引き込む前に、アクティブなタスクを 1 つ完了するか前進させましょう。"
+          }
         }
       }
     },
@@ -2584,6 +3280,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "已完成工作也是系统的一部分。看到任务关闭，会带来动能，也能减轻压力。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完了した作業も仕組みの一部です。タスクが閉じていくのを見ると、勢いが生まれ、ストレスも減ります。"
           }
         }
       }
@@ -2607,6 +3309,12 @@
             "state": "translated",
             "value": "流程优化"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フロー最適化"
+          }
         }
       }
     },
@@ -2628,6 +3336,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "流程优化保护专注"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フロー最適化は集中を守ります"
           }
         }
       }
@@ -2651,6 +3365,12 @@
             "state": "translated",
             "value": "流程回顾"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フロー確認"
+          }
         }
       }
     },
@@ -2672,6 +3392,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "流程状态"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フロー状態"
           }
         }
       }
@@ -2695,6 +3421,12 @@
             "state": "translated",
             "value": "流程趋势"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フロー傾向"
+          }
         }
       }
     },
@@ -2716,6 +3448,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "专注当前工作"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "現在の作業に集中"
           }
         }
       }
@@ -2739,6 +3477,12 @@
             "state": "translated",
             "value": "专注任务"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タスクに集中"
+          }
         }
       }
     },
@@ -2760,6 +3504,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "专注此任务"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このタスクに集中"
           }
         }
       }
@@ -2783,6 +3533,12 @@
             "state": "translated",
             "value": "新近"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新しい"
+          }
         }
       }
     },
@@ -2804,6 +3560,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "从进行中到已完成"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "進行中から完了へ"
           }
         }
       }
@@ -2827,6 +3589,12 @@
             "state": "translated",
             "value": "生成一个具体的下一步，帮助这个任务重新动起来。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このタスクを再び動かすための、具体的な次の一手を生成します。"
+          }
         }
       }
     },
@@ -2848,6 +3616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "正在生成…"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "生成中…"
           }
         }
       }
@@ -2871,6 +3645,12 @@
             "state": "translated",
             "value": "开局不错，继续把工作推进到已完成。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "良いスタートです。作業を完了へ進め続けましょう。"
+          }
         }
       }
     },
@@ -2890,6 +3670,12 @@
           }
         },
         "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "高"
+          }
+        },
+        "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "高"
@@ -2916,6 +3702,12 @@
             "state": "translated",
             "value": "高优先级"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "高優先度"
+          }
         }
       }
     },
@@ -2937,6 +3729,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "这款 App 如何支持它"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この App がどう支えるか"
           }
         }
       }
@@ -2960,6 +3758,12 @@
             "state": "translated",
             "value": "如何使用这款 App"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この App の使い方"
+          }
         }
       }
     },
@@ -2982,6 +3786,12 @@
             "state": "translated",
             "value": "iCloud 同步已开启"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iCloud 同期がオンです"
+          }
         }
       }
     },
@@ -3003,6 +3813,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "导入照片"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "写真を読み込む"
           }
         }
       }
@@ -3027,6 +3843,12 @@
             "state": "translated",
             "value": "进行中"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "進行中"
+          }
         }
       }
     },
@@ -3048,6 +3870,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "进行中意味着正在投入注意力"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "進行中とは、今注意を向けていること"
           }
         }
       }
@@ -3071,6 +3899,12 @@
             "state": "translated",
             "value": "在这款 App 中，只有当活跃列还有容量时，新任务才应该进入“进行中”。目前触发 WIP 限制次数：%lld。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この App では、アクティブな列に余裕があるときだけ新しいタスクを「進行中」に移します。これまでの WIP 制限到達回数: %lld。"
+          }
         }
       }
     },
@@ -3092,6 +3926,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "信息"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "情報"
           }
         }
       }
@@ -3115,6 +3955,12 @@
             "state": "translated",
             "value": "Kanban"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "カンバン"
+          }
         }
       }
     },
@@ -3136,6 +3982,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "KanbanApp 为你的任务提供一个清晰系统，让你不用把所有事情都塞在脑子里，而是开始真正推进工作。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KanbanApp はタスクのための明確な仕組みを提供します。頭の中だけで抱え込まず、作業を前に進められます。"
           }
         }
       }
@@ -3159,6 +4011,12 @@
             "state": "translated",
             "value": "保持简短。简短的完成检查能帮你完成，而不是无止境地打磨。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "短くまとめましょう。簡潔な完了条件があると、延々と磨き続けるのではなく完了しやすくなります。"
+          }
         }
       }
     },
@@ -3180,6 +4038,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "保持简短。紧凑的完成检查会让任务更容易收尾。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "短くしましょう。コンパクトな完了条件があると、タスクを閉じやすくなります。"
           }
         }
       }
@@ -3203,6 +4067,12 @@
             "state": "translated",
             "value": "让任务在三个核心状态间流动。看板是你工作流程的主视图，不只是任务列表。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タスクを 3 つの基本状態の間で動かし続けましょう。ボードは単なるリストではなく、フロー全体を映すものです。"
+          }
         }
       }
     },
@@ -3224,6 +4094,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "大任务"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "大きなタスク"
           }
         }
       }
@@ -3247,6 +4123,12 @@
             "state": "translated",
             "value": "让已完成带来动力"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完了をモチベーションにする"
+          }
         }
       }
     },
@@ -3268,6 +4150,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "已达到限制"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "制限に達しました"
           }
         }
       }
@@ -3291,6 +4179,12 @@
             "state": "translated",
             "value": "限制 WIP"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP を制限"
+          }
         }
       }
     },
@@ -3312,6 +4206,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "限制进行中的工作，减少上下文切换。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "進行中の作業を制限して、コンテキストスイッチを減らします。"
           }
         }
       }
@@ -3335,6 +4235,12 @@
             "state": "translated",
             "value": "正在听..."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "聞き取り中..."
+          }
         }
       }
     },
@@ -3357,6 +4263,12 @@
             "state": "translated",
             "value": "此设备不支持实时文本扫描。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このデバイスではライブテキストスキャンはサポートされていません。"
+          }
         }
       }
     },
@@ -3376,6 +4288,12 @@
           }
         },
         "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "低"
+          }
+        },
+        "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "低"
@@ -3402,6 +4320,12 @@
             "state": "translated",
             "value": "低优先级"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "低優先度"
+          }
         }
       }
     },
@@ -3423,6 +4347,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "降低脑力负担"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "頭の負荷を下げる"
           }
         }
       }
@@ -3446,6 +4376,12 @@
             "state": "translated",
             "value": "宣言"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "マニフェスト"
+          }
         }
       }
     },
@@ -3467,6 +4403,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "标记为活跃"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アクティブにする"
           }
         }
       }
@@ -3490,6 +4432,12 @@
             "state": "translated",
             "value": "标记为阻塞 / 等待中"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ブロック中 / 待機中にする"
+          }
         }
       }
     },
@@ -3511,6 +4459,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "标记为已完成"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完了にする"
           }
         }
       }
@@ -3534,6 +4488,12 @@
             "state": "translated",
             "value": "最大活跃任务数"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最大アクティブタスク数"
+          }
         }
       }
     },
@@ -3553,6 +4513,12 @@
           }
         },
         "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "中"
+          }
+        },
+        "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "中"
@@ -3579,6 +4545,12 @@
             "state": "translated",
             "value": "中优先级"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "中優先度"
+          }
         }
       }
     },
@@ -3600,6 +4572,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "听写任务需要麦克风权限。请在设置中开启。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タスクを音声入力するにはマイクへのアクセスが必要です。設定で有効にしてください。"
           }
         }
       }
@@ -3623,6 +4601,12 @@
             "state": "translated",
             "value": "你的看板正在积累动能。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ボード全体に勢いが生まれています。"
+          }
         }
       }
     },
@@ -3644,6 +4628,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "动能已经可见。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "勢いが見えています。"
           }
         }
       }
@@ -3667,6 +4657,12 @@
             "state": "translated",
             "value": "更多完成动力"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完了へのモチベーションを高める"
+          }
         }
       }
     },
@@ -3688,6 +4684,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "只有当容量释放出来时，才把任务移动到“进行中”。让完成为下一个承诺腾出空间。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "余裕ができたときだけタスクを「進行中」に移しましょう。完了によって次の約束のための空間を作ります。"
           }
         }
       }
@@ -3711,6 +4713,12 @@
             "state": "translated",
             "value": "移动到进行中"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "進行中へ移動"
+          }
         }
       }
     },
@@ -3732,6 +4740,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "移动到待办"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未着手へ移動"
           }
         }
       }
@@ -3755,6 +4769,12 @@
             "state": "translated",
             "value": "把第一个任务移动到已完成，建立动能。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最初のタスクを完了に移して、勢いを作りましょう。"
+          }
         }
       }
     },
@@ -3776,6 +4796,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "将此任务移动到进行中。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このタスクを進行中に移動します。"
           }
         }
       }
@@ -3799,6 +4825,12 @@
             "state": "translated",
             "value": "需要完成进行中的任务"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "進行中から完了したタスクが必要です"
+          }
         }
       }
     },
@@ -3820,6 +4852,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "需要更清晰的范围"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "範囲をもっと明確にする必要があります"
           }
         }
       }
@@ -3843,6 +4881,12 @@
             "state": "translated",
             "value": "新任务"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新規タスク"
+          }
         }
       }
     },
@@ -3864,6 +4908,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "下一步行动"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "次のアクション"
           }
         }
       }
@@ -3887,6 +4937,12 @@
             "state": "translated",
             "value": "下一步行动建议现在不可用。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "次のアクション提案は現在利用できません。"
+          }
         }
       }
     },
@@ -3908,6 +4964,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "下一步行动：%@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "次のアクション: %@"
           }
         }
       }
@@ -3931,6 +4993,12 @@
             "state": "translated",
             "value": "无需操作"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "操作は不要です"
+          }
         }
       }
     },
@@ -3952,6 +5020,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "当前没有活跃阻塞。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "現在、アクティブなブロッカーはありません。"
           }
         }
       }
@@ -3975,6 +5049,12 @@
             "state": "translated",
             "value": "当前没有活跃任务"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "実行中のアクティブタスクはありません"
+          }
         }
       }
     },
@@ -3996,6 +5076,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "没有活跃任务"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アクティブなタスクはありません"
           }
         }
       }
@@ -4019,6 +5105,12 @@
             "state": "translated",
             "value": "没有匹配的任务"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "一致するタスクはありません"
+          }
         }
       }
     },
@@ -4040,6 +5132,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "未在该图片中找到可读文本。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "その画像には読み取れるテキストが見つかりませんでした。"
           }
         }
       }
@@ -4063,6 +5161,12 @@
             "state": "translated",
             "value": "未在相机画面中找到可读文本。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "カメラ画面に読み取れるテキストが見つかりませんでした。"
+          }
         }
       }
     },
@@ -4084,6 +5188,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "没有等待中的就绪任务"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "待機中の準備済みタスクはありません"
           }
         }
       }
@@ -4107,6 +5217,12 @@
             "state": "translated",
             "value": "没有需要关注的就绪工作"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "確認が必要な準備済み作業はありません"
+          }
         }
       }
     },
@@ -4128,6 +5244,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "没有推荐任务。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "おすすめのタスクはありません。"
           }
         }
       }
@@ -4151,6 +5273,12 @@
             "state": "translated",
             "value": "没有捕捉到语音。请重新录制。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "音声を取り込めませんでした。もう一度録音してください。"
+          }
         }
       }
     },
@@ -4172,6 +5300,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "当前没有停滞的工作。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "現在、停滞している作業はありません。"
           }
         }
       }
@@ -4195,6 +5329,12 @@
             "state": "translated",
             "value": "没有任务"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タスクはありません"
+          }
         }
       }
     },
@@ -4216,6 +5356,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "还没有任务"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "まだタスクはありません"
           }
         }
       }
@@ -4239,6 +5385,12 @@
             "state": "translated",
             "value": "没有等待中的任务"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "待機中のタスクはありません"
+          }
         }
       }
     },
@@ -4260,6 +5412,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "还没有完成任何内容"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "まだ完了したものはありません"
           }
         }
       }
@@ -4283,6 +5441,12 @@
             "state": "translated",
             "value": "暂时没有任务偏离。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "まだ流れから外れているものはありません。"
+          }
         }
       }
     },
@@ -4304,6 +5468,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "通知未开启。你可以在设置中允许通知，以接收活跃任务提醒。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "通知は有効になっていません。アクティブタスク通知を受け取るには、設定で許可してください。"
           }
         }
       }
@@ -4328,6 +5498,12 @@
             "state": "translated",
             "value": "现在"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今"
+          }
         }
       }
     },
@@ -4349,6 +5525,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "关闭"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "オフ"
           }
         }
       }
@@ -4372,6 +5554,12 @@
             "state": "translated",
             "value": "好"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
         }
       }
     },
@@ -4393,6 +5581,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "最久的活跃任务"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最も古いアクティブタスク"
           }
         }
       }
@@ -4416,6 +5610,12 @@
             "state": "translated",
             "value": "开启"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "オン"
+          }
         }
       }
     },
@@ -4437,6 +5637,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "只剩一个专注位置"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "集中枠は残り 1 つです"
           }
         }
       }
@@ -4460,6 +5666,12 @@
             "state": "translated",
             "value": "打开阻塞任务"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ブロック中のタスクを開く"
+          }
         }
       }
     },
@@ -4481,6 +5693,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "打开详细推荐。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "詳細なおすすめを開きます。"
           }
         }
       }
@@ -4504,6 +5722,12 @@
             "state": "translated",
             "value": "打开任务详情。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タスクの詳細を開きます。"
+          }
         }
       }
     },
@@ -4525,6 +5749,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "打开此列中的任务"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この列のタスクを開きます"
           }
         }
       }
@@ -4548,6 +5778,12 @@
             "state": "translated",
             "value": "打开活跃工作列。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アクティブ作業の列を開きます。"
+          }
         }
       }
     },
@@ -4569,6 +5805,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "打开被阻塞的任务，方便你更新。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ブロック中のタスクを開いて更新できます。"
           }
         }
       }
@@ -4592,6 +5834,12 @@
             "state": "translated",
             "value": "打开推荐的活跃任务。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "おすすめのアクティブタスクを開きます。"
+          }
         }
       }
     },
@@ -4613,6 +5861,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "超出 WIP 限制 %lld"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP 制限を %lld 件超過"
           }
         }
       }
@@ -4636,6 +5890,12 @@
             "state": "translated",
             "value": "粘贴一段笔记或零散想法…"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "メモやまとまっていない考えを貼り付け…"
+          }
         }
       }
     },
@@ -4657,6 +5917,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "粘贴笔记"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "メモを貼り付け"
           }
         }
       }
@@ -4680,6 +5946,12 @@
             "state": "translated",
             "value": "个人 Kanban"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "パーソナルカンバン"
+          }
         }
       }
     },
@@ -4701,6 +5973,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "个人 Kanban 实践"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "パーソナルカンバンの実践"
           }
         }
       }
@@ -4724,6 +6002,12 @@
             "state": "translated",
             "value": "个人 Kanban 宣言"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "パーソナルカンバン・マニフェスト"
+          }
         }
       }
     },
@@ -4745,6 +6029,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "个人 Kanban 建议将 WIP 限制在 2 或 3，以减少上下文切换，更快完成任务。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "パーソナルカンバンでは、コンテキストスイッチを減らし、タスクを早く完了するために、WIP を 2〜3 件に制限することをすすめています。"
           }
         }
       }
@@ -4768,6 +6058,12 @@
             "state": "translated",
             "value": "个人 Kanban 建议将 WIP 限制在 2 或 3，以减少上下文切换，更快完成任务。添加另一个进行中任务前，先完成或移动一个活跃任务。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "パーソナルカンバンでは、コンテキストスイッチを減らし、タスクを早く完了するために、WIP を 2〜3 件に制限することをすすめています。別の進行中タスクを追加する前に、アクティブなタスクを完了するか移動しましょう。"
+          }
         }
       }
     },
@@ -4789,6 +6085,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "个人 Kanban 建议将 WIP 限制在 2 或 3，以减少上下文切换，更快完成任务。把另一个任务移入进行中前，先完成或移动一个活跃任务。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "パーソナルカンバンでは、コンテキストスイッチを減らし、タスクを早く完了するために、WIP を 2〜3 件に制限することをすすめています。別のタスクを進行中に移す前に、アクティブなタスクを完了するか移動しましょう。"
           }
         }
       }
@@ -4812,6 +6114,12 @@
             "state": "translated",
             "value": "个人 Kanban 在“先完成，再拉入”时效果最好。保持活跃列精简且可见。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "パーソナルカンバンは、引き込む前に完了すると最も効果を発揮します。アクティブな列を小さく、見える状態に保ちましょう。"
+          }
         }
       }
     },
@@ -4833,6 +6141,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "照片已导入。Apple Intelligence 不可用，文本已添加供你手动检查。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "写真を読み込みました。Apple Intelligence を利用できないため、テキストを手動確認用に追加しました。"
           }
         }
       }
@@ -4856,6 +6170,12 @@
             "state": "translated",
             "value": "照片已导入。已根据提取的文本生成草稿。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "写真を読み込みました。抽出したテキストから下書きを生成しました。"
+          }
         }
       }
     },
@@ -4877,6 +6197,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "照片已导入。请检查提取的文本，或生成草稿。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "写真を読み込みました。抽出したテキストを確認するか、下書きを生成してください。"
           }
         }
       }
@@ -4900,6 +6226,12 @@
             "state": "translated",
             "value": "实践"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "実践"
+          }
         }
       }
     },
@@ -4921,6 +6253,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "压力在合适的时刻出现"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "必要なタイミングで圧力が見える"
           }
         }
       }
@@ -4944,6 +6282,12 @@
             "state": "translated",
             "value": "优先级"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "優先度"
+          }
         }
       }
     },
@@ -4965,6 +6309,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "优先级信号、WIP 指引和可见任务状态，可以帮助用户更轻松地选择下一步要完成什么。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "優先度のサイン、WIP ガイダンス、見えるタスク状態によって、次に何を完了すべきかを迷いにくくします。"
           }
         }
       }
@@ -4988,6 +6338,12 @@
             "state": "translated",
             "value": "保护你的注意力"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "注意力を守る"
+          }
         }
       }
     },
@@ -5009,6 +6365,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "保护你的专注"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "集中を守る"
           }
         }
       }
@@ -5032,6 +6394,12 @@
             "state": "translated",
             "value": "拉入工作，而不是过载"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "抱え込まずに引き込む"
+          }
         }
       }
     },
@@ -5053,6 +6421,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "只有当下一个任务很小或很紧急时才拉入。否则，先完成活跃工作。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "次のタスクが小さい、または緊急の場合だけ引き込みましょう。それ以外は、まずアクティブな作業を完了します。"
           }
         }
       }
@@ -5076,6 +6450,12 @@
             "state": "translated",
             "value": "有空间时才拉入"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "余裕があるときだけ引き込む"
+          }
         }
       }
     },
@@ -5097,6 +6477,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "只有有余量时才拉入"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "余裕があるときだけ引き込む"
           }
         }
       }
@@ -5120,6 +6506,12 @@
             "state": "translated",
             "value": "拉入任务"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タスクを引き込む"
+          }
         }
       }
     },
@@ -5141,6 +6533,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "快速捕捉"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "クイックキャプチャ"
           }
         }
       }
@@ -5164,6 +6562,12 @@
             "state": "translated",
             "value": "快速捕捉 AI 现在无法生成草稿。请检查文本后重试。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "クイックキャプチャ AI は現在下書きを生成できません。テキストを確認して、もう一度お試しください。"
+          }
         }
       }
     },
@@ -5185,6 +6589,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "快速捕捉 AI 现在无法生成草稿。请尝试缩短笔记后重试。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "クイックキャプチャ AI は現在下書きを生成できません。メモを短くして、もう一度お試しください。"
           }
         }
       }
@@ -5208,6 +6618,12 @@
             "state": "translated",
             "value": "快速捕捉 AI 现在不可用。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "クイックキャプチャ AI は現在利用できません。"
+          }
         }
       }
     },
@@ -5229,6 +6645,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "了解可视化工作、拉动系统和 WIP 限制背后的核心原则。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "作業の可視化、プル型システム、WIP 制限の基本原則を読みます。"
           }
         }
       }
@@ -5252,6 +6674,12 @@
             "state": "translated",
             "value": "就绪"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "準備完了"
+          }
         }
       }
     },
@@ -5273,6 +6701,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "就绪备选项"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "準備済みの候補"
           }
         }
       }
@@ -5296,6 +6730,12 @@
             "state": "translated",
             "value": "可拉入"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "引き込み可能"
+          }
         }
       }
     },
@@ -5317,6 +6757,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "近期完成率"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最近の完了ペース"
           }
         }
       }
@@ -5340,6 +6786,12 @@
             "state": "translated",
             "value": "推荐操作"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "おすすめのアクション"
+          }
         }
       }
     },
@@ -5361,6 +6813,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "推荐任务：%@。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "おすすめタスク: %@。"
           }
         }
       }
@@ -5384,6 +6842,12 @@
             "state": "translated",
             "value": "重新录音"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "もう一度録音"
+          }
         }
       }
     },
@@ -5405,6 +6869,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "录制语音"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "音声を録音"
           }
         }
       }
@@ -5428,6 +6898,12 @@
             "state": "translated",
             "value": "开始新工作前，先减少活跃工作。这样能保护专注和完成速度。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新しいことを始める前に、アクティブな作業を減らしましょう。集中と完了スピードを守れます。"
+          }
         }
       }
     },
@@ -5449,6 +6925,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "先减少 WIP"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "先に WIP を減らす"
           }
         }
       }
@@ -5472,6 +6954,12 @@
             "state": "translated",
             "value": "现在减少 WIP"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今すぐ WIP を減らす"
+          }
         }
       }
     },
@@ -5493,6 +6981,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "与活跃工作相关"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アクティブ作業に関連"
           }
         }
       }
@@ -5516,6 +7010,12 @@
             "state": "translated",
             "value": "拉入更多任务前，先解决被阻塞的工作，除非新任务紧急且很小。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新しいタスクが緊急で小さい場合を除き、追加で引き込む前にブロック中の作業を解消しましょう。"
+          }
         }
       }
     },
@@ -5537,6 +7037,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "恢复"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "復元"
           }
         }
       }
@@ -5560,6 +7066,12 @@
             "state": "translated",
             "value": "从归档恢复"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アーカイブから復元"
+          }
         }
       }
     },
@@ -5581,6 +7093,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "检查活跃任务"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アクティブタスクを確認"
           }
         }
       }
@@ -5604,6 +7122,12 @@
             "state": "translated",
             "value": "拉入前检查"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "引き込む前に確認"
+          }
         }
       }
     },
@@ -5625,6 +7149,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "检查容量"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "容量を確認"
           }
         }
       }
@@ -5648,6 +7178,12 @@
             "state": "translated",
             "value": "按列检查任务"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "列ごとにタスクを確認"
+          }
         }
       }
     },
@@ -5669,6 +7205,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "应用到任务前，请先检查建议。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タスクに適用する前に、提案を確認してください。"
           }
         }
       }
@@ -5692,6 +7234,12 @@
             "state": "translated",
             "value": "检查你的活跃任务，决定下一步该推进什么。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アクティブなタスクを確認し、次に何を進めるか決めましょう。"
+          }
         }
       }
     },
@@ -5713,6 +7261,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "检查你的转写文本"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "文字起こしを確認"
           }
         }
       }
@@ -5736,6 +7290,12 @@
             "state": "translated",
             "value": "扫描文本"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "テキストをスキャン"
+          }
         }
       }
     },
@@ -5757,6 +7317,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "扫描器不可用"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "スキャナーを利用できません"
           }
         }
       }
@@ -5780,6 +7346,12 @@
             "state": "translated",
             "value": "搜索"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "検索"
+          }
         }
       }
     },
@@ -5801,6 +7373,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "搜索任务"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タスクを検索"
           }
         }
       }
@@ -5824,6 +7402,12 @@
             "state": "translated",
             "value": "搜索你的工作"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "作業を検索"
+          }
         }
       }
     },
@@ -5845,6 +7429,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "查看进度、WIP 压力和流程信号，推动你走向完成。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "進捗、WIP 圧力、完了へ向かうためのフローサインを確認できます。"
           }
         }
       }
@@ -5868,6 +7458,12 @@
             "state": "translated",
             "value": "清楚看到你的工作"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "作業をはっきり見る"
+          }
         }
       }
     },
@@ -5889,6 +7485,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "当进行中的任务变久或停滞时，每天发送一次提醒。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "進行中のタスクが長引いたり停滞したりしているとき、1 日 1 回リマインダーを送信します。"
           }
         }
       }
@@ -5912,6 +7514,12 @@
             "state": "translated",
             "value": "设置活跃任务上限，让注意力保持集中。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アクティブなタスクの上限を設定して、注意力を絞ります。"
+          }
         }
       }
     },
@@ -5933,6 +7541,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "设置"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "設定"
           }
         }
       }
@@ -5956,6 +7570,12 @@
             "state": "translated",
             "value": "跳过"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "スキップ"
+          }
         }
       }
     },
@@ -5977,6 +7597,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "剩余位置"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "残り枠"
           }
         }
       }
@@ -6000,6 +7626,12 @@
             "state": "translated",
             "value": "更小 WIP，更快完成"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP を小さく、完了を速く"
+          }
         }
       }
     },
@@ -6022,6 +7654,12 @@
             "state": "translated",
             "value": "听写任务需要语音识别权限。请在设置中开启。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タスクを音声入力するには音声認識へのアクセスが必要です。設定で有効にしてください。"
+          }
         }
       }
     },
@@ -6040,6 +7678,12 @@
           }
         },
         "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "停滞"
+          }
+        },
+        "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "停滞"
@@ -6066,6 +7710,12 @@
             "state": "translated",
             "value": "停滞阈值"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "停滞のしきい値"
+          }
         }
       }
     },
@@ -6087,6 +7737,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "停滞任务"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "停滞しているタスク"
           }
         }
       }
@@ -6110,6 +7766,12 @@
             "state": "translated",
             "value": "只有当容量释放出来时，才开始新任务。完成会为下一个承诺创造空间。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "容量が空いたときだけ新しいタスクを始めましょう。完了が次の約束のための余地を作ります。"
+          }
         }
       }
     },
@@ -6131,6 +7793,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "开始专注"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "集中を始める"
           }
         }
       }
@@ -6154,6 +7822,12 @@
             "state": "translated",
             "value": "状态"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ステータス"
+          }
         }
       }
     },
@@ -6176,6 +7850,12 @@
             "state": "translated",
             "value": "状态分布：%lld 个待办，%lld 个进行中，%lld 个已完成"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ステータス分布: 未着手 %lld 件、進行中 %lld 件、完了 %lld 件"
+          }
         }
       }
     },
@@ -6194,6 +7874,12 @@
           }
         },
         "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "停止"
+          }
+        },
+        "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "停止"
@@ -6220,6 +7906,12 @@
             "state": "translated",
             "value": "完成节奏很好。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "良い完了リズムです。"
+          }
         }
       }
     },
@@ -6241,6 +7933,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "更强专注"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "より強い集中"
           }
         }
       }
@@ -6264,6 +7962,12 @@
             "state": "translated",
             "value": "建议下一步行动"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "次のアクションを提案"
+          }
         }
       }
     },
@@ -6285,6 +7989,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "建议已添加到任务描述。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "提案をタスクの説明に追加しました。"
           }
         }
       }
@@ -6309,6 +8019,12 @@
             "state": "translated",
             "value": "任务"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タスク"
+          }
         }
       }
     },
@@ -6331,6 +8047,12 @@
             "state": "translated",
             "value": "任务详情"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タスク詳細"
+          }
         }
       }
     },
@@ -6352,6 +8074,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "任务同步"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タスク同期"
           }
         }
       }
@@ -6376,6 +8104,12 @@
             "state": "translated",
             "value": "任务"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タスク"
+          }
         }
       }
     },
@@ -6397,6 +8131,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "任务目前只存储在此设备上。为这款 App 开启 iCloud，即使换手机也能继续访问任务。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "現在、タスクはこのデバイスにのみ保存されています。この App で iCloud をオンにすると、機種変更後もタスクを利用できます。"
           }
         }
       }
@@ -6420,6 +8160,12 @@
             "state": "translated",
             "value": "任务不再需要全部记在脑子里。看板和仪表盘会帮你承载这个系统。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タスクを頭の中だけで覚えておく必要はありません。ボードとダッシュボードが仕組みを支えます。"
+          }
         }
       }
     },
@@ -6441,6 +8187,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "当你在每台设备上使用同一个 Apple 账户时，任务会通过 iCloud 同步。更改可能需要一点时间才会出现在所有设备上。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "各デバイスで同じ Apple Account を使うと、タスクは iCloud 経由で同期されます。変更がすべての場所に反映されるまで少し時間がかかることがあります。"
           }
         }
       }
@@ -6464,6 +8216,12 @@
             "state": "translated",
             "value": "文本已添加。Apple Intelligence 不可用，请在创建任务前手动检查。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "テキストを追加しました。Apple Intelligence を利用できないため、タスクを作成する前に手動で確認してください。"
+          }
         }
       }
     },
@@ -6485,6 +8243,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "文本已捕捉。Apple Intelligence 不可用，文本已添加供你手动检查。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "テキストを取り込みました。Apple Intelligence を利用できないため、手動確認用に追加しました。"
           }
         }
       }
@@ -6508,6 +8272,12 @@
             "state": "translated",
             "value": "文本已捕捉。已根据相机扫描生成草稿。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "テキストを取り込みました。カメラスキャンから下書きを生成しました。"
+          }
         }
       }
     },
@@ -6529,6 +8299,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "文本已捕捉。请检查提取的文本，或生成草稿。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "テキストを取り込みました。抽出したテキストを確認するか、下書きを生成してください。"
           }
         }
       }
@@ -6552,6 +8328,12 @@
             "state": "translated",
             "value": "这款 App 可以执行 WIP 限制，避免一次有太多任务进入进行中。这样能让注意力更集中，并减少上下文切换。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この App は WIP 制限を適用し、同時に多くのタスクが進行中へ入らないようにできます。注意力を絞り、コンテキストスイッチを減らします。"
+          }
         }
       }
     },
@@ -6573,6 +8355,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "App 现在无法生成下一步行动。请稍后再试。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "現在、次のアクションを生成できません。少し待ってからもう一度お試しください。"
           }
         }
       }
@@ -6596,6 +8384,12 @@
             "state": "translated",
             "value": "App 会在每天 %lld:00 安排滚动摘要，不会按每个任务单独发送通知。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この App は毎日 %lld:00 に更新型のダイジェストをスケジュールし、タスクごとの通知は送りません。"
+          }
         }
       }
     },
@@ -6617,6 +8411,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "看板通过待办、进行中和已完成，让每个任务都清楚可见。你能看到哪些在等待、哪些正在进行、哪些已经完成。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ボードは未着手、進行中、完了で各タスクを明確にし、何が待機中で、何がアクティブで、何が完了したかを見えるようにします。"
           }
         }
       }
@@ -6640,6 +8440,12 @@
             "state": "translated",
             "value": "看板让你的承诺可见，重要事项不会再模糊或隐藏。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ボードは約束したことを見える化し、大事なことが曖昧なまま隠れないようにします。"
+          }
         }
       }
     },
@@ -6661,6 +8467,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "相机扫描器现在不可用。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "現在、カメラスキャナーを利用できません。"
           }
         }
       }
@@ -6684,6 +8496,12 @@
             "state": "translated",
             "value": "仪表盘会显示进度、WIP 压力和优先级分布，帮助你决定是完成、暂停，还是避免拉入更多工作。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ダッシュボードでは進捗、WIP 圧力、優先度の分布を確認でき、完了するか、一時停止するか、追加で引き込まないかを判断できます。"
+          }
         }
       }
     },
@@ -6705,6 +8523,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "图片文本已提取，但现在无法生成 AI 草稿。请检查后重新生成。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "画像のテキストは抽出されましたが、現在 AI 下書きを生成できません。確認してからもう一度生成してください。"
           }
         }
       }
@@ -6728,6 +8552,12 @@
             "state": "translated",
             "value": "宣言很简单：可视化你的工作，限制进行中的工作，有空间时才拉入，并让已完成保持可见。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "マニフェストはシンプルです。作業を可視化し、進行中の作業を制限し、余裕があるときだけ引き込み、完了を見える状態に保ちます。"
+          }
         }
       }
     },
@@ -6749,6 +8579,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "无法启动麦克风。请检查音频权限后重试。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "マイクを開始できませんでした。オーディオ権限を確認して、もう一度お試しください。"
           }
         }
       }
@@ -6772,6 +8608,12 @@
             "state": "translated",
             "value": "下一个完成的任务会改变看板。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "次に完了するタスクが、ボードを変えます。"
+          }
         }
       }
     },
@@ -6793,6 +8635,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "无法加载所选图片。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "選択した画像を読み込めませんでした。"
           }
         }
       }
@@ -6816,6 +8664,12 @@
             "state": "translated",
             "value": "无法读取所选图片。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "選択した画像を読み取れませんでした。"
+          }
         }
       }
     },
@@ -6837,6 +8691,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "文本已捕捉，但现在无法生成 AI 草稿。请检查后重新生成。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "テキストは取り込まれましたが、現在 AI 下書きを生成できません。確認してからもう一度生成してください。"
           }
         }
       }
@@ -6860,6 +8720,12 @@
             "state": "translated",
             "value": "语音转写已捕捉，但现在无法生成 AI 草稿。请检查后重新生成。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "音声の文字起こしは取り込まれましたが、現在 AI 下書きを生成できません。確認してからもう一度生成してください。"
+          }
         }
       }
     },
@@ -6881,6 +8747,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "这些任务活跃时间已经较长，可能开始拖慢流程。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "これらのタスクは長くアクティブなままで、流れを重くする可能性があります。"
           }
         }
       }
@@ -6904,6 +8776,12 @@
             "state": "translated",
             "value": "这些任务在进行中停留太久，可能需要一个决定。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "これらのタスクは進行中のまま長く残っており、判断が必要かもしれません。"
+          }
         }
       }
     },
@@ -6925,6 +8803,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "这款 App 通过帮助你清楚看到工作、保护专注，并在开始更多工作前先完成当前任务，来实践个人 Kanban。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この App は、作業を明確に見せ、集中を守り、新しいことを始める前に完了できるようにすることで、パーソナルカンバンを実践します。"
           }
         }
       }
@@ -6948,6 +8832,12 @@
             "state": "translated",
             "value": "这款 App 围绕个人 Kanban 纪律构建：一次少做一点，更频繁完成，并减少上下文切换。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この App は、一度に抱える量を減らし、より頻繁に完了し、コンテキストスイッチを減らすというパーソナルカンバンの考え方を中心に作られています。"
+          }
         }
       }
     },
@@ -6970,6 +8860,12 @@
             "state": "translated",
             "value": "流程提醒次数"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フローが引き戻した回数"
+          }
         }
       }
     },
@@ -6991,6 +8887,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "标题"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タイトル"
           }
         }
       }
@@ -7015,6 +8917,12 @@
             "state": "translated",
             "value": "待办"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未着手"
+          }
         }
       }
     },
@@ -7036,6 +8944,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "活跃工作太多了。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アクティブな作業が多すぎます。"
           }
         }
       }
@@ -7059,6 +8973,12 @@
             "state": "translated",
             "value": "用待办、进行中和已完成来跟踪工作，而不是把清单放在脑子里。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "頭の中のリストではなく、未着手、進行中、完了で作業を追跡しましょう。"
+          }
         }
       }
     },
@@ -7080,6 +9000,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "转写文本"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "文字起こし"
           }
         }
       }
@@ -7103,6 +9029,12 @@
             "state": "translated",
             "value": "试试其他搜索词。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "別の検索語を試してください。"
+          }
         }
       }
     },
@@ -7124,6 +9056,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "重试"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "もう一度試す"
           }
         }
       }
@@ -7147,6 +9085,12 @@
             "state": "translated",
             "value": "在设置中开启 Apple Intelligence，以个性化 WIP 辅导。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP コーチングをパーソナライズするには、設定で Apple Intelligence をオンにしてください。"
+          }
         }
       }
     },
@@ -7168,6 +9112,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "在设置中开启 Apple Intelligence，以建议下一步行动。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "次のアクションを提案するには、設定で Apple Intelligence をオンにしてください。"
           }
         }
       }
@@ -7191,6 +9141,12 @@
             "state": "translated",
             "value": "在设置中开启 Apple Intelligence，以使用快速捕捉 AI。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "クイックキャプチャ AI を使うには、設定で Apple Intelligence をオンにしてください。"
+          }
         }
       }
     },
@@ -7212,6 +9168,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "先解除阻塞"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "先にブロック解除"
           }
         }
       }
@@ -7235,6 +9197,12 @@
             "state": "translated",
             "value": "解除工作阻塞"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "作業のブロックを解除"
+          }
         }
       }
     },
@@ -7256,6 +9224,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "已更新"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "更新済み"
           }
         }
       }
@@ -7279,6 +9253,12 @@
             "state": "translated",
             "value": "使用建议"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "提案を使う"
+          }
         }
       }
     },
@@ -7300,6 +9280,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "使用文本"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "テキストを使う"
           }
         }
       }
@@ -7323,6 +9309,12 @@
             "state": "translated",
             "value": "用看板有意识地选择，用仪表盘保护流程，用已完成列让动能保持真实。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ボードで意図的に選び、ダッシュボードで流れを守り、完了列で勢いを実感しましょう。"
+          }
         }
       }
     },
@@ -7344,6 +9336,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "使用仪表盘重新平衡流程"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ダッシュボードで流れを整える"
           }
         }
       }
@@ -7367,6 +9365,12 @@
             "state": "translated",
             "value": "当工作暂时无法推进时使用它。被阻塞的任务应该尽快变得可见。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "作業がまだ前に進めないときに使います。ブロック中のタスクは早めに見えるようにしましょう。"
+          }
         }
       }
     },
@@ -7388,6 +9392,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "使用转写文本"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "文字起こしを使う"
           }
         }
       }
@@ -7411,6 +9421,12 @@
             "state": "translated",
             "value": "使用识别到的文本创建任务草稿。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "認識したテキストを使ってタスクの下書きを作成します。"
+          }
         }
       }
     },
@@ -7432,6 +9448,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "正在使用此设备上的本地存储"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このデバイスのローカルストレージを使用中"
           }
         }
       }
@@ -7455,6 +9477,12 @@
             "state": "translated",
             "value": "可见的进度和真实的已完成状态，会让完成变成你看得见的东西，而不只是一个打算。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "見える進捗と本当の完了状態によって、完了は「やるつもり」ではなく「見えるもの」になります。"
+          }
         }
       }
     },
@@ -7476,6 +9504,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "可视化看板"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "視覚的なボード"
           }
         }
       }
@@ -7499,6 +9533,12 @@
             "state": "translated",
             "value": "可视化"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "可視化"
+          }
         }
       }
     },
@@ -7520,6 +9560,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "可视化工作"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "作業を可視化"
           }
         }
       }
@@ -7543,6 +9589,12 @@
             "state": "translated",
             "value": "可视化你的工作"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "作業を可視化する"
+          }
         }
       }
     },
@@ -7564,6 +9616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "语音已捕捉。Apple Intelligence 不可用，转写文本已添加供你手动检查。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "音声を取り込みました。Apple Intelligence を利用できないため、文字起こしを手動確認用に追加しました。"
           }
         }
       }
@@ -7587,6 +9645,12 @@
             "state": "translated",
             "value": "语音已捕捉。已根据你的听写生成草稿。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "音声を取り込みました。音声入力から下書きを生成しました。"
+          }
         }
       }
     },
@@ -7608,6 +9672,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "语音已捕捉。请检查转写文本，或生成草稿。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "音声を取り込みました。文字起こしを確認するか、下書きを生成してください。"
           }
         }
       }
@@ -7631,6 +9701,12 @@
             "state": "translated",
             "value": "语音听写现在不可用。请稍后再试。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "音声入力は現在利用できません。少し待ってからもう一度お試しください。"
+          }
         }
       }
     },
@@ -7652,6 +9728,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "等待中"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "待機中"
           }
         }
       }
@@ -7675,6 +9757,12 @@
             "state": "translated",
             "value": "已等待一周"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 週間待機中"
+          }
         }
       }
     },
@@ -7696,6 +9784,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "已等待多天"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "数日間待機中"
           }
         }
       }
@@ -7719,6 +9813,12 @@
             "state": "translated",
             "value": "等待中的工作应该清楚可见，而不是悄悄混进活跃焦点里。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "待機中の作業は、アクティブな集中対象に紛れ込ませず、はっきり見えるようにしましょう。"
+          }
         }
       }
     },
@@ -7740,6 +9840,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "什么才算完成？"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完了とはどんな状態ですか？"
           }
         }
       }
@@ -7763,6 +9869,12 @@
             "state": "translated",
             "value": "需要完成什么？"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "何を完了する必要がありますか？"
+          }
         }
       }
     },
@@ -7784,6 +9896,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "用户能获得什么"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ユーザーが得られるもの"
           }
         }
       }
@@ -7807,6 +9925,12 @@
             "state": "translated",
             "value": "当活跃列满了，仪表盘会把你推回完成工作。App 鼓励拉动，而不是过载。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アクティブな列がいっぱいになると、ダッシュボードが完了へ戻るよう促します。この App は過負荷ではなく、プル型の作業を促します。"
+          }
         }
       }
     },
@@ -7828,6 +9952,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "当你的列满了，App 会提醒你先完成，再拉入更多工作。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "列がいっぱいのとき、この App は新しい作業を引き込む前に完了へ戻るよう促します。"
           }
         }
       }
@@ -7851,6 +9981,12 @@
             "state": "translated",
             "value": "WIP 教练"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP コーチ"
+          }
         }
       }
     },
@@ -7872,6 +10008,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "WIP 教练的 AI 文案现在不可用。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP コーチの AI コピーは現在利用できません。"
           }
         }
       }
@@ -7895,6 +10037,12 @@
             "state": "translated",
             "value": "WIP 已满"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP がいっぱいです"
+          }
         }
       }
     },
@@ -7916,6 +10064,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "WIP 限制"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP 制限"
           }
         }
       }
@@ -7939,6 +10093,12 @@
             "state": "translated",
             "value": "触发 WIP 限制次数"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP 制限到達回数"
+          }
         }
       }
     },
@@ -7960,6 +10120,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "已达到 WIP 限制"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP 制限に達しました"
           }
         }
       }
@@ -7983,6 +10149,12 @@
             "state": "translated",
             "value": "已达到 WIP 限制"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP 制限に達しました"
+          }
         }
       }
     },
@@ -8004,6 +10176,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "WIP 压力"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP 圧力"
           }
         }
       }
@@ -8027,6 +10205,12 @@
             "state": "translated",
             "value": "WIP 压力"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP 圧力"
+          }
         }
       }
     },
@@ -8048,6 +10232,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "从看板开始工作"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ボードから作業する"
           }
         }
       }
@@ -8071,6 +10261,12 @@
             "state": "translated",
             "value": "进行中工作压力。%@ %lld/%lld 个任务处于活跃状态。剩余 %lld 个位置。%@。%@"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "進行中の作業圧力。%@ %lld / %lld 件がアクティブです。残り枠は %lld 件。%@。%@"
+          }
         }
       }
     },
@@ -8092,6 +10288,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "进行中工作回顾。%lld/%lld 个任务处于活跃状态。剩余 %lld 个位置。%lld 个阻塞任务。%lld 个就绪任务。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "進行中作業の確認。%lld / %lld 件がアクティブです。残り枠 %lld 件。ブロック中 %lld 件。準備済み %lld 件。"
           }
         }
       }
@@ -8115,6 +10317,12 @@
             "state": "translated",
             "value": "工作流策略"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ワークフローポリシー"
+          }
         }
       }
     },
@@ -8136,6 +10344,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "你正在稳定地把工作变成已完成。通过收紧 WIP 来保护这个节奏。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "作業を安定して完了へ変えています。WIP を絞って、そのリズムを守りましょう。"
           }
         }
       }
@@ -8159,6 +10373,12 @@
             "state": "translated",
             "value": "你可以随时从设置中重新查看宣言。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "マニフェストは設定からいつでも見返せます。"
+          }
         }
       }
     },
@@ -8180,6 +10400,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "你可以安全地再拉入一个任务，但要保持活跃工作精简，让当前任务能够完成。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "もう 1 件なら安全に引き込めます。ただし、現在のタスクを完了できるよう、アクティブな作業は絞りましょう。"
           }
         }
       }
@@ -8203,6 +10429,12 @@
             "state": "translated",
             "value": "你已经达到容量上限。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "容量いっぱいです。"
+          }
         }
       }
     },
@@ -8224,6 +10456,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "你已经满负荷了！完成“%@”会释放空间。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "容量が上限です。「%@」を完了すると空きができます。"
           }
         }
       }
@@ -8247,6 +10485,12 @@
             "state": "translated",
             "value": "你已经接近 WIP 限制。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP 制限に近づいています。"
+          }
         }
       }
     },
@@ -8268,6 +10512,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "你的活跃列已满。从待办开始新任务前，先检查进行中的工作。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アクティブな列がいっぱいです。未着手から始める前に、進行中の作業を確認しましょう。"
           }
         }
       }
@@ -8291,6 +10541,12 @@
             "state": "translated",
             "value": "你的活跃工作仍在容量内。谨慎拉入新工作，或先完成一个当前任务。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アクティブな作業は容量内です。慎重に引き込むか、まず現在のタスクを完了しましょう。"
+          }
         }
       }
     },
@@ -8312,6 +10568,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "你的看板是空的"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ボードは空です"
           }
         }
       }
@@ -8335,6 +10597,12 @@
             "state": "translated",
             "value": "你的流程很平衡。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フローはバランスが取れています。"
+          }
         }
       }
     },
@@ -8356,6 +10624,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "你的流程还有空间。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フローにはまだ余裕があります。"
           }
         }
       }
@@ -8379,6 +10653,12 @@
             "state": "translated",
             "value": "你的进度"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "進捗"
+          }
         }
       }
     },
@@ -8400,6 +10680,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "你的进度。%@。已完成 %lld%%。%@ %lld 个待办，%lld 个进行中，%lld 个已完成。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "進捗。%@。%lld%% 完了。%@ 未着手 %lld 件、進行中 %lld 件、完了 %lld 件。"
           }
         }
       }
@@ -8423,6 +10709,12 @@
             "state": "translated",
             "value": "你的进度。还没有任务。添加第一个任务，开始跟踪进度。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "進捗。まだタスクはありません。最初のタスクを追加して、進捗の記録を始めましょう。"
+          }
         }
       }
     },
@@ -8444,6 +10736,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "你的工作清晰可见"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "作業が見える状態です"
           }
         }
       }

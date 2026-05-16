@@ -28,6 +28,12 @@
             "state": "translated",
             "value": "KanbanApp"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KanbanApp"
+          }
         }
       }
     },
@@ -56,6 +62,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "使用相机扫描文本，并将其转换为任务草稿。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "カメラを使ってテキストをスキャンし、タスクの下書きに変換します。"
           }
         }
       }
@@ -86,6 +98,12 @@
             "state": "translated",
             "value": "使用麦克风听写任务，并将其转换为任务草稿。"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "マイクを使ってタスクを音声入力し、タスクの下書きに変換します。"
+          }
         }
       }
     },
@@ -114,6 +132,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "使用语音识别来转写听写的任务。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "音声認識を使って、音声入力したタスクを文字起こしします。"
           }
         }
       }
