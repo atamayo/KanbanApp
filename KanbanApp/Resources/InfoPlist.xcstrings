@@ -1,51 +1,75 @@
 {
-  "sourceLanguage" : "en",
-  "strings" : {
-    "CFBundleName" : {
-      "comment" : "Bundle name",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "KanbanApp"
+  "sourceLanguage": "en",
+  "strings": {
+    "CFBundleName": {
+      "comment": "Bundle name",
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "KanbanApp"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KanbanApp"
           }
         }
       }
     },
-    "NSCameraUsageDescription" : {
-      "comment" : "Privacy purpose string shown when the app asks to use the camera for Live Text scanning.",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Use the camera to scan text and turn it into a task draft."
+    "NSCameraUsageDescription": {
+      "comment": "Privacy purpose string shown when the app asks to use the camera for Live Text scanning.",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use the camera to scan text and turn it into a task draft."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usa la cámara para escanear texto y convertirlo en un borrador de tarea."
           }
         }
       }
     },
-    "NSMicrophoneUsageDescription" : {
-      "comment" : "Privacy purpose string shown when the app asks to use the microphone for voice capture.",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Use the microphone to dictate a task and turn it into a task draft."
+    "NSMicrophoneUsageDescription": {
+      "comment": "Privacy purpose string shown when the app asks to use the microphone for voice capture.",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use the microphone to dictate a task and turn it into a task draft."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usa el micrófono para dictar una tarea y convertirla en un borrador de tarea."
           }
         }
       }
     },
-    "NSSpeechRecognitionUsageDescription" : {
-      "comment" : "Privacy purpose string shown when the app asks to use speech recognition for voice capture.",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Use speech recognition to transcribe dictated tasks."
+    "NSSpeechRecognitionUsageDescription": {
+      "comment": "Privacy purpose string shown when the app asks to use speech recognition for voice capture.",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use speech recognition to transcribe dictated tasks."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usa el reconocimiento de voz para transcribir tareas dictadas."
           }
         }
       }
     }
   },
-  "version" : "1.0"
+  "version": "1.0"
 }

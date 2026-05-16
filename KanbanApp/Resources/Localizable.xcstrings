@@ -5,1153 +5,3854 @@
 
     },
     "\"%@\" has been in progress for a while. Review it before pulling more work." : {
-      "comment" : "Daily notification body naming a stalled task"
+      "comment" : "Daily notification body naming a stalled task",
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "\"%@\" lleva un tiempo en curso. Revísala antes de traer más trabajo."
+          }
+        }
+      }
     },
     "\"%@\" is starting to age in progress. A quick review can keep the board moving." : {
-      "comment" : "Daily notification body naming an aging task"
+      "comment" : "Daily notification body naming an aging task",
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "\"%@\" empieza a llevar demasiado tiempo en curso. Una revisión rápida puede mantener el tablero en marcha."
+          }
+        }
+      }
     },
     "\"%@\" may need a decision. %lld more active %@ are aging." : {
-      "comment" : "Daily notification body naming a stalled task and summarizing aging tasks"
+      "comment" : "Daily notification body naming a stalled task and summarizing aging tasks",
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "\"%@\" puede necesitar una decisión. Hay %lld %@ activos más que están envejeciendo."
+          }
+        }
+      }
     },
     "%@ %@" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ %@"
+          }
+        }
+      }
     },
     "%@ column, %lld tasks" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Columna %@, %lld tareas"
+          }
+        }
+      }
     },
     "%@ of %@ %@ completed" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ de %@ %@ completadas"
+          }
+        }
+      }
     },
     "%@ priority" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prioridad %@"
+          }
+        }
+      }
     },
     "%@, %lld %@" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@, %lld %@"
+          }
+        }
+      }
     },
     "%@, created %@ ago" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@, creada hace %@"
+          }
+        }
+      }
     },
     "%@, in progress for %@" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@, en curso desde hace %@"
+          }
+        }
+      }
     },
     "%@. %@" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@. %@"
+          }
+        }
+      }
     },
     "%lld" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        }
+      }
     },
     "%lld %@" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld %@"
+          }
+        }
+      }
     },
     "%lld %@ may be stalled" : {
-      "comment" : "Daily notification title for stalled active tasks"
+      "comment" : "Daily notification title for stalled active tasks",
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld %@ pueden estar bloqueadas"
+          }
+        }
+      }
     },
     "%lld active %@ aging" : {
-      "comment" : "Daily notification title for aging active tasks"
+      "comment" : "Daily notification title for aging active tasks",
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld %@ activas envejeciendo"
+          }
+        }
+      }
     },
     "%lldd" : {
-      "comment" : "Short duration in days"
+      "comment" : "Short duration in days",
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld d"
+          }
+        }
+      }
     },
     "%lldd in status" : {
-      "comment" : "Short relative time in current task status"
+      "comment" : "Short relative time in current task status",
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld d en estado"
+          }
+        }
+      }
     },
     "%lldh" : {
-      "comment" : "Short duration in hours"
+      "comment" : "Short duration in hours",
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld h"
+          }
+        }
+      }
     },
     "%lldh in status" : {
-      "comment" : "Short relative time in current task status"
+      "comment" : "Short relative time in current task status",
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld h en estado"
+          }
+        }
+      }
     },
     "%lldm" : {
-      "comment" : "Short duration in minutes"
+      "comment" : "Short duration in minutes",
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld min"
+          }
+        }
+      }
     },
     "%lldm ago" : {
-      "comment" : "Short relative time since task status changed"
+      "comment" : "Short relative time since task status changed",
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "hace %lld min"
+          }
+        }
+      }
     },
     "3 / 3" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3 / 3"
+          }
+        }
+      }
     },
     "A focused system works better when you keep active work small." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un sistema enfocado funciona mejor cuando mantienes poco trabajo activo."
+          }
+        }
+      }
     },
     "A limit of 2 or 3 active tasks usually improves focus, quality, and completion rate." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un límite de 2 o 3 tareas activas suele mejorar el foco, la calidad y el ritmo de finalización."
+          }
+        }
+      }
     },
     "A limited In Progress lane makes it easier to stay with the current work instead of scattering effort across too many tasks." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un carril En curso limitado hace más fácil seguir con el trabajo actual en vez de dispersarte entre demasiadas tareas."
+          }
+        }
+      }
     },
     "A task belongs in In Progress only when you are actively working it now. Blocked or waiting work should be visible, not mixed in silently." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Una tarea pertenece a En curso solo cuando estás trabajando activamente en ella ahora. El trabajo bloqueado o en espera debe verse, no mezclarse en silencio."
+          }
+        }
+      }
     },
     "A task is done when its finish check is satisfied, not when it merely feels close. Use the Definition of Done field to make completion explicit." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Una tarea está terminada cuando cumple su comprobación de finalización, no cuando simplemente parece cercana. Usa el campo Definición de terminado para dejarlo claro."
+          }
+        }
+      }
     },
     "Actionable dashboard" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Panel accionable"
+          }
+        }
+      }
     },
     "active" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "activas"
+          }
+        }
+      }
     },
     "Active" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activo"
+          }
+        }
+      }
     },
     "Active Age" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Antigüedad activa"
+          }
+        }
+      }
     },
     "Active Task Nudges" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recordatorios de tareas activas"
+          }
+        }
+      }
     },
     "Active Work" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trabajo activo"
+          }
+        }
+      }
     },
     "Add a task to populate your dashboard" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añade una tarea para llenar tu panel"
+          }
+        }
+      }
     },
     "Add context for the task" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añade contexto para la tarea"
+          }
+        }
+      }
     },
     "Add Task" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir tarea"
+          }
+        }
+      }
     },
     "Add your first task to start tracking progress." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añade tu primera tarea para empezar a seguir el progreso."
+          }
+        }
+      }
     },
     "Adding to %@ status" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadiendo al estado %@"
+          }
+        }
+      }
     },
     "Aging" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envejeciendo"
+          }
+        }
+      }
     },
     "Aging after" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envejece tras"
+          }
+        }
+      }
     },
     "Aging Tasks" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tareas envejeciendo"
+          }
+        }
+      }
     },
     "All Tasks" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todas las tareas"
+          }
+        }
+      }
     },
     "All tasks completed" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todas las tareas completadas"
+          }
+        }
+      }
     },
     "Almost there — close the remaining tasks." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ya casi está: cierra las tareas restantes."
+          }
+        }
+      }
     },
     "Apple Intelligence is getting ready. Try again in a moment." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple Intelligence se está preparando. Inténtalo de nuevo en un momento."
+          }
+        }
+      }
     },
     "Apple Intelligence is not supported on this device." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple Intelligence no es compatible con este dispositivo."
+          }
+        }
+      }
     },
     "Apple Intelligence is unavailable, so paste text here and add it to the task manually." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple Intelligence no está disponible, así que pega el texto aquí y añádelo a la tarea manualmente."
+          }
+        }
+      }
     },
     "Archive" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Archivar"
+          }
+        }
+      }
     },
     "Archive Completed Task" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Archivar tarea completada"
+          }
+        }
+      }
     },
     "Archived" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Archivadas"
+          }
+        }
+      }
     },
     "Archived %@ ago" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Archivada hace %@"
+          }
+        }
+      }
     },
     "Archived %lld" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld archivadas"
+          }
+        }
+      }
     },
     "Archived Done tasks leave the active board but still count toward completion history." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las tareas terminadas archivadas salen del tablero activo, pero siguen contando en el historial de finalización."
+          }
+        }
+      }
     },
     "Avg Days To Done" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Días medios hasta terminar"
+          }
+        }
+      }
     },
     "BEST TASK TO PULL NEXT" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MEJOR TAREA PARA HACER AHORA"
+          }
+        }
+      }
     },
     "Blocked" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bloqueada"
+          }
+        }
+      }
     },
     "Blocked / Waiting" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bloqueada / En espera"
+          }
+        }
+      }
     },
     "Blocked active work" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trabajo activo bloqueado"
+          }
+        }
+      }
     },
     "Blocked tasks need attention before more work is pulled." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las tareas bloqueadas necesitan atención antes de traer más trabajo."
+          }
+        }
+      }
     },
     "Blocked Work" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trabajo bloqueado"
+          }
+        }
+      }
     },
     "Blocked work is slowing your flow." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El trabajo bloqueado está frenando tu flujo."
+          }
+        }
+      }
     },
     "Blocked work stays visible" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El trabajo bloqueado sigue visible"
+          }
+        }
+      }
     },
     "Board complete — all tasks are done." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tablero completo: todas las tareas están terminadas."
+          }
+        }
+      }
     },
     "BREAK DOWN FIRST" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DIVIDE PRIMERO"
+          }
+        }
+      }
     },
     "Break Down Task" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dividir tarea"
+          }
+        }
+      }
     },
     "Buy groceries" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comprar comida"
+          }
+        }
+      }
     },
     "Camera access is required to scan text. Enable it in Settings." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se necesita acceso a la cámara para escanear texto. Actívalo en Ajustes."
+          }
+        }
+      }
     },
     "Camera access is unavailable right now." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El acceso a la cámara no está disponible ahora mismo."
+          }
+        }
+      }
     },
     "Cancel" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
+          }
+        }
+      }
     },
     "Capture" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Capturar"
+          }
+        }
+      }
     },
     "Choose Next Task" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elegir siguiente tarea"
+          }
+        }
+      }
     },
     "Clear" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Borrar"
+          }
+        }
+      }
     },
     "Clear finish check" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Borrar comprobación final"
+          }
+        }
+      }
     },
     "Clear Finish Checks" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Borrar comprobaciones finales"
+          }
+        }
+      }
     },
     "Clearer decisions" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Decisiones más claras"
+          }
+        }
+      }
     },
     "Close" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cerrar"
+          }
+        }
+      }
     },
     "Close one task and you free a focus slot, strengthen the Done column, and make progress feel real again." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cierra una tarea y liberas un hueco de foco, refuerzas la columna Terminado y haces que el progreso vuelva a sentirse real."
+          }
+        }
+      }
     },
     "Closed" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cerradas"
+          }
+        }
+      }
     },
     "Closed %@ ago" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cerrada hace %@"
+          }
+        }
+      }
     },
     "Complete" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Completo"
+          }
+        }
+      }
     },
     "completed" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "completadas"
+          }
+        }
+      }
     },
     "Completed" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Completada"
+          }
+        }
+      }
     },
     "Completion is not hidden. The dashboard and board both make finished work visible so progress feels concrete and motivating." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La finalización no queda oculta. El panel y el tablero hacen visible el trabajo terminado para que el progreso se sienta concreto y motivador."
+          }
+        }
+      }
     },
     "Continue" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continuar"
+          }
+        }
+      }
     },
     "Create Task" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crear tarea"
+          }
+        }
+      }
     },
     "Created" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Creada"
+          }
+        }
+      }
     },
     "Current %lld" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Actual %lld"
+          }
+        }
+      }
     },
     "Dashboard" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Panel"
+          }
+        }
+      }
     },
     "day" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "día"
+          }
+        }
+      }
     },
     "days" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "días"
+          }
+        }
+      }
     },
     "Definition of Done" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Definición de terminado"
+          }
+        }
+      }
     },
     "Delete" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar"
+          }
+        }
+      }
     },
     "Delete Task" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar tarea"
+          }
+        }
+      }
     },
     "Describe one task naturally. You can edit the generated task before saving." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Describe una tarea de forma natural. Puedes editar la tarea generada antes de guardarla."
+          }
+        }
+      }
     },
     "Description" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descripción"
+          }
+        }
+      }
     },
     "Digest time" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hora del resumen"
+          }
+        }
+      }
     },
     "Dismisses the scanner without using captured text." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cierra el escáner sin usar el texto capturado."
+          }
+        }
+      }
     },
     "Done" : {
-      "comment" : "Task status name"
+      "comment" : "Task status name",
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hechas"
+          }
+        }
+      }
     },
     "Done Filter" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtro de terminado"
+          }
+        }
+      }
     },
     "Done means criteria met" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terminado significa criterios cumplidos"
+          }
+        }
+      }
     },
     "Done Momentum" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impulso de terminado"
+          }
+        }
+      }
     },
     "Done stays visible" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terminado sigue visible"
+          }
+        }
+      }
     },
     "Done task filter" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtro de tareas terminadas"
+          }
+        }
+      }
     },
     "Done This Week" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terminadas esta semana"
+          }
+        }
+      }
     },
     "Double-tap to open details. Swipe or long press for actions. Drag the card to reorder." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toca dos veces para abrir los detalles. Desliza o mantén pulsado para ver acciones. Arrastra la tarjeta para reordenarla."
+          }
+        }
+      }
     },
     "Draft generated. Review and adjust before creating the task." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Borrador generado. Revísalo y ajústalo antes de crear la tarea."
+          }
+        }
+      }
     },
     "Enable Active Task Nudges" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activar recordatorios de tareas activas"
+          }
+        }
+      }
     },
     "Enable Flow Optimization" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activar optimización del trabajo"
+          }
+        }
+      }
     },
     "Enough context" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contexto suficiente"
+          }
+        }
+      }
     },
     "Every completed task frees attention and opens space for the next pull." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cada tarea completada libera atención y abre espacio para traer la siguiente."
+          }
+        }
+      }
     },
     "Extracting text from image…" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Extrayendo texto de la imagen…"
+          }
+        }
+      }
     },
     "Find tasks by title, description, or definition of done." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Busca tareas por título, descripción o definición de terminado."
+          }
+        }
+      }
     },
     "Finish" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terminar"
+          }
+        }
+      }
     },
     "Finish one before pulling another." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termina una antes de traer otra."
+          }
+        }
+      }
     },
     "Finish one task before pulling another." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termina una tarea antes de traer otra."
+          }
+        }
+      }
     },
     "Finish or move one active task forward before pulling new work." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termina o avanza una tarea activa antes de traer trabajo nuevo."
+          }
+        }
+      }
     },
     "Finished work is part of the system. Seeing tasks close gives momentum and reduces stress." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El trabajo terminado forma parte del sistema. Ver tareas cerrarse da impulso y reduce estrés."
+          }
+        }
+      }
     },
     "Flow Optimization" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Optimización del flujo"
+          }
+        }
+      }
     },
     "Flow Optimization protects focus" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La optimización del flujo protege el foco"
+          }
+        }
+      }
     },
     "Flow Review" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Revisión del flujo"
+          }
+        }
+      }
     },
     "Flow State" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estado del flujo"
+          }
+        }
+      }
     },
     "Flow Trends" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tendencias del flujo"
+          }
+        }
+      }
     },
     "Focus Current Work" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Centrarse en el trabajo actual"
+          }
+        }
+      }
     },
     "Focus Task" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Centrar tarea"
+          }
+        }
+      }
     },
     "FOCUS THIS TASK" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CENTRA ESTA TAREA"
+          }
+        }
+      }
     },
     "Fresh" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reciente"
+          }
+        }
+      }
     },
     "From In Progress to Done" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De En curso a Terminado"
+          }
+        }
+      }
     },
     "Generate one concrete next step to help restart motion on this task." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Genera un siguiente paso concreto para ayudar a reactivar esta tarea."
+          }
+        }
+      }
     },
     "Generating…" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Generando…"
+          }
+        }
+      }
     },
     "Good start — keep moving work toward Done." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buen comienzo: sigue moviendo trabajo hacia Terminado."
+          }
+        }
+      }
     },
     "High" : {
-      "comment" : "Task priority name"
+      "comment" : "Task priority name",
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alta"
+          }
+        }
+      }
     },
     "High priority" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prioridad alta"
+          }
+        }
+      }
     },
     "How This App Supports It" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cómo ayuda esta app"
+          }
+        }
+      }
     },
     "How To Use This App" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cómo usar esta app"
+          }
+        }
+      }
     },
     "iCloud sync is on" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La sincronización con iCloud está activada"
+          }
+        }
+      }
     },
     "Import Photo" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Importar foto"
+          }
+        }
+      }
     },
     "In Progress" : {
-      "comment" : "Task status name"
+      "comment" : "Task status name",
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En curso"
+          }
+        }
+      }
     },
     "In Progress means active attention" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En curso significa atención activa"
+          }
+        }
+      }
     },
     "In this app, a new task should move into In Progress only when the active lane has capacity. WIP limit hits so far: %lld." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En esta app, una tarea nueva solo debería pasar a En curso cuando el carril activo tenga capacidad. Veces que se alcanzó el límite WIP hasta ahora: %lld."
+          }
+        }
+      }
     },
     "Info" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Información"
+          }
+        }
+      }
     },
     "Kanban" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kanban"
+          }
+        }
+      }
     },
     "KanbanApp gives you one clear system for your tasks, so you can stop juggling everything in your head and start moving work forward." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KanbanApp te da un sistema claro para tus tareas, para que dejes de llevarlo todo en la cabeza y empieces a mover el trabajo hacia delante."
+          }
+        }
+      }
     },
     "Keep it compact. A short completion check helps you finish instead of endlessly refining." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mantenlo compacto. Una comprobación breve ayuda a terminar en vez de refinar sin fin."
+          }
+        }
+      }
     },
     "Keep it short. A compact finish check makes it easier to close the task." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mantenlo breve. Una comprobación compacta hace más fácil cerrar la tarea."
+          }
+        }
+      }
     },
     "Keep tasks moving through the three core states. The board is the main picture of your flow, not just a list of tasks." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mantén las tareas moviéndose por los tres estados principales. El tablero es la imagen principal de tu flujo, no solo una lista de tareas."
+          }
+        }
+      }
     },
     "Large task" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarea grande"
+          }
+        }
+      }
     },
     "Let Done motivate you" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deja que Terminado te motive"
+          }
+        }
+      }
     },
     "Limit Reached" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Límite alcanzado"
+          }
+        }
+      }
     },
     "Limit WIP" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Limitar WIP"
+          }
+        }
+      }
     },
     "Limit work in progress to reduce context switching." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Limita el trabajo en curso para reducir los cambios de contexto."
+          }
+        }
+      }
     },
     "Listening..." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escuchando..."
+          }
+        }
+      }
     },
     "Live text scanning is not supported on this device." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El escaneo de texto en vivo no es compatible con este dispositivo."
+          }
+        }
+      }
     },
     "Low" : {
-      "comment" : "Task priority name"
+      "comment" : "Task priority name",
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Baja"
+          }
+        }
+      }
     },
     "Low priority" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prioridad baja"
+          }
+        }
+      }
     },
     "Lower mental load" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menos carga mental"
+          }
+        }
+      }
     },
     "Manifesto" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manifiesto"
+          }
+        }
+      }
     },
     "Mark Active" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marcar como activa"
+          }
+        }
+      }
     },
     "Mark Blocked / Waiting" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marcar como bloqueada / en espera"
+          }
+        }
+      }
     },
     "Mark Done" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marcar como terminada"
+          }
+        }
+      }
     },
     "Max Active Tasks" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Máximo de tareas activas"
+          }
+        }
+      }
     },
     "Medium" : {
-      "comment" : "Task priority name"
+      "comment" : "Task priority name",
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Media"
+          }
+        }
+      }
     },
     "Medium priority" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prioridad media"
+          }
+        }
+      }
     },
     "Microphone access is required to dictate tasks. Enable it in Settings." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se necesita acceso al micrófono para dictar tareas. Actívalo en Ajustes."
+          }
+        }
+      }
     },
     "Momentum is building across your board." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El impulso está creciendo en tu tablero."
+          }
+        }
+      }
     },
     "Momentum is visible." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El impulso es visible."
+          }
+        }
+      }
     },
     "More motivation to finish" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Más motivación para terminar"
+          }
+        }
+      }
     },
     "Move a task into In Progress only when capacity opens up. Let completion create space for the next commitment." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mueve una tarea a En curso solo cuando se abra capacidad. Deja que terminar cree espacio para el siguiente compromiso."
+          }
+        }
+      }
     },
     "Move to In Progress" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mover a En curso"
+          }
+        }
+      }
     },
     "Move to To Do" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mover a Por hacer"
+          }
+        }
+      }
     },
     "Move your first task to Done to build momentum." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mueve tu primera tarea a Terminado para ganar impulso."
+          }
+        }
+      }
     },
     "Moves this task to In Progress." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mueve esta tarea a En curso."
+          }
+        }
+      }
     },
     "Need completed in-progress tasks" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Necesitas tareas en curso completadas"
+          }
+        }
+      }
     },
     "Needs clearer scope" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Necesita un alcance más claro"
+          }
+        }
+      }
     },
     "New Task" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nueva tarea"
+          }
+        }
+      }
     },
     "Next Action" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siguiente acción"
+          }
+        }
+      }
     },
     "Next Action suggestion is unavailable right now." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La sugerencia de siguiente acción no está disponible ahora mismo."
+          }
+        }
+      }
     },
     "Next action: %@" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siguiente acción: %@"
+          }
+        }
+      }
     },
     "NO ACTION NEEDED" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NO HACE FALTA ACTUAR"
+          }
+        }
+      }
     },
     "No active blockers right now." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hay bloqueos activos ahora mismo."
+          }
+        }
+      }
     },
     "No active task running" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hay ninguna tarea activa en marcha"
+          }
+        }
+      }
     },
     "No active tasks" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hay tareas activas"
+          }
+        }
+      }
     },
     "No matching tasks" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hay tareas que coincidan"
+          }
+        }
+      }
     },
     "No readable text was found in that image." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se encontró texto legible en esa imagen."
+          }
+        }
+      }
     },
     "No readable text was found in the camera view." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se encontró texto legible en la vista de la cámara."
+          }
+        }
+      }
     },
     "No ready tasks are waiting" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hay tareas listas esperando"
+          }
+        }
+      }
     },
     "No ready work needs attention" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hay trabajo listo que necesite atención"
+          }
+        }
+      }
     },
     "No recommended task." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hay tarea recomendada."
+          }
+        }
+      }
     },
     "No speech was captured. Try recording again." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se capturó voz. Intenta grabar de nuevo."
+          }
+        }
+      }
     },
     "No stalled work right now." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hay trabajo estancado ahora mismo."
+          }
+        }
+      }
     },
     "No tasks" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hay tareas"
+          }
+        }
+      }
     },
     "No tasks yet" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aún no hay tareas"
+          }
+        }
+      }
     },
     "No waiting tasks" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hay tareas en espera"
+          }
+        }
+      }
     },
     "Nothing completed yet" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todavía no hay nada completado"
+          }
+        }
+      }
     },
     "Nothing is drifting yet." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nada se está desviando todavía."
+          }
+        }
+      }
     },
     "Notifications were not enabled. You can allow them in Settings to receive active task nudges." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las notificaciones no se activaron. Puedes permitirlas en Ajustes para recibir recordatorios de tareas activas."
+          }
+        }
+      }
     },
     "now" : {
-      "comment" : "Immediate relative duration"
+      "comment" : "Immediate relative duration",
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ahora"
+          }
+        }
+      }
     },
     "Off" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desactivado"
+          }
+        }
+      }
     },
     "OK" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aceptar"
+          }
+        }
+      }
     },
     "Oldest active task" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarea activa más antigua"
+          }
+        }
+      }
     },
     "On" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activado"
+          }
+        }
+      }
     },
     "Only one focus slot remains" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solo queda un hueco de foco"
+          }
+        }
+      }
     },
     "Open Blocked Task" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir tarea bloqueada"
+          }
+        }
+      }
     },
     "Opens a detailed recommendation." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre una recomendación detallada."
+          }
+        }
+      }
     },
     "Opens task details." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre los detalles de la tarea."
+          }
+        }
+      }
     },
     "Opens tasks in this lane" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre las tareas de este carril"
+          }
+        }
+      }
     },
     "Opens the active work lane." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre el carril de trabajo activo."
+          }
+        }
+      }
     },
     "Opens the blocked task so you can update it." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre la tarea bloqueada para que puedas actualizarla."
+          }
+        }
+      }
     },
     "Opens the recommended active task." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre la tarea activa recomendada."
+          }
+        }
+      }
     },
     "Over WIP limit by %lld" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Por encima del límite WIP en %lld"
+          }
+        }
+      }
     },
     "Paste a note or messy thought…" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pega una nota o una idea desordenada…"
+          }
+        }
+      }
     },
     "Paste Note" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pegar nota"
+          }
+        }
+      }
     },
     "Personal Kanban" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kanban personal"
+          }
+        }
+      }
     },
     "Personal Kanban in practice" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kanban personal en la práctica"
+          }
+        }
+      }
     },
     "Personal Kanban Manifesto" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manifiesto Kanban personal"
+          }
+        }
+      }
     },
     "Personal Kanban recommends a WIP limit of 2 or 3 to minimize context-switching and finish tasks faster." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kanban personal recomienda un límite WIP de 2 o 3 para minimizar los cambios de contexto y terminar tareas más rápido."
+          }
+        }
+      }
     },
     "Personal Kanban recommends a WIP limit of 2 or 3 to minimize context-switching and finish tasks faster. Finish or move an active task before adding another In Progress task." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kanban personal recomienda un límite WIP de 2 o 3 para minimizar los cambios de contexto y terminar tareas más rápido. Termina o mueve una tarea activa antes de añadir otra tarea En curso."
+          }
+        }
+      }
     },
     "Personal Kanban recommends a WIP limit of 2 or 3 to minimize context-switching and finish tasks faster. Finish or move an active task before moving another task into In Progress." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kanban personal recomienda un límite WIP de 2 o 3 para minimizar los cambios de contexto y terminar tareas más rápido. Termina o mueve una tarea activa antes de mover otra tarea a En curso."
+          }
+        }
+      }
     },
     "Personal Kanban works best when you finish before you pull. Keep your active lane small and visible." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kanban personal funciona mejor cuando terminas antes de traer más trabajo. Mantén tu carril activo pequeño y visible."
+          }
+        }
+      }
     },
     "Photo imported. Apple Intelligence is unavailable, so the text was added for manual review." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foto importada. Apple Intelligence no está disponible, así que el texto se añadió para revisarlo manualmente."
+          }
+        }
+      }
     },
     "Photo imported. Draft generated from the extracted text." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foto importada. Borrador generado a partir del texto extraído."
+          }
+        }
+      }
     },
     "Photo imported. Review the extracted text or generate a draft." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foto importada. Revisa el texto extraído o genera un borrador."
+          }
+        }
+      }
     },
     "Practice" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Práctica"
+          }
+        }
+      }
     },
     "Pressure appears at the right moment" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La presión aparece en el momento adecuado"
+          }
+        }
+      }
     },
     "Priority" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prioridad"
+          }
+        }
+      }
     },
     "Priority signals, WIP guidance, and visible task states help the user choose what to finish next with less friction." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las señales de prioridad, la guía WIP y los estados visibles ayudan a elegir qué terminar después con menos fricción."
+          }
+        }
+      }
     },
     "Protect your attention" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Protege tu atención"
+          }
+        }
+      }
     },
     "Protect your focus" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Protege tu foco"
+          }
+        }
+      }
     },
     "Pull instead of overload" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Traer trabajo en vez de sobrecargarte"
+          }
+        }
+      }
     },
     "Pull only if the next task is small or urgent. Otherwise, finish active work first." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trae trabajo solo si la siguiente tarea es pequeña o urgente. Si no, termina primero el trabajo activo."
+          }
+        }
+      }
     },
     "Pull only when there is room" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trae trabajo solo cuando haya hueco"
+          }
+        }
+      }
     },
     "Pull only when you have room" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trae trabajo solo cuando tengas hueco"
+          }
+        }
+      }
     },
     "Pull Task" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Traer tarea"
+          }
+        }
+      }
     },
     "Quick Capture" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Captura rápida"
+          }
+        }
+      }
     },
     "Quick Capture AI couldn’t generate a draft right now. Review the text and try again." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La IA de Captura rápida no pudo generar un borrador ahora mismo. Revisa el texto e inténtalo de nuevo."
+          }
+        }
+      }
     },
     "Quick Capture AI couldn’t generate a draft right now. Try shortening the note and retry." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La IA de Captura rápida no pudo generar un borrador ahora mismo. Prueba a acortar la nota e inténtalo otra vez."
+          }
+        }
+      }
     },
     "Quick Capture AI is unavailable right now." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La IA de Captura rápida no está disponible ahora mismo."
+          }
+        }
+      }
     },
     "Read the core principles behind visual work, pull systems, and WIP limits." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lee los principios básicos detrás del trabajo visual, los sistemas pull y los límites WIP."
+          }
+        }
+      }
     },
     "Ready" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lista"
+          }
+        }
+      }
     },
     "Ready Alternatives" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alternativas listas"
+          }
+        }
+      }
     },
     "Ready to pull" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lista para traer"
+          }
+        }
+      }
     },
     "Recent finish rate" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ritmo reciente de finalización"
+          }
+        }
+      }
     },
     "Recommended Action" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acción recomendada"
+          }
+        }
+      }
     },
     "Recommended task: %@." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarea recomendada: %@."
+          }
+        }
+      }
     },
     "Record Again" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grabar de nuevo"
+          }
+        }
+      }
     },
     "Record Voice" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grabar voz"
+          }
+        }
+      }
     },
     "Reduce active work before starting anything new. This will protect focus and completion speed." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reduce el trabajo activo antes de empezar nada nuevo. Esto protegerá el foco y la velocidad de finalización."
+          }
+        }
+      }
     },
     "REDUCE WIP FIRST" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "REDUCE WIP PRIMERO"
+          }
+        }
+      }
     },
     "Reduce WIP Now" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reducir WIP ahora"
+          }
+        }
+      }
     },
     "Related to active work" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Relacionado con trabajo activo"
+          }
+        }
+      }
     },
     "Resolve blocked work before pulling more tasks, unless a new task is urgent and small." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resuelve el trabajo bloqueado antes de traer más tareas, salvo que una tarea nueva sea urgente y pequeña."
+          }
+        }
+      }
     },
     "Restore" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurar"
+          }
+        }
+      }
     },
     "Restore from Archive" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurar desde archivo"
+          }
+        }
+      }
     },
     "Review Active Tasks" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Revisar tareas activas"
+          }
+        }
+      }
     },
     "Review Before Pulling" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Revisar antes de hacer"
+          }
+        }
+      }
     },
     "Review Capacity" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Revisar capacidad"
+          }
+        }
+      }
     },
     "Review tasks by lane" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Revisar tareas por carril"
+          }
+        }
+      }
     },
     "Review the suggestion before applying it to the task." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Revisa la sugerencia antes de aplicarla a la tarea."
+          }
+        }
+      }
     },
     "Review your active tasks and decide what should move forward next." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Revisa tus tareas activas y decide qué debería avanzar después."
+          }
+        }
+      }
     },
     "Review your transcript" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Revisa tu transcripción"
+          }
+        }
+      }
     },
     "Scan Text" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escanear texto"
+          }
+        }
+      }
     },
     "Scanner unavailable" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escáner no disponible"
+          }
+        }
+      }
     },
     "Search" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buscar"
+          }
+        }
+      }
     },
     "Search tasks" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buscar tareas"
+          }
+        }
+      }
     },
     "Search your work" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Busca tu trabajo"
+          }
+        }
+      }
     },
     "See progress, WIP pressure, and flow signals that push you toward finishing." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ve el progreso, la presión WIP y las señales de flujo que te empujan a terminar."
+          }
+        }
+      }
     },
     "See your work clearly" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ve tu trabajo con claridad"
+          }
+        }
+      }
     },
     "Send one daily reminder when In Progress tasks are aging or stalled." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envía un recordatorio diario cuando las tareas En curso estén envejeciendo o estancadas."
+          }
+        }
+      }
     },
     "Set a max number of active tasks so your attention stays narrow." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Define un número máximo de tareas activas para mantener la atención enfocada."
+          }
+        }
+      }
     },
     "Settings" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajustes"
+          }
+        }
+      }
     },
     "Skip" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Omitir"
+          }
+        }
+      }
     },
     "Slots Left" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Huecos libres"
+          }
+        }
+      }
     },
     "Small WIP, faster finish" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WIP pequeño, finalización más rápida"
+          }
+        }
+      }
     },
     "Speech recognition access is required to dictate tasks. Enable it in Settings." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se necesita acceso al reconocimiento de voz para dictar tareas. Actívalo en Ajustes."
+          }
+        }
+      }
     },
     "Stalled" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estancadas"
+          }
+        }
+      }
     },
     "Stalled after" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estancada tras"
+          }
+        }
+      }
     },
     "Stalled Tasks" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tareas estancadas"
+          }
+        }
+      }
     },
     "Start a new task only when capacity opens. Completion creates space for the next commitment." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Empieza una tarea nueva solo cuando se abra capacidad. Terminar crea espacio para el siguiente compromiso."
+          }
+        }
+      }
     },
     "Start Focusing" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Empezar a enfocarte"
+          }
+        }
+      }
     },
     "Status" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estado"
+          }
+        }
+      }
     },
     "Status distribution: %lld to do, %lld in progress, %lld done" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Distribución de estados: %lld por hacer, %lld en curso, %lld terminadas"
+          }
+        }
+      }
     },
     "Stop" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parar"
+          }
+        }
+      }
     },
     "Strong finishing rhythm." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buen ritmo de finalización."
+          }
+        }
+      }
     },
     "Stronger focus" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Más foco"
+          }
+        }
+      }
     },
     "Suggest Next Action" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sugerir siguiente acción"
+          }
+        }
+      }
     },
     "Suggestion added to the task description." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sugerencia añadida a la descripción de la tarea."
+          }
+        }
+      }
     },
     "task" : {
-      "comment" : "Singular task count noun"
+      "comment" : "Singular task count noun",
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "tarea"
+          }
+        }
+      }
     },
     "Task Details" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detalles de la tarea"
+          }
+        }
+      }
     },
     "Task Sync" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sincronización de tareas"
+          }
+        }
+      }
     },
     "tasks" : {
-      "comment" : "Plural task count noun"
+      "comment" : "Plural task count noun",
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "tareas"
+          }
+        }
+      }
     },
     "Tasks are currently stored only on this device. Turn on iCloud for this app to keep tasks available when you switch phones." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ahora mismo las tareas se guardan solo en este dispositivo. Activa iCloud para esta app y tendrás tus tareas disponibles cuando cambies de teléfono."
+          }
+        }
+      }
     },
     "Tasks no longer have to live in memory. The board and dashboard hold the system for you." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las tareas ya no tienen que vivir en tu memoria. El tablero y el panel sostienen el sistema por ti."
+          }
+        }
+      }
     },
     "Tasks sync through iCloud when you use the same Apple Account on each device. Changes can take a short moment to appear everywhere." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las tareas se sincronizan por iCloud cuando usas la misma cuenta de Apple en cada dispositivo. Los cambios pueden tardar un momento en aparecer en todas partes."
+          }
+        }
+      }
     },
     "Text added. Apple Intelligence is unavailable, so review it manually before creating the task." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Texto añadido. Apple Intelligence no está disponible, así que revísalo manualmente antes de crear la tarea."
+          }
+        }
+      }
     },
     "Text captured. Apple Intelligence is unavailable, so the text was added for manual review." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Texto capturado. Apple Intelligence no está disponible, así que el texto se añadió para revisarlo manualmente."
+          }
+        }
+      }
     },
     "Text captured. Draft generated from the camera scan." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Texto capturado. Borrador generado a partir del escaneo de cámara."
+          }
+        }
+      }
     },
     "Text captured. Review the extracted text or generate a draft." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Texto capturado. Revisa el texto extraído o genera un borrador."
+          }
+        }
+      }
     },
     "The app can enforce a WIP limit so too many tasks do not enter In Progress at once. That keeps attention narrow and reduces context switching." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La app puede aplicar un límite WIP para que no entren demasiadas tareas en En curso a la vez. Eso mantiene la atención enfocada y reduce los cambios de contexto."
+          }
+        }
+      }
     },
     "The app couldn’t generate a next action right now. Try again in a moment." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La app no pudo generar una siguiente acción ahora mismo. Inténtalo de nuevo en un momento."
+          }
+        }
+      }
     },
     "The app schedules a rolling daily digest at %lld:00 and never sends one notification per task." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La app programa un resumen diario rotativo a las %lld:00 y nunca envía una notificación por tarea."
+          }
+        }
+      }
     },
     "The board makes every task explicit through To Do, In Progress, and Done, so you can see what is waiting, what is active, and what has been completed." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El tablero hace explícita cada tarea mediante Por hacer, En curso y Terminado, para que veas qué está esperando, qué está activo y qué se ha completado."
+          }
+        }
+      }
     },
     "The board makes your commitments visible so nothing important stays vague or hidden." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El tablero hace visibles tus compromisos para que nada importante quede difuso u oculto."
+          }
+        }
+      }
     },
     "The camera scanner is unavailable right now." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El escáner de cámara no está disponible ahora mismo."
+          }
+        }
+      }
     },
     "The dashboard shows progress, WIP pressure, and priority distribution so you can decide whether to finish, pause, or avoid pulling more." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El panel muestra progreso, presión WIP y distribución de prioridades para que puedas decidir si terminar, pausar o evitar traer más trabajo."
+          }
+        }
+      }
     },
     "The image text was extracted, but the AI draft couldn’t be generated right now. Review it and generate again." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se extrajo el texto de la imagen, pero no se pudo generar el borrador con IA ahora mismo. Revísalo y genera de nuevo."
+          }
+        }
+      }
     },
     "The manifesto is simple: visualize your work, limit work in progress, pull only when there is room, and let Done stay visible." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El manifiesto es simple: visualiza tu trabajo, limita el trabajo en curso, trae trabajo solo cuando haya hueco y deja que Terminado siga visible."
+          }
+        }
+      }
     },
     "The microphone could not be started. Check audio permissions and try again." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se pudo iniciar el micrófono. Comprueba los permisos de audio e inténtalo de nuevo."
+          }
+        }
+      }
     },
     "The next finished task changes the board." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La próxima tarea terminada cambia el tablero."
+          }
+        }
+      }
     },
     "The selected image could not be loaded." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se pudo cargar la imagen seleccionada."
+          }
+        }
+      }
     },
     "The selected image could not be read." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se pudo leer la imagen seleccionada."
+          }
+        }
+      }
     },
     "The text was captured, but the AI draft couldn’t be generated right now. Review it and generate again." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El texto se capturó, pero no se pudo generar el borrador con IA ahora mismo. Revísalo y genera de nuevo."
+          }
+        }
+      }
     },
     "The voice transcript was captured, but the AI draft couldn’t be generated right now. Review it and generate again." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La transcripción de voz se capturó, pero no se pudo generar el borrador con IA ahora mismo. Revísala y genera de nuevo."
+          }
+        }
+      }
     },
     "These tasks are staying active long enough to risk drag." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estas tareas llevan activas el tiempo suficiente como para arriesgarse a atascar el flujo."
+          }
+        }
+      }
     },
     "These tasks have sat too long in progress and may need a decision." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estas tareas llevan demasiado tiempo en curso y pueden necesitar una decisión."
+          }
+        }
+      }
     },
     "This app applies Personal Kanban by helping you see your work clearly, protect your focus, and finish before starting more." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta app aplica Kanban personal ayudándote a ver tu trabajo con claridad, proteger tu foco y terminar antes de empezar más."
+          }
+        }
+      }
     },
     "This app is built around Personal Kanban discipline: do less at once, finish more often, and reduce context switching." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta app está construida alrededor de la disciplina Kanban personal: hacer menos cosas a la vez, terminar más a menudo y reducir cambios de contexto."
+          }
+        }
+      }
     },
     "Times flow pushed back" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Veces que el flujo empujó de vuelta"
+          }
+        }
+      }
     },
     "Title" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Título"
+          }
+        }
+      }
     },
     "To Do" : {
-      "comment" : "Task status name"
+      "comment" : "Task status name",
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Por hacer"
+          }
+        }
+      }
     },
     "Too much work is active." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hay demasiado trabajo activo."
+          }
+        }
+      }
     },
     "Track work through To Do, In Progress, and Done instead of keeping mental lists." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sigue el trabajo mediante Por hacer, En curso y Terminado en vez de mantener listas mentales."
+          }
+        }
+      }
     },
     "Transcript" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transcripción"
+          }
+        }
+      }
     },
     "Try a different search term." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prueba con otro término de búsqueda."
+          }
+        }
+      }
     },
     "Try Again" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intentar de nuevo"
+          }
+        }
+      }
     },
     "Turn on Apple Intelligence in Settings to personalize WIP coaching." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activa Apple Intelligence en Ajustes para personalizar el coaching WIP."
+          }
+        }
+      }
     },
     "Turn on Apple Intelligence in Settings to suggest a next action." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activa Apple Intelligence en Ajustes para sugerir una siguiente acción."
+          }
+        }
+      }
     },
     "Turn on Apple Intelligence in Settings to use Quick Capture AI." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activa Apple Intelligence en Ajustes para usar la IA de Captura rápida."
+          }
+        }
+      }
     },
     "UNBLOCK FIRST" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DESBLOQUEA PRIMERO"
+          }
+        }
+      }
     },
     "Unblock Work" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desbloquear trabajo"
+          }
+        }
+      }
     },
     "Updated" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Actualizada"
+          }
+        }
+      }
     },
     "Use Suggestion" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usar sugerencia"
+          }
+        }
+      }
     },
     "Use Text" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usar texto"
+          }
+        }
+      }
     },
     "Use the board to choose deliberately, the dashboard to protect flow, and the Done column to keep momentum real." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usa el tablero para elegir con intención, el panel para proteger el flujo y la columna Terminado para mantener el impulso real."
+          }
+        }
+      }
     },
     "Use the dashboard to rebalance flow" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usa el panel para reequilibrar el flujo"
+          }
+        }
+      }
     },
     "Use this when work cannot move forward yet. Blocked tasks should become visible quickly." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usa esto cuando el trabajo aún no pueda avanzar. Las tareas bloqueadas deberían hacerse visibles rápido."
+          }
+        }
+      }
     },
     "Use Transcript" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usar transcripción"
+          }
+        }
+      }
     },
     "Uses the recognized text to create a task draft." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usa el texto reconocido para crear un borrador de tarea."
+          }
+        }
+      }
     },
     "Using local storage on this device" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usando almacenamiento local en este dispositivo"
+          }
+        }
+      }
     },
     "Visible progress and a real Done state turn completion into something you can see, not just something you intend." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El progreso visible y un estado Terminado real convierten la finalización en algo que puedes ver, no solo en algo que pretendes hacer."
+          }
+        }
+      }
     },
     "Visual board" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tablero visual"
+          }
+        }
+      }
     },
     "Visualize" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visualizar"
+          }
+        }
+      }
     },
     "Visualize work" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visualizar el trabajo"
+          }
+        }
+      }
     },
     "Visualize your work" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visualiza tu trabajo"
+          }
+        }
+      }
     },
     "Voice captured. Apple Intelligence is unavailable, so the transcript was added for manual review." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voz capturada. Apple Intelligence no está disponible, así que la transcripción se añadió para revisarla manualmente."
+          }
+        }
+      }
     },
     "Voice captured. Draft generated from your dictation." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voz capturada. Borrador generado a partir de tu dictado."
+          }
+        }
+      }
     },
     "Voice captured. Review the transcript or generate a draft." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voz capturada. Revisa la transcripción o genera un borrador."
+          }
+        }
+      }
     },
     "Voice dictation is unavailable right now. Try again in a moment." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El dictado de voz no está disponible ahora mismo. Inténtalo de nuevo en un momento."
+          }
+        }
+      }
     },
     "waiting" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "en espera"
+          }
+        }
+      }
     },
     "Waiting for a week" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esperando desde hace una semana"
+          }
+        }
+      }
     },
     "Waiting for days" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esperando desde hace días"
+          }
+        }
+      }
     },
     "Waiting work should be seen clearly, not silently mixed into active focus." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El trabajo en espera debe verse con claridad, no mezclarse en silencio con el foco activo."
+          }
+        }
+      }
     },
     "What does done look like?" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Cómo se ve terminado?"
+          }
+        }
+      }
     },
     "What needs to be done?" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Qué hay que hacer?"
+          }
+        }
+      }
     },
     "What The User Gains" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qué gana la persona usuaria"
+          }
+        }
+      }
     },
     "When your active lane is full, the dashboard pushes you back toward finishing. The app encourages pull, not overload." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cuando tu carril activo está lleno, el panel te empuja a volver a terminar. La app fomenta traer trabajo, no sobrecargarte."
+          }
+        }
+      }
     },
     "When your lane is full, the app pushes you back toward finishing before pulling more work." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cuando tu carril está lleno, la app te empuja a terminar antes de traer más trabajo."
+          }
+        }
+      }
     },
     "WIP Coach" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coach WIP"
+          }
+        }
+      }
     },
     "WIP Coach AI copy is unavailable right now." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El texto con IA del Coach WIP no está disponible ahora mismo."
+          }
+        }
+      }
     },
     "WIP full" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WIP lleno"
+          }
+        }
+      }
     },
     "WIP Limit" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Límite WIP"
+          }
+        }
+      }
     },
     "WIP Limit Hits" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Veces que se alcanzó el límite WIP"
+          }
+        }
+      }
     },
     "WIP limit reached" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Límite WIP alcanzado"
+          }
+        }
+      }
     },
     "WIP Limit Reached" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Límite WIP alcanzado"
+          }
+        }
+      }
     },
     "WIP pressure" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Presión WIP"
+          }
+        }
+      }
     },
     "WIP Pressure" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Presión WIP"
+          }
+        }
+      }
     },
     "Work from the board" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trabaja desde el tablero"
+          }
+        }
+      }
     },
     "Work in progress pressure. %@ %lld of %lld tasks active. %lld slots left. %@. %@" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Presión de trabajo en curso. %@ %lld de %lld tareas activas. Quedan %lld huecos. %@. %@"
+          }
+        }
+      }
     },
     "Work in progress review. %lld of %lld tasks active. %lld slots left. %lld blocked tasks. %lld ready tasks." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Revisión del trabajo en curso. %lld de %lld tareas activas. Quedan %lld huecos. %lld tareas bloqueadas. %lld tareas listas."
+          }
+        }
+      }
     },
     "Workflow Policy" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Política de flujo de trabajo"
+          }
+        }
+      }
     },
     "You are turning work into done consistently. Protect that rhythm by keeping WIP tight." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estás convirtiendo trabajo en terminado de forma constante. Protege ese ritmo manteniendo el WIP ajustado."
+          }
+        }
+      }
     },
     "You can revisit the manifesto anytime from Settings." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Puedes volver al manifiesto cuando quieras desde Ajustes."
+          }
+        }
+      }
     },
     "You can safely pull one more task, but keep active work tight so current tasks can reach done." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Puedes traer una tarea más con seguridad, pero mantén ajustado el trabajo activo para que las tareas actuales puedan terminarse."
+          }
+        }
+      }
     },
     "You're at capacity." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estás al límite de capacidad."
+          }
+        }
+      }
     },
     "You're at peak capacity! Finishing '%@' will free up space." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Estás a máxima capacidad! Terminar '%@' liberará espacio."
+          }
+        }
+      }
     },
     "You're close to your WIP limit." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estás cerca de tu límite WIP."
+          }
+        }
+      }
     },
     "Your active lane is full. Review In Progress work before starting from To Do." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu carril activo está lleno. Revisa el trabajo En curso antes de empezar algo de Por hacer."
+          }
+        }
+      }
     },
     "Your active work is within capacity. Pull carefully or finish a current task first." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu trabajo activo está dentro de la capacidad. Trae trabajo con cuidado o termina primero una tarea actual."
+          }
+        }
+      }
     },
     "Your board is clear" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu tablero está despejado"
+          }
+        }
+      }
     },
     "Your flow is balanced." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu flujo está equilibrado."
+          }
+        }
+      }
     },
     "Your flow still has room." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu flujo aún tiene margen."
+          }
+        }
+      }
     },
     "YOUR PROGRESS" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TU PROGRESO"
+          }
+        }
+      }
     },
     "Your progress. %@. %lld percent complete. %@ %lld to do, %lld in progress, %lld done." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu progreso. %@. %lld por ciento completado. %@ %lld por hacer, %lld en curso, %lld terminadas."
+          }
+        }
+      }
     },
     "Your progress. No tasks yet. Add your first task to start tracking progress." : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu progreso. Aún no hay tareas. Añade tu primera tarea para empezar a seguir el progreso."
+          }
+        }
+      }
     },
     "Your work is visible" : {
-
+      "localizations" : {
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu trabajo es visible"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"
