@@ -46,6 +46,12 @@
             "state": "translated",
             "value": "KanbanApp"
           }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KanbanApp"
+          }
         }
       }
     },
@@ -92,6 +98,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Use a câmera para escanear texto e transformá-lo em um rascunho de tarefa."
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KanbanApp에서 사진을 가져오거나 텍스트를 스캔해 작업 초안을 만들 수 있도록 카메라 접근 권한이 필요합니다."
           }
         }
       }
@@ -140,6 +152,12 @@
             "state": "translated",
             "value": "Use o microfone para ditar uma tarefa e transformá-la em um rascunho de tarefa."
           }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KanbanApp에서 음성으로 작업을 캡처할 수 있도록 마이크 접근 권한이 필요합니다."
+          }
         }
       }
     },
@@ -186,6 +204,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Use o reconhecimento de fala para transcrever tarefas ditadas."
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KanbanApp에서 음성 캡처를 작업 텍스트로 변환할 수 있도록 음성 인식 권한이 필요합니다."
           }
         }
       }
