@@ -52,6 +52,12 @@
             "state": "translated",
             "value": "KanbanApp"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KanbanApp"
+          }
         }
       }
     },
@@ -104,6 +110,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "KanbanApp에서 사진을 가져오거나 텍스트를 스캔해 작업 초안을 만들 수 있도록 카메라 접근 권한이 필요합니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KanbanApp a besoin d’accéder à la caméra pour importer des photos ou scanner du texte afin de créer des brouillons de tâches."
           }
         }
       }
@@ -158,6 +170,12 @@
             "state": "translated",
             "value": "KanbanApp에서 음성으로 작업을 캡처할 수 있도록 마이크 접근 권한이 필요합니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KanbanApp a besoin d’accéder au microphone pour capturer des tâches à la voix."
+          }
         }
       }
     },
@@ -210,6 +228,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "KanbanApp에서 음성 캡처를 작업 텍스트로 변환할 수 있도록 음성 인식 권한이 필요합니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KanbanApp a besoin de la reconnaissance vocale pour convertir vos captures vocales en texte de tâche."
           }
         }
       }

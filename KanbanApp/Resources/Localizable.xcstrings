@@ -46,6 +46,12 @@
             "state": "translated",
             "value": "“%@” 작업이 한동안 진행 중입니다. 새 작업을 가져오기 전에 검토해 보세요."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” est en cours depuis un moment. Relisez-la avant de prendre plus de travail."
+          }
         }
       }
     },
@@ -92,6 +98,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "“%@” 작업이 진행 중 상태에서 오래되고 있습니다. 짧게 검토하면 보드 흐름을 유지할 수 있어요."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” commence à vieillir en cours. Une vérification rapide peut garder le tableau en mouvement."
           }
         }
       }
@@ -140,6 +152,12 @@
             "state": "translated",
             "value": "“%@”에는 결정이 필요할 수 있습니다. %lld개의 활성 %@도 오래되고 있습니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” nécessite peut-être une décision. %lld autres %@ actifs vieillissent."
+          }
         }
       }
     },
@@ -182,6 +200,12 @@
           }
         },
         "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ %@"
+          }
+        },
+        "fr-FR": {
           "stringUnit": {
             "state": "translated",
             "value": "%@ %@"
@@ -232,6 +256,12 @@
             "state": "translated",
             "value": "%@ 열, 작업 %lld개"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Colonne %@, %lld tâches"
+          }
         }
       }
     },
@@ -277,6 +307,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@ 중 %@ %@ 완료"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ sur %@ %@ terminés"
           }
         }
       }
@@ -324,6 +360,12 @@
             "state": "translated",
             "value": "%@ 우선순위"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Priorité %@"
+          }
         }
       }
     },
@@ -366,6 +408,12 @@
           }
         },
         "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@, %lld %@"
+          }
+        },
+        "fr-FR": {
           "stringUnit": {
             "state": "translated",
             "value": "%@, %lld %@"
@@ -416,6 +464,12 @@
             "state": "translated",
             "value": "%@, %@ 전에 생성됨"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@, créée il y a %@"
+          }
         }
       }
     },
@@ -462,6 +516,12 @@
             "state": "translated",
             "value": "%@, %@ 동안 진행 중"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@, en cours depuis %@"
+          }
         }
       }
     },
@@ -504,6 +564,12 @@
           }
         },
         "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@. %@"
+          }
+        },
+        "fr-FR": {
           "stringUnit": {
             "state": "translated",
             "value": "%@. %@"
@@ -554,6 +620,12 @@
             "state": "translated",
             "value": "%lld"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld"
+          }
         }
       }
     },
@@ -596,6 +668,12 @@
           }
         },
         "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld %@"
+          }
+        },
+        "fr-FR": {
           "stringUnit": {
             "state": "translated",
             "value": "%lld %@"
@@ -647,6 +725,12 @@
             "state": "translated",
             "value": "%lld개의 %@이(가) 지연 중일 수 있습니다"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld %@ sont peut-être bloquées"
+          }
         }
       }
     },
@@ -693,6 +777,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld개의 활성 %@이(가) 오래되고 있습니다"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld %@ actifs vieillissent"
           }
         }
       }
@@ -741,6 +831,12 @@
             "state": "translated",
             "value": "%lld일"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld j"
+          }
         }
       }
     },
@@ -787,6 +883,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "상태에서 %lld일"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld j dans le statut"
           }
         }
       }
@@ -835,6 +937,12 @@
             "state": "translated",
             "value": "%lld시간"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld h"
+          }
         }
       }
     },
@@ -881,6 +989,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "상태에서 %lld시간"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld h dans le statut"
           }
         }
       }
@@ -929,6 +1043,12 @@
             "state": "translated",
             "value": "%lld분"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld min"
+          }
         }
       }
     },
@@ -976,6 +1096,12 @@
             "state": "translated",
             "value": "%lld분 전"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "il y a %lld min"
+          }
         }
       }
     },
@@ -1018,6 +1144,12 @@
           }
         },
         "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3 / 3"
+          }
+        },
+        "fr-FR": {
           "stringUnit": {
             "state": "translated",
             "value": "3 / 3"
@@ -1068,6 +1200,12 @@
             "state": "translated",
             "value": "활성 작업을 작게 유지할수록 집중 시스템이 더 잘 작동합니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un système concentré fonctionne mieux quand vous limitez le travail actif."
+          }
         }
       }
     },
@@ -1113,6 +1251,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "활성 작업을 2~3개로 제한하면 보통 집중도, 품질, 완료율이 좋아집니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Une limite de 2 ou 3 tâches actives améliore généralement la concentration, la qualité et le taux d’achèvement."
           }
         }
       }
@@ -1160,6 +1304,12 @@
             "state": "translated",
             "value": "진행 중 열을 제한하면 너무 많은 작업에 힘을 흩뜨리지 않고 현재 작업에 머물기 쉬워집니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Une voie En cours limitée aide à rester sur le travail actuel au lieu de disperser l’effort entre trop de tâches."
+          }
         }
       }
     },
@@ -1205,6 +1355,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "지금 실제로 작업 중일 때만 작업을 진행 중에 둡니다. 막혔거나 대기 중인 작업은 조용히 섞어 두지 말고 보이게 해야 합니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Une tâche appartient à En cours uniquement quand vous travaillez activement dessus maintenant. Le travail bloqué ou en attente doit rester visible, pas se mélanger silencieusement."
           }
         }
       }
@@ -1252,6 +1408,12 @@
             "state": "translated",
             "value": "작업은 거의 끝난 느낌이 아니라 완료 기준을 충족했을 때 완료됩니다. 완료 정의 필드로 완료 조건을 명확히 하세요."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Une tâche est terminée quand son critère de fin est satisfait, pas seulement quand elle semble presque finie. Utilisez le champ Définition de terminé pour rendre l’achèvement explicite."
+          }
         }
       }
     },
@@ -1297,6 +1459,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "실행 가능한 대시보드"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tableau de bord actionnable"
           }
         }
       }
@@ -1344,6 +1512,12 @@
             "state": "translated",
             "value": "활성"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "actif"
+          }
         }
       }
     },
@@ -1389,6 +1563,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "활성"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Actif"
           }
         }
       }
@@ -1436,6 +1616,12 @@
             "state": "translated",
             "value": "활성 경과 시간"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Âge actif"
+          }
         }
       }
     },
@@ -1481,6 +1667,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "활성 작업 알림"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rappels de tâches actives"
           }
         }
       }
@@ -1528,6 +1720,12 @@
             "state": "translated",
             "value": "활성 작업"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Travail actif"
+          }
         }
       }
     },
@@ -1573,6 +1771,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "대시보드를 채우려면 작업을 추가하세요"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajoutez une tâche pour remplir votre tableau de bord"
           }
         }
       }
@@ -1620,6 +1824,12 @@
             "state": "translated",
             "value": "작업에 필요한 맥락을 추가하세요"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajoutez du contexte pour la tâche"
+          }
         }
       }
     },
@@ -1665,6 +1875,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "작업 추가"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajouter une tâche"
           }
         }
       }
@@ -1712,6 +1928,12 @@
             "state": "translated",
             "value": "진행 상황을 추적하려면 첫 작업을 추가하세요."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajoutez votre première tâche pour commencer à suivre votre progression."
+          }
         }
       }
     },
@@ -1757,6 +1979,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@ 상태에 추가 중"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajout au statut %@"
           }
         }
       }
@@ -1804,6 +2032,12 @@
             "state": "translated",
             "value": "오래됨"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vieillissant"
+          }
         }
       }
     },
@@ -1849,6 +2083,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "오래됨 기준"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vieillissement après"
           }
         }
       }
@@ -1896,6 +2136,12 @@
             "state": "translated",
             "value": "오래된 작업"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tâches vieillissantes"
+          }
         }
       }
     },
@@ -1941,6 +2187,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "모든 작업"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toutes les tâches"
           }
         }
       }
@@ -1988,6 +2240,12 @@
             "state": "translated",
             "value": "모든 작업 완료"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toutes les tâches sont terminées"
+          }
         }
       }
     },
@@ -2033,6 +2291,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "거의 다 왔어요 — 남은 작업을 마무리하세요."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vous y êtes presque — terminez les tâches restantes."
           }
         }
       }
@@ -2080,6 +2344,12 @@
             "state": "translated",
             "value": "Apple Intelligence를 준비 중입니다. 잠시 후 다시 시도하세요."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Intelligence se prépare. Réessayez dans un instant."
+          }
         }
       }
     },
@@ -2125,6 +2395,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "이 기기에서는 Apple Intelligence가 지원되지 않습니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Intelligence n’est pas pris en charge sur cet appareil."
           }
         }
       }
@@ -2172,6 +2448,12 @@
             "state": "translated",
             "value": "Apple Intelligence를 사용할 수 없으므로 여기에 텍스트를 붙여 넣고 작업에 직접 추가하세요."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Intelligence est indisponible. Collez donc du texte ici et ajoutez-le manuellement à la tâche."
+          }
         }
       }
     },
@@ -2217,6 +2499,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "보관"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Archiver"
           }
         }
       }
@@ -2264,6 +2552,12 @@
             "state": "translated",
             "value": "완료 작업 보관"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Archiver la tâche terminée"
+          }
         }
       }
     },
@@ -2309,6 +2603,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "보관됨"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Archivée"
           }
         }
       }
@@ -2356,6 +2656,12 @@
             "state": "translated",
             "value": "%@ 전에 보관됨"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Archivée il y a %@"
+          }
         }
       }
     },
@@ -2401,6 +2707,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld개 보관됨"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld archivées"
           }
         }
       }
@@ -2448,6 +2760,12 @@
             "state": "translated",
             "value": "보관된 완료 작업은 활성 보드에서는 사라지지만 완료 기록에는 계속 포함됩니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les tâches terminées archivées quittent le tableau actif, mais comptent toujours dans l’historique d’achèvement."
+          }
         }
       }
     },
@@ -2493,6 +2811,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "완료까지 평균 일수"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jours moyens pour terminer"
           }
         }
       }
@@ -2540,6 +2864,12 @@
             "state": "translated",
             "value": "다음으로 가져올 최적의 작업"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MEILLEURE TÂCHE À PRENDRE ENSUITE"
+          }
         }
       }
     },
@@ -2585,6 +2915,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "막힘"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bloquée"
           }
         }
       }
@@ -2632,6 +2968,12 @@
             "state": "translated",
             "value": "막힘 / 대기"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bloquée / En attente"
+          }
         }
       }
     },
@@ -2677,6 +3019,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "막힌 활성 작업"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Travail actif bloqué"
           }
         }
       }
@@ -2724,6 +3072,12 @@
             "state": "translated",
             "value": "새 작업을 더 가져오기 전에 막힌 작업을 먼저 살펴봐야 합니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les tâches bloquées demandent de l’attention avant de prendre plus de travail."
+          }
         }
       }
     },
@@ -2769,6 +3123,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "막힌 작업"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Travail bloqué"
           }
         }
       }
@@ -2816,6 +3176,12 @@
             "state": "translated",
             "value": "막힌 작업이 흐름을 늦추고 있습니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le travail bloqué ralentit votre flux."
+          }
         }
       }
     },
@@ -2861,6 +3227,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "막힌 작업을 계속 보이게 유지"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le travail bloqué reste visible"
           }
         }
       }
@@ -2908,6 +3280,12 @@
             "state": "translated",
             "value": "보드 완료 — 모든 작업이 끝났습니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tableau terminé — toutes les tâches sont faites."
+          }
         }
       }
     },
@@ -2953,6 +3331,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "먼저 나누기"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DÉCOUPER D’ABORD"
           }
         }
       }
@@ -3000,6 +3384,12 @@
             "state": "translated",
             "value": "작업 나누기"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Découper la tâche"
+          }
         }
       }
     },
@@ -3045,6 +3435,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "식료품 사기"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faire les courses"
           }
         }
       }
@@ -3092,6 +3488,12 @@
             "state": "translated",
             "value": "텍스트를 스캔하려면 카메라 접근 권한이 필요합니다. 설정에서 허용하세요."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L’accès à la caméra est nécessaire pour scanner du texte. Activez-le dans Réglages."
+          }
         }
       }
     },
@@ -3137,6 +3539,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "지금은 카메라 접근을 사용할 수 없습니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L’accès à la caméra est indisponible pour le moment."
           }
         }
       }
@@ -3184,6 +3592,12 @@
             "state": "translated",
             "value": "취소"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Annuler"
+          }
         }
       }
     },
@@ -3229,6 +3643,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "캡처"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Capturer"
           }
         }
       }
@@ -3276,6 +3696,12 @@
             "state": "translated",
             "value": "다음 작업 선택"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choisir la prochaine tâche"
+          }
         }
       }
     },
@@ -3321,6 +3747,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "지우기"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Effacer"
           }
         }
       }
@@ -3368,6 +3800,12 @@
             "state": "translated",
             "value": "완료 기준 지우기"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Effacer le critère de fin"
+          }
         }
       }
     },
@@ -3413,6 +3851,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "완료 기준 지우기"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Effacer les critères de fin"
           }
         }
       }
@@ -3460,6 +3904,12 @@
             "state": "translated",
             "value": "더 명확한 결정"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Décisions plus claires"
+          }
         }
       }
     },
@@ -3505,6 +3955,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "닫기"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fermer"
           }
         }
       }
@@ -3552,6 +4008,12 @@
             "state": "translated",
             "value": "작업 하나를 끝내면 집중 슬롯이 비고, 완료 열이 단단해지며, 진척이 다시 실제로 느껴집니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terminez une tâche et vous libérez un créneau de concentration, renforcez la colonne Terminé et rendez la progression à nouveau tangible."
+          }
         }
       }
     },
@@ -3597,6 +4059,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "닫힘"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fermée"
           }
         }
       }
@@ -3644,6 +4112,12 @@
             "state": "translated",
             "value": "%@ 전에 닫힘"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fermée il y a %@"
+          }
         }
       }
     },
@@ -3689,6 +4163,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "완료"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terminer"
           }
         }
       }
@@ -3736,6 +4216,12 @@
             "state": "translated",
             "value": "완료됨"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "terminées"
+          }
         }
       }
     },
@@ -3781,6 +4267,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "완료됨"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terminée"
           }
         }
       }
@@ -3828,6 +4320,12 @@
             "state": "translated",
             "value": "완료는 숨겨지지 않습니다. 대시보드와 보드가 완료된 작업을 보여 주어 진척이 구체적이고 동기부여가 되게 합니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L’achèvement n’est pas caché. Le tableau de bord et le tableau rendent le travail terminé visible, pour une progression concrète et motivante."
+          }
         }
       }
     },
@@ -3873,6 +4371,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "계속"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuer"
           }
         }
       }
@@ -3920,6 +4424,12 @@
             "state": "translated",
             "value": "작업 생성"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Créer la tâche"
+          }
         }
       }
     },
@@ -3965,6 +4475,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "생성됨"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Créée"
           }
         }
       }
@@ -4012,6 +4528,12 @@
             "state": "translated",
             "value": "현재 %lld"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Actuel %lld"
+          }
         }
       }
     },
@@ -4057,6 +4579,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "대시보드"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tableau de bord"
           }
         }
       }
@@ -4104,6 +4632,12 @@
             "state": "translated",
             "value": "일"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "jour"
+          }
         }
       }
     },
@@ -4149,6 +4683,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "일"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "jours"
           }
         }
       }
@@ -4196,6 +4736,12 @@
             "state": "translated",
             "value": "완료 정의"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Définition de terminé"
+          }
         }
       }
     },
@@ -4241,6 +4787,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "삭제"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Supprimer"
           }
         }
       }
@@ -4288,6 +4840,12 @@
             "state": "translated",
             "value": "작업 삭제"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Supprimer la tâche"
+          }
         }
       }
     },
@@ -4333,6 +4891,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "작업 하나를 자연스럽게 설명하세요. 저장하기 전에 생성된 작업을 수정할 수 있습니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Décrivez naturellement une tâche. Vous pouvez modifier la tâche générée avant de l’enregistrer."
           }
         }
       }
@@ -4380,6 +4944,12 @@
             "state": "translated",
             "value": "설명"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Description"
+          }
         }
       }
     },
@@ -4426,6 +4996,12 @@
             "state": "translated",
             "value": "요약 알림 시간"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heure du résumé"
+          }
         }
       }
     },
@@ -4471,6 +5047,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "캡처한 텍스트를 사용하지 않고 스캐너를 닫습니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ferme le scanner sans utiliser le texte capturé."
           }
         }
       }
@@ -4519,6 +5101,12 @@
             "state": "translated",
             "value": "완료"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terminé"
+          }
         }
       }
     },
@@ -4564,6 +5152,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "완료 필터"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filtre Terminé"
           }
         }
       }
@@ -4611,6 +5205,12 @@
             "state": "translated",
             "value": "완료는 기준 충족을 의미"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terminé signifie critères remplis"
+          }
         }
       }
     },
@@ -4656,6 +5256,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "완료 모멘텀"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Élan des tâches terminées"
           }
         }
       }
@@ -4703,6 +5309,12 @@
             "state": "translated",
             "value": "완료가 계속 보임"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terminé reste visible"
+          }
         }
       }
     },
@@ -4748,6 +5360,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "완료 작업 필터"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filtre des tâches terminées"
           }
         }
       }
@@ -4795,6 +5413,12 @@
             "state": "translated",
             "value": "이번 주 완료"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terminé cette semaine"
+          }
         }
       }
     },
@@ -4840,6 +5464,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "두 번 탭하면 세부 정보가 열립니다. 쓸어넘기거나 길게 눌러 작업을 실행하세요. 카드를 끌어 순서를 바꿀 수 있습니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Touchez deux fois pour ouvrir les détails. Balayez ou appuyez longuement pour les actions. Faites glisser la carte pour réordonner."
           }
         }
       }
@@ -4887,6 +5517,12 @@
             "state": "translated",
             "value": "초안이 생성되었습니다. 작업을 만들기 전에 검토하고 조정하세요."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brouillon généré. Relisez et ajustez avant de créer la tâche."
+          }
         }
       }
     },
@@ -4932,6 +5568,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "활성 작업 알림 켜기"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activer les rappels de tâches actives"
           }
         }
       }
@@ -4979,6 +5621,12 @@
             "state": "translated",
             "value": "흐름 최적화 켜기"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activer l’optimisation du flux"
+          }
         }
       }
     },
@@ -5024,6 +5672,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "충분한 맥락"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contexte suffisant"
           }
         }
       }
@@ -5071,6 +5725,12 @@
             "state": "translated",
             "value": "완료된 작업 하나하나가 주의를 비우고 다음 작업을 가져올 공간을 만듭니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chaque tâche terminée libère de l’attention et ouvre de la place pour la prochaine prise."
+          }
         }
       }
     },
@@ -5116,6 +5776,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "이미지에서 텍스트 추출 중…"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Extraction du texte de l’image…"
           }
         }
       }
@@ -5163,6 +5829,12 @@
             "state": "translated",
             "value": "제목, 설명 또는 완료 정의로 작업을 찾으세요."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trouvez des tâches par titre, description ou définition de terminé."
+          }
         }
       }
     },
@@ -5208,6 +5880,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "마무리"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finir"
           }
         }
       }
@@ -5255,6 +5933,12 @@
             "state": "translated",
             "value": "다른 작업을 가져오기 전에 하나를 끝내세요."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terminez-en une avant d’en prendre une autre."
+          }
         }
       }
     },
@@ -5300,6 +5984,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "다른 작업을 가져오기 전에 작업 하나를 끝내세요."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terminez une tâche avant d’en prendre une autre."
           }
         }
       }
@@ -5347,6 +6037,12 @@
             "state": "translated",
             "value": "새 작업을 가져오기 전에 활성 작업 하나를 끝내거나 앞으로 진행시키세요."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terminez ou faites avancer une tâche active avant de prendre du nouveau travail."
+          }
         }
       }
     },
@@ -5392,6 +6088,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "완료된 작업도 시스템의 일부입니다. 작업이 닫히는 모습을 보면 추진력이 생기고 스트레스가 줄어듭니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le travail terminé fait partie du système. Voir les tâches se fermer donne de l’élan et réduit le stress."
           }
         }
       }
@@ -5439,6 +6141,12 @@
             "state": "translated",
             "value": "흐름 최적화"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Optimisation du flux"
+          }
         }
       }
     },
@@ -5484,6 +6192,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "흐름 최적화는 집중을 보호합니다"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L’optimisation du flux protège la concentration"
           }
         }
       }
@@ -5531,6 +6245,12 @@
             "state": "translated",
             "value": "흐름 검토"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revue du flux"
+          }
         }
       }
     },
@@ -5576,6 +6296,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "흐름 상태"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "État du flux"
           }
         }
       }
@@ -5623,6 +6349,12 @@
             "state": "translated",
             "value": "흐름 추세"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tendances du flux"
+          }
         }
       }
     },
@@ -5668,6 +6400,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "현재 작업에 집중"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se concentrer sur le travail actuel"
           }
         }
       }
@@ -5715,6 +6453,12 @@
             "state": "translated",
             "value": "작업 집중"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tâche de focus"
+          }
         }
       }
     },
@@ -5760,6 +6504,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "이 작업에 집중"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SE CONCENTRER SUR CETTE TÂCHE"
           }
         }
       }
@@ -5807,6 +6557,12 @@
             "state": "translated",
             "value": "새로움"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fraîche"
+          }
         }
       }
     },
@@ -5852,6 +6608,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "진행 중에서 완료로"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De En cours à Terminé"
           }
         }
       }
@@ -5899,6 +6661,12 @@
             "state": "translated",
             "value": "이 작업을 다시 움직이게 할 구체적인 다음 단계를 하나 생성하세요."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Générez une prochaine étape concrète pour relancer cette tâche."
+          }
         }
       }
     },
@@ -5945,6 +6713,12 @@
             "state": "translated",
             "value": "생성 중…"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Génération…"
+          }
         }
       }
     },
@@ -5990,6 +6764,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "좋은 시작입니다 — 작업을 계속 완료 쪽으로 움직이세요."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bon début — continuez à faire avancer le travail vers Terminé."
           }
         }
       }
@@ -6038,6 +6818,12 @@
             "state": "translated",
             "value": "높음"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Élevée"
+          }
         }
       }
     },
@@ -6083,6 +6869,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "높은 우선순위"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Priorité élevée"
           }
         }
       }
@@ -6130,6 +6922,12 @@
             "state": "translated",
             "value": "이 앱이 지원하는 방식"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comment cette app le soutient"
+          }
         }
       }
     },
@@ -6175,6 +6973,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "이 앱 사용 방법"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comment utiliser cette app"
           }
         }
       }
@@ -6222,6 +7026,12 @@
             "state": "translated",
             "value": "iCloud 동기화 켜짐"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La synchronisation iCloud est activée"
+          }
         }
       }
     },
@@ -6267,6 +7077,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "사진 가져오기"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Importer une photo"
           }
         }
       }
@@ -6315,6 +7131,12 @@
             "state": "translated",
             "value": "진행 중"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En cours"
+          }
         }
       }
     },
@@ -6360,6 +7182,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "진행 중은 실제 주의가 향한다는 뜻"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En cours signifie attention active"
           }
         }
       }
@@ -6407,6 +7235,12 @@
             "state": "translated",
             "value": "이 앱에서는 활성 열에 여유가 있을 때만 새 작업을 진행 중으로 옮기는 것이 좋습니다. 지금까지 WIP 제한에 걸린 횟수: %lld회."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dans cette app, une nouvelle tâche ne devrait passer en En cours que lorsque la voie active a de la capacité. Limites WIP atteintes jusqu’ici : %lld."
+          }
         }
       }
     },
@@ -6452,6 +7286,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "정보"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Infos"
           }
         }
       }
@@ -6499,6 +7339,12 @@
             "state": "translated",
             "value": "칸반"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kanban"
+          }
         }
       }
     },
@@ -6544,6 +7390,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "KanbanApp은 작업을 위한 명확한 하나의 시스템을 제공합니다. 머릿속에서 모든 것을 떠안지 않고 일을 앞으로 움직일 수 있어요."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KanbanApp vous donne un système clair pour vos tâches, afin d’arrêter de tout jongler dans votre tête et de commencer à faire avancer le travail."
           }
         }
       }
@@ -6591,6 +7443,12 @@
             "state": "translated",
             "value": "간결하게 유지하세요. 짧은 완료 기준은 끝없는 다듬기 대신 마무리를 돕습니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restez concis. Un court critère d’achèvement aide à terminer au lieu de peaufiner sans fin."
+          }
         }
       }
     },
@@ -6636,6 +7494,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "짧게 유지하세요. 간결한 완료 기준은 작업을 닫기 쉽게 만듭니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restez bref. Un critère de fin compact facilite la clôture de la tâche."
           }
         }
       }
@@ -6683,6 +7547,12 @@
             "state": "translated",
             "value": "작업을 세 가지 핵심 상태로 계속 움직이세요. 보드는 단순한 작업 목록이 아니라 흐름을 보여 주는 핵심 그림입니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faites avancer les tâches à travers les trois états clés. Le tableau est l’image principale de votre flux, pas seulement une liste de tâches."
+          }
         }
       }
     },
@@ -6728,6 +7598,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "큰 작업"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grande tâche"
           }
         }
       }
@@ -6775,6 +7651,12 @@
             "state": "translated",
             "value": "완료가 동기가 되게 하세요"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Laissez Terminé vous motiver"
+          }
         }
       }
     },
@@ -6820,6 +7702,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "제한 도달"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Limite atteinte"
           }
         }
       }
@@ -6867,6 +7755,12 @@
             "state": "translated",
             "value": "WIP 제한"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Limiter le WIP"
+          }
         }
       }
     },
@@ -6912,6 +7806,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "진행 중 작업을 제한해 컨텍스트 전환을 줄이세요."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Limitez le travail en cours pour réduire les changements de contexte."
           }
         }
       }
@@ -6959,6 +7859,12 @@
             "state": "translated",
             "value": "듣는 중..."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Écoute..."
+          }
         }
       }
     },
@@ -7004,6 +7910,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "이 기기에서는 라이브 텍스트 스캔이 지원되지 않습니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le scan de texte en direct n’est pas pris en charge sur cet appareil."
           }
         }
       }
@@ -7052,6 +7964,12 @@
             "state": "translated",
             "value": "낮음"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faible"
+          }
         }
       }
     },
@@ -7097,6 +8015,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "낮은 우선순위"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Priorité faible"
           }
         }
       }
@@ -7144,6 +8068,12 @@
             "state": "translated",
             "value": "인지 부담 낮추기"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Charge mentale réduite"
+          }
         }
       }
     },
@@ -7189,6 +8119,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "매니페스토"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Manifeste"
           }
         }
       }
@@ -7236,6 +8172,12 @@
             "state": "translated",
             "value": "활성으로 표시"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marquer comme active"
+          }
         }
       }
     },
@@ -7281,6 +8223,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "막힘 / 대기로 표시"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marquer comme bloquée / en attente"
           }
         }
       }
@@ -7328,6 +8276,12 @@
             "state": "translated",
             "value": "완료로 표시"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marquer comme terminée"
+          }
         }
       }
     },
@@ -7373,6 +8327,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "최대 활성 작업"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nombre maximal de tâches actives"
           }
         }
       }
@@ -7421,6 +8381,12 @@
             "state": "translated",
             "value": "보통"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Moyenne"
+          }
         }
       }
     },
@@ -7466,6 +8432,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "보통 우선순위"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Priorité moyenne"
           }
         }
       }
@@ -7513,6 +8485,12 @@
             "state": "translated",
             "value": "작업을 받아쓰려면 마이크 접근 권한이 필요합니다. 설정에서 허용하세요."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L’accès au microphone est nécessaire pour dicter des tâches. Activez-le dans Réglages."
+          }
         }
       }
     },
@@ -7558,6 +8536,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "보드 전체에 추진력이 쌓이고 있습니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L’élan se construit sur votre tableau."
           }
         }
       }
@@ -7605,6 +8589,12 @@
             "state": "translated",
             "value": "추진력이 보입니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L’élan est visible."
+          }
         }
       }
     },
@@ -7650,6 +8640,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "마무리할 더 큰 동기"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plus de motivation pour finir"
           }
         }
       }
@@ -7697,6 +8693,12 @@
             "state": "translated",
             "value": "여유가 생겼을 때만 작업을 진행 중으로 옮기세요. 완료가 다음 약속을 위한 공간을 만들게 하세요."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Déplacez une tâche vers En cours uniquement quand de la capacité se libère. Laissez l’achèvement créer de la place pour le prochain engagement."
+          }
         }
       }
     },
@@ -7742,6 +8744,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "진행 중으로 이동"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Déplacer vers En cours"
           }
         }
       }
@@ -7789,6 +8797,12 @@
             "state": "translated",
             "value": "할 일로 이동"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Déplacer vers À faire"
+          }
         }
       }
     },
@@ -7834,6 +8848,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "첫 작업을 완료로 옮겨 추진력을 만드세요."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Déplacez votre première tâche vers Terminé pour créer de l’élan."
           }
         }
       }
@@ -7881,6 +8901,12 @@
             "state": "translated",
             "value": "이 작업을 진행 중으로 옮깁니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Déplace cette tâche vers En cours."
+          }
         }
       }
     },
@@ -7926,6 +8952,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "진행 중 작업 완료 필요"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tâches en cours terminées requises"
           }
         }
       }
@@ -7973,6 +9005,12 @@
             "state": "translated",
             "value": "범위가 더 명확해야 함"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Portée à clarifier"
+          }
         }
       }
     },
@@ -8018,6 +9056,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "새 작업"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nouvelle tâche"
           }
         }
       }
@@ -8065,6 +9109,12 @@
             "state": "translated",
             "value": "다음 행동"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Action suivante"
+          }
         }
       }
     },
@@ -8110,6 +9160,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "지금은 다음 행동 제안을 사용할 수 없습니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La suggestion d’action suivante est indisponible pour le moment."
           }
         }
       }
@@ -8157,6 +9213,12 @@
             "state": "translated",
             "value": "다음 행동: %@"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Action suivante : %@"
+          }
         }
       }
     },
@@ -8202,6 +9264,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "조치 필요 없음"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AUCUNE ACTION REQUISE"
           }
         }
       }
@@ -8249,6 +9317,12 @@
             "state": "translated",
             "value": "지금은 활성 차단 요소가 없습니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucun blocage actif pour le moment."
+          }
         }
       }
     },
@@ -8294,6 +9368,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "진행 중인 활성 작업 없음"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucune tâche active en cours"
           }
         }
       }
@@ -8341,6 +9421,12 @@
             "state": "translated",
             "value": "활성 작업 없음"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucune tâche active"
+          }
         }
       }
     },
@@ -8386,6 +9472,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "일치하는 작업 없음"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucune tâche correspondante"
           }
         }
       }
@@ -8433,6 +9525,12 @@
             "state": "translated",
             "value": "해당 이미지에서 읽을 수 있는 텍스트를 찾지 못했습니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucun texte lisible n’a été trouvé dans cette image."
+          }
         }
       }
     },
@@ -8478,6 +9576,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "카메라 화면에서 읽을 수 있는 텍스트를 찾지 못했습니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucun texte lisible n’a été trouvé dans la vue caméra."
           }
         }
       }
@@ -8525,6 +9629,12 @@
             "state": "translated",
             "value": "대기 중인 준비된 작업 없음"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucune tâche prête en attente"
+          }
         }
       }
     },
@@ -8570,6 +9680,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "살펴볼 준비 작업 없음"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucun travail prêt ne demande d’attention"
           }
         }
       }
@@ -8617,6 +9733,12 @@
             "state": "translated",
             "value": "추천 작업이 없습니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucune tâche recommandée."
+          }
         }
       }
     },
@@ -8662,6 +9784,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "음성이 캡처되지 않았습니다. 다시 녹음해 보세요."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucune parole n’a été capturée. Essayez d’enregistrer à nouveau."
           }
         }
       }
@@ -8709,6 +9837,12 @@
             "state": "translated",
             "value": "지금은 지연된 작업이 없습니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucun travail bloqué pour le moment."
+          }
         }
       }
     },
@@ -8754,6 +9888,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "작업 없음"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucune tâche"
           }
         }
       }
@@ -8801,6 +9941,12 @@
             "state": "translated",
             "value": "아직 작업 없음"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pas encore de tâches"
+          }
         }
       }
     },
@@ -8846,6 +9992,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "대기 작업 없음"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucune tâche en attente"
           }
         }
       }
@@ -8893,6 +10045,12 @@
             "state": "translated",
             "value": "아직 완료된 항목 없음"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rien de terminé pour le moment"
+          }
         }
       }
     },
@@ -8939,6 +10097,12 @@
             "state": "translated",
             "value": "아직 흐트러지는 작업이 없습니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rien ne dérive encore."
+          }
         }
       }
     },
@@ -8984,6 +10148,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "알림이 켜지지 않았습니다. 설정에서 허용하면 활성 작업 알림을 받을 수 있습니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les notifications n’ont pas été activées. Vous pouvez les autoriser dans Réglages pour recevoir des rappels de tâches actives."
           }
         }
       }
@@ -9032,6 +10202,12 @@
             "state": "translated",
             "value": "지금"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "maintenant"
+          }
         }
       }
     },
@@ -9077,6 +10253,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "끔"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Désactivé"
           }
         }
       }
@@ -9124,6 +10306,12 @@
             "state": "translated",
             "value": "확인"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
         }
       }
     },
@@ -9169,6 +10357,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "가장 오래된 활성 작업"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tâche active la plus ancienne"
           }
         }
       }
@@ -9216,6 +10410,12 @@
             "state": "translated",
             "value": "켬"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activé"
+          }
         }
       }
     },
@@ -9261,6 +10461,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "집중 슬롯이 하나만 남았습니다"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Il ne reste qu’un créneau de concentration"
           }
         }
       }
@@ -9308,6 +10514,12 @@
             "state": "translated",
             "value": "막힌 작업 열기"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ouvrir la tâche bloquée"
+          }
         }
       }
     },
@@ -9353,6 +10565,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "상세 추천을 엽니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ouvre une recommandation détaillée."
           }
         }
       }
@@ -9400,6 +10618,12 @@
             "state": "translated",
             "value": "작업 세부 정보를 엽니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ouvre les détails de la tâche."
+          }
         }
       }
     },
@@ -9445,6 +10669,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "이 열의 작업을 엽니다"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ouvre les tâches dans cette voie"
           }
         }
       }
@@ -9492,6 +10722,12 @@
             "state": "translated",
             "value": "활성 작업 열을 엽니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ouvre la voie du travail actif."
+          }
         }
       }
     },
@@ -9537,6 +10773,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "업데이트할 수 있도록 막힌 작업을 엽니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ouvre la tâche bloquée afin que vous puissiez la mettre à jour."
           }
         }
       }
@@ -9584,6 +10826,12 @@
             "state": "translated",
             "value": "추천 활성 작업을 엽니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ouvre la tâche active recommandée."
+          }
         }
       }
     },
@@ -9629,6 +10877,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "WIP 제한을 %lld개 초과"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Limite WIP dépassée de %lld"
           }
         }
       }
@@ -9676,6 +10930,12 @@
             "state": "translated",
             "value": "메모나 정리되지 않은 생각을 붙여 넣으세요…"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Collez une note ou une pensée en vrac…"
+          }
         }
       }
     },
@@ -9721,6 +10981,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "메모 붙여넣기"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coller une note"
           }
         }
       }
@@ -9768,6 +11034,12 @@
             "state": "translated",
             "value": "개인 칸반"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kanban personnel"
+          }
         }
       }
     },
@@ -9813,6 +11085,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "실전 개인 칸반"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le Kanban personnel en pratique"
           }
         }
       }
@@ -9860,6 +11138,12 @@
             "state": "translated",
             "value": "개인 칸반 매니페스토"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Manifeste du Kanban personnel"
+          }
         }
       }
     },
@@ -9905,6 +11189,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "개인 칸반은 컨텍스트 전환을 줄이고 작업을 더 빨리 끝내기 위해 WIP 제한을 2~3개로 권장합니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le Kanban personnel recommande une limite WIP de 2 ou 3 pour réduire les changements de contexte et terminer les tâches plus vite."
           }
         }
       }
@@ -9952,6 +11242,12 @@
             "state": "translated",
             "value": "개인 칸반은 컨텍스트 전환을 줄이고 작업을 더 빨리 끝내기 위해 WIP 제한을 2~3개로 권장합니다. 진행 중 작업을 하나 더 추가하기 전에 활성 작업을 끝내거나 이동하세요."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le Kanban personnel recommande une limite WIP de 2 ou 3 pour réduire les changements de contexte et terminer les tâches plus vite. Terminez ou déplacez une tâche active avant d’ajouter une autre tâche En cours."
+          }
         }
       }
     },
@@ -9997,6 +11293,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "개인 칸반은 컨텍스트 전환을 줄이고 작업을 더 빨리 끝내기 위해 WIP 제한을 2~3개로 권장합니다. 다른 작업을 진행 중으로 옮기기 전에 활성 작업을 끝내거나 이동하세요."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le Kanban personnel recommande une limite WIP de 2 ou 3 pour réduire les changements de contexte et terminer les tâches plus vite. Terminez ou déplacez une tâche active avant de déplacer une autre tâche vers En cours."
           }
         }
       }
@@ -10044,6 +11346,12 @@
             "state": "translated",
             "value": "개인 칸반은 가져오기 전에 끝낼 때 가장 잘 작동합니다. 활성 열을 작고 잘 보이게 유지하세요."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le Kanban personnel fonctionne mieux quand vous terminez avant de prendre. Gardez votre voie active petite et visible."
+          }
         }
       }
     },
@@ -10089,6 +11397,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "사진을 가져왔습니다. Apple Intelligence를 사용할 수 없어 텍스트를 수동 검토용으로 추가했습니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Photo importée. Apple Intelligence est indisponible, donc le texte a été ajouté pour une relecture manuelle."
           }
         }
       }
@@ -10136,6 +11450,12 @@
             "state": "translated",
             "value": "사진을 가져왔습니다. 추출한 텍스트로 초안을 생성했습니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Photo importée. Brouillon généré à partir du texte extrait."
+          }
         }
       }
     },
@@ -10181,6 +11501,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "사진을 가져왔습니다. 추출한 텍스트를 검토하거나 초안을 생성하세요."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Photo importée. Relisez le texte extrait ou générez un brouillon."
           }
         }
       }
@@ -10228,6 +11554,12 @@
             "state": "translated",
             "value": "연습"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pratique"
+          }
         }
       }
     },
@@ -10273,6 +11605,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "압박은 적절한 순간에 나타납니다"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La pression apparaît au bon moment"
           }
         }
       }
@@ -10320,6 +11658,12 @@
             "state": "translated",
             "value": "우선순위"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Priorité"
+          }
         }
       }
     },
@@ -10365,6 +11709,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "우선순위 신호, WIP 안내, 보이는 작업 상태는 사용자가 다음에 무엇을 끝낼지 더 쉽게 고르도록 돕습니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les signaux de priorité, les conseils WIP et les états de tâche visibles aident l’utilisateur à choisir quoi finir ensuite avec moins de friction."
           }
         }
       }
@@ -10412,6 +11762,12 @@
             "state": "translated",
             "value": "주의를 보호하세요"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Protégez votre attention"
+          }
         }
       }
     },
@@ -10457,6 +11813,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "집중을 보호하세요"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Protégez votre concentration"
           }
         }
       }
@@ -10504,6 +11866,12 @@
             "state": "translated",
             "value": "과부하 대신 가져오기"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prendre au lieu de surcharger"
+          }
         }
       }
     },
@@ -10549,6 +11917,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "다음 작업이 작거나 긴급할 때만 가져오세요. 그렇지 않으면 활성 작업을 먼저 끝내세요."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prenez seulement si la prochaine tâche est petite ou urgente. Sinon, terminez d’abord le travail actif."
           }
         }
       }
@@ -10596,6 +11970,12 @@
             "state": "translated",
             "value": "여유가 있을 때만 가져오기"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prendre seulement quand il y a de la place"
+          }
         }
       }
     },
@@ -10641,6 +12021,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "여유가 있을 때만 가져오세요"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prenez seulement quand vous avez de la place"
           }
         }
       }
@@ -10688,6 +12074,12 @@
             "state": "translated",
             "value": "작업 가져오기"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prendre la tâche"
+          }
         }
       }
     },
@@ -10733,6 +12125,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "빠른 캡처"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Capture rapide"
           }
         }
       }
@@ -10780,6 +12178,12 @@
             "state": "translated",
             "value": "빠른 캡처 AI가 지금 초안을 생성하지 못했습니다. 텍스트를 검토하고 다시 시도하세요."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L’IA de Capture rapide n’a pas pu générer de brouillon maintenant. Relisez le texte et réessayez."
+          }
         }
       }
     },
@@ -10825,6 +12229,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "빠른 캡처 AI가 지금 초안을 생성하지 못했습니다. 메모를 줄인 뒤 다시 시도하세요."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L’IA de Capture rapide n’a pas pu générer de brouillon maintenant. Essayez de raccourcir la note puis réessayez."
           }
         }
       }
@@ -10872,6 +12282,12 @@
             "state": "translated",
             "value": "지금은 빠른 캡처 AI를 사용할 수 없습니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L’IA de Capture rapide est indisponible pour le moment."
+          }
         }
       }
     },
@@ -10917,6 +12333,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "시각적 작업, pull 시스템, WIP 제한의 핵심 원칙을 읽어 보세요."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lisez les principes clés du travail visuel, des systèmes de traction et des limites WIP."
           }
         }
       }
@@ -10964,6 +12386,12 @@
             "state": "translated",
             "value": "준비됨"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prête"
+          }
         }
       }
     },
@@ -11009,6 +12437,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "준비된 대안"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alternatives prêtes"
           }
         }
       }
@@ -11056,6 +12490,12 @@
             "state": "translated",
             "value": "가져올 준비됨"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prête à prendre"
+          }
         }
       }
     },
@@ -11101,6 +12541,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "최근 완료율"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Taux de finition récent"
           }
         }
       }
@@ -11148,6 +12594,12 @@
             "state": "translated",
             "value": "추천 행동"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Action recommandée"
+          }
         }
       }
     },
@@ -11193,6 +12645,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "추천 작업: %@."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tâche recommandée : %@."
           }
         }
       }
@@ -11240,6 +12698,12 @@
             "state": "translated",
             "value": "다시 녹음"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enregistrer à nouveau"
+          }
         }
       }
     },
@@ -11285,6 +12749,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "음성 녹음"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enregistrer la voix"
           }
         }
       }
@@ -11332,6 +12802,12 @@
             "state": "translated",
             "value": "새로 시작하기 전에 활성 작업을 줄이세요. 그러면 집중과 완료 속도를 보호할 수 있습니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Réduisez le travail actif avant de commencer quoi que ce soit de nouveau. Cela protégera la concentration et la vitesse d’achèvement."
+          }
         }
       }
     },
@@ -11377,6 +12853,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "먼저 WIP 줄이기"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "RÉDUIRE LE WIP D’ABORD"
           }
         }
       }
@@ -11424,6 +12906,12 @@
             "state": "translated",
             "value": "지금 WIP 줄이기"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Réduire le WIP maintenant"
+          }
         }
       }
     },
@@ -11469,6 +12957,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "활성 작업과 관련됨"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lié au travail actif"
           }
         }
       }
@@ -11516,6 +13010,12 @@
             "state": "translated",
             "value": "새 작업이 긴급하고 작지 않다면, 더 가져오기 전에 막힌 작업을 해결하세요."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Résolvez le travail bloqué avant de prendre plus de tâches, sauf si une nouvelle tâche est urgente et petite."
+          }
         }
       }
     },
@@ -11561,6 +13061,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "복원"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurer"
           }
         }
       }
@@ -11608,6 +13114,12 @@
             "state": "translated",
             "value": "보관함에서 복원"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurer depuis l’archive"
+          }
         }
       }
     },
@@ -11653,6 +13165,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "활성 작업 검토"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Examiner les tâches actives"
           }
         }
       }
@@ -11700,6 +13218,12 @@
             "state": "translated",
             "value": "가져오기 전 검토"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Relire avant de prendre"
+          }
         }
       }
     },
@@ -11745,6 +13269,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "용량 검토"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Examiner la capacité"
           }
         }
       }
@@ -11792,6 +13322,12 @@
             "state": "translated",
             "value": "열별 작업 검토"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Examiner les tâches par voie"
+          }
         }
       }
     },
@@ -11837,6 +13373,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "작업에 적용하기 전에 제안을 검토하세요."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Relisez la suggestion avant de l’appliquer à la tâche."
           }
         }
       }
@@ -11884,6 +13426,12 @@
             "state": "translated",
             "value": "활성 작업을 검토하고 다음에 무엇을 앞으로 진행할지 결정하세요."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Examinez vos tâches actives et décidez ce qui doit avancer ensuite."
+          }
         }
       }
     },
@@ -11929,6 +13477,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "전사 내용을 검토하세요"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Relisez votre transcription"
           }
         }
       }
@@ -11976,6 +13530,12 @@
             "state": "translated",
             "value": "텍스트 스캔"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scanner du texte"
+          }
         }
       }
     },
@@ -12021,6 +13581,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "스캐너 사용 불가"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scanner indisponible"
           }
         }
       }
@@ -12068,6 +13634,12 @@
             "state": "translated",
             "value": "검색"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rechercher"
+          }
         }
       }
     },
@@ -12113,6 +13685,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "작업 검색"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rechercher des tâches"
           }
         }
       }
@@ -12160,6 +13738,12 @@
             "state": "translated",
             "value": "작업 검색"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rechercher dans votre travail"
+          }
         }
       }
     },
@@ -12205,6 +13789,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "완료로 이끄는 진행 상황, WIP 압박, 흐름 신호를 확인하세요."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voyez la progression, la pression WIP et les signaux de flux qui vous poussent vers l’achèvement."
           }
         }
       }
@@ -12252,6 +13842,12 @@
             "state": "translated",
             "value": "작업을 명확히 보기"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voir clairement votre travail"
+          }
         }
       }
     },
@@ -12297,6 +13893,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "진행 중 작업이 오래되거나 지연되면 하루에 한 번 알림을 보냅니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envoyer un rappel quotidien quand les tâches En cours vieillissent ou sont bloquées."
           }
         }
       }
@@ -12344,6 +13946,12 @@
             "state": "translated",
             "value": "주의를 좁게 유지하도록 활성 작업의 최대 개수를 설정하세요."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Définissez un nombre maximal de tâches actives pour garder votre attention resserrée."
+          }
         }
       }
     },
@@ -12389,6 +13997,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "설정"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Réglages"
           }
         }
       }
@@ -12436,6 +14050,12 @@
             "state": "translated",
             "value": "건너뛰기"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ignorer"
+          }
         }
       }
     },
@@ -12481,6 +14101,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "남은 슬롯"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Créneaux restants"
           }
         }
       }
@@ -12528,6 +14154,12 @@
             "state": "translated",
             "value": "작은 WIP, 더 빠른 완료"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Petit WIP, finition plus rapide"
+          }
         }
       }
     },
@@ -12573,6 +14205,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "작업을 받아쓰려면 음성 인식 접근 권한이 필요합니다. 설정에서 허용하세요."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L’accès à la reconnaissance vocale est nécessaire pour dicter des tâches. Activez-le dans Réglages."
           }
         }
       }
@@ -12620,6 +14258,12 @@
             "state": "translated",
             "value": "지연됨"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bloquée"
+          }
         }
       }
     },
@@ -12665,6 +14309,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "지연 기준"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Blocage après"
           }
         }
       }
@@ -12712,6 +14362,12 @@
             "state": "translated",
             "value": "지연된 작업"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tâches bloquées"
+          }
         }
       }
     },
@@ -12757,6 +14413,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "여유가 생겼을 때만 새 작업을 시작하세요. 완료가 다음 약속을 위한 공간을 만듭니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Commencez une nouvelle tâche seulement quand de la capacité se libère. L’achèvement crée de la place pour le prochain engagement."
           }
         }
       }
@@ -12804,6 +14466,12 @@
             "state": "translated",
             "value": "집중 시작"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Commencer à se concentrer"
+          }
         }
       }
     },
@@ -12849,6 +14517,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "상태"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Statut"
           }
         }
       }
@@ -12896,6 +14570,12 @@
             "state": "translated",
             "value": "상태 분포: 할 일 %lld개, 진행 중 %lld개, 완료 %lld개"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Répartition des statuts : %lld à faire, %lld en cours, %lld terminées"
+          }
         }
       }
     },
@@ -12941,6 +14621,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "중지"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arrêter"
           }
         }
       }
@@ -12988,6 +14674,12 @@
             "state": "translated",
             "value": "강한 마무리 리듬입니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rythme de finition solide."
+          }
         }
       }
     },
@@ -13033,6 +14725,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "더 강한 집중"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Concentration renforcée"
           }
         }
       }
@@ -13080,6 +14778,12 @@
             "state": "translated",
             "value": "다음 행동 제안"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suggérer l’action suivante"
+          }
         }
       }
     },
@@ -13125,6 +14829,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "제안이 작업 설명에 추가되었습니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suggestion ajoutée à la description de la tâche."
           }
         }
       }
@@ -13173,6 +14883,12 @@
             "state": "translated",
             "value": "작업"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "tâche"
+          }
         }
       }
     },
@@ -13219,6 +14935,12 @@
             "state": "translated",
             "value": "작업 세부 정보"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Détails de la tâche"
+          }
         }
       }
     },
@@ -13264,6 +14986,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "작업 동기화"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Synchronisation des tâches"
           }
         }
       }
@@ -13312,6 +15040,12 @@
             "state": "translated",
             "value": "작업"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "tâches"
+          }
         }
       }
     },
@@ -13357,6 +15091,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "현재 작업은 이 기기에만 저장됩니다. 휴대폰을 바꿔도 작업을 사용할 수 있도록 이 앱의 iCloud를 켜세요."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les tâches sont actuellement stockées uniquement sur cet appareil. Activez iCloud pour cette app afin de garder vos tâches disponibles quand vous changez de téléphone."
           }
         }
       }
@@ -13404,6 +15144,12 @@
             "state": "translated",
             "value": "이제 작업을 머릿속에 보관할 필요가 없습니다. 보드와 대시보드가 시스템을 대신 잡아 줍니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les tâches n’ont plus besoin de vivre dans votre mémoire. Le tableau et le tableau de bord portent le système pour vous."
+          }
         }
       }
     },
@@ -13449,6 +15195,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "각 기기에서 같은 Apple 계정을 사용하면 작업이 iCloud를 통해 동기화됩니다. 변경 사항이 모든 곳에 나타나기까지 잠시 걸릴 수 있습니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les tâches se synchronisent via iCloud lorsque vous utilisez le même compte Apple sur chaque appareil. Les changements peuvent prendre un court instant à apparaître partout."
           }
         }
       }
@@ -13496,6 +15248,12 @@
             "state": "translated",
             "value": "텍스트가 추가되었습니다. Apple Intelligence를 사용할 수 없으므로 작업을 만들기 전에 직접 검토하세요."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Texte ajouté. Apple Intelligence est indisponible, donc relisez-le manuellement avant de créer la tâche."
+          }
         }
       }
     },
@@ -13541,6 +15299,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "텍스트가 캡처되었습니다. Apple Intelligence를 사용할 수 없어 텍스트를 수동 검토용으로 추가했습니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Texte capturé. Apple Intelligence est indisponible, donc le texte a été ajouté pour une relecture manuelle."
           }
         }
       }
@@ -13588,6 +15352,12 @@
             "state": "translated",
             "value": "텍스트가 캡처되었습니다. 카메라 스캔에서 초안을 생성했습니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Texte capturé. Brouillon généré depuis le scan caméra."
+          }
         }
       }
     },
@@ -13633,6 +15403,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "텍스트가 캡처되었습니다. 추출한 텍스트를 검토하거나 초안을 생성하세요."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Texte capturé. Relisez le texte extrait ou générez un brouillon."
           }
         }
       }
@@ -13680,6 +15456,12 @@
             "state": "translated",
             "value": "앱은 한 번에 너무 많은 작업이 진행 중으로 들어가지 않도록 WIP 제한을 적용할 수 있습니다. 덕분에 주의가 좁게 유지되고 컨텍스트 전환이 줄어듭니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L’app peut appliquer une limite WIP pour éviter que trop de tâches entrent en En cours en même temps. Cela garde l’attention resserrée et réduit les changements de contexte."
+          }
         }
       }
     },
@@ -13725,6 +15507,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "앱이 지금 다음 행동을 생성하지 못했습니다. 잠시 후 다시 시도하세요."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L’app n’a pas pu générer d’action suivante pour le moment. Réessayez dans un instant."
           }
         }
       }
@@ -13772,6 +15560,12 @@
             "state": "translated",
             "value": "앱은 매일 %lld:00에 갱신되는 요약 알림을 예약하며, 작업마다 알림을 보내지는 않습니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L’app planifie un résumé quotidien glissant à %lld:00 et n’envoie jamais une notification par tâche."
+          }
         }
       }
     },
@@ -13817,6 +15611,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "보드는 할 일, 진행 중, 완료를 통해 모든 작업을 명확히 보여 줍니다. 무엇이 기다리고 있고, 무엇이 활성 상태이며, 무엇이 완료되었는지 볼 수 있습니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le tableau rend chaque tâche explicite avec À faire, En cours et Terminé, pour voir ce qui attend, ce qui est actif et ce qui a été terminé."
           }
         }
       }
@@ -13864,6 +15664,12 @@
             "state": "translated",
             "value": "보드는 약속을 보이게 만들어 중요한 일이 흐릿하거나 숨겨진 채 남지 않게 합니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le tableau rend vos engagements visibles afin que rien d’important ne reste vague ou caché."
+          }
         }
       }
     },
@@ -13909,6 +15715,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "지금은 카메라 스캐너를 사용할 수 없습니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le scanner caméra est indisponible pour le moment."
           }
         }
       }
@@ -13956,6 +15768,12 @@
             "state": "translated",
             "value": "대시보드는 진행 상황, WIP 압박, 우선순위 분포를 보여 주어 끝낼지, 멈출지, 더 가져오지 말지 결정하는 데 도움을 줍니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le tableau de bord montre la progression, la pression WIP et la répartition des priorités pour décider s’il faut finir, mettre en pause ou éviter de prendre plus."
+          }
         }
       }
     },
@@ -14001,6 +15819,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "이미지 텍스트는 추출되었지만 지금 AI 초안을 생성하지 못했습니다. 검토한 뒤 다시 생성하세요."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le texte de l’image a été extrait, mais le brouillon IA n’a pas pu être généré maintenant. Relisez-le et générez à nouveau."
           }
         }
       }
@@ -14048,6 +15872,12 @@
             "state": "translated",
             "value": "매니페스토는 단순합니다. 작업을 시각화하고, 진행 중 작업을 제한하고, 여유가 있을 때만 가져오며, 완료를 계속 보이게 하세요."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le manifeste est simple : visualisez votre travail, limitez le travail en cours, prenez seulement quand il y a de la place et laissez Terminé visible."
+          }
         }
       }
     },
@@ -14093,6 +15923,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "마이크를 시작할 수 없습니다. 오디오 권한을 확인하고 다시 시도하세요."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le microphone n’a pas pu démarrer. Vérifiez les autorisations audio et réessayez."
           }
         }
       }
@@ -14140,6 +15976,12 @@
             "state": "translated",
             "value": "다음으로 완료되는 작업이 보드를 바꿉니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La prochaine tâche terminée change le tableau."
+          }
         }
       }
     },
@@ -14185,6 +16027,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "선택한 이미지를 불러올 수 없습니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L’image sélectionnée n’a pas pu être chargée."
           }
         }
       }
@@ -14232,6 +16080,12 @@
             "state": "translated",
             "value": "선택한 이미지를 읽을 수 없습니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L’image sélectionnée n’a pas pu être lue."
+          }
         }
       }
     },
@@ -14277,6 +16131,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "텍스트는 캡처되었지만 지금 AI 초안을 생성하지 못했습니다. 검토한 뒤 다시 생성하세요."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le texte a été capturé, mais le brouillon IA n’a pas pu être généré maintenant. Relisez-le et générez à nouveau."
           }
         }
       }
@@ -14324,6 +16184,12 @@
             "state": "translated",
             "value": "음성 전사는 캡처되었지만 지금 AI 초안을 생성하지 못했습니다. 검토한 뒤 다시 생성하세요."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La transcription vocale a été capturée, mais le brouillon IA n’a pas pu être généré maintenant. Relisez-la et générez à nouveau."
+          }
         }
       }
     },
@@ -14369,6 +16235,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "이 작업들은 너무 오래 활성 상태로 남아 흐름을 늦출 수 있습니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ces tâches restent actives assez longtemps pour risquer de freiner le flux."
           }
         }
       }
@@ -14416,6 +16288,12 @@
             "state": "translated",
             "value": "이 작업들은 진행 중 상태로 너무 오래 머물렀고 결정이 필요할 수 있습니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ces tâches sont restées trop longtemps en cours et nécessitent peut-être une décision."
+          }
         }
       }
     },
@@ -14461,6 +16339,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "이 앱은 작업을 명확히 보고, 집중을 보호하고, 더 시작하기 전에 끝내도록 도와 개인 칸반을 적용합니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cette app applique le Kanban personnel en vous aidant à voir clairement votre travail, protéger votre concentration et finir avant de commencer davantage."
           }
         }
       }
@@ -14508,6 +16392,12 @@
             "state": "translated",
             "value": "이 앱은 한 번에 덜 하고, 더 자주 끝내며, 컨텍스트 전환을 줄이는 개인 칸반 원칙을 중심으로 만들어졌습니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cette app repose sur la discipline du Kanban personnel : faire moins à la fois, finir plus souvent et réduire les changements de contexte."
+          }
         }
       }
     },
@@ -14554,6 +16444,12 @@
             "state": "translated",
             "value": "흐름이 되돌려진 횟수"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nombre de fois où le flux a repoussé"
+          }
         }
       }
     },
@@ -14599,6 +16495,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "제목"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Titre"
           }
         }
       }
@@ -14647,6 +16549,12 @@
             "state": "translated",
             "value": "할 일"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "À faire"
+          }
         }
       }
     },
@@ -14692,6 +16600,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "활성 작업이 너무 많습니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trop de travail est actif."
           }
         }
       }
@@ -14739,6 +16653,12 @@
             "state": "translated",
             "value": "머릿속 목록 대신 할 일, 진행 중, 완료로 작업을 추적하세요."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suivez le travail avec À faire, En cours et Terminé au lieu de garder des listes mentales."
+          }
         }
       }
     },
@@ -14784,6 +16704,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "전사"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Transcription"
           }
         }
       }
@@ -14831,6 +16757,12 @@
             "state": "translated",
             "value": "다른 검색어를 시도해 보세요."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Essayez un autre terme de recherche."
+          }
         }
       }
     },
@@ -14876,6 +16808,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "다시 시도"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Réessayer"
           }
         }
       }
@@ -14923,6 +16861,12 @@
             "state": "translated",
             "value": "WIP 코칭을 개인화하려면 설정에서 Apple Intelligence를 켜세요."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activez Apple Intelligence dans Réglages pour personnaliser le coaching WIP."
+          }
         }
       }
     },
@@ -14968,6 +16912,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "다음 행동을 제안하려면 설정에서 Apple Intelligence를 켜세요."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activez Apple Intelligence dans Réglages pour suggérer une action suivante."
           }
         }
       }
@@ -15015,6 +16965,12 @@
             "state": "translated",
             "value": "빠른 캡처 AI를 사용하려면 설정에서 Apple Intelligence를 켜세요."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activez Apple Intelligence dans Réglages pour utiliser l’IA de Capture rapide."
+          }
         }
       }
     },
@@ -15060,6 +17016,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "먼저 막힘 해소"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DÉBLOQUER D’ABORD"
           }
         }
       }
@@ -15107,6 +17069,12 @@
             "state": "translated",
             "value": "작업 막힘 해소"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Débloquer le travail"
+          }
         }
       }
     },
@@ -15152,6 +17120,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "업데이트됨"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mise à jour"
           }
         }
       }
@@ -15199,6 +17173,12 @@
             "state": "translated",
             "value": "제안 사용"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Utiliser la suggestion"
+          }
         }
       }
     },
@@ -15244,6 +17224,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "텍스트 사용"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Utiliser le texte"
           }
         }
       }
@@ -15291,6 +17277,12 @@
             "state": "translated",
             "value": "보드로 신중하게 선택하고, 대시보드로 흐름을 보호하며, 완료 열로 실제 추진력을 유지하세요."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Utilisez le tableau pour choisir délibérément, le tableau de bord pour protéger le flux et la colonne Terminé pour garder un élan réel."
+          }
         }
       }
     },
@@ -15336,6 +17328,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "대시보드로 흐름 재균형 맞추기"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Utilisez le tableau de bord pour rééquilibrer le flux"
           }
         }
       }
@@ -15383,6 +17381,12 @@
             "state": "translated",
             "value": "작업이 아직 앞으로 나아갈 수 없을 때 사용하세요. 막힌 작업은 빠르게 보이게 해야 합니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Utilisez ceci quand le travail ne peut pas encore avancer. Les tâches bloquées doivent devenir visibles rapidement."
+          }
         }
       }
     },
@@ -15428,6 +17432,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "전사 사용"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Utiliser la transcription"
           }
         }
       }
@@ -15475,6 +17485,12 @@
             "state": "translated",
             "value": "인식한 텍스트로 작업 초안을 만듭니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Utilise le texte reconnu pour créer un brouillon de tâche."
+          }
         }
       }
     },
@@ -15520,6 +17536,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "이 기기에서 로컬 저장소 사용 중"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockage local utilisé sur cet appareil"
           }
         }
       }
@@ -15567,6 +17589,12 @@
             "state": "translated",
             "value": "보이는 진척과 실제 완료 상태는 완료를 마음먹은 일이 아니라 눈에 보이는 것으로 바꿉니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Une progression visible et un vrai état Terminé transforment l’achèvement en quelque chose que vous voyez, pas seulement en intention."
+          }
         }
       }
     },
@@ -15612,6 +17640,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "시각적 보드"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tableau visuel"
           }
         }
       }
@@ -15659,6 +17693,12 @@
             "state": "translated",
             "value": "시각화"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Visualiser"
+          }
         }
       }
     },
@@ -15704,6 +17744,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "작업 시각화"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Visualiser le travail"
           }
         }
       }
@@ -15751,6 +17797,12 @@
             "state": "translated",
             "value": "작업을 시각화하세요"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Visualisez votre travail"
+          }
         }
       }
     },
@@ -15796,6 +17848,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "음성이 캡처되었습니다. Apple Intelligence를 사용할 수 없어 전사 내용을 수동 검토용으로 추가했습니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voix capturée. Apple Intelligence est indisponible, donc la transcription a été ajoutée pour une relecture manuelle."
           }
         }
       }
@@ -15843,6 +17901,12 @@
             "state": "translated",
             "value": "음성이 캡처되었습니다. 받아쓰기에서 초안을 생성했습니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voix capturée. Brouillon généré depuis votre dictée."
+          }
         }
       }
     },
@@ -15888,6 +17952,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "음성이 캡처되었습니다. 전사를 검토하거나 초안을 생성하세요."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voix capturée. Relisez la transcription ou générez un brouillon."
           }
         }
       }
@@ -15935,6 +18005,12 @@
             "state": "translated",
             "value": "지금은 음성 받아쓰기를 사용할 수 없습니다. 잠시 후 다시 시도하세요."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La dictée vocale est indisponible pour le moment. Réessayez dans un instant."
+          }
         }
       }
     },
@@ -15980,6 +18056,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "대기 중"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "en attente"
           }
         }
       }
@@ -16027,6 +18109,12 @@
             "state": "translated",
             "value": "일주일째 대기 중"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En attente depuis une semaine"
+          }
         }
       }
     },
@@ -16072,6 +18160,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "며칠째 대기 중"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En attente depuis plusieurs jours"
           }
         }
       }
@@ -16119,6 +18213,12 @@
             "state": "translated",
             "value": "대기 중인 작업은 활성 집중 속에 조용히 섞이지 않고 명확히 보여야 합니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le travail en attente doit être clairement visible, pas mélangé silencieusement à la concentration active."
+          }
         }
       }
     },
@@ -16164,6 +18264,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "완료는 어떤 모습인가요?"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "À quoi ressemble terminé ?"
           }
         }
       }
@@ -16211,6 +18317,12 @@
             "state": "translated",
             "value": "무엇을 해야 하나요?"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Que faut-il faire ?"
+          }
         }
       }
     },
@@ -16256,6 +18368,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "사용자가 얻는 것"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ce que l’utilisateur gagne"
           }
         }
       }
@@ -16303,6 +18421,12 @@
             "state": "translated",
             "value": "활성 열이 가득 차면 대시보드가 다시 마무리로 이끕니다. 앱은 과부하가 아니라 pull을 장려합니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quand votre voie active est pleine, le tableau de bord vous ramène vers la finition. L’app encourage la traction, pas la surcharge."
+          }
         }
       }
     },
@@ -16348,6 +18472,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "열이 가득 차면 앱은 더 가져오기 전에 마무리로 돌아가도록 이끕니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quand votre voie est pleine, l’app vous pousse à finir avant de prendre plus de travail."
           }
         }
       }
@@ -16395,6 +18525,12 @@
             "state": "translated",
             "value": "WIP 코치"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coach WIP"
+          }
         }
       }
     },
@@ -16440,6 +18576,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "지금은 WIP 코치 AI 문구를 사용할 수 없습니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le texte IA du coach WIP est indisponible pour le moment."
           }
         }
       }
@@ -16487,6 +18629,12 @@
             "state": "translated",
             "value": "WIP 가득 참"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP plein"
+          }
         }
       }
     },
@@ -16532,6 +18680,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "WIP 제한"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Limite WIP"
           }
         }
       }
@@ -16579,6 +18733,12 @@
             "state": "translated",
             "value": "WIP 제한 도달 횟수"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Limites WIP atteintes"
+          }
         }
       }
     },
@@ -16624,6 +18784,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "WIP 제한에 도달함"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Limite WIP atteinte"
           }
         }
       }
@@ -16671,6 +18837,12 @@
             "state": "translated",
             "value": "WIP 제한 도달"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Limite WIP atteinte"
+          }
         }
       }
     },
@@ -16716,6 +18888,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "WIP 압박"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "pression WIP"
           }
         }
       }
@@ -16763,6 +18941,12 @@
             "state": "translated",
             "value": "WIP 압박"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pression WIP"
+          }
         }
       }
     },
@@ -16808,6 +18992,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "보드에서 작업하기"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Travailler depuis le tableau"
           }
         }
       }
@@ -16855,6 +19045,12 @@
             "state": "translated",
             "value": "진행 중 작업 압박. %@ 작업 %lld/%lld개 활성. 남은 슬롯 %lld개. %@. %@"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pression du travail en cours. %@ %lld sur %lld tâches actives. %lld créneaux restants. %@. %@"
+          }
         }
       }
     },
@@ -16900,6 +19096,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "진행 중 작업 검토. 작업 %lld/%lld개 활성. 남은 슬롯 %lld개. 막힌 작업 %lld개. 준비된 작업 %lld개."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revue du travail en cours. %lld sur %lld tâches actives. %lld créneaux restants. %lld tâches bloquées. %lld tâches prêtes."
           }
         }
       }
@@ -16947,6 +19149,12 @@
             "state": "translated",
             "value": "워크플로 정책"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Politique de workflow"
+          }
         }
       }
     },
@@ -16992,6 +19200,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "작업을 꾸준히 완료로 바꾸고 있습니다. WIP를 단단히 관리해 그 리듬을 지키세요."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vous transformez régulièrement le travail en terminé. Protégez ce rythme en gardant un WIP serré."
           }
         }
       }
@@ -17039,6 +19253,12 @@
             "state": "translated",
             "value": "설정에서 언제든지 매니페스토를 다시 볼 수 있습니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vous pouvez revoir le manifeste à tout moment depuis Réglages."
+          }
         }
       }
     },
@@ -17084,6 +19304,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "작업을 하나 더 안전하게 가져올 수 있지만, 현재 작업이 완료에 도달하도록 활성 작업을 타이트하게 유지하세요."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vous pouvez prendre une tâche de plus sans risque, mais gardez le travail actif serré pour que les tâches actuelles atteignent Terminé."
           }
         }
       }
@@ -17131,6 +19357,12 @@
             "state": "translated",
             "value": "용량에 도달했습니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vous êtes à capacité."
+          }
         }
       }
     },
@@ -17176,6 +19408,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "최대 용량입니다! “%@”을(를) 끝내면 공간이 생깁니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vous êtes à capacité maximale ! Terminer “%@” libérera de la place."
           }
         }
       }
@@ -17223,6 +19461,12 @@
             "state": "translated",
             "value": "WIP 제한에 가까워졌습니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vous approchez de votre limite WIP."
+          }
         }
       }
     },
@@ -17268,6 +19512,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "활성 열이 가득 찼습니다. 할 일에서 새로 시작하기 전에 진행 중 작업을 검토하세요."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Votre voie active est pleine. Examinez le travail En cours avant de commencer depuis À faire."
           }
         }
       }
@@ -17315,6 +19565,12 @@
             "state": "translated",
             "value": "활성 작업이 용량 안에 있습니다. 신중하게 가져오거나 현재 작업을 먼저 끝내세요."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Votre travail actif est dans la capacité. Prenez prudemment ou terminez d’abord une tâche actuelle."
+          }
         }
       }
     },
@@ -17360,6 +19616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "보드가 비어 있습니다"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Votre tableau est vide"
           }
         }
       }
@@ -17407,6 +19669,12 @@
             "state": "translated",
             "value": "흐름이 균형 잡혀 있습니다."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Votre flux est équilibré."
+          }
         }
       }
     },
@@ -17452,6 +19720,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "흐름에 아직 여유가 있습니다."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Votre flux a encore de la place."
           }
         }
       }
@@ -17499,6 +19773,12 @@
             "state": "translated",
             "value": "진행 상황"
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VOTRE PROGRESSION"
+          }
         }
       }
     },
@@ -17544,6 +19824,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "진행 상황. %@. %lld퍼센트 완료. %@ 할 일 %lld개, 진행 중 %lld개, 완료 %lld개."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Votre progression. %@. %lld pour cent terminés. %@ %lld à faire, %lld en cours, %lld terminées."
           }
         }
       }
@@ -17591,6 +19877,12 @@
             "state": "translated",
             "value": "진행 상황. 아직 작업이 없습니다. 진행을 추적하려면 첫 작업을 추가하세요."
           }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Votre progression. Pas encore de tâches. Ajoutez votre première tâche pour commencer à suivre la progression."
+          }
         }
       }
     },
@@ -17636,6 +19928,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "작업이 보입니다"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Votre travail est visible"
           }
         }
       }
