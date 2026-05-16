@@ -8,21 +8,17 @@ struct AddTaskView: View {
 
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
-    @State private var quickCaptureText = ""
     @State private var title = ""
     @State private var description = ""
     @State private var completionCriteria = ""
     @State private var priority: TaskPriority = .medium
     @State private var selectedQuickCapturePhoto: PhotosPickerItem?
-    @State private var isGeneratingQuickCapture = false
-    @State private var isImportingQuickCapturePhoto = false
-    @State private var quickCaptureMessage: String?
-    @State private var quickCaptureDraftMessage: String?
     @State private var showingWIPLimitAlert = false
     @State private var showingQuickCaptureSheet = false
     @State private var showingPhotoPicker = false
     @State private var showingLiveTextScanner = false
     @State private var showingVoiceCapture = false
+    @StateObject private var quickCapture = QuickCaptureCoordinator()
     @FocusState private var focusedField: Field?
     @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = true
     @AppStorage("maxActiveTasks") private var maxActiveTasks = 3
@@ -54,10 +50,10 @@ struct AddTaskView: View {
             }
             
             AddTaskActionBar(
-                isImportingQuickCapturePhoto: isImportingQuickCapturePhoto,
-                quickCaptureMessage: quickCaptureMessage,
+                isImportingQuickCapturePhoto: quickCapture.isImportingPhoto,
+                quickCaptureMessage: quickCapture.message,
                 quickCaptureMessageColor: quickCaptureMessageColor,
-                isQuickCaptureBusy: isGeneratingQuickCapture || isImportingQuickCapturePhoto,
+                isQuickCaptureBusy: quickCapture.isGenerating || quickCapture.isImportingPhoto,
                 isCreateEnabled: isValid,
                 onPasteNote: showPasteNoteCapture,
                 onImportPhoto: showPhotoPicker,
@@ -71,7 +67,9 @@ struct AddTaskView: View {
         .onAppear { focusedField = .title }
         .task(id: selectedQuickCapturePhoto) {
             guard let selectedQuickCapturePhoto else { return }
-            await importQuickCapturePhoto(selectedQuickCapturePhoto)
+            let result = await quickCapture.importPhoto(selectedQuickCapturePhoto)
+            handleQuickCaptureResult(result)
+            self.selectedQuickCapturePhoto = nil
         }
         .photosPicker(
             isPresented: $showingPhotoPicker,
@@ -80,31 +78,37 @@ struct AddTaskView: View {
         )
         .sheet(isPresented: $showingQuickCaptureSheet) {
             QuickCaptureDraftSheet(
-                text: $quickCaptureText,
-                message: quickCaptureDraftMessage,
-                isAvailable: isQuickCaptureAvailable,
-                unavailableMessage: quickCaptureUnavailableMessage,
-                isGenerating: isGeneratingQuickCapture
+                text: $quickCapture.text,
+                message: quickCapture.draftMessage,
+                isAvailable: quickCapture.isAvailable,
+                unavailableMessage: quickCapture.unavailableMessage,
+                isGenerating: quickCapture.isGenerating
             ) {
                 await generateTaskDraft()
             } onAddManually: {
-                applyManualCaptureText(quickCaptureText, source: .paste)
+                handleQuickCaptureResult(.applyManualText(quickCapture.text, source: .paste))
             }
             .presentationDetents([.medium, .large])
             .presentationDragIndicator(.visible)
         }
         .sheet(isPresented: $showingLiveTextScanner) {
             LiveTextScannerSheet { recognizedText in
-                Task { await handleRecognizedQuickCaptureText(recognizedText, source: .scanner) }
+                Task {
+                    let result = await quickCapture.handleRecognizedText(recognizedText, source: .scanner)
+                    handleQuickCaptureResult(result)
+                }
             } onError: { error in
-                quickCaptureMessage = error.localizedDescription
+                quickCapture.showMessage(error.localizedDescription)
             }
         }
         .sheet(isPresented: $showingVoiceCapture) {
             VoiceCaptureSheet { recognizedText in
-                Task { await handleRecognizedQuickCaptureText(recognizedText, source: .voice) }
+                Task {
+                    let result = await quickCapture.handleRecognizedText(recognizedText, source: .voice)
+                    handleQuickCaptureResult(result)
+                }
             } onError: { error in
-                quickCaptureMessage = error.localizedDescription
+                quickCapture.showMessage(error.localizedDescription)
             }
             .presentationDetents([.large, .large])
             .presentationDragIndicator(.visible)
@@ -229,33 +233,15 @@ struct AddTaskView: View {
         .clipShape(RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
     }
 
-    private var quickCaptureAvailability: QuickCaptureAvailability {
-        QuickCaptureTaskGenerator.availability
-    }
-
     private var quickCaptureMessageColor: Color {
-        if quickCaptureMessage?.hasPrefix("Photo imported.") == true || quickCaptureMessage?.hasPrefix("Draft generated.") == true {
+        if quickCapture.message?.hasPrefix("Photo imported.") == true || quickCapture.message?.hasPrefix("Draft generated.") == true {
             return AppStyle.Colors.doneAccent
         }
-        return isQuickCaptureAvailable ? .secondary : AppStyle.Colors.warning
-    }
-
-    private var isQuickCaptureAvailable: Bool {
-        if case .available = quickCaptureAvailability {
-            return true
-        }
-        return false
-    }
-
-    private var quickCaptureUnavailableMessage: String? {
-        if case .unavailable(let message) = quickCaptureAvailability {
-            return message
-        }
-        return nil
+        return quickCapture.isAvailable ? .secondary : AppStyle.Colors.warning
     }
 
     private func showPasteNoteCapture() {
-        quickCaptureDraftMessage = isQuickCaptureAvailable ? nil : QuickCaptureSource.paste.reviewMessage
+        quickCapture.preparePasteCapture()
         showingQuickCaptureSheet = true
     }
 
@@ -268,7 +254,7 @@ struct AddTaskView: View {
     }
 
     private func showVoiceCapture() {
-        quickCaptureMessage = nil
+        quickCapture.clearFeedback()
         showingVoiceCapture = true
     }
 
@@ -304,52 +290,8 @@ struct AddTaskView: View {
 
     @MainActor
     private func generateTaskDraft() async {
-        let cleanedText = quickCaptureText.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !cleanedText.isEmpty else { return }
-        guard isQuickCaptureAvailable else {
-            quickCaptureDraftMessage = quickCaptureUnavailableMessage
-            return
-        }
-
-        isGeneratingQuickCapture = true
-        quickCaptureDraftMessage = nil
-
-        defer { isGeneratingQuickCapture = false }
-
-        do {
-            let draft = try await QuickCaptureTaskGenerator.generate(from: cleanedText)
-            applyTaskDraft(draft, message: "Draft generated. Review and adjust before creating the task.")
-            showingQuickCaptureSheet = false
-        } catch {
-            quickCaptureDraftMessage = "Quick Capture AI couldn’t generate a draft right now. Try shortening the note and retry."
-        }
-    }
-
-    @MainActor
-    private func importQuickCapturePhoto(_ item: PhotosPickerItem) async {
-        isImportingQuickCapturePhoto = true
-        quickCaptureMessage = nil
-        quickCaptureDraftMessage = nil
-
-        defer {
-            isImportingQuickCapturePhoto = false
-            selectedQuickCapturePhoto = nil
-        }
-
-        do {
-            guard let imageData = try await item.loadTransferable(type: Data.self) else {
-                quickCaptureMessage = "The selected image could not be loaded."
-                return
-            }
-
-            let extractedText = try await ImageTextExtractionService.extractText(from: imageData)
-            await handleRecognizedQuickCaptureText(extractedText, source: .photo)
-        } catch let error as ImageTextExtractionError {
-            quickCaptureMessage = error.localizedDescription
-        } catch {
-            quickCaptureMessage = "The image text was extracted, but the AI draft couldn’t be generated right now. Review it and generate again."
-            showingQuickCaptureSheet = true
-        }
+        let result = await quickCapture.generateDraftFromCurrentText()
+        handleQuickCaptureResult(result)
     }
 
     @MainActor
@@ -371,7 +313,7 @@ struct AddTaskView: View {
         completionCriteria = cleanedDone
         priority = QuickCaptureTaskGenerator.taskPriority(from: draft.priority)
         focusedField = .title
-        quickCaptureMessage = message
+        quickCapture.markDraftApplied(message: message)
     }
 
     @MainActor
@@ -391,52 +333,36 @@ struct AddTaskView: View {
             focusedField = .description
         }
 
-        quickCaptureText = cleanedText
-        quickCaptureDraftMessage = nil
-        quickCaptureMessage = source.manualAppliedMessage
+        quickCapture.markManualTextApplied(cleanedText, source: source)
         showingQuickCaptureSheet = false
     }
 
     @MainActor
     private func beginLiveTextScan() async {
-        quickCaptureMessage = nil
-        quickCaptureDraftMessage = nil
+        quickCapture.clearFeedback()
 
         switch await CameraPermissionService.requestCameraAccess() {
         case .granted:
             showingLiveTextScanner = true
         case .denied:
-            quickCaptureMessage = LiveTextScannerError.cameraAccessDenied.localizedDescription
+            quickCapture.showMessage(LiveTextScannerError.cameraAccessDenied.localizedDescription)
         case .unavailable:
-            quickCaptureMessage = "Camera access is unavailable right now."
+            quickCapture.showMessage("Camera access is unavailable right now.")
         }
     }
 
     @MainActor
-    private func handleRecognizedQuickCaptureText(_ recognizedText: String, source: QuickCaptureSource) async {
-        let cleanedText = recognizedText.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !cleanedText.isEmpty else {
-            quickCaptureMessage = LiveTextScannerError.noTextFound.localizedDescription
-            return
-        }
-
-        quickCaptureText = cleanedText
-        quickCaptureDraftMessage = source.reviewMessage
-
-        guard isQuickCaptureAvailable else {
-            applyManualCaptureText(cleanedText, source: source)
-            return
-        }
-
-        isGeneratingQuickCapture = true
-        defer { isGeneratingQuickCapture = false }
-
-        do {
-            let draft = try await QuickCaptureTaskGenerator.generate(from: cleanedText)
-            applyTaskDraft(draft, message: source.successMessage)
-        } catch {
+    private func handleQuickCaptureResult(_ result: QuickCaptureCoordinatorResult) {
+        switch result {
+        case .none:
+            break
+        case .applyDraft(let draft, let message):
+            applyTaskDraft(draft, message: message)
+            showingQuickCaptureSheet = false
+        case .applyManualText(let text, let source):
+            applyManualCaptureText(text, source: source)
+        case .showReviewSheet:
             showingQuickCaptureSheet = true
-            quickCaptureMessage = source.generationFailureMessage
         }
     }
 

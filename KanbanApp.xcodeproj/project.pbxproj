@@ -35,6 +35,7 @@
 		A7C10000000000000000001A /* QuickCaptureSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C10000000000000000001B /* QuickCaptureSource.swift */; };
 		A7C10000000000000000001C /* CameraPermissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C10000000000000000001D /* CameraPermissionService.swift */; };
 		A7C10000000000000000001E /* AddTaskActionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C10000000000000000001F /* AddTaskActionBar.swift */; };
+		A7C100000000000000000020 /* QuickCaptureCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C100000000000000000021 /* QuickCaptureCoordinator.swift */; };
 		B8A7D0D8D7304BF4B02921A1 /* PersistenceBootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A7D0D7D7304BF4B02921A1 /* PersistenceBootstrap.swift */; };
 		C46D8078D30040238CCDE162FB2FE17E /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE822CFBF944080AA7DC05248E4FCB2 /* MainTabView.swift */; };
 		CC88F17F1EB745D7B67C1DED74B18C18 /* AllTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC21578A5014A16A3256BF3F502DDAC /* AllTasksView.swift */; };
@@ -81,6 +82,7 @@
 		A7C10000000000000000001B /* QuickCaptureSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickCaptureSource.swift; sourceTree = "<group>"; };
 		A7C10000000000000000001D /* CameraPermissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionService.swift; sourceTree = "<group>"; };
 		A7C10000000000000000001F /* AddTaskActionBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskActionBar.swift; sourceTree = "<group>"; };
+		A7C100000000000000000021 /* QuickCaptureCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickCaptureCoordinator.swift; sourceTree = "<group>"; };
 		B8A7D0D6D7304BF4B02921A1 /* KanbanApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KanbanApp.entitlements; sourceTree = "<group>"; };
 		B8A7D0D7D7304BF4B02921A1 /* PersistenceBootstrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceBootstrap.swift; sourceTree = "<group>"; };
 		D4C3B2A20000000000000002 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				A7C100000000000000000013 /* ImageTextExtractionService.swift */,
 				A7C10000000000000000001D /* CameraPermissionService.swift */,
 				A7C100000000000000000017 /* VoiceCaptureService.swift */,
+				A7C100000000000000000021 /* QuickCaptureCoordinator.swift */,
 				B8A7D0D7D7304BF4B02921A1 /* PersistenceBootstrap.swift */,
 				F00D00000000000000000004 /* WIPCoachEngine.swift */,
 				F00D00000000000000000006 /* WIPCoachCopyGenerator.swift */,
@@ -310,6 +313,7 @@
 				A7C100000000000000000012 /* ImageTextExtractionService.swift in Sources */,
 				A7C10000000000000000001C /* CameraPermissionService.swift in Sources */,
 				A7C100000000000000000016 /* VoiceCaptureService.swift in Sources */,
+				A7C100000000000000000020 /* QuickCaptureCoordinator.swift in Sources */,
 				A7C100000000000000000014 /* QuickCapturePhotoImportButton.swift in Sources */,
 				A7C10000000000000000001E /* AddTaskActionBar.swift in Sources */,
 				A7C100000000000000000018 /* QuickCaptureDraftSheet.swift in Sources */,
