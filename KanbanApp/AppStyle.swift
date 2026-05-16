@@ -69,12 +69,12 @@ enum AppStyle {
                 light: UIColor(red: 0.75, green: 0.25, blue: 0.28, alpha: 1)
             )
             static let medium = dynamic(
-                dark: UIColor(red: 0.90, green: 0.60, blue: 0.30, alpha: 1),
-                light: UIColor(red: 0.80, green: 0.45, blue: 0.18, alpha: 1)
+                dark: UIColor(red: 0.88, green: 0.70, blue: 0.34, alpha: 1),
+                light: UIColor(red: 0.64, green: 0.49, blue: 0.18, alpha: 1)
             )
             static let low = dynamic(
-                dark: UIColor(red: 0.35, green: 0.68, blue: 0.72, alpha: 1),
-                light: UIColor(red: 0.15, green: 0.55, blue: 0.60, alpha: 1)
+                dark: UIColor(red: 0.48, green: 0.58, blue: 0.68, alpha: 1),
+                light: UIColor(red: 0.34, green: 0.45, blue: 0.56, alpha: 1)
             )
         }
 
@@ -129,6 +129,10 @@ enum AppStyle {
             dark: UIColor(red: 1.0, green: 0.4, blue: 0.0, alpha: 1),
             light: UIColor(red: 0.9, green: 0.3, blue: 0.0, alpha: 1)
         )
+        static let blocked = dynamic(
+            dark: UIColor(red: 0.98, green: 0.36, blue: 0.30, alpha: 1),
+            light: UIColor(red: 0.78, green: 0.20, blue: 0.14, alpha: 1)
+        )
 
         static let cardSheen = dynamic(
             dark: UIColor(white: 1, alpha: 0.04),
@@ -167,6 +171,7 @@ enum AppStyle {
 
         static let sectionTitle = Font.caption.weight(.regular)
         static let sectionTracking: CGFloat = 1.8
+        static let minimumScaleFactor: CGFloat = 0.7
 
         static let statusLabel = Font.subheadline.weight(.medium)
         static let statusLabelHighlighted = Font.subheadline.weight(.bold)
@@ -182,6 +187,11 @@ enum AppStyle {
         static let ringPercentage = Font.system(.title3, design: .rounded, weight: .bold)
         static let ringCaption = Font.caption2.weight(.medium)
         static let ringPercentageSmall = Font.caption2.weight(.bold)
+        static let progressEyebrow = Font.system(.callout, design: .rounded, weight: .medium)
+        static let progressSummary = Font.system(.title, design: .rounded, weight: .bold)
+        static let progressInsight = Font.system(.callout, design: .rounded, weight: .regular)
+        static let progressBreakdownCount = Font.system(.headline, design: .rounded, weight: .bold)
+        static let progressBreakdownLabel = Font.system(.subheadline, design: .rounded, weight: .regular)
 
         static let emptyIcon = Font.system(size: 42, weight: .light)
         static let emptyTitle = Font.title2.weight(.medium)
@@ -257,10 +267,17 @@ enum AppStyle {
         static let headerPaddingHorizontal: CGFloat = 20
         static let statusCardVerticalPadding: CGFloat = 6
         static let priorityVerticalPadding: CGFloat = 20
+        static let progressCardVerticalPadding: CGFloat = 24
+        static let progressCardHorizontalPadding: CGFloat = 28
 
         static let headerHStackGap: CGFloat = 24
         static let hStackGap: CGFloat = 14
         static let statusRowGap: CGFloat = 12
+        static let progressContentGap: CGFloat = 24
+        static let progressSummaryGap: CGFloat = 22
+        static let progressTextGap: CGFloat = 14
+        static let progressBreakdownTopGap: CGFloat = 34
+        static let progressBreakdownItemGap: CGFloat = 8
         static let priorityHStackGap: CGFloat = 12
         static let headerVStackGap: CGFloat = 6
         static let priorityCardVStackGap: CGFloat = 10
@@ -270,6 +287,7 @@ enum AppStyle {
         static let statusRowVerticalCompact: CGFloat = 12
         static let statusRowVerticalComfortable: CGFloat = 18
         static let statusRowVerticalHighlighted: CGFloat = 16
+        static let statusRowSubtitleGap: CGFloat = 2
         static let totalRowVertical: CGFloat = 10
 
         static let statusLabelWidth: CGFloat = 88
@@ -325,6 +343,7 @@ enum AppStyle {
         static let pillCornerRadius: CGFloat = 8
 
         static let barHeight: CGFloat = 4
+        static let statusDistributionBarHeight: CGFloat = 5
         static let previewAccentHeight: CGFloat = 6
         static let barHeightHighlighted: CGFloat = 7
         static let progressBarHeight: CGFloat = 10
@@ -350,6 +369,7 @@ enum AppStyle {
         static let iconBadgeMedium: CGFloat = 48
         static let iconBadgeLarge: CGFloat = 52
         static let alertIconSize: CGFloat = 58
+        static let minimumTapTarget: CGFloat = 44
         
         static let dragScale: CGFloat = 1.05
         static let dragShadowRadius: CGFloat = 12
@@ -358,6 +378,12 @@ enum AppStyle {
         static let dashboardRingSize: CGFloat = 96
         static let dashboardRingTrackStroke: CGFloat = 9
         static let dashboardRingGlowStroke: CGFloat = 12
+        static let progressRingSize: CGFloat = 84
+        static let progressRingTrackStroke: CGFloat = 7
+        static let progressRingGlowStroke: CGFloat = 10
+        static let progressRingHeroSize: CGFloat = 104
+        static let progressRingHeroTrackStroke: CGFloat = 8
+        static let progressRingHeroGlowStroke: CGFloat = 10
         static let compactRingSize: CGFloat = 44
         static let ringTrackStroke: CGFloat = 4
         static let compactRingTrackStroke: CGFloat = 3
@@ -375,10 +401,12 @@ enum AppStyle {
         static let lanePreviewAccentWidth: CGFloat = 32
         static let formControlMinWidth: CGFloat = 132
         static let modalMaxWidth: CGFloat = 320
+        static let voiceTranscriptMinHeight: CGFloat = 180
         static let statusIconSize: CGFloat = 14
         static let statusRowIconWidth: CGFloat = 24
         static let chevronWidth: CGFloat = 14
         static let dividerHeight: CGFloat = 1
+        static let progressBreakdownDividerHeight: CGFloat = 28
 
         static let tinyShadowRadius: CGFloat = 4
         static let tinyShadowY: CGFloat = 2

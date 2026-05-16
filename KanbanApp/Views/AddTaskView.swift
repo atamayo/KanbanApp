@@ -1,26 +1,24 @@
 import SwiftData
 import PhotosUI
 import SwiftUI
-import AVFoundation
 
 struct AddTaskView: View {
     let status: TaskStatus
+    var onTaskCreated: ((TaskItem) -> Void)? = nil
+
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
-    @State private var quickCaptureText = ""
     @State private var title = ""
     @State private var description = ""
     @State private var completionCriteria = ""
     @State private var priority: TaskPriority = .medium
     @State private var selectedQuickCapturePhoto: PhotosPickerItem?
-    @State private var isGeneratingQuickCapture = false
-    @State private var isImportingQuickCapturePhoto = false
-    @State private var quickCaptureMessage: String?
-    @State private var quickCaptureDraftMessage: String?
     @State private var showingWIPLimitAlert = false
     @State private var showingQuickCaptureSheet = false
     @State private var showingPhotoPicker = false
     @State private var showingLiveTextScanner = false
+    @State private var showingVoiceCapture = false
+    @StateObject private var quickCapture = QuickCaptureCoordinator()
     @FocusState private var focusedField: Field?
     @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = true
     @AppStorage("maxActiveTasks") private var maxActiveTasks = 3
@@ -51,14 +49,27 @@ struct AddTaskView: View {
                 .padding(AppStyle.Spacing.extraLarge)
             }
             
-            bottomActionBar
+            AddTaskActionBar(
+                isImportingQuickCapturePhoto: quickCapture.isImportingPhoto,
+                quickCaptureMessage: quickCapture.message,
+                quickCaptureMessageColor: quickCaptureMessageColor,
+                isQuickCaptureBusy: quickCapture.isGenerating || quickCapture.isImportingPhoto,
+                isCreateEnabled: isValid,
+                onPasteNote: showPasteNoteCapture,
+                onImportPhoto: showPhotoPicker,
+                onScanText: startLiveTextScan,
+                onRecordVoice: showVoiceCapture,
+                onCreate: addTask
+            )
                 .padding(AppStyle.Spacing.extraLarge)
         }
         .background(AppStyle.Colors.background)
         .onAppear { focusedField = .title }
         .task(id: selectedQuickCapturePhoto) {
             guard let selectedQuickCapturePhoto else { return }
-            await importQuickCapturePhoto(selectedQuickCapturePhoto)
+            let result = await quickCapture.importPhoto(selectedQuickCapturePhoto)
+            handleQuickCaptureResult(result)
+            self.selectedQuickCapturePhoto = nil
         }
         .photosPicker(
             isPresented: $showingPhotoPicker,
@@ -67,23 +78,40 @@ struct AddTaskView: View {
         )
         .sheet(isPresented: $showingQuickCaptureSheet) {
             QuickCaptureDraftSheet(
-                text: $quickCaptureText,
-                message: quickCaptureDraftMessage,
-                isAvailable: isQuickCaptureAvailable,
-                unavailableMessage: quickCaptureUnavailableMessage,
-                isGenerating: isGeneratingQuickCapture
+                text: $quickCapture.text,
+                message: quickCapture.draftMessage,
+                isAvailable: quickCapture.isAvailable,
+                unavailableMessage: quickCapture.unavailableMessage,
+                isGenerating: quickCapture.isGenerating
             ) {
                 await generateTaskDraft()
+            } onAddManually: {
+                handleQuickCaptureResult(.applyManualText(quickCapture.text, source: .paste))
             }
             .presentationDetents([.medium, .large])
             .presentationDragIndicator(.visible)
         }
         .sheet(isPresented: $showingLiveTextScanner) {
             LiveTextScannerSheet { recognizedText in
-                Task { await handleRecognizedQuickCaptureText(recognizedText, source: .scanner) }
+                Task {
+                    let result = await quickCapture.handleRecognizedText(recognizedText, source: .scanner)
+                    handleQuickCaptureResult(result)
+                }
             } onError: { error in
-                quickCaptureMessage = error.localizedDescription
+                quickCapture.showMessage(error.localizedDescription)
             }
+        }
+        .sheet(isPresented: $showingVoiceCapture) {
+            VoiceCaptureSheet { recognizedText in
+                Task {
+                    let result = await quickCapture.handleRecognizedText(recognizedText, source: .voice)
+                    handleQuickCaptureResult(result)
+                }
+            } onError: { error in
+                quickCapture.showMessage(error.localizedDescription)
+            }
+            .presentationDetents([.large, .large])
+            .presentationDragIndicator(.visible)
         }
         .customAlert(
             isPresented: $showingWIPLimitAlert,
@@ -205,106 +233,29 @@ struct AddTaskView: View {
         .clipShape(RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
     }
 
-    private var bottomActionBar: some View {
-        VStack(alignment: .leading, spacing: AppStyle.Spacing.medium) {
-            if isImportingQuickCapturePhoto {
-                HStack(spacing: AppStyle.Spacing.small) {
-                    ProgressView()
-                        .controlSize(.small)
-                    Text("Extracting text from image…")
-                        .font(AppStyle.Typography.guidanceFooter)
-                        .foregroundStyle(AppStyle.Colors.secondaryText)
-                }
-            } else if let quickCaptureMessage {
-                Text(quickCaptureMessage)
-                    .font(AppStyle.Typography.guidanceFooter)
-                    .foregroundStyle(quickCaptureMessageColor)
-                    .fixedSize(horizontal: false, vertical: true)
-            }
-
-            HStack(spacing: AppStyle.Spacing.medium) {
-                captureMenu
-                createButton
-            }
-        }
-    }
-
-    private var captureMenu: some View {
-        Menu {
-            Button {
-                quickCaptureDraftMessage = nil
-                showingQuickCaptureSheet = true
-            } label: {
-                Label("Paste Note", systemImage: "square.and.pencil")
-            }
-
-            Button {
-                showingPhotoPicker = true
-            } label: {
-                Label("Import Photo", systemImage: "photo.on.rectangle.angled")
-            }
-
-            Button {
-                Task { await beginLiveTextScan() }
-            } label: {
-                Label("Scan Text", systemImage: "camera.viewfinder")
-            }
-        } label: {
-            HStack(spacing: AppStyle.Spacing.small) {
-                Image(systemName: "wand.and.stars")
-                Text("Capture")
-            }
-            .font(AppStyle.Typography.buttonLabel)
-            .frame(height: AppStyle.Shapes.fabSize)
-            .padding(.horizontal, AppStyle.Spacing.normal)
-            .frame(minWidth: AppStyle.Shapes.formControlMinWidth)
-        }
-        .buttonStyle(.glass)
-        .disabled(isGeneratingQuickCapture || isImportingQuickCapturePhoto)
-    }
-
-    private var createButton: some View {
-        Button {
-            addTask()
-        } label: {
-            HStack(spacing: AppStyle.Spacing.small) {
-                Image(systemName: "text.badge.plus")
-                    .font(AppStyle.Typography.buttonLabel)
-
-                Text("Create Task")
-                    .font(AppStyle.Typography.buttonLabel)
-            }
-            .frame(maxWidth: .infinity)
-            .frame(height: AppStyle.Shapes.fabSize)
-        }
-        .tint(isValid ? AppStyle.Colors.Status.todo : AppStyle.Colors.disabledControl)
-        .buttonStyle(.glass)
-        .disabled(!isValid)
-    }
-
-    private var quickCaptureAvailability: QuickCaptureAvailability {
-        QuickCaptureTaskGenerator.availability
-    }
-
     private var quickCaptureMessageColor: Color {
-        if quickCaptureMessage?.hasPrefix("Photo imported.") == true || quickCaptureMessage?.hasPrefix("Draft generated.") == true {
+        if quickCapture.message?.hasPrefix("Photo imported.") == true || quickCapture.message?.hasPrefix("Draft generated.") == true {
             return AppStyle.Colors.doneAccent
         }
-        return isQuickCaptureAvailable ? .secondary : AppStyle.Colors.warning
+        return quickCapture.isAvailable ? .secondary : AppStyle.Colors.warning
     }
 
-    private var isQuickCaptureAvailable: Bool {
-        if case .available = quickCaptureAvailability {
-            return true
-        }
-        return false
+    private func showPasteNoteCapture() {
+        quickCapture.preparePasteCapture()
+        showingQuickCaptureSheet = true
     }
 
-    private var quickCaptureUnavailableMessage: String? {
-        if case .unavailable(let message) = quickCaptureAvailability {
-            return message
-        }
-        return nil
+    private func showPhotoPicker() {
+        showingPhotoPicker = true
+    }
+
+    private func startLiveTextScan() {
+        Task { await beginLiveTextScan() }
+    }
+
+    private func showVoiceCapture() {
+        quickCapture.clearFeedback()
+        showingVoiceCapture = true
     }
 
     private func addTask() {
@@ -333,57 +284,14 @@ struct AddTaskView: View {
         )
         modelContext.insert(task)
         try? modelContext.save()
+        onTaskCreated?(task)
         dismiss()
     }
 
     @MainActor
     private func generateTaskDraft() async {
-        let cleanedText = quickCaptureText.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !cleanedText.isEmpty else { return }
-        guard isQuickCaptureAvailable else {
-            quickCaptureDraftMessage = quickCaptureUnavailableMessage
-            return
-        }
-
-        isGeneratingQuickCapture = true
-        quickCaptureDraftMessage = nil
-
-        defer { isGeneratingQuickCapture = false }
-
-        do {
-            let draft = try await QuickCaptureTaskGenerator.generate(from: cleanedText)
-            applyTaskDraft(draft, message: "Draft generated. Review and adjust before creating the task.")
-            showingQuickCaptureSheet = false
-        } catch {
-            quickCaptureDraftMessage = "Quick Capture AI couldn’t generate a draft right now. Try shortening the note and retry."
-        }
-    }
-
-    @MainActor
-    private func importQuickCapturePhoto(_ item: PhotosPickerItem) async {
-        isImportingQuickCapturePhoto = true
-        quickCaptureMessage = nil
-        quickCaptureDraftMessage = nil
-
-        defer {
-            isImportingQuickCapturePhoto = false
-            selectedQuickCapturePhoto = nil
-        }
-
-        do {
-            guard let imageData = try await item.loadTransferable(type: Data.self) else {
-                quickCaptureMessage = "The selected image could not be loaded."
-                return
-            }
-
-            let extractedText = try await ImageTextExtractionService.extractText(from: imageData)
-            await handleRecognizedQuickCaptureText(extractedText, source: .photo)
-        } catch let error as ImageTextExtractionError {
-            quickCaptureMessage = error.localizedDescription
-        } catch {
-            quickCaptureMessage = "The image text was extracted, but the AI draft couldn’t be generated right now. Review it and generate again."
-            showingQuickCaptureSheet = true
-        }
+        let result = await quickCapture.generateDraftFromCurrentText()
+        handleQuickCaptureResult(result)
     }
 
     @MainActor
@@ -405,65 +313,56 @@ struct AddTaskView: View {
         completionCriteria = cleanedDone
         priority = QuickCaptureTaskGenerator.taskPriority(from: draft.priority)
         focusedField = .title
-        quickCaptureMessage = message
+        quickCapture.markDraftApplied(message: message)
+    }
+
+    @MainActor
+    private func applyManualCaptureText(_ rawText: String, source: QuickCaptureSource) {
+        let cleanedText = rawText.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !cleanedText.isEmpty else { return }
+
+        if title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            title = cleanedText
+            focusedField = .title
+        } else if description.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            description = cleanedText
+            focusedField = .description
+        } else {
+            let cleanedDescription = description.trimmingCharacters(in: .whitespacesAndNewlines)
+            description = "\(cleanedDescription)\n\n\(cleanedText)"
+            focusedField = .description
+        }
+
+        quickCapture.markManualTextApplied(cleanedText, source: source)
+        showingQuickCaptureSheet = false
     }
 
     @MainActor
     private func beginLiveTextScan() async {
-        quickCaptureMessage = nil
-        quickCaptureDraftMessage = nil
+        quickCapture.clearFeedback()
 
-        switch AVCaptureDevice.authorizationStatus(for: .video) {
-        case .authorized:
+        switch await CameraPermissionService.requestCameraAccess() {
+        case .granted:
             showingLiveTextScanner = true
-        case .notDetermined:
-            let granted = await requestCameraAccess()
-            if granted {
-                showingLiveTextScanner = true
-            } else {
-                quickCaptureMessage = LiveTextScannerError.cameraAccessDenied.localizedDescription
-            }
-        case .denied, .restricted:
-            quickCaptureMessage = LiveTextScannerError.cameraAccessDenied.localizedDescription
-        @unknown default:
-            quickCaptureMessage = "Camera access is unavailable right now."
+        case .denied:
+            quickCapture.showMessage(LiveTextScannerError.cameraAccessDenied.localizedDescription)
+        case .unavailable:
+            quickCapture.showMessage("Camera access is unavailable right now.")
         }
     }
 
     @MainActor
-    private func handleRecognizedQuickCaptureText(_ recognizedText: String, source: QuickCaptureSource) async {
-        let cleanedText = recognizedText.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !cleanedText.isEmpty else {
-            quickCaptureMessage = LiveTextScannerError.noTextFound.localizedDescription
-            return
-        }
-
-        quickCaptureText = cleanedText
-        quickCaptureDraftMessage = source.reviewMessage
-
-        guard isQuickCaptureAvailable else {
+    private func handleQuickCaptureResult(_ result: QuickCaptureCoordinatorResult) {
+        switch result {
+        case .none:
+            break
+        case .applyDraft(let draft, let message):
+            applyTaskDraft(draft, message: message)
+            showingQuickCaptureSheet = false
+        case .applyManualText(let text, let source):
+            applyManualCaptureText(text, source: source)
+        case .showReviewSheet:
             showingQuickCaptureSheet = true
-            quickCaptureMessage = source.manualReviewMessage
-            return
-        }
-
-        isGeneratingQuickCapture = true
-        defer { isGeneratingQuickCapture = false }
-
-        do {
-            let draft = try await QuickCaptureTaskGenerator.generate(from: cleanedText)
-            applyTaskDraft(draft, message: source.successMessage)
-        } catch {
-            showingQuickCaptureSheet = true
-            quickCaptureMessage = source.generationFailureMessage
-        }
-    }
-
-    private func requestCameraAccess() async -> Bool {
-        await withCheckedContinuation { continuation in
-            AVCaptureDevice.requestAccess(for: .video) { granted in
-                continuation.resume(returning: granted)
-            }
         }
     }
 
@@ -488,124 +387,6 @@ struct AddTaskView: View {
         case .high: return AppStyle.Colors.Priority.high
         case .medium: return AppStyle.Colors.Priority.medium
         case .low: return AppStyle.Colors.Priority.low
-        }
-    }
-}
-
-private enum QuickCaptureSource {
-    case photo
-    case scanner
-
-    var reviewMessage: String {
-        switch self {
-        case .photo:
-            return "Photo imported. Review the extracted text or generate a draft."
-        case .scanner:
-            return "Text captured. Review the extracted text or generate a draft."
-        }
-    }
-
-    var manualReviewMessage: String {
-        switch self {
-        case .photo:
-            return "Photo imported. Text extracted. Apple Intelligence is unavailable, so review it manually."
-        case .scanner:
-            return "Text captured. Apple Intelligence is unavailable, so review it manually."
-        }
-    }
-
-    var successMessage: String {
-        switch self {
-        case .photo:
-            return "Photo imported. Draft generated from the extracted text."
-        case .scanner:
-            return "Text captured. Draft generated from the camera scan."
-        }
-    }
-
-    var generationFailureMessage: String {
-        switch self {
-        case .photo:
-            return "The image text was extracted, but the AI draft couldn’t be generated right now. Review it and generate again."
-        case .scanner:
-            return "The text was captured, but the AI draft couldn’t be generated right now. Review it and generate again."
-        }
-    }
-}
-
-private struct QuickCaptureDraftSheet: View {
-    @Binding var text: String
-    let message: String?
-    let isAvailable: Bool
-    let unavailableMessage: String?
-    let isGenerating: Bool
-    let onGenerate: @MainActor () async -> Void
-    @Environment(\.dismiss) private var dismiss
-    @FocusState private var isTextFocused: Bool
-
-    private var canGenerate: Bool {
-        isAvailable && !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && !isGenerating
-    }
-
-    var body: some View {
-        NavigationStack {
-            VStack(alignment: .leading, spacing: AppStyle.Spacing.large) {
-                VStack(alignment: .leading, spacing: AppStyle.Spacing.small) {
-                    Text("Quick Capture")
-                        .font(AppStyle.Typography.compactHeaderTitle)
-
-                    Text("Paste a note, email, or rough thought and turn it into a clean task draft.")
-                        .font(AppStyle.Typography.formFooter)
-                        .foregroundStyle(AppStyle.Colors.secondaryText)
-                }
-
-                TextField("Paste a note or messy thought…", text: $text, axis: .vertical)
-                    .lineLimit(8...14)
-                    .formFieldStyle()
-                    .focused($isTextFocused)
-
-                if let message {
-                    Text(message)
-                        .font(AppStyle.Typography.guidanceFooter)
-                        .foregroundStyle(message.hasPrefix("Draft generated.") ? AppStyle.Colors.doneAccent : AppStyle.Colors.secondaryText)
-                        .fixedSize(horizontal: false, vertical: true)
-                } else if !isAvailable, let unavailableMessage {
-                    Text(unavailableMessage)
-                        .font(AppStyle.Typography.guidanceFooter)
-                        .foregroundStyle(AppStyle.Colors.warning)
-                        .fixedSize(horizontal: false, vertical: true)
-                }
-
-                Spacer(minLength: AppStyle.Spacing.none)
-            }
-            .padding(AppStyle.Spacing.extraLarge)
-            .background(AppStyle.Colors.background)
-            .navigationTitle("Paste Note")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Button("Cancel") {
-                        dismiss()
-                    }
-                }
-
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        Task { await onGenerate() }
-                    } label: {
-                        if isGenerating {
-                            ProgressView()
-                                .controlSize(.small)
-                        } else {
-                            Text("Generate Draft")
-                        }
-                    }
-                    .disabled(!canGenerate)
-                }
-            }
-            .onAppear {
-                isTextFocused = true
-            }
         }
     }
 }

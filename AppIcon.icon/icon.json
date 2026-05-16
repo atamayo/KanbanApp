@@ -1,6 +1,6 @@
 {
   "fill" : {
-    "automatic-gradient" : "extended-srgb:0.00000,0.53333,1.00000,1.00000"
+    "solid" : "extended-gray:1.00000,1.00000"
   },
   "groups" : [
     {
@@ -8,13 +8,13 @@
         {
           "glass" : false,
           "hidden" : false,
-          "image-name" : "ig_04b3bab258fefcf0016a00d207dcf08191bb313034acc49261.png",
-          "name" : "ig_04b3bab258fefcf0016a00d207dcf08191bb313034acc49261",
+          "image-name" : "AppIcon 2.png",
+          "name" : "AppIcon 2",
           "position" : {
             "scale" : 1,
             "translation-in-points" : [
-              4.5234375,
-              -4
+              -6.9317661970756035,
+              15.88529753496448
             ]
           }
         }

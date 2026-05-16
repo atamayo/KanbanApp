@@ -14,10 +14,11 @@ struct MainTabView: View {
     @State private var selectedSegment: TaskStatus = .todo
     @State private var isAddingTask = false
     @State private var addTaskStatus: TaskStatus = .todo
+    @State private var addTaskSourceTab: AppTab = .dashboard
     @State private var searchText = ""
 
     private var inProgressCount: Int {
-        allTasks.filter { $0.status == .inProgress }.count
+        allTasks.filter { $0.status == .inProgress && !$0.isArchived }.count
     }
 
     var body: some View {
@@ -26,8 +27,11 @@ struct MainTabView: View {
             .tabBarMinimizeBehavior(.onScrollDown)
             .ignoresSafeArea(.keyboard)
             .syncAppIconBadge(tasks: allTasks)
+            .syncTaskAgingNotifications(tasks: allTasks)
             .sheet(isPresented: $isAddingTask) {
-                AddTaskView(status: addTaskStatus)
+                AddTaskView(status: addTaskStatus) { createdTask in
+                    handleCreatedTask(createdTask, from: addTaskSourceTab)
+                }
                     .presentationDetents([.large])
                     .presentationDragIndicator(.visible)
             }
@@ -95,6 +99,8 @@ struct MainTabView: View {
     }
 
     private func presentAddTask() {
+        addTaskSourceTab = selectedTab
+
         switch selectedTab {
         case .dashboard:
             addTaskStatus = .todo
@@ -105,6 +111,15 @@ struct MainTabView: View {
         }
 
         isAddingTask = true
+    }
+
+    private func handleCreatedTask(_ task: TaskItem, from sourceTab: AppTab) {
+        guard sourceTab == .dashboard else { return }
+
+        selectedSegment = task.status
+        withAnimation(AppStyle.Motion.snappy) {
+            selectedTab = .tasks
+        }
     }
 }
 

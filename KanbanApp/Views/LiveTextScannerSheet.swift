@@ -48,20 +48,9 @@ struct LiveTextScannerSheet: View {
             }
             .navigationTitle("Scan Text")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Button("Cancel") {
-                        dismiss()
-                    }
-                }
-
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button("Use Text") {
-                        let cleanedText = recognizedText.trimmingCharacters(in: .whitespacesAndNewlines)
-                        dismiss()
-                        onRecognizedText(cleanedText)
-                    }
-                    .disabled(!canUseCapturedText)
+            .safeAreaInset(edge: .bottom) {
+                if scannerError == nil {
+                    scannerActionBar
                 }
             }
         }
@@ -69,6 +58,60 @@ struct LiveTextScannerSheet: View {
             guard let newValue else { return }
             onError(newValue)
         }
+    }
+
+    private var scannerActionBar: some View {
+        HStack(spacing: AppStyle.Spacing.medium) {
+            Button {
+                dismiss()
+            } label: {
+                Text("Cancel")
+                    .font(AppStyle.Typography.secondaryAction)
+                    .frame(maxWidth: .infinity, minHeight: AppStyle.Shapes.iconBadgeSmall)
+                    .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .foregroundStyle(AppStyle.Colors.primaryText)
+            .background(
+                Capsule(style: .continuous)
+                    .fill(AppStyle.Colors.surface)
+            )
+            .overlay(
+                Capsule(style: .continuous)
+                    .stroke(AppStyle.Colors.surfaceBorder, lineWidth: AppStyle.Shapes.borderWidth)
+            )
+            .accessibilityHint("Dismisses the scanner without using captured text.")
+
+            Button {
+                useCapturedText()
+            } label: {
+                Text("Use Text")
+                    .font(AppStyle.Typography.buttonLabel)
+                    .frame(maxWidth: .infinity, minHeight: AppStyle.Shapes.iconBadgeSmall)
+                    .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .foregroundStyle(AppStyle.Colors.inverseText)
+            .background(
+                Capsule(style: .continuous)
+                    .fill(canUseCapturedText ? AppStyle.Colors.Status.todo : AppStyle.Colors.disabledControl)
+            )
+            .opacity(canUseCapturedText ? AppStyle.Opacity.opaque : AppStyle.Opacity.disabledControl)
+            .disabled(!canUseCapturedText)
+            .accessibilityHint("Uses the recognized text to create a task draft.")
+        }
+        .padding(.horizontal, AppStyle.Spacing.normal)
+        .padding(.top, AppStyle.Spacing.medium)
+        .padding(.bottom, AppStyle.Spacing.small)
+        .background(AppStyle.Materials.chrome)
+    }
+
+    private func useCapturedText() {
+        let cleanedText = recognizedText.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !cleanedText.isEmpty else { return }
+
+        dismiss()
+        onRecognizedText(cleanedText)
     }
 
     private func scannerUnavailableState(_ error: LiveTextScannerError) -> some View {

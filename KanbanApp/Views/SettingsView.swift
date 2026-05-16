@@ -4,12 +4,20 @@ struct SettingsView: View {
     @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = true
     @AppStorage("maxActiveTasks") private var maxActiveTasks = 3
     @AppStorage("wipLimitHitCount") private var wipLimitHitCount = 0
+    @AppStorage("isTaskAgingNotificationsEnabled") private var isTaskAgingNotificationsEnabled = false
+    @AppStorage("taskAgingNotificationDayThreshold") private var taskAgingNotificationDayThreshold = 3
+    @AppStorage("taskStalledNotificationDayThreshold") private var taskStalledNotificationDayThreshold = 5
+    @AppStorage("taskAgingNotificationHour") private var taskAgingNotificationHour = 9
+    @Environment(\.persistenceSyncMode) private var persistenceSyncMode
+    @State private var taskAgingNotificationMessage: String?
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: AppStyle.Spacing.compactSectionSpacing) {
                 focusGuardHero
+                syncSection
                 flowOptimizationSection
+                taskAgingNotificationSection
                 workflowPolicySection
                 learningSection
             }
@@ -124,6 +132,85 @@ struct SettingsView: View {
         }
     }
 
+    private var syncSection: some View {
+        VStack(alignment: .leading, spacing: AppStyle.Spacing.sectionToCard) {
+            sectionHeader("Task Sync")
+
+            settingsInfoCard(
+                icon: persistenceSyncMode.isCloudBacked ? "icloud.fill" : "internaldrive.fill",
+                title: persistenceSyncMode.isCloudBacked ? "iCloud sync is on" : "Using local storage on this device",
+                body: persistenceSyncMode.isCloudBacked
+                    ? "Tasks sync through iCloud when you use the same Apple Account on each device. Changes can take a short moment to appear everywhere."
+                    : "Tasks are currently stored only on this device. Turn on iCloud for this app to keep tasks available when you switch phones."
+            )
+        }
+    }
+
+    private var taskAgingNotificationSection: some View {
+        VStack(alignment: .leading, spacing: AppStyle.Spacing.sectionToCard) {
+            sectionHeader("Active Task Nudges")
+
+            VStack(alignment: .leading, spacing: AppStyle.Spacing.comfortable) {
+                Toggle(isOn: taskAgingNotificationToggleBinding) {
+                    HStack(spacing: AppStyle.Spacing.statusRowGap) {
+                        Image(systemName: "bell.badge.fill")
+                            .font(AppStyle.Typography.iconMedium)
+                            .foregroundStyle(AppStyle.Colors.warning)
+                            .frame(width: AppStyle.Spacing.iconFrameWidthLarge)
+
+                        VStack(alignment: .leading, spacing: AppStyle.Spacing.micro) {
+                            Text("Enable Active Task Nudges")
+                                .font(AppStyle.Typography.statusLabelHighlighted)
+                                .foregroundStyle(AppStyle.Colors.primaryText)
+
+                            Text("Send one daily reminder when In Progress tasks are aging or stalled.")
+                                .font(AppStyle.Typography.cardDate)
+                                .foregroundStyle(AppStyle.Colors.secondaryText)
+                        }
+                    }
+                }
+                .tint(AppStyle.Colors.warning)
+
+                if isTaskAgingNotificationsEnabled {
+                    VStack(alignment: .leading, spacing: AppStyle.Spacing.statusRowGap) {
+                        thresholdStepper(
+                            title: "Aging after",
+                            value: taskAgingNotificationDayThreshold,
+                            systemImage: "clock.badge.exclamationmark",
+                            binding: agingThresholdBinding,
+                            range: 1...14
+                        )
+
+                        thresholdStepper(
+                            title: "Stalled after",
+                            value: taskStalledNotificationDayThreshold,
+                            systemImage: "exclamationmark.circle.fill",
+                            binding: stalledThresholdBinding,
+                            range: (taskAgingNotificationDayThreshold + 1)...30
+                        )
+
+                        infoRow(label: "Digest time", value: "\(taskAgingNotificationHour):00")
+
+                        Text("The app schedules a rolling daily digest at \(taskAgingNotificationHour):00 and never sends one notification per task.")
+                            .font(AppStyle.Typography.guidanceFooter)
+                            .foregroundStyle(AppStyle.Colors.secondaryText)
+                    }
+                    .padding(AppStyle.Spacing.normal)
+                    .background(AppStyle.Colors.warning.opacity(AppStyle.Opacity.accentWashSubtle), in: RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
+                }
+
+                if let taskAgingNotificationMessage {
+                    Text(taskAgingNotificationMessage)
+                        .font(AppStyle.Typography.guidanceFooter)
+                        .foregroundStyle(AppStyle.Colors.warning)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+            }
+            .padding(AppStyle.Spacing.large)
+            .cardStyle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
+        }
+    }
+
     private var learningSection: some View {
         VStack(alignment: .leading, spacing: AppStyle.Spacing.sectionToCard) {
             sectionHeader("Practice")
@@ -186,6 +273,58 @@ struct SettingsView: View {
         }
     }
 
+    private var taskAgingNotificationToggleBinding: Binding<Bool> {
+        Binding(
+            get: { isTaskAgingNotificationsEnabled },
+            set: { newValue in
+                Task {
+                    await updateTaskAgingNotificationsEnabled(newValue)
+                }
+            }
+        )
+    }
+
+    private var agingThresholdBinding: Binding<Int> {
+        Binding(
+            get: { taskAgingNotificationDayThreshold },
+            set: { newValue in
+                taskAgingNotificationDayThreshold = max(newValue, 1)
+                if taskStalledNotificationDayThreshold <= taskAgingNotificationDayThreshold {
+                    taskStalledNotificationDayThreshold = taskAgingNotificationDayThreshold + 1
+                }
+            }
+        )
+    }
+
+    private var stalledThresholdBinding: Binding<Int> {
+        Binding(
+            get: { taskStalledNotificationDayThreshold },
+            set: { newValue in
+                taskStalledNotificationDayThreshold = max(newValue, taskAgingNotificationDayThreshold + 1)
+            }
+        )
+    }
+
+    @MainActor
+    private func updateTaskAgingNotificationsEnabled(_ isEnabled: Bool) async {
+        taskAgingNotificationMessage = nil
+
+        guard isEnabled else {
+            isTaskAgingNotificationsEnabled = false
+            await TaskAgingNotificationService.cancelScheduledNotifications()
+            return
+        }
+
+        let granted = await TaskAgingNotificationService.requestAuthorization()
+        if granted {
+            isTaskAgingNotificationsEnabled = true
+        } else {
+            isTaskAgingNotificationsEnabled = false
+            taskAgingNotificationMessage = "Notifications were not enabled. You can allow them in Settings to receive active task nudges."
+            await TaskAgingNotificationService.cancelScheduledNotifications()
+        }
+    }
+
     private func settingsStatCard(label: String, value: String, tint: Color) -> some View {
         VStack(alignment: .leading, spacing: AppStyle.Spacing.tiny) {
             Text(label)
@@ -232,6 +371,31 @@ struct SettingsView: View {
         }
         .padding(AppStyle.Spacing.cardContentPadding)
         .cardStyle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
+    }
+
+    private func thresholdStepper(
+        title: String,
+        value: Int,
+        systemImage: String,
+        binding: Binding<Int>,
+        range: ClosedRange<Int>
+    ) -> some View {
+        VStack(alignment: .leading, spacing: AppStyle.Spacing.tiny) {
+            HStack {
+                Label(title, systemImage: systemImage)
+                    .font(AppStyle.Typography.statusLabel)
+                    .foregroundStyle(AppStyle.Colors.primaryText)
+
+                Spacer()
+
+                Text("\(value) \(value == 1 ? "day" : "days")")
+                    .font(AppStyle.Typography.metricMedium)
+                    .foregroundStyle(AppStyle.Colors.warning)
+            }
+
+            Stepper("", value: binding, in: range)
+                .labelsHidden()
+        }
     }
 
     private func settingsInfoCard(icon: String, title: String, body: String) -> some View {

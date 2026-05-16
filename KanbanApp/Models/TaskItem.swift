@@ -35,25 +35,27 @@ enum TaskPriority: String, Codable, CaseIterable, Identifiable {
 
 @Model
 final class TaskItem {
-    var id: UUID
-    var title: String
-    var desc: String
-    var completionCriteria: String
-    var statusRaw: String
+    var id: UUID = UUID()
+    var title: String = ""
+    var desc: String = ""
+    var completionCriteria: String = ""
+    var statusRaw: String = TaskStatus.todo.rawValue
     var priorityRaw: String?
-    var isBlocked: Bool
-    var createdAt: Date
-    var updatedAt: Date
+    var isBlocked: Bool = false
+    var createdAt: Date = Date()
+    var updatedAt: Date = Date()
     var finalizedAt: Date?
+    var archivedAt: Date?
     var enteredInProgressAt: Date?
-    var order: Int
+    var order: Int = 0
 
-    var lastStatusChange: Date
+    var lastStatusChange: Date = Date()
     var status: TaskStatus {
         get { TaskStatus(rawValue: statusRaw) ?? .todo }
         set { 
             if statusRaw != newValue.rawValue {
                 statusRaw = newValue.rawValue 
+                archivedAt = nil
                 if newValue == .inProgress {
                     enteredInProgressAt = Date()
                 } else if newValue == .todo {
@@ -77,6 +79,21 @@ final class TaskItem {
         status == .inProgress && Date().timeIntervalSince(lastStatusChange) > (3 * 24 * 60 * 60)
     }
 
+    var isArchived: Bool {
+        archivedAt != nil
+    }
+
+    func archive() {
+        guard status == .done else { return }
+        archivedAt = Date()
+        updatedAt = Date()
+    }
+
+    func restoreFromArchive() {
+        guard archivedAt != nil else { return }
+        archivedAt = nil
+        updatedAt = Date()
+    }
 
     func timeInStatus() -> String {
         let diff = Date().timeIntervalSince(lastStatusChange)
@@ -103,6 +120,7 @@ final class TaskItem {
         self.updatedAt = Date()
         self.lastStatusChange = Date()
         self.enteredInProgressAt = status == .inProgress ? Date() : nil
+        self.archivedAt = nil
         self.order = order
         updateFinalizedAt(for: status)
     }

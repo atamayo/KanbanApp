@@ -26,7 +26,7 @@ struct KanbanBoardView: View {
 
     private func tasks(for status: TaskStatus) -> [TaskItem] {
         allTasks
-            .filter { $0.status == status }
+            .filter { $0.status == status && !$0.isArchived }
             .sorted { a, b in
                 if a.priority.sortOrder != b.priority.sortOrder {
                     return a.priority.sortOrder < b.priority.sortOrder

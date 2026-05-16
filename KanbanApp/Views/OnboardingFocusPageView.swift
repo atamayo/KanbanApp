@@ -34,7 +34,7 @@ struct OnboardingFocusPageView: View {
 
                     principleRow(
                         icon: "pause.circle.fill",
-                        tint: AppStyle.Colors.Priority.medium,
+                        tint: AppStyle.Colors.blocked,
                         title: "Blocked work stays visible",
                         body: "Waiting work should be seen clearly, not silently mixed into active focus."
                     )

@@ -6,21 +6,23 @@ struct DashboardView: View {
     @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = true
     @AppStorage("maxActiveTasks") private var maxActiveTasks = 3
     @AppStorage("wipLimitHitCount") private var wipLimitHitCount = 0
+    @AppStorage("taskAgingNotificationDayThreshold") private var taskAgingNotificationDayThreshold = 3
+    @AppStorage("taskStalledNotificationDayThreshold") private var taskStalledNotificationDayThreshold = 5
+    @State private var selectedCoachTask: TaskItem?
 
     // MARK: - Data
 
-    private var totalCount: Int { allTasks.count }
-    private var doneCount: Int { allTasks.filter { $0.status == .done }.count }
-    private var inProgressCount: Int { allTasks.filter { $0.status == .inProgress }.count }
-    private var todoCount: Int { allTasks.filter { $0.status == .todo }.count }
-
-    private var donePercent: Double {
-        guard totalCount > 0 else { return 0 }
-        return Double(doneCount) / Double(totalCount)
+    private var currentTasks: [TaskItem] {
+        allTasks.filter { !$0.isArchived }
     }
 
+    private var totalCount: Int { currentTasks.count }
+    private var doneCount: Int { currentTasks.filter { $0.status == .done }.count }
+    private var inProgressCount: Int { currentTasks.filter { $0.status == .inProgress }.count }
+    private var todoCount: Int { currentTasks.filter { $0.status == .todo }.count }
+
     private func count(priority: TaskPriority) -> Int {
-        allTasks.filter { $0.priority == priority }.count
+        currentTasks.filter { $0.priority == priority }.count
     }
 
     private var maxPriorityCount: Int {
@@ -28,21 +30,21 @@ struct DashboardView: View {
     }
 
     private var oldestInProgressTask: TaskItem? {
-        allTasks
+        currentTasks
             .filter { $0.status == .inProgress && !$0.isBlocked }
-            .sorted { $0.lastStatusChange < $1.lastStatusChange }
+            .sorted { TaskAgingEvaluator.activeSince(for: $0) < TaskAgingEvaluator.activeSince(for: $1) }
             .first
     }
 
     private var blockedInProgressTask: TaskItem? {
-        allTasks
+        currentTasks
             .filter { $0.status == .inProgress && $0.isBlocked }
             .sorted { $0.updatedAt < $1.updatedAt }
             .first
     }
 
     private var nextPullTask: TaskItem? {
-        allTasks
+        currentTasks
             .filter { $0.status == .todo }
             .sorted { lhs, rhs in
                 if lhs.priority.sortOrder != rhs.priority.sortOrder {
@@ -53,25 +55,21 @@ struct DashboardView: View {
             .first
     }
 
+    private var agingSummary: TaskAgingSummary {
+        TaskAgingEvaluator.evaluate(
+            tasks: currentTasks,
+            now: Date(),
+            agingDays: taskAgingNotificationDayThreshold,
+            stalledDays: taskStalledNotificationDayThreshold
+        )
+    }
+
     private var agingInProgressTasks: [TaskItem] {
-        allTasks
-            .filter {
-                $0.status == .inProgress &&
-                !$0.isBlocked &&
-                Date().timeIntervalSince($0.lastStatusChange) >= (3 * 24 * 60 * 60) &&
-                Date().timeIntervalSince($0.lastStatusChange) < (5 * 24 * 60 * 60)
-            }
-            .sorted { $0.lastStatusChange < $1.lastStatusChange }
+        agingSummary.agingTasks
     }
 
     private var stalledInProgressTasks: [TaskItem] {
-        allTasks
-            .filter {
-                $0.status == .inProgress &&
-                !$0.isBlocked &&
-                Date().timeIntervalSince($0.lastStatusChange) >= (5 * 24 * 60 * 60)
-            }
-            .sorted { $0.lastStatusChange < $1.lastStatusChange }
+        agingSummary.stalledTasks
     }
 
     private var doneThisWeekCount: Int {
@@ -82,7 +80,7 @@ struct DashboardView: View {
     }
 
     private var tasksWithCompletionCriteria: Int {
-        allTasks.filter { !$0.completionCriteria.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }.count
+        currentTasks.filter { !$0.completionCriteria.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }.count
     }
 
     private var doneTasksWithCycleTime: [TaskItem] {
@@ -104,18 +102,31 @@ struct DashboardView: View {
                 emptyState
             } else {
                 VStack(spacing: AppStyle.Spacing.compactSectionSpacing) {
-                    headerSection
-                    statusSection
+                    ProgresView(
+                        doneCount: doneCount,
+                        totalCount: totalCount,
+                        todoCount: todoCount,
+                        inProgressCount: inProgressCount
+                    )
+                    StatusView(
+                        todoCount: todoCount,
+                        inProgressCount: inProgressCount,
+                        doneCount: doneCount,
+                        totalCount: totalCount,
+                        maxActiveTasks: maxActiveTasks,
+                        isFocusGuardEnabled: isFocusGuardEnabled,
+                        onSelectStatus: onSelectStatus
+                    )
                     prioritySection
                     
                     WIPView(
-                        inProgressCount: inProgressCount,
+                        allTasks: currentTasks,
                         maxActiveTasks: maxActiveTasks,
                         isFocusGuardEnabled: isFocusGuardEnabled,
-                        blockedInProgressTask: blockedInProgressTask,
-                        oldestInProgressTask: oldestInProgressTask,
-                        nextPullTask: nextPullTask,
-                        onReviewActiveTasks: { onSelectStatus?(.inProgress) }
+                        onReviewActiveTasks: { onSelectStatus?(.inProgress) },
+                        onOpenTask: { task in
+                            selectedCoachTask = task
+                        }
                     )
 
                     flowReviewSection
@@ -133,6 +144,11 @@ struct DashboardView: View {
         .contentMargins(.bottom, AppStyle.Spacing.extraLarge, for: .scrollContent)
         .navigationTitle("Dashboard")
         .navigationBarTitleDisplayMode(.inline)
+        .sheet(item: $selectedCoachTask) { task in
+            TaskDetailView(task: task)
+                .presentationDetents([.large])
+                .presentationDragIndicator(.visible)
+        }
     }
 
     // MARK: - Empty State
@@ -153,251 +169,6 @@ struct DashboardView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(.vertical, AppStyle.Spacing.emptyStateVerticalPadding)
-    }
-
-    // MARK: - Header
-
-    private var headerSection: some View {
-        HStack(alignment: .center, spacing: AppStyle.Spacing.comfortable) {
-            VStack(alignment: .leading, spacing: AppStyle.Spacing.statusRowGap) {
-                VStack(alignment: .leading, spacing: AppStyle.Spacing.tight) {
-                    Text("Your Progress")
-                        .font(AppStyle.Typography.inlineHint)
-                        .foregroundStyle(AppStyle.Colors.subtleText)
-
-                    Text("\(doneCount) of \(totalCount) tasks")
-                        .font(AppStyle.Typography.metricSmall)
-                        .foregroundStyle(AppStyle.Colors.primaryText)
-                        .contentTransition(.numericText())
-                        .minimumScaleFactor(0.85)
-                }
-
-                progressBar
-            }
-
-            Spacer(minLength: AppStyle.Spacing.none)
-
-            progressRing
-        }
-        .padding(.vertical, AppStyle.Spacing.comfortable)
-        .padding(.horizontal, AppStyle.Spacing.heroPadding)
-        .cardStyle(cornerRadius: AppStyle.Shapes.headerCornerRadius)
-    }
-
-    private var progressBar: some View {
-        GeometryReader { geo in
-            ZStack(alignment: .leading) {
-                Capsule()
-                    .fill(AppStyle.Colors.track.opacity(AppStyle.Opacity.track))
-
-                Capsule()
-                    .fill(
-                        LinearGradient(
-                            colors: [
-                                AppStyle.Colors.Status.done.opacity(AppStyle.Opacity.accentForegroundStrong),
-                                AppStyle.Colors.Status.done
-                            ],
-                            startPoint: .leading,
-                            endPoint: .trailing
-                        )
-                    )
-                    .frame(width: max(AppStyle.Shapes.progressMinWidth, geo.size.width * donePercent))
-                    .animation(AppStyle.Motion.progress, value: donePercent)
-            }
-        }
-        .frame(maxWidth: AppStyle.Shapes.progressBarMaxWidth)
-        .frame(height: AppStyle.Shapes.progressBarHeight)
-    }
-
-    private var progressRing: some View {
-        let ringSize = AppStyle.Shapes.dashboardRingSize
-        return ZStack {
-            Circle()
-                .stroke(AppStyle.Colors.track.opacity(AppStyle.Opacity.subtleTrack), lineWidth: AppStyle.Shapes.dashboardRingTrackStroke)
-
-            Circle()
-                .trim(from: 0, to: donePercent)
-                .stroke(
-                    AppStyle.Colors.Status.done.opacity(AppStyle.Opacity.accentBorder),
-                    style: .init(lineWidth: AppStyle.Shapes.dashboardRingGlowStroke, lineCap: .round)
-                )
-                .rotationEffect(.degrees(-90))
-                .blur(radius: AppStyle.Shapes.compactRingGlowBlur)
-
-            Circle()
-                .trim(from: 0, to: donePercent)
-                .stroke(
-                    LinearGradient(
-                        colors: [AppStyle.Colors.Status.done.opacity(AppStyle.Opacity.accentForegroundEmphasized), AppStyle.Colors.Status.done],
-                        startPoint: .top,
-                        endPoint: .bottomTrailing
-                    ),
-                    style: .init(lineWidth: AppStyle.Shapes.dashboardRingTrackStroke, lineCap: .round)
-                )
-                .rotationEffect(.degrees(-90))
-                .animation(AppStyle.Motion.ringProgress, value: donePercent)
-
-            VStack(spacing: AppStyle.Spacing.micro) {
-                Text("\(Int(donePercent * 100))%")
-                    .font(AppStyle.Typography.ringPercentage)
-                    .foregroundStyle(AppStyle.Colors.primaryText)
-                    .contentTransition(.numericText())
-
-                Text("Complete")
-                    .font(AppStyle.Typography.ringCaption)
-                    .foregroundStyle(AppStyle.Colors.subtleText)
-            }
-        }
-        .frame(width: ringSize, height: ringSize)
-    }
-
-    // MARK: - Status
-
-    private var statusSection: some View {
-        VStack(alignment: .leading, spacing: AppStyle.Spacing.statusRowGap) {
-            HStack(alignment: .center) {
-                sectionHeader("Status")
-                Spacer()
-                stackedBar
-                    .frame(width: AppStyle.Spacing.stackedBarWidth)
-            }
-
-            HStack(spacing: AppStyle.Spacing.tight) {
-                Image(systemName: "hand.tap.fill")
-                    .font(AppStyle.Typography.iconTiny)
-                Text("Tap a lane to open its tasks")
-                    .font(AppStyle.Typography.inlineHint)
-            }
-            .foregroundStyle(AppStyle.Colors.subtleText)
-
-            VStack(spacing: AppStyle.Spacing.none) {
-                statusRow(status: .todo, count: todoCount, color: AppStyle.Colors.Status.todo, icon: "circle")
-                
-                dividerLine
-                
-                statusRow(status: .inProgress, count: inProgressCount, color: AppStyle.Colors.Status.inProgress, icon: "clock.fill", isHighlighted: true)
-                
-                dividerLine
-                
-                statusRow(status: .done, count: doneCount, color: AppStyle.Colors.Status.done, icon: "checkmark.circle.fill")
-            }
-            .cardStyle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
-        }
-    }
-
-    private var dividerLine: some View {
-        AppStyle.Colors.divider
-            .frame(height: AppStyle.Shapes.dividerHeight)
-            .padding(.leading, AppStyle.Spacing.dividerLeadingCompact)
-    }
-
-    private func statusRow(status: TaskStatus, count: Int, color: Color, icon: String, isHighlighted: Bool = false) -> some View {
-        let barRatio = totalCount > 0 ? Double(count) / Double(totalCount) : 0.0
-        
-        // Focus Guard logic
-        let isWIPLimitReached = isFocusGuardEnabled && status == .inProgress && count >= maxActiveTasks
-        let rowColor = isWIPLimitReached ? AppStyle.Colors.warning : color
-
-        return Button {
-            onSelectStatus?(status)
-        } label: {
-            HStack(spacing: AppStyle.Spacing.statusRowGap) {
-                Image(systemName: isWIPLimitReached ? "exclamationmark.triangle.fill" : icon)
-                    .font(AppStyle.Typography.iconMedium)
-                    .foregroundStyle(rowColor)
-                    .frame(width: AppStyle.Shapes.statusRowIconWidth)
-
-                Text(status.rawValue)
-                    .font(isHighlighted ? AppStyle.Typography.statusRowTitleHighlighted : AppStyle.Typography.statusRowTitle)
-                    .foregroundStyle(isHighlighted ? AppStyle.Colors.primaryText : rowColor.opacity(AppStyle.Opacity.accentForegroundStrong))
-                    .frame(width: AppStyle.Spacing.statusLabelWidthComfortable, alignment: .leading)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.82)
-
-                GeometryReader { geo in
-                    Capsule()
-                        .fill(
-                            LinearGradient(
-                                colors: [rowColor, rowColor.opacity(AppStyle.Opacity.subtleTrack)],
-                                startPoint: .leading,
-                                endPoint: .trailing
-                            )
-                        )
-                        .frame(width: max(AppStyle.Shapes.minBarWidth, geo.size.width * barRatio))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .animation(AppStyle.Motion.rowProgress, value: barRatio)
-                }
-                .frame(height: AppStyle.Shapes.barHeightHighlighted)
-
-                Text(count.formatted())
-                    .font(AppStyle.Typography.statusRowCount)
-                    .foregroundStyle(isHighlighted ? AppStyle.Colors.primaryText : AppStyle.Colors.secondaryText)
-                    .monospacedDigit()
-                    .contentTransition(.numericText())
-                    .frame(width: AppStyle.Spacing.countFrameWidthComfortable, alignment: .trailing)
-
-                Image(systemName: "chevron.right")
-                    .font(AppStyle.Typography.iconSmall)
-                    .foregroundStyle(AppStyle.Colors.tertiaryText)
-                    .frame(width: AppStyle.Shapes.chevronWidth)
-            }
-            .padding(.horizontal, AppStyle.Spacing.cardPadding)
-            .padding(.vertical, AppStyle.Spacing.statusRowVerticalComfortable)
-            .contentShape(.rect)
-            .background {
-                if isHighlighted {
-                    RoundedRectangle(cornerRadius: AppStyle.Shapes.statusHighlightCornerRadius, style: .continuous)
-                        .fill(rowColor.opacity(AppStyle.Opacity.accentWashStrong))
-                        .padding(.horizontal, AppStyle.Spacing.statusHighlightPaddingHorizontal)
-                        .padding(.vertical, AppStyle.Spacing.statusHighlightPaddingVertical)
-                }
-            }
-            .overlay(alignment: .trailing) {
-                if isHighlighted {
-                    RoundedRectangle(cornerRadius: AppStyle.Shapes.statusHighlightCornerRadius, style: .continuous)
-                        .stroke(rowColor.opacity(AppStyle.Opacity.accentBorder), lineWidth: AppStyle.Shapes.emphasizedBorderWidth)
-                        .padding(.horizontal, AppStyle.Spacing.statusHighlightPaddingHorizontal)
-                        .padding(.vertical, AppStyle.Spacing.statusHighlightPaddingVertical)
-                }
-            }
-        }
-        .buttonStyle(.plain)
-        .accessibilityLabel("\(status.rawValue), \(count) tasks")
-        .accessibilityHint("Opens the \(status.rawValue) lane")
-    }
-
-    private var stackedBar: some View {
-        let total = max(totalCount, 1)
-        let todoRatio = CGFloat(todoCount) / CGFloat(total)
-        let progRatio = CGFloat(inProgressCount) / CGFloat(total)
-        let doneRatio = CGFloat(doneCount) / CGFloat(total)
-
-        return GeometryReader { geo in
-            ZStack(alignment: .leading) {
-                Capsule()
-                    .fill(AppStyle.Colors.track)
-
-                HStack(spacing: AppStyle.Spacing.none) {
-                    if todoCount > 0 {
-                        Rectangle()
-                            .fill(AppStyle.Colors.Status.todo)
-                            .frame(width: geo.size.width * todoRatio)
-                    }
-                    if inProgressCount > 0 {
-                        Rectangle()
-                            .fill(isFocusGuardEnabled && inProgressCount >= maxActiveTasks ? AppStyle.Colors.warning : AppStyle.Colors.Status.inProgress)
-                            .frame(width: geo.size.width * progRatio)
-                    }
-                    if doneCount > 0 {
-                        Rectangle()
-                            .fill(AppStyle.Colors.Status.done)
-                            .frame(width: geo.size.width * doneRatio)
-                    }
-                }
-            }
-            .clipShape(Capsule())
-        }
-        .frame(height: AppStyle.Shapes.barHeight)
     }
 
     // MARK: - Priority
@@ -472,8 +243,8 @@ struct DashboardView: View {
             VStack(spacing: AppStyle.Spacing.statusRowGap) {
                 flowReviewCard(
                     title: "Blocked Work",
-                    count: blockedInProgressTask == nil ? 0 : allTasks.filter { $0.status == .inProgress && $0.isBlocked }.count,
-                    tint: AppStyle.Colors.warning,
+                    count: blockedInProgressTask == nil ? 0 : currentTasks.filter { $0.status == .inProgress && $0.isBlocked }.count,
+                    tint: AppStyle.Colors.blocked,
                     icon: "pause.circle.fill",
                     description: blockedInProgressTask == nil ? "No active blockers right now." : "Blocked tasks need attention before more work is pulled."
                 )
@@ -669,15 +440,16 @@ struct DashboardView: View {
     }
 
     private func activeAgeText(for task: TaskItem) -> String {
-        let days = Int(Date().timeIntervalSince(task.lastStatusChange) / (24 * 60 * 60))
+        let activeSince = TaskAgingEvaluator.activeSince(for: task)
+        let days = Int(Date().timeIntervalSince(activeSince) / (24 * 60 * 60))
         if days > 0 {
             return "\(days)d"
         }
-        let hours = Int(Date().timeIntervalSince(task.lastStatusChange) / (60 * 60))
+        let hours = Int(Date().timeIntervalSince(activeSince) / (60 * 60))
         if hours > 0 {
             return "\(hours)h"
         }
-        let minutes = Int(Date().timeIntervalSince(task.lastStatusChange) / 60)
+        let minutes = Int(Date().timeIntervalSince(activeSince) / 60)
         return "\(max(minutes, 1))m"
     }
 
