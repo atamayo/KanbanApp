@@ -28,6 +28,12 @@
             "state": "translated",
             "value": "「%@」はしばらく進行中です。新しい作業を引き込む前に確認しましょう。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” कुछ समय से प्रगति में है। और काम लेने से पहले इसे देख लें।"
+          }
         }
       }
     },
@@ -56,6 +62,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "「%@」は進行中のまま少し時間が経っています。軽く見直すと、ボードの流れを保てます。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” प्रगति में रहते हुए लंबा खिंचने लगा है। एक छोटी समीक्षा बोर्ड को आगे बढ़ाए रख सकती है।"
           }
         }
       }
@@ -86,6 +98,12 @@
             "state": "translated",
             "value": "「%@」には判断が必要かもしれません。ほかにも %lld 件のアクティブな%@が長引いています。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” पर शायद निर्णय चाहिए। %lld और सक्रिय %@ भी लंबे खिंच रहे हैं।"
+          }
         }
       }
     },
@@ -110,6 +128,12 @@
           }
         },
         "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ %@"
+          }
+        },
+        "hi": {
           "stringUnit": {
             "state": "translated",
             "value": "%@ %@"
@@ -142,6 +166,12 @@
             "state": "translated",
             "value": "%@ 列、%lld 件のタスク"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ कॉलम, %lld कार्य"
+          }
         }
       }
     },
@@ -169,6 +199,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@ / %@ %@ 完了"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ में से %@ %@ पूरे"
           }
         }
       }
@@ -198,6 +234,12 @@
             "state": "translated",
             "value": "%@優先度"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ प्राथमिकता"
+          }
         }
       }
     },
@@ -225,6 +267,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@、%lld %@"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@, %lld %@"
           }
         }
       }
@@ -254,6 +302,12 @@
             "state": "translated",
             "value": "%@、%@前に作成"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@, %@ पहले बनाया गया"
+          }
         }
       }
     },
@@ -281,6 +335,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@、%@進行中"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@, %@ से प्रगति में"
           }
         }
       }
@@ -310,6 +370,12 @@
             "state": "translated",
             "value": "%@。%@"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@। %@"
+          }
         }
       }
     },
@@ -338,6 +404,12 @@
             "state": "translated",
             "value": "%lld"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld"
+          }
         }
       }
     },
@@ -362,6 +434,12 @@
           }
         },
         "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld %@"
+          }
+        },
+        "hi": {
           "stringUnit": {
             "state": "translated",
             "value": "%lld %@"
@@ -395,6 +473,12 @@
             "state": "translated",
             "value": "%lld 件の%@が停滞している可能性があります"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld %@ रुक सकते हैं"
+          }
         }
       }
     },
@@ -423,6 +507,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld 件のアクティブな%@が長引いています"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld सक्रिय %@ लंबे खिंच रहे हैं"
           }
         }
       }
@@ -453,6 +543,12 @@
             "state": "translated",
             "value": "%lld日"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld दिन"
+          }
         }
       }
     },
@@ -481,6 +577,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "この状態で %lld 日"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इस स्थिति में %lld दिन"
           }
         }
       }
@@ -511,6 +613,12 @@
             "state": "translated",
             "value": "%lld時間"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld घंटे"
+          }
         }
       }
     },
@@ -539,6 +647,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "この状態で %lld 時間"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इस स्थिति में %lld घंटे"
           }
         }
       }
@@ -569,6 +683,12 @@
             "state": "translated",
             "value": "%lld分"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld मिनट"
+          }
         }
       }
     },
@@ -598,6 +718,12 @@
             "state": "translated",
             "value": "%lld分前"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld मिनट पहले"
+          }
         }
       }
     },
@@ -622,6 +748,12 @@
           }
         },
         "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3 / 3"
+          }
+        },
+        "hi": {
           "stringUnit": {
             "state": "translated",
             "value": "3 / 3"
@@ -654,6 +786,12 @@
             "state": "translated",
             "value": "アクティブな作業を小さく保つほど、集中できる仕組みはうまく機能します。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सक्रिय काम कम रखने पर फोकस वाला सिस्टम बेहतर काम करता है।"
+          }
         }
       }
     },
@@ -681,6 +819,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "アクティブなタスクを 2〜3 件に絞ると、集中力、品質、完了率が上がりやすくなります。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "2 या 3 सक्रिय कार्यों की सीमा आम तौर पर फोकस, गुणवत्ता और पूरा करने की गति सुधारती है।"
           }
         }
       }
@@ -710,6 +854,12 @@
             "state": "translated",
             "value": "「進行中」を制限すると、作業を増やしすぎず、今の作業に集中しやすくなります。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सीमित “प्रगति में” लेन से मौजूदा काम पर टिके रहना आसान होता है, बजाय बहुत सारे कार्यों में ऊर्जा बिखेरने के।"
+          }
         }
       }
     },
@@ -737,6 +887,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "タスクを「進行中」に置くのは、今まさに取り組んでいるときだけです。ブロック中や待機中の作業は、見えないまま混ぜずに可視化しましょう。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कोई कार्य “प्रगति में” तभी होना चाहिए जब आप अभी सच में उस पर काम कर रहे हों। रुका हुआ या इंतज़ार वाला काम साफ दिखना चाहिए, चुपचाप मिला हुआ नहीं।"
           }
         }
       }
@@ -766,6 +922,12 @@
             "state": "translated",
             "value": "タスクは「もう少しで終わり」ではなく、完了条件を満たしたときに完了です。「完了の定義」を使って、完了基準を明確にしましょう。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कार्य तब पूरा है जब उसका पूरा होने का मानदंड पूरा हो, सिर्फ पास लगता हो तब नहीं। पूरा होना स्पष्ट करने के लिए “पूर्णता की परिभाषा” फ़ील्ड इस्तेमाल करें।"
+          }
         }
       }
     },
@@ -793,6 +955,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "行動につながるダッシュボード"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कार्रवाई योग्य डैशबोर्ड"
           }
         }
       }
@@ -822,6 +990,12 @@
             "state": "translated",
             "value": "アクティブ"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सक्रिय"
+          }
         }
       }
     },
@@ -849,6 +1023,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "アクティブ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सक्रिय"
           }
         }
       }
@@ -878,6 +1058,12 @@
             "state": "translated",
             "value": "アクティブ期間"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सक्रिय अवधि"
+          }
         }
       }
     },
@@ -905,6 +1091,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "アクティブタスク通知"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सक्रिय कार्य याद दिलाना"
           }
         }
       }
@@ -934,6 +1126,12 @@
             "state": "translated",
             "value": "アクティブな作業"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सक्रिय काम"
+          }
         }
       }
     },
@@ -961,6 +1159,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "タスクを追加すると、ダッシュボードに内容が表示されます"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "डैशबोर्ड भरने के लिए एक कार्य जोड़ें"
           }
         }
       }
@@ -990,6 +1194,12 @@
             "state": "translated",
             "value": "タスクの背景を追加"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कार्य के लिए संदर्भ जोड़ें"
+          }
         }
       }
     },
@@ -1017,6 +1227,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "タスクを追加"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कार्य जोड़ें"
           }
         }
       }
@@ -1046,6 +1262,12 @@
             "state": "translated",
             "value": "最初のタスクを追加して、進捗の記録を始めましょう。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "प्रगति ट्रैक करना शुरू करने के लिए अपना पहला कार्य जोड़ें।"
+          }
         }
       }
     },
@@ -1073,6 +1295,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@ ステータスに追加中"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ स्थिति में जोड़ा जा रहा है"
           }
         }
       }
@@ -1102,6 +1330,12 @@
             "state": "translated",
             "value": "長期化"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "लंबा खिंच रहा"
+          }
         }
       }
     },
@@ -1129,6 +1363,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "長期化のしきい値"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इसके बाद लंबा माना जाए"
           }
         }
       }
@@ -1158,6 +1398,12 @@
             "state": "translated",
             "value": "長期化しているタスク"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "लंबे खिंचते कार्य"
+          }
         }
       }
     },
@@ -1185,6 +1431,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "すべてのタスク"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सभी कार्य"
           }
         }
       }
@@ -1214,6 +1466,12 @@
             "state": "translated",
             "value": "すべてのタスクが完了しました"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सभी कार्य पूरे हुए"
+          }
         }
       }
     },
@@ -1241,6 +1499,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "あと少しです。残りのタスクを完了しましょう。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "लगभग हो गया — बाकी कार्य बंद करें।"
           }
         }
       }
@@ -1270,6 +1534,12 @@
             "state": "translated",
             "value": "Apple Intelligence を準備しています。少し待ってからもう一度お試しください。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Intelligence तैयार हो रहा है। थोड़ी देर में फिर कोशिश करें।"
+          }
         }
       }
     },
@@ -1297,6 +1567,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "このデバイスでは Apple Intelligence はサポートされていません。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इस डिवाइस पर Apple Intelligence समर्थित नहीं है।"
           }
         }
       }
@@ -1326,6 +1602,12 @@
             "state": "translated",
             "value": "Apple Intelligence を利用できません。ここにテキストを貼り付け、手動でタスクに追加してください。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Intelligence उपलब्ध नहीं है, इसलिए टेक्स्ट यहाँ पेस्ट करें और उसे कार्य में मैन्युअली जोड़ें।"
+          }
         }
       }
     },
@@ -1353,6 +1635,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "アーカイブ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आर्काइव"
           }
         }
       }
@@ -1382,6 +1670,12 @@
             "state": "translated",
             "value": "完了タスクをアーカイブ"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पूरा कार्य आर्काइव करें"
+          }
         }
       }
     },
@@ -1409,6 +1703,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "アーカイブ済み"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आर्काइव किए गए"
           }
         }
       }
@@ -1438,6 +1738,12 @@
             "state": "translated",
             "value": "%@前にアーカイブ"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ पहले आर्काइव किया गया"
+          }
         }
       }
     },
@@ -1465,6 +1771,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "アーカイブ済み %lld 件"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld आर्काइव"
           }
         }
       }
@@ -1494,6 +1806,12 @@
             "state": "translated",
             "value": "アーカイブした完了タスクはアクティブなボードから外れますが、完了履歴には残ります。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आर्काइव किए गए पूरे कार्य सक्रिय बोर्ड से हट जाते हैं, लेकिन पूरा होने के इतिहास में गिने जाते हैं।"
+          }
         }
       }
     },
@@ -1521,6 +1839,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "平均完了日数"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पूरा होने के औसत दिन"
           }
         }
       }
@@ -1550,6 +1874,12 @@
             "state": "translated",
             "value": "次に引き込むべきタスク"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अगला लेने के लिए सबसे अच्छा कार्य"
+          }
         }
       }
     },
@@ -1577,6 +1907,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "ブロック中"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "रुका हुआ"
           }
         }
       }
@@ -1606,6 +1942,12 @@
             "state": "translated",
             "value": "ブロック中 / 待機中"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "रुका हुआ / इंतज़ार में"
+          }
         }
       }
     },
@@ -1633,6 +1975,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "ブロック中のアクティブ作業"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "रुका हुआ सक्रिय काम"
           }
         }
       }
@@ -1662,6 +2010,12 @@
             "state": "translated",
             "value": "新しい作業を引き込む前に、ブロック中のタスクを確認しましょう。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "और काम लेने से पहले रुके हुए कार्यों पर ध्यान देना ज़रूरी है।"
+          }
         }
       }
     },
@@ -1689,6 +2043,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "ブロック中の作業"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "रुका हुआ काम"
           }
         }
       }
@@ -1718,6 +2078,12 @@
             "state": "translated",
             "value": "ブロック中の作業が流れを遅くしています。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "रुका हुआ काम आपकी गति कम कर रहा है।"
+          }
         }
       }
     },
@@ -1745,6 +2111,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "ブロック中の作業を見える状態に保つ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "रुका हुआ काम दिखता रहता है"
           }
         }
       }
@@ -1774,6 +2146,12 @@
             "state": "translated",
             "value": "ボード完了。すべてのタスクが完了しました。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "बोर्ड पूरा — सभी कार्य हो गए।"
+          }
         }
       }
     },
@@ -1801,6 +2179,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "先に分解"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पहले तोड़ें"
           }
         }
       }
@@ -1830,6 +2214,12 @@
             "state": "translated",
             "value": "タスクを分解"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कार्य को छोटे हिस्सों में तोड़ें"
+          }
         }
       }
     },
@@ -1857,6 +2247,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "食料品を買う"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "किराना खरीदें"
           }
         }
       }
@@ -1886,6 +2282,12 @@
             "state": "translated",
             "value": "テキストをスキャンするにはカメラへのアクセスが必要です。設定で有効にしてください。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "टेक्स्ट स्कैन करने के लिए कैमरा एक्सेस चाहिए। इसे सेटिंग्स में चालू करें।"
+          }
         }
       }
     },
@@ -1913,6 +2315,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "現在、カメラへのアクセスを利用できません。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कैमरा एक्सेस अभी उपलब्ध नहीं है।"
           }
         }
       }
@@ -1942,6 +2350,12 @@
             "state": "translated",
             "value": "キャンセル"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "रद्द करें"
+          }
         }
       }
     },
@@ -1969,6 +2383,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "取り込み"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कैप्चर"
           }
         }
       }
@@ -1998,6 +2418,12 @@
             "state": "translated",
             "value": "次のタスクを選択"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अगला कार्य चुनें"
+          }
         }
       }
     },
@@ -2025,6 +2451,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "クリア"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "साफ करें"
           }
         }
       }
@@ -2054,6 +2486,12 @@
             "state": "translated",
             "value": "完了条件をクリア"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पूरा करने का मानदंड साफ करें"
+          }
         }
       }
     },
@@ -2081,6 +2519,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "完了条件をクリア"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पूरा करने के मानदंड साफ करें"
           }
         }
       }
@@ -2110,6 +2554,12 @@
             "state": "translated",
             "value": "判断を明確に"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ज़्यादा साफ निर्णय"
+          }
         }
       }
     },
@@ -2137,6 +2587,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "閉じる"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "बंद करें"
           }
         }
       }
@@ -2166,6 +2622,12 @@
             "state": "translated",
             "value": "タスクを 1 つ完了すると、集中枠が空き、「完了」列が強くなり、進捗を実感しやすくなります。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "एक कार्य बंद करें और आप एक फोकस स्लॉट खाली करते हैं, पूरा कॉलम मज़बूत करते हैं, और प्रगति फिर से असली लगती है।"
+          }
         }
       }
     },
@@ -2193,6 +2655,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "クローズ済み"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "बंद"
           }
         }
       }
@@ -2222,6 +2690,12 @@
             "state": "translated",
             "value": "%@前にクローズ"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ पहले बंद किया गया"
+          }
         }
       }
     },
@@ -2249,6 +2723,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "完了"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पूरा करें"
           }
         }
       }
@@ -2278,6 +2758,12 @@
             "state": "translated",
             "value": "完了"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पूरे"
+          }
         }
       }
     },
@@ -2305,6 +2791,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "完了済み"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पूरा हुआ"
           }
         }
       }
@@ -2334,6 +2826,12 @@
             "state": "translated",
             "value": "完了した作業は隠れません。ダッシュボードとボードの両方で見えるため、進捗が具体的で励みになります。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पूरा हुआ काम छिपता नहीं है। डैशबोर्ड और बोर्ड दोनों उसे दिखाते हैं, ताकि प्रगति ठोस और प्रेरक लगे।"
+          }
         }
       }
     },
@@ -2361,6 +2859,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "続ける"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "जारी रखें"
           }
         }
       }
@@ -2390,6 +2894,12 @@
             "state": "translated",
             "value": "タスクを作成"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कार्य बनाएँ"
+          }
         }
       }
     },
@@ -2417,6 +2927,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "作成済み"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "बनाया गया"
           }
         }
       }
@@ -2446,6 +2962,12 @@
             "state": "translated",
             "value": "現在 %lld"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "मौजूदा %lld"
+          }
         }
       }
     },
@@ -2473,6 +2995,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "ダッシュボード"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "डैशबोर्ड"
           }
         }
       }
@@ -2502,6 +3030,12 @@
             "state": "translated",
             "value": "日"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "दिन"
+          }
         }
       }
     },
@@ -2529,6 +3063,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "日"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "दिन"
           }
         }
       }
@@ -2558,6 +3098,12 @@
             "state": "translated",
             "value": "完了の定義"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पूर्णता की परिभाषा"
+          }
         }
       }
     },
@@ -2585,6 +3131,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "削除"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "हटाएँ"
           }
         }
       }
@@ -2614,6 +3166,12 @@
             "state": "translated",
             "value": "タスクを削除"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कार्य हटाएँ"
+          }
         }
       }
     },
@@ -2641,6 +3199,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "タスクを自然な言葉で説明してください。生成されたタスクは保存前に編集できます。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "एक कार्य को सहज भाषा में लिखें। सेव करने से पहले आप बनाए गए कार्य को संपादित कर सकते हैं।"
           }
         }
       }
@@ -2670,6 +3234,12 @@
             "state": "translated",
             "value": "説明"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "विवरण"
+          }
         }
       }
     },
@@ -2698,6 +3268,12 @@
             "state": "translated",
             "value": "ダイジェスト時刻"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सारांश का समय"
+          }
         }
       }
     },
@@ -2725,6 +3301,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "取り込んだテキストを使わずにスキャナーを閉じます。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कैप्चर किए गए टेक्स्ट का उपयोग किए बिना स्कैनर बंद करता है।"
           }
         }
       }
@@ -2755,6 +3337,12 @@
             "state": "translated",
             "value": "完了"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पूरा"
+          }
         }
       }
     },
@@ -2782,6 +3370,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "完了フィルター"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पूरा फ़िल्टर"
           }
         }
       }
@@ -2811,6 +3405,12 @@
             "state": "translated",
             "value": "完了とは基準を満たすこと"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पूरा मतलब मानदंड पूरे"
+          }
         }
       }
     },
@@ -2838,6 +3438,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "完了の勢い"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पूरा होने की गति"
           }
         }
       }
@@ -2867,6 +3473,12 @@
             "state": "translated",
             "value": "完了を見える状態に保つ"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पूरा हुआ दिखता रहता है"
+          }
         }
       }
     },
@@ -2894,6 +3506,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "完了タスクフィルター"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पूरे कार्यों का फ़िल्टर"
           }
         }
       }
@@ -2923,6 +3541,12 @@
             "state": "translated",
             "value": "今週の完了"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इस सप्ताह पूरे"
+          }
         }
       }
     },
@@ -2950,6 +3574,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "ダブルタップで詳細を開きます。スワイプまたは長押しで操作できます。カードをドラッグして並べ替えます。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "विवरण खोलने के लिए दो बार टैप करें। कार्रवाइयों के लिए स्वाइप या लंबा दबाएँ। क्रम बदलने के लिए कार्ड खींचें।"
           }
         }
       }
@@ -2979,6 +3609,12 @@
             "state": "translated",
             "value": "下書きを生成しました。タスクを作成する前に確認して調整してください。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ड्राफ़्ट बन गया। कार्य बनाने से पहले समीक्षा और बदलाव करें।"
+          }
         }
       }
     },
@@ -3006,6 +3642,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "アクティブタスク通知を有効にする"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सक्रिय कार्य याद दिलाना चालू करें"
           }
         }
       }
@@ -3035,6 +3677,12 @@
             "state": "translated",
             "value": "フロー最適化を有効にする"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "फ़्लो ऑप्टिमाइज़ेशन चालू करें"
+          }
         }
       }
     },
@@ -3062,6 +3710,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "十分な背景情報"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पर्याप्त संदर्भ"
           }
         }
       }
@@ -3091,6 +3745,12 @@
             "state": "translated",
             "value": "タスクを 1 つ完了するたびに注意力が空き、次の作業を引き込む余地が生まれます。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "हर पूरा कार्य ध्यान खाली करता है और अगला काम लेने की जगह बनाता है।"
+          }
         }
       }
     },
@@ -3118,6 +3778,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "画像からテキストを抽出しています…"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "चित्र से टेक्स्ट निकाला जा रहा है…"
           }
         }
       }
@@ -3147,6 +3813,12 @@
             "state": "translated",
             "value": "タイトル、説明、完了の定義でタスクを検索します。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "शीर्षक, विवरण या पूर्णता की परिभाषा से कार्य खोजें।"
+          }
         }
       }
     },
@@ -3174,6 +3846,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "終わらせる"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "समाप्त करें"
           }
         }
       }
@@ -3203,6 +3881,12 @@
             "state": "translated",
             "value": "次を引き込む前に、まず 1 つ完了しましょう。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "दूसरा लेने से पहले एक पूरा करें।"
+          }
         }
       }
     },
@@ -3230,6 +3914,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "次のタスクを引き込む前に、1 つ完了しましょう。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "दूसरा कार्य लेने से पहले एक कार्य पूरा करें।"
           }
         }
       }
@@ -3259,6 +3949,12 @@
             "state": "translated",
             "value": "新しい作業を引き込む前に、アクティブなタスクを 1 つ完了するか前進させましょう。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "नया काम लेने से पहले एक सक्रिय कार्य पूरा करें या आगे बढ़ाएँ।"
+          }
         }
       }
     },
@@ -3286,6 +3982,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "完了した作業も仕組みの一部です。タスクが閉じていくのを見ると、勢いが生まれ、ストレスも減ります。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पूरा हुआ काम भी सिस्टम का हिस्सा है। कार्य बंद होते देखना गति देता है और तनाव घटाता है।"
           }
         }
       }
@@ -3315,6 +4017,12 @@
             "state": "translated",
             "value": "フロー最適化"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "फ़्लो ऑप्टिमाइज़ेशन"
+          }
         }
       }
     },
@@ -3342,6 +4050,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "フロー最適化は集中を守ります"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "फ़्लो ऑप्टिमाइज़ेशन फोकस बचाता है"
           }
         }
       }
@@ -3371,6 +4085,12 @@
             "state": "translated",
             "value": "フロー確認"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "फ़्लो समीक्षा"
+          }
         }
       }
     },
@@ -3398,6 +4118,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "フロー状態"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "फ़्लो स्थिति"
           }
         }
       }
@@ -3427,6 +4153,12 @@
             "state": "translated",
             "value": "フロー傾向"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "फ़्लो रुझान"
+          }
         }
       }
     },
@@ -3454,6 +4186,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "現在の作業に集中"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "मौजूदा काम पर फोकस करें"
           }
         }
       }
@@ -3483,6 +4221,12 @@
             "state": "translated",
             "value": "タスクに集中"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कार्य पर फोकस"
+          }
         }
       }
     },
@@ -3510,6 +4254,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "このタスクに集中"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इस कार्य पर फोकस करें"
           }
         }
       }
@@ -3539,6 +4289,12 @@
             "state": "translated",
             "value": "新しい"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "नया"
+          }
         }
       }
     },
@@ -3566,6 +4322,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "進行中から完了へ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "प्रगति में से पूरा तक"
           }
         }
       }
@@ -3595,6 +4357,12 @@
             "state": "translated",
             "value": "このタスクを再び動かすための、具体的な次の一手を生成します。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इस कार्य को फिर से आगे बढ़ाने के लिए एक ठोस अगला कदम बनाएँ।"
+          }
         }
       }
     },
@@ -3623,6 +4391,12 @@
             "state": "translated",
             "value": "生成中…"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "बनाया जा रहा है…"
+          }
         }
       }
     },
@@ -3650,6 +4424,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "良いスタートです。作業を完了へ進め続けましょう。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अच्छी शुरुआत — काम को पूरा होने की ओर बढ़ाते रहें।"
           }
         }
       }
@@ -3680,6 +4460,12 @@
             "state": "translated",
             "value": "高"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "उच्च"
+          }
         }
       }
     },
@@ -3707,6 +4493,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "高優先度"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "उच्च प्राथमिकता"
           }
         }
       }
@@ -3736,6 +4528,12 @@
             "state": "translated",
             "value": "この App がどう支えるか"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "यह ऐप कैसे मदद करता है"
+          }
         }
       }
     },
@@ -3763,6 +4561,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "この App の使い方"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इस ऐप का उपयोग कैसे करें"
           }
         }
       }
@@ -3792,6 +4596,12 @@
             "state": "translated",
             "value": "iCloud 同期がオンです"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iCloud सिंक चालू है"
+          }
         }
       }
     },
@@ -3819,6 +4629,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "写真を読み込む"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "फ़ोटो आयात करें"
           }
         }
       }
@@ -3849,6 +4665,12 @@
             "state": "translated",
             "value": "進行中"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "प्रगति में"
+          }
         }
       }
     },
@@ -3876,6 +4698,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "進行中とは、今注意を向けていること"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "प्रगति में मतलब सक्रिय ध्यान"
           }
         }
       }
@@ -3905,6 +4733,12 @@
             "state": "translated",
             "value": "この App では、アクティブな列に余裕があるときだけ新しいタスクを「進行中」に移します。これまでの WIP 制限到達回数: %lld。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इस ऐप में नया कार्य “प्रगति में” तभी जाना चाहिए जब सक्रिय लेन में जगह हो। अब तक WIP सीमा इतनी बार पहुँची: %lld।"
+          }
         }
       }
     },
@@ -3932,6 +4766,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "情報"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "जानकारी"
           }
         }
       }
@@ -3961,6 +4801,12 @@
             "state": "translated",
             "value": "カンバン"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kanban"
+          }
         }
       }
     },
@@ -3988,6 +4834,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "KanbanApp はタスクのための明確な仕組みを提供します。頭の中だけで抱え込まず、作業を前に進められます。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KanbanApp आपके कार्यों के लिए एक साफ सिस्टम देता है, ताकि सब कुछ दिमाग में सँभालने के बजाय आप काम आगे बढ़ा सकें।"
           }
         }
       }
@@ -4017,6 +4869,12 @@
             "state": "translated",
             "value": "短くまとめましょう。簡潔な完了条件があると、延々と磨き続けるのではなく完了しやすくなります。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इसे छोटा रखें। छोटा completion check आपको लगातार सुधारते रहने के बजाय पूरा करने में मदद करता है।"
+          }
         }
       }
     },
@@ -4044,6 +4902,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "短くしましょう。コンパクトな完了条件があると、タスクを閉じやすくなります。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इसे छोटा रखें। संक्षिप्त finish check से कार्य बंद करना आसान होता है।"
           }
         }
       }
@@ -4073,6 +4937,12 @@
             "state": "translated",
             "value": "タスクを 3 つの基本状態の間で動かし続けましょう。ボードは単なるリストではなく、フロー全体を映すものです。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कार्य तीन मुख्य स्थितियों से आगे बढ़ते रहें। बोर्ड आपके फ़्लो की मुख्य तस्वीर है, सिर्फ कार्यों की सूची नहीं।"
+          }
         }
       }
     },
@@ -4100,6 +4970,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "大きなタスク"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "बड़ा कार्य"
           }
         }
       }
@@ -4129,6 +5005,12 @@
             "state": "translated",
             "value": "完了をモチベーションにする"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पूरा हुआ काम आपको प्रेरित करे"
+          }
         }
       }
     },
@@ -4156,6 +5038,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "制限に達しました"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सीमा पहुँच गई"
           }
         }
       }
@@ -4185,6 +5073,12 @@
             "state": "translated",
             "value": "WIP を制限"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP सीमित करें"
+          }
         }
       }
     },
@@ -4212,6 +5106,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "進行中の作業を制限して、コンテキストスイッチを減らします。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "context switching कम करने के लिए चल रहा काम सीमित करें।"
           }
         }
       }
@@ -4241,6 +5141,12 @@
             "state": "translated",
             "value": "聞き取り中..."
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सुन रहा है..."
+          }
         }
       }
     },
@@ -4268,6 +5174,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "このデバイスではライブテキストスキャンはサポートされていません。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इस डिवाइस पर live text scanning समर्थित नहीं है।"
           }
         }
       }
@@ -4298,6 +5210,12 @@
             "state": "translated",
             "value": "低"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कम"
+          }
         }
       }
     },
@@ -4325,6 +5243,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "低優先度"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कम प्राथमिकता"
           }
         }
       }
@@ -4354,6 +5278,12 @@
             "state": "translated",
             "value": "頭の負荷を下げる"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "मानसिक बोझ कम करें"
+          }
         }
       }
     },
@@ -4381,6 +5311,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "マニフェスト"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "मैनिफेस्टो"
           }
         }
       }
@@ -4410,6 +5346,12 @@
             "state": "translated",
             "value": "アクティブにする"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सक्रिय मार्क करें"
+          }
         }
       }
     },
@@ -4437,6 +5379,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "ブロック中 / 待機中にする"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "रुका हुआ / इंतज़ार में मार्क करें"
           }
         }
       }
@@ -4466,6 +5414,12 @@
             "state": "translated",
             "value": "完了にする"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पूरा मार्क करें"
+          }
         }
       }
     },
@@ -4493,6 +5447,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "最大アクティブタスク数"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अधिकतम सक्रिय कार्य"
           }
         }
       }
@@ -4523,6 +5483,12 @@
             "state": "translated",
             "value": "中"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "मध्यम"
+          }
         }
       }
     },
@@ -4550,6 +5516,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "中優先度"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "मध्यम प्राथमिकता"
           }
         }
       }
@@ -4579,6 +5551,12 @@
             "state": "translated",
             "value": "タスクを音声入力するにはマイクへのアクセスが必要です。設定で有効にしてください。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कार्य बोलकर लिखने के लिए माइक्रोफ़ोन एक्सेस चाहिए। इसे सेटिंग्स में चालू करें।"
+          }
         }
       }
     },
@@ -4606,6 +5584,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "ボード全体に勢いが生まれています。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आपके बोर्ड पर गति बन रही है।"
           }
         }
       }
@@ -4635,6 +5619,12 @@
             "state": "translated",
             "value": "勢いが見えています。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "गति दिख रही है।"
+          }
         }
       }
     },
@@ -4662,6 +5652,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "完了へのモチベーションを高める"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पूरा करने की और प्रेरणा"
           }
         }
       }
@@ -4691,6 +5687,12 @@
             "state": "translated",
             "value": "余裕ができたときだけタスクを「進行中」に移しましょう。完了によって次の約束のための空間を作ります。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कार्य को “प्रगति में” तभी ले जाएँ जब जगह बने। पूरा होना अगले commitment के लिए जगह बनाता है।"
+          }
         }
       }
     },
@@ -4718,6 +5720,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "進行中へ移動"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "प्रगति में ले जाएँ"
           }
         }
       }
@@ -4747,6 +5755,12 @@
             "state": "translated",
             "value": "未着手へ移動"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "करना है में ले जाएँ"
+          }
         }
       }
     },
@@ -4774,6 +5788,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "最初のタスクを完了に移して、勢いを作りましょう。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "गति बनाने के लिए अपना पहला कार्य पूरा में ले जाएँ।"
           }
         }
       }
@@ -4803,6 +5823,12 @@
             "state": "translated",
             "value": "このタスクを進行中に移動します。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इस कार्य को प्रगति में ले जाता है।"
+          }
         }
       }
     },
@@ -4830,6 +5856,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "進行中から完了したタスクが必要です"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "प्रगति में से पूरे हुए कार्य चाहिए"
           }
         }
       }
@@ -4859,6 +5891,12 @@
             "state": "translated",
             "value": "範囲をもっと明確にする必要があります"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "दायरा और साफ चाहिए"
+          }
         }
       }
     },
@@ -4886,6 +5924,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "新規タスク"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "नया कार्य"
           }
         }
       }
@@ -4915,6 +5959,12 @@
             "state": "translated",
             "value": "次のアクション"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अगली कार्रवाई"
+          }
         }
       }
     },
@@ -4942,6 +5992,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "次のアクション提案は現在利用できません。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अगली कार्रवाई का सुझाव अभी उपलब्ध नहीं है।"
           }
         }
       }
@@ -4971,6 +6027,12 @@
             "state": "translated",
             "value": "次のアクション: %@"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अगली कार्रवाई: %@"
+          }
         }
       }
     },
@@ -4998,6 +6060,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "操作は不要です"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कोई कार्रवाई नहीं चाहिए"
           }
         }
       }
@@ -5027,6 +6095,12 @@
             "state": "translated",
             "value": "現在、アクティブなブロッカーはありません。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अभी कोई सक्रिय blocker नहीं है।"
+          }
         }
       }
     },
@@ -5054,6 +6128,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "実行中のアクティブタスクはありません"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कोई सक्रिय कार्य चल नहीं रहा"
           }
         }
       }
@@ -5083,6 +6163,12 @@
             "state": "translated",
             "value": "アクティブなタスクはありません"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कोई सक्रिय कार्य नहीं"
+          }
         }
       }
     },
@@ -5110,6 +6196,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "一致するタスクはありません"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कोई मिलते-जुलते कार्य नहीं"
           }
         }
       }
@@ -5139,6 +6231,12 @@
             "state": "translated",
             "value": "その画像には読み取れるテキストが見つかりませんでした。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "उस चित्र में पढ़ने योग्य टेक्स्ट नहीं मिला।"
+          }
         }
       }
     },
@@ -5166,6 +6264,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "カメラ画面に読み取れるテキストが見つかりませんでした。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कैमरा दृश्य में पढ़ने योग्य टेक्स्ट नहीं मिला।"
           }
         }
       }
@@ -5195,6 +6299,12 @@
             "state": "translated",
             "value": "待機中の準備済みタスクはありません"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कोई तैयार कार्य इंतज़ार में नहीं है"
+          }
         }
       }
     },
@@ -5222,6 +6332,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "確認が必要な準備済み作業はありません"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "किसी तैयार काम पर ध्यान नहीं चाहिए"
           }
         }
       }
@@ -5251,6 +6367,12 @@
             "state": "translated",
             "value": "おすすめのタスクはありません。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कोई सुझाया गया कार्य नहीं।"
+          }
         }
       }
     },
@@ -5278,6 +6400,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "音声を取り込めませんでした。もう一度録音してください。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कोई आवाज़ कैप्चर नहीं हुई। फिर से रिकॉर्ड करें।"
           }
         }
       }
@@ -5307,6 +6435,12 @@
             "state": "translated",
             "value": "現在、停滞している作業はありません。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अभी कोई रुका हुआ काम नहीं है।"
+          }
         }
       }
     },
@@ -5334,6 +6468,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "タスクはありません"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कोई कार्य नहीं"
           }
         }
       }
@@ -5363,6 +6503,12 @@
             "state": "translated",
             "value": "まだタスクはありません"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अभी कोई कार्य नहीं"
+          }
         }
       }
     },
@@ -5390,6 +6536,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "待機中のタスクはありません"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कोई इंतज़ार वाला कार्य नहीं"
           }
         }
       }
@@ -5419,6 +6571,12 @@
             "state": "translated",
             "value": "まだ完了したものはありません"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अभी कुछ पूरा नहीं हुआ"
+          }
         }
       }
     },
@@ -5447,6 +6605,12 @@
             "state": "translated",
             "value": "まだ流れから外れているものはありません。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अभी कुछ भी बहक नहीं रहा है।"
+          }
         }
       }
     },
@@ -5474,6 +6638,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "通知は有効になっていません。アクティブタスク通知を受け取るには、設定で許可してください。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notifications चालू नहीं हुईं। सक्रिय कार्य याद दिलाने के लिए आप इन्हें सेटिंग्स में अनुमति दे सकते हैं।"
           }
         }
       }
@@ -5504,6 +6674,12 @@
             "state": "translated",
             "value": "今"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अभी"
+          }
         }
       }
     },
@@ -5531,6 +6707,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "オフ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "बंद"
           }
         }
       }
@@ -5560,6 +6742,12 @@
             "state": "translated",
             "value": "OK"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ठीक है"
+          }
         }
       }
     },
@@ -5587,6 +6775,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "最も古いアクティブタスク"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सबसे पुराना सक्रिय कार्य"
           }
         }
       }
@@ -5616,6 +6810,12 @@
             "state": "translated",
             "value": "オン"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "चालू"
+          }
         }
       }
     },
@@ -5643,6 +6843,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "集中枠は残り 1 つです"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सिर्फ एक फोकस स्लॉट बचा है"
           }
         }
       }
@@ -5672,6 +6878,12 @@
             "state": "translated",
             "value": "ブロック中のタスクを開く"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "रुका हुआ कार्य खोलें"
+          }
         }
       }
     },
@@ -5699,6 +6911,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "詳細なおすすめを開きます。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "विस्तृत सुझाव खोलता है।"
           }
         }
       }
@@ -5728,6 +6946,12 @@
             "state": "translated",
             "value": "タスクの詳細を開きます。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कार्य विवरण खोलता है।"
+          }
         }
       }
     },
@@ -5755,6 +6979,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "この列のタスクを開きます"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इस लेन के कार्य खोलता है"
           }
         }
       }
@@ -5784,6 +7014,12 @@
             "state": "translated",
             "value": "アクティブ作業の列を開きます。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सक्रिय काम की लेन खोलता है।"
+          }
         }
       }
     },
@@ -5811,6 +7047,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "ブロック中のタスクを開いて更新できます。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "रुका हुआ कार्य खोलता है ताकि आप उसे अपडेट कर सकें।"
           }
         }
       }
@@ -5840,6 +7082,12 @@
             "state": "translated",
             "value": "おすすめのアクティブタスクを開きます。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सुझाया गया सक्रिय कार्य खोलता है।"
+          }
         }
       }
     },
@@ -5867,6 +7115,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "WIP 制限を %lld 件超過"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP सीमा से %lld ज़्यादा"
           }
         }
       }
@@ -5896,6 +7150,12 @@
             "state": "translated",
             "value": "メモやまとまっていない考えを貼り付け…"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कोई नोट या बिखरा हुआ विचार पेस्ट करें…"
+          }
         }
       }
     },
@@ -5923,6 +7183,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "メモを貼り付け"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "नोट पेस्ट करें"
           }
         }
       }
@@ -5952,6 +7218,12 @@
             "state": "translated",
             "value": "パーソナルカンバン"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Personal Kanban"
+          }
         }
       }
     },
@@ -5979,6 +7251,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "パーソナルカンバンの実践"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Personal Kanban व्यवहार में"
           }
         }
       }
@@ -6008,6 +7286,12 @@
             "state": "translated",
             "value": "パーソナルカンバン・マニフェスト"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Personal Kanban मैनिफेस्टो"
+          }
         }
       }
     },
@@ -6035,6 +7319,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "パーソナルカンバンでは、コンテキストスイッチを減らし、タスクを早く完了するために、WIP を 2〜3 件に制限することをすすめています。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Personal Kanban context-switching कम करने और कार्य जल्दी पूरा करने के लिए WIP सीमा 2 या 3 रखने की सलाह देता है।"
           }
         }
       }
@@ -6064,6 +7354,12 @@
             "state": "translated",
             "value": "パーソナルカンバンでは、コンテキストスイッチを減らし、タスクを早く完了するために、WIP を 2〜3 件に制限することをすすめています。別の進行中タスクを追加する前に、アクティブなタスクを完了するか移動しましょう。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Personal Kanban context-switching कम करने और कार्य जल्दी पूरा करने के लिए WIP सीमा 2 या 3 रखने की सलाह देता है। दूसरा प्रगति में कार्य जोड़ने से पहले एक सक्रिय कार्य पूरा करें या हटाएँ।"
+          }
         }
       }
     },
@@ -6091,6 +7387,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "パーソナルカンバンでは、コンテキストスイッチを減らし、タスクを早く完了するために、WIP を 2〜3 件に制限することをすすめています。別のタスクを進行中に移す前に、アクティブなタスクを完了するか移動しましょう。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Personal Kanban context-switching कम करने और कार्य जल्दी पूरा करने के लिए WIP सीमा 2 या 3 रखने की सलाह देता है। दूसरे कार्य को प्रगति में ले जाने से पहले एक सक्रिय कार्य पूरा करें या हटाएँ।"
           }
         }
       }
@@ -6120,6 +7422,12 @@
             "state": "translated",
             "value": "パーソナルカンバンは、引き込む前に完了すると最も効果を発揮します。アクティブな列を小さく、見える状態に保ちましょう。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Personal Kanban तब सबसे अच्छा काम करता है जब आप नया लेने से पहले पूरा करते हैं। अपनी सक्रिय लेन छोटी और साफ रखें।"
+          }
         }
       }
     },
@@ -6147,6 +7455,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "写真を読み込みました。Apple Intelligence を利用できないため、テキストを手動確認用に追加しました。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "फ़ोटो आयात हो गई। Apple Intelligence उपलब्ध नहीं है, इसलिए टेक्स्ट मैन्युअल समीक्षा के लिए जोड़ दिया गया।"
           }
         }
       }
@@ -6176,6 +7490,12 @@
             "state": "translated",
             "value": "写真を読み込みました。抽出したテキストから下書きを生成しました。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "फ़ोटो आयात हो गई। निकाले गए टेक्स्ट से ड्राफ़्ट बन गया।"
+          }
         }
       }
     },
@@ -6203,6 +7523,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "写真を読み込みました。抽出したテキストを確認するか、下書きを生成してください。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "फ़ोटो आयात हो गई। निकाले गए टेक्स्ट की समीक्षा करें या ड्राफ़्ट बनाएँ।"
           }
         }
       }
@@ -6232,6 +7558,12 @@
             "state": "translated",
             "value": "実践"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अभ्यास"
+          }
         }
       }
     },
@@ -6259,6 +7591,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "必要なタイミングで圧力が見える"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "दबाव सही समय पर दिखता है"
           }
         }
       }
@@ -6288,6 +7626,12 @@
             "state": "translated",
             "value": "優先度"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "प्राथमिकता"
+          }
         }
       }
     },
@@ -6315,6 +7659,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "優先度のサイン、WIP ガイダンス、見えるタスク状態によって、次に何を完了すべきかを迷いにくくします。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "प्राथमिकता संकेत, WIP मार्गदर्शन और दिखती हुई कार्य स्थितियाँ उपयोगकर्ता को कम रुकावट के साथ अगला पूरा करने योग्य काम चुनने में मदद करती हैं।"
           }
         }
       }
@@ -6344,6 +7694,12 @@
             "state": "translated",
             "value": "注意力を守る"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अपना ध्यान बचाएँ"
+          }
         }
       }
     },
@@ -6371,6 +7727,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "集中を守る"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अपना फोकस बचाएँ"
           }
         }
       }
@@ -6400,6 +7762,12 @@
             "state": "translated",
             "value": "抱え込まずに引き込む"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ओवरलोड के बजाय काम खींचें"
+          }
         }
       }
     },
@@ -6427,6 +7795,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "次のタスクが小さい、または緊急の場合だけ引き込みましょう。それ以外は、まずアクティブな作業を完了します。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अगला कार्य छोटा या ज़रूरी हो तभी खींचें। नहीं तो पहले सक्रिय काम पूरा करें।"
           }
         }
       }
@@ -6456,6 +7830,12 @@
             "state": "translated",
             "value": "余裕があるときだけ引き込む"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "जगह हो तभी खींचें"
+          }
         }
       }
     },
@@ -6483,6 +7863,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "余裕があるときだけ引き込む"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आपके पास जगह हो तभी खींचें"
           }
         }
       }
@@ -6512,6 +7898,12 @@
             "state": "translated",
             "value": "タスクを引き込む"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कार्य खींचें"
+          }
         }
       }
     },
@@ -6539,6 +7931,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "クイックキャプチャ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quick Capture"
           }
         }
       }
@@ -6568,6 +7966,12 @@
             "state": "translated",
             "value": "クイックキャプチャ AI は現在下書きを生成できません。テキストを確認して、もう一度お試しください。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quick Capture AI अभी ड्राफ़्ट नहीं बना सका। टेक्स्ट देखें और फिर कोशिश करें।"
+          }
         }
       }
     },
@@ -6595,6 +7999,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "クイックキャプチャ AI は現在下書きを生成できません。メモを短くして、もう一度お試しください。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quick Capture AI अभी ड्राफ़्ट नहीं बना सका। नोट छोटा करके फिर कोशिश करें।"
           }
         }
       }
@@ -6624,6 +8034,12 @@
             "state": "translated",
             "value": "クイックキャプチャ AI は現在利用できません。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quick Capture AI अभी उपलब्ध नहीं है।"
+          }
         }
       }
     },
@@ -6651,6 +8067,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "作業の可視化、プル型システム、WIP 制限の基本原則を読みます。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "visual work, pull systems और WIP limits के मुख्य सिद्धांत पढ़ें।"
           }
         }
       }
@@ -6680,6 +8102,12 @@
             "state": "translated",
             "value": "準備完了"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "तैयार"
+          }
         }
       }
     },
@@ -6707,6 +8135,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "準備済みの候補"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "तैयार विकल्प"
           }
         }
       }
@@ -6736,6 +8170,12 @@
             "state": "translated",
             "value": "引き込み可能"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "खींचने के लिए तैयार"
+          }
         }
       }
     },
@@ -6763,6 +8203,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "最近の完了ペース"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "हाल की पूरा करने की दर"
           }
         }
       }
@@ -6792,6 +8238,12 @@
             "state": "translated",
             "value": "おすすめのアクション"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सुझाई गई कार्रवाई"
+          }
         }
       }
     },
@@ -6819,6 +8271,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "おすすめタスク: %@。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सुझाया गया कार्य: %@।"
           }
         }
       }
@@ -6848,6 +8306,12 @@
             "state": "translated",
             "value": "もう一度録音"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "फिर रिकॉर्ड करें"
+          }
         }
       }
     },
@@ -6875,6 +8339,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "音声を録音"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आवाज़ रिकॉर्ड करें"
           }
         }
       }
@@ -6904,6 +8374,12 @@
             "state": "translated",
             "value": "新しいことを始める前に、アクティブな作業を減らしましょう。集中と完了スピードを守れます。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कुछ नया शुरू करने से पहले सक्रिय काम घटाएँ। इससे फोकस और पूरा करने की गति बचती है।"
+          }
         }
       }
     },
@@ -6931,6 +8407,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "先に WIP を減らす"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पहले WIP घटाएँ"
           }
         }
       }
@@ -6960,6 +8442,12 @@
             "state": "translated",
             "value": "今すぐ WIP を減らす"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अभी WIP घटाएँ"
+          }
         }
       }
     },
@@ -6987,6 +8475,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "アクティブ作業に関連"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सक्रिय काम से संबंधित"
           }
         }
       }
@@ -7016,6 +8510,12 @@
             "state": "translated",
             "value": "新しいタスクが緊急で小さい場合を除き、追加で引き込む前にブロック中の作業を解消しましょう。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "और कार्य खींचने से पहले रुका हुआ काम हल करें, जब तक नया कार्य छोटा और ज़रूरी न हो।"
+          }
         }
       }
     },
@@ -7043,6 +8543,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "復元"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पुनर्स्थापित करें"
           }
         }
       }
@@ -7072,6 +8578,12 @@
             "state": "translated",
             "value": "アーカイブから復元"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आर्काइव से पुनर्स्थापित करें"
+          }
         }
       }
     },
@@ -7099,6 +8611,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "アクティブタスクを確認"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सक्रिय कार्यों की समीक्षा करें"
           }
         }
       }
@@ -7128,6 +8646,12 @@
             "state": "translated",
             "value": "引き込む前に確認"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "खींचने से पहले समीक्षा"
+          }
         }
       }
     },
@@ -7155,6 +8679,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "容量を確認"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "क्षमता की समीक्षा करें"
           }
         }
       }
@@ -7184,6 +8714,12 @@
             "state": "translated",
             "value": "列ごとにタスクを確認"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "लेन के अनुसार कार्य देखें"
+          }
         }
       }
     },
@@ -7211,6 +8747,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "タスクに適用する前に、提案を確認してください。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सुझाव को कार्य में लागू करने से पहले समीक्षा करें।"
           }
         }
       }
@@ -7240,6 +8782,12 @@
             "state": "translated",
             "value": "アクティブなタスクを確認し、次に何を進めるか決めましょう。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अपने सक्रिय कार्य देखें और तय करें कि आगे क्या बढ़ना चाहिए।"
+          }
         }
       }
     },
@@ -7267,6 +8815,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "文字起こしを確認"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अपना ट्रांसक्रिप्ट देखें"
           }
         }
       }
@@ -7296,6 +8850,12 @@
             "state": "translated",
             "value": "テキストをスキャン"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "टेक्स्ट स्कैन करें"
+          }
         }
       }
     },
@@ -7323,6 +8883,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "スキャナーを利用できません"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "स्कैनर उपलब्ध नहीं"
           }
         }
       }
@@ -7352,6 +8918,12 @@
             "state": "translated",
             "value": "検索"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "खोजें"
+          }
         }
       }
     },
@@ -7379,6 +8951,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "タスクを検索"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कार्य खोजें"
           }
         }
       }
@@ -7408,6 +8986,12 @@
             "state": "translated",
             "value": "作業を検索"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अपना काम खोजें"
+          }
         }
       }
     },
@@ -7435,6 +9019,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "進捗、WIP 圧力、完了へ向かうためのフローサインを確認できます。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "प्रगति, WIP दबाव और ऐसे फ़्लो संकेत देखें जो आपको पूरा करने की ओर धकेलते हैं।"
           }
         }
       }
@@ -7464,6 +9054,12 @@
             "state": "translated",
             "value": "作業をはっきり見る"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अपना काम साफ देखें"
+          }
         }
       }
     },
@@ -7491,6 +9087,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "進行中のタスクが長引いたり停滞したりしているとき、1 日 1 回リマインダーを送信します。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "जब प्रगति में कार्य लंबे खिंचें या रुकें, तो रोज़ एक reminder भेजें।"
           }
         }
       }
@@ -7520,6 +9122,12 @@
             "state": "translated",
             "value": "アクティブなタスクの上限を設定して、注意力を絞ります。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सक्रिय कार्यों की अधिकतम संख्या तय करें ताकि ध्यान सीमित रहे।"
+          }
         }
       }
     },
@@ -7547,6 +9155,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "設定"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सेटिंग्स"
           }
         }
       }
@@ -7576,6 +9190,12 @@
             "state": "translated",
             "value": "スキップ"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "छोड़ें"
+          }
         }
       }
     },
@@ -7603,6 +9223,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "残り枠"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "बचे स्लॉट"
           }
         }
       }
@@ -7632,6 +9258,12 @@
             "state": "translated",
             "value": "WIP を小さく、完了を速く"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "छोटा WIP, तेज़ पूरा"
+          }
         }
       }
     },
@@ -7659,6 +9291,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "タスクを音声入力するには音声認識へのアクセスが必要です。設定で有効にしてください。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कार्य बोलकर लिखने के लिए speech recognition access चाहिए। इसे सेटिंग्स में चालू करें।"
           }
         }
       }
@@ -7688,6 +9326,12 @@
             "state": "translated",
             "value": "停滞"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "रुका हुआ"
+          }
         }
       }
     },
@@ -7715,6 +9359,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "停滞のしきい値"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इसके बाद रुका माना जाए"
           }
         }
       }
@@ -7744,6 +9394,12 @@
             "state": "translated",
             "value": "停滞しているタスク"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "रुके हुए कार्य"
+          }
         }
       }
     },
@@ -7771,6 +9427,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "容量が空いたときだけ新しいタスクを始めましょう。完了が次の約束のための余地を作ります。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "नया कार्य तभी शुरू करें जब क्षमता खुले। पूरा होना अगले commitment के लिए जगह बनाता है।"
           }
         }
       }
@@ -7800,6 +9462,12 @@
             "state": "translated",
             "value": "集中を始める"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "फोकस शुरू करें"
+          }
         }
       }
     },
@@ -7827,6 +9495,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "ステータス"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "स्थिति"
           }
         }
       }
@@ -7856,6 +9530,12 @@
             "state": "translated",
             "value": "ステータス分布: 未着手 %lld 件、進行中 %lld 件、完了 %lld 件"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "स्थिति वितरण: %lld करना है, %lld प्रगति में, %lld पूरे"
+          }
         }
       }
     },
@@ -7883,6 +9563,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "停止"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "रोकें"
           }
         }
       }
@@ -7912,6 +9598,12 @@
             "state": "translated",
             "value": "良い完了リズムです。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पूरा करने की अच्छी लय।"
+          }
         }
       }
     },
@@ -7939,6 +9631,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "より強い集中"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ज़्यादा मजबूत फोकस"
           }
         }
       }
@@ -7968,6 +9666,12 @@
             "state": "translated",
             "value": "次のアクションを提案"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अगली कार्रवाई सुझाएँ"
+          }
         }
       }
     },
@@ -7995,6 +9699,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "提案をタスクの説明に追加しました。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सुझाव कार्य विवरण में जोड़ दिया गया।"
           }
         }
       }
@@ -8025,6 +9735,12 @@
             "state": "translated",
             "value": "タスク"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कार्य"
+          }
         }
       }
     },
@@ -8053,6 +9769,12 @@
             "state": "translated",
             "value": "タスク詳細"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कार्य विवरण"
+          }
         }
       }
     },
@@ -8080,6 +9802,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "タスク同期"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कार्य सिंक"
           }
         }
       }
@@ -8110,6 +9838,12 @@
             "state": "translated",
             "value": "タスク"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कार्य"
+          }
         }
       }
     },
@@ -8137,6 +9871,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "現在、タスクはこのデバイスにのみ保存されています。この App で iCloud をオンにすると、機種変更後もタスクを利用できます。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कार्य अभी सिर्फ इस डिवाइस पर सेव हैं। फ़ोन बदलने पर कार्य उपलब्ध रखने के लिए इस ऐप के लिए iCloud चालू करें।"
           }
         }
       }
@@ -8166,6 +9906,12 @@
             "state": "translated",
             "value": "タスクを頭の中だけで覚えておく必要はありません。ボードとダッシュボードが仕組みを支えます。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कार्य अब याददाश्त में रखने की ज़रूरत नहीं। बोर्ड और डैशबोर्ड आपके लिए सिस्टम संभालते हैं।"
+          }
         }
       }
     },
@@ -8193,6 +9939,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "各デバイスで同じ Apple Account を使うと、タスクは iCloud 経由で同期されます。変更がすべての場所に反映されるまで少し時間がかかることがあります。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "हर डिवाइस पर वही Apple Account इस्तेमाल करने पर कार्य iCloud से सिंक होते हैं। बदलाव हर जगह दिखने में थोड़ा समय ले सकते हैं।"
           }
         }
       }
@@ -8222,6 +9974,12 @@
             "state": "translated",
             "value": "テキストを追加しました。Apple Intelligence を利用できないため、タスクを作成する前に手動で確認してください。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "टेक्स्ट जोड़ दिया गया। Apple Intelligence उपलब्ध नहीं है, इसलिए कार्य बनाने से पहले इसे मैन्युअली देखें।"
+          }
         }
       }
     },
@@ -8249,6 +10007,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "テキストを取り込みました。Apple Intelligence を利用できないため、手動確認用に追加しました。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "टेक्स्ट कैप्चर हुआ। Apple Intelligence उपलब्ध नहीं है, इसलिए टेक्स्ट मैन्युअल समीक्षा के लिए जोड़ दिया गया।"
           }
         }
       }
@@ -8278,6 +10042,12 @@
             "state": "translated",
             "value": "テキストを取り込みました。カメラスキャンから下書きを生成しました。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "टेक्स्ट कैप्चर हुआ। कैमरा स्कैन से ड्राफ़्ट बन गया।"
+          }
         }
       }
     },
@@ -8305,6 +10075,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "テキストを取り込みました。抽出したテキストを確認するか、下書きを生成してください。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "टेक्स्ट कैप्चर हुआ। निकाले गए टेक्स्ट की समीक्षा करें या ड्राफ़्ट बनाएँ।"
           }
         }
       }
@@ -8334,6 +10110,12 @@
             "state": "translated",
             "value": "この App は WIP 制限を適用し、同時に多くのタスクが進行中へ入らないようにできます。注意力を絞り、コンテキストスイッチを減らします。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ऐप WIP सीमा लागू कर सकता है ताकि बहुत सारे कार्य एक साथ प्रगति में न जाएँ। इससे ध्यान सीमित रहता है और context switching घटती है।"
+          }
         }
       }
     },
@@ -8361,6 +10143,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "現在、次のアクションを生成できません。少し待ってからもう一度お試しください。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ऐप अभी अगली कार्रवाई नहीं बना सका। थोड़ी देर में फिर कोशिश करें।"
           }
         }
       }
@@ -8390,6 +10178,12 @@
             "state": "translated",
             "value": "この App は毎日 %lld:00 に更新型のダイジェストをスケジュールし、タスクごとの通知は送りません。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ऐप %lld:00 बजे rolling daily digest शेड्यूल करता है और हर कार्य के लिए अलग notification नहीं भेजता।"
+          }
         }
       }
     },
@@ -8417,6 +10211,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "ボードは未着手、進行中、完了で各タスクを明確にし、何が待機中で、何がアクティブで、何が完了したかを見えるようにします。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "बोर्ड हर कार्य को करना है, प्रगति में और पूरा के ज़रिए स्पष्ट बनाता है, ताकि आप देख सकें क्या इंतज़ार में है, क्या सक्रिय है और क्या पूरा हो चुका है।"
           }
         }
       }
@@ -8446,6 +10246,12 @@
             "state": "translated",
             "value": "ボードは約束したことを見える化し、大事なことが曖昧なまま隠れないようにします。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "बोर्ड आपके commitments को दिखाता है ताकि कोई ज़रूरी चीज़ धुंधली या छिपी न रहे।"
+          }
         }
       }
     },
@@ -8473,6 +10279,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "現在、カメラスキャナーを利用できません。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कैमरा स्कैनर अभी उपलब्ध नहीं है।"
           }
         }
       }
@@ -8502,6 +10314,12 @@
             "state": "translated",
             "value": "ダッシュボードでは進捗、WIP 圧力、優先度の分布を確認でき、完了するか、一時停止するか、追加で引き込まないかを判断できます。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "डैशबोर्ड प्रगति, WIP दबाव और प्राथमिकता वितरण दिखाता है, ताकि आप तय कर सकें कि पूरा करना है, रोकना है या और काम नहीं लेना है।"
+          }
         }
       }
     },
@@ -8529,6 +10347,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "画像のテキストは抽出されましたが、現在 AI 下書きを生成できません。確認してからもう一度生成してください。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "चित्र का टेक्स्ट निकल गया, लेकिन AI ड्राफ़्ट अभी नहीं बन सका। इसे देखें और फिर से बनाएँ।"
           }
         }
       }
@@ -8558,6 +10382,12 @@
             "state": "translated",
             "value": "マニフェストはシンプルです。作業を可視化し、進行中の作業を制限し、余裕があるときだけ引き込み、完了を見える状態に保ちます。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "मैनिफेस्टो सरल है: अपना काम दिखाएँ, चल रहा काम सीमित रखें, जगह हो तभी नया काम लें, और पूरा हुआ काम दिखता रहने दें।"
+          }
         }
       }
     },
@@ -8585,6 +10415,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "マイクを開始できませんでした。オーディオ権限を確認して、もう一度お試しください。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "माइक्रोफ़ोन शुरू नहीं हो सका। ऑडियो permissions देखें और फिर कोशिश करें।"
           }
         }
       }
@@ -8614,6 +10450,12 @@
             "state": "translated",
             "value": "次に完了するタスクが、ボードを変えます。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अगला पूरा कार्य बोर्ड बदल देता है।"
+          }
         }
       }
     },
@@ -8641,6 +10483,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "選択した画像を読み込めませんでした。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "चुना गया चित्र लोड नहीं हो सका।"
           }
         }
       }
@@ -8670,6 +10518,12 @@
             "state": "translated",
             "value": "選択した画像を読み取れませんでした。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "चुना गया चित्र पढ़ा नहीं जा सका।"
+          }
         }
       }
     },
@@ -8697,6 +10551,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "テキストは取り込まれましたが、現在 AI 下書きを生成できません。確認してからもう一度生成してください。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "टेक्स्ट कैप्चर हुआ, लेकिन AI ड्राफ़्ट अभी नहीं बन सका। इसे देखें और फिर से बनाएँ।"
           }
         }
       }
@@ -8726,6 +10586,12 @@
             "state": "translated",
             "value": "音声の文字起こしは取り込まれましたが、現在 AI 下書きを生成できません。確認してからもう一度生成してください。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "वॉइस ट्रांसक्रिप्ट कैप्चर हुआ, लेकिन AI ड्राफ़्ट अभी नहीं बन सका। इसे देखें और फिर से बनाएँ।"
+          }
         }
       }
     },
@@ -8753,6 +10619,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "これらのタスクは長くアクティブなままで、流れを重くする可能性があります。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ये कार्य इतने लंबे समय से सक्रिय हैं कि गति धीमी हो सकती है।"
           }
         }
       }
@@ -8782,6 +10654,12 @@
             "state": "translated",
             "value": "これらのタスクは進行中のまま長く残っており、判断が必要かもしれません。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ये कार्य बहुत लंबे समय से प्रगति में हैं और शायद निर्णय चाहते हैं।"
+          }
         }
       }
     },
@@ -8809,6 +10687,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "この App は、作業を明確に見せ、集中を守り、新しいことを始める前に完了できるようにすることで、パーソナルカンバンを実践します。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "यह ऐप आपका काम साफ दिखाकर, फोकस बचाकर और और शुरू करने से पहले पूरा करने में मदद करके Personal Kanban लागू करता है।"
           }
         }
       }
@@ -8838,6 +10722,12 @@
             "state": "translated",
             "value": "この App は、一度に抱える量を減らし、より頻繁に完了し、コンテキストスイッチを減らすというパーソナルカンバンの考え方を中心に作られています。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "यह ऐप Personal Kanban discipline पर बना है: एक साथ कम करें, ज़्यादा बार पूरा करें, और context switching घटाएँ।"
+          }
         }
       }
     },
@@ -8866,6 +10756,12 @@
             "state": "translated",
             "value": "フローが引き戻した回数"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "फ़्लो ने जितनी बार रोका"
+          }
         }
       }
     },
@@ -8893,6 +10789,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "タイトル"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "शीर्षक"
           }
         }
       }
@@ -8923,6 +10825,12 @@
             "state": "translated",
             "value": "未着手"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "करना है"
+          }
         }
       }
     },
@@ -8950,6 +10858,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "アクティブな作業が多すぎます。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "बहुत ज़्यादा काम सक्रिय है।"
           }
         }
       }
@@ -8979,6 +10893,12 @@
             "state": "translated",
             "value": "頭の中のリストではなく、未着手、進行中、完了で作業を追跡しましょう。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "mental lists रखने के बजाय काम को करना है, प्रगति में और पूरा से ट्रैक करें।"
+          }
         }
       }
     },
@@ -9006,6 +10926,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "文字起こし"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ट्रांसक्रिप्ट"
           }
         }
       }
@@ -9035,6 +10961,12 @@
             "state": "translated",
             "value": "別の検索語を試してください。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कोई दूसरा खोज शब्द आज़माएँ।"
+          }
         }
       }
     },
@@ -9062,6 +10994,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "もう一度試す"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "फिर कोशिश करें"
           }
         }
       }
@@ -9091,6 +11029,12 @@
             "state": "translated",
             "value": "WIP コーチングをパーソナライズするには、設定で Apple Intelligence をオンにしてください。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP coaching को personalize करने के लिए सेटिंग्स में Apple Intelligence चालू करें।"
+          }
         }
       }
     },
@@ -9118,6 +11062,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "次のアクションを提案するには、設定で Apple Intelligence をオンにしてください。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अगली कार्रवाई सुझाने के लिए सेटिंग्स में Apple Intelligence चालू करें।"
           }
         }
       }
@@ -9147,6 +11097,12 @@
             "state": "translated",
             "value": "クイックキャプチャ AI を使うには、設定で Apple Intelligence をオンにしてください。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quick Capture AI इस्तेमाल करने के लिए सेटिंग्स में Apple Intelligence चालू करें।"
+          }
         }
       }
     },
@@ -9174,6 +11130,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "先にブロック解除"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पहले अनब्लॉक करें"
           }
         }
       }
@@ -9203,6 +11165,12 @@
             "state": "translated",
             "value": "作業のブロックを解除"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "काम अनब्लॉक करें"
+          }
         }
       }
     },
@@ -9230,6 +11198,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "更新済み"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अपडेट किया गया"
           }
         }
       }
@@ -9259,6 +11233,12 @@
             "state": "translated",
             "value": "提案を使う"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सुझाव इस्तेमाल करें"
+          }
         }
       }
     },
@@ -9286,6 +11266,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "テキストを使う"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "टेक्स्ट इस्तेमाल करें"
           }
         }
       }
@@ -9315,6 +11301,12 @@
             "state": "translated",
             "value": "ボードで意図的に選び、ダッシュボードで流れを守り、完了列で勢いを実感しましょう。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सोच-समझकर चुनने के लिए बोर्ड, फ़्लो बचाने के लिए डैशबोर्ड, और गति को वास्तविक रखने के लिए पूरा कॉलम इस्तेमाल करें।"
+          }
         }
       }
     },
@@ -9342,6 +11334,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "ダッシュボードで流れを整える"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "फ़्लो फिर संतुलित करने के लिए डैशबोर्ड इस्तेमाल करें"
           }
         }
       }
@@ -9371,6 +11369,12 @@
             "state": "translated",
             "value": "作業がまだ前に進めないときに使います。ブロック中のタスクは早めに見えるようにしましょう。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इसे तब इस्तेमाल करें जब काम अभी आगे नहीं बढ़ सकता। रुके हुए कार्य जल्दी दिखने चाहिए।"
+          }
         }
       }
     },
@@ -9398,6 +11402,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "文字起こしを使う"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ट्रांसक्रिप्ट इस्तेमाल करें"
           }
         }
       }
@@ -9427,6 +11437,12 @@
             "state": "translated",
             "value": "認識したテキストを使ってタスクの下書きを作成します。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पहचाने गए टेक्स्ट से कार्य ड्राफ़्ट बनाता है।"
+          }
         }
       }
     },
@@ -9454,6 +11470,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "このデバイスのローカルストレージを使用中"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इस डिवाइस पर local storage इस्तेमाल हो रहा है"
           }
         }
       }
@@ -9483,6 +11505,12 @@
             "state": "translated",
             "value": "見える進捗と本当の完了状態によって、完了は「やるつもり」ではなく「見えるもの」になります。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "दिखती हुई प्रगति और असली पूरा स्थिति completion को ऐसी चीज़ बनाते हैं जिसे आप देख सकें, सिर्फ इरादा न रहे।"
+          }
         }
       }
     },
@@ -9510,6 +11538,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "視覚的なボード"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "विज़ुअल बोर्ड"
           }
         }
       }
@@ -9539,6 +11573,12 @@
             "state": "translated",
             "value": "可視化"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "विज़ुअलाइज़ करें"
+          }
         }
       }
     },
@@ -9566,6 +11606,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "作業を可視化"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "काम को विज़ुअलाइज़ करें"
           }
         }
       }
@@ -9595,6 +11641,12 @@
             "state": "translated",
             "value": "作業を可視化する"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अपना काम विज़ुअलाइज़ करें"
+          }
         }
       }
     },
@@ -9622,6 +11674,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "音声を取り込みました。Apple Intelligence を利用できないため、文字起こしを手動確認用に追加しました。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आवाज़ कैप्चर हुई। Apple Intelligence उपलब्ध नहीं है, इसलिए ट्रांसक्रिप्ट मैन्युअल समीक्षा के लिए जोड़ दिया गया।"
           }
         }
       }
@@ -9651,6 +11709,12 @@
             "state": "translated",
             "value": "音声を取り込みました。音声入力から下書きを生成しました。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आवाज़ कैप्चर हुई। आपकी dictation से ड्राफ़्ट बन गया।"
+          }
         }
       }
     },
@@ -9678,6 +11742,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "音声を取り込みました。文字起こしを確認するか、下書きを生成してください。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आवाज़ कैप्चर हुई। ट्रांसक्रिप्ट देखें या ड्राफ़्ट बनाएँ।"
           }
         }
       }
@@ -9707,6 +11777,12 @@
             "state": "translated",
             "value": "音声入力は現在利用できません。少し待ってからもう一度お試しください。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voice dictation अभी उपलब्ध नहीं है। थोड़ी देर में फिर कोशिश करें।"
+          }
         }
       }
     },
@@ -9734,6 +11810,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "待機中"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इंतज़ार में"
           }
         }
       }
@@ -9763,6 +11845,12 @@
             "state": "translated",
             "value": "1 週間待機中"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "एक सप्ताह से इंतज़ार में"
+          }
         }
       }
     },
@@ -9790,6 +11878,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "数日間待機中"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कई दिनों से इंतज़ार में"
           }
         }
       }
@@ -9819,6 +11913,12 @@
             "state": "translated",
             "value": "待機中の作業は、アクティブな集中対象に紛れ込ませず、はっきり見えるようにしましょう。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इंतज़ार वाला काम साफ दिखना चाहिए, सक्रिय फोकस में चुपचाप मिला हुआ नहीं।"
+          }
         }
       }
     },
@@ -9846,6 +11946,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "完了とはどんな状態ですか？"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पूरा होना कैसा दिखता है?"
           }
         }
       }
@@ -9875,6 +11981,12 @@
             "state": "translated",
             "value": "何を完了する必要がありますか？"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "क्या किया जाना है?"
+          }
         }
       }
     },
@@ -9902,6 +12014,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "ユーザーが得られるもの"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "यूज़र को क्या मिलता है"
           }
         }
       }
@@ -9931,6 +12049,12 @@
             "state": "translated",
             "value": "アクティブな列がいっぱいになると、ダッシュボードが完了へ戻るよう促します。この App は過負荷ではなく、プル型の作業を促します。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "जब आपकी सक्रिय लेन भर जाती है, डैशबोर्ड आपको पूरा करने की ओर वापस धकेलता है। ऐप pull को बढ़ावा देता है, overload को नहीं।"
+          }
         }
       }
     },
@@ -9958,6 +12082,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "列がいっぱいのとき、この App は新しい作業を引き込む前に完了へ戻るよう促します。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "जब आपकी लेन भरी होती है, ऐप आपको और काम लेने से पहले पूरा करने की ओर वापस ले जाता है।"
           }
         }
       }
@@ -9987,6 +12117,12 @@
             "state": "translated",
             "value": "WIP コーチ"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP Coach"
+          }
         }
       }
     },
@@ -10014,6 +12150,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "WIP コーチの AI コピーは現在利用できません。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP Coach AI copy अभी उपलब्ध नहीं है।"
           }
         }
       }
@@ -10043,6 +12185,12 @@
             "state": "translated",
             "value": "WIP がいっぱいです"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP भरा हुआ"
+          }
         }
       }
     },
@@ -10070,6 +12218,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "WIP 制限"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP सीमा"
           }
         }
       }
@@ -10099,6 +12253,12 @@
             "state": "translated",
             "value": "WIP 制限到達回数"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP सीमा पहुँचना"
+          }
         }
       }
     },
@@ -10126,6 +12286,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "WIP 制限に達しました"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP सीमा पहुँच गई"
           }
         }
       }
@@ -10155,6 +12321,12 @@
             "state": "translated",
             "value": "WIP 制限に達しました"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP सीमा पहुँच गई"
+          }
         }
       }
     },
@@ -10182,6 +12354,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "WIP 圧力"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP दबाव"
           }
         }
       }
@@ -10211,6 +12389,12 @@
             "state": "translated",
             "value": "WIP 圧力"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP दबाव"
+          }
         }
       }
     },
@@ -10238,6 +12422,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "ボードから作業する"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "बोर्ड से काम करें"
           }
         }
       }
@@ -10267,6 +12457,12 @@
             "state": "translated",
             "value": "進行中の作業圧力。%@ %lld / %lld 件がアクティブです。残り枠は %lld 件。%@。%@"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "प्रगति में काम का दबाव। %@ %lld में से %lld कार्य सक्रिय। %lld स्लॉट बचे। %@। %@"
+          }
         }
       }
     },
@@ -10294,6 +12490,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "進行中作業の確認。%lld / %lld 件がアクティブです。残り枠 %lld 件。ブロック中 %lld 件。準備済み %lld 件。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "प्रगति में काम की समीक्षा। %lld में से %lld कार्य सक्रिय। %lld स्लॉट बचे। %lld रुके हुए कार्य। %lld तैयार कार्य।"
           }
         }
       }
@@ -10323,6 +12525,12 @@
             "state": "translated",
             "value": "ワークフローポリシー"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "वर्कफ़्लो नीति"
+          }
         }
       }
     },
@@ -10350,6 +12558,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "作業を安定して完了へ変えています。WIP を絞って、そのリズムを守りましょう。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आप लगातार काम को पूरा कर रहे हैं। WIP कम रखकर इस लय को बचाएँ।"
           }
         }
       }
@@ -10379,6 +12593,12 @@
             "state": "translated",
             "value": "マニフェストは設定からいつでも見返せます。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आप सेटिंग्स से कभी भी मैनिफेस्टो दोबारा देख सकते हैं।"
+          }
         }
       }
     },
@@ -10406,6 +12626,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "もう 1 件なら安全に引き込めます。ただし、現在のタスクを完了できるよう、アクティブな作業は絞りましょう。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आप सुरक्षित रूप से एक और कार्य खींच सकते हैं, लेकिन सक्रिय काम सीमित रखें ताकि मौजूदा कार्य पूरे हो सकें।"
           }
         }
       }
@@ -10435,6 +12661,12 @@
             "state": "translated",
             "value": "容量いっぱいです。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आप क्षमता पर हैं।"
+          }
         }
       }
     },
@@ -10462,6 +12694,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "容量が上限です。「%@」を完了すると空きができます。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आप पूरी क्षमता पर हैं! '%@' पूरा करने से जगह खाली होगी।"
           }
         }
       }
@@ -10491,6 +12729,12 @@
             "state": "translated",
             "value": "WIP 制限に近づいています。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आप अपनी WIP सीमा के करीब हैं।"
+          }
         }
       }
     },
@@ -10518,6 +12762,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "アクティブな列がいっぱいです。未着手から始める前に、進行中の作業を確認しましょう。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आपकी सक्रिय लेन भरी है। करना है से शुरू करने से पहले प्रगति में काम देखें।"
           }
         }
       }
@@ -10547,6 +12797,12 @@
             "state": "translated",
             "value": "アクティブな作業は容量内です。慎重に引き込むか、まず現在のタスクを完了しましょう。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आपका सक्रिय काम क्षमता के भीतर है। सावधानी से खींचें या पहले मौजूदा कार्य पूरा करें।"
+          }
         }
       }
     },
@@ -10574,6 +12830,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "ボードは空です"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आपका बोर्ड खाली है"
           }
         }
       }
@@ -10603,6 +12865,12 @@
             "state": "translated",
             "value": "フローはバランスが取れています。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आपका फ़्लो संतुलित है।"
+          }
         }
       }
     },
@@ -10630,6 +12898,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "フローにはまだ余裕があります。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आपके फ़्लो में अभी जगह है।"
           }
         }
       }
@@ -10659,6 +12933,12 @@
             "state": "translated",
             "value": "進捗"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आपकी प्रगति"
+          }
         }
       }
     },
@@ -10686,6 +12966,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "進捗。%@。%lld%% 完了。%@ 未着手 %lld 件、進行中 %lld 件、完了 %lld 件。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आपकी प्रगति। %@। %lld प्रतिशत पूरा। %@ %lld करना है, %lld प्रगति में, %lld पूरे।"
           }
         }
       }
@@ -10715,6 +13001,12 @@
             "state": "translated",
             "value": "進捗。まだタスクはありません。最初のタスクを追加して、進捗の記録を始めましょう。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आपकी प्रगति। अभी कोई कार्य नहीं। प्रगति ट्रैक करना शुरू करने के लिए पहला कार्य जोड़ें।"
+          }
         }
       }
     },
@@ -10742,6 +13034,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "作業が見える状態です"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आपका काम दिख रहा है"
           }
         }
       }

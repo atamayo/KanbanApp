@@ -34,6 +34,12 @@
             "state": "translated",
             "value": "KanbanApp"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KanbanApp"
+          }
         }
       }
     },
@@ -68,6 +74,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "カメラを使ってテキストをスキャンし、タスクの下書きに変換します。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कैमरे का उपयोग टेक्स्ट स्कैन करने और उसे कार्य ड्राफ़्ट में बदलने के लिए करें।"
           }
         }
       }
@@ -104,6 +116,12 @@
             "state": "translated",
             "value": "マイクを使ってタスクを音声入力し、タスクの下書きに変換します。"
           }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "माइक्रोफ़ोन का उपयोग कार्य बोलकर लिखने और उसे कार्य ड्राफ़्ट में बदलने के लिए करें।"
+          }
         }
       }
     },
@@ -138,6 +156,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "音声認識を使って、音声入力したタスクを文字起こしします。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "बोले गए कार्यों को टेक्स्ट में बदलने के लिए speech recognition का उपयोग करें।"
           }
         }
       }
