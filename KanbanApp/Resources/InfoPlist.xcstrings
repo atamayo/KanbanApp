@@ -58,6 +58,18 @@
             "state": "translated",
             "value": "KanbanApp"
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KanbanApp"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KanbanApp"
+          }
         }
       }
     },
@@ -116,6 +128,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "KanbanApp a besoin d’accéder à la caméra pour importer des photos ou scanner du texte afin de créer des brouillons de tâches."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KanbanApp richiede l’accesso alla fotocamera per importare foto o scansionare testo e creare bozze di attività."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KanbanApp heeft toegang tot de camera nodig om foto’s te importeren of tekst te scannen en taakconcepten te maken."
           }
         }
       }
@@ -176,6 +200,18 @@
             "state": "translated",
             "value": "KanbanApp a besoin d’accéder au microphone pour capturer des tâches à la voix."
           }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KanbanApp richiede l’accesso al microfono per catturare attività con la voce."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KanbanApp heeft toegang tot de microfoon nodig om taken met je stem vast te leggen."
+          }
         }
       }
     },
@@ -234,6 +270,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "KanbanApp a besoin de la reconnaissance vocale pour convertir vos captures vocales en texte de tâche."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KanbanApp richiede il riconoscimento vocale per convertire le catture vocali in testo dell’attività."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KanbanApp heeft spraakherkenning nodig om stemopnames om te zetten naar taaktekst."
           }
         }
       }
