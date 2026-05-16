@@ -1,44 +1,19 @@
-import AVFoundation
-import Speech
 import SwiftUI
-
-enum VoiceCaptureError: LocalizedError {
-    case speechRecognitionDenied
-    case microphoneDenied
-    case recognizerUnavailable
-    case audioSetupFailed
-    case noSpeechFound
-
-    var errorDescription: String? {
-        switch self {
-        case .speechRecognitionDenied:
-            return "Speech recognition access is required to dictate tasks. Enable it in Settings."
-        case .microphoneDenied:
-            return "Microphone access is required to dictate tasks. Enable it in Settings."
-        case .recognizerUnavailable:
-            return "Voice dictation is unavailable right now. Try again in a moment."
-        case .audioSetupFailed:
-            return "The microphone could not be started. Check audio permissions and try again."
-        case .noSpeechFound:
-            return "No speech was captured. Try recording again."
-        }
-    }
-}
 
 struct VoiceCaptureSheet: View {
     let onRecognizedText: (String) -> Void
     let onError: (VoiceCaptureError) -> Void
 
     @Environment(\.dismiss) private var dismiss
-    @StateObject private var recorder = VoiceCaptureRecorder()
+    @StateObject private var voiceCapture = VoiceCaptureService()
     @State private var hasRequestedStart = false
 
     private var cleanedTranscript: String {
-        recorder.transcript.trimmingCharacters(in: .whitespacesAndNewlines)
+        voiceCapture.transcript.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
     private var canUseTranscript: Bool {
-        !cleanedTranscript.isEmpty && !recorder.isRecording
+        !cleanedTranscript.isEmpty && !voiceCapture.isRecording
     }
 
     var body: some View {
@@ -56,7 +31,7 @@ struct VoiceCaptureSheet: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Cancel") {
-                        recorder.cancel()
+                        voiceCapture.cancel()
                         dismiss()
                     }
                 }
@@ -74,14 +49,14 @@ struct VoiceCaptureSheet: View {
         .task {
             guard !hasRequestedStart else { return }
             hasRequestedStart = true
-            await recorder.start()
+            await voiceCapture.start()
         }
-        .onChange(of: recorder.error) { _, newValue in
+        .onChange(of: voiceCapture.error) { _, newValue in
             guard let newValue else { return }
             onError(newValue)
         }
         .onDisappear {
-            recorder.cancel()
+            voiceCapture.cancel()
         }
     }
 
@@ -93,13 +68,13 @@ struct VoiceCaptureSheet: View {
                         .fill(recordingTint.opacity(AppStyle.Opacity.accentWashSelected))
                         .frame(width: AppStyle.Shapes.iconBadgeLarge, height: AppStyle.Shapes.iconBadgeLarge)
 
-                    Image(systemName: recorder.isRecording ? "waveform" : "mic.fill")
+                    Image(systemName: voiceCapture.isRecording ? "waveform" : "mic.fill")
                         .font(AppStyle.Typography.iconHero)
                         .foregroundStyle(recordingTint)
                 }
 
                 VStack(alignment: .leading, spacing: AppStyle.Spacing.tiny) {
-                    Text(recorder.isRecording ? "Listening..." : "Review your transcript")
+                    Text(voiceCapture.isRecording ? "Listening..." : "Review your transcript")
                         .font(AppStyle.Typography.metricMedium)
                         .foregroundStyle(AppStyle.Colors.primaryText)
 
@@ -126,7 +101,7 @@ struct VoiceCaptureSheet: View {
             }
             .frame(minHeight: AppStyle.Shapes.voiceTranscriptMinHeight)
 
-            if let error = recorder.error {
+            if let error = voiceCapture.error {
                 Text(error.localizedDescription)
                     .font(AppStyle.Typography.guidanceFooter)
                     .foregroundStyle(AppStyle.Colors.warning)
@@ -144,23 +119,23 @@ struct VoiceCaptureSheet: View {
     private var controls: some View {
         HStack(spacing: AppStyle.Spacing.medium) {
             Button {
-                recorder.clear()
+                voiceCapture.clear()
             } label: {
                 Label("Clear", systemImage: "xmark.circle")
                     .frame(maxWidth: .infinity)
                     .frame(height: AppStyle.Shapes.fabSize)
             }
             .buttonStyle(.glass)
-            .disabled(cleanedTranscript.isEmpty || recorder.isRecording)
+            .disabled(cleanedTranscript.isEmpty || voiceCapture.isRecording)
 
             Button {
-                if recorder.isRecording {
-                    recorder.stop()
+                if voiceCapture.isRecording {
+                    voiceCapture.stop()
                 } else {
-                    Task { await recorder.start() }
+                    Task { await voiceCapture.start() }
                 }
             } label: {
-                Label(recorder.isRecording ? "Stop" : "Record Again", systemImage: recorder.isRecording ? "stop.circle.fill" : "mic.fill")
+                Label(voiceCapture.isRecording ? "Stop" : "Record Again", systemImage: voiceCapture.isRecording ? "stop.circle.fill" : "mic.fill")
                     .frame(maxWidth: .infinity)
                     .frame(height: AppStyle.Shapes.fabSize)
             }
@@ -170,145 +145,6 @@ struct VoiceCaptureSheet: View {
     }
 
     private var recordingTint: Color {
-        recorder.error == nil ? AppStyle.Colors.Status.todo : AppStyle.Colors.warning
-    }
-}
-
-@MainActor
-private final class VoiceCaptureRecorder: NSObject, ObservableObject {
-    @Published var transcript = ""
-    @Published var isRecording = false
-    @Published var error: VoiceCaptureError?
-
-    private let speechRecognizer = SFSpeechRecognizer(locale: Locale.current)
-    private let audioEngine = AVAudioEngine()
-    private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
-    private var recognitionTask: SFSpeechRecognitionTask?
-
-    func start() async {
-        guard !isRecording else { return }
-
-        error = nil
-        let speechAuthorized = await requestSpeechAuthorization()
-        guard speechAuthorized else {
-            error = .speechRecognitionDenied
-            return
-        }
-
-        let microphoneAuthorized = await requestMicrophoneAuthorization()
-        guard microphoneAuthorized else {
-            error = .microphoneDenied
-            return
-        }
-
-        guard speechRecognizer?.isAvailable == true else {
-            error = .recognizerUnavailable
-            return
-        }
-
-        do {
-            try beginRecording()
-        } catch {
-            self.error = .audioSetupFailed
-            stop()
-        }
-    }
-
-    func stop() {
-        guard isRecording || audioEngine.isRunning else { return }
-
-        audioEngine.stop()
-        audioEngine.inputNode.removeTap(onBus: 0)
-        recognitionRequest?.endAudio()
-        recognitionRequest = nil
-        isRecording = false
-        try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
-    }
-
-    func cancel() {
-        if audioEngine.isRunning {
-            audioEngine.stop()
-            audioEngine.inputNode.removeTap(onBus: 0)
-        }
-        recognitionRequest?.endAudio()
-        recognitionRequest = nil
-        recognitionTask?.cancel()
-        recognitionTask = nil
-        isRecording = false
-        try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
-    }
-
-    func clear() {
-        transcript = ""
-        error = nil
-    }
-
-    private func beginRecording() throws {
-        recognitionTask?.cancel()
-        recognitionTask = nil
-
-        let audioSession = AVAudioSession.sharedInstance()
-        try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
-        try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
-
-        let request = SFSpeechAudioBufferRecognitionRequest()
-        request.shouldReportPartialResults = true
-        recognitionRequest = request
-
-        let inputNode = audioEngine.inputNode
-        let recordingFormat = inputNode.outputFormat(forBus: 0)
-        inputNode.removeTap(onBus: 0)
-        inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { [weak self] buffer, _ in
-            self?.recognitionRequest?.append(buffer)
-        }
-
-        audioEngine.prepare()
-        try audioEngine.start()
-        isRecording = true
-
-        recognitionTask = speechRecognizer?.recognitionTask(with: request) { [weak self] result, taskError in
-            Task { @MainActor in
-                guard let self else { return }
-
-                if let result {
-                    self.transcript = result.bestTranscription.formattedString
-                    if result.isFinal {
-                        self.stop()
-                    }
-                }
-
-                if taskError != nil {
-                    self.stop()
-                    if self.transcript.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                        self.error = .noSpeechFound
-                    }
-                }
-            }
-        }
-    }
-
-    private func requestSpeechAuthorization() async -> Bool {
-        await withCheckedContinuation { continuation in
-            SFSpeechRecognizer.requestAuthorization { status in
-                continuation.resume(returning: status == .authorized)
-            }
-        }
-    }
-
-    private func requestMicrophoneAuthorization() async -> Bool {
-        switch AVCaptureDevice.authorizationStatus(for: .audio) {
-        case .authorized:
-            return true
-        case .notDetermined:
-            return await withCheckedContinuation { continuation in
-                AVCaptureDevice.requestAccess(for: .audio) { granted in
-                    continuation.resume(returning: granted)
-                }
-            }
-        case .denied, .restricted:
-            return false
-        @unknown default:
-            return false
-        }
+        voiceCapture.error == nil ? AppStyle.Colors.Status.todo : AppStyle.Colors.warning
     }
 }
