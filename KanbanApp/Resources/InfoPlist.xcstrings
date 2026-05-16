@@ -40,6 +40,12 @@
             "state": "translated",
             "value": "KanbanApp"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KanbanApp"
+          }
         }
       }
     },
@@ -80,6 +86,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "कैमरे का उपयोग टेक्स्ट स्कैन करने और उसे कार्य ड्राफ़्ट में बदलने के लिए करें।"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use a câmera para escanear texto e transformá-lo em um rascunho de tarefa."
           }
         }
       }
@@ -122,6 +134,12 @@
             "state": "translated",
             "value": "माइक्रोफ़ोन का उपयोग कार्य बोलकर लिखने और उसे कार्य ड्राफ़्ट में बदलने के लिए करें।"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use o microfone para ditar uma tarefa e transformá-la em um rascunho de tarefa."
+          }
         }
       }
     },
@@ -162,6 +180,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "बोले गए कार्यों को टेक्स्ट में बदलने के लिए speech recognition का उपयोग करें।"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use o reconhecimento de fala para transcrever tarefas ditadas."
           }
         }
       }
