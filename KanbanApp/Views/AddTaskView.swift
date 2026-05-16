@@ -77,6 +77,8 @@ struct AddTaskView: View {
                 isGenerating: isGeneratingQuickCapture
             ) {
                 await generateTaskDraft()
+            } onAddManually: {
+                applyManualCaptureText(quickCaptureText, source: .paste)
             }
             .presentationDetents([.medium, .large])
             .presentationDragIndicator(.visible)
@@ -244,7 +246,7 @@ struct AddTaskView: View {
     private var captureMenu: some View {
         Menu {
             Button {
-                quickCaptureDraftMessage = nil
+                quickCaptureDraftMessage = isQuickCaptureAvailable ? nil : QuickCaptureSource.paste.reviewMessage
                 showingQuickCaptureSheet = true
             } label: {
                 Label("Paste Note", systemImage: "square.and.pencil")
@@ -429,6 +431,29 @@ struct AddTaskView: View {
     }
 
     @MainActor
+    private func applyManualCaptureText(_ rawText: String, source: QuickCaptureSource) {
+        let cleanedText = rawText.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !cleanedText.isEmpty else { return }
+
+        if title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            title = cleanedText
+            focusedField = .title
+        } else if description.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            description = cleanedText
+            focusedField = .description
+        } else {
+            let cleanedDescription = description.trimmingCharacters(in: .whitespacesAndNewlines)
+            description = "\(cleanedDescription)\n\n\(cleanedText)"
+            focusedField = .description
+        }
+
+        quickCaptureText = cleanedText
+        quickCaptureDraftMessage = nil
+        quickCaptureMessage = source.manualAppliedMessage
+        showingQuickCaptureSheet = false
+    }
+
+    @MainActor
     private func beginLiveTextScan() async {
         quickCaptureMessage = nil
         quickCaptureDraftMessage = nil
@@ -462,8 +487,7 @@ struct AddTaskView: View {
         quickCaptureDraftMessage = source.reviewMessage
 
         guard isQuickCaptureAvailable else {
-            showingQuickCaptureSheet = true
-            quickCaptureMessage = source.manualReviewMessage
+            applyManualCaptureText(cleanedText, source: source)
             return
         }
 
@@ -513,12 +537,15 @@ struct AddTaskView: View {
 }
 
 private enum QuickCaptureSource {
+    case paste
     case photo
     case scanner
     case voice
 
     var reviewMessage: String {
         switch self {
+        case .paste:
+            return "Apple Intelligence is unavailable, so paste text here and add it to the task manually."
         case .photo:
             return "Photo imported. Review the extracted text or generate a draft."
         case .scanner:
@@ -528,19 +555,23 @@ private enum QuickCaptureSource {
         }
     }
 
-    var manualReviewMessage: String {
+    var manualAppliedMessage: String {
         switch self {
+        case .paste:
+            return "Text added. Apple Intelligence is unavailable, so review it manually before creating the task."
         case .photo:
-            return "Photo imported. Text extracted. Apple Intelligence is unavailable, so review it manually."
+            return "Photo imported. Apple Intelligence is unavailable, so the text was added for manual review."
         case .scanner:
-            return "Text captured. Apple Intelligence is unavailable, so review it manually."
+            return "Text captured. Apple Intelligence is unavailable, so the text was added for manual review."
         case .voice:
-            return "Voice captured. Apple Intelligence is unavailable, so review it manually."
+            return "Voice captured. Apple Intelligence is unavailable, so the transcript was added for manual review."
         }
     }
 
     var successMessage: String {
         switch self {
+        case .paste:
+            return "Draft generated. Review and adjust before creating the task."
         case .photo:
             return "Photo imported. Draft generated from the extracted text."
         case .scanner:
@@ -552,6 +583,8 @@ private enum QuickCaptureSource {
 
     var generationFailureMessage: String {
         switch self {
+        case .paste:
+            return "Quick Capture AI couldn’t generate a draft right now. Review the text and try again."
         case .photo:
             return "The image text was extracted, but the AI draft couldn’t be generated right now. Review it and generate again."
         case .scanner:
@@ -569,11 +602,27 @@ private struct QuickCaptureDraftSheet: View {
     let unavailableMessage: String?
     let isGenerating: Bool
     let onGenerate: @MainActor () async -> Void
+    let onAddManually: @MainActor () -> Void
     @Environment(\.dismiss) private var dismiss
     @FocusState private var isTextFocused: Bool
 
-    private var canGenerate: Bool {
-        isAvailable && !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && !isGenerating
+    private var hasText: Bool {
+        !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+
+    private var canPerformPrimaryAction: Bool {
+        hasText && !isGenerating
+    }
+
+    private var headerDescription: String {
+        if isAvailable {
+            return "Paste a note, email, or rough thought and turn it into a clean task draft."
+        }
+        return "Paste a note, email, or rough thought and add it to the task for manual review."
+    }
+
+    private var primaryActionTitle: String {
+        isAvailable ? "Generate Draft" : "Add Text"
     }
 
     var body: some View {
@@ -583,7 +632,7 @@ private struct QuickCaptureDraftSheet: View {
                     Text("Quick Capture")
                         .font(AppStyle.Typography.compactHeaderTitle)
 
-                    Text("Paste a note, email, or rough thought and turn it into a clean task draft.")
+                    Text(headerDescription)
                         .font(AppStyle.Typography.formFooter)
                         .foregroundStyle(AppStyle.Colors.secondaryText)
                 }
@@ -620,16 +669,21 @@ private struct QuickCaptureDraftSheet: View {
 
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
-                        Task { await onGenerate() }
+                        if isAvailable {
+                            Task { await onGenerate() }
+                        } else {
+                            onAddManually()
+                            dismiss()
+                        }
                     } label: {
                         if isGenerating {
                             ProgressView()
                                 .controlSize(.small)
                         } else {
-                            Text("Generate Draft")
+                            Text(primaryActionTitle)
                         }
                     }
-                    .disabled(!canGenerate)
+                    .disabled(!canPerformPrimaryAction)
                 }
             }
             .onAppear {
