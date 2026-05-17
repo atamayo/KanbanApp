@@ -70,6 +70,12 @@
             "state": "translated",
             "value": "KanbanApp"
           }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KanbanApp"
+          }
         }
       }
     },
@@ -140,6 +146,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "KanbanApp heeft toegang tot de camera nodig om foto’s te importeren of tekst te scannen en taakconcepten te maken."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Użyj aparatu, aby zeskanować tekst i zamienić go w szkic zadania."
           }
         }
       }
@@ -212,6 +224,12 @@
             "state": "translated",
             "value": "KanbanApp heeft toegang tot de microfoon nodig om taken met je stem vast te leggen."
           }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Użyj mikrofonu, aby podyktować zadanie i zamienić je w szkic zadania."
+          }
         }
       }
     },
@@ -282,6 +300,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "KanbanApp heeft spraakherkenning nodig om stemopnames om te zetten naar taaktekst."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Użyj rozpoznawania mowy, aby przepisać dyktowane zadania."
           }
         }
       }

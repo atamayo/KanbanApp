@@ -34,6 +34,7 @@ enum AppStoreScreenshotScene: String, CaseIterable {
                 fr: "Sachez quoi terminer ensuite",
                 it: "Sai cosa finire dopo",
                 nl: "Weet wat je nu afrondt",
+                pl: "Wiedz, co skończyć dalej",
                 zh: "知道下一步该完成什么"
             )
         case .board:
@@ -48,6 +49,7 @@ enum AppStoreScreenshotScene: String, CaseIterable {
                 fr: "Voyez chaque tâche avancer",
                 it: "Vedi ogni attività in movimento",
                 nl: "Zie elke taak in beweging",
+                pl: "Zobacz każdy ruch zadania",
                 zh: "查看每个任务的流转"
             )
         case .quickCapture:
@@ -62,6 +64,7 @@ enum AppStoreScreenshotScene: String, CaseIterable {
                 fr: "Transformez vos notes en tâches",
                 it: "Trasforma note in attività chiare",
                 nl: "Maak van notities heldere taken",
+                pl: "Zamień notatki w jasne zadania",
                 zh: "将零散笔记变成清晰任务"
             )
         case .focusGuard:
@@ -76,6 +79,7 @@ enum AppStoreScreenshotScene: String, CaseIterable {
                 fr: "Évitez d’en prendre trop",
                 it: "Evita di prendere troppo",
                 nl: "Neem niet te veel op je",
+                pl: "Nie bierz na siebie za dużo",
                 zh: "避免承担过多工作"
             )
         case .flowReview:
@@ -90,6 +94,7 @@ enum AppStoreScreenshotScene: String, CaseIterable {
                 fr: "Repérez blocages et retards",
                 it: "Trova blocchi e attività ferme",
                 nl: "Zie blokkades en oud werk",
+                pl: "Wykryj blokady i zaległości",
                 zh: "发现受阻和拖延的工作"
             )
         case .search:
@@ -104,6 +109,7 @@ enum AppStoreScreenshotScene: String, CaseIterable {
                 fr: "Trouvez tout rapidement",
                 it: "Trova tutto in fretta",
                 nl: "Vind alles snel",
+                pl: "Znajdź wszystko szybko",
                 zh: "快速找到任何内容"
             )
         }
@@ -125,6 +131,7 @@ enum AppStoreScreenshotScene: String, CaseIterable {
                 fr: "Un coach kanban personnel pour travailler concentré.",
                 it: "Un coach kanban personale per lavorare con focus.",
                 nl: "Een persoonlijke kanban-coach voor gefocust solowerk.",
+                pl: "Osobisty trener kanban do skupionej pracy solo.",
                 zh: "专为个人专注工作打造的看板教练。"
             )
         case .board:
@@ -139,6 +146,7 @@ enum AppStoreScreenshotScene: String, CaseIterable {
                 fr: "Priorisez, lancez et terminez sans perdre le contexte.",
                 it: "Dai priorità, avvia e chiudi senza perdere contesto.",
                 nl: "Prioriteer, pak op en rond af zonder contextverlies.",
+                pl: "Ustalaj priorytety, bierz i kończ bez utraty kontekstu.",
                 zh: "不丢失上下文地排序、拉取并完成工作。"
             )
         case .quickCapture:
@@ -153,6 +161,7 @@ enum AppStoreScreenshotScene: String, CaseIterable {
                 fr: "Capturez idées, photos, scans ou dictées.",
                 it: "Cattura idee da note, foto, scansioni o voce.",
                 nl: "Leg ideeën vast uit notities, foto’s, scans of stem.",
+                pl: "Chwytaj pomysły z notatek, zdjęć, skanów lub głosu.",
                 zh: "从笔记、照片、扫描或语音中捕捉想法。"
             )
         case .focusGuard:
@@ -167,6 +176,7 @@ enum AppStoreScreenshotScene: String, CaseIterable {
                 fr: "Les limites WIP protègent votre attention avant la surcharge.",
                 it: "I limiti WIP proteggono l’attenzione dal sovraccarico.",
                 nl: "WIP-limieten beschermen je aandacht vóór overbelasting.",
+                pl: "Limity WIP chronią uwagę przed przeciążeniem.",
                 zh: "WIP 限制在过载前保护你的注意力。"
             )
         case .flowReview:
@@ -181,6 +191,7 @@ enum AppStoreScreenshotScene: String, CaseIterable {
                 fr: "Voyez le travail à décider avant qu’il ne dérive.",
                 it: "Vedi cosa richiede una decisione prima che si fermi.",
                 nl: "Zie welk werk een beslissing nodig heeft voordat het blijft liggen.",
+                pl: "Zobacz pracę, która wymaga decyzji, zanim utknie.",
                 zh: "在工作停滞前，看清哪些需要决策。"
             )
         case .search:
@@ -195,6 +206,7 @@ enum AppStoreScreenshotScene: String, CaseIterable {
                 fr: "Cherchez titres, contexte et critères de terminé.",
                 it: "Cerca titoli, contesto e definizioni di completato.",
                 nl: "Zoek titels, context en definities van klaar.",
+                pl: "Szukaj tytułów, kontekstu i definicji ukończenia.",
                 zh: "搜索标题、上下文和完成标准。"
             )
         }
@@ -223,7 +235,29 @@ private enum AppStoreScreenshotLanguage: String {
     case fr
     case it
     case nl
+    case pl
     case zh
+
+    var locale: Locale {
+        Locale(identifier: localeIdentifier)
+    }
+
+    var localeIdentifier: String {
+        switch self {
+        case .en: return "en"
+        case .es: return "es_ES"
+        case .de: return "de"
+        case .ja: return "ja"
+        case .hi: return "hi"
+        case .pt: return "pt_BR"
+        case .ko: return "ko"
+        case .fr: return "fr_FR"
+        case .it: return "it"
+        case .nl: return "nl"
+        case .pl: return "pl"
+        case .zh: return "zh_Hans"
+        }
+    }
 
     static var current: AppStoreScreenshotLanguage {
         let explicitLanguage = CommandLine.arguments
@@ -241,11 +275,12 @@ private enum AppStoreScreenshotLanguage: String {
         if preferredLanguage.hasPrefix("fr") { return .fr }
         if preferredLanguage.hasPrefix("it") { return .it }
         if preferredLanguage.hasPrefix("nl") { return .nl }
+        if preferredLanguage.hasPrefix("pl") { return .pl }
         if preferredLanguage.hasPrefix("zh") { return .zh }
         return .en
     }
 
-    func text(en: String, es: String, de: String, ja: String, hi: String, pt: String, ko: String, fr: String, it: String, nl: String, zh: String) -> String {
+    func text(en: String, es: String, de: String, ja: String, hi: String, pt: String, ko: String, fr: String, it: String, nl: String, pl: String, zh: String) -> String {
         switch self {
         case .en: return en
         case .es: return es
@@ -257,6 +292,7 @@ private enum AppStoreScreenshotLanguage: String {
         case .fr: return fr
         case .it: return it
         case .nl: return nl
+        case .pl: return pl
         case .zh: return zh
         }
     }
@@ -447,6 +483,7 @@ struct AppStoreScreenshotView: View {
             }
         }
         .preferredColorScheme(.light)
+        .environment(\.locale, AppStoreScreenshotLanguage.current.locale)
         .environment(\.dynamicTypeSize, .large)
         .task {
             configureSceneState()
