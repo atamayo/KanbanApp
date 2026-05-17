@@ -8,6 +8,12 @@
             "state": "translated",
             "value": ""
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ""
+          }
         }
       }
     },
@@ -78,6 +84,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "\"%@\" jest w toku już od pewnego czasu. Przejrzyj to zadanie, zanim weźmiesz kolejne."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "\"%@\" fa una estona que és en curs. Revisa-la abans d'agafar més feina."
           }
         }
       }
@@ -150,6 +162,12 @@
             "state": "translated",
             "value": "\"%@\" zaczyna zalegać w toku. Szybki przegląd pomoże utrzymać ruch na tablicy."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "\"%@\" comença a envellir en curs. Una revisió ràpida pot mantenir el tauler en moviment."
+          }
         }
       }
     },
@@ -221,6 +239,12 @@
             "state": "translated",
             "value": "\"%@\" może wymagać decyzji. Jeszcze %lld aktywnych %@ zaczyna zalegać."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "\"%@\" pot necessitar una decisió. %lld %@ actives més estan envellint."
+          }
         }
       }
     },
@@ -287,6 +311,12 @@
           }
         },
         "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ %@"
+          }
+        },
+        "ca": {
           "stringUnit": {
             "state": "translated",
             "value": "%@ %@"
@@ -361,6 +391,12 @@
             "state": "translated",
             "value": "Kolumna %@, %lld zadań"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Columna %@, %lld tasques"
+          }
         }
       }
     },
@@ -430,6 +466,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ukończono %@ z %@ %@"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@/%@ %@ fetes"
           }
         }
       }
@@ -501,6 +543,12 @@
             "state": "translated",
             "value": "Priorytet: %@"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prioritat %@"
+          }
         }
       }
     },
@@ -567,6 +615,12 @@
           }
         },
         "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@, %lld %@"
+          }
+        },
+        "ca": {
           "stringUnit": {
             "state": "translated",
             "value": "%@, %lld %@"
@@ -641,6 +695,12 @@
             "state": "translated",
             "value": "%@, utworzono %@ temu"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@, creada fa %@"
+          }
         }
       }
     },
@@ -711,6 +771,12 @@
             "state": "translated",
             "value": "%@, w toku od %@"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@, en curs des de fa %@"
+          }
         }
       }
     },
@@ -777,6 +843,12 @@
           }
         },
         "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@. %@"
+          }
+        },
+        "ca": {
           "stringUnit": {
             "state": "translated",
             "value": "%@. %@"
@@ -851,6 +923,12 @@
             "state": "translated",
             "value": "%lld"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld"
+          }
         }
       }
     },
@@ -917,6 +995,12 @@
           }
         },
         "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld %@"
+          }
+        },
+        "ca": {
           "stringUnit": {
             "state": "translated",
             "value": "%lld %@"
@@ -992,6 +1076,12 @@
             "state": "translated",
             "value": "%lld %@ może być zatrzymane"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld %@ pot estar encallada"
+          }
         }
       }
     },
@@ -1063,6 +1153,12 @@
             "state": "translated",
             "value": "%lld aktywnych %@ się starzeje"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld %@ actives envellint"
+          }
         }
       }
     },
@@ -1130,6 +1226,12 @@
           }
         },
         "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lldd"
+          }
+        },
+        "ca": {
           "stringUnit": {
             "state": "translated",
             "value": "%lldd"
@@ -1205,6 +1307,12 @@
             "state": "translated",
             "value": "%lldd w statusie"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lldd en estat"
+          }
         }
       }
     },
@@ -1272,6 +1380,12 @@
           }
         },
         "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lldh"
+          }
+        },
+        "ca": {
           "stringUnit": {
             "state": "translated",
             "value": "%lldh"
@@ -1347,6 +1461,12 @@
             "state": "translated",
             "value": "%lldh w statusie"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lldh en estat"
+          }
         }
       }
     },
@@ -1414,6 +1534,12 @@
           }
         },
         "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lldm"
+          }
+        },
+        "ca": {
           "stringUnit": {
             "state": "translated",
             "value": "%lldm"
@@ -1489,6 +1615,12 @@
             "state": "translated",
             "value": "%lldm temu"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "fa %lldm"
+          }
         }
       }
     },
@@ -1555,6 +1687,12 @@
           }
         },
         "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3 / 3"
+          }
+        },
+        "ca": {
           "stringUnit": {
             "state": "translated",
             "value": "3 / 3"
@@ -1629,6 +1767,12 @@
             "state": "translated",
             "value": "Skupiony system działa lepiej, gdy liczba aktywnych zadań jest mała."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un sistema enfocat funciona millor quan mantens poca feina activa."
+          }
         }
       }
     },
@@ -1698,6 +1842,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Limit 2 lub 3 aktywnych zadań zwykle poprawia skupienie, jakość i tempo kończenia pracy."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un límit de 2 o 3 tasques actives sol millorar el focus, la qualitat i el ritme de finalització."
           }
         }
       }
@@ -1769,6 +1919,12 @@
             "state": "translated",
             "value": "Ograniczona kolumna W toku ułatwia trzymanie się bieżącej pracy zamiast rozpraszać wysiłek na zbyt wiele zadań."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una columna En curs limitada facilita mantenir-te amb la feina actual en lloc de dispersar l'esforç entre massa tasques."
+          }
         }
       }
     },
@@ -1838,6 +1994,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zadanie należy do W toku tylko wtedy, gdy teraz aktywnie nad nim pracujesz. Praca zablokowana lub oczekująca powinna być widoczna, a nie cicho pomieszana z aktywną."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una tasca pertany a En curs només quan hi estàs treballant ara. La feina bloquejada o en espera ha de ser visible, no barrejada en silenci."
           }
         }
       }
@@ -1909,6 +2071,12 @@
             "state": "translated",
             "value": "Zadanie jest ukończone, gdy spełnia warunek zakończenia, a nie tylko gdy wydaje się prawie gotowe. Użyj pola Definicja ukończenia, aby jasno określić koniec pracy."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una tasca està feta quan compleix el criteri final, no només quan sembla gairebé acabada. Fes servir el camp Definició de fet per fer explícita la finalització."
+          }
         }
       }
     },
@@ -1978,6 +2146,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Praktyczny pulpit"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tauler accionable"
           }
         }
       }
@@ -2049,6 +2223,12 @@
             "state": "translated",
             "value": "aktywne"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "actives"
+          }
         }
       }
     },
@@ -2118,6 +2298,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aktywne"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Actives"
           }
         }
       }
@@ -2189,6 +2375,12 @@
             "state": "translated",
             "value": "Wiek aktywnych"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Antiguitat activa"
+          }
         }
       }
     },
@@ -2258,6 +2450,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Przypomnienia o aktywnych zadaniach"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recordatoris de tasques actives"
           }
         }
       }
@@ -2329,6 +2527,12 @@
             "state": "translated",
             "value": "Aktywna praca"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Feina activa"
+          }
         }
       }
     },
@@ -2398,6 +2602,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dodaj zadanie, aby wypełnić pulpit"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afegeix una tasca per omplir el tauler"
           }
         }
       }
@@ -2469,6 +2679,12 @@
             "state": "translated",
             "value": "Dodaj kontekst zadania"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afegeix context a la tasca"
+          }
         }
       }
     },
@@ -2538,6 +2754,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dodaj zadanie"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afegeix tasca"
           }
         }
       }
@@ -2609,6 +2831,12 @@
             "state": "translated",
             "value": "Dodaj pierwsze zadanie, aby zacząć śledzić postęp."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afegeix la primera tasca per començar a seguir el progrés."
+          }
         }
       }
     },
@@ -2678,6 +2906,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dodawanie do statusu %@"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afegint a l'estat %@"
           }
         }
       }
@@ -2749,6 +2983,12 @@
             "state": "translated",
             "value": "Starzejące się"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envellint"
+          }
         }
       }
     },
@@ -2818,6 +3058,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Starzeje się po"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envelleix després de"
           }
         }
       }
@@ -2889,6 +3135,12 @@
             "state": "translated",
             "value": "Starzejące się zadania"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tasques envellint"
+          }
         }
       }
     },
@@ -2958,6 +3210,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Wszystkie zadania"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Totes les tasques"
           }
         }
       }
@@ -3029,6 +3287,12 @@
             "state": "translated",
             "value": "Wszystkie zadania ukończone"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Totes les tasques completades"
+          }
         }
       }
     },
@@ -3098,6 +3362,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Już prawie — zamknij pozostałe zadania."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ja gairebé hi ets — tanca les tasques restants."
           }
         }
       }
@@ -3169,6 +3439,12 @@
             "state": "translated",
             "value": "Apple Intelligence przygotowuje się. Spróbuj ponownie za chwilę."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Intelligence s'està preparant. Torna-ho a provar d'aquí a un moment."
+          }
         }
       }
     },
@@ -3238,6 +3514,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Apple Intelligence nie jest obsługiwane na tym urządzeniu."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Intelligence no és compatible amb aquest dispositiu."
           }
         }
       }
@@ -3309,6 +3591,12 @@
             "state": "translated",
             "value": "Apple Intelligence jest niedostępne, więc wklej tekst tutaj i dodaj go do zadania ręcznie."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Intelligence no està disponible; enganxa el text aquí i afegeix-lo manualment a la tasca."
+          }
         }
       }
     },
@@ -3378,6 +3666,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Archiwizuj"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arxiva"
           }
         }
       }
@@ -3449,6 +3743,12 @@
             "state": "translated",
             "value": "Archiwizuj ukończone zadanie"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arxiva la tasca completada"
+          }
         }
       }
     },
@@ -3518,6 +3818,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zarchiwizowane"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arxivades"
           }
         }
       }
@@ -3589,6 +3895,12 @@
             "state": "translated",
             "value": "Zarchiwizowano %@ temu"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arxivada fa %@"
+          }
         }
       }
     },
@@ -3658,6 +3970,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zarchiwizowano %lld"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld arxivades"
           }
         }
       }
@@ -3729,6 +4047,12 @@
             "state": "translated",
             "value": "Zarchiwizowane ukończone zadania znikają z aktywnej tablicy, ale nadal liczą się w historii ukończeń."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les tasques fetes arxivades surten del tauler actiu però continuen comptant a l'historial de finalitzacions."
+          }
         }
       }
     },
@@ -3798,6 +4122,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Śr. dni do ukończenia"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dies mitjans fins a fet"
           }
         }
       }
@@ -3869,6 +4199,12 @@
             "state": "translated",
             "value": "NAJLEPSZE NASTĘPNE ZADANIE"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MILLOR TASCA SEGÜENT"
+          }
         }
       }
     },
@@ -3938,6 +4274,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zablokowane"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bloquejada"
           }
         }
       }
@@ -4009,6 +4351,12 @@
             "state": "translated",
             "value": "Zablokowane / oczekujące"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bloquejada / en espera"
+          }
         }
       }
     },
@@ -4078,6 +4426,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zablokowana aktywna praca"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Feina activa bloquejada"
           }
         }
       }
@@ -4149,6 +4503,12 @@
             "state": "translated",
             "value": "Zablokowane zadania wymagają uwagi, zanim weźmiesz kolejną pracę."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les tasques bloquejades necessiten atenció abans d'agafar més feina."
+          }
         }
       }
     },
@@ -4218,6 +4578,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zablokowana praca"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Feina bloquejada"
           }
         }
       }
@@ -4289,6 +4655,12 @@
             "state": "translated",
             "value": "Zablokowana praca spowalnia Twój przepływ."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La feina bloquejada està alentint el flux."
+          }
         }
       }
     },
@@ -4358,6 +4730,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zablokowana praca pozostaje widoczna"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La feina bloquejada continua visible"
           }
         }
       }
@@ -4429,6 +4807,12 @@
             "state": "translated",
             "value": "Tablica ukończona — wszystkie zadania są gotowe."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tauler complet — totes les tasques estan fetes."
+          }
         }
       }
     },
@@ -4498,6 +4882,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "NAJPIERW PODZIEL"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DESGLOSSA PRIMER"
           }
         }
       }
@@ -4569,6 +4959,12 @@
             "state": "translated",
             "value": "Podziel zadanie"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desglossa la tasca"
+          }
         }
       }
     },
@@ -4638,6 +5034,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Kup produkty spożywcze"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compra queviures"
           }
         }
       }
@@ -4709,6 +5111,12 @@
             "state": "translated",
             "value": "Dostęp do aparatu jest wymagany do skanowania tekstu. Włącz go w Ustawieniach."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cal accés a la càmera per escanejar text. Activa-ho a Configuració."
+          }
         }
       }
     },
@@ -4778,6 +5186,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dostęp do aparatu jest teraz niedostępny."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L'accés a la càmera no està disponible ara mateix."
           }
         }
       }
@@ -4849,6 +5263,12 @@
             "state": "translated",
             "value": "Anuluj"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel·la"
+          }
         }
       }
     },
@@ -4918,6 +5338,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Przechwyć"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Captura"
           }
         }
       }
@@ -4989,6 +5415,12 @@
             "state": "translated",
             "value": "Wybierz następne zadanie"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tria la següent tasca"
+          }
         }
       }
     },
@@ -5058,6 +5490,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Wyczyść"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neteja"
           }
         }
       }
@@ -5129,6 +5567,12 @@
             "state": "translated",
             "value": "Wyczyść warunek zakończenia"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neteja el criteri final"
+          }
         }
       }
     },
@@ -5198,6 +5642,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Wyczyść warunki zakończenia"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neteja els criteris finals"
           }
         }
       }
@@ -5269,6 +5719,12 @@
             "state": "translated",
             "value": "Jaśniejsze decyzje"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Decisions més clares"
+          }
         }
       }
     },
@@ -5338,6 +5794,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zamknij"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tanca"
           }
         }
       }
@@ -5409,6 +5871,12 @@
             "state": "translated",
             "value": "Zamknij jedno zadanie, a zwolnisz miejsce na skupienie, wzmocnisz kolumnę Ukończone i znów poczujesz realny postęp."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tanca una tasca i alliberes un espai de focus, reforces la columna Fet i fas que el progrés torni a semblar real."
+          }
         }
       }
     },
@@ -5478,6 +5946,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zamknięte"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tancada"
           }
         }
       }
@@ -5549,6 +6023,12 @@
             "state": "translated",
             "value": "Zamknięto %@ temu"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tancada fa %@"
+          }
         }
       }
     },
@@ -5618,6 +6098,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ukończ"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Completa"
           }
         }
       }
@@ -5689,6 +6175,12 @@
             "state": "translated",
             "value": "ukończone"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "completades"
+          }
         }
       }
     },
@@ -5758,6 +6250,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ukończone"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Completades"
           }
         }
       }
@@ -5829,6 +6327,12 @@
             "state": "translated",
             "value": "Ukończenie nie jest ukryte. Pulpit i tablica pokazują skończoną pracę, dzięki czemu postęp jest konkretny i motywujący."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La finalització no queda amagada. El tauler i el panell fan visible la feina acabada perquè el progrés sigui concret i motivador."
+          }
         }
       }
     },
@@ -5840,6 +6344,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Potwierdź datę startu z Samem"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Confirma la data de llançament amb en Sam"
           }
         }
       }
@@ -5911,6 +6421,12 @@
             "state": "translated",
             "value": "Kontynuuj"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continua"
+          }
         }
       }
     },
@@ -5980,6 +6496,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Utwórz zadanie"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crea tasca"
           }
         }
       }
@@ -6051,6 +6573,12 @@
             "state": "translated",
             "value": "Utworzono"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Creada"
+          }
         }
       }
     },
@@ -6120,6 +6648,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Obecnie %lld"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Actual %lld"
           }
         }
       }
@@ -6191,6 +6725,12 @@
             "state": "translated",
             "value": "Pulpit"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tauler"
+          }
         }
       }
     },
@@ -6260,6 +6800,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "dzień"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "dia"
           }
         }
       }
@@ -6331,6 +6877,12 @@
             "state": "translated",
             "value": "dni"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "dies"
+          }
         }
       }
     },
@@ -6400,6 +6952,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Definicja ukończenia"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Definició de fet"
           }
         }
       }
@@ -6471,6 +7029,12 @@
             "state": "translated",
             "value": "Usuń"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suprimeix"
+          }
         }
       }
     },
@@ -6540,6 +7104,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Usuń zadanie"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suprimeix la tasca"
           }
         }
       }
@@ -6611,6 +7181,12 @@
             "state": "translated",
             "value": "Opisz jedno zadanie naturalnie. Przed zapisaniem możesz edytować wygenerowane zadanie."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descriu una tasca de manera natural. Pots editar la tasca generada abans de desar-la."
+          }
         }
       }
     },
@@ -6680,6 +7256,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Opis"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descripció"
           }
         }
       }
@@ -6751,6 +7333,12 @@
             "state": "translated",
             "value": "Godzina podsumowania"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hora del resum"
+          }
         }
       }
     },
@@ -6820,6 +7408,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zamyka skaner bez użycia przechwyconego tekstu."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tanca l'escàner sense utilitzar el text capturat."
           }
         }
       }
@@ -6892,6 +7486,12 @@
             "state": "translated",
             "value": "Ukończone"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fet"
+          }
         }
       }
     },
@@ -6961,6 +7561,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Filtr ukończonych"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filtre de fet"
           }
         }
       }
@@ -7032,6 +7638,12 @@
             "state": "translated",
             "value": "Ukończone oznacza spełnione kryteria"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fet vol dir criteris complerts"
+          }
         }
       }
     },
@@ -7101,6 +7713,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Momentum ukończeń"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impuls de fet"
           }
         }
       }
@@ -7172,6 +7790,12 @@
             "state": "translated",
             "value": "Ukończone pozostaje widoczne"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fet continua visible"
+          }
         }
       }
     },
@@ -7241,6 +7865,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Filtr ukończonych zadań"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filtre de tasques fetes"
           }
         }
       }
@@ -7312,6 +7942,12 @@
             "state": "translated",
             "value": "Ukończone w tym tygodniu"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fetes aquesta setmana"
+          }
         }
       }
     },
@@ -7381,6 +8017,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Stuknij dwukrotnie, aby otworzyć szczegóły. Przesuń lub przytrzymaj, aby wykonać działania. Przeciągnij kartę, aby zmienić kolejność."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca dues vegades per obrir els detalls. Fes lliscar o mantén premut per a accions. Arrossega la targeta per reordenar."
           }
         }
       }
@@ -7452,6 +8094,12 @@
             "state": "translated",
             "value": "Szkic wygenerowany. Sprawdź i popraw przed utworzeniem zadania."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esborrany generat. Revisa'l i ajusta'l abans de crear la tasca."
+          }
         }
       }
     },
@@ -7521,6 +8169,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Włącz przypomnienia o aktywnych zadaniach"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activa recordatoris de tasques actives"
           }
         }
       }
@@ -7592,6 +8246,12 @@
             "state": "translated",
             "value": "Włącz optymalizację przepływu"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activa l'optimització del flux"
+          }
         }
       }
     },
@@ -7661,6 +8321,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Wystarczający kontekst"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prou context"
           }
         }
       }
@@ -7732,6 +8398,12 @@
             "state": "translated",
             "value": "Każde ukończone zadanie uwalnia uwagę i robi miejsce na kolejne."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada tasca completada allibera atenció i obre espai per agafar la següent."
+          }
         }
       }
     },
@@ -7801,6 +8473,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Wyodrębnianie tekstu z obrazu…"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Extraient text de la imatge…"
           }
         }
       }
@@ -7872,6 +8550,12 @@
             "state": "translated",
             "value": "Znajdź zadania według tytułu, opisu lub definicji ukończenia."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Troba tasques per títol, descripció o definició de fet."
+          }
         }
       }
     },
@@ -7941,6 +8625,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zakończ"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acaba"
           }
         }
       }
@@ -8012,6 +8702,12 @@
             "state": "translated",
             "value": "Zakończ jedno, zanim weźmiesz kolejne."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acaba'n una abans d'agafar-ne una altra."
+          }
         }
       }
     },
@@ -8081,6 +8777,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ukończ jedno zadanie, zanim weźmiesz kolejne."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acaba una tasca abans d'agafar-ne una altra."
           }
         }
       }
@@ -8152,6 +8854,12 @@
             "state": "translated",
             "value": "Zakończ albo przesuń jedno aktywne zadanie naprzód, zanim weźmiesz nową pracę."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acaba o avança una tasca activa abans d'agafar feina nova."
+          }
         }
       }
     },
@@ -8221,6 +8929,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ukończona praca jest częścią systemu. Widok zamykanych zadań daje impet i zmniejsza stres."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La feina acabada forma part del sistema. Veure tasques tancades dona impuls i redueix l'estrès."
           }
         }
       }
@@ -8292,6 +9006,12 @@
             "state": "translated",
             "value": "Optymalizacja przepływu"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Optimització del flux"
+          }
         }
       }
     },
@@ -8361,6 +9081,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Optymalizacja przepływu chroni skupienie"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L'optimització del flux protegeix el focus"
           }
         }
       }
@@ -8432,6 +9158,12 @@
             "state": "translated",
             "value": "Przegląd przepływu"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revisió del flux"
+          }
         }
       }
     },
@@ -8501,6 +9233,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Stan przepływu"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estat del flux"
           }
         }
       }
@@ -8572,6 +9310,12 @@
             "state": "translated",
             "value": "Trendy przepływu"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tendències del flux"
+          }
         }
       }
     },
@@ -8642,6 +9386,12 @@
             "state": "translated",
             "value": "Skup się na bieżącej pracy"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Centra't en la feina actual"
+          }
         }
       }
     },
@@ -8653,6 +9403,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ochrona skupienia"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Protector de focus"
           }
         }
       }
@@ -8724,6 +9480,12 @@
             "state": "translated",
             "value": "Zadanie do skupienia"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tasca de focus"
+          }
         }
       }
     },
@@ -8794,6 +9556,12 @@
             "state": "translated",
             "value": "SKUP SIĘ NA TYM"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CENTRA'T EN AQUESTA"
+          }
         }
       }
     },
@@ -8805,6 +9573,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Skontaktuj się z Samem w sprawie strony cen, wyślij poprawiony tekst i potwierdź datę startu przed piątkiem."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fes seguiment amb en Sam sobre la pàgina de preus, envia el text revisat i confirma la data de llançament abans de divendres."
           }
         }
       }
@@ -8876,6 +9650,12 @@
             "state": "translated",
             "value": "Świeże"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recent"
+          }
         }
       }
     },
@@ -8945,6 +9725,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Z W toku do Ukończone"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "D'En curs a Fet"
           }
         }
       }
@@ -9016,6 +9802,12 @@
             "state": "translated",
             "value": "Wygeneruj jeden konkretny następny krok, aby ponownie ruszyć to zadanie."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genera un pas següent concret per ajudar a reactivar aquesta tasca."
+          }
         }
       }
     },
@@ -9027,6 +9819,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Wygenerowany szkic"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esborrany generat"
           }
         }
       }
@@ -9098,6 +9896,12 @@
             "state": "translated",
             "value": "Generowanie…"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Generant…"
+          }
         }
       }
     },
@@ -9167,6 +9971,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dobry początek — przesuwaj pracę ku ukończeniu."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bon inici — porta feina cap a Fet."
           }
         }
       }
@@ -9239,6 +10049,12 @@
             "state": "translated",
             "value": "Wysoki"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alta"
+          }
         }
       }
     },
@@ -9308,6 +10124,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Wysoki priorytet"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prioritat alta"
           }
         }
       }
@@ -9379,6 +10201,12 @@
             "state": "translated",
             "value": "Jak ta aplikacja to wspiera"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Com ho dona suport aquesta app"
+          }
         }
       }
     },
@@ -9448,6 +10276,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Jak używać tej aplikacji"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Com utilitzar aquesta app"
           }
         }
       }
@@ -9519,6 +10353,12 @@
             "state": "translated",
             "value": "Synchronizacja iCloud jest włączona"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La sincronització amb iCloud està activada"
+          }
         }
       }
     },
@@ -9588,6 +10428,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Importuj zdjęcie"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Importa foto"
           }
         }
       }
@@ -9660,6 +10506,12 @@
             "state": "translated",
             "value": "W toku"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En curs"
+          }
         }
       }
     },
@@ -9729,6 +10581,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "W toku oznacza aktywną uwagę"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En curs vol dir atenció activa"
           }
         }
       }
@@ -9800,6 +10658,12 @@
             "state": "translated",
             "value": "W tej aplikacji nowe zadanie powinno trafić do W toku tylko wtedy, gdy aktywna kolumna ma miejsce. Dotychczasowe trafienia limitu WIP: %lld."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En aquesta app, una tasca nova només hauria de passar a En curs quan la columna activa tingui capacitat. Arribades al límit WIP fins ara: %lld."
+          }
         }
       }
     },
@@ -9870,6 +10734,12 @@
             "state": "translated",
             "value": "Informacje"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Informació"
+          }
         }
       }
     },
@@ -9936,6 +10806,12 @@
           }
         },
         "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kanban"
+          }
+        },
+        "ca": {
           "stringUnit": {
             "state": "translated",
             "value": "Kanban"
@@ -10010,6 +10886,12 @@
             "state": "translated",
             "value": "KanbanApp daje jeden przejrzysty system dla zadań, dzięki czemu przestajesz żonglować wszystkim w głowie i zaczynasz przesuwać pracę naprzód."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KanbanApp et dona un sistema clar per a les tasques, perquè deixis de portar-ho tot al cap i comencis a fer avançar la feina."
+          }
         }
       }
     },
@@ -10079,6 +10961,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Niech będzie zwięzłe. Krótki warunek ukończenia pomaga kończyć zamiast bez końca dopracowywać."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mantén-ho compacte. Un criteri final curt t'ajuda a acabar en lloc de refinar sense fi."
           }
         }
       }
@@ -10150,6 +11038,12 @@
             "state": "translated",
             "value": "Niech będzie krótkie. Zwięzły warunek zakończenia ułatwia zamknięcie zadania."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fes-ho curt. Un criteri final compacte facilita tancar la tasca."
+          }
         }
       }
     },
@@ -10219,6 +11113,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Przesuwaj zadania przez trzy podstawowe stany. Tablica pokazuje Twój przepływ, a nie tylko listę zadań."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mantén les tasques movent-se pels tres estats principals. El tauler és la imatge del teu flux, no només una llista de tasques."
           }
         }
       }
@@ -10290,6 +11190,12 @@
             "state": "translated",
             "value": "Duże zadanie"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tasca gran"
+          }
         }
       }
     },
@@ -10359,6 +11265,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Niech Ukończone motywuje"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deixa que Fet et motivi"
           }
         }
       }
@@ -10430,6 +11342,12 @@
             "state": "translated",
             "value": "Limit osiągnięty"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Límit assolit"
+          }
         }
       }
     },
@@ -10499,6 +11417,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ogranicz WIP"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Limita el WIP"
           }
         }
       }
@@ -10570,6 +11494,12 @@
             "state": "translated",
             "value": "Ogranicz pracę w toku, aby zmniejszyć przełączanie kontekstu."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Limita la feina en curs per reduir el canvi de context."
+          }
         }
       }
     },
@@ -10640,6 +11570,12 @@
             "state": "translated",
             "value": "Słuchanie..."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escoltant..."
+          }
         }
       }
     },
@@ -10709,6 +11645,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Skanowanie tekstu na żywo nie jest obsługiwane na tym urządzeniu."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L'escaneig de text en viu no és compatible amb aquest dispositiu."
           }
         }
       }
@@ -10781,6 +11723,12 @@
             "state": "translated",
             "value": "Niski"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Baixa"
+          }
         }
       }
     },
@@ -10850,6 +11798,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Niski priorytet"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prioritat baixa"
           }
         }
       }
@@ -10921,6 +11875,12 @@
             "state": "translated",
             "value": "Mniejsze obciążenie mentalne"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menys càrrega mental"
+          }
         }
       }
     },
@@ -10987,6 +11947,12 @@
           }
         },
         "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Manifest"
+          }
+        },
+        "ca": {
           "stringUnit": {
             "state": "translated",
             "value": "Manifest"
@@ -11061,6 +12027,12 @@
             "state": "translated",
             "value": "Oznacz jako aktywne"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marca com activa"
+          }
         }
       }
     },
@@ -11130,6 +12102,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Oznacz jako zablokowane / oczekujące"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marca com bloquejada / en espera"
           }
         }
       }
@@ -11201,6 +12179,12 @@
             "state": "translated",
             "value": "Oznacz jako ukończone"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marca com feta"
+          }
         }
       }
     },
@@ -11270,6 +12254,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Maks. aktywnych zadań"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Màx. tasques actives"
           }
         }
       }
@@ -11342,6 +12332,12 @@
             "state": "translated",
             "value": "Średni"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mitjana"
+          }
         }
       }
     },
@@ -11411,6 +12407,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Średni priorytet"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prioritat mitjana"
           }
         }
       }
@@ -11482,6 +12484,12 @@
             "state": "translated",
             "value": "Dostęp do mikrofonu jest wymagany do dyktowania zadań. Włącz go w Ustawieniach."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cal accés al micròfon per dictar tasques. Activa-ho a Configuració."
+          }
         }
       }
     },
@@ -11551,6 +12559,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Na tablicy rośnie momentum."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L'impuls creix al teu tauler."
           }
         }
       }
@@ -11622,6 +12636,12 @@
             "state": "translated",
             "value": "Momentum jest widoczne."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L'impuls és visible."
+          }
         }
       }
     },
@@ -11691,6 +12711,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Więcej motywacji do kończenia"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Més motivació per acabar"
           }
         }
       }
@@ -11762,6 +12788,12 @@
             "state": "translated",
             "value": "Przenieś zadanie do W toku dopiero wtedy, gdy pojawi się miejsce. Niech ukończenie tworzy przestrzeń na kolejne zobowiązanie."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mou una tasca a En curs només quan s'obri capacitat. Deixa que acabar creï espai per al següent compromís."
+          }
         }
       }
     },
@@ -11831,6 +12863,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Przenieś do W toku"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mou a En curs"
           }
         }
       }
@@ -11902,6 +12940,12 @@
             "state": "translated",
             "value": "Przenieś do Do zrobienia"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mou a Per fer"
+          }
         }
       }
     },
@@ -11971,6 +13015,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Przenieś pierwsze zadanie do Ukończone, aby zbudować momentum."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mou la primera tasca a Fet per crear impuls."
           }
         }
       }
@@ -12042,6 +13092,12 @@
             "state": "translated",
             "value": "Przenosi to zadanie do W toku."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mou aquesta tasca a En curs."
+          }
         }
       }
     },
@@ -12111,6 +13167,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Potrzebne ukończone zadania z W toku"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Calen tasques en curs completades"
           }
         }
       }
@@ -12182,6 +13244,12 @@
             "state": "translated",
             "value": "Wymaga jaśniejszego zakresu"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Necessita un abast més clar"
+          }
         }
       }
     },
@@ -12251,6 +13319,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nowe zadanie"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tasca nova"
           }
         }
       }
@@ -12322,6 +13396,12 @@
             "state": "translated",
             "value": "Następne działanie"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acció següent"
+          }
         }
       }
     },
@@ -12391,6 +13471,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sugestia następnego działania jest teraz niedostępna."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La suggerència d'acció següent no està disponible ara mateix."
           }
         }
       }
@@ -12462,6 +13548,12 @@
             "state": "translated",
             "value": "Następne działanie: %@"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acció següent: %@"
+          }
         }
       }
     },
@@ -12531,6 +13623,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "NIE TRZEBA DZIAŁAĆ"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NO CAL CAP ACCIÓ"
           }
         }
       }
@@ -12602,6 +13700,12 @@
             "state": "translated",
             "value": "Brak aktywnych blokad."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hi ha bloquejos actius ara mateix."
+          }
         }
       }
     },
@@ -12671,6 +13775,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Brak aktywnego zadania"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hi ha cap tasca activa"
           }
         }
       }
@@ -12742,6 +13852,12 @@
             "state": "translated",
             "value": "Brak aktywnych zadań"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hi ha tasques actives"
+          }
         }
       }
     },
@@ -12811,6 +13927,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Brak pasujących zadań"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hi ha tasques coincidents"
           }
         }
       }
@@ -12882,6 +14004,12 @@
             "state": "translated",
             "value": "Nie znaleziono czytelnego tekstu na tym obrazie."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No s'ha trobat text llegible en aquesta imatge."
+          }
         }
       }
     },
@@ -12951,6 +14079,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nie znaleziono czytelnego tekstu w widoku aparatu."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No s'ha trobat text llegible a la vista de la càmera."
           }
         }
       }
@@ -13022,6 +14156,12 @@
             "state": "translated",
             "value": "Brak gotowych zadań oczekujących"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hi ha tasques preparades esperant"
+          }
         }
       }
     },
@@ -13091,6 +14231,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Brak gotowej pracy wymagającej uwagi"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hi ha feina preparada que requereixi atenció"
           }
         }
       }
@@ -13162,6 +14308,12 @@
             "state": "translated",
             "value": "Brak rekomendowanego zadania."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hi ha cap tasca recomanada."
+          }
         }
       }
     },
@@ -13231,6 +14383,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nie przechwycono mowy. Spróbuj nagrać ponownie."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No s'ha capturat cap veu. Prova de gravar de nou."
           }
         }
       }
@@ -13302,6 +14460,12 @@
             "state": "translated",
             "value": "Brak zatrzymanej pracy."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hi ha feina encallada ara mateix."
+          }
         }
       }
     },
@@ -13371,6 +14535,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Brak zadań"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hi ha tasques"
           }
         }
       }
@@ -13442,6 +14612,12 @@
             "state": "translated",
             "value": "Nie ma jeszcze zadań"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Encara no hi ha tasques"
+          }
         }
       }
     },
@@ -13511,6 +14687,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Brak oczekujących zadań"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hi ha tasques en espera"
           }
         }
       }
@@ -13582,6 +14764,12 @@
             "state": "translated",
             "value": "Nic jeszcze nie ukończono"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Encara no s'ha completat res"
+          }
         }
       }
     },
@@ -13652,6 +14840,12 @@
             "state": "translated",
             "value": "Nic jeszcze nie odpływa."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Encara no hi ha res que derivi."
+          }
         }
       }
     },
@@ -13721,6 +14915,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Powiadomienia nie zostały włączone. Możesz zezwolić na nie w Ustawieniach, aby otrzymywać przypomnienia o aktywnych zadaniach."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les notificacions no s'han activat. Pots permetre-les a Configuració per rebre recordatoris de tasques actives."
           }
         }
       }
@@ -13793,6 +14993,12 @@
             "state": "translated",
             "value": "teraz"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ara"
+          }
         }
       }
     },
@@ -13862,6 +15068,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Wył."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desactivat"
           }
         }
       }
@@ -13933,6 +15145,12 @@
             "state": "translated",
             "value": "OK"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "D'acord"
+          }
         }
       }
     },
@@ -14002,6 +15220,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Najstarsze aktywne zadanie"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tasca activa més antiga"
           }
         }
       }
@@ -14073,6 +15297,12 @@
             "state": "translated",
             "value": "Wł."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activat"
+          }
         }
       }
     },
@@ -14142,6 +15372,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zostało tylko jedno miejsce na skupienie"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Només queda un espai de focus"
           }
         }
       }
@@ -14213,6 +15449,12 @@
             "state": "translated",
             "value": "Otwórz zablokowane zadanie"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Obre la tasca bloquejada"
+          }
         }
       }
     },
@@ -14282,6 +15524,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Otwiera szczegółową rekomendację."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Obre una recomanació detallada."
           }
         }
       }
@@ -14353,6 +15601,12 @@
             "state": "translated",
             "value": "Otwiera szczegóły zadania."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Obre els detalls de la tasca."
+          }
         }
       }
     },
@@ -14422,6 +15676,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Otwiera zadania w tej kolumnie"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Obre les tasques d'aquesta columna"
           }
         }
       }
@@ -14493,6 +15753,12 @@
             "state": "translated",
             "value": "Otwiera kolumnę aktywnej pracy."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Obre la columna de feina activa."
+          }
         }
       }
     },
@@ -14562,6 +15828,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Otwiera zablokowane zadanie, aby można je było zaktualizować."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Obre la tasca bloquejada perquè la puguis actualitzar."
           }
         }
       }
@@ -14633,6 +15905,12 @@
             "state": "translated",
             "value": "Otwiera rekomendowane aktywne zadanie."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Obre la tasca activa recomanada."
+          }
         }
       }
     },
@@ -14703,6 +15981,12 @@
             "state": "translated",
             "value": "Ponad limit WIP o %lld"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Per sobre del límit WIP en %lld"
+          }
         }
       }
     },
@@ -14714,6 +15998,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Wklej chaotyczną notatkę i zamień ją w czysty szkic zadania."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enganxa una nota desordenada i converteix-la en un esborrany de tasca clar."
           }
         }
       }
@@ -14785,6 +16075,12 @@
             "state": "translated",
             "value": "Wklej notatkę albo chaotyczną myśl…"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enganxa una nota o pensament desordenat…"
+          }
         }
       }
     },
@@ -14854,6 +16150,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Wklej notatkę"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enganxa nota"
           }
         }
       }
@@ -14925,6 +16227,12 @@
             "state": "translated",
             "value": "Osobisty Kanban"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kanban personal"
+          }
         }
       }
     },
@@ -14994,6 +16302,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Osobisty Kanban w praktyce"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kanban personal a la pràctica"
           }
         }
       }
@@ -15065,6 +16379,12 @@
             "state": "translated",
             "value": "Manifest Osobistego Kanbanu"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Manifest del Kanban personal"
+          }
         }
       }
     },
@@ -15134,6 +16454,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Osobisty Kanban zaleca limit WIP 2 lub 3, aby ograniczyć przełączanie kontekstu i szybciej kończyć zadania."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El Kanban personal recomana un límit WIP de 2 o 3 per minimitzar el canvi de context i acabar tasques més ràpid."
           }
         }
       }
@@ -15205,6 +16531,12 @@
             "state": "translated",
             "value": "Osobisty Kanban zaleca limit WIP 2 lub 3, aby ograniczyć przełączanie kontekstu i szybciej kończyć zadania. Zakończ lub przesuń aktywne zadanie, zanim dodasz kolejne do W toku."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El Kanban personal recomana un límit WIP de 2 o 3 per minimitzar el canvi de context i acabar tasques més ràpid. Acaba o mou una tasca activa abans d'afegir-ne una altra a En curs."
+          }
         }
       }
     },
@@ -15274,6 +16606,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Osobisty Kanban zaleca limit WIP 2 lub 3, aby ograniczyć przełączanie kontekstu i szybciej kończyć zadania. Zakończ lub przesuń aktywne zadanie, zanim przeniesiesz kolejne do W toku."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El Kanban personal recomana un límit WIP de 2 o 3 per minimitzar el canvi de context i acabar tasques més ràpid. Acaba o mou una tasca activa abans de passar-ne una altra a En curs."
           }
         }
       }
@@ -15345,6 +16683,12 @@
             "state": "translated",
             "value": "Osobisty Kanban działa najlepiej, gdy kończysz, zanim weźmiesz kolejną pracę. Utrzymuj aktywną kolumnę małą i widoczną."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El Kanban personal funciona millor quan acabes abans d'agafar més feina. Mantén la columna activa petita i visible."
+          }
         }
       }
     },
@@ -15414,6 +16758,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zdjęcie zaimportowane. Apple Intelligence jest niedostępne, więc tekst dodano do ręcznego przeglądu."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Foto importada. Apple Intelligence no està disponible, així que el text s'ha afegit per a revisió manual."
           }
         }
       }
@@ -15485,6 +16835,12 @@
             "state": "translated",
             "value": "Zdjęcie zaimportowane. Szkic wygenerowano z wyodrębnionego tekstu."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Foto importada. Esborrany generat a partir del text extret."
+          }
         }
       }
     },
@@ -15554,6 +16910,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zdjęcie zaimportowane. Przejrzyj wyodrębniony tekst albo wygeneruj szkic."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Foto importada. Revisa el text extret o genera un esborrany."
           }
         }
       }
@@ -15625,6 +16987,12 @@
             "state": "translated",
             "value": "Praktyka"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pràctica"
+          }
         }
       }
     },
@@ -15694,6 +17062,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Presja pojawia się we właściwym momencie"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La pressió apareix en el moment adequat"
           }
         }
       }
@@ -15765,6 +17139,12 @@
             "state": "translated",
             "value": "Priorytet"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prioritat"
+          }
         }
       }
     },
@@ -15834,6 +17214,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sygnały priorytetu, wskazówki WIP i widoczne stany zadań pomagają wybrać, co ukończyć dalej, z mniejszym tarciem."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Els senyals de prioritat, la guia WIP i els estats visibles ajuden l'usuari a triar què acabar després amb menys fricció."
           }
         }
       }
@@ -15905,6 +17291,12 @@
             "state": "translated",
             "value": "Chroń swoją uwagę"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Protegeix la teva atenció"
+          }
         }
       }
     },
@@ -15974,6 +17366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Chroń skupienie"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Protegeix el focus"
           }
         }
       }
@@ -16045,6 +17443,12 @@
             "state": "translated",
             "value": "Bierz pracę zamiast się przeciążać"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Agafa feina en lloc de sobrecarregar-te"
+          }
         }
       }
     },
@@ -16114,6 +17518,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Weź kolejne zadanie tylko wtedy, gdy jest małe albo pilne. W przeciwnym razie najpierw zakończ aktywną pracę."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Agafa la següent tasca només si és petita o urgent. Si no, acaba primer la feina activa."
           }
         }
       }
@@ -16185,6 +17595,12 @@
             "state": "translated",
             "value": "Bierz tylko wtedy, gdy jest miejsce"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Agafa feina només quan hi hagi espai"
+          }
         }
       }
     },
@@ -16254,6 +17670,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bierz tylko wtedy, gdy masz miejsce"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Agafa feina només quan tinguis espai"
           }
         }
       }
@@ -16325,6 +17747,12 @@
             "state": "translated",
             "value": "Weź zadanie"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Agafa tasca"
+          }
         }
       }
     },
@@ -16394,6 +17822,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Szybkie przechwytywanie"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Captura ràpida"
           }
         }
       }
@@ -16465,6 +17899,12 @@
             "state": "translated",
             "value": "AI szybkiego przechwytywania nie może teraz wygenerować szkicu. Przejrzyj tekst i spróbuj ponownie."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La IA de Captura ràpida no pot generar un esborrany ara mateix. Revisa el text i torna-ho a provar."
+          }
         }
       }
     },
@@ -16534,6 +17974,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "AI szybkiego przechwytywania nie może teraz wygenerować szkicu. Skróć notatkę i spróbuj ponownie."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La IA de Captura ràpida no pot generar un esborrany ara mateix. Escurça la nota i torna-ho a provar."
           }
         }
       }
@@ -16605,6 +18051,12 @@
             "state": "translated",
             "value": "AI szybkiego przechwytywania jest teraz niedostępne."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La IA de Captura ràpida no està disponible ara mateix."
+          }
         }
       }
     },
@@ -16674,6 +18126,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Poznaj podstawowe zasady pracy wizualnej, systemów pull i limitów WIP."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Llegeix els principis bàsics de la feina visual, els sistemes pull i els límits WIP."
           }
         }
       }
@@ -16745,6 +18203,12 @@
             "state": "translated",
             "value": "Gotowe"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preparada"
+          }
         }
       }
     },
@@ -16814,6 +18278,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Gotowe alternatywy"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alternatives preparades"
           }
         }
       }
@@ -16885,6 +18355,12 @@
             "state": "translated",
             "value": "Gotowe do wzięcia"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preparada per agafar"
+          }
         }
       }
     },
@@ -16954,6 +18430,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ostatnie tempo kończenia"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ritme recent de finalització"
           }
         }
       }
@@ -17025,6 +18507,12 @@
             "state": "translated",
             "value": "Rekomendowane działanie"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acció recomanada"
+          }
         }
       }
     },
@@ -17094,6 +18582,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Rekomendowane zadanie: %@."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tasca recomanada: %@."
           }
         }
       }
@@ -17165,6 +18659,12 @@
             "state": "translated",
             "value": "Nagraj ponownie"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grava de nou"
+          }
         }
       }
     },
@@ -17234,6 +18734,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nagraj głos"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grava veu"
           }
         }
       }
@@ -17305,6 +18811,12 @@
             "state": "translated",
             "value": "Ogranicz aktywną pracę, zanim zaczniesz coś nowego. To ochroni skupienie i tempo kończenia."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Redueix la feina activa abans de començar res nou. Això protegirà el focus i la velocitat de finalització."
+          }
         }
       }
     },
@@ -17374,6 +18886,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "NAJPIERW ZMNIEJSZ WIP"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "REDUEIX WIP PRIMER"
           }
         }
       }
@@ -17445,6 +18963,12 @@
             "state": "translated",
             "value": "Zmniejsz WIP teraz"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Redueix el WIP ara"
+          }
         }
       }
     },
@@ -17514,6 +19038,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Powiązane z aktywną pracą"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Relacionada amb feina activa"
           }
         }
       }
@@ -17585,6 +19115,12 @@
             "state": "translated",
             "value": "Rozwiąż zablokowaną pracę, zanim weźmiesz więcej zadań, chyba że nowe zadanie jest pilne i małe."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resol la feina bloquejada abans d'agafar més tasques, tret que una tasca nova sigui urgent i petita."
+          }
         }
       }
     },
@@ -17654,6 +19190,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Przywróć"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaura"
           }
         }
       }
@@ -17725,6 +19267,12 @@
             "state": "translated",
             "value": "Przywróć z archiwum"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaura des de l'arxiu"
+          }
         }
       }
     },
@@ -17794,6 +19342,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Przejrzyj aktywne zadania"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revisa tasques actives"
           }
         }
       }
@@ -17865,6 +19419,12 @@
             "state": "translated",
             "value": "Przejrzyj przed wzięciem"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revisa abans d'agafar"
+          }
         }
       }
     },
@@ -17934,6 +19494,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Przejrzyj pojemność"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revisa la capacitat"
           }
         }
       }
@@ -18005,6 +19571,12 @@
             "state": "translated",
             "value": "Przeglądaj zadania według kolumn"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revisa tasques per columna"
+          }
         }
       }
     },
@@ -18074,6 +19646,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Przejrzyj sugestię przed zastosowaniem jej do zadania."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revisa la suggerència abans d'aplicar-la a la tasca."
           }
         }
       }
@@ -18145,6 +19723,12 @@
             "state": "translated",
             "value": "Przejrzyj aktywne zadania i zdecyduj, co powinno ruszyć dalej."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revisa les teves tasques actives i decideix què ha d'avançar després."
+          }
         }
       }
     },
@@ -18214,6 +19798,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Przejrzyj transkrypcję"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revisa la transcripció"
           }
         }
       }
@@ -18285,6 +19875,12 @@
             "state": "translated",
             "value": "Skanuj tekst"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escaneja text"
+          }
         }
       }
     },
@@ -18354,6 +19950,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Skaner niedostępny"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escàner no disponible"
           }
         }
       }
@@ -18425,6 +20027,12 @@
             "state": "translated",
             "value": "Szukaj"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cerca"
+          }
         }
       }
     },
@@ -18494,6 +20102,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Szukaj zadań"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cerca tasques"
           }
         }
       }
@@ -18565,6 +20179,12 @@
             "state": "translated",
             "value": "Szukaj w swojej pracy"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cerca la teva feina"
+          }
         }
       }
     },
@@ -18634,6 +20254,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zobacz postęp, presję WIP i sygnały przepływu, które kierują Cię ku kończeniu."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Veu el progrés, la pressió WIP i els senyals de flux que t'empenyen a acabar."
           }
         }
       }
@@ -18705,6 +20331,12 @@
             "state": "translated",
             "value": "Zobacz swoją pracę jasno"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Veu la teva feina clarament"
+          }
         }
       }
     },
@@ -18775,6 +20407,12 @@
             "state": "translated",
             "value": "Wyślij jedno dzienne przypomnienie, gdy zadania W toku się starzeją lub zatrzymują."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envia un recordatori diari quan les tasques En curs envelleixin o s'encallin."
+          }
         }
       }
     },
@@ -18786,6 +20424,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Wyślij poprawiony tekst cen i potwierdź datę startu przed piątkiem."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envia el text revisat de preus i confirma la data de llançament abans de divendres."
           }
         }
       }
@@ -18857,6 +20501,12 @@
             "state": "translated",
             "value": "Ustaw maksymalną liczbę aktywnych zadań, aby utrzymać wąskie skupienie."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Defineix un màxim de tasques actives perquè l'atenció es mantingui concentrada."
+          }
         }
       }
     },
@@ -18926,6 +20576,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ustawienia"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Configuració"
           }
         }
       }
@@ -18997,6 +20653,12 @@
             "state": "translated",
             "value": "Pomiń"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Omet"
+          }
         }
       }
     },
@@ -19066,6 +20728,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Wolne miejsca"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Espais lliures"
           }
         }
       }
@@ -19137,6 +20805,12 @@
             "state": "translated",
             "value": "Mały WIP, szybsze kończenie"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP petit, acabes més ràpid"
+          }
         }
       }
     },
@@ -19206,6 +20880,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dostęp do rozpoznawania mowy jest wymagany do dyktowania zadań. Włącz go w Ustawieniach."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cal accés al reconeixement de veu per dictar tasques. Activa-ho a Configuració."
           }
         }
       }
@@ -19277,6 +20957,12 @@
             "state": "translated",
             "value": "Zatrzymane"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Encallada"
+          }
         }
       }
     },
@@ -19346,6 +21032,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zatrzymane po"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Encallada després de"
           }
         }
       }
@@ -19417,6 +21109,12 @@
             "state": "translated",
             "value": "Zatrzymane zadania"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tasques encallades"
+          }
         }
       }
     },
@@ -19486,6 +21184,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zaczynaj nowe zadanie tylko wtedy, gdy pojawi się pojemność. Ukończenie tworzy miejsce na kolejne zobowiązanie."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comença una tasca nova només quan s'obri capacitat. Acabar crea espai per al següent compromís."
           }
         }
       }
@@ -19557,6 +21261,12 @@
             "state": "translated",
             "value": "Zacznij się skupiać"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comença a enfocar-te"
+          }
         }
       }
     },
@@ -19626,6 +21336,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Status"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estat"
           }
         }
       }
@@ -19697,6 +21413,12 @@
             "state": "translated",
             "value": "Rozkład statusów: %lld do zrobienia, %lld w toku, %lld ukończone"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Distribució d'estat: %lld per fer, %lld en curs, %lld fetes"
+          }
         }
       }
     },
@@ -19766,6 +21488,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Stop"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Atura"
           }
         }
       }
@@ -19837,6 +21565,12 @@
             "state": "translated",
             "value": "Silny rytm kończenia."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bon ritme de finalització."
+          }
         }
       }
     },
@@ -19906,6 +21640,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Silniejsze skupienie"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Focus més fort"
           }
         }
       }
@@ -19977,6 +21717,12 @@
             "state": "translated",
             "value": "Zasugeruj następne działanie"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suggereix la següent acció"
+          }
         }
       }
     },
@@ -20046,6 +21792,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sugestia dodana do opisu zadania."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "S'ha afegit la suggerència a la descripció de la tasca."
           }
         }
       }
@@ -20118,6 +21870,12 @@
             "state": "translated",
             "value": "zadanie"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "tasca"
+          }
         }
       }
     },
@@ -20188,6 +21946,12 @@
             "state": "translated",
             "value": "Szczegóły zadania"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Detalls de la tasca"
+          }
         }
       }
     },
@@ -20257,6 +22021,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Synchronizacja zadań"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sincronització de tasques"
           }
         }
       }
@@ -20329,6 +22099,12 @@
             "state": "translated",
             "value": "zadania"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "tasques"
+          }
         }
       }
     },
@@ -20398,6 +22174,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zadania są obecnie przechowywane tylko na tym urządzeniu. Włącz iCloud dla tej aplikacji, aby zachować dostęp do zadań po zmianie telefonu."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les tasques ara mateix només es desen en aquest dispositiu. Activa iCloud per a aquesta app per mantenir-les disponibles quan canviïs de telèfon."
           }
         }
       }
@@ -20469,6 +22251,12 @@
             "state": "translated",
             "value": "Zadania nie muszą już być trzymane w pamięci. Tablica i pulpit utrzymują system za Ciebie."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les tasques ja no han de viure a la memòria. El tauler i el panell sostenen el sistema per tu."
+          }
         }
       }
     },
@@ -20538,6 +22326,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zadania synchronizują się przez iCloud, gdy używasz tego samego konta Apple na każdym urządzeniu. Zmiany mogą pojawić się wszędzie po krótkiej chwili."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les tasques se sincronitzen amb iCloud quan fas servir el mateix compte d'Apple a cada dispositiu. Els canvis poden trigar un moment a aparèixer a tot arreu."
           }
         }
       }
@@ -20609,6 +22403,12 @@
             "state": "translated",
             "value": "Tekst dodany. Apple Intelligence jest niedostępne, więc przejrzyj go ręcznie przed utworzeniem zadania."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Text afegit. Apple Intelligence no està disponible, així que revisa'l manualment abans de crear la tasca."
+          }
         }
       }
     },
@@ -20678,6 +22478,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tekst przechwycony. Apple Intelligence jest niedostępne, więc tekst dodano do ręcznego przeglądu."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Text capturat. Apple Intelligence no està disponible, així que el text s'ha afegit per a revisió manual."
           }
         }
       }
@@ -20749,6 +22555,12 @@
             "state": "translated",
             "value": "Tekst przechwycony. Szkic wygenerowano ze skanu aparatu."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Text capturat. Esborrany generat a partir de l'escaneig de la càmera."
+          }
         }
       }
     },
@@ -20818,6 +22630,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tekst przechwycony. Przejrzyj wyodrębniony tekst albo wygeneruj szkic."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Text capturat. Revisa el text extret o genera un esborrany."
           }
         }
       }
@@ -20889,6 +22707,12 @@
             "state": "translated",
             "value": "Aplikacja może egzekwować limit WIP, aby zbyt wiele zadań nie trafiało naraz do W toku. To zawęża uwagę i ogranicza przełączanie kontekstu."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L'app pot aplicar un límit WIP perquè no entrin massa tasques a En curs alhora. Això manté l'atenció estreta i redueix el canvi de context."
+          }
         }
       }
     },
@@ -20958,6 +22782,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aplikacja nie może teraz wygenerować następnego działania. Spróbuj ponownie za chwilę."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L'app no pot generar una acció següent ara mateix. Torna-ho a provar d'aquí a un moment."
           }
         }
       }
@@ -21029,6 +22859,12 @@
             "state": "translated",
             "value": "Aplikacja planuje codzienne podsumowanie o %lld:00 i nigdy nie wysyła jednego powiadomienia na zadanie."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L'app programa un resum diari continu a les %lld:00 i mai envia una notificació per tasca."
+          }
         }
       }
     },
@@ -21098,6 +22934,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tablica pokazuje każde zadanie przez Do zrobienia, W toku i Ukończone, więc widzisz, co czeka, co jest aktywne i co zostało zakończone."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El tauler fa explícita cada tasca amb Per fer, En curs i Fet, perquè vegis què espera, què és actiu i què s'ha completat."
           }
         }
       }
@@ -21169,6 +23011,12 @@
             "state": "translated",
             "value": "Tablica pokazuje Twoje zobowiązania, aby nic ważnego nie pozostało niejasne ani ukryte."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El tauler fa visibles els teus compromisos perquè res important quedi vague o amagat."
+          }
         }
       }
     },
@@ -21238,6 +23086,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Skaner aparatu jest teraz niedostępny."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L'escàner de la càmera no està disponible ara mateix."
           }
         }
       }
@@ -21309,6 +23163,12 @@
             "state": "translated",
             "value": "Pulpit pokazuje postęp, presję WIP i rozkład priorytetów, aby pomóc zdecydować, czy kończyć, zatrzymać się, czy nie brać więcej."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El tauler mostra progrés, pressió WIP i distribució de prioritats perquè puguis decidir si acabar, pausar o evitar agafar més feina."
+          }
         }
       }
     },
@@ -21378,6 +23238,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tekst z obrazu został wyodrębniony, ale szkicu AI nie można teraz wygenerować. Przejrzyj go i wygeneruj ponownie."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "S'ha extret el text de la imatge, però l'esborrany d'IA no es pot generar ara mateix. Revisa'l i torna a generar-lo."
           }
         }
       }
@@ -21449,6 +23315,12 @@
             "state": "translated",
             "value": "Manifest jest prosty: wizualizuj pracę, ogranicz pracę w toku, bierz tylko wtedy, gdy jest miejsce, i pozwól kolumnie Ukończone pozostać widoczną."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El manifest és simple: visualitza la feina, limita la feina en curs, agafa feina només quan hi hagi espai i deixa Fet visible."
+          }
         }
       }
     },
@@ -21518,6 +23390,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nie można uruchomić mikrofonu. Sprawdź uprawnienia audio i spróbuj ponownie."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No s'ha pogut iniciar el micròfon. Comprova els permisos d'àudio i torna-ho a provar."
           }
         }
       }
@@ -21589,6 +23467,12 @@
             "state": "translated",
             "value": "Następne ukończone zadanie zmienia tablicę."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La següent tasca acabada canvia el tauler."
+          }
         }
       }
     },
@@ -21658,6 +23542,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nie można załadować wybranego obrazu."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No s'ha pogut carregar la imatge seleccionada."
           }
         }
       }
@@ -21729,6 +23619,12 @@
             "state": "translated",
             "value": "Nie można odczytać wybranego obrazu."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No s'ha pogut llegir la imatge seleccionada."
+          }
         }
       }
     },
@@ -21798,6 +23694,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tekst został przechwycony, ale szkicu AI nie można teraz wygenerować. Przejrzyj go i wygeneruj ponownie."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "S'ha capturat el text, però l'esborrany d'IA no es pot generar ara mateix. Revisa'l i torna a generar-lo."
           }
         }
       }
@@ -21869,6 +23771,12 @@
             "state": "translated",
             "value": "Transkrypcja głosu została przechwycona, ale szkicu AI nie można teraz wygenerować. Przejrzyj ją i wygeneruj ponownie."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "S'ha capturat la transcripció de veu, però l'esborrany d'IA no es pot generar ara mateix. Revisa-la i torna a generar-la."
+          }
         }
       }
     },
@@ -21938,6 +23846,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Te zadania pozostają aktywne na tyle długo, że grozi im przeciąganie."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aquestes tasques porten prou temps actives per arriscar-se a arrossegar-se."
           }
         }
       }
@@ -22009,6 +23923,12 @@
             "state": "translated",
             "value": "Te zadania zbyt długo są w toku i mogą wymagać decyzji."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aquestes tasques porten massa temps en curs i poden necessitar una decisió."
+          }
         }
       }
     },
@@ -22078,6 +23998,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ta aplikacja stosuje Osobisty Kanban, pomagając jasno widzieć pracę, chronić skupienie i kończyć przed zaczynaniem kolejnych rzeczy."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aquesta app aplica el Kanban personal ajudant-te a veure la feina clarament, protegir el focus i acabar abans de començar més."
           }
         }
       }
@@ -22149,6 +24075,12 @@
             "state": "translated",
             "value": "Ta aplikacja opiera się na dyscyplinie Osobistego Kanbanu: rób mniej naraz, kończ częściej i ograniczaj przełączanie kontekstu."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aquesta app està construïda al voltant de la disciplina del Kanban personal: fer menys alhora, acabar més sovint i reduir el canvi de context."
+          }
         }
       }
     },
@@ -22219,6 +24151,12 @@
             "state": "translated",
             "value": "Liczba razy, gdy przepływ został cofnięty"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vegades que el flux ha frenat"
+          }
         }
       }
     },
@@ -22288,6 +24226,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tytuł"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Títol"
           }
         }
       }
@@ -22360,6 +24304,12 @@
             "state": "translated",
             "value": "Do zrobienia"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Per fer"
+          }
         }
       }
     },
@@ -22371,6 +24321,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Do zrobienia -> W toku -> Ukończone"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Per fer -> En curs -> Fet"
           }
         }
       }
@@ -22442,6 +24398,12 @@
             "state": "translated",
             "value": "Zbyt wiele pracy jest aktywne."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hi ha massa feina activa."
+          }
         }
       }
     },
@@ -22511,6 +24473,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Śledź pracę przez Do zrobienia, W toku i Ukończone zamiast trzymać listy w głowie."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Segueix la feina amb Per fer, En curs i Fet en lloc de mantenir llistes mentals."
           }
         }
       }
@@ -22582,6 +24550,12 @@
             "state": "translated",
             "value": "Transkrypcja"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Transcripció"
+          }
         }
       }
     },
@@ -22651,6 +24625,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Spróbuj innego wyszukiwania."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prova un altre terme de cerca."
           }
         }
       }
@@ -22722,6 +24702,12 @@
             "state": "translated",
             "value": "Spróbuj ponownie"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Torna-ho a provar"
+          }
         }
       }
     },
@@ -22791,6 +24777,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Włącz Apple Intelligence w Ustawieniach, aby spersonalizować coaching WIP."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activa Apple Intelligence a Configuració per personalitzar el coaching WIP."
           }
         }
       }
@@ -22862,6 +24854,12 @@
             "state": "translated",
             "value": "Włącz Apple Intelligence w Ustawieniach, aby sugerować następne działanie."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activa Apple Intelligence a Configuració per suggerir una acció següent."
+          }
         }
       }
     },
@@ -22931,6 +24929,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Włącz Apple Intelligence w Ustawieniach, aby używać AI szybkiego przechwytywania."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activa Apple Intelligence a Configuració per usar la IA de Captura ràpida."
           }
         }
       }
@@ -23002,6 +25006,12 @@
             "state": "translated",
             "value": "NAJPIERW ODBLOKUJ"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DESBLOQUEJA PRIMER"
+          }
         }
       }
     },
@@ -23071,6 +25081,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Odblokuj pracę"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desbloqueja feina"
           }
         }
       }
@@ -23142,6 +25158,12 @@
             "state": "translated",
             "value": "Zaktualizowano"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Actualitzada"
+          }
         }
       }
     },
@@ -23211,6 +25233,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Użyj sugestii"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usa la suggerència"
           }
         }
       }
@@ -23282,6 +25310,12 @@
             "state": "translated",
             "value": "Użyj tekstu"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usa el text"
+          }
         }
       }
     },
@@ -23351,6 +25385,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Używaj tablicy, aby wybierać świadomie, pulpitu, aby chronić przepływ, i kolumny Ukończone, aby utrzymać realne momentum."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fes servir el tauler per triar deliberadament, el panell per protegir el flux i la columna Fet per mantenir l'impuls real."
           }
         }
       }
@@ -23422,6 +25462,12 @@
             "state": "translated",
             "value": "Użyj pulpitu, aby przywrócić równowagę przepływu"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fes servir el tauler per reequilibrar el flux"
+          }
         }
       }
     },
@@ -23491,6 +25537,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Użyj tego, gdy praca nie może jeszcze ruszyć naprzód. Zablokowane zadania powinny szybko stać się widoczne."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fes-ho servir quan la feina encara no pot avançar. Les tasques bloquejades han de fer-se visibles ràpidament."
           }
         }
       }
@@ -23562,6 +25614,12 @@
             "state": "translated",
             "value": "Użyj transkrypcji"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usa la transcripció"
+          }
         }
       }
     },
@@ -23631,6 +25689,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Używa rozpoznanego tekstu do utworzenia szkicu zadania."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usa el text reconegut per crear un esborrany de tasca."
           }
         }
       }
@@ -23702,6 +25766,12 @@
             "state": "translated",
             "value": "Używanie pamięci lokalnej na tym urządzeniu"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usant emmagatzematge local en aquest dispositiu"
+          }
         }
       }
     },
@@ -23771,6 +25841,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Widoczny postęp i prawdziwy stan Ukończone zmieniają zakończenie w coś, co widać, a nie tylko planuje."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El progrés visible i un estat Fet real converteixen la finalització en una cosa que pots veure, no només intentar."
           }
         }
       }
@@ -23842,6 +25918,12 @@
             "state": "translated",
             "value": "Wizualna tablica"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tauler visual"
+          }
         }
       }
     },
@@ -23911,6 +25993,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Wizualizuj"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Visualitza"
           }
         }
       }
@@ -23982,6 +26070,12 @@
             "state": "translated",
             "value": "Wizualizuj pracę"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Visualitza la feina"
+          }
         }
       }
     },
@@ -24051,6 +26145,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Wizualizuj swoją pracę"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Visualitza la teva feina"
           }
         }
       }
@@ -24122,6 +26222,12 @@
             "state": "translated",
             "value": "Głos przechwycony. Apple Intelligence jest niedostępne, więc transkrypcję dodano do ręcznego przeglądu."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Veu capturada. Apple Intelligence no està disponible, així que la transcripció s'ha afegit per a revisió manual."
+          }
         }
       }
     },
@@ -24191,6 +26297,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Głos przechwycony. Szkic wygenerowano z dyktowania."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Veu capturada. Esborrany generat a partir del dictat."
           }
         }
       }
@@ -24262,6 +26374,12 @@
             "state": "translated",
             "value": "Głos przechwycony. Przejrzyj transkrypcję albo wygeneruj szkic."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Veu capturada. Revisa la transcripció o genera un esborrany."
+          }
         }
       }
     },
@@ -24331,6 +26449,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dyktowanie głosowe jest teraz niedostępne. Spróbuj ponownie za chwilę."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El dictat de veu no està disponible ara mateix. Torna-ho a provar d'aquí a un moment."
           }
         }
       }
@@ -24402,6 +26526,12 @@
             "state": "translated",
             "value": "oczekujące"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "en espera"
+          }
         }
       }
     },
@@ -24471,6 +26601,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Oczekuje od tygodnia"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En espera des de fa una setmana"
           }
         }
       }
@@ -24542,6 +26678,12 @@
             "state": "translated",
             "value": "Oczekuje od dni"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En espera des de fa dies"
+          }
         }
       }
     },
@@ -24611,6 +26753,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Oczekująca praca powinna być wyraźnie widoczna, a nie cicho wymieszana z aktywnym skupieniem."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La feina en espera s'ha de veure clarament, no barrejar-se en silenci amb el focus actiu."
           }
         }
       }
@@ -24682,6 +26830,12 @@
             "state": "translated",
             "value": "Jak wygląda ukończenie?"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Com és quan està fet?"
+          }
         }
       }
     },
@@ -24751,6 +26905,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Co trzeba zrobić?"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Què cal fer?"
           }
         }
       }
@@ -24822,6 +26982,12 @@
             "state": "translated",
             "value": "Co zyskuje użytkownik"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Què hi guanya l'usuari"
+          }
         }
       }
     },
@@ -24891,6 +27057,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Gdy aktywna kolumna jest pełna, pulpit kieruje Cię z powrotem ku kończeniu. Aplikacja zachęca do systemu pull, a nie przeciążenia."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quan la columna activa és plena, el tauler et torna a orientar cap a acabar. L'app fomenta agafar feina, no sobrecarregar-te."
           }
         }
       }
@@ -24962,6 +27134,12 @@
             "state": "translated",
             "value": "Gdy Twoja kolumna jest pełna, aplikacja kieruje Cię ku kończeniu, zanim weźmiesz więcej pracy."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quan la teva columna és plena, l'app et torna a orientar cap a acabar abans d'agafar més feina."
+          }
         }
       }
     },
@@ -25031,6 +27209,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Trener WIP"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coach WIP"
           }
         }
       }
@@ -25102,6 +27286,12 @@
             "state": "translated",
             "value": "Tekst AI Trenera WIP jest teraz niedostępny."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El text d'IA del Coach WIP no està disponible ara mateix."
+          }
         }
       }
     },
@@ -25171,6 +27361,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "WIP pełny"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WIP ple"
           }
         }
       }
@@ -25242,6 +27438,12 @@
             "state": "translated",
             "value": "Limit WIP"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Límit WIP"
+          }
         }
       }
     },
@@ -25311,6 +27513,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Trafienia limitu WIP"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arribades al límit WIP"
           }
         }
       }
@@ -25382,6 +27590,12 @@
             "state": "translated",
             "value": "Osiągnięto limit WIP"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Límit WIP assolit"
+          }
         }
       }
     },
@@ -25451,6 +27665,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Osiągnięto limit WIP"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Límit WIP assolit"
           }
         }
       }
@@ -25522,6 +27742,12 @@
             "state": "translated",
             "value": "Presja WIP"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pressió WIP"
+          }
         }
       }
     },
@@ -25591,6 +27817,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Presja WIP"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pressió WIP"
           }
         }
       }
@@ -25662,6 +27894,12 @@
             "state": "translated",
             "value": "Pracuj z tablicy"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Treballa des del tauler"
+          }
         }
       }
     },
@@ -25731,6 +27969,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Presja pracy w toku. %@ %lld z %lld zadań aktywnych. Pozostało miejsc: %lld. %@. %@"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pressió de feina en curs. %@ %lld de %lld tasques actives. Queden %lld espais. %@. %@"
           }
         }
       }
@@ -25802,6 +28046,12 @@
             "state": "translated",
             "value": "Przegląd pracy w toku. %lld z %lld zadań aktywnych. Pozostało miejsc: %lld. Zablokowane zadania: %lld. Gotowe zadania: %lld."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revisió de feina en curs. %lld de %lld tasques actives. Queden %lld espais. %lld tasques bloquejades. %lld tasques preparades."
+          }
         }
       }
     },
@@ -25871,6 +28121,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zasady przepływu pracy"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Política de flux de treball"
           }
         }
       }
@@ -25942,6 +28198,12 @@
             "state": "translated",
             "value": "Konsekwentnie zamieniasz pracę w ukończone zadania. Chroń ten rytm, utrzymując niski WIP."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estàs convertint feina en tasques fetes de manera constant. Protegeix aquest ritme mantenint el WIP ajustat."
+          }
         }
       }
     },
@@ -26011,6 +28273,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Możesz wrócić do manifestu w dowolnym momencie w Ustawieniach."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pots tornar al manifest en qualsevol moment des de Configuració."
           }
         }
       }
@@ -26082,6 +28350,12 @@
             "state": "translated",
             "value": "Możesz bezpiecznie wziąć jeszcze jedno zadanie, ale utrzymuj aktywną pracę w ryzach, aby bieżące zadania mogły zostać ukończone."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pots agafar una tasca més amb seguretat, però mantén la feina activa ajustada perquè les tasques actuals arribin a Fet."
+          }
         }
       }
     },
@@ -26151,6 +28425,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Jesteś na granicy pojemności."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ets al límit de capacitat."
           }
         }
       }
@@ -26222,6 +28502,12 @@
             "state": "translated",
             "value": "Jesteś na pełnej pojemności! Ukończenie '%@' zwolni miejsce."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ets a capacitat màxima! Acabar '%@' alliberarà espai."
+          }
         }
       }
     },
@@ -26292,6 +28578,12 @@
             "state": "translated",
             "value": "Zbliżasz się do limitu WIP."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ets a prop del límit WIP."
+          }
         }
       }
     },
@@ -26303,6 +28595,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Twoja aktywna kolumna jest pełna. KanbanApp pokazuje następne zadanie, ale najpierw chroni Twoje skupienie."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La columna activa és plena. KanbanApp manté visible la següent tasca, però protegeix primer el teu focus."
           }
         }
       }
@@ -26374,6 +28672,12 @@
             "state": "translated",
             "value": "Twoja aktywna kolumna jest pełna. Przejrzyj pracę W toku, zanim zaczniesz coś z Do zrobienia."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La columna activa és plena. Revisa la feina En curs abans de començar des de Per fer."
+          }
         }
       }
     },
@@ -26443,6 +28747,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Twoja aktywna praca mieści się w pojemności. Bierz ostrożnie albo najpierw ukończ bieżące zadanie."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La feina activa és dins la capacitat. Agafa feina amb cura o acaba primer una tasca actual."
           }
         }
       }
@@ -26514,6 +28824,12 @@
             "state": "translated",
             "value": "Twoja tablica jest pusta"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El teu tauler és buit"
+          }
         }
       }
     },
@@ -26583,6 +28899,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Twój przepływ jest zrównoważony."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El teu flux està equilibrat."
           }
         }
       }
@@ -26654,6 +28976,12 @@
             "state": "translated",
             "value": "Twój przepływ ma jeszcze miejsce."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El teu flux encara té espai."
+          }
         }
       }
     },
@@ -26723,6 +29051,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "TWÓJ POSTĘP"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "EL TEU PROGRÉS"
           }
         }
       }
@@ -26794,6 +29128,12 @@
             "state": "translated",
             "value": "Twój postęp. %@. Ukończono %lld procent. %@ %lld do zrobienia, %lld w toku, %lld ukończone."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El teu progrés. %@. %lld per cent completat. %@ %lld per fer, %lld en curs, %lld fetes."
+          }
         }
       }
     },
@@ -26864,6 +29204,12 @@
             "state": "translated",
             "value": "Twój postęp. Nie ma jeszcze zadań. Dodaj pierwsze zadanie, aby zacząć śledzić postęp."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El teu progrés. Encara no hi ha tasques. Afegeix la primera tasca per començar a seguir el progrés."
+          }
         }
       }
     },
@@ -26933,6 +29279,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Twoja praca jest widoczna"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La teva feina és visible"
           }
         }
       }

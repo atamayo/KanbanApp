@@ -25,6 +25,7 @@ enum AppStoreScreenshotScene: String, CaseIterable {
         case .dashboard:
             return language.text(
                 en: "Know what to finish next",
+                ca: "Saps què acabar després",
                 es: "Sabe qué terminar después",
                 de: "Wisse, was als Nächstes dran ist",
                 ja: "次に終えるべき作業がわかる",
@@ -40,6 +41,7 @@ enum AppStoreScreenshotScene: String, CaseIterable {
         case .board:
             return language.text(
                 en: "See every task in motion",
+                ca: "Veu cada tasca en moviment",
                 es: "Ve cada tarea en movimiento",
                 de: "Sieh jede Aufgabe im Fluss",
                 ja: "すべてのタスクの流れを見る",
@@ -55,6 +57,7 @@ enum AppStoreScreenshotScene: String, CaseIterable {
         case .quickCapture:
             return language.text(
                 en: "Turn rough notes into clear tasks",
+                ca: "Converteix notes en tasques clares",
                 es: "Convierte notas en tareas claras",
                 de: "Mach aus Notizen klare Aufgaben",
                 ja: "ラフなメモを明確なタスクに",
@@ -70,6 +73,7 @@ enum AppStoreScreenshotScene: String, CaseIterable {
         case .focusGuard:
             return language.text(
                 en: "Avoid taking on too much",
+                ca: "Evita assumir massa feina",
                 es: "Evita asumir demasiado",
                 de: "Übernimm nicht zu viel",
                 ja: "抱えすぎを防ぐ",
@@ -85,6 +89,7 @@ enum AppStoreScreenshotScene: String, CaseIterable {
         case .flowReview:
             return language.text(
                 en: "Spot blocked and aging work",
+                ca: "Detecta bloquejos i endarreriments",
                 es: "Detecta bloqueos y retrasos",
                 de: "Erkenne Blockaden und alte Arbeit",
                 ja: "停滞や長引く作業を見つける",
@@ -100,6 +105,7 @@ enum AppStoreScreenshotScene: String, CaseIterable {
         case .search:
             return language.text(
                 en: "Find anything fast",
+                ca: "Troba-ho tot ràpid",
                 es: "Encuentra todo rápido",
                 de: "Finde alles schnell",
                 ja: "すばやく見つける",
@@ -122,6 +128,7 @@ enum AppStoreScreenshotScene: String, CaseIterable {
         case .dashboard:
             return language.text(
                 en: "A personal kanban coach for focused solo work.",
+                ca: "Un coach kanban personal per treballar amb focus.",
                 es: "Un coach kanban personal para trabajar con foco.",
                 de: "Dein persönlicher Kanban-Coach für fokussierte Soloarbeit.",
                 ja: "集中して進める個人作業のためのKanbanコーチ。",
@@ -137,6 +144,7 @@ enum AppStoreScreenshotScene: String, CaseIterable {
         case .board:
             return language.text(
                 en: "Prioritize, pull, and close work without losing context.",
+                ca: "Prioritza, agafa i tanca feina sense perdre context.",
                 es: "Prioriza, empieza y termina sin perder contexto.",
                 de: "Priorisieren, ziehen und abschließen, ohne Kontext zu verlieren.",
                 ja: "文脈を失わずに、優先し、着手し、完了する。",
@@ -152,6 +160,7 @@ enum AppStoreScreenshotScene: String, CaseIterable {
         case .quickCapture:
             return language.text(
                 en: "Capture ideas from notes, photos, scans, or voice.",
+                ca: "Captura idees de notes, fotos, escanejos o veu.",
                 es: "Captura ideas desde notas, fotos, escaneos o voz.",
                 de: "Erfasse Ideen aus Notizen, Fotos, Scans oder Sprache.",
                 ja: "メモ、写真、スキャン、音声からアイデアを取り込む。",
@@ -167,6 +176,7 @@ enum AppStoreScreenshotScene: String, CaseIterable {
         case .focusGuard:
             return language.text(
                 en: "WIP limits protect your attention before overload wins.",
+                ca: "Els límits WIP protegeixen l'atenció abans de la sobrecàrrega.",
                 es: "Los límites WIP protegen tu atención antes de saturarte.",
                 de: "WIP-Limits schützen deinen Fokus vor Überlastung.",
                 ja: "WIP制限で、抱えすぎる前に集中を守る。",
@@ -182,6 +192,7 @@ enum AppStoreScreenshotScene: String, CaseIterable {
         case .flowReview:
             return language.text(
                 en: "See the work that needs a decision before it drifts.",
+                ca: "Veu la feina que necessita decisió abans que s'encalli.",
                 es: "Ve qué trabajo necesita una decisión antes de atascarse.",
                 de: "Sieh Arbeit, die eine Entscheidung braucht, bevor sie driftet.",
                 ja: "滞る前に、判断が必要な作業を見つける。",
@@ -197,6 +208,7 @@ enum AppStoreScreenshotScene: String, CaseIterable {
         case .search:
             return language.text(
                 en: "Search titles, context, and definitions of done.",
+                ca: "Cerca títols, context i definicions de fet.",
                 es: "Busca títulos, contexto y criterios de terminado.",
                 de: "Durchsuche Titel, Kontext und Definitionen von fertig.",
                 ja: "タイトル、文脈、完了条件を検索。",
@@ -226,6 +238,7 @@ enum AppStoreScreenshotScene: String, CaseIterable {
 
 private enum AppStoreScreenshotLanguage: String {
     case en
+    case ca
     case es
     case de
     case ja
@@ -245,6 +258,7 @@ private enum AppStoreScreenshotLanguage: String {
     var localeIdentifier: String {
         switch self {
         case .en: return "en"
+        case .ca: return "ca"
         case .es: return "es_ES"
         case .de: return "de"
         case .ja: return "ja"
@@ -266,6 +280,7 @@ private enum AppStoreScreenshotLanguage: String {
 
         let preferredLanguage = explicitLanguage ?? Locale.preferredLanguages.first ?? "en"
 
+        if preferredLanguage.hasPrefix("ca") { return .ca }
         if preferredLanguage.hasPrefix("es") { return .es }
         if preferredLanguage.hasPrefix("de") { return .de }
         if preferredLanguage.hasPrefix("ja") { return .ja }
@@ -280,9 +295,10 @@ private enum AppStoreScreenshotLanguage: String {
         return .en
     }
 
-    func text(en: String, es: String, de: String, ja: String, hi: String, pt: String, ko: String, fr: String, it: String, nl: String, pl: String, zh: String) -> String {
+    func text(en: String, ca: String, es: String, de: String, ja: String, hi: String, pt: String, ko: String, fr: String, it: String, nl: String, pl: String, zh: String) -> String {
         switch self {
         case .en: return en
+        case .ca: return ca
         case .es: return es
         case .de: return de
         case .ja: return ja

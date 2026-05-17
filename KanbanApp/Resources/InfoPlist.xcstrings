@@ -76,6 +76,12 @@
             "state": "translated",
             "value": "KanbanApp"
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KanbanApp"
+          }
         }
       }
     },
@@ -152,6 +158,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Użyj aparatu, aby zeskanować tekst i zamienić go w szkic zadania."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fes servir la càmera per escanejar text i convertir-lo en un esborrany de tasca."
           }
         }
       }
@@ -230,6 +242,12 @@
             "state": "translated",
             "value": "Użyj mikrofonu, aby podyktować zadanie i zamienić je w szkic zadania."
           }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fes servir el micròfon per dictar una tasca i convertir-la en un esborrany de tasca."
+          }
         }
       }
     },
@@ -306,6 +324,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Użyj rozpoznawania mowy, aby przepisać dyktowane zadania."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fes servir el reconeixement de veu per transcriure tasques dictades."
           }
         }
       }
