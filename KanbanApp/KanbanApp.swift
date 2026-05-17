@@ -4,6 +4,7 @@ import SwiftData
 @main
 struct KanbanApp: App {
     let persistence: PersistenceBootstrapResult
+    let appStoreScreenshotScene: AppStoreScreenshotScene?
 
     init() {
         UserDefaults.standard.register(defaults: [
@@ -15,14 +16,30 @@ struct KanbanApp: App {
             "taskAgingNotificationHour": 9,
         ])
 
-        persistence = PersistenceBootstrap.makeContainer()
+        appStoreScreenshotScene = AppStoreScreenshotScene.fromLaunchArguments()
+
+        if appStoreScreenshotScene != nil {
+            UserDefaults.standard.set(true, forKey: "hasSeenOnboarding")
+            UserDefaults.standard.set(true, forKey: "isFocusGuardEnabled")
+            UserDefaults.standard.set(3, forKey: "maxActiveTasks")
+            UserDefaults.standard.set(4, forKey: "wipLimitHitCount")
+            persistence = AppStoreScreenshotFixtures.makeContainer()
+        } else {
+            persistence = PersistenceBootstrap.makeContainer()
+        }
     }
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .modelContainer(persistence.container)
-                .environment(\.persistenceSyncMode, persistence.syncMode)
+            if let appStoreScreenshotScene {
+                AppStoreScreenshotView(scene: appStoreScreenshotScene)
+                    .modelContainer(persistence.container)
+                    .environment(\.persistenceSyncMode, persistence.syncMode)
+            } else {
+                ContentView()
+                    .modelContainer(persistence.container)
+                    .environment(\.persistenceSyncMode, persistence.syncMode)
+            }
         }
     }
 }
