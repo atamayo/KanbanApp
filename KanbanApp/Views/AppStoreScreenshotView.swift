@@ -930,8 +930,7 @@ private struct FocusGuardScreenshotContent: View {
                     allTasks: currentTasks,
                     maxActiveTasks: 3,
                     isFocusGuardEnabled: true,
-                    onReviewActiveTasks: {},
-                    onOpenTask: { _ in }
+                    onOpenCoach: {}
                 )
 
                 focusGuardCard
@@ -1016,8 +1015,7 @@ private struct FlowReviewScreenshotContent: View {
                     allTasks: currentTasks,
                     maxActiveTasks: 3,
                     isFocusGuardEnabled: true,
-                    onReviewActiveTasks: {},
-                    onOpenTask: { _ in }
+                    onOpenCoach: {}
                 )
             }
             .padding(.horizontal, AppStyle.Spacing.outerHorizontal)

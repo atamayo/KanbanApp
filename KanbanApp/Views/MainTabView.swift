@@ -5,11 +5,14 @@ struct MainTabView: View {
     private enum AppTab: Int, Hashable {
         case dashboard
         case tasks
+        case coach
         case search
         case settings
     }
 
     @Query(sort: \TaskItem.order) private var allTasks: [TaskItem]
+    @AppStorage("isFocusGuardEnabled") private var isFocusGuardEnabled = true
+    @AppStorage("maxActiveTasks") private var maxActiveTasks = 3
     @State private var selectedTab: AppTab = .dashboard
     @State private var selectedSegment: TaskStatus = .todo
     @State private var isAddingTask = false
@@ -48,6 +51,11 @@ struct MainTabView: View {
                             withAnimation(AppStyle.Motion.snappy) {
                                 selectedTab = .tasks
                             }
+                        },
+                        onOpenWIPCoach: {
+                            withAnimation(AppStyle.Motion.snappy) {
+                                selectedTab = .coach
+                            }
                         }
                     )
                     .toolbar {
@@ -68,6 +76,25 @@ struct MainTabView: View {
                 }
             }
             .badge(inProgressCount > 0 ? inProgressCount : 0)
+
+            Tab("Coach", systemImage: "scope", value: .coach) {
+                NavigationStack {
+                    WIPCoachView(
+                        allTasks: allTasks.filter { !$0.isArchived },
+                        maxActiveTasks: maxActiveTasks,
+                        isFocusGuardEnabled: isFocusGuardEnabled,
+                        onReviewActiveTasks: {
+                            selectedSegment = .inProgress
+                            withAnimation(AppStyle.Motion.snappy) {
+                                selectedTab = .tasks
+                            }
+                        }
+                    )
+                    .toolbar {
+                        addTaskToolbarItem
+                    }
+                }
+            }
 
             Tab(value: .search, role: .search) {
                 NavigationStack {
@@ -106,7 +133,7 @@ struct MainTabView: View {
             addTaskStatus = .todo
         case .tasks:
             addTaskStatus = selectedSegment
-        case .search, .settings:
+        case .coach, .search, .settings:
             addTaskStatus = .todo
         }
 
