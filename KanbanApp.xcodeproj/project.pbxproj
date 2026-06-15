@@ -41,6 +41,9 @@
 		A7C100000000000000000026 /* TaskAgingNotificationSyncView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C100000000000000000027 /* TaskAgingNotificationSyncView.swift */; };
 		A7C100000000000000000028 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A7C100000000000000000029 /* Localizable.xcstrings */; };
 		A7C10000000000000000002A /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A7C10000000000000000002B /* InfoPlist.xcstrings */; };
+		A9D100000000000000000002 /* TaskChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D100000000000000000001 /* TaskChatService.swift */; };
+		A9D100000000000000000004 /* TaskChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D100000000000000000003 /* TaskChatView.swift */; };
+		A9D100000000000000000006 /* TaskChatStarterPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D100000000000000000005 /* TaskChatStarterPrompt.swift */; };
 		B8A7D0D8D7304BF4B02921A1 /* PersistenceBootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A7D0D7D7304BF4B02921A1 /* PersistenceBootstrap.swift */; };
 		C46D8078D30040238CCDE162FB2FE17E /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE822CFBF944080AA7DC05248E4FCB2 /* MainTabView.swift */; };
 		CC88F17F1EB745D7B67C1DED74B18C18 /* AllTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC21578A5014A16A3256BF3F502DDAC /* AllTasksView.swift */; };
@@ -95,6 +98,9 @@
 		A7C100000000000000000027 /* TaskAgingNotificationSyncView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAgingNotificationSyncView.swift; sourceTree = "<group>"; };
 		A7C100000000000000000029 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		A7C10000000000000000002B /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		A9D100000000000000000001 /* TaskChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskChatService.swift; sourceTree = "<group>"; };
+		A9D100000000000000000003 /* TaskChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskChatView.swift; sourceTree = "<group>"; };
+		A9D100000000000000000005 /* TaskChatStarterPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskChatStarterPrompt.swift; sourceTree = "<group>"; };
 		B8A7D0D6D7304BF4B02921A1 /* KanbanApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KanbanApp.entitlements; sourceTree = "<group>"; };
 		B8A7D0D7D7304BF4B02921A1 /* PersistenceBootstrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceBootstrap.swift; sourceTree = "<group>"; };
 		D4C3B2A20000000000000002 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
@@ -180,6 +186,8 @@
 				A7C100000000000000000027 /* TaskAgingNotificationSyncView.swift */,
 				E1F2A3B4C5D6000000000002 /* WIPView.swift */,
 				E1F2A3B4C5D6000000000006 /* WIPCoachView.swift */,
+				A9D100000000000000000003 /* TaskChatView.swift */,
+				A9D100000000000000000005 /* TaskChatStarterPrompt.swift */,
 				E1F2A3B4C5D6000000000004 /* PersonalKanbanManifestoView.swift */,
 				F10D00000000000000000002 /* AppStoreScreenshotView.swift */,
 				2BC21578A5014A16A3256BF3F502DDAC /* AllTasksView.swift */,
@@ -228,6 +236,7 @@
 				B8A7D0D7D7304BF4B02921A1 /* PersistenceBootstrap.swift */,
 				F00D00000000000000000004 /* WIPCoachEngine.swift */,
 				F00D00000000000000000006 /* WIPCoachCopyGenerator.swift */,
+				A9D100000000000000000001 /* TaskChatService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -283,7 +292,17 @@
 				"en-US",
 				en,
 				ca,
+				de,
+				"es-ES",
+				"fr-FR",
+				hi,
+				it,
+				ja,
+				ko,
+				nl,
 				pl,
+				"pt-BR",
+				"zh-Hans",
 				Base,
 			);
 			mainGroup = A1B2C3D4E5F6000000000002;
@@ -341,6 +360,7 @@
 				A7C100000000000000000020 /* QuickCaptureCoordinator.swift in Sources */,
 				A7C100000000000000000022 /* TaskAgingEvaluator.swift in Sources */,
 				A7C100000000000000000024 /* TaskAgingNotificationService.swift in Sources */,
+				A9D100000000000000000002 /* TaskChatService.swift in Sources */,
 				A7C100000000000000000014 /* QuickCapturePhotoImportButton.swift in Sources */,
 				A7C10000000000000000001E /* AddTaskActionBar.swift in Sources */,
 				A7C100000000000000000018 /* QuickCaptureDraftSheet.swift in Sources */,
@@ -352,6 +372,8 @@
 				F00D00000000000000000005 /* WIPCoachCopyGenerator.swift in Sources */,
 				E1F2A3B4C5D6000000000001 /* WIPView.swift in Sources */,
 				E1F2A3B4C5D6000000000005 /* WIPCoachView.swift in Sources */,
+				A9D100000000000000000004 /* TaskChatView.swift in Sources */,
+				A9D100000000000000000006 /* TaskChatStarterPrompt.swift in Sources */,
 				E1F2A3B4C5D6000000000003 /* PersonalKanbanManifestoView.swift in Sources */,
 				F10D00000000000000000001 /* AppStoreScreenshotView.swift in Sources */,
 				C46D8078D30040238CCDE162FB2FE17E /* MainTabView.swift in Sources */,

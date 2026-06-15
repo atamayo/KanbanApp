@@ -2,6 +2,20 @@ import SwiftData
 import SwiftUI
 
 struct WIPCoachView: View {
+    private enum WIPCoachSheet: Identifiable {
+        case task(TaskItem)
+        case chat
+
+        var id: String {
+            switch self {
+            case .task(let task):
+                return "task-\(task.id.uuidString)"
+            case .chat:
+                return "task-chat"
+            }
+        }
+    }
+
     let allTasks: [TaskItem]
     let maxActiveTasks: Int
     let isFocusGuardEnabled: Bool
@@ -11,7 +25,8 @@ struct WIPCoachView: View {
     @AppStorage("taskAgingNotificationDayThreshold") private var taskAgingNotificationDayThreshold = 3
     @AppStorage("taskStalledNotificationDayThreshold") private var taskStalledNotificationDayThreshold = 5
     @Environment(\.modelContext) private var modelContext
-    @State private var selectedTask: TaskItem?
+    @State private var activeSheet: WIPCoachSheet?
+    @State private var taskChatMessages: [TaskChatMessage] = []
     @State private var generatedCoachCopy: WIPCoachCopyDraft?
     @State private var generatedCoachCopySignature: String?
 
@@ -109,28 +124,67 @@ struct WIPCoachView: View {
     }
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: AppStyle.Spacing.compactSectionSpacing) {
-                summaryCard
-                recommendationSection
-                alternativesSection
-                activeWorkSection
-                flowReviewSection
-                trendSection
+        ZStack(alignment: .bottomTrailing) {
+            ScrollView {
+                VStack(alignment: .leading, spacing: AppStyle.Spacing.compactSectionSpacing) {
+                    summaryCard
+                    recommendationSection
+                    alternativesSection
+                    activeWorkSection
+                    flowReviewSection
+                    trendSection
+                }
+                .padding(.horizontal, AppStyle.Spacing.outerHorizontal)
+                .padding(.top, AppStyle.Spacing.outerVertical)
+                .padding(.bottom, AppStyle.Spacing.outerVertical + AppStyle.Spacing.emptyBottomSpacer)
             }
-            .padding(.horizontal, AppStyle.Spacing.outerHorizontal)
-            .padding(.vertical, AppStyle.Spacing.outerVertical)
+
+            taskChatButton
+                .padding(.trailing, AppStyle.Spacing.fabPadding)
+                .padding(.bottom, AppStyle.Spacing.fabPadding)
         }
         .background(AppStyle.Colors.background)
         .navigationTitle("WIP Coach")
         .navigationBarTitleDisplayMode(.inline)
-        .sheet(item: $selectedTask) { task in
-            TaskDetailView(task: task)
-                .presentationDetents([.large])
-                .presentationDragIndicator(.visible)
+        .sheet(item: $activeSheet) { sheet in
+            sheetContent(for: sheet)
         }
         .task(id: coachCopyRequest.signature) {
             await refreshGeneratedCoachCopy(for: coachCopyRequest)
+        }
+    }
+
+    private var taskChatButton: some View {
+        Button {
+            activeSheet = .chat
+        } label: {
+            Image(systemName: "bubble.left.and.text.bubble.right.fill")
+                .font(AppStyle.Typography.fabIcon)
+                .foregroundStyle(AppStyle.Colors.inverseText)
+                .frame(width: AppStyle.Shapes.fabSize, height: AppStyle.Shapes.fabSize)
+                .background(AppStyle.Colors.fabGradient, in: Circle())
+                .shadow(
+                    color: AppStyle.Colors.fabShadow,
+                    radius: AppStyle.Shapes.fabShadowRadius,
+                    x: AppStyle.Shapes.fabShadowX,
+                    y: AppStyle.Shapes.fabShadowY
+                )
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("Ask about tasks")
+    }
+
+    @ViewBuilder
+    private func sheetContent(for sheet: WIPCoachSheet) -> some View {
+        switch sheet {
+        case .task(let task):
+            TaskDetailView(task: task)
+                .presentationDetents([.large])
+                .presentationDragIndicator(.visible)
+        case .chat:
+            TaskChatView(tasks: allTasks, messages: $taskChatMessages)
+                .presentationDetents([.medium, .large])
+                .presentationDragIndicator(.visible)
         }
     }
 
@@ -287,7 +341,7 @@ struct WIPCoachView: View {
         case .focusCurrentTask:
             if let task = recommendation.recommendedTask {
                 Button {
-                    selectedTask = task
+                    activeSheet = .task(task)
                 } label: {
                     Label("Focus Task", systemImage: "scope")
                         .frame(maxWidth: .infinity, minHeight: AppStyle.Shapes.iconBadgeSmall)
@@ -299,7 +353,7 @@ struct WIPCoachView: View {
         case .unblockTask:
             if let task = recommendation.recommendedTask {
                 Button {
-                    selectedTask = task
+                    activeSheet = .task(task)
                 } label: {
                     Label("Open Blocked Task", systemImage: "pause.circle.fill")
                         .frame(maxWidth: .infinity, minHeight: AppStyle.Shapes.iconBadgeSmall)
@@ -319,7 +373,7 @@ struct WIPCoachView: View {
         case .breakDownTask:
             if let task = recommendation.recommendedTask {
                 Button {
-                    selectedTask = task
+                    activeSheet = .task(task)
                 } label: {
                     Label("Break Down Task", systemImage: "list.bullet.indent")
                         .frame(maxWidth: .infinity, minHeight: AppStyle.Shapes.iconBadgeSmall)
@@ -347,7 +401,7 @@ struct WIPCoachView: View {
                             icon: "circle",
                             tint: AppStyle.Colors.Status.todo
                         ) {
-                            selectedTask = candidate.task
+                            activeSheet = .task(candidate.task)
                         }
                     }
                 }
@@ -370,7 +424,7 @@ struct WIPCoachView: View {
                             icon: task.isBlocked ? "pause.circle.fill" : "clock.fill",
                             tint: task.isBlocked ? AppStyle.Colors.blocked : AppStyle.Colors.Status.inProgress
                         ) {
-                            selectedTask = task
+                            activeSheet = .task(task)
                         }
                     }
                 }
@@ -512,7 +566,7 @@ struct WIPCoachView: View {
         task.order = nextOrder
         task.updatedAt = Date()
         try? modelContext.save()
-        selectedTask = task
+        activeSheet = .task(task)
     }
 
     @MainActor
