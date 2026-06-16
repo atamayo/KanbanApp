@@ -96,7 +96,7 @@ struct TaskCardView: View {
     private var flowReferenceDate: Date {
         switch task.status {
         case .todo:
-            return task.createdAt
+            return TaskAgingEvaluator.toDoSince(for: task)
         case .inProgress:
             return TaskAgingEvaluator.activeSince(for: task)
         case .done:
@@ -150,14 +150,7 @@ struct TaskCardView: View {
     }
 
     private var flowDurationText: String {
-        let minutes = Int(flowAge / 60)
-        let hours = Int(flowAge / 3600)
-        let days = Int(flowAge / 86400)
-
-        if days > 0 { return String(localized: "\(days)d", comment: "Short duration in days") }
-        if hours > 0 { return String(localized: "\(hours)h", comment: "Short duration in hours") }
-        if minutes > 0 { return String(localized: "\(minutes)m", comment: "Short duration in minutes") }
-        return String(localized: "now", comment: "Immediate relative duration")
+        TaskAgingEvaluator.shortDurationText(for: flowAge)
     }
 
     private var statusIconName: String {
@@ -179,11 +172,11 @@ struct TaskCardView: View {
         if task.isArchived {
             return String(localized: "Archived")
         }
-        return task.status == .todo ? flowState.label : task.status.localizedName
+        return task.status == .todo ? String(localized: "Waiting \(flowDurationText)") : task.status.localizedName
     }
 
     private var statusBadgeIcon: String {
-        task.status == .todo ? flowState.icon : statusIconName
+        task.status == .todo ? "clock" : statusIconName
     }
 
     private var statusBadgeTint: Color {
@@ -217,7 +210,7 @@ struct TaskCardView: View {
 
         switch task.status {
         case .todo:
-            return String(localized: "\(flowState.label), created \(flowDurationText) ago")
+            return String(localized: "\(flowState.label), waiting \(flowDurationText)")
         case .inProgress:
             return String(localized: "\(flowState.label), in progress for \(flowDurationText)")
         case .done:

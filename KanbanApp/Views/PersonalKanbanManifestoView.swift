@@ -170,3 +170,17 @@ struct PersonalKanbanManifestoView: View {
             .sectionHeaderStyle()
     }
 }
+#Preview("Manifesto Light") {
+    NavigationStack {
+        PersonalKanbanManifestoView()
+    }
+    .preferredColorScheme(.light)
+}
+
+#Preview("Manifesto Dark") {
+    NavigationStack {
+        PersonalKanbanManifestoView()
+    }
+    .preferredColorScheme(.dark)
+}
+

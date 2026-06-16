@@ -16,4 +16,5 @@ SwiftUI + SwiftData Kanban board (iOS/macOS).
 - **Drag-and-drop** between columns uses `.onDrag`/`.dropDestination` with `UUID` strings.
 - **Task ordering** is manual: `order: Int` field, re-calculated after each move via `reorder()`.
 - **Status enum** (`todo`, `inProgress`, `done`) stored as raw string in `statusRaw` — always access via computed `.status` property.
+- **Localization is mandatory.** Any new user-facing text, controls, dialogs, accessibility labels/hints, placeholders, prompt starters, chart/table labels, and chat/system messages must be added to `KanbanApp/Resources/Localizable.xcstrings` and translated for every supported catalog locale (`ca`, `de`, `es-ES`, `fr-FR`, `hi`, `it`, `ja`, `ko`, `nl`, `pl`, `pt-BR`, `zh-Hans`). Keep `knownRegions` in `KanbanApp.xcodeproj/project.pbxproj` aligned with those locales.
 - Initially created by an AI assistant (OpenCode).

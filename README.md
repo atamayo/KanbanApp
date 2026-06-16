@@ -44,6 +44,12 @@ A modern, high-performance Personal Kanban application for iOS and macOS, built 
 3.  Select a target (e.g., iPhone 15 Pro simulator or "My Mac").
 4.  Press `Cmd + R` to build and run the application.
 
+### App Store Screenshot Scenes
+
+Launch the app with `--app-store-screenshot=<scene>` to render a screenshot-only scene. Available scenes are `dashboard`, `board`, `quickCapture`, `focusGuard`, `flowReview`, `search`, and `wipChat`.
+
+Export the WIP Chat scene as `07-wip-chat.png` in each existing `AppStoreScreenshots` device or locale folder.
+
 ## 📖 Development Conventions
 
 - **Styling:** Always use `AppStyle` for colors, spacing, and typography. Avoid hardcoding magic numbers or colors.

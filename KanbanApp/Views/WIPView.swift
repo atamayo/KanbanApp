@@ -1,20 +1,10 @@
-import SwiftData
 import SwiftUI
 
 struct WIPView: View {
     let allTasks: [TaskItem]
     let maxActiveTasks: Int
     let isFocusGuardEnabled: Bool
-    let onReviewActiveTasks: () -> Void
-    let onOpenTask: (TaskItem) -> Void
-
-    @Environment(\.modelContext) private var modelContext
-    @State private var isShowingCoachReview = false
-    @State private var coachReviewDetent: PresentationDetent = .large
-    @State private var pendingTaskToOpen: TaskItem?
-    @State private var shouldReviewActiveTasksAfterDismiss = false
-    @State private var generatedCoachCopy: WIPCoachCopyDraft?
-    @State private var generatedCoachCopySignature: String?
+    let onOpenCoach: () -> Void
 
     private var recommendation: WIPCoachRecommendation {
         WIPCoachEngine.evaluate(
@@ -25,28 +15,18 @@ struct WIPView: View {
     }
 
     private var wipAccentColor: Color {
-        color(for: recommendation.pressure)
-    }
-
-    private var coachCopyRequest: WIPCoachCopyRequest {
-        WIPCoachCopyRequest(recommendation: recommendation)
-    }
-
-    private var validGeneratedCopy: WIPCoachCopyDraft? {
-        guard generatedCoachCopySignature == coachCopyRequest.signature else { return nil }
-        return generatedCoachCopy
-    }
-
-    private var displayedHeadline: String {
-        validGeneratedCopy?.headline.trimmedNonEmpty ?? recommendation.headline
-    }
-
-    private var displayedBody: String {
-        validGeneratedCopy?.body.trimmedNonEmpty ?? recommendation.body
-    }
-
-    private var displayedRecommendationReason: String {
-        validGeneratedCopy?.recommendationReason.trimmedNonEmpty ?? recommendation.reason
+        switch recommendation.pressure {
+        case .hasRoom:
+            return AppStyle.Colors.Status.todo
+        case .healthy:
+            return AppStyle.Colors.Status.done
+        case .nearLimit, .atLimit:
+            return AppStyle.Colors.warning
+        case .overloaded:
+            return AppStyle.Colors.Priority.high
+        case .blocked:
+            return AppStyle.Colors.blocked
+        }
     }
 
     private var wipIconName: String {
@@ -65,20 +45,15 @@ struct WIPView: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: AppStyle.Spacing.sectionToCard) {
-            Text("WIP Pressure")
-                .sectionHeaderStyle()
-
-            VStack(alignment: .leading, spacing: AppStyle.Spacing.comfortable) {
+        Button(action: onOpenCoach) {
+            VStack(alignment: .leading, spacing: AppStyle.Spacing.normal) {
                 header
                 stats
-                recommendationCard
-                ctaButton
             }
             .padding(AppStyle.Spacing.heroPadding)
             .accentCardStyle(
                 tint: wipAccentColor,
-                fillOpacity: recommendation.pressure == .overloaded ? AppStyle.Opacity.accentFillMuted : AppStyle.Opacity.accentWashStrong
+                fillOpacity: AppStyle.Opacity.accentWashStrong
             )
             .shadow(
                 color: wipAccentColor.opacity(AppStyle.Opacity.restingShadow),
@@ -88,156 +63,88 @@ struct WIPView: View {
             )
             .accessibilityElement(children: .combine)
             .accessibilityLabel(accessibilitySummary)
+            .contentShape(Rectangle())
         }
-        .sheet(isPresented: $isShowingCoachReview) {
-            WIPCoachReviewSheet(
-                recommendation: recommendation,
-                headline: displayedHeadline,
-                coachBody: displayedBody,
-                recommendationReason: displayedRecommendationReason,
-                accentColor: wipAccentColor,
-                onPullTask: pullTask,
-                onOpenTask: queueOpenTask,
-                onReviewActiveTasks: queueReviewActiveTasks
-            )
-            .presentationDetents([.large], selection: $coachReviewDetent)
-            .presentationDragIndicator(.visible)
-        }
-        .onChange(of: isShowingCoachReview) { _, isPresented in
-            guard !isPresented else { return }
-
-            if let pendingTaskToOpen {
-                self.pendingTaskToOpen = nil
-                onOpenTask(pendingTaskToOpen)
-            } else if shouldReviewActiveTasksAfterDismiss {
-                shouldReviewActiveTasksAfterDismiss = false
-                onReviewActiveTasks()
-            }
-        }
-        .task(id: coachCopyRequest.signature) {
-            await refreshGeneratedCoachCopy(for: coachCopyRequest)
-        }
+        .buttonStyle(.plain)
     }
 
     private var header: some View {
-        HStack(alignment: .top, spacing: AppStyle.Spacing.normal) {
-            ZStack {
-                Circle()
-                    .fill(wipAccentColor.opacity(AppStyle.Opacity.accentWashSelected))
-                    .frame(width: AppStyle.Shapes.iconBadgeLarge, height: AppStyle.Shapes.iconBadgeLarge)
+        HStack(alignment: .center, spacing: AppStyle.Spacing.normal) {
+            HStack(alignment: .center, spacing: AppStyle.Spacing.regular) {
+                ZStack {
+                    Circle()
+                        .fill(wipAccentColor.opacity(AppStyle.Opacity.accentWashSelected))
+                        .frame(width: AppStyle.Shapes.iconBadgeSmall, height: AppStyle.Shapes.iconBadgeSmall)
 
-                Image(systemName: wipIconName)
-                    .font(AppStyle.Typography.iconHero)
-                    .foregroundStyle(wipAccentColor)
-                    .accessibilityHidden(true)
+                    Image(systemName: wipIconName)
+                        .font(AppStyle.Typography.iconMedium)
+                        .foregroundStyle(wipAccentColor)
+                        .accessibilityHidden(true)
+                }
+
+                VStack(alignment: .leading, spacing: AppStyle.Spacing.tiny) {
+                    Text("Coach")
+                        .font(AppStyle.Typography.statusLabelHighlighted)
+                        .foregroundStyle(AppStyle.Colors.primaryText)
+
+                    Text(recommendation.label)
+                        .font(AppStyle.Typography.cardDate)
+                        .foregroundStyle(wipAccentColor)
+                        .textCase(.uppercase)
+                }
             }
 
-            VStack(alignment: .leading, spacing: AppStyle.Spacing.tight) {
-                Text(displayedHeadline)
-                    .font(AppStyle.Typography.metricMedium)
-                    .foregroundStyle(AppStyle.Colors.primaryText)
+            Spacer(minLength: AppStyle.Spacing.none)
 
-                Text(displayedBody)
-                    .font(AppStyle.Typography.formFooter)
-                    .foregroundStyle(AppStyle.Colors.secondaryText)
-                    .fixedSize(horizontal: false, vertical: true)
-            }
+            Image(systemName: "arrow.right")
+                .font(AppStyle.Typography.iconSmall)
+                .foregroundStyle(AppStyle.Colors.tertiaryText)
+                .accessibilityHidden(true)
         }
     }
 
     private var stats: some View {
-        ViewThatFits(in: .horizontal) {
-            HStack(spacing: AppStyle.Spacing.statusRowGap) {
-                statPill(
-                    label: "Active",
-                    value: "\(recommendation.stats.activeCount)/\(recommendation.stats.wipLimit)",
-                    tint: wipAccentColor
-                )
-
-                statPill(
-                    label: "Slots Left",
-                    value: "\(recommendation.stats.slotsLeft)",
-                    tint: recommendation.stats.slotsLeft == 0 ? AppStyle.Colors.warning : AppStyle.Colors.Status.todo
-                )
-            }
-
-            VStack(spacing: AppStyle.Spacing.statusRowGap) {
-                statPill(
-                    label: "Active",
-                    value: "\(recommendation.stats.activeCount)/\(recommendation.stats.wipLimit)",
-                    tint: wipAccentColor
-                )
-
-                statPill(
-                    label: "Slots Left",
-                    value: "\(recommendation.stats.slotsLeft)",
-                    tint: recommendation.stats.slotsLeft == 0 ? AppStyle.Colors.warning : AppStyle.Colors.Status.todo
-                )
-            }
-        }
-    }
-
-    private var recommendationCard: some View {
-        VStack(alignment: .leading, spacing: AppStyle.Spacing.tiny) {
-            Text(recommendation.label)
-                .font(AppStyle.Typography.pillLabel)
-                .foregroundStyle(wipAccentColor)
-                .textCase(.uppercase)
-
-            Text(recommendation.recommendedTask?.title ?? String(localized: "Your board is clear"))
-                .font(AppStyle.Typography.cardTitle)
+        VStack(alignment: .leading, spacing: AppStyle.Spacing.small) {
+            Text(recommendation.headline)
+                .font(AppStyle.Typography.formFooter)
                 .foregroundStyle(AppStyle.Colors.primaryText)
-                .lineLimit(2)
-
-            Text(displayedRecommendationReason)
-                .font(AppStyle.Typography.cardDate)
-                .foregroundStyle(AppStyle.Colors.secondaryText)
                 .fixedSize(horizontal: false, vertical: true)
-        }
-        .padding(AppStyle.Spacing.compactCardPadding)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(AppStyle.Colors.spotlightSurface, in: RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
-    }
 
-    private var ctaButton: some View {
-        Button {
-            isShowingCoachReview = true
-        } label: {
-            HStack {
-                Text(recommendation.ctaTitle)
-                Spacer()
-                Image(systemName: "arrow.right")
-                    .accessibilityHidden(true)
+            ViewThatFits(in: .horizontal) {
+                HStack(spacing: AppStyle.Spacing.statusRowGap) {
+                    statPill(
+                        label: "Active",
+                        value: "\(recommendation.stats.activeCount)/\(recommendation.stats.wipLimit)",
+                        tint: wipAccentColor
+                    )
+
+                    statPill(
+                        label: "Slots Left",
+                        value: "\(recommendation.stats.slotsLeft)",
+                        tint: recommendation.stats.slotsLeft == 0 ? AppStyle.Colors.warning : AppStyle.Colors.Status.todo
+                    )
+                }
+
+                VStack(spacing: AppStyle.Spacing.statusRowGap) {
+                    statPill(
+                        label: "Active",
+                        value: "\(recommendation.stats.activeCount)/\(recommendation.stats.wipLimit)",
+                        tint: wipAccentColor
+                    )
+
+                    statPill(
+                        label: "Slots Left",
+                        value: "\(recommendation.stats.slotsLeft)",
+                        tint: recommendation.stats.slotsLeft == 0 ? AppStyle.Colors.warning : AppStyle.Colors.Status.todo
+                    )
+                }
             }
-            .font(AppStyle.Typography.buttonLabel)
-            .foregroundStyle(primaryCTAUsesFill ? AppStyle.Colors.inverseText : wipAccentColor)
-            .padding(.horizontal, AppStyle.Spacing.normal)
-            .padding(.vertical, AppStyle.Spacing.regular)
-            .frame(minHeight: AppStyle.Shapes.iconBadgeSmall)
-            .background(
-                primaryCTAUsesFill
-                ? AnyShapeStyle(LinearGradient(colors: [wipAccentColor, wipAccentColor.opacity(AppStyle.Opacity.accentForegroundMuted)], startPoint: .leading, endPoint: .trailing))
-                : AnyShapeStyle(AppStyle.Colors.spotlightSurface),
-                in: RoundedRectangle(cornerRadius: AppStyle.Shapes.cardCornerRadius, style: .continuous)
-            )
-        }
-        .buttonStyle(.plain)
-        .accessibilityLabel(recommendation.ctaTitle)
-        .accessibilityHint("Opens a detailed recommendation.")
-    }
-
-    private var primaryCTAUsesFill: Bool {
-        switch recommendation.action {
-        case .focusCurrentTask, .unblockTask, .reduceWIP:
-            return true
-        case .pullNextTask, .breakDownTask, .noActionNeeded:
-            return false
         }
     }
 
     private var accessibilitySummary: String {
         let taskSummary = recommendation.recommendedTask.map { String(localized: "Recommended task: \($0.title).") } ?? String(localized: "No recommended task.")
-        return String(localized: "Work in progress pressure. \(displayedHeadline) \(recommendation.stats.activeCount) of \(recommendation.stats.wipLimit) tasks active. \(recommendation.stats.slotsLeft) slots left. \(recommendation.label.capitalized). \(taskSummary)")
+        return String(localized: "Work in progress pressure. \(recommendation.headline) \(recommendation.stats.activeCount) of \(recommendation.stats.wipLimit) tasks active. \(recommendation.stats.slotsLeft) slots left. \(recommendation.label.capitalized). \(taskSummary)")
     }
 
     private func statPill(label: LocalizedStringKey, value: String, tint: Color) -> some View {
@@ -255,333 +162,6 @@ struct WIPView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(tint.opacity(AppStyle.Opacity.accentWash), in: RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
     }
-
-    private func pullTask(_ task: TaskItem) {
-        guard recommendation.action == .pullNextTask, task.status == .todo, recommendation.stats.slotsLeft > 0 else { return }
-
-        let nextOrder = (allTasks.filter { $0.status == .inProgress }.map(\.order).max() ?? -1) + 1
-        task.status = .inProgress
-        task.order = nextOrder
-        task.updatedAt = Date()
-        try? modelContext.save()
-        queueOpenTask(task)
-    }
-
-    private func queueOpenTask(_ task: TaskItem) {
-        pendingTaskToOpen = task
-    }
-
-    private func queueReviewActiveTasks() {
-        shouldReviewActiveTasksAfterDismiss = true
-    }
-
-    private func color(for pressure: WIPPressureLevel) -> Color {
-        switch pressure {
-        case .hasRoom:
-            return AppStyle.Colors.Status.todo
-        case .healthy:
-            return AppStyle.Colors.Status.done
-        case .nearLimit, .atLimit:
-            return AppStyle.Colors.warning
-        case .overloaded:
-            return AppStyle.Colors.Priority.high
-        case .blocked:
-            return AppStyle.Colors.blocked
-        }
-    }
-
-    @MainActor
-    private func refreshGeneratedCoachCopy(for request: WIPCoachCopyRequest) async {
-        generatedCoachCopy = nil
-        generatedCoachCopySignature = nil
-
-        guard case .available = WIPCoachCopyGenerator.availability else { return }
-
-        do {
-            let copy = try await WIPCoachCopyGenerator.generate(for: request)
-            guard request.signature == coachCopyRequest.signature else { return }
-            guard copy.hasUsableContent else { return }
-
-            generatedCoachCopy = copy
-            generatedCoachCopySignature = request.signature
-        } catch {
-            generatedCoachCopy = nil
-            generatedCoachCopySignature = nil
-        }
-    }
-}
-
-private struct WIPCoachReviewSheet: View {
-    let recommendation: WIPCoachRecommendation
-    let headline: String
-    let coachBody: String
-    let recommendationReason: String
-    let accentColor: Color
-    let onPullTask: (TaskItem) -> Void
-    let onOpenTask: (TaskItem) -> Void
-    let onReviewActiveTasks: () -> Void
-
-    @Environment(\.dismiss) private var dismiss
-
-    var body: some View {
-        NavigationStack {
-            ScrollView {
-                VStack(alignment: .leading, spacing: AppStyle.Spacing.compactSectionSpacing) {
-                    summaryCard
-                    recommendationSection
-                    alternativesSection
-                    activeWorkSection
-                }
-                .padding(.horizontal, AppStyle.Spacing.outerHorizontal)
-                .padding(.vertical, AppStyle.Spacing.outerVertical)
-            }
-            .background(AppStyle.Colors.background)
-            .navigationTitle("WIP Coach")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Done") {
-                        dismiss()
-                    }
-                }
-            }
-        }
-    }
-
-    private var summaryCard: some View {
-        VStack(alignment: .leading, spacing: AppStyle.Spacing.normal) {
-            Label(headline, systemImage: "scope")
-                .font(AppStyle.Typography.metricMedium)
-                .foregroundStyle(AppStyle.Colors.primaryText)
-
-            Text(coachBody)
-                .font(AppStyle.Typography.formFooter)
-                .foregroundStyle(AppStyle.Colors.secondaryText)
-                .fixedSize(horizontal: false, vertical: true)
-
-            ViewThatFits(in: .horizontal) {
-                statsRow
-                VStack(spacing: AppStyle.Spacing.statusRowGap) {
-                    statTile("Active", "\(recommendation.stats.activeCount)/\(recommendation.stats.wipLimit)")
-                    statTile("Slots Left", "\(recommendation.stats.slotsLeft)")
-                    statTile("Blocked", "\(recommendation.stats.blockedCount)")
-                    statTile("Ready", "\(recommendation.stats.readyCount)")
-                }
-            }
-        }
-        .padding(AppStyle.Spacing.large)
-        .accentCardStyle(tint: accentColor)
-        .accessibilityElement(children: .combine)
-        .accessibilityLabel(String(localized: "Work in progress review. \(recommendation.stats.activeCount) of \(recommendation.stats.wipLimit) tasks active. \(recommendation.stats.slotsLeft) slots left. \(recommendation.stats.blockedCount) blocked tasks. \(recommendation.stats.readyCount) ready tasks."))
-    }
-
-    private var statsRow: some View {
-        HStack(spacing: AppStyle.Spacing.statusRowGap) {
-            statTile("Active", "\(recommendation.stats.activeCount)/\(recommendation.stats.wipLimit)")
-            statTile("Slots Left", "\(recommendation.stats.slotsLeft)")
-            statTile("Blocked", "\(recommendation.stats.blockedCount)")
-            statTile("Ready", "\(recommendation.stats.readyCount)")
-        }
-    }
-
-    private var recommendationSection: some View {
-        VStack(alignment: .leading, spacing: AppStyle.Spacing.sectionToCard) {
-            Text("Recommended Action")
-                .sectionHeaderStyle()
-
-            VStack(alignment: .leading, spacing: AppStyle.Spacing.normal) {
-                Text(recommendation.label)
-                    .font(AppStyle.Typography.pillLabel)
-                    .foregroundStyle(accentColor)
-                    .textCase(.uppercase)
-
-                Text(recommendation.recommendedTask?.title ?? String(localized: "Your board is clear"))
-                    .font(AppStyle.Typography.cardTitle)
-                    .foregroundStyle(AppStyle.Colors.primaryText)
-                    .fixedSize(horizontal: false, vertical: true)
-
-                Text(recommendationReason)
-                    .font(AppStyle.Typography.formFooter)
-                    .foregroundStyle(AppStyle.Colors.secondaryText)
-
-                actionButtons
-            }
-            .padding(AppStyle.Spacing.large)
-            .cardStyle()
-        }
-    }
-
-    @ViewBuilder
-    private var actionButtons: some View {
-        switch recommendation.action {
-        case .pullNextTask:
-            if let task = recommendation.recommendedTask {
-                Button {
-                    dismiss()
-                    onPullTask(task)
-                } label: {
-                    Label("Pull Task", systemImage: "arrow.right.circle.fill")
-                        .frame(maxWidth: .infinity, minHeight: AppStyle.Shapes.iconBadgeSmall)
-                }
-                .buttonStyle(.borderedProminent)
-                .tint(accentColor)
-                .accessibilityHint("Moves this task to In Progress.")
-            }
-        case .focusCurrentTask:
-            if let task = recommendation.recommendedTask {
-                Button {
-                    dismiss()
-                    onOpenTask(task)
-                } label: {
-                    Label("Focus Task", systemImage: "scope")
-                        .frame(maxWidth: .infinity, minHeight: AppStyle.Shapes.iconBadgeSmall)
-                }
-                .buttonStyle(.borderedProminent)
-                .tint(accentColor)
-                .accessibilityHint("Opens the recommended active task.")
-            }
-        case .unblockTask:
-            if let task = recommendation.recommendedTask {
-                Button {
-                    dismiss()
-                    onOpenTask(task)
-                } label: {
-                    Label("Open Blocked Task", systemImage: "pause.circle.fill")
-                        .frame(maxWidth: .infinity, minHeight: AppStyle.Shapes.iconBadgeSmall)
-                }
-                .buttonStyle(.borderedProminent)
-                .tint(accentColor)
-                .accessibilityHint("Opens the blocked task so you can update it.")
-            }
-        case .reduceWIP:
-            Button {
-                dismiss()
-                onReviewActiveTasks()
-            } label: {
-                Label("Review Active Tasks", systemImage: "tray.full.fill")
-                    .frame(maxWidth: .infinity, minHeight: AppStyle.Shapes.iconBadgeSmall)
-            }
-            .buttonStyle(.borderedProminent)
-            .tint(accentColor)
-            .accessibilityHint("Opens the active work lane.")
-        case .breakDownTask:
-            if let task = recommendation.recommendedTask {
-                Button {
-                    dismiss()
-                    onOpenTask(task)
-                } label: {
-                    Label("Break Down Task", systemImage: "list.bullet.indent")
-                        .frame(maxWidth: .infinity, minHeight: AppStyle.Shapes.iconBadgeSmall)
-                }
-                .buttonStyle(.borderedProminent)
-                .tint(accentColor)
-            }
-        case .noActionNeeded:
-            EmptyView()
-        }
-    }
-
-    @ViewBuilder
-    private var alternativesSection: some View {
-        if !recommendation.readyAlternatives.isEmpty {
-            VStack(alignment: .leading, spacing: AppStyle.Spacing.sectionToCard) {
-                Text("Ready Alternatives")
-                    .sectionHeaderStyle()
-
-                VStack(spacing: AppStyle.Spacing.statusRowGap) {
-                    ForEach(recommendation.readyAlternatives, id: \.task.id) { candidate in
-                        taskRow(
-                            title: candidate.task.title,
-                            subtitle: candidate.reason,
-                            icon: "circle",
-                            tint: AppStyle.Colors.Status.todo
-                        ) {
-                            dismiss()
-                            onOpenTask(candidate.task)
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    @ViewBuilder
-    private var activeWorkSection: some View {
-        if !recommendation.activeTasks.isEmpty {
-            VStack(alignment: .leading, spacing: AppStyle.Spacing.sectionToCard) {
-                Text("Active Work")
-                    .sectionHeaderStyle()
-
-                VStack(spacing: AppStyle.Spacing.statusRowGap) {
-                    ForEach(recommendation.activeTasks.prefix(3)) { task in
-                        taskRow(
-                            title: task.title,
-                            subtitle: task.isBlocked ? String(localized: "Blocked") : task.lastStatusChange.formatted(.relative(presentation: .named)),
-                            icon: task.isBlocked ? "pause.circle.fill" : "clock.fill",
-                            tint: task.isBlocked ? AppStyle.Colors.blocked : AppStyle.Colors.Status.inProgress
-                        ) {
-                            dismiss()
-                            onOpenTask(task)
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    private func statTile(_ label: LocalizedStringKey, _ value: String) -> some View {
-        VStack(alignment: .leading, spacing: AppStyle.Spacing.tiny) {
-            Text(label)
-                .font(AppStyle.Typography.statLabel)
-                .foregroundStyle(AppStyle.Colors.secondaryText)
-
-            Text(value)
-                .font(AppStyle.Typography.metricSmall)
-                .foregroundStyle(AppStyle.Colors.primaryText)
-                .monospacedDigit()
-        }
-        .padding(.horizontal, AppStyle.Spacing.regular)
-        .padding(.vertical, AppStyle.Spacing.compact)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(accentColor.opacity(AppStyle.Opacity.accentWash), in: RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
-    }
-
-    private func taskRow(title: String, subtitle: String, icon: String, tint: Color, action: @escaping () -> Void) -> some View {
-        Button(action: action) {
-            HStack(alignment: .top, spacing: AppStyle.Spacing.regular) {
-                Image(systemName: icon)
-                    .font(AppStyle.Typography.iconSmall)
-                    .foregroundStyle(tint)
-                    .frame(width: AppStyle.Spacing.iconFrameWidthMedium)
-                    .accessibilityHidden(true)
-
-                VStack(alignment: .leading, spacing: AppStyle.Spacing.tiny) {
-                    Text(title)
-                        .font(AppStyle.Typography.cardTitle)
-                        .foregroundStyle(AppStyle.Colors.primaryText)
-                        .lineLimit(2)
-
-                    Text(subtitle)
-                        .font(AppStyle.Typography.cardDate)
-                        .foregroundStyle(AppStyle.Colors.secondaryText)
-                }
-
-                Spacer(minLength: AppStyle.Spacing.none)
-
-                Image(systemName: "chevron.right")
-                    .font(AppStyle.Typography.iconSmall)
-                    .foregroundStyle(AppStyle.Colors.tertiaryText)
-                    .accessibilityHidden(true)
-            }
-            .padding(AppStyle.Spacing.compactCardPadding)
-            .frame(maxWidth: .infinity, minHeight: AppStyle.Shapes.iconBadgeSmall, alignment: .leading)
-            .background(AppStyle.Colors.spotlightSurface, in: RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
-            .contentShape(Rectangle())
-        }
-        .buttonStyle(.plain)
-        .accessibilityLabel("\(title). \(subtitle)")
-        .accessibilityHint("Opens task details.")
-    }
 }
 
 #Preview("WIP Has Room") {
@@ -589,8 +169,7 @@ private struct WIPCoachReviewSheet: View {
         allTasks: WIPPreviewData.hasRoom,
         maxActiveTasks: 3,
         isFocusGuardEnabled: true,
-        onReviewActiveTasks: {},
-        onOpenTask: { _ in }
+        onOpenCoach: {}
     )
     .padding()
     .background(AppStyle.Colors.background)
@@ -601,8 +180,7 @@ private struct WIPCoachReviewSheet: View {
         allTasks: WIPPreviewData.atLimit,
         maxActiveTasks: 3,
         isFocusGuardEnabled: true,
-        onReviewActiveTasks: {},
-        onOpenTask: { _ in }
+        onOpenCoach: {}
     )
     .padding()
     .background(AppStyle.Colors.background)
@@ -613,8 +191,7 @@ private struct WIPCoachReviewSheet: View {
         allTasks: WIPPreviewData.blocked,
         maxActiveTasks: 3,
         isFocusGuardEnabled: true,
-        onReviewActiveTasks: {},
-        onOpenTask: { _ in }
+        onOpenCoach: {}
     )
     .padding()
     .background(AppStyle.Colors.background)
@@ -625,8 +202,7 @@ private struct WIPCoachReviewSheet: View {
         allTasks: WIPPreviewData.overloaded,
         maxActiveTasks: 3,
         isFocusGuardEnabled: true,
-        onReviewActiveTasks: {},
-        onOpenTask: { _ in }
+        onOpenCoach: {}
     )
     .padding()
     .background(AppStyle.Colors.background)
@@ -638,15 +214,14 @@ private struct WIPCoachReviewSheet: View {
         allTasks: WIPPreviewData.noReady,
         maxActiveTasks: 4,
         isFocusGuardEnabled: true,
-        onReviewActiveTasks: {},
-        onOpenTask: { _ in }
+        onOpenCoach: {}
     )
     .padding()
     .background(AppStyle.Colors.background)
     .preferredColorScheme(.dark)
 }
 
-private enum WIPPreviewData {
+enum WIPPreviewData {
     static var hasRoom: [TaskItem] {
         [
             task("Plan sprint goals", status: .todo, priority: .high, order: 0),

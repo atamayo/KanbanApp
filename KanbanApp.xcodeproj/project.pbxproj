@@ -41,19 +41,35 @@
 		A7C100000000000000000026 /* TaskAgingNotificationSyncView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C100000000000000000027 /* TaskAgingNotificationSyncView.swift */; };
 		A7C100000000000000000028 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A7C100000000000000000029 /* Localizable.xcstrings */; };
 		A7C10000000000000000002A /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A7C10000000000000000002B /* InfoPlist.xcstrings */; };
+		A9D100000000000000000002 /* TaskChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D100000000000000000001 /* TaskChatService.swift */; };
+		A9D100000000000000000004 /* TaskChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D100000000000000000003 /* TaskChatView.swift */; };
+		A9D100000000000000000006 /* TaskChatStarterPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D100000000000000000005 /* TaskChatStarterPrompt.swift */; };
 		B8A7D0D8D7304BF4B02921A1 /* PersistenceBootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A7D0D7D7304BF4B02921A1 /* PersistenceBootstrap.swift */; };
+		BADDCAFE0000000000000001 /* TaskChatPromptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDCAFE0000000000000002 /* TaskChatPromptTests.swift */; };
+		BADDCAFE0000000000000011 /* TaskChatServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDCAFE0000000000000012 /* TaskChatServiceTests.swift */; };
 		C46D8078D30040238CCDE162FB2FE17E /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE822CFBF944080AA7DC05248E4FCB2 /* MainTabView.swift */; };
 		CC88F17F1EB745D7B67C1DED74B18C18 /* AllTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC21578A5014A16A3256BF3F502DDAC /* AllTasksView.swift */; };
 		D4C3B2A10000000000000001 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C3B2A20000000000000002 /* CustomAlertView.swift */; };
 		DD1100000000000000000001 /* LiveTextScannerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1100000000000000000002 /* LiveTextScannerSheet.swift */; };
 		E1F2A3B4C5D6000000000001 /* WIPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F2A3B4C5D6000000000002 /* WIPView.swift */; };
 		E1F2A3B4C5D6000000000003 /* PersonalKanbanManifestoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F2A3B4C5D6000000000004 /* PersonalKanbanManifestoView.swift */; };
+		E1F2A3B4C5D6000000000005 /* WIPCoachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F2A3B4C5D6000000000006 /* WIPCoachView.swift */; };
 		F00D00000000000000000001 /* VoiceCaptureSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00D00000000000000000002 /* VoiceCaptureSheet.swift */; };
 		F00D00000000000000000003 /* WIPCoachEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00D00000000000000000004 /* WIPCoachEngine.swift */; };
 		F00D00000000000000000005 /* WIPCoachCopyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00D00000000000000000006 /* WIPCoachCopyGenerator.swift */; };
 		F10D00000000000000000001 /* AppStoreScreenshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10D00000000000000000002 /* AppStoreScreenshotView.swift */; };
 		FC1578978B8E4651B24C4D809767D49F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9527358144CD4E779E36F571C9E106AD /* SettingsView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BADDCAFE000000000000000C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1B2C3D4E5F6000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1B2C3D4E5F600000000000A;
+			remoteInfo = KanbanApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2BC21578A5014A16A3256BF3F502DDAC /* AllTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTasksView.swift; sourceTree = "<group>"; };
@@ -94,12 +110,19 @@
 		A7C100000000000000000027 /* TaskAgingNotificationSyncView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAgingNotificationSyncView.swift; sourceTree = "<group>"; };
 		A7C100000000000000000029 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		A7C10000000000000000002B /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		A9D100000000000000000001 /* TaskChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskChatService.swift; sourceTree = "<group>"; };
+		A9D100000000000000000003 /* TaskChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskChatView.swift; sourceTree = "<group>"; };
+		A9D100000000000000000005 /* TaskChatStarterPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskChatStarterPrompt.swift; sourceTree = "<group>"; };
 		B8A7D0D6D7304BF4B02921A1 /* KanbanApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KanbanApp.entitlements; sourceTree = "<group>"; };
 		B8A7D0D7D7304BF4B02921A1 /* PersistenceBootstrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceBootstrap.swift; sourceTree = "<group>"; };
+		BADDCAFE0000000000000002 /* TaskChatPromptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskChatPromptTests.swift; sourceTree = "<group>"; };
+		BADDCAFE0000000000000003 /* KanbanAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KanbanAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BADDCAFE0000000000000012 /* TaskChatServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskChatServiceTests.swift; sourceTree = "<group>"; };
 		D4C3B2A20000000000000002 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		DD1100000000000000000002 /* LiveTextScannerSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTextScannerSheet.swift; sourceTree = "<group>"; };
 		E1F2A3B4C5D6000000000002 /* WIPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIPView.swift; sourceTree = "<group>"; };
 		E1F2A3B4C5D6000000000004 /* PersonalKanbanManifestoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalKanbanManifestoView.swift; sourceTree = "<group>"; };
+		E1F2A3B4C5D6000000000006 /* WIPCoachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIPCoachView.swift; sourceTree = "<group>"; };
 		F00D00000000000000000002 /* VoiceCaptureSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceCaptureSheet.swift; sourceTree = "<group>"; };
 		F00D00000000000000000004 /* WIPCoachEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIPCoachEngine.swift; sourceTree = "<group>"; };
 		F00D00000000000000000006 /* WIPCoachCopyGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIPCoachCopyGenerator.swift; sourceTree = "<group>"; };
@@ -115,6 +138,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BADDCAFE0000000000000004 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -122,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				A1B2C3D4E5F6000000000003 /* KanbanApp */,
+				BADDCAFE0000000000000007 /* KanbanAppTests */,
 				A1B2C3D4E5F6000000000007 /* Frameworks */,
 				A1B2C3D4E5F6000000000008 /* Products */,
 			);
@@ -177,6 +208,9 @@
 				A7C10000000000000000000C /* SearchTasksView.swift */,
 				A7C100000000000000000027 /* TaskAgingNotificationSyncView.swift */,
 				E1F2A3B4C5D6000000000002 /* WIPView.swift */,
+				E1F2A3B4C5D6000000000006 /* WIPCoachView.swift */,
+				A9D100000000000000000003 /* TaskChatView.swift */,
+				A9D100000000000000000005 /* TaskChatStarterPrompt.swift */,
 				E1F2A3B4C5D6000000000004 /* PersonalKanbanManifestoView.swift */,
 				F10D00000000000000000002 /* AppStoreScreenshotView.swift */,
 				2BC21578A5014A16A3256BF3F502DDAC /* AllTasksView.swift */,
@@ -207,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				A1B2C3D4E5F6000000000009 /* KanbanApp.app */,
+				BADDCAFE0000000000000003 /* KanbanAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -225,8 +260,18 @@
 				B8A7D0D7D7304BF4B02921A1 /* PersistenceBootstrap.swift */,
 				F00D00000000000000000004 /* WIPCoachEngine.swift */,
 				F00D00000000000000000006 /* WIPCoachCopyGenerator.swift */,
+				A9D100000000000000000001 /* TaskChatService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		BADDCAFE0000000000000007 /* KanbanAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				BADDCAFE0000000000000002 /* TaskChatPromptTests.swift */,
+				BADDCAFE0000000000000012 /* TaskChatServiceTests.swift */,
+			);
+			path = KanbanAppTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +294,24 @@
 			productReference = A1B2C3D4E5F6000000000009 /* KanbanApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		BADDCAFE0000000000000008 /* KanbanAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BADDCAFE0000000000000009 /* Build configuration list for PBXNativeTarget "KanbanAppTests" */;
+			buildPhases = (
+				BADDCAFE0000000000000006 /* Sources */,
+				BADDCAFE0000000000000004 /* Frameworks */,
+				BADDCAFE0000000000000005 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BADDCAFE000000000000000D /* PBXTargetDependency */,
+			);
+			name = KanbanAppTests;
+			productName = KanbanAppTests;
+			productReference = BADDCAFE0000000000000003 /* KanbanAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -270,6 +333,10 @@
 							};
 						};
 					};
+					BADDCAFE0000000000000008 = {
+						CreatedOnToolsVersion = 26.0;
+						TestTargetID = A1B2C3D4E5F600000000000A;
+					};
 				};
 			};
 			buildConfigurationList = A1B2C3D4E5F6000000000025 /* Build configuration list for PBXProject "KanbanApp" */;
@@ -280,7 +347,17 @@
 				"en-US",
 				en,
 				ca,
+				de,
+				"es-ES",
+				"fr-FR",
+				hi,
+				it,
+				ja,
+				ko,
+				nl,
 				pl,
+				"pt-BR",
+				"zh-Hans",
 				Base,
 			);
 			mainGroup = A1B2C3D4E5F6000000000002;
@@ -289,6 +366,7 @@
 			projectRoot = "";
 			targets = (
 				A1B2C3D4E5F600000000000A /* KanbanApp */,
+				BADDCAFE0000000000000008 /* KanbanAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -301,6 +379,13 @@
 				A1B2C3D4E5F6000000000031 /* Assets.xcassets in Resources */,
 				A7C100000000000000000028 /* Localizable.xcstrings in Resources */,
 				A7C10000000000000000002A /* InfoPlist.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BADDCAFE0000000000000005 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +423,7 @@
 				A7C100000000000000000020 /* QuickCaptureCoordinator.swift in Sources */,
 				A7C100000000000000000022 /* TaskAgingEvaluator.swift in Sources */,
 				A7C100000000000000000024 /* TaskAgingNotificationService.swift in Sources */,
+				A9D100000000000000000002 /* TaskChatService.swift in Sources */,
 				A7C100000000000000000014 /* QuickCapturePhotoImportButton.swift in Sources */,
 				A7C10000000000000000001E /* AddTaskActionBar.swift in Sources */,
 				A7C100000000000000000018 /* QuickCaptureDraftSheet.swift in Sources */,
@@ -348,6 +434,9 @@
 				F00D00000000000000000003 /* WIPCoachEngine.swift in Sources */,
 				F00D00000000000000000005 /* WIPCoachCopyGenerator.swift in Sources */,
 				E1F2A3B4C5D6000000000001 /* WIPView.swift in Sources */,
+				E1F2A3B4C5D6000000000005 /* WIPCoachView.swift in Sources */,
+				A9D100000000000000000004 /* TaskChatView.swift in Sources */,
+				A9D100000000000000000006 /* TaskChatStarterPrompt.swift in Sources */,
 				E1F2A3B4C5D6000000000003 /* PersonalKanbanManifestoView.swift in Sources */,
 				F10D00000000000000000001 /* AppStoreScreenshotView.swift in Sources */,
 				C46D8078D30040238CCDE162FB2FE17E /* MainTabView.swift in Sources */,
@@ -357,7 +446,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BADDCAFE0000000000000006 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BADDCAFE0000000000000001 /* TaskChatPromptTests.swift in Sources */,
+				BADDCAFE0000000000000011 /* TaskChatServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BADDCAFE000000000000000D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1B2C3D4E5F600000000000A /* KanbanApp */;
+			targetProxy = BADDCAFE000000000000000C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		A1B2C3D4E5F6000000000021 /* Debug */ = {
@@ -480,7 +586,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Use the camera to scan text and turn it into a task draft.";
 				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = KanbanApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -500,12 +606,58 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Use the camera to scan text and turn it into a task draft.";
 				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = KanbanApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BADDCAFE000000000000000A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FMAF78CAD7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = KanbanAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KanbanApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/KanbanApp";
+			};
+			name = Debug;
+		};
+		BADDCAFE000000000000000B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FMAF78CAD7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = KanbanAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KanbanApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/KanbanApp";
 			};
 			name = Release;
 		};
@@ -526,6 +678,15 @@
 			buildConfigurations = (
 				A1B2C3D4E5F6000000000023 /* Debug */,
 				A1B2C3D4E5F6000000000024 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BADDCAFE0000000000000009 /* Build configuration list for PBXNativeTarget "KanbanAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BADDCAFE000000000000000A /* Debug */,
+				BADDCAFE000000000000000B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
