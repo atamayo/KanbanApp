@@ -29,6 +29,7 @@ enum TaskChatVisualizationKind: String, CaseIterable {
     case statusBreakdown
     case priorityBreakdown
     case activeAging
+    case toDoWaiting
     case completedThisMonth
     case slowestClosed
     case blockedTasks
@@ -236,16 +237,128 @@ struct TaskChatTurn {
     let content: String
 }
 
+struct TaskChatContext: Equatable {
+    let signature: String
+    let pressure: WIPPressureLevel
+    let action: WIPCoachActionType
+    let headline: String
+    let reason: String
+    let activeCount: Int
+    let wipLimit: Int
+    let slotsLeft: Int
+    let blockedCount: Int
+    let readyCount: Int
+    let recommendedTaskID: UUID?
+    let recommendedTaskTitle: String?
+    let recommendedTaskStatusRaw: String?
+    let recommendedTaskPriorityRaw: String?
+    let recommendedTaskIsBlocked: Bool
+    let readyAlternatives: [String]
+    let activeTasks: [String]
+
+    init(
+        recommendation: WIPCoachRecommendation,
+        headline: String? = nil,
+        reason: String? = nil
+    ) {
+        let recommendedTask = recommendation.recommendedTask
+        let readyAlternatives = recommendation.readyAlternatives.map {
+            "\($0.task.title) | priority: \($0.task.priority.rawValue) | reason: \($0.reason)"
+        }
+        let activeTasks = recommendation.activeTasks.map {
+            "\($0.title) | priority: \($0.priority.rawValue) | blocked: \($0.isBlocked ? "yes" : "no")"
+        }
+
+        self.pressure = recommendation.pressure
+        self.action = recommendation.action
+        self.headline = headline?.trimmedNonEmpty ?? recommendation.headline
+        self.reason = reason?.trimmedNonEmpty ?? recommendation.reason
+        activeCount = recommendation.stats.activeCount
+        wipLimit = recommendation.stats.wipLimit
+        slotsLeft = recommendation.stats.slotsLeft
+        blockedCount = recommendation.stats.blockedCount
+        readyCount = recommendation.stats.readyCount
+        recommendedTaskID = recommendedTask?.id
+        recommendedTaskTitle = recommendedTask?.title
+        recommendedTaskStatusRaw = recommendedTask?.status.rawValue
+        recommendedTaskPriorityRaw = recommendedTask?.priority.rawValue
+        recommendedTaskIsBlocked = recommendedTask?.isBlocked ?? false
+        self.readyAlternatives = readyAlternatives
+        self.activeTasks = activeTasks
+
+        signature = [
+            recommendation.pressure.promptName,
+            recommendation.action.promptName,
+            "\(activeCount)",
+            "\(wipLimit)",
+            "\(slotsLeft)",
+            "\(blockedCount)",
+            "\(readyCount)",
+            recommendedTask?.id.uuidString ?? "none",
+            recommendedTask?.updatedAt.timeIntervalSince1970.description ?? "0",
+            self.headline,
+            self.reason,
+            readyAlternatives.joined(separator: ";"),
+            activeTasks.joined(separator: ";")
+        ].joined(separator: "|")
+    }
+
+    var introText: String {
+        let recommendationText: String
+        if let recommendedTaskTitle {
+            recommendationText = String(localized: "Recommended move: \(recommendedTaskTitle)")
+        } else {
+            recommendationText = String(localized: "No task action is needed right now.")
+        }
+
+        return [
+            String(localized: "Current WIP read: \(headline)"),
+            recommendationText,
+            String(localized: "Reason: \(reason)")
+        ].joined(separator: "\n")
+    }
+
+    var promptSummary: String {
+        """
+        Current WIP Coach context:
+        - Pressure: \(pressure.promptName)
+        - Recommended action: \(action.promptName)
+        - Coach headline: \(headline)
+        - Coach reason: \(reason)
+        - Active tasks: \(activeCount)/\(wipLimit)
+        - Slots left: \(slotsLeft)
+        - Blocked active tasks: \(blockedCount)
+        - Ready tasks: \(readyCount)
+        - Recommended task id: \(recommendedTaskID?.uuidString ?? "None")
+        - Recommended task title: \(recommendedTaskTitle ?? "None")
+        - Recommended task status: \(recommendedTaskStatusRaw ?? "None")
+        - Recommended task priority: \(recommendedTaskPriorityRaw ?? "None")
+        - Recommended task blocked: \(recommendedTaskIsBlocked ? "yes" : "no")
+        - Ready alternatives: \(readyAlternatives.isEmpty ? "None" : readyAlternatives.joined(separator: "\n"))
+        - Active work: \(activeTasks.isEmpty ? "None" : activeTasks.joined(separator: "\n"))
+        """
+    }
+}
+
 struct TaskChatRequest {
     let question: String
     let previousTurns: [TaskChatTurn]
     let snapshot: TaskChatBoardSnapshot
+    let context: TaskChatContext?
     let responseLanguageName: String
 
-    init(question: String, previousTurns: [TaskChatTurn], tasks: [TaskItem], now: Date = Date(), locale: Locale = .autoupdatingCurrent) {
+    init(
+        question: String,
+        previousTurns: [TaskChatTurn],
+        tasks: [TaskItem],
+        context: TaskChatContext? = nil,
+        now: Date = Date(),
+        locale: Locale = .autoupdatingCurrent
+    ) {
         self.question = question
         self.previousTurns = previousTurns
         self.snapshot = TaskChatBoardSnapshot(tasks: tasks, now: now)
+        self.context = context
         self.responseLanguageName = locale.localizedString(forIdentifier: locale.identifier) ?? locale.identifier
     }
 
@@ -263,9 +376,13 @@ struct TaskChatRequest {
         Board facts:
         \(snapshot.promptSummary)
 
+        \(context?.promptSummary ?? "Current WIP Coach context: None")
+
         Answer requirements:
         - Answer the current user question directly.
         - Treat the board facts and deterministic metrics as authoritative.
+        - Treat the Current WIP Coach context as authoritative for questions about the current recommendation, WIP pressure, why this task, whether to pull work, what to finish first, blockers, active risks, or reducing WIP.
+        - For To Do waiting questions, use To Do waiting age rather than created date.
         - Use exact counts, task titles, dates, and durations from the facts.
         - If the facts do not contain enough information, say what is missing.
         - Write the answer and metric summary in the response language unless the user clearly asks in another language. Keep task titles exactly as written.
@@ -303,6 +420,9 @@ struct TaskChatBoardSnapshot {
     private let doneLastMonth: [CompletedTaskFact]
     private let doneThisWeek: [CompletedTaskFact]
     private let doneLastWeek: [CompletedTaskFact]
+    private let todoTasks: [TaskItem]
+    private let staleToDoTasks: [TaskItem]
+    private let oldestToDoTask: TaskItem?
     private let blockedTasks: [TaskItem]
     private let longestToClose: CompletedTaskFact?
     private let averageCloseDuration: TimeInterval?
@@ -341,6 +461,18 @@ struct TaskChatBoardSnapshot {
         let averageCloseDuration = completedTasks.isEmpty
             ? nil
             : completedTasks.map(\.duration).reduce(0, +) / Double(completedTasks.count)
+        let todoTasks = tasks
+            .filter { !$0.isArchived && $0.status == .todo }
+            .sorted { lhs, rhs in
+                if TaskAgingEvaluator.toDoSince(for: lhs) != TaskAgingEvaluator.toDoSince(for: rhs) {
+                    return TaskAgingEvaluator.toDoSince(for: lhs) < TaskAgingEvaluator.toDoSince(for: rhs)
+                }
+                if lhs.priority.sortOrder != rhs.priority.sortOrder {
+                    return lhs.priority.sortOrder < rhs.priority.sortOrder
+                }
+                return lhs.createdAt < rhs.createdAt
+            }
+        let toDoWaitingSummary = TaskAgingEvaluator.evaluateToDoWaiting(tasks: tasks, now: now)
         let blockedTasks = tasks.filter { !$0.isArchived && $0.status == .inProgress && $0.isBlocked }
 
         self.now = now
@@ -358,6 +490,9 @@ struct TaskChatBoardSnapshot {
         self.doneLastMonth = doneLastMonth
         self.doneThisWeek = doneThisWeek
         self.doneLastWeek = doneLastWeek
+        self.todoTasks = todoTasks
+        self.staleToDoTasks = toDoWaitingSummary.staleTasks
+        self.oldestToDoTask = toDoWaitingSummary.oldestTask
         self.blockedTasks = blockedTasks
         self.longestToClose = longestToClose
         self.averageCloseDuration = averageCloseDuration
@@ -365,6 +500,9 @@ struct TaskChatBoardSnapshot {
         self.visualizationsByKind = Self.makeVisualizations(
             tasks: tasks,
             currentTasks: currentTasks,
+            todoTasks: todoTasks,
+            staleToDoTasks: toDoWaitingSummary.staleTasks,
+            oldestToDoTask: toDoWaitingSummary.oldestTask,
             visibleDoneTasks: visibleDoneTasks,
             archivedDoneTasks: archivedDoneTasks,
             completedTasks: completedTasks,
@@ -397,11 +535,14 @@ struct TaskChatBoardSnapshot {
         - Closed tasks are tasks currently in Done, including archived Done tasks.
         - Closed date is finalizedAt when present, otherwise updatedAt.
         - Time to close means createdAt to closed date.
+        - To Do waiting time means time since the task last entered To Do.
         - This month is \(Self.dateText(monthStart)) through \(Self.dateText(calendar.date(byAdding: .day, value: -1, to: monthEnd) ?? monthEnd)).
 
         Deterministic metrics:
         - Current visible tasks: \(currentTasks.count + visibleDoneTasks.count)
         - To Do: \(tasks.filter { !$0.isArchived && $0.status == .todo }.count)
+        - Stale To Do tasks waiting \(TaskAgingEvaluator.defaultToDoWaitingDays)+ days: \(staleToDoTasks.count)
+        - Oldest To Do waiting time: \(oldestToDoTask.map { Self.durationText(now.timeIntervalSince(TaskAgingEvaluator.toDoSince(for: $0))) + " - " + Self.normalized($0.title, maxLength: 90) } ?? "No To Do tasks.")
         - In Progress: \(tasks.filter { !$0.isArchived && $0.status == .inProgress }.count)
         - Done visible: \(visibleDoneTasks.count)
         - Done archived: \(archivedDoneTasks.count)
@@ -509,6 +650,27 @@ struct TaskChatBoardSnapshot {
                 metricSummary: metricSummary,
                 dateRange: Self.dateRangeText(from: previousWeekStart, through: dayBefore(weekStart)),
                 excludedSummary: String(localized: "Tasks outside this date range.")
+            )
+        }
+
+        if containsAny(text, ["to do", "todo", "backlog"]) &&
+            containsAny(text, ["wait", "waiting", "age", "aging", "oldest", "stale", "longest"]) {
+            return makeEvidence(
+                metricSummary: metricSummary,
+                dateRange: nil,
+                countLabel: String(localized: "Tasks counted"),
+                countValue: todoTasks.count.formatted(),
+                excludedSummary: String(localized: "Archived, active, and completed tasks."),
+                includedTaskIDs: taskIDs(todoTasks),
+                extraRows: [
+                    (String(localized: "Stale To Do"), staleToDoTasks.count.formatted()),
+                    (
+                        String(localized: "Oldest"),
+                        oldestToDoTask.map {
+                            Self.durationText(now.timeIntervalSince(TaskAgingEvaluator.toDoSince(for: $0)))
+                        } ?? String(localized: "None")
+                    )
+                ]
             )
         }
 
@@ -667,6 +829,9 @@ struct TaskChatBoardSnapshot {
     private static func makeVisualizations(
         tasks: [TaskItem],
         currentTasks: [TaskItem],
+        todoTasks: [TaskItem],
+        staleToDoTasks: [TaskItem],
+        oldestToDoTask: TaskItem?,
         visibleDoneTasks: [TaskItem],
         archivedDoneTasks: [TaskItem],
         completedTasks: [CompletedTaskFact],
@@ -691,6 +856,12 @@ struct TaskChatBoardSnapshot {
             ),
             .priorityBreakdown: priorityBreakdownVisualization(tasks: tasks),
             .activeAging: activeAgingVisualization(tasks: currentTasks, now: now),
+            .toDoWaiting: toDoWaitingVisualization(
+                tasks: todoTasks,
+                staleTasks: staleToDoTasks,
+                oldestTask: oldestToDoTask,
+                now: now
+            ),
             .completedThisMonth: completedThisMonthVisualization(tasks: doneThisMonth, monthText: monthText),
             .slowestClosed: slowestClosedVisualization(
                 tasks: completedTasks,
@@ -830,6 +1001,73 @@ struct TaskChatBoardSnapshot {
                             durationText(age),
                             task.priority.localizedName,
                             task.isBlocked ? String(localized: "Blocked") : String(localized: "Active")
+                        ],
+                        taskID: task.id
+                    )
+                }
+            )
+        )
+    }
+
+    private static func toDoWaitingVisualization(
+        tasks: [TaskItem],
+        staleTasks: [TaskItem],
+        oldestTask: TaskItem?,
+        now: Date
+    ) -> TaskChatVisualization {
+        let rankedTasks = tasks.sorted { lhs, rhs in
+            let lhsAge = now.timeIntervalSince(TaskAgingEvaluator.toDoSince(for: lhs))
+            let rhsAge = now.timeIntervalSince(TaskAgingEvaluator.toDoSince(for: rhs))
+            if lhsAge != rhsAge {
+                return lhsAge > rhsAge
+            }
+            if lhs.priority.sortOrder != rhs.priority.sortOrder {
+                return lhs.priority.sortOrder < rhs.priority.sortOrder
+            }
+            return lhs.createdAt < rhs.createdAt
+        }
+
+        return TaskChatVisualization(
+            kind: .toDoWaiting,
+            title: String(localized: "To Do Waiting"),
+            subtitle: rankedTasks.isEmpty
+                ? String(localized: "No To Do tasks are waiting right now.")
+                : String(localized: "\(rankedTasks.count.formatted()) To Do tasks ordered by waiting time"),
+            metricCards: [
+                TaskChatMetricCard(label: String(localized: "To Do"), value: rankedTasks.count.formatted(), systemImage: "circle.fill", tint: .todo),
+                TaskChatMetricCard(label: String(localized: "Stale"), value: staleTasks.count.formatted(), systemImage: "clock.badge.exclamationmark", tint: staleTasks.isEmpty ? .neutral : .high),
+                TaskChatMetricCard(
+                    label: String(localized: "Oldest"),
+                    value: oldestTask.map { durationText(now.timeIntervalSince(TaskAgingEvaluator.toDoSince(for: $0))) } ?? String(localized: "None"),
+                    systemImage: "hourglass",
+                    tint: .neutral
+                )
+            ],
+            bars: rankedTasks.prefix(5).map { task in
+                let age = now.timeIntervalSince(TaskAgingEvaluator.toDoSince(for: task))
+                return TaskChatBar(
+                    label: normalized(task.title, maxLength: 34),
+                    value: age,
+                    displayValue: durationText(age),
+                    tint: staleTasks.contains(where: { $0.id == task.id }) ? .high : .todo
+                )
+            },
+            table: TaskChatTable(
+                columns: [
+                    String(localized: "Task"),
+                    String(localized: "Waiting"),
+                    String(localized: "Priority"),
+                    String(localized: "State")
+                ],
+                rows: rankedTasks.prefix(6).map { task in
+                    let age = now.timeIntervalSince(TaskAgingEvaluator.toDoSince(for: task))
+                    let isStale = staleTasks.contains { $0.id == task.id }
+                    return TaskChatTableRow(
+                        values: [
+                            normalized(task.title, maxLength: 44),
+                            durationText(age),
+                            task.priority.localizedName,
+                            isStale ? String(localized: "Stale") : String(localized: "Ready")
                         ],
                         taskID: task.id
                     )
@@ -1166,10 +1404,13 @@ struct TaskChatBoardSnapshot {
     private static func currentTaskLine(for task: TaskItem, now: Date) -> String {
         let activeSince = task.status == .inProgress ? (task.enteredInProgressAt ?? task.lastStatusChange) : nil
         let activeAge = activeSince.map { durationText(now.timeIntervalSince($0)) } ?? String(localized: "not active")
+        let toDoAge = task.status == .todo
+            ? durationText(now.timeIntervalSince(TaskAgingEvaluator.toDoSince(for: task)))
+            : String(localized: "not in To Do")
         let description = normalized(task.desc, maxLength: 140)
         let completionCriteria = normalized(task.completionCriteria, maxLength: 120)
 
-        return "- id: \(task.id.uuidString) | title: \(normalized(task.title, maxLength: 90)) | status: \(task.status.rawValue) | priority: \(task.priority.rawValue) | blocked: \(task.isBlocked ? "yes" : "no") | created: \(dateText(task.createdAt)) | active age: \(activeAge) | description: \(description.isEmpty ? "none" : description) | definition of done: \(completionCriteria.isEmpty ? "none" : completionCriteria)"
+        return "- id: \(task.id.uuidString) | title: \(normalized(task.title, maxLength: 90)) | status: \(task.status.rawValue) | priority: \(task.priority.rawValue) | blocked: \(task.isBlocked ? "yes" : "no") | created: \(dateText(task.createdAt)) | To Do waiting age: \(toDoAge) | active age: \(activeAge) | description: \(description.isEmpty ? "none" : description) | definition of done: \(completionCriteria.isEmpty ? "none" : completionCriteria)"
     }
 
     private static func weeklyBuckets(completedTasks: [CompletedTaskFact], now: Date, calendar: Calendar, count: Int = 6) -> [TaskChatTimeBucket] {
@@ -1290,6 +1531,10 @@ enum TaskChatService {
             return response
         }
 
+        if let response = deterministicWIPContextResponse(for: request.question, context: request.context) {
+            return response
+        }
+
         let session = LanguageModelSession(
             instructions: """
             You are the private on-device task analyst in a Personal Kanban app.
@@ -1357,6 +1602,60 @@ enum TaskChatService {
             return simpleResponse(String(localized: "You're welcome."))
         }
         return nil
+    }
+
+    private static func deterministicWIPContextResponse(for question: String, context: TaskChatContext?) -> TaskChatResponse? {
+        guard let context, asksAboutPullCapacity(question) else { return nil }
+
+        let answer: String
+        let referencedTaskIDs: [UUID]
+
+        switch context.action {
+        case .pullNextTask:
+            var lines = [
+                String(localized: "You can safely pull one more task, but keep active work tight so current tasks can reach done.")
+            ]
+            if let recommendedTaskTitle = context.recommendedTaskTitle {
+                lines.append(String(localized: "Recommended task: \(recommendedTaskTitle)."))
+            }
+            answer = lines.joined(separator: "\n")
+            referencedTaskIDs = context.recommendedTaskID.map { [$0] } ?? []
+        case .unblockTask:
+            answer = String(localized: "Blocked tasks need attention before more work is pulled.")
+            referencedTaskIDs = context.recommendedTaskID.map { [$0] } ?? []
+        case .focusCurrentTask:
+            answer = context.reason
+            referencedTaskIDs = context.recommendedTaskID.map { [$0] } ?? []
+        case .reduceWIP:
+            answer = context.reason
+            referencedTaskIDs = context.recommendedTaskID.map { [$0] } ?? []
+        case .breakDownTask:
+            answer = context.reason
+            referencedTaskIDs = context.recommendedTaskID.map { [$0] } ?? []
+        case .noActionNeeded:
+            answer = context.reason
+            referencedTaskIDs = []
+        }
+
+        return TaskChatResponse(
+            answer: answer,
+            metricSummary: context.headline,
+            referencedTaskIDs: referencedTaskIDs,
+            proposedActions: [],
+            visualizations: [],
+            evidence: TaskChatEvidence(
+                rows: [
+                    TaskChatEvidenceRow(label: String(localized: "Metric"), value: context.headline)
+                ],
+                includedTaskIDs: []
+            )
+        )
+    }
+
+    private static func asksAboutPullCapacity(_ question: String) -> Bool {
+        let text = question.evidenceSearchText
+        guard containsAny(text, ["pull", "start", "take", "bring"]) else { return false }
+        return containsAny(text, ["work", "task", "more", "another", "next", "right now", "now"])
     }
 
     private static func smallTalkPhrase(for question: String) -> String {
@@ -1503,6 +1802,9 @@ enum TaskChatService {
         if text.contains("blocked") {
             return [.blockedTasks]
         }
+        if containsAny(text, ["to do", "todo", "backlog"]) && containsAny(text, ["wait", "waiting", "age", "aging", "oldest", "stale", "longest"]) {
+            return [.toDoWaiting]
+        }
         if text.contains("priority") {
             return [.priorityBreakdown]
         }
@@ -1640,5 +1942,43 @@ private extension String {
 private extension Array {
     func limited(to count: Int) -> [Element] {
         Array(self[0..<Swift.min(count, self.count)])
+    }
+}
+
+private extension WIPPressureLevel {
+    var promptName: String {
+        switch self {
+        case .hasRoom:
+            return "Has room"
+        case .healthy:
+            return "Healthy"
+        case .nearLimit:
+            return "Near limit"
+        case .atLimit:
+            return "At limit"
+        case .overloaded:
+            return "Overloaded"
+        case .blocked:
+            return "Blocked"
+        }
+    }
+}
+
+private extension WIPCoachActionType {
+    var promptName: String {
+        switch self {
+        case .pullNextTask:
+            return "Pull next task"
+        case .focusCurrentTask:
+            return "Focus current task"
+        case .unblockTask:
+            return "Unblock task"
+        case .reduceWIP:
+            return "Reduce WIP"
+        case .breakDownTask:
+            return "Break down task"
+        case .noActionNeeded:
+            return "No action needed"
+        }
     }
 }

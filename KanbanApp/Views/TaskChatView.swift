@@ -39,6 +39,7 @@ struct TaskChatMessage: Identifiable, Equatable {
 
 struct TaskChatView: View {
     let tasks: [TaskItem]
+    let context: TaskChatContext?
     @Binding var messages: [TaskChatMessage]
 
     @Environment(\.modelContext) private var modelContext
@@ -60,8 +61,22 @@ struct TaskChatView: View {
 
     private let bottomID = "task-chat-bottom"
 
+    init(tasks: [TaskItem], context: TaskChatContext? = nil, messages: Binding<[TaskChatMessage]>) {
+        self.tasks = tasks
+        self.context = context
+        self._messages = messages
+    }
+
     private var canSend: Bool {
         !draft.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && isAvailable && !isResponding
+    }
+
+    private var validContext: TaskChatContext? {
+        guard let context else { return nil }
+        guard let recommendedTaskID = context.recommendedTaskID else { return context }
+        guard let task = tasks.first(where: { $0.id == recommendedTaskID }) else { return nil }
+        guard task.status.rawValue == context.recommendedTaskStatusRaw else { return nil }
+        return context
     }
 
     private var availability: QuickCaptureAvailability {
@@ -134,6 +149,7 @@ struct TaskChatView: View {
                     .presentationDragIndicator(.visible)
             }
             .onAppear {
+                seedContextIntroIfNeeded()
                 refreshRecommendedPromptsIfNeeded()
                 isInputFocused = isAvailable
             }
@@ -227,7 +243,11 @@ struct TaskChatView: View {
     }
 
     private var displayedStarterPrompts: [TaskChatStarterPrompt] {
-        recommendedPrompts.isEmpty
+        if let validContext {
+            return TaskChatStarterPrompt.contextualPrompts(for: validContext)
+        }
+
+        return recommendedPrompts.isEmpty
             ? Array(TaskChatStarterPrompt.availablePrompts.prefix(3))
             : recommendedPrompts
     }
@@ -554,7 +574,8 @@ struct TaskChatView: View {
             let request = TaskChatRequest(
                 question: question,
                 previousTurns: Array(previousTurns),
-                tasks: tasks
+                tasks: tasks,
+                context: validContext
             )
             let response = try await TaskChatService.respond(to: request)
             let answer = response.answer.isEmpty
@@ -581,6 +602,7 @@ struct TaskChatView: View {
     }
 
     private func refreshRecommendedPromptsIfNeeded() {
+        guard validContext == nil else { return }
         guard recommendedPrompts.isEmpty else { return }
         recommendedPrompts = Array(TaskChatStarterPrompt.availablePrompts.shuffled().prefix(3))
     }
@@ -600,7 +622,19 @@ struct TaskChatView: View {
         expandedEvidenceMessageIDs.removeAll()
         pendingAction = nil
         isConfirmingAction = false
+        seedContextIntroIfNeeded()
         isInputFocused = isAvailable
+    }
+
+    private func seedContextIntroIfNeeded() {
+        guard messages.isEmpty, let validContext else { return }
+        messages.append(
+            TaskChatMessage(
+                role: .assistant,
+                text: validContext.introText,
+                referencedTaskIDs: validContext.recommendedTaskID.map { [$0] } ?? []
+            )
+        )
     }
 
     private func resolvedReferencedTasks(for message: TaskChatMessage) -> [TaskItem] {
@@ -1160,6 +1194,8 @@ private struct TaskChatVisualizationView: View {
             return "chart.bar.xaxis"
         case .activeAging:
             return "clock.badge"
+        case .toDoWaiting:
+            return "clock.badge.exclamationmark"
         case .completedThisMonth:
             return "calendar.badge.checkmark"
         case .slowestClosed:

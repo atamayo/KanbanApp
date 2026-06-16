@@ -88,6 +88,12 @@ struct MainTabView: View {
                             withAnimation(AppStyle.Motion.snappy) {
                                 selectedTab = .tasks
                             }
+                        },
+                        onReviewToDoTasks: {
+                            selectedSegment = .todo
+                            withAnimation(AppStyle.Motion.snappy) {
+                                selectedTab = .tasks
+                            }
                         }
                     )
                     .toolbar {

@@ -2,30 +2,18 @@ import SwiftData
 import SwiftUI
 
 struct WIPCoachView: View {
-    private enum WIPCoachSheet: Identifiable {
-        case task(TaskItem)
-        case chat
-
-        var id: String {
-            switch self {
-            case .task(let task):
-                return "task-\(task.id.uuidString)"
-            case .chat:
-                return "task-chat"
-            }
-        }
-    }
-
     let allTasks: [TaskItem]
     let maxActiveTasks: Int
     let isFocusGuardEnabled: Bool
     let onReviewActiveTasks: () -> Void
+    let onReviewToDoTasks: () -> Void
 
     @AppStorage("wipLimitHitCount") private var wipLimitHitCount = 0
     @AppStorage("taskAgingNotificationDayThreshold") private var taskAgingNotificationDayThreshold = 3
     @AppStorage("taskStalledNotificationDayThreshold") private var taskStalledNotificationDayThreshold = 5
     @Environment(\.modelContext) private var modelContext
-    @State private var activeSheet: WIPCoachSheet?
+    @State private var activeTask: TaskItem?
+    @State private var isTaskChatPresented = false
     @State private var taskChatMessages: [TaskChatMessage] = []
     @State private var generatedCoachCopy: WIPCoachCopyDraft?
     @State private var generatedCoachCopySignature: String?
@@ -60,6 +48,14 @@ struct WIPCoachView: View {
     private var validGeneratedCopy: WIPCoachCopyDraft? {
         guard generatedCoachCopySignature == coachCopyRequest.signature else { return nil }
         return generatedCoachCopy
+    }
+
+    private var taskChatContext: TaskChatContext {
+        TaskChatContext(
+            recommendation: recommendation,
+            headline: displayedHeadline,
+            reason: displayedRecommendationReason
+        )
     }
 
     private var displayedHeadline: String {
@@ -98,6 +94,21 @@ struct WIPCoachView: View {
         agingSummary.stalledTasks
     }
 
+    private var toDoWaitingSummary: ToDoWaitingSummary {
+        TaskAgingEvaluator.evaluateToDoWaiting(
+            tasks: allTasks,
+            now: Date()
+        )
+    }
+
+    private var staleToDoTasks: [TaskItem] {
+        toDoWaitingSummary.staleTasks
+    }
+
+    private var oldestToDoTask: TaskItem? {
+        toDoWaitingSummary.oldestTask
+    }
+
     private var oldestInProgressTask: TaskItem? {
         allTasks
             .filter { $0.status == .inProgress && !$0.isBlocked }
@@ -134,20 +145,30 @@ struct WIPCoachView: View {
                     flowReviewSection
                     trendSection
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal, AppStyle.Spacing.outerHorizontal)
                 .padding(.top, AppStyle.Spacing.outerVertical)
                 .padding(.bottom, AppStyle.Spacing.outerVertical + AppStyle.Spacing.emptyBottomSpacer)
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
 
             taskChatButton
                 .padding(.trailing, AppStyle.Spacing.fabPadding)
                 .padding(.bottom, AppStyle.Spacing.fabPadding)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(AppStyle.Colors.background)
         .navigationTitle("WIP Coach")
         .navigationBarTitleDisplayMode(.inline)
-        .sheet(item: $activeSheet) { sheet in
-            sheetContent(for: sheet)
+        .sheet(item: $activeTask) { task in
+            TaskDetailView(task: task)
+                .presentationDetents([.large])
+                .presentationDragIndicator(.visible)
+        }
+        .sheet(isPresented: $isTaskChatPresented) {
+            TaskChatView(tasks: allTasks, context: taskChatContext, messages: $taskChatMessages)
+                .presentationDetents([.large])
+                .presentationDragIndicator(.visible)
         }
         .task(id: coachCopyRequest.signature) {
             await refreshGeneratedCoachCopy(for: coachCopyRequest)
@@ -156,7 +177,7 @@ struct WIPCoachView: View {
 
     private var taskChatButton: some View {
         Button {
-            activeSheet = .chat
+            isTaskChatPresented = true
         } label: {
             Image(systemName: "bubble.left.and.text.bubble.right.fill")
                 .font(AppStyle.Typography.fabIcon)
@@ -174,20 +195,6 @@ struct WIPCoachView: View {
         .accessibilityLabel("Ask about tasks")
     }
 
-    @ViewBuilder
-    private func sheetContent(for sheet: WIPCoachSheet) -> some View {
-        switch sheet {
-        case .task(let task):
-            TaskDetailView(task: task)
-                .presentationDetents([.large])
-                .presentationDragIndicator(.visible)
-        case .chat:
-            TaskChatView(tasks: allTasks, messages: $taskChatMessages)
-                .presentationDetents([.medium, .large])
-                .presentationDragIndicator(.visible)
-        }
-    }
-
     private var flowReviewSection: some View {
         VStack(alignment: .leading, spacing: AppStyle.Spacing.sectionToCard) {
             Text("Flow Review")
@@ -199,7 +206,17 @@ struct WIPCoachView: View {
                     count: blockedInProgressTask == nil ? 0 : allTasks.filter { $0.status == .inProgress && $0.isBlocked }.count,
                     tint: AppStyle.Colors.blocked,
                     icon: "pause.circle.fill",
-                    description: blockedInProgressTask == nil ? String(localized: "No active blockers right now.") : String(localized: "Blocked tasks need attention before more work is pulled.")
+                    description: blockedInProgressTask == nil ? String(localized: "No active blockers right now.") : String(localized: "Blocked tasks need attention before more work is pulled."),
+                    action: onReviewActiveTasks
+                )
+
+                flowReviewCard(
+                    title: "Waiting To Do",
+                    count: staleToDoTasks.count,
+                    tint: AppStyle.Colors.Status.todo,
+                    icon: "clock.badge.exclamationmark",
+                    description: waitingToDoDescription,
+                    action: onReviewToDoTasks
                 )
 
                 flowReviewCard(
@@ -207,7 +224,8 @@ struct WIPCoachView: View {
                     count: agingInProgressTasks.count,
                     tint: AppStyle.Colors.Priority.medium,
                     icon: "clock.badge.exclamationmark",
-                    description: agingInProgressTasks.isEmpty ? String(localized: "Nothing is drifting yet.") : String(localized: "These tasks are staying active long enough to risk drag.")
+                    description: agingInProgressTasks.isEmpty ? String(localized: "Nothing is drifting yet.") : String(localized: "These tasks are staying active long enough to risk drag."),
+                    action: onReviewActiveTasks
                 )
 
                 flowReviewCard(
@@ -215,10 +233,12 @@ struct WIPCoachView: View {
                     count: stalledInProgressTasks.count,
                     tint: AppStyle.Colors.Priority.high,
                     icon: "exclamationmark.circle.fill",
-                    description: stalledInProgressTasks.isEmpty ? String(localized: "No stalled work right now.") : String(localized: "These tasks have sat too long in progress and may need a decision.")
+                    description: stalledInProgressTasks.isEmpty ? String(localized: "No stalled work right now.") : String(localized: "These tasks have sat too long in progress and may need a decision."),
+                    action: onReviewActiveTasks
                 )
             }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     private var trendSection: some View {
@@ -258,6 +278,7 @@ struct WIPCoachView: View {
                 )
             }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     private var summaryCard: some View {
@@ -282,6 +303,7 @@ struct WIPCoachView: View {
             }
         }
         .padding(AppStyle.Spacing.large)
+        .frame(maxWidth: .infinity, alignment: .leading)
         .accentCardStyle(tint: accentColor)
         .accessibilityElement(children: .combine)
         .accessibilityLabel(String(localized: "Work in progress review. \(recommendation.stats.activeCount) of \(recommendation.stats.wipLimit) tasks active. \(recommendation.stats.slotsLeft) slots left. \(recommendation.stats.blockedCount) blocked tasks. \(recommendation.stats.readyCount) ready tasks."))
@@ -319,8 +341,10 @@ struct WIPCoachView: View {
                 actionButtons
             }
             .padding(AppStyle.Spacing.large)
+            .frame(maxWidth: .infinity, alignment: .leading)
             .cardStyle()
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     @ViewBuilder
@@ -341,7 +365,7 @@ struct WIPCoachView: View {
         case .focusCurrentTask:
             if let task = recommendation.recommendedTask {
                 Button {
-                    activeSheet = .task(task)
+                    activeTask = task
                 } label: {
                     Label("Focus Task", systemImage: "scope")
                         .frame(maxWidth: .infinity, minHeight: AppStyle.Shapes.iconBadgeSmall)
@@ -353,7 +377,7 @@ struct WIPCoachView: View {
         case .unblockTask:
             if let task = recommendation.recommendedTask {
                 Button {
-                    activeSheet = .task(task)
+                    activeTask = task
                 } label: {
                     Label("Open Blocked Task", systemImage: "pause.circle.fill")
                         .frame(maxWidth: .infinity, minHeight: AppStyle.Shapes.iconBadgeSmall)
@@ -373,7 +397,7 @@ struct WIPCoachView: View {
         case .breakDownTask:
             if let task = recommendation.recommendedTask {
                 Button {
-                    activeSheet = .task(task)
+                    activeTask = task
                 } label: {
                     Label("Break Down Task", systemImage: "list.bullet.indent")
                         .frame(maxWidth: .infinity, minHeight: AppStyle.Shapes.iconBadgeSmall)
@@ -401,11 +425,12 @@ struct WIPCoachView: View {
                             icon: "circle",
                             tint: AppStyle.Colors.Status.todo
                         ) {
-                            activeSheet = .task(candidate.task)
+                            activeTask = candidate.task
                         }
                     }
                 }
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 
@@ -424,11 +449,12 @@ struct WIPCoachView: View {
                             icon: task.isBlocked ? "pause.circle.fill" : "clock.fill",
                             tint: task.isBlocked ? AppStyle.Colors.blocked : AppStyle.Colors.Status.inProgress
                         ) {
-                            activeSheet = .task(task)
+                            activeTask = task
                         }
                     }
                 }
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 
@@ -486,8 +512,8 @@ struct WIPCoachView: View {
         .accessibilityHint("Opens task details.")
     }
 
-    private func flowReviewCard(title: LocalizedStringKey, count: Int, tint: Color, icon: String, description: String) -> some View {
-        Button(action: onReviewActiveTasks) {
+    private func flowReviewCard(title: LocalizedStringKey, count: Int, tint: Color, icon: String, description: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
             HStack(alignment: .top, spacing: AppStyle.Spacing.regular) {
                 ZStack {
                     RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous)
@@ -519,9 +545,23 @@ struct WIPCoachView: View {
                 }
             }
             .padding(AppStyle.Spacing.cardContentPadding)
+            .frame(maxWidth: .infinity, alignment: .leading)
             .cardStyle(cornerRadius: AppStyle.Shapes.cardCornerRadius)
         }
         .buttonStyle(.plain)
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    private var waitingToDoDescription: String {
+        guard let oldestToDoTask else {
+            return String(localized: "No To Do tasks are waiting right now.")
+        }
+
+        let age = toDoAgeText(for: oldestToDoTask)
+        if staleToDoTasks.isEmpty {
+            return String(localized: "Oldest To Do task: \(oldestToDoTask.title), waiting \(age).")
+        }
+        return String(localized: "Oldest waiting task: \(oldestToDoTask.title), waiting \(age).")
     }
 
     private func trendCard(label: LocalizedStringKey, value: String, tint: Color, note: String) -> some View {
@@ -546,16 +586,12 @@ struct WIPCoachView: View {
 
     private func activeAgeText(for task: TaskItem) -> String {
         let activeSince = TaskAgingEvaluator.activeSince(for: task)
-        let days = Int(Date().timeIntervalSince(activeSince) / (24 * 60 * 60))
-        if days > 0 {
-            return String(localized: "\(days)d", comment: "Short duration in days")
-        }
-        let hours = Int(Date().timeIntervalSince(activeSince) / (60 * 60))
-        if hours > 0 {
-            return String(localized: "\(hours)h", comment: "Short duration in hours")
-        }
-        let minutes = Int(Date().timeIntervalSince(activeSince) / 60)
-        return String(localized: "\(max(minutes, 1))m", comment: "Short duration in minutes")
+        return TaskAgingEvaluator.shortDurationText(for: Date().timeIntervalSince(activeSince))
+    }
+
+    private func toDoAgeText(for task: TaskItem) -> String {
+        let toDoSince = TaskAgingEvaluator.toDoSince(for: task)
+        return TaskAgingEvaluator.shortDurationText(for: Date().timeIntervalSince(toDoSince))
     }
 
     private func pullTask(_ task: TaskItem) {
@@ -566,7 +602,7 @@ struct WIPCoachView: View {
         task.order = nextOrder
         task.updatedAt = Date()
         try? modelContext.save()
-        activeSheet = .task(task)
+        activeTask = task
     }
 
     @MainActor
@@ -596,7 +632,8 @@ struct WIPCoachView: View {
             allTasks: WIPPreviewData.overloaded,
             maxActiveTasks: 3,
             isFocusGuardEnabled: true,
-            onReviewActiveTasks: {}
+            onReviewActiveTasks: {},
+            onReviewToDoTasks: {}
         )
     }
     .modelContainer(for: TaskItem.self, inMemory: true)

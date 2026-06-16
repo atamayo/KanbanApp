@@ -5,6 +5,119 @@ struct TaskChatStarterPrompt: Identifiable {
     let title: String
     let requestText: String
 
+    static func contextualPrompts(for context: TaskChatContext) -> [TaskChatStarterPrompt] {
+        switch context.action {
+        case .pullNextTask:
+            return [
+                TaskChatStarterPrompt(
+                    id: "wip-why-this-task",
+                    title: String(localized: "Why this task?"),
+                    requestText: "Explain why the WIP Coach recommended this task."
+                ),
+                TaskChatStarterPrompt(
+                    id: "wip-can-pull",
+                    title: String(localized: "Can I pull more work?"),
+                    requestText: "Can I safely pull more work right now?"
+                ),
+                TaskChatStarterPrompt(
+                    id: "wip-active-risks",
+                    title: String(localized: "Show active risks"),
+                    requestText: "Show active risks in my current WIP."
+                )
+            ]
+        case .focusCurrentTask:
+            return [
+                TaskChatStarterPrompt(
+                    id: "wip-finish-first",
+                    title: String(localized: "What should I finish first?"),
+                    requestText: "Which active task should I finish first based on the current WIP recommendation?"
+                ),
+                TaskChatStarterPrompt(
+                    id: "wip-why-focus",
+                    title: String(localized: "Why focus now?"),
+                    requestText: "Explain why I should focus current work now."
+                ),
+                TaskChatStarterPrompt(
+                    id: "wip-active-risks",
+                    title: String(localized: "Show active risks"),
+                    requestText: "Show active risks in my current WIP."
+                )
+            ]
+        case .unblockTask:
+            return [
+                TaskChatStarterPrompt(
+                    id: "wip-blocking-flow",
+                    title: String(localized: "What is blocking flow?"),
+                    requestText: "What is blocking my flow right now?"
+                ),
+                TaskChatStarterPrompt(
+                    id: "wip-finish-first",
+                    title: String(localized: "What should I finish first?"),
+                    requestText: "Which active task should I finish first based on the current WIP recommendation?"
+                ),
+                TaskChatStarterPrompt(
+                    id: "wip-active-risks",
+                    title: String(localized: "Show active risks"),
+                    requestText: "Show active risks in my current WIP."
+                )
+            ]
+        case .reduceWIP:
+            return [
+                TaskChatStarterPrompt(
+                    id: "wip-reduce",
+                    title: String(localized: "Help me reduce WIP"),
+                    requestText: "Help me reduce WIP based on the current recommendation."
+                ),
+                TaskChatStarterPrompt(
+                    id: "wip-finish-first",
+                    title: String(localized: "What should I finish first?"),
+                    requestText: "Which active task should I finish first based on the current WIP recommendation?"
+                ),
+                TaskChatStarterPrompt(
+                    id: "wip-active-risks",
+                    title: String(localized: "Show active risks"),
+                    requestText: "Show active risks in my current WIP."
+                )
+            ]
+        case .breakDownTask:
+            return [
+                TaskChatStarterPrompt(
+                    id: "wip-break-down",
+                    title: String(localized: "How should I break this down?"),
+                    requestText: "How should I break down the recommended task?"
+                ),
+                TaskChatStarterPrompt(
+                    id: "wip-finish-first",
+                    title: String(localized: "What should I finish first?"),
+                    requestText: "Which active task should I finish first based on the current WIP recommendation?"
+                ),
+                TaskChatStarterPrompt(
+                    id: "wip-active-risks",
+                    title: String(localized: "Show active risks"),
+                    requestText: "Show active risks in my current WIP."
+                )
+            ]
+        case .noActionNeeded:
+            return [
+                TaskChatStarterPrompt(
+                    id: "wip-next",
+                    title: String(localized: "What should I do next?"),
+                    requestText: "What should I do next from the current WIP state?"
+                ),
+                TaskChatStarterPrompt(
+                    id: "wip-can-pull",
+                    title: String(localized: "Can I pull more work?"),
+                    requestText: "Can I safely pull more work right now?"
+                ),
+                TaskChatStarterPrompt(
+                    id: "wip-active-risks",
+                    title: String(localized: "Show active risks"),
+                    requestText: "Show active risks in my current WIP."
+                )
+            ]
+        }
+    }
+
     static var availablePrompts: [TaskChatStarterPrompt] {
         [
             TaskChatStarterPrompt(
