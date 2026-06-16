@@ -45,6 +45,8 @@
 		A9D100000000000000000004 /* TaskChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D100000000000000000003 /* TaskChatView.swift */; };
 		A9D100000000000000000006 /* TaskChatStarterPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D100000000000000000005 /* TaskChatStarterPrompt.swift */; };
 		B8A7D0D8D7304BF4B02921A1 /* PersistenceBootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A7D0D7D7304BF4B02921A1 /* PersistenceBootstrap.swift */; };
+		BADDCAFE0000000000000001 /* TaskChatPromptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDCAFE0000000000000002 /* TaskChatPromptTests.swift */; };
+		BADDCAFE0000000000000011 /* TaskChatServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDCAFE0000000000000012 /* TaskChatServiceTests.swift */; };
 		C46D8078D30040238CCDE162FB2FE17E /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE822CFBF944080AA7DC05248E4FCB2 /* MainTabView.swift */; };
 		CC88F17F1EB745D7B67C1DED74B18C18 /* AllTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC21578A5014A16A3256BF3F502DDAC /* AllTasksView.swift */; };
 		D4C3B2A10000000000000001 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C3B2A20000000000000002 /* CustomAlertView.swift */; };
@@ -57,8 +59,6 @@
 		F00D00000000000000000005 /* WIPCoachCopyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00D00000000000000000006 /* WIPCoachCopyGenerator.swift */; };
 		F10D00000000000000000001 /* AppStoreScreenshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10D00000000000000000002 /* AppStoreScreenshotView.swift */; };
 		FC1578978B8E4651B24C4D809767D49F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9527358144CD4E779E36F571C9E106AD /* SettingsView.swift */; };
-		BADDCAFE0000000000000001 /* TaskChatPromptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDCAFE0000000000000002 /* TaskChatPromptTests.swift */; };
-		BADDCAFE0000000000000011 /* TaskChatServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDCAFE0000000000000012 /* TaskChatServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +115,9 @@
 		A9D100000000000000000005 /* TaskChatStarterPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskChatStarterPrompt.swift; sourceTree = "<group>"; };
 		B8A7D0D6D7304BF4B02921A1 /* KanbanApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KanbanApp.entitlements; sourceTree = "<group>"; };
 		B8A7D0D7D7304BF4B02921A1 /* PersistenceBootstrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceBootstrap.swift; sourceTree = "<group>"; };
+		BADDCAFE0000000000000002 /* TaskChatPromptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskChatPromptTests.swift; sourceTree = "<group>"; };
+		BADDCAFE0000000000000003 /* KanbanAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KanbanAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BADDCAFE0000000000000012 /* TaskChatServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskChatServiceTests.swift; sourceTree = "<group>"; };
 		D4C3B2A20000000000000002 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		DD1100000000000000000002 /* LiveTextScannerSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTextScannerSheet.swift; sourceTree = "<group>"; };
 		E1F2A3B4C5D6000000000002 /* WIPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIPView.swift; sourceTree = "<group>"; };
@@ -125,9 +128,6 @@
 		F00D00000000000000000006 /* WIPCoachCopyGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIPCoachCopyGenerator.swift; sourceTree = "<group>"; };
 		F10D00000000000000000002 /* AppStoreScreenshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreScreenshotView.swift; sourceTree = "<group>"; };
 		FAE822CFBF944080AA7DC05248E4FCB2 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
-		BADDCAFE0000000000000002 /* TaskChatPromptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskChatPromptTests.swift; sourceTree = "<group>"; };
-		BADDCAFE0000000000000003 /* KanbanAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KanbanAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BADDCAFE0000000000000012 /* TaskChatServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskChatServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,15 +246,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BADDCAFE0000000000000007 /* KanbanAppTests */ = {
-			isa = PBXGroup;
-			children = (
-				BADDCAFE0000000000000002 /* TaskChatPromptTests.swift */,
-				BADDCAFE0000000000000012 /* TaskChatServiceTests.swift */,
-			);
-			path = KanbanAppTests;
-			sourceTree = "<group>";
-		};
 		A7C10000000000000000000F /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +263,15 @@
 				A9D100000000000000000001 /* TaskChatService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		BADDCAFE0000000000000007 /* KanbanAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				BADDCAFE0000000000000002 /* TaskChatPromptTests.swift */,
+				BADDCAFE0000000000000012 /* TaskChatServiceTests.swift */,
+			);
+			path = KanbanAppTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -586,7 +586,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Use the camera to scan text and turn it into a task draft.";
 				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = KanbanApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -606,7 +606,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Use the camera to scan text and turn it into a task draft.";
 				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = KanbanApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
