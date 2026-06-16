@@ -1721,7 +1721,7 @@ enum TaskChatService {
     }
 
     private static func allowedActionKinds(for question: String) -> Set<TaskChatActionKind> {
-        let text = question.lowercased()
+        let text = question.evidenceSearchText
         guard !containsAny(text, ["what should", "which task should", "recommend", "suggest", "why", "how many", "add next action", "add a next action", "append next action", "add next step", "add a next step"]) else {
             return []
         }
@@ -1763,8 +1763,8 @@ enum TaskChatService {
             .map { focusedVisualization($0, for: question) }
     }
 
-    private static func inferredVisualizationKinds(for question: String) -> [TaskChatVisualizationKind] {
-        let text = question.lowercased()
+    static func inferredVisualizationKinds(for question: String) -> [TaskChatVisualizationKind] {
+        let text = question.evidenceSearchText
         let asksForVisual = [
             "table",
             "list",
@@ -1805,7 +1805,7 @@ enum TaskChatService {
         if containsAny(text, ["to do", "todo", "backlog"]) && containsAny(text, ["wait", "waiting", "age", "aging", "oldest", "stale", "longest"]) {
             return [.toDoWaiting]
         }
-        if text.contains("priority") {
+        if containsAny(text, ["priority", "priorities"]) {
             return [.priorityBreakdown]
         }
         if text.contains("slowest") || text.contains("longest") || text.contains("longer") || text.contains("took") {
