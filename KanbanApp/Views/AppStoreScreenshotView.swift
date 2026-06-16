@@ -8,6 +8,7 @@ enum AppStoreScreenshotScene: String, CaseIterable {
     case focusGuard
     case flowReview
     case search
+    case wipChat
 
     static func fromLaunchArguments(_ arguments: [String] = CommandLine.arguments) -> AppStoreScreenshotScene? {
         guard let argument = arguments.first(where: { $0.hasPrefix("--app-store-screenshot=") }) else {
@@ -118,6 +119,22 @@ enum AppStoreScreenshotScene: String, CaseIterable {
                 pl: "Znajdź wszystko szybko",
                 zh: "快速找到任何内容"
             )
+        case .wipChat:
+            return language.text(
+                en: "Ask WIP Coach what to do next",
+                ca: "Pregunta al Coach WIP què fer després",
+                es: "Pregunta al Coach WIP qué hacer después",
+                de: "Frag den WIP-Coach, was als Nächstes dran ist",
+                ja: "WIP コーチに次の一手を聞く",
+                hi: "WIP Coach से पूछें आगे क्या करें",
+                pt: "Pergunte ao Coach WIP o que fazer agora",
+                ko: "WIP 코치에게 다음 할 일을 물어보세요",
+                fr: "Demandez au coach WIP quoi faire ensuite",
+                it: "Chiedi al coach WIP cosa fare dopo",
+                nl: "Vraag WIP-coach wat je nu doet",
+                pl: "Zapytaj Trenera WIP, co dalej",
+                zh: "询问 WIP 教练下一步做什么"
+            )
         }
     }
 
@@ -221,12 +238,28 @@ enum AppStoreScreenshotScene: String, CaseIterable {
                 pl: "Szukaj tytułów, kontekstu i definicji ukończenia.",
                 zh: "搜索标题、上下文和完成标准。"
             )
+        case .wipChat:
+            return language.text(
+                en: "Chat about what to finish, pull, or unblock before your flow drifts.",
+                ca: "Xateja sobre què acabar, agafar o desbloquejar abans que el flux es desviï.",
+                es: "Chatea sobre qué terminar, tomar o desbloquear antes de que el flujo se desvíe.",
+                de: "Chatte darüber, was du abschließen, ziehen oder entblocken solltest, bevor dein Flow driftet.",
+                ja: "流れが乱れる前に、何を終え、引き込み、解除するかをチャットで確認。",
+                hi: "फ़्लो भटकने से पहले क्या पूरा, खींचना या अनब्लॉक करना है, उस पर चैट करें।",
+                pt: "Converse sobre o que finalizar, puxar ou desbloquear antes que o fluxo se desvie.",
+                ko: "흐름이 흔들리기 전에 무엇을 끝내고, 가져오고, 막힘을 풀지 대화하세요.",
+                fr: "Discutez de ce qu’il faut finir, prendre ou débloquer avant que le flux dérive.",
+                it: "Chatta su cosa finire, prendere o sbloccare prima che il flusso deragli.",
+                nl: "Chat over wat je afrondt, oppakt of deblokkeert voordat je flow afdrijft.",
+                pl: "Porozmawiaj o tym, co skończyć, wziąć lub odblokować, zanim przepływ się rozjedzie.",
+                zh: "在流程漂移前，聊聊该完成、拉入或解除阻塞的工作。"
+            )
         }
     }
 
     var accent: Color {
         switch self {
-        case .dashboard, .board, .quickCapture, .search:
+        case .dashboard, .board, .quickCapture, .search, .wipChat:
             return AppStyle.Colors.Status.todo
         case .focusGuard:
             return AppStyle.Colors.warning
@@ -557,6 +590,8 @@ struct AppStoreScreenshotView: View {
                 SearchTasksView(allTasks: allTasks, searchText: $searchText)
                     .searchable(text: $searchText, prompt: "Search tasks")
             }
+        case .wipChat:
+            WIPChatScreenshotContent(allTasks: allTasks)
         }
     }
 
@@ -903,6 +938,380 @@ private struct QuickCaptureScreenshotContent: View {
         .padding(.vertical, AppStyle.Spacing.normal)
         .background(AppStyle.Colors.Status.todo.opacity(AppStyle.Opacity.accentWash), in: RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
         .foregroundStyle(AppStyle.Colors.Status.todo)
+    }
+}
+
+private struct WIPChatScreenshotContent: View {
+    let allTasks: [TaskItem]
+
+    private var currentTasks: [TaskItem] {
+        allTasks.filter { !$0.isArchived }
+    }
+
+    private var recommendation: WIPCoachRecommendation {
+        WIPCoachEngine.evaluate(
+            tasks: currentTasks,
+            maxActiveTasks: 3,
+            isFocusGuardEnabled: true
+        )
+    }
+
+    private var activeTasks: [TaskItem] {
+        recommendation.activeTasks
+    }
+
+    private var blockedTask: TaskItem? {
+        activeTasks.first(where: \.isBlocked)
+    }
+
+    private var readyTask: TaskItem? {
+        recommendation.readyAlternatives.first?.task
+            ?? currentTasks
+                .filter { $0.status == .todo && !$0.isBlocked }
+                .sorted { lhs, rhs in
+                    if lhs.priority.sortOrder != rhs.priority.sortOrder {
+                        return lhs.priority.sortOrder < rhs.priority.sortOrder
+                    }
+                    return lhs.order < rhs.order
+                }
+                .first
+    }
+
+    private var referencedTasks: [TaskItem] {
+        [
+            blockedTask,
+            activeTasks.first(where: { !$0.isBlocked }),
+            readyTask
+        ]
+        .compactMap(\.self)
+        .reduce(into: [TaskItem]()) { uniqueTasks, task in
+            if !uniqueTasks.contains(where: { $0.id == task.id }) {
+                uniqueTasks.append(task)
+            }
+        }
+    }
+
+    var body: some View {
+        GeometryReader { geo in
+            let compact = geo.size.width < 620
+
+            VStack(spacing: AppStyle.Spacing.none) {
+                header(compact: compact)
+
+                ScrollView {
+                    LazyVStack(spacing: compact ? AppStyle.Spacing.medium : AppStyle.Spacing.regular) {
+                        userMessage
+                        assistantMessage(compact: compact)
+                    }
+                    .padding(.horizontal, compact ? AppStyle.Spacing.normal : AppStyle.Spacing.outerHorizontal)
+                    .padding(.vertical, compact ? AppStyle.Spacing.normal : AppStyle.Spacing.outerVertical)
+                }
+                .scrollDisabled(compact)
+
+                Divider()
+
+                composer(compact: compact)
+            }
+            .background(AppStyle.Colors.background)
+        }
+    }
+
+    private func header(compact: Bool) -> some View {
+        ZStack {
+            HStack {
+                Text("Clear")
+                    .font(AppStyle.Typography.secondaryAction)
+                    .foregroundStyle(AppStyle.Colors.disabledControl)
+
+                Spacer()
+
+                Text("Done")
+                    .font(AppStyle.Typography.secondaryAction)
+                    .foregroundStyle(AppStyle.Colors.Status.todo)
+            }
+
+            HStack(spacing: AppStyle.Spacing.small) {
+                Image(systemName: "scope")
+                    .font(AppStyle.Typography.iconSmall)
+                    .foregroundStyle(AppStyle.Colors.Status.todo)
+                    .accessibilityHidden(true)
+
+                Text("WIP Coach")
+                    .font(AppStyle.Typography.headerTitle)
+                    .foregroundStyle(AppStyle.Colors.primaryText)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.78)
+            }
+        }
+        .padding(.horizontal, compact ? AppStyle.Spacing.normal : AppStyle.Spacing.extraLarge)
+        .padding(.vertical, compact ? AppStyle.Spacing.medium : AppStyle.Spacing.large)
+        .background(AppStyle.Materials.chrome)
+        .overlay(alignment: .bottom) {
+            Divider().opacity(AppStyle.Opacity.divider)
+        }
+    }
+
+    private var userMessage: some View {
+        HStack(alignment: .bottom) {
+            Spacer(minLength: AppStyle.Spacing.extraLarge)
+
+            Text("Can I pull more work?")
+                .font(AppStyle.Typography.body)
+                .foregroundStyle(AppStyle.Colors.inverseText)
+                .padding(.horizontal, AppStyle.Spacing.normal)
+                .padding(.vertical, AppStyle.Spacing.medium)
+                .background(
+                    AppStyle.Colors.Status.todo,
+                    in: RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous)
+                )
+                .frame(maxWidth: 420, alignment: .trailing)
+        }
+        .frame(maxWidth: .infinity, alignment: .trailing)
+    }
+
+    private func assistantMessage(compact: Bool) -> some View {
+        HStack(alignment: .bottom) {
+            VStack(alignment: .leading, spacing: compact ? AppStyle.Spacing.small : AppStyle.Spacing.medium) {
+                Text(assistantAnswer)
+                    .font(AppStyle.Typography.body)
+                    .foregroundStyle(AppStyle.Colors.primaryText)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .padding(.horizontal, AppStyle.Spacing.normal)
+                    .padding(.vertical, AppStyle.Spacing.medium)
+                    .background(
+                        AppStyle.Colors.surface,
+                        in: RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous)
+                    )
+                    .overlay {
+                        RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous)
+                            .stroke(AppStyle.Colors.surfaceBorder, lineWidth: AppStyle.Shapes.borderWidth)
+                    }
+
+                answerSources(compact: compact)
+                referencedTaskChips(compact: compact)
+            }
+            .frame(maxWidth: compact ? 420 : 560, alignment: .leading)
+
+            Spacer(minLength: AppStyle.Spacing.extraLarge)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    private func answerSources(compact: Bool) -> some View {
+        VStack(alignment: .leading, spacing: AppStyle.Spacing.small) {
+            HStack(spacing: AppStyle.Spacing.small) {
+                Image(systemName: "checkmark.seal.fill")
+                    .font(AppStyle.Typography.iconSmall)
+                    .foregroundStyle(AppStyle.Colors.Status.done)
+                    .accessibilityHidden(true)
+
+                Text("Answer sources")
+                    .font(AppStyle.Typography.statusLabelHighlighted)
+                    .foregroundStyle(AppStyle.Colors.primaryText)
+            }
+
+            VStack(alignment: .leading, spacing: AppStyle.Spacing.tiny) {
+                sourceRow(
+                    label: "WIP Limit",
+                    value: "\(recommendation.stats.activeCount) / \(recommendation.stats.wipLimit)",
+                    systemImage: "gauge.with.dots.needle.67percent",
+                    tint: AppStyle.Colors.warning
+                )
+
+                sourceRow(
+                    label: "Blocked active work",
+                    value: blockedTask?.title ?? fallbackNone,
+                    systemImage: "pause.circle.fill",
+                    tint: AppStyle.Colors.blocked
+                )
+
+                if !compact {
+                    sourceRow(
+                        label: "Ready to pull",
+                        value: readyTask?.title ?? fallbackNone,
+                        systemImage: "tray.and.arrow.down.fill",
+                        tint: AppStyle.Colors.Status.todo
+                    )
+                }
+            }
+        }
+        .padding(AppStyle.Spacing.compactCardPadding)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(AppStyle.Colors.spotlightSurface, in: RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous)
+                .stroke(AppStyle.Colors.surfaceBorder, lineWidth: AppStyle.Shapes.borderWidth)
+        }
+    }
+
+    private func sourceRow(label: LocalizedStringKey, value: String, systemImage: String, tint: Color) -> some View {
+        HStack(alignment: .center, spacing: AppStyle.Spacing.small) {
+            Image(systemName: systemImage)
+                .font(AppStyle.Typography.iconSmall)
+                .foregroundStyle(tint)
+                .frame(width: AppStyle.Spacing.iconFrameWidth)
+                .accessibilityHidden(true)
+
+            Text(label)
+                .font(AppStyle.Typography.cardDate)
+                .foregroundStyle(AppStyle.Colors.tertiaryText)
+                .frame(width: 112, alignment: .leading)
+                .lineLimit(2)
+
+            Text(value)
+                .font(AppStyle.Typography.cardTitle)
+                .foregroundStyle(AppStyle.Colors.secondaryText)
+                .lineLimit(1)
+                .minimumScaleFactor(0.72)
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
+    }
+
+    private func referencedTaskChips(compact: Bool) -> some View {
+        VStack(alignment: .leading, spacing: AppStyle.Spacing.tiny) {
+            ForEach(Array(referencedTasks.prefix(compact ? 2 : 3))) { task in
+                HStack(spacing: AppStyle.Spacing.small) {
+                    Image(systemName: statusIcon(for: task))
+                        .font(AppStyle.Typography.iconSmall)
+                        .foregroundStyle(statusColor(for: task))
+                        .frame(width: AppStyle.Spacing.iconFrameWidth)
+                        .accessibilityHidden(true)
+
+                    VStack(alignment: .leading, spacing: AppStyle.Spacing.micro) {
+                        Text(task.title)
+                            .font(AppStyle.Typography.cardTitle)
+                            .foregroundStyle(AppStyle.Colors.primaryText)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.76)
+
+                        Text("\(task.status.localizedName) - \(task.priority.localizedName)")
+                            .font(AppStyle.Typography.cardDate)
+                            .foregroundStyle(AppStyle.Colors.secondaryText)
+                            .lineLimit(1)
+                    }
+
+                    Spacer(minLength: AppStyle.Spacing.small)
+
+                    Image(systemName: "chevron.right")
+                        .font(AppStyle.Typography.iconTiny)
+                        .foregroundStyle(AppStyle.Colors.tertiaryText)
+                        .accessibilityHidden(true)
+                }
+                .padding(.horizontal, AppStyle.Spacing.regular)
+                .padding(.vertical, AppStyle.Spacing.small)
+                .frame(maxWidth: .infinity, minHeight: AppStyle.Shapes.minimumTapTarget, alignment: .leading)
+                .background(AppStyle.Colors.spotlightSurface, in: RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
+            }
+        }
+    }
+
+    private func composer(compact: Bool) -> some View {
+        VStack(alignment: .leading, spacing: AppStyle.Spacing.small) {
+            if !compact {
+                HStack(spacing: AppStyle.Spacing.small) {
+                    Text("UNBLOCK FIRST")
+                        .font(AppStyle.Typography.pillLabel)
+                        .foregroundStyle(AppStyle.Colors.blocked)
+                        .padding(.horizontal, AppStyle.Spacing.emphasizedPillHorizontalPadding)
+                        .padding(.vertical, AppStyle.Spacing.emphasizedPillVerticalPadding)
+                        .background(AppStyle.Colors.blocked.opacity(AppStyle.Opacity.accentWash), in: Capsule())
+
+                    Text("Can I pull more work?")
+                        .font(AppStyle.Typography.pillLabel)
+                        .foregroundStyle(AppStyle.Colors.Status.todo)
+                        .padding(.horizontal, AppStyle.Spacing.emphasizedPillHorizontalPadding)
+                        .padding(.vertical, AppStyle.Spacing.emphasizedPillVerticalPadding)
+                        .background(AppStyle.Colors.Status.todo.opacity(AppStyle.Opacity.accentWash), in: Capsule())
+                }
+            }
+
+            HStack(alignment: .center, spacing: AppStyle.Spacing.small) {
+                Text("Ask about tasks")
+                    .font(AppStyle.Typography.body)
+                    .foregroundStyle(AppStyle.Colors.tertiaryText)
+                    .lineLimit(1)
+                    .padding(.horizontal, AppStyle.Spacing.normal)
+                    .padding(.vertical, AppStyle.Spacing.medium)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(AppStyle.Colors.surface, in: RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous))
+                    .overlay {
+                        RoundedRectangle(cornerRadius: AppStyle.Shapes.smallCornerRadius, style: .continuous)
+                            .stroke(AppStyle.Colors.surfaceBorder, lineWidth: AppStyle.Shapes.borderWidth)
+                    }
+
+                Image(systemName: "arrow.up.circle.fill")
+                    .font(AppStyle.Typography.iconHero)
+                    .foregroundStyle(AppStyle.Colors.Status.todo)
+                    .frame(width: AppStyle.Shapes.minimumTapTarget, height: AppStyle.Shapes.minimumTapTarget)
+                    .accessibilityLabel(Text("Send"))
+            }
+        }
+        .padding(.horizontal, compact ? AppStyle.Spacing.normal : AppStyle.Spacing.outerHorizontal)
+        .padding(.top, AppStyle.Spacing.medium)
+        .padding(.bottom, AppStyle.Spacing.normal)
+        .background(AppStyle.Colors.background)
+    }
+
+    private var assistantAnswer: String {
+        AppStoreScreenshotLanguage.current.text(
+            en: "Not yet. Your active lane is full and one task is blocked. Unblock Book onboarding calls or finish active work before pulling Draft client proposal.",
+            ca: "Encara no. El carril actiu és ple i una tasca està bloquejada. Desbloqueja Book onboarding calls o acaba feina activa abans d'agafar Draft client proposal.",
+            es: "Todavía no. Tu carril activo está lleno y una tarea está bloqueada. Desbloquea Book onboarding calls o termina trabajo activo antes de tomar Draft client proposal.",
+            de: "Noch nicht. Deine aktive Spur ist voll und eine Aufgabe ist blockiert. Entblocke Book onboarding calls oder schließe aktive Arbeit ab, bevor du Draft client proposal ziehst.",
+            ja: "まだです。アクティブレーンはいっぱいで、1件がブロックされています。Draft client proposal を引き込む前に、Book onboarding calls を解除するか、アクティブな作業を終えましょう。",
+            hi: "अभी नहीं। आपकी सक्रिय लेन भरी है और एक कार्य रुका हुआ है। Draft client proposal खींचने से पहले Book onboarding calls को अनब्लॉक करें या सक्रिय काम पूरा करें।",
+            pt: "Ainda não. Sua raia ativa está cheia e uma tarefa está bloqueada. Desbloqueie Book onboarding calls ou finalize trabalho ativo antes de puxar Draft client proposal.",
+            ko: "아직은 아닙니다. 활성 레인이 가득 찼고 작업 하나가 막혀 있습니다. Draft client proposal을 가져오기 전에 Book onboarding calls의 막힘을 풀거나 활성 작업을 끝내세요.",
+            fr: "Pas encore. Votre voie active est pleine et une tâche est bloquée. Débloquez Book onboarding calls ou terminez du travail actif avant de prendre Draft client proposal.",
+            it: "Non ancora. La corsia attiva è piena e un'attività è bloccata. Sblocca Book onboarding calls o finisci il lavoro attivo prima di prendere Draft client proposal.",
+            nl: "Nog niet. Je actieve kolom is vol en één taak is geblokkeerd. Deblokkeer Book onboarding calls of rond actief werk af voordat je Draft client proposal oppakt.",
+            pl: "Jeszcze nie. Aktywna kolumna jest pełna, a jedno zadanie jest zablokowane. Odblokuj Book onboarding calls albo skończ bieżącą pracę przed wzięciem Draft client proposal.",
+            zh: "还不行。你的进行中栏已满，而且有一项任务被阻塞。先解除 Book onboarding calls 的阻塞，或完成进行中的工作，再拉入 Draft client proposal。"
+        )
+    }
+
+    private var fallbackNone: String {
+        AppStoreScreenshotLanguage.current.text(
+            en: "None",
+            ca: "Cap",
+            es: "Ninguna",
+            de: "Keine",
+            ja: "なし",
+            hi: "कोई नहीं",
+            pt: "Nenhuma",
+            ko: "없음",
+            fr: "Aucune",
+            it: "Nessuna",
+            nl: "Geen",
+            pl: "Brak",
+            zh: "无"
+        )
+    }
+
+    private func statusIcon(for task: TaskItem) -> String {
+        switch task.status {
+        case .todo:
+            return "circle"
+        case .inProgress:
+            return task.isBlocked ? "pause.circle.fill" : "clock.fill"
+        case .done:
+            return "checkmark.circle.fill"
+        }
+    }
+
+    private func statusColor(for task: TaskItem) -> Color {
+        if task.status == .inProgress && task.isBlocked {
+            return AppStyle.Colors.blocked
+        }
+
+        switch task.status {
+        case .todo:
+            return AppStyle.Colors.Status.todo
+        case .inProgress:
+            return AppStyle.Colors.Status.inProgress
+        case .done:
+            return AppStyle.Colors.Status.done
+        }
     }
 }
 
