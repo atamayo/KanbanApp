@@ -6869,6 +6869,7 @@
       }
     },
     "Ask WIP Coach what to do next" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -8923,6 +8924,7 @@
       }
     },
     "Chat about what to finish, pull, or unblock before your flow drifts." : {
+      "extractionState" : "stale",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -12288,7 +12290,90 @@
         "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hechas"
+            "value" : "Completadas"
+          }
+        },
+        "fr-FR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terminé"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पूरा"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Completato"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完了"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "완료"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klaar"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ukończone"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Concluído"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已完成"
+          }
+        }
+      }
+    },
+    "wip_coach_done" : {
+      "comment" : "WIP Coach chat dismiss button",
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fet"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erledigt"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Listo"
           }
         },
         "fr-FR" : {
@@ -20643,6 +20728,82 @@
         }
       }
     },
+    "New!" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nou!"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neu!"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Nuevo!"
+          }
+        },
+        "fr-FR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nouveau !"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "नया!"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Novità!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新着!"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "신규!"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nieuw!"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nowość!"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Novo!"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新功能!"
+          }
+        }
+      }
+    },
     "Next Action" : {
       "localizations" : {
         "ca" : {
@@ -22619,82 +22780,6 @@
         }
       }
     },
-    "Not yet. Your active lane is full and one task is blocked. Unblock Book onboarding calls or finish active work before pulling Draft client proposal." : {
-      "localizations" : {
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Encara no. El carril actiu és ple i una tasca està bloquejada. Desbloqueja Book onboarding calls o acaba feina activa abans d'agafar Draft client proposal."
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Noch nicht. Deine aktive Spur ist voll und eine Aufgabe ist blockiert. Entblocke Book onboarding calls oder schließe aktive Arbeit ab, bevor du Draft client proposal ziehst."
-          }
-        },
-        "es-ES" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Todavía no. Tu carril activo está lleno y una tarea está bloqueada. Desbloquea Book onboarding calls o termina trabajo activo antes de tomar Draft client proposal."
-          }
-        },
-        "fr-FR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pas encore. Votre voie active est pleine et une tâche est bloquée. Débloquez Book onboarding calls ou terminez du travail actif avant de prendre Draft client proposal."
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "अभी नहीं। आपकी सक्रिय लेन भरी है और एक कार्य रुका हुआ है। Draft client proposal खींचने से पहले Book onboarding calls को अनब्लॉक करें या सक्रिय काम पूरा करें।"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Non ancora. La corsia attiva è piena e un'attività è bloccata. Sblocca Book onboarding calls o finisci il lavoro attivo prima di prendere Draft client proposal."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "まだです。アクティブレーンはいっぱいで、1件がブロックされています。Draft client proposal を引き込む前に、Book onboarding calls を解除するか、アクティブな作業を終えましょう。"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "아직은 아닙니다. 활성 레인이 가득 찼고 작업 하나가 막혀 있습니다. Draft client proposal을 가져오기 전에 Book onboarding calls의 막힘을 풀거나 활성 작업을 끝내세요."
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nog niet. Je actieve kolom is vol en één taak is geblokkeerd. Deblokkeer Book onboarding calls of rond actief werk af voordat je Draft client proposal oppakt."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jeszcze nie. Aktywna kolumna jest pełna, a jedno zadanie jest zablokowane. Odblokuj Book onboarding calls albo skończ bieżącą pracę przed wzięciem Draft client proposal."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ainda não. Sua raia ativa está cheia e uma tarefa está bloqueada. Desbloqueie Book onboarding calls ou finalize trabalho ativo antes de puxar Draft client proposal."
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "还不行。你的进行中栏已满，而且有一项任务被阻塞。先解除 Book onboarding calls 的阻塞，或完成进行中的工作，再拉入 Draft client proposal。"
-          }
-        }
-      }
-    },
     "not active" : {
       "localizations" : {
         "ca" : {
@@ -22843,6 +22928,83 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "不在 To Do 中"
+          }
+        }
+      }
+    },
+    "Not yet. Your active lane is full and one task is blocked. Unblock Book onboarding calls or finish active work before pulling Draft client proposal." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Encara no. El carril actiu és ple i una tasca està bloquejada. Desbloqueja Book onboarding calls o acaba feina activa abans d'agafar Draft client proposal."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noch nicht. Deine aktive Spur ist voll und eine Aufgabe ist blockiert. Entblocke Book onboarding calls oder schließe aktive Arbeit ab, bevor du Draft client proposal ziehst."
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todavía no. Tu carril activo está lleno y una tarea está bloqueada. Desbloquea Book onboarding calls o termina trabajo activo antes de tomar Draft client proposal."
+          }
+        },
+        "fr-FR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pas encore. Votre voie active est pleine et une tâche est bloquée. Débloquez Book onboarding calls ou terminez du travail actif avant de prendre Draft client proposal."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अभी नहीं। आपकी सक्रिय लेन भरी है और एक कार्य रुका हुआ है। Draft client proposal खींचने से पहले Book onboarding calls को अनब्लॉक करें या सक्रिय काम पूरा करें।"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non ancora. La corsia attiva è piena e un'attività è bloccata. Sblocca Book onboarding calls o finisci il lavoro attivo prima di prendere Draft client proposal."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "まだです。アクティブレーンはいっぱいで、1件がブロックされています。Draft client proposal を引き込む前に、Book onboarding calls を解除するか、アクティブな作業を終えましょう。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "아직은 아닙니다. 활성 레인이 가득 찼고 작업 하나가 막혀 있습니다. Draft client proposal을 가져오기 전에 Book onboarding calls의 막힘을 풀거나 활성 작업을 끝내세요."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nog niet. Je actieve kolom is vol en één taak is geblokkeerd. Deblokkeer Book onboarding calls of rond actief werk af voordat je Draft client proposal oppakt."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeszcze nie. Aktywna kolumna jest pełna, a jedno zadanie jest zablokowane. Odblokuj Book onboarding calls albo skończ bieżącą pracę przed wzięciem Draft client proposal."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ainda não. Sua raia ativa está cheia e uma tarefa está bloqueada. Desbloqueie Book onboarding calls ou finalize trabalho ativo antes de puxar Draft client proposal."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "还不行。你的进行中栏已满，而且有一项任务被阻塞。先解除 Book onboarding calls 的阻塞，或完成进行中的工作，再拉入 Draft client proposal。"
           }
         }
       }

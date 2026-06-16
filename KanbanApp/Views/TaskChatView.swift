@@ -118,7 +118,7 @@ struct TaskChatView: View {
                 }
 
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button(String(localized: "Done")) {
+                    Button(String(localized: "wip_coach_done")) {
                         dismiss()
                     }
                 }

@@ -523,7 +523,7 @@ struct AppStoreScreenshotView: View {
                 screenshotBackground(accent: scene.accent)
 
                 VStack(spacing: layout(for: geo.size).verticalSpacing) {
-                    header
+                    heroHeader
                     appPreview
                 }
                 .padding(.horizontal, layout(for: geo.size).horizontalPadding)
@@ -536,6 +536,22 @@ struct AppStoreScreenshotView: View {
         .environment(\.dynamicTypeSize, .large)
         .task {
             configureSceneState()
+        }
+    }
+
+    @ViewBuilder
+    private var heroHeader: some View {
+        if scene == .wipChat {
+            VStack(spacing: 10) {
+                HStack {
+                    Spacer()
+                    wipChatBadge
+                }
+
+                header
+            }
+        } else {
+            header
         }
     }
 
@@ -556,6 +572,23 @@ struct AppStoreScreenshotView: View {
                 .minimumScaleFactor(0.82)
         }
         .frame(maxWidth: .infinity)
+    }
+
+    private var wipChatBadge: some View {
+        Text("New!")
+            .font(.system(size: 18, weight: .bold, design: .rounded))
+            .foregroundStyle(AppStyle.Colors.inverseText)
+            .lineLimit(1)
+            .minimumScaleFactor(0.78)
+            .padding(.horizontal, 16)
+            .padding(.vertical, 8)
+            .background(AppStyle.Colors.Status.todo, in: Capsule())
+            .overlay {
+                Capsule()
+                    .stroke(.white.opacity(0.74), lineWidth: 1)
+            }
+            .shadow(color: scene.accent.opacity(0.22), radius: 10, x: 0, y: 6)
+            .shadow(color: .black.opacity(0.08), radius: 6, x: 0, y: 2)
     }
 
     private var appPreview: some View {
